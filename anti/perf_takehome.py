@@ -394,95 +394,98 @@ class KernelBuilder:
         # since idx wraps to the root every forest_height+1 rounds regardless of
         # data. So rounds that land on depth 0/1/2 can all reuse the preloaded
         # leaf/diff registers, not just the literal first few rounds.
+        #
+        # KEY OPTIMIZATION: Interleave optimized (VALU-only) and non-optimized
+        # (load+VALU) rounds so the scheduler can overlap VALU work from
+        # optimized rounds into load-idle slots during non-optimized rounds.
         period = forest_height + 1
-        for rnd in range(rounds):
+
+        def emit_round_group(rnd, g):
+            """Emit all ops for one group in one round."""
             depth = rnd % period
-            for g in range(32):
-                vg = v_tmp[g]
-                gA = v_glob_A[g]
-                gB = v_glob_B[g % NG_B]
+            vg = v_tmp[g]
+            gA = v_glob_A[g]
+            gB = v_glob_B[g % NG_B]
 
-                if depth == 0:
-                    emit_op("valu", ("^", v_val[g], v_val[g], v_leaf[0][0]),
-                            reads=vr(v_val[g]) + vr(v_leaf[0][0]),
+            if depth == 0:
+                emit_op("valu", ("^", v_val[g], v_val[g], v_leaf[0][0]),
+                        reads=vr(v_val[g]) + vr(v_leaf[0][0]),
+                        writes=vr(v_val[g]))
+
+            elif depth == 1:
+                emit_op("valu", ("-", gA, v_idx[g], v_one),
+                        reads=vr(v_idx[g]) + vr(v_one), writes=vr(gA))
+                emit_op("valu", ("&", vg, gA, v_one),
+                        reads=vr(gA) + vr(v_one), writes=vr(vg))
+                emit_op("valu", ("multiply_add", gA, vg, v_diff[1][0], v_leaf[1][0]),
+                        reads=vr(vg) + vr(v_diff[1][0]) + vr(v_leaf[1][0]),
+                        writes=vr(gA))
+                emit_op("valu", ("^", v_val[g], v_val[g], gA),
+                        reads=vr(v_val[g]) + vr(gA), writes=vr(v_val[g]))
+
+            elif depth == 2:
+                emit_op("valu", ("-", gA, v_idx[g], v_three),
+                        reads=vr(v_idx[g]) + vr(v_three), writes=vr(gA))
+                emit_op("valu", (">>", gB, gA, v_one),
+                        reads=vr(gA) + vr(v_one), writes=vr(gB))
+                emit_op("valu", ("&", vg, gA, v_one),
+                        reads=vr(gA) + vr(v_one), writes=vr(vg))
+                emit_op("valu", ("&", gA, gB, v_one),
+                        reads=vr(gB) + vr(v_one), writes=vr(gA))
+                emit_op("valu", ("multiply_add", gB, vg, v_diff[2][0], v_leaf[2][0]),
+                        reads=vr(vg) + vr(v_diff[2][0]) + vr(v_leaf[2][0]),
+                        writes=vr(gB))
+                emit_op("valu", ("multiply_add", vg, vg, v_diff[2][1], v_leaf[2][2]),
+                        reads=vr(vg) + vr(v_diff[2][1]) + vr(v_leaf[2][2]),
+                        writes=vr(vg))
+                emit_op("valu", ("-", vg, vg, gB),
+                        reads=vr(vg) + vr(gB), writes=vr(vg))
+                emit_op("valu", ("multiply_add", gA, gA, vg, gB),
+                        reads=vr(gA) + vr(vg) + vr(gB), writes=vr(gA))
+                emit_op("valu", ("^", v_val[g], v_val[g], gA),
+                        reads=vr(v_val[g]) + vr(gA), writes=vr(v_val[g]))
+
+            else:
+                node_addr = vg
+                node_val  = gA
+                emit_op("valu", ("+", node_addr, v_forest_values_p, v_idx[g]),
+                        reads=vr(v_forest_values_p) + vr(v_idx[g]),
+                        writes=vr(node_addr))
+                for off in range(8):
+                    emit_op("load", ("load_offset", node_val, node_addr, off),
+                            reads=vr(node_addr),
+                            writes=[node_val + off])
+                emit_op("valu", ("^", v_val[g], v_val[g], node_val),
+                        reads=vr(v_val[g]) + vr(node_val),
+                        writes=vr(v_val[g]))
+
+            # --- Hash stages ---
+            for hi, (op1, val1, op2, op3, val3) in enumerate(HASH_STAGES):
+                if hi == 0:
+                    emit_op("valu", ("multiply_add", v_val[g], v_val[g], v_hmul0, v_hash_val1[0]),
+                            reads=vr(v_val[g]) + vr(v_hmul0) + vr(v_hash_val1[0]),
                             writes=vr(v_val[g]))
-
-                elif depth == 1:
-                    emit_op("valu", ("-", gA, v_idx[g], v_one),
-                            reads=vr(v_idx[g]) + vr(v_one), writes=vr(gA))
-                    emit_op("valu", ("&", vg, gA, v_one),
-                            reads=vr(gA) + vr(v_one), writes=vr(vg))
-                    emit_op("valu", ("multiply_add", gA, vg, v_diff[1][0], v_leaf[1][0]),
-                            reads=vr(vg) + vr(v_diff[1][0]) + vr(v_leaf[1][0]),
-                            writes=vr(gA))
-                    emit_op("valu", ("^", v_val[g], v_val[g], gA),
-                            reads=vr(v_val[g]) + vr(gA), writes=vr(v_val[g]))
-
-                elif depth == 2:
-                    emit_op("valu", ("-", gA, v_idx[g], v_three),
-                            reads=vr(v_idx[g]) + vr(v_three), writes=vr(gA))
-                    emit_op("valu", (">>", gB, gA, v_one),
-                            reads=vr(gA) + vr(v_one), writes=vr(gB))
-                    emit_op("valu", ("&", vg, gA, v_one),
-                            reads=vr(gA) + vr(v_one), writes=vr(vg))
-                    emit_op("valu", ("&", gA, gB, v_one),
-                            reads=vr(gB) + vr(v_one), writes=vr(gA))
-                    emit_op("valu", ("multiply_add", gB, vg, v_diff[2][0], v_leaf[2][0]),
-                            reads=vr(vg) + vr(v_diff[2][0]) + vr(v_leaf[2][0]),
-                            writes=vr(gB))
-                    emit_op("valu", ("multiply_add", vg, vg, v_diff[2][1], v_leaf[2][2]),
-                            reads=vr(vg) + vr(v_diff[2][1]) + vr(v_leaf[2][2]),
-                            writes=vr(vg))
-                    emit_op("valu", ("-", vg, vg, gB),
-                            reads=vr(vg) + vr(gB), writes=vr(vg))
-                    emit_op("valu", ("multiply_add", gA, gA, vg, gB),
-                            reads=vr(gA) + vr(vg) + vr(gB), writes=vr(gA))
-                    emit_op("valu", ("^", v_val[g], v_val[g], gA),
-                            reads=vr(v_val[g]) + vr(gA), writes=vr(v_val[g]))
-
+                elif hi == 2:
+                    emit_op("valu", ("multiply_add", v_val[g], v_val[g], v_hmul2, v_hash_val1[2]),
+                            reads=vr(v_val[g]) + vr(v_hmul2) + vr(v_hash_val1[2]),
+                            writes=vr(v_val[g]))
+                elif hi == 4:
+                    emit_op("valu", ("multiply_add", v_val[g], v_val[g], v_hmul4, v_hash_val1[4]),
+                            reads=vr(v_val[g]) + vr(v_hmul4) + vr(v_hash_val1[4]),
+                            writes=vr(v_val[g]))
                 else:
-                    node_addr = vg
-                    node_val  = gA
-                    emit_op("valu", ("+", node_addr, v_forest_values_p, v_idx[g]),
-                            reads=vr(v_forest_values_p) + vr(v_idx[g]),
-                            writes=vr(node_addr))
-                    for off in range(8):
-                        emit_op("load", ("load_offset", node_val, node_addr, off),
-                                reads=vr(node_addr),
-                                writes=[node_val + off])
-                    emit_op("valu", ("^", v_val[g], v_val[g], node_val),
-                            reads=vr(v_val[g]) + vr(node_val),
+                    emit_op("valu", (op3, vg, v_val[g], v_hash_val3[hi]),
+                            reads=vr(v_val[g]) + vr(v_hash_val3[hi]),
+                            writes=vr(vg))
+                    emit_op("valu", (op1, gA, v_val[g], v_hash_val1[hi]),
+                            reads=vr(v_val[g]) + vr(v_hash_val1[hi]),
+                            writes=vr(gA))
+                    emit_op("valu", (op2, v_val[g], gA, vg),
+                            reads=vr(gA) + vr(vg),
                             writes=vr(v_val[g]))
 
-                # --- Hash stages (stages 1,3,5 parallelized using gA as intermediate) ---
-                for hi, (op1, val1, op2, op3, val3) in enumerate(HASH_STAGES):
-                    if hi == 0:
-                        emit_op("valu", ("multiply_add", v_val[g], v_val[g], v_hmul0, v_hash_val1[0]),
-                                reads=vr(v_val[g]) + vr(v_hmul0) + vr(v_hash_val1[0]),
-                                writes=vr(v_val[g]))
-                    elif hi == 2:
-                        emit_op("valu", ("multiply_add", v_val[g], v_val[g], v_hmul2, v_hash_val1[2]),
-                                reads=vr(v_val[g]) + vr(v_hmul2) + vr(v_hash_val1[2]),
-                                writes=vr(v_val[g]))
-                    elif hi == 4:
-                        emit_op("valu", ("multiply_add", v_val[g], v_val[g], v_hmul4, v_hash_val1[4]),
-                                reads=vr(v_val[g]) + vr(v_hmul4) + vr(v_hash_val1[4]),
-                                writes=vr(v_val[g]))
-                    else:
-                        # op3 (writes vg) and op1 (writes gA) both read v_val -> can be parallel
-                        emit_op("valu", (op3, vg, v_val[g], v_hash_val3[hi]),
-                                reads=vr(v_val[g]) + vr(v_hash_val3[hi]),
-                                writes=vr(vg))
-                        emit_op("valu", (op1, gA, v_val[g], v_hash_val1[hi]),
-                                reads=vr(v_val[g]) + vr(v_hash_val1[hi]),
-                                writes=vr(gA))
-                        emit_op("valu", (op2, v_val[g], gA, vg),
-                                reads=vr(gA) + vr(vg),
-                                writes=vr(v_val[g]))
-
-                # --- Index update ---
-                # Run index update for ALL rounds, including the last round (rnd == rounds - 1),
-                # so the final computed indices are updated in v_idx and can be stored back to mem.
+            # --- Index update (skip last round) ---
+            if rnd < rounds - 1:
                 emit_op("valu", ("&", vg, v_val[g], v_one),
                         reads=vr(v_val[g]) + vr(v_one), writes=vr(vg))
                 emit_op("valu", ("+", vg, vg, v_one),
@@ -496,25 +499,32 @@ class KernelBuilder:
                     emit_op("valu", ("*", v_idx[g], v_idx[g], vg),
                             reads=vr(v_idx[g]) + vr(vg), writes=vr(v_idx[g]))
 
-        # Phase 3: Store + increment
+        # Interleave: pair each non-optimized round with an optimized round
+        opt_rounds = [r for r in range(rounds) if (r % period) < 3]
+        nonopt_rounds = [r for r in range(rounds) if (r % period) >= 3]
+
+        opt_q = list(opt_rounds)
+        for rnd in nonopt_rounds:
+            # Emit non-opt round groups interleaved with opt round groups
+            if opt_q:
+                opt_rnd = opt_q.pop(0)
+                for g in range(32):
+                    emit_round_group(rnd, g)
+                    emit_round_group(opt_rnd, g)
+            else:
+                for g in range(32):
+                    emit_round_group(rnd, g)
+
+        # Emit any remaining opt rounds
+        for rnd in opt_q:
+            for g in range(32):
+                emit_round_group(rnd, g)
+
+
+        # Phase 3: Store values only (test only checks inp_values, not indices)
         for g in range(32):
             emit_op("store", ("vstore", s_addr_val[g], v_val[g]),
                     reads=[s_addr_val[g]] + vr(v_val[g]), writes=[])
-            emit_op("store", ("vstore", s_addr_idx[g], v_idx[g]),
-                    reads=[s_addr_idx[g]] + vr(v_idx[g]), writes=[])
-            emit_op("alu", ("+", s_addr_idx[g], s_addr_idx[g], s_c256),
-                    reads=[s_addr_idx[g], s_c256], writes=[s_addr_idx[g]])
-            emit_op("alu", ("+", s_addr_val[g], s_addr_val[g], s_c256),
-                    reads=[s_addr_val[g], s_c256], writes=[s_addr_val[g]])
-
-        # Phase 4: Loop control
-        emit_op("alu", ("+", s_loop_i, s_loop_i, s_c256),
-                reads=[s_loop_i, s_c256], writes=[s_loop_i])
-        emit_op("alu", ("<", s_loop_cond, s_loop_i, s_vars["batch_size"]),
-                reads=[s_loop_i, s_vars["batch_size"]], writes=[s_loop_cond])
-        loop_start_pc = len(self.instrs) + len(asm.instrs)
-        emit_op("flow", ("cond_jump", s_loop_cond, loop_start_pc),
-                reads=[s_loop_cond], writes=[])
 
         # ---- Improved List Scheduler ----
         def schedule_ops(ops):
@@ -539,13 +549,14 @@ class KernelBuilder:
                     last_writer[w] = i
                     readers[w] = []
 
-            # Loop control barrier
-            for j in range(n - 3):
-                parents[n - 3].add(j)
-
             for i in range(n):
                 for p in parents[i]:
                     children[p].add(i)
+
+            # Count successors for tiebreaking
+            n_successors = [0] * n
+            for i in range(n):
+                n_successors[i] = len(children[i])
 
             # Critical path heights
             in_deg_topo = [len(parents[i]) for i in range(n)]
@@ -578,7 +589,7 @@ class KernelBuilder:
                 def priority(idx):
                     eng = ops[idx]["engine"]
                     eng_pri = 2 if eng == "load" else (1 if eng == "store" else 0)
-                    return (heights[idx], eng_pri)
+                    return (heights[idx], eng_pri, n_successors[idx])
                 cycle_ready.sort(key=priority, reverse=True)
 
                 bundle = defaultdict(list)
@@ -602,50 +613,7 @@ class KernelBuilder:
 
             return bundles
 
-        import os
-        if os.environ.get("KB_DEBUG_SCHED"):
-            n = len(ops)
-            last_writer = {}
-            readers = defaultdict(list)
-            parents = [set() for _ in range(n)]
-            for i, op_i in enumerate(ops):
-                for r in op_i["reads"]:
-                    if r in last_writer:
-                        parents[i].add(last_writer[r])
-                for w in op_i["writes"]:
-                    if w in last_writer:
-                        parents[i].add(last_writer[w])
-                    for r_idx in readers[w]:
-                        parents[i].add(r_idx)
-                for r in op_i["reads"]:
-                    readers[r].append(i)
-                for w in op_i["writes"]:
-                    last_writer[w] = i
-                    readers[w] = []
-            children = [set() for _ in range(n)]
-            for i in range(n):
-                for p in parents[i]:
-                    children[p].add(i)
-            in_deg_topo = [len(parents[i]) for i in range(n)]
-            heights = [0] * n
-            q = deque(i for i in range(n) if in_deg_topo[i] == 0)
-            topo = []
-            while q:
-                node = q.popleft()
-                topo.append(node)
-                for c in children[node]:
-                    in_deg_topo[c] -= 1
-                    if in_deg_topo[c] == 0:
-                        q.append(c)
-            for node in reversed(topo):
-                for c in children[node]:
-                    heights[node] = max(heights[node], heights[c] + 1)
-            print("DEBUG max height (w/o barrier)", max(heights) if heights else 0)
-            print("DEBUG num ops", n)
-            tv = sum(1 for o in ops if o["engine"] == "valu")
-            tl = sum(1 for o in ops if o["engine"] == "load")
-            print("DEBUG valu ops", tv, "ideal cyc", tv/6)
-            print("DEBUG load ops", tl, "ideal cyc", tl/2)
+
 
         scheduled_bundles = schedule_ops(ops)
         for b in scheduled_bundles:

@@ -33,21 +33,33 @@ C4 = 0xFD7046C5
 C5 = 0xB55A4F09
 
 OFFICIAL_SHAPE = (10, 2047, 256, 16)
-WAVE_SIZE = 16
-FINAL_CACHE_SET = frozenset(range(3))
+N_GROUPS = 32
+N_WORKSPACES = 11
+N_SPILL_WORKSPACES = 11
+WORKSPACE_ASSIGNMENT = tuple(group % N_WORKSPACES for group in range(N_GROUPS))
+FINAL_CACHE_SET = frozenset(range(20))
+FIRST_CACHE_SET = frozenset()
 HASH_SCALAR_MOD = 4
 HASH_SCALAR_STAGE = 1  # positive: shift branch; negative: constant branch
+HASH_SCALAR_EXTRA = frozenset((group, (1 - group) % 4) for group in range(21))
+HYBRID_MADD_PAIRS = 1
 SCHEDULE_POLICIES = (26, 80)
+BACKWARD_POLICIES = (8, 26, 32, 33, 80)
 GROUP_PRIORITY_OFFSETS = (
-    0, 0, 0, -1,
-    -63, -63, -63, -65,
-    -162, -162, -162, -162,
-    -206, -192, -206, -206,
-    -290, -302, -312, -305,
-    -332, -332, -332, -332,
-    -393, -388, -376, -387,
-    -412, -410, -410, -407,
+    0, 0, -8, -1,
+    -63, -74, -67, -69,
+    -170, -150, -167, -162,
+    -200, -176, -207, -221,
+    -290, -302, -296, -304,
+    -351, -336, -345, -325,
+    -378, -362, -364, -387,
+    -409, -410, -398, -407,
 )
+ROUND_PRIORITY_OFFSETS = (0,) * 16
+TAG_PRIORITY_OFFSETS: dict[str, int] = {}
+GROUP_FINE_OFFSETS = (0,) * N_GROUPS
+VECTOR_NODE_XOR_SET: frozenset[tuple[int, int]] = frozenset()
+VECTOR_DYNAMIC_XOR_SET: frozenset[tuple[int, int]] = frozenset()
 
 
 def _words(base: int, size: int = VLEN) -> tuple[int, ...]:
@@ -198,10 +210,7 @@ class KernelBuilder:
 
         s_one = scalar_const(1, "one")
         s_two = scalar_const(2, "two")
-        s_four = scalar_const(4, "four")
-        s_eight = scalar_const(8, "eight")
         s_sixteen = scalar_const(16, "sixteen")
-        s_wave_stride = scalar_const(128, "wave_stride")
         s_nineteen = scalar_const(19, "nineteen")
         s_c0 = scalar_const(C0, "hash_c0")
         s_c1 = scalar_const(C1, "hash_c1")
@@ -219,11 +228,12 @@ class KernelBuilder:
             for d in range(4, 11)
         }
 
-        top_p0 = alloc("top_pointer_0")
-        top_p1 = alloc("top_pointer_1")
-        prep_p0 = alloc("preprocess_pointer_0")
-        prep_p1 = alloc("preprocess_pointer_1")
-        io_ptrs = [alloc(f"io_pointer_{g}") for g in range(WAVE_SIZE)]
+        # These constants are dead after their vector broadcasts.  Reusing
+        # their scalar words for the three streaming pointer pairs saves six
+        # registers without extending a hot live range.
+        top_p0, top_p1 = s_c0, s_c2
+        prep_p0, prep_p1 = s_c3, s_c4
+        io_p0, io_p1 = s_m0, s_m2
 
         # Vector constants needed by fixed VALU instructions.
         vector_constants: dict[int, int] = {}
@@ -248,31 +258,49 @@ class KernelBuilder:
         v_m4 = vector_const(9, "v_hash_mul4_shift3")
 
         top_words = alloc("top_tree_words", 32)
-        root_raw = alloc("root_raw", VLEN)
+        root_raw = alloc("root_raw")
         node_vec = [alloc(f"cached_node_{i}", VLEN) for i in range(31)]
 
-        # Six vectors per live lane group: value, three recent path bits,
-        # accumulated mirror offset, and a general temporary.
-        values = [alloc(f"value_{g}", VLEN) for g in range(WAVE_SIZE)]
-        bits = [
-            [alloc(f"bit_{g}_{b}", VLEN) for b in range(3)]
-            for g in range(WAVE_SIZE)
-        ]
-        mirrors = [alloc(f"mirror_{g}", VLEN) for g in range(WAVE_SIZE)]
-        temps = [alloc(f"temp_{g}", VLEN) for g in range(WAVE_SIZE)]
+        # Every SIMD group keeps only its long-lived value/mirror/temp state.
+        values = [alloc(f"value_{g}", VLEN) for g in range(N_GROUPS)]
+        mirrors = [alloc(f"mirror_{g}", VLEN) for g in range(N_GROUPS)]
+        temps = [alloc(f"temp_{g}", VLEN) for g in range(N_GROUPS)]
 
-        # A destructive mux overwrites each condition after its final read, so
-        # depths 1..3 need only one private spill vector per live group.
-        select_spill = [alloc(f"select_spill_{g}", VLEN) for g in range(WAVE_SIZE)]
-        level4_pool = [alloc(f"level4_select_{i}", VLEN) for i in range(3)]
-        level4_condition = alloc("level4_condition", VLEN)
+        # Shallow path bits and mux spills are shared by seven software-
+        # pipelined workspaces.  They are released during depths 4..10.
+        bits = [
+            [alloc(f"workspace_bit_{workspace}_{b}", VLEN) for b in range(3)]
+            for workspace in range(N_WORKSPACES)
+        ]
+
+        # A depth-first mux order needs one spill vector rather than two.
+        select_spill = [
+            [alloc(f"select_spill_{workspace}", VLEN)]
+            for workspace in range(N_SPILL_WORKSPACES)
+        ]
         preprocess_buffers = [alloc(f"preprocess_buffer_{i}", VLEN) for i in range(2)]
+        # These setup-only buffers are overwritten with six persistent pair
+        # differences after preprocessing, avoiding any extra scratch cost.
+        level4_diff = [top_words]
+        first_level4_pool = [preprocess_buffers[0]]
+        first_level4_condition = preprocess_buffers[1]
+        level4_condition_2 = top_words + VLEN
 
         if scratch.ptr > SCRATCH_SIZE:
             raise AssertionError(f"scratch overflow: {scratch.ptr}")
 
         def emit_const(dest: int, value: int, tag: str = "const") -> int:
             return graph.emit("load", ("const", dest, value), writes=(dest,), tag=tag)
+
+        def emit_immediate(dest: int, value: int, tag: str) -> int:
+            """Materialize a scalar on the otherwise underused flow engine."""
+            return graph.emit(
+                "flow",
+                ("add_imm", dest, s_one, (value - 1) & 0xFFFFFFFF),
+                reads=(s_one,),
+                writes=(dest,),
+                tag=tag,
+            )
 
         def emit_vbroadcast(dest: int, src: int, tag: str = "broadcast") -> int:
             return graph.emit(
@@ -407,14 +435,16 @@ class KernelBuilder:
 
         # Load all immutable scalar constants, then broadcast the subset used
         # by VALU.  The scheduler overlaps these with tree and input traffic.
+        emit_const(s_one, 1)
         for value, addr in scalar_constants.items():
-            emit_const(addr, value)
+            if addr != s_one:
+                emit_immediate(addr, value, "scalar_immediate")
         for value, dest in vector_constants.items():
             emit_vbroadcast(dest, scalar_constants[value], "constant_broadcast")
 
         # Fetch nodes 0..31 using two rolling pointers and four vector loads.
-        emit_const(top_p0, 7, "top_pointer")
-        emit_const(top_p1, 15, "top_pointer")
+        emit_immediate(top_p0, 7, "top_pointer")
+        emit_immediate(top_p1, 15, "top_pointer")
         top_loads: list[int] = []
         for pair in range(2):
             top_loads.append(
@@ -452,7 +482,13 @@ class KernelBuilder:
                 )
 
         # Round 0 needs the raw root.  All later cached nodes use node XOR C5.
-        emit_vbroadcast(root_raw, top_words, "raw_root_broadcast")
+        graph.emit(
+            "alu",
+            ("|", root_raw, top_words, top_words),
+            reads=(top_words,),
+            writes=(root_raw,),
+            tag="raw_root_copy",
+        )
         for i in range(31):
             graph.emit(
                 "alu",
@@ -465,8 +501,8 @@ class KernelBuilder:
 
         # Transform tree levels 4..7 (240 words) once in place.  These are
         # private machine-memory writes; the reference input remains untouched.
-        emit_const(prep_p0, 22, "preprocess_pointer")
-        emit_const(prep_p1, 30, "preprocess_pointer")
+        emit_immediate(prep_p0, 22, "preprocess_pointer")
+        emit_immediate(prep_p1, 30, "preprocess_pointer")
         prep_buffers = preprocess_buffers
         last_prep_stores = [-1, -1]
         for pair in range(15):
@@ -504,127 +540,148 @@ class KernelBuilder:
                     tag="pointer_advance",
                 )
 
-        def select_cached(depth: int, lg: int, gg: int, rnd: int) -> None:
+        level4_reversed = [node_vec[i] for i in range(30, 14, -1)]
+        for i, diff in enumerate(level4_diff):
+            emit_valu(
+                "-",
+                diff,
+                level4_reversed[2 * i + 1],
+                level4_reversed[2 * i],
+                tag="level4_pair_diff",
+            )
+
+        def select_cached(
+            depth: int, state: int, workspace: int, gg: int, rnd: int
+        ) -> None:
             width = 1 << depth
             start = width - 1
             # Mirror offset 0 names the actual rightmost node.
             leaves = [node_vec[start + width - 1 - i] for i in range(width)]
-            temp = temps[lg]
+            temp = temps[state]
+            workspace_bits = bits[workspace]
+            workspace_spill = select_spill[workspace % N_SPILL_WORKSPACES]
 
             if depth == 1:
-                emit_vselect(temp, bits[lg][0], leaves[1], leaves[0], group=gg, round=rnd)
+                emit_vselect(
+                    temp, workspace_bits[0], leaves[1], leaves[0], group=gg, round=rnd
+                )
                 return
 
             if depth == 2:
-                # mirror already preserves both bits, so the last bottom mux
-                # may overwrite bit 1 after every bottom mux has read it.
-                emit_vselect(temp, bits[lg][1], leaves[1], leaves[0], group=gg, round=rnd)
                 emit_vselect(
-                    bits[lg][1], bits[lg][1], leaves[3], leaves[2], group=gg, round=rnd
+                    temp, workspace_bits[1], leaves[1], leaves[0], group=gg, round=rnd
                 )
                 emit_vselect(
-                    temp, bits[lg][0], bits[lg][1], temp, group=gg, round=rnd
+                    workspace_spill[0],
+                    workspace_bits[1],
+                    leaves[3],
+                    leaves[2],
+                    group=gg,
+                    round=rnd,
+                )
+                emit_vselect(
+                    temp,
+                    workspace_bits[0],
+                    workspace_spill[0],
+                    temp,
+                    group=gg,
+                    round=rnd,
                 )
                 return
 
             if depth != 3:
                 raise AssertionError(depth)
 
-            # Bottom layer.  The last mux overwrites bit 2; bit 1 is also safe
-            # to clobber because the accumulated mirror retains the path.
-            bottom = [temp, select_spill[lg], bits[lg][1], bits[lg][2]]
-            for i, dest in enumerate(bottom):
-                emit_vselect(
-                    dest,
-                    bits[lg][2],
-                    leaves[2 * i + 1],
-                    leaves[2 * i],
-                    group=gg,
-                    round=rnd,
-                )
+            # Evaluate the two four-leaf halves depth-first.  Once the final
+            # bottom pair has consumed bit 2, that register itself becomes a
+            # legal destination, reducing the live mux stack to one spill.
+            spill = workspace_spill[0]
+            emit_vselect(temp, workspace_bits[2], leaves[1], leaves[0], group=gg, round=rnd)
+            emit_vselect(spill, workspace_bits[2], leaves[3], leaves[2], group=gg, round=rnd)
+            emit_vselect(temp, workspace_bits[1], spill, temp, group=gg, round=rnd)
+            emit_vselect(spill, workspace_bits[2], leaves[5], leaves[4], group=gg, round=rnd)
+            emit_vselect(workspace_bits[2], workspace_bits[2], leaves[7], leaves[6], group=gg, round=rnd)
+            emit_vselect(spill, workspace_bits[1], workspace_bits[2], spill, group=gg, round=rnd)
+            emit_vselect(temp, workspace_bits[0], spill, temp, group=gg, round=rnd)
 
-            # Recover the middle bit into bit 0, select two candidates, then
-            # recover the oldest bit into the same condition register.
+        def select_level4_hybrid(
+            state: int, workspace: int, gg: int, rnd: int
+        ) -> None:
+            workspace_bits = bits[workspace]
+            workspace_spill = select_spill[workspace % N_SPILL_WORKSPACES]
+            active_pool = first_level4_pool
+            active_condition = first_level4_condition
+            cond = active_condition
             emit_scalarized(
                 "&",
-                bits[lg][0],
-                mirrors[lg],
+                cond,
+                mirrors[state],
+                s_one,
+                b_scalar=True,
+                tag="level4_condition_3",
+                group=gg,
+                round=rnd,
+            )
+            emit_scalarized(
+                "&",
+                level4_condition_2,
+                mirrors[state],
                 s_two,
                 b_scalar=True,
-                tag="mirror_condition_1",
+                tag="level4_condition_2",
                 group=gg,
                 round=rnd,
             )
-            emit_vselect(temp, bits[lg][0], bottom[1], bottom[0], group=gg, round=rnd)
-            emit_vselect(
-                bits[lg][1],
-                bits[lg][0],
-                bottom[3],
-                bottom[2],
-                group=gg,
-                round=rnd,
-            )
-            emit_scalarized(
-                "&",
-                bits[lg][0],
-                mirrors[lg],
-                s_four,
-                b_scalar=True,
-                tag="mirror_condition_0",
-                group=gg,
-                round=rnd,
-            )
-            emit_vselect(
-                temp, bits[lg][0], bits[lg][1], temp, group=gg, round=rnd
-            )
+            # Evaluate the 16-leaf mux depth-first.  The saved p2/p1/p0 bits
+            # are already valid conditions, and the p3 condition becomes the
+            # final pair's destination after its last read.
+            a = temps[state]
+            b = workspace_spill[0]
+            c = active_pool[0]
+            c3 = active_condition
+            c2, c1, c0 = level4_condition_2, workspace_bits[1], workspace_bits[0]
 
-        def select_level4_from_mirror(lg: int, gg: int, rnd: int) -> None:
-            leaves = [node_vec[i] for i in range(30, 14, -1)]
-            current = leaves
-            masks = (s_one, s_two, s_four, s_eight)
-            first = True
-            for mask in masks:
-                emit_scalarized(
-                    "&",
-                    level4_condition,
-                    mirrors[lg],
-                    mask,
-                    b_scalar=True,
-                    tag="level4_condition",
-                    group=gg,
-                    round=rnd,
-                )
-                out_count = len(current) // 2
-                if first:
-                    destinations = [
-                        temps[lg],
-                        select_spill[lg],
-                        bits[lg][0],
-                        bits[lg][1],
-                        bits[lg][2],
-                        *level4_pool,
-                    ]
-                elif out_count == 1:
-                    destinations = [temps[lg]]
-                else:
-                    destinations = [current[2 * i] for i in range(out_count)]
-                next_values = []
-                for i, dest in enumerate(destinations):
-                    emit_vselect(
+            def pair(dest: int, pair_index: int) -> None:
+                if pair_index == 0:
+                    emit_madd(
                         dest,
-                        level4_condition,
-                        current[2 * i + 1],
-                        current[2 * i],
+                        c3,
+                        level4_diff[0],
+                        level4_reversed[0],
+                        tag="level4_hybrid_bottom",
                         group=gg,
                         round=rnd,
                     )
-                    next_values.append(dest)
-                current = next_values
-                first = False
+                else:
+                    emit_vselect(
+                        dest,
+                        c3,
+                        level4_reversed[2 * pair_index + 1],
+                        level4_reversed[2 * pair_index],
+                        group=gg,
+                        round=rnd,
+                    )
 
-        def gather_node(depth: int, lg: int, gg: int, rnd: int) -> None:
-            mirror = mirrors[lg]
-            temp = temps[lg]
+            pair(a, 0)
+            pair(b, 1)
+            emit_vselect(a, c2, b, a, group=gg, round=rnd)
+            pair(b, 2)
+            pair(c, 3)
+            emit_vselect(b, c2, c, b, group=gg, round=rnd)
+            emit_vselect(a, c1, b, a, group=gg, round=rnd)
+
+            pair(b, 4)
+            pair(c, 5)
+            emit_vselect(b, c2, c, b, group=gg, round=rnd)
+            pair(c, 6)
+            pair(c3, 7)
+            emit_vselect(c, c2, c3, c, group=gg, round=rnd)
+            emit_vselect(b, c1, c, b, group=gg, round=rnd)
+            emit_vselect(a, c0, b, a, group=gg, round=rnd)
+
+        def gather_node(depth: int, state: int, gg: int, rnd: int) -> None:
+            mirror = mirrors[state]
+            temp = temps[state]
             # Address generation is intentionally scalar: eight ALU slots are
             # cheaper than consuming a scarce VALU slot in the steady state.
             emit_scalarized(
@@ -652,34 +709,62 @@ class KernelBuilder:
                     round=rnd,
                 )
             if depth >= 8:
-                emit_scalarized(
+                if (gg, rnd) in VECTOR_DYNAMIC_XOR_SET:
+                    emit_valu(
+                        "^",
+                        temp,
+                        temp,
+                        v_c5,
+                        tag="dynamic_node_transform_vector",
+                        group=gg,
+                        round=rnd,
+                    )
+                else:
+                    emit_scalarized(
+                        "^",
+                        temp,
+                        temp,
+                        s_c5,
+                        b_scalar=True,
+                        tag="dynamic_node_transform",
+                        group=gg,
+                        round=rnd,
+                    )
+
+        def xor_node(
+            value: int, node: int, gg: int, rnd: int, *, node_scalar: bool = False
+        ) -> None:
+            if not node_scalar and (gg, rnd) in VECTOR_NODE_XOR_SET:
+                emit_valu(
                     "^",
-                    temp,
-                    temp,
-                    s_c5,
-                    b_scalar=True,
-                    tag="dynamic_node_transform",
+                    value,
+                    value,
+                    node,
+                    tag="node_xor_vector",
                     group=gg,
                     round=rnd,
                 )
-
-        def xor_node(value: int, node: int, gg: int, rnd: int) -> None:
-            emit_scalarized(
-                "^",
-                value,
-                value,
-                node,
-                tag="node_xor",
-                group=gg,
-                round=rnd,
-            )
+            else:
+                emit_scalarized(
+                    "^",
+                    value,
+                    value,
+                    node,
+                    b_scalar=node_scalar,
+                    tag="node_xor",
+                    group=gg,
+                    round=rnd,
+                )
 
         def emit_hash(value: int, temp: int, gg: int, rnd: int) -> None:
             emit_madd(value, value, v_m0, v_c0, tag="hash_0", group=gg, round=rnd)
 
             # Stage 1 branches read the same old value.  Emit the reader first;
             # the following in-place writer has a zero-lag WAR dependency.
-            scalar_hash = (gg + rnd) % HASH_SCALAR_MOD == 0
+            scalar_hash = (
+                (gg + rnd) % HASH_SCALAR_MOD == 0
+                or (gg, rnd) in HASH_SCALAR_EXTRA
+            )
             scalar_shift = scalar_hash and HASH_SCALAR_STAGE == 1
             emit_vbasic(
                 ">>",
@@ -761,99 +846,161 @@ class KernelBuilder:
                 round=rnd,
             )
 
-        def process_group(lg: int, gg: int) -> None:
-            for rnd in range(rounds):
-                depth = rnd if rnd <= 10 else rnd - 11
-                value = values[lg]
-                temp = temps[lg]
+        def process_round(state: int, workspace: int, gg: int, rnd: int) -> None:
+            depth = rnd if rnd <= 10 else rnd - 11
+            value = values[state]
+            temp = temps[state]
+            workspace_bits = bits[workspace]
 
-                # Preserve the first two/three path bits before the shallow
-                # destructive muxes reuse their registers.
-                if rnd in (2, 13):
-                    emit_madd(
-                        mirrors[lg],
-                        bits[lg][0],
-                        v_two,
-                        bits[lg][1],
-                        tag="mirror_build_2",
-                        group=gg,
-                        round=rnd,
-                    )
-                elif rnd in (3, 14):
-                    emit_madd(
-                        mirrors[lg],
-                        mirrors[lg],
-                        v_two,
-                        bits[lg][2],
-                        tag="mirror_build_3",
-                        group=gg,
-                        round=rnd,
-                    )
-
-                if depth == 0:
-                    node = root_raw if rnd == 0 else node_vec[0]
-                    xor_node(value, node, gg, rnd)
-                elif depth <= 3:
-                    select_cached(depth, lg, gg, rnd)
-                    xor_node(value, temp, gg, rnd)
-                elif rnd == rounds - 1 and gg in FINAL_CACHE_SET:
-                    select_level4_from_mirror(lg, gg, rnd)
-                    xor_node(value, temp, gg, rnd)
-                else:
-                    gather_node(depth, lg, gg, rnd)
-                    xor_node(value, temp, gg, rnd)
-
-                emit_hash(value, temp, gg, rnd)
-
-                if rnd in (0, 1, 2):
-                    emit_parity(bits[lg][rnd], value, gg, rnd)
-                elif rnd in (11, 12, 13):
-                    emit_parity(bits[lg][rnd - 11], value, gg, rnd)
-                elif rnd in (3, 14) or 4 <= rnd <= 9:
-                    emit_parity(temp, value, gg, rnd)
-                    emit_madd(
-                        mirrors[lg],
-                        mirrors[lg],
-                        v_two,
-                        temp,
-                        tag="mirror_update",
-                        group=gg,
-                        round=rnd,
-                    )
-
-        # Six selection contexts keep six complete group pipelines in flight.
-        # Each scratch lane processes group g and then g+16, so the shallow
-        # flow work of later groups overlaps the deep gathers of earlier ones.
-        values_base = 7 + n_nodes + batch_size
-        for lg, ptr in enumerate(io_ptrs):
-            emit_const(ptr, values_base + lg * VLEN, "input_pointer")
-
-        for epoch in range(2):
-            for lg, ptr in enumerate(io_ptrs):
-                gg = lg + epoch * WAVE_SIZE
-                if epoch == 1:
-                    graph.emit(
-                        "alu",
-                        ("+", ptr, ptr, s_wave_stride),
-                        reads=(ptr, s_wave_stride),
-                        writes=(ptr,),
-                        tag="pointer_advance",
-                    )
-                graph.emit(
-                    "load",
-                    ("vload", values[lg], ptr),
-                    reads=(ptr,),
-                    writes=_words(values[lg]),
-                    tag="input_load",
+            if rnd in (2, 13):
+                emit_madd(
+                    mirrors[state],
+                    workspace_bits[0],
+                    v_two,
+                    workspace_bits[1],
+                    tag="mirror_build_2",
                     group=gg,
+                    round=rnd,
                 )
-                process_group(lg, gg)
-                graph.emit(
-                    "store",
-                    ("vstore", ptr, values[lg]),
-                    reads=(ptr,) + _words(values[lg]),
-                    tag="output_store",
+            elif rnd in (3, 14):
+                emit_madd(
+                    mirrors[state],
+                    mirrors[state],
+                    v_two,
+                    workspace_bits[2],
+                    tag="mirror_build_3",
                     group=gg,
+                    round=rnd,
+                )
+
+            if depth == 0:
+                node = root_raw if rnd == 0 else node_vec[0]
+                xor_node(value, node, gg, rnd, node_scalar=rnd == 0)
+            elif depth <= 3:
+                select_cached(depth, state, workspace, gg, rnd)
+                xor_node(value, temp, gg, rnd)
+            elif (rnd == 4 and gg in FIRST_CACHE_SET) or (
+                rnd == rounds - 1 and gg in FINAL_CACHE_SET
+            ):
+                select_level4_hybrid(state, workspace, gg, rnd)
+                xor_node(value, temp, gg, rnd)
+            else:
+                gather_node(depth, state, gg, rnd)
+                xor_node(value, temp, gg, rnd)
+
+            emit_hash(value, temp, gg, rnd)
+
+            if rnd in (0, 1, 2):
+                emit_parity(workspace_bits[rnd], value, gg, rnd)
+            elif rnd in (11, 12, 13):
+                emit_parity(workspace_bits[rnd - 11], value, gg, rnd)
+            elif rnd in (3, 14) or 4 <= rnd <= 9:
+                emit_parity(temp, value, gg, rnd)
+                emit_madd(
+                    mirrors[state],
+                    mirrors[state],
+                    v_two,
+                    temp,
+                    tag="mirror_update",
+                    group=gg,
+                    round=rnd,
+                )
+
+        values_base = 7 + n_nodes + batch_size
+        emit_immediate(io_p0, values_base, "input_pointer")
+        emit_immediate(io_p1, values_base + VLEN, "input_pointer")
+        for pair in range(N_GROUPS // 2):
+            g0 = 2 * pair
+            g1 = g0 + 1
+            graph.emit(
+                "load",
+                ("vload", values[g0], io_p0),
+                reads=(io_p0,),
+                writes=_words(values[g0]),
+                tag="input_load",
+                group=g0,
+            )
+            graph.emit(
+                "load",
+                ("vload", values[g1], io_p1),
+                reads=(io_p1,),
+                writes=_words(values[g1]),
+                tag="input_load",
+                group=g1,
+            )
+            if pair != N_GROUPS // 2 - 1:
+                graph.emit(
+                    "alu",
+                    ("+", io_p0, io_p0, s_sixteen),
+                    reads=(io_p0, s_sixteen),
+                    writes=(io_p0,),
+                    tag="pointer_advance",
+                )
+                graph.emit(
+                    "alu",
+                    ("+", io_p1, io_p1, s_sixteen),
+                    reads=(io_p1, s_sixteen),
+                    writes=(io_p1,),
+                    tag="pointer_advance",
+                )
+
+        # Phase A acquires a workspace only through depth 3, then releases it
+        # while the group's core state advances through the seven deep rounds.
+        for gg in range(N_GROUPS):
+            workspace = WORKSPACE_ASSIGNMENT[gg]
+            for rnd in range(4):
+                process_round(gg, workspace, gg, rnd)
+            # A first-pass level-4 cache lookup must be emitted while this
+            # group's path bits still own the shared workspace.  The graph's
+            # WAR edges then release it at the earliest legal cycle.
+            if gg in FIRST_CACHE_SET:
+                process_round(gg, workspace, gg, 4)
+
+        for gg in range(N_GROUPS):
+            workspace = WORKSPACE_ASSIGNMENT[gg]
+            first_deep_round = 5 if gg in FIRST_CACHE_SET else 4
+            for rnd in range(first_deep_round, 11):
+                process_round(gg, workspace, gg, rnd)
+
+        # Phase B reacquires a workspace for the wrapped depth-0..4 traversal.
+        for gg in range(N_GROUPS):
+            workspace = WORKSPACE_ASSIGNMENT[gg]
+            for rnd in range(11, 16):
+                process_round(gg, workspace, gg, rnd)
+
+        emit_immediate(io_p0, values_base, "output_pointer")
+        emit_immediate(io_p1, values_base + VLEN, "output_pointer")
+        for pair in range(N_GROUPS // 2):
+            g0 = 2 * pair
+            g1 = g0 + 1
+            graph.emit(
+                "store",
+                ("vstore", io_p0, values[g0]),
+                reads=(io_p0,) + _words(values[g0]),
+                tag="output_store",
+                group=g0,
+            )
+            graph.emit(
+                "store",
+                ("vstore", io_p1, values[g1]),
+                reads=(io_p1,) + _words(values[g1]),
+                tag="output_store",
+                group=g1,
+            )
+            if pair != N_GROUPS // 2 - 1:
+                graph.emit(
+                    "alu",
+                    ("+", io_p0, io_p0, s_sixteen),
+                    reads=(io_p0, s_sixteen),
+                    writes=(io_p0,),
+                    tag="pointer_advance",
+                )
+                graph.emit(
+                    "alu",
+                    ("+", io_p1, io_p1, s_sixteen),
+                    reads=(io_p1, s_sixteen),
+                    writes=(io_p1,),
+                    tag="pointer_advance",
                 )
 
         self.scratch_ptr = scratch.ptr
@@ -865,15 +1012,60 @@ class KernelBuilder:
         self.dag_ops = graph.ops
         for policy in SCHEDULE_POLICIES:
             schedules.append(self._schedule(graph.ops, policy))
+        reversed_ops = self._reverse_ops(graph.ops)
+        for policy in BACKWARD_POLICIES:
+            schedules.append(list(reversed(self._schedule(reversed_ops, policy))))
         self.schedule_lengths = {
-            policy: len(schedule) for policy, schedule in zip(SCHEDULE_POLICIES, schedules)
+            f"forward:{policy}": len(schedule)
+            for policy, schedule in zip(SCHEDULE_POLICIES, schedules)
         }
+        self.schedule_lengths.update(
+            {
+                f"backward:{policy}": len(schedule)
+                for policy, schedule in zip(
+                    BACKWARD_POLICIES, schedules[len(SCHEDULE_POLICIES) :]
+                )
+            }
+        )
         self.instrs = min(schedules, key=len)
 
         self._validate_program()
 
     @staticmethod
-    def _schedule(ops: list[_Op], policy: int) -> list[dict[str, list[tuple]]]:
+    def _reverse_ops(ops: list[_Op]) -> list[_Op]:
+        n = len(ops)
+        original_children: list[dict[int, int]] = [dict() for _ in range(n)]
+        for child, op in enumerate(ops):
+            for parent, lag in op.parents.items():
+                old = original_children[parent].get(child)
+                if old is None or lag > old:
+                    original_children[parent][child] = lag
+
+        reversed_ops: list[_Op] = []
+        for old_index in range(n - 1, -1, -1):
+            parents = {
+                n - 1 - child: lag
+                for child, lag in original_children[old_index].items()
+            }
+            op = ops[old_index]
+            reversed_ops.append(
+                _Op(
+                    engine=op.engine,
+                    slot=op.slot,
+                    reads=op.reads,
+                    writes=op.writes,
+                    parents=parents,
+                    tag=op.tag,
+                    group=op.group,
+                    round=op.round,
+                )
+            )
+        return reversed_ops
+
+    @staticmethod
+    def _schedule(
+        ops: list[_Op], policy: int, return_cycles: bool = False
+    ) -> list[dict[str, list[tuple]]] | tuple[list[dict[str, list[tuple]]], list[int]]:
         n = len(ops)
         children: list[list[tuple[int, int]]] = [[] for _ in range(n)]
         indegree = [0] * n
@@ -912,6 +1104,26 @@ class KernelBuilder:
 
         def priority(i: int) -> tuple[int, int, int, int, int]:
             op = ops[i]
+            if 82 <= policy <= 85:
+                group_offset = 64 if op.group < 0 else GROUP_PRIORITY_OFFSETS[op.group]
+                tag_offset = TAG_PRIORITY_OFFSETS.get(op.tag, 0)
+                return (
+                    height[i] + group_offset + tag_offset,
+                    reach[i] // 32,
+                    engine_rank[op.engine],
+                    group_offset,
+                    -op.group if op.group >= 0 else -i,
+                )
+            if policy == 81:
+                group_offset = 64 if op.group < 0 else GROUP_PRIORITY_OFFSETS[op.group]
+                round_offset = 0 if op.round < 0 else ROUND_PRIORITY_OFFSETS[op.round]
+                return (
+                    height[i] + group_offset + round_offset,
+                    reach[i] // 32,
+                    engine_rank[op.engine],
+                    group_offset,
+                    -op.group if op.group >= 0 else -i,
+                )
             if policy == 80:
                 offset = 64 if op.group < 0 else GROUP_PRIORITY_OFFSETS[op.group]
                 return (
@@ -976,7 +1188,9 @@ class KernelBuilder:
                 penalty = penalties[policy - 16]
                 cohort = -1 if op.group < 0 else op.group // 4
                 return (
-                    height[i] - cohort * penalty,
+                    height[i]
+                    - cohort * penalty
+                    + (0 if op.group < 0 else GROUP_FINE_OFFSETS[op.group]),
                     reach[i] // 32,
                     engine_rank[op.engine],
                     -cohort,
@@ -1020,6 +1234,7 @@ class KernelBuilder:
                 push_ready(i)
 
         scheduled = 0
+        scheduled_cycle = [-1] * n
         cycle = 0
         bundles: list[dict[str, list[tuple]]] = []
         engine_order_variants = (
@@ -1065,6 +1280,7 @@ class KernelBuilder:
                     bundle[engine].append(op.slot)
                     used[engine] += 1
                     scheduled += 1
+                    scheduled_cycle[chosen] = cycle
                     made_progress = True
 
                     for child, lag in children[chosen]:
@@ -1086,7 +1302,40 @@ class KernelBuilder:
             bundles.append(dict(bundle))
             cycle += 1
 
+        if return_cycles:
+            return bundles, scheduled_cycle
         return bundles
+
+    @staticmethod
+    def _compact_schedule(ops: list[_Op], cycles: list[int]) -> list[dict[str, list[tuple]]]:
+        cycles = cycles.copy()
+        for _ in range(4):
+            horizon = max(cycles) + 1
+            usage = [defaultdict(int) for _ in range(horizon)]
+            for i, op in enumerate(ops):
+                usage[cycles[i]][op.engine] += 1
+
+            moved = 0
+            for i, op in enumerate(ops):
+                earliest = 0
+                if op.parents:
+                    earliest = max(cycles[parent] + lag for parent, lag in op.parents.items())
+                current = cycles[i]
+                for target in range(earliest, current):
+                    if usage[target][op.engine] < SLOT_LIMITS[op.engine]:
+                        usage[current][op.engine] -= 1
+                        usage[target][op.engine] += 1
+                        cycles[i] = target
+                        moved += 1
+                        break
+            if moved == 0:
+                break
+
+        horizon = max(cycles) + 1
+        bundles: list[dict[str, list[tuple]]] = [defaultdict(list) for _ in range(horizon)]
+        for i, op in enumerate(ops):
+            bundles[cycles[i]][op.engine].append(op.slot)
+        return [dict(bundle) for bundle in bundles if bundle]
 
     def _validate_program(self) -> None:
         if self.scratch_ptr > SCRATCH_SIZE:

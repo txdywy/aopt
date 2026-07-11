@@ -67,11 +67,31 @@ class KernelBuilder:
 
     # ------------------------------------------------------------------
     def build_kernel(self, forest_height, n_nodes, batch_size, rounds):
-        VG = batch_size // VLEN  # number of vector groups
+        import os as _os
+        VG = batch_size // VLEN  # total vector groups if all-vector
         assert VG * VLEN == batch_size, "batch_size must be a multiple of VLEN"
+
+        # ---- dual-engine split -------------------------------------------
+        # The valu (vector) engine is the bottleneck; the scalar ALU engine
+        # (12 slots) is otherwise idle. So we peel off NSCALAR elements and
+        # process them entirely on the ALU engine, in parallel with the vector
+        # groups, cutting the makespan below the pure-vector floor.
+        # Offloading to the scalar engine only pays off once the vector engine
+        # is the bottleneck (large batches). For smaller batches the scalar
+        # path's per-element overhead dominates, so stay pure-vector.
+        default_ns = 24 if batch_size >= 256 else 0
+        NSCALAR = int(_os.environ.get("NSCALAR", str(default_ns)))
+        NSCALAR = max(0, min(NSCALAR, batch_size - VLEN))
+        while NSCALAR and (batch_size - NSCALAR) % VLEN != 0:
+            NSCALAR -= 1
+        VG_v = (batch_size - NSCALAR) // VLEN
+        scalar_base = VG_v * VLEN  # first element index handled by scalar path
         period = forest_height + 1
-        # Preload depth: shallow levels selected from registers (no gather).
-        PRELOAD = min(3, period)
+        # Preload depth: shallow levels (0..PRELOAD-1) are selected from
+        # registers on the FLOW engine (vselect) with no memory gather. Deeper
+        # levels are gathered. Preloading depth 3 cuts the gather rounds from 10
+        # to 8, moving the bottleneck off the load engine onto valu.
+        PRELOAD = min(4, period)
 
         asm = Assembler()
 
@@ -82,11 +102,12 @@ class KernelBuilder:
 
         s_zero = self.alloc_scratch("s_zero")
 
-        s_addr_val = [self.alloc_scratch(f"s_addr_val_{g}") for g in range(VG)]
+        s_addr_val = [self.alloc_scratch(f"s_addr_val_{g}") for g in range(VG_v)]
 
         # ---------------- vector constant regs ----------------
         v_one = self.alloc_scratch("v_one", VLEN)
         v_two = self.alloc_scratch("v_two", VLEN)
+        v_four = self.alloc_scratch("v_four", VLEN)  # bit-2 mask for depth-3
 
         # Hash constants.
         #
@@ -132,24 +153,41 @@ class KernelBuilder:
             (v_hc4, C4), (v_hc5, C5), (v_s5, S5),
         ]
 
-        # Preloaded leaf values (broadcast). Depth-1/2 node selection is done on
-        # the otherwise-idle FLOW engine via vselect, so we keep the raw leaves
-        # (not diffs) as vector constants.
-        v_leaf = [self.alloc_scratch(f"v_leaf{i}", VLEN) for i in range(7)]
+        # Preloaded leaf values (broadcast). Node selection for preloaded depths
+        # is done on the otherwise-idle FLOW engine via vselect, so we keep the
+        # raw leaves as vector constants. Leaves 0..(2^PRELOAD - 2) are needed.
+        n_leaves_v = (1 << PRELOAD) - 1
+        v_leaf = [self.alloc_scratch(f"v_leaf{i}", VLEN) for i in range(n_leaves_v)]
 
         # base_d = forest_values_p + (2^d - 1) for gather depths
         gather_depths = [d for d in range(PRELOAD, period)]
         v_base = {d: self.alloc_scratch(f"v_base_{d}", VLEN) for d in gather_depths}
 
         # ---------------- per-group working regs ----------------
-        v_val = [self.alloc_scratch(f"v_val_{g}", VLEN) for g in range(VG)]
-        v_off = [self.alloc_scratch(f"v_off_{g}", VLEN) for g in range(VG)]
-        # 2 private temps per group; a small shared pool supplies the rare 3rd
-        # temp needed only by the depth-2 select.
+        v_val = [self.alloc_scratch(f"v_val_{g}", VLEN) for g in range(VG_v)]
+        v_off = [self.alloc_scratch(f"v_off_{g}", VLEN) for g in range(VG_v)]
+        # 2 private temps per group; a shared pool supplies the extra temps
+        # needed by the depth-2 (1 extra) and depth-3 (2 extra) selects. The
+        # pool is used as pairs indexed by g % NPAIR so groups that share a pair
+        # are kept temporally apart by the banded scheduler.
         v_t = [[self.alloc_scratch(f"v_t{j}_{g}", VLEN) for j in range(2)]
-               for g in range(VG)]
-        NPOOL = 16
-        v_pool = [self.alloc_scratch(f"v_pool_{i}", VLEN) for i in range(NPOOL)]
+               for g in range(VG_v)]
+        NPAIR = 7
+        v_pool = [self.alloc_scratch(f"v_pool_{i}", VLEN) for i in range(2 * NPAIR)]
+
+        # ---------------- scalar-engine working regs ----------------
+        # NSCALAR elements processed on the ALU engine. Each keeps a value and
+        # an offset; a shared temp pool (2 per concurrent element) supports the
+        # hash chain and selects.
+        s_sval = [self.alloc_scratch(f"s_sval_{j}") for j in range(NSCALAR)]
+        s_soff = [self.alloc_scratch(f"s_soff_{j}") for j in range(NSCALAR)]
+        SPAIR = NSCALAR  # one private temp pair per scalar element (no WAR sharing)
+        s_tpool = [self.alloc_scratch(f"s_tp_{i}") for i in range(2 * SPAIR)]
+        s_saddr = [self.alloc_scratch(f"s_sa_{i}") for i in range(6 if NSCALAR else 0)]
+        if NSCALAR:
+            s_diff1 = self.alloc_scratch("s_diff1")
+            s_d34 = self.alloc_scratch("s_d34")
+            s_d56 = self.alloc_scratch("s_d56")
 
         assert self.scratch_ptr <= SCRATCH_SIZE, (
             f"scratch overflow {self.scratch_ptr}"
@@ -157,16 +195,27 @@ class KernelBuilder:
 
         # ---------------- setup scratch temps ----------------
         n_leaf_scalar = min((1 << PRELOAD) - 1, n_nodes)
-        s_leaf = [self.alloc_scratch(f"s_leaf_{i}") for i in range(7)]
+        s_leaf = [self.alloc_scratch(f"s_leaf_{i}") for i in range(n_leaves_v)]
         s_hdr = [self.alloc_scratch(f"s_hdr_{i}") for i in range(7)]
-        s_leafaddr = [self.alloc_scratch(f"s_la_{i}") for i in range(7)]
+        NLA = 4  # round-robin leaf-address temps (setup only)
+        s_leafaddr = [self.alloc_scratch(f"s_la_{i}") for i in range(NLA)]
         hc_tmp = [self.alloc_scratch(f"s_hc_{i}") for i in range(len(hash_consts))]
+        # The scalar path reuses the hash-constant scalars (hc_tmp holds the
+        # constant values, written once and read-only thereafter). Indices match
+        # the hash_consts list order.
+        (s_hc0, s_hm4097, s_hc1, s_hs1, s_hm33, s_hfadd,
+         s_hm2s, s_hsadd, s_hm9, s_hc4, s_hc5, s_hs5) = hc_tmp
         s_one = self.alloc_scratch("s_one")
         s_two = self.alloc_scratch("s_two")
-        s_base = {d: self.alloc_scratch(f"s_base_{d}") for d in gather_depths}
+        s_four = self.alloc_scratch("s_four")
+        # scalar path gathers from depth PS..period-1 (PS<=PRELOAD), so it may
+        # need base registers for depths the vector path preloads.
+        PS = min(3, period)
+        base_depths = sorted(set(gather_depths) | (set(range(PS, period)) if NSCALAR else set()))
+        s_base = {d: self.alloc_scratch(f"s_base_{d}") for d in base_depths}
         pow_regs = {}
         k = 0
-        while (1 << k) < VG:
+        while (1 << k) < VG_v:
             pow_regs[k] = self.alloc_scratch(f"s_pow_{k}")
             k += 1
 
@@ -198,20 +247,31 @@ class KernelBuilder:
         emit_op("load", ("const", s_zero, 0), reads=[], writes=[s_zero], tag=SETUP)
         emit_op("load", ("const", s_one, 1), reads=[], writes=[s_one], tag=SETUP)
         emit_op("load", ("const", s_two, 2), reads=[], writes=[s_two], tag=SETUP)
+        emit_op("load", ("const", s_four, 4), reads=[], writes=[s_four], tag=SETUP)
         emit_op("valu", ("vbroadcast", v_one, s_one), reads=[s_one], writes=vr(v_one), tag=SETUP)
         emit_op("valu", ("vbroadcast", v_two, s_two), reads=[s_two], writes=vr(v_two), tag=SETUP)
+        emit_op("valu", ("vbroadcast", v_four, s_four), reads=[s_four], writes=vr(v_four), tag=SETUP)
 
         fvp = s_vars["forest_values_p"]
-        # ----- leaves leaf0..leaf6 (scalar) then broadcast -----
+        # ----- preloaded leaves (scalar loads) then broadcast -----
         emit_op("load", ("load", s_leaf[0], fvp), reads=[fvp], writes=[s_leaf[0]], tag=SETUP)
-        for i in range(1, n_leaf_scalar):
-            emit_op("flow", ("add_imm", s_leafaddr[i], fvp, i),
-                    reads=[fvp], writes=[s_leafaddr[i]], tag=SETUP)
-            emit_op("load", ("load", s_leaf[i], s_leafaddr[i]),
-                    reads=[s_leafaddr[i]], writes=[s_leaf[i]], tag=SETUP)
-        for i in range(7):
+        for i in range(1, n_leaves_v):
+            la = s_leafaddr[i % NLA]
+            emit_op("flow", ("add_imm", la, fvp, i),
+                    reads=[fvp], writes=[la], tag=SETUP)
+            emit_op("load", ("load", s_leaf[i], la),
+                    reads=[la], writes=[s_leaf[i]], tag=SETUP)
+        for i in range(n_leaves_v):
             emit_op("valu", ("vbroadcast", v_leaf[i], s_leaf[i]),
                     reads=[s_leaf[i]], writes=vr(v_leaf[i]), tag=SETUP)
+        # scalar leaf diffs for arithmetic (branchless) selects on the ALU engine
+        if NSCALAR:
+            emit_op("alu", ("-", s_diff1, s_leaf[2], s_leaf[1]),
+                    reads=[s_leaf[2], s_leaf[1]], writes=[s_diff1], tag=SETUP)
+            emit_op("alu", ("-", s_d34, s_leaf[4], s_leaf[3]),
+                    reads=[s_leaf[4], s_leaf[3]], writes=[s_d34], tag=SETUP)
+            emit_op("alu", ("-", s_d56, s_leaf[6], s_leaf[5]),
+                    reads=[s_leaf[6], s_leaf[5]], writes=[s_d56], tag=SETUP)
 
         # ----- hash constants -----
         for i, (vreg, val) in enumerate(hash_consts):
@@ -219,10 +279,11 @@ class KernelBuilder:
             emit_op("valu", ("vbroadcast", vreg, hc_tmp[i]),
                     reads=[hc_tmp[i]], writes=vr(vreg), tag=SETUP)
 
-        # ----- base_d = forest_values_p + (2^d - 1) then broadcast -----
-        for d in gather_depths:
+        # ----- base_d = forest_values_p + (2^d - 1) (scalar), broadcast for vector -----
+        for d in base_depths:
             emit_op("flow", ("add_imm", s_base[d], fvp, (1 << d) - 1),
                     reads=[fvp], writes=[s_base[d]], tag=SETUP)
+        for d in gather_depths:
             emit_op("valu", ("vbroadcast", v_base[d], s_base[d]),
                     reads=[s_base[d]], writes=vr(v_base[d]), tag=SETUP)
 
@@ -235,9 +296,9 @@ class KernelBuilder:
         emit_op("alu", ("+", s_addr_val[0], ivp, s_zero),
                 reads=[ivp, s_zero], writes=[s_addr_val[0]], tag=SETUP)
         k = 0
-        while (1 << k) < VG:
+        while (1 << k) < VG_v:
             half = 1 << k
-            for g in range(half, min(2 * half, VG)):
+            for g in range(half, min(2 * half, VG_v)):
                 emit_op("alu", ("+", s_addr_val[g], s_addr_val[g - half], pow_regs[k]),
                         reads=[s_addr_val[g - half], pow_regs[k]], writes=[s_addr_val[g]],
                         tag=SETUP)
@@ -279,11 +340,13 @@ class KernelBuilder:
             val = v_val[g]
             off = v_off[g]
             t0, t1 = v_t[g]
-            t2 = v_pool[g % NPOOL]
+            t2 = v_pool[(g % NPAIR) * 2]
+            t3 = v_pool[(g % NPAIR) * 2 + 1]
 
             # ----- combine node value into val -----
             # Node selection for shallow (preloaded) depths uses the FLOW engine
-            # (vselect) so the valu engine is reserved for hashing.
+            # (vselect) so the valu engine is reserved for hashing. `off` is only
+            # read here (never clobbered), so it survives for the offset update.
             if depth == 0:
                 emit_op("valu", ("^", val, val, v_leaf[0]),
                         reads=vr(val) + vr(v_leaf[0]), writes=vr(val), tag=tag)
@@ -294,17 +357,41 @@ class KernelBuilder:
                 emit_op("valu", ("^", val, val, t0),
                         reads=vr(val) + vr(t0), writes=vr(val), tag=tag)
             elif depth == 2:
-                # off in {0,1,2,3}: 4-way vselect tree on bits b0, b1
+                # off in {0..3}: 4-way vselect tree on bits b0, b1
                 emit_op("valu", ("&", t0, off, v_one),
                         reads=vr(off) + vr(v_one), writes=vr(t0), tag=tag)          # b0
-                emit_op("valu", (">>", t1, off, v_one),
-                        reads=vr(off) + vr(v_one), writes=vr(t1), tag=tag)          # b1
+                emit_op("valu", ("&", t1, off, v_two),
+                        reads=vr(off) + vr(v_two), writes=vr(t1), tag=tag)          # b1 (!=0)
                 emit_op("flow", ("vselect", t2, t0, v_leaf[4], v_leaf[3]),
                         reads=vr(t0) + vr(v_leaf[4]) + vr(v_leaf[3]), writes=vr(t2), tag=tag)  # lo
                 emit_op("flow", ("vselect", t0, t0, v_leaf[6], v_leaf[5]),
                         reads=vr(t0) + vr(v_leaf[6]) + vr(v_leaf[5]), writes=vr(t0), tag=tag)  # hi
                 emit_op("flow", ("vselect", t2, t1, t0, t2),
                         reads=vr(t1) + vr(t0) + vr(t2), writes=vr(t2), tag=tag)     # node
+                emit_op("valu", ("^", val, val, t2),
+                        reads=vr(val) + vr(t2), writes=vr(val), tag=tag)
+            elif depth == 3:
+                # off in {0..7}: 8-way vselect tree on bits b0,b1,b2 (masks 1/2/4)
+                emit_op("valu", ("&", t0, off, v_one),
+                        reads=vr(off) + vr(v_one), writes=vr(t0), tag=tag)          # b0
+                emit_op("valu", ("&", t1, off, v_two),
+                        reads=vr(off) + vr(v_two), writes=vr(t1), tag=tag)          # b1 (!=0)
+                emit_op("flow", ("vselect", t2, t0, v_leaf[8], v_leaf[7]),
+                        reads=vr(t0) + vr(v_leaf[8]) + vr(v_leaf[7]), writes=vr(t2), tag=tag)   # lo0
+                emit_op("flow", ("vselect", t3, t0, v_leaf[10], v_leaf[9]),
+                        reads=vr(t0) + vr(v_leaf[10]) + vr(v_leaf[9]), writes=vr(t3), tag=tag)  # lo1
+                emit_op("flow", ("vselect", t2, t1, t3, t2),
+                        reads=vr(t1) + vr(t3) + vr(t2), writes=vr(t2), tag=tag)     # m0
+                emit_op("flow", ("vselect", t3, t0, v_leaf[12], v_leaf[11]),
+                        reads=vr(t0) + vr(v_leaf[12]) + vr(v_leaf[11]), writes=vr(t3), tag=tag)  # lo2
+                emit_op("flow", ("vselect", t0, t0, v_leaf[14], v_leaf[13]),
+                        reads=vr(t0) + vr(v_leaf[14]) + vr(v_leaf[13]), writes=vr(t0), tag=tag)  # lo3 (b0 consumed)
+                emit_op("flow", ("vselect", t3, t1, t0, t3),
+                        reads=vr(t1) + vr(t0) + vr(t3), writes=vr(t3), tag=tag)     # m1
+                emit_op("valu", ("&", t0, off, v_four),
+                        reads=vr(off) + vr(v_four), writes=vr(t0), tag=tag)         # b2 (!=0)
+                emit_op("flow", ("vselect", t2, t0, t3, t2),
+                        reads=vr(t0) + vr(t3) + vr(t2), writes=vr(t2), tag=tag)     # node
                 emit_op("valu", ("^", val, val, t2),
                         reads=vr(val) + vr(t2), writes=vr(val), tag=tag)
             else:
@@ -336,21 +423,98 @@ class KernelBuilder:
         # Emit in group-major order so the scheduler can pipeline groups at
         # staggered rounds: a group stalled on gather loads yields valu slots to
         # another group doing preload/hash work, keeping both engines busy.
-        for g in range(VG):
+        for g in range(VG_v):
             # Load this group's initial values (offset starts at 0 -> derived).
             emit_op("load", ("vload", v_val[g], s_addr_val[g]),
                     reads=[s_addr_val[g]], writes=vr(v_val[g]), tag=g)
             for rnd in range(rounds):
                 emit_round(g, rnd, tag=g)
 
-        # ----- store final values back to memory -----
-        # The VG groups cover all `batch_size` elements in a single pass, so
-        # there is no outer batch loop (no loop control / address bumps needed).
-        for g in range(VG):
+        # ----- store vector results back to memory -----
+        for g in range(VG_v):
             emit_op("store", ("vstore", s_addr_val[g], v_val[g]),
                     reads=[s_addr_val[g]] + vr(v_val[g]), writes=[])
 
-        scheduled = self._schedule(ops, band_size=max(1, VG // 8))
+        # ================= SCALAR ENGINE PATH =================
+        # Elements scalar_base..batch_size-1 run entirely on the ALU engine.
+        # Scalar preloads depths 0/1/2 (selects on the flow engine) and gathers
+        # depths >=3 (one scalar load each), mirroring the reference exactly.
+        ivp = s_vars["inp_values_p"]
+        for j in range(NSCALAR):
+            e = scalar_base + j
+            sv = s_sval[j]; so = s_soff[j]
+            st0 = s_tpool[(j % SPAIR) * 2]
+            st1 = s_tpool[(j % SPAIR) * 2 + 1]
+            sa = s_saddr[j % len(s_saddr)]
+            # Stagger scalar elements across the vector band range so their
+            # gather-load demand is spread over time (avoids load-engine storms)
+            # while keeping enough chains concurrently active to feed the ALU.
+            stag = (j * VG_v) // max(1, NSCALAR)
+            # load initial value
+            emit_op("flow", ("add_imm", sa, ivp, e),
+                    reads=[ivp], writes=[sa], tag=stag)
+            emit_op("load", ("load", sv, sa), reads=[sa], writes=[sv], tag=stag)
+            for rnd in range(rounds):
+                d = rnd % period
+                # ---- node combine ----
+                if d == 0:
+                    emit_op("alu", ("^", sv, sv, s_leaf[0]),
+                            reads=[sv, s_leaf[0]], writes=[sv], tag=stag)
+                elif d == 1:
+                    # node = leaf1 + off*(leaf2-leaf1)  (off in {0,1}), all on ALU
+                    emit_op("alu", ("*", st0, so, s_diff1), reads=[so, s_diff1], writes=[st0], tag=stag)
+                    emit_op("alu", ("+", st0, st0, s_leaf[1]), reads=[st0, s_leaf[1]], writes=[st0], tag=stag)
+                    emit_op("alu", ("^", sv, sv, st0), reads=[sv, st0], writes=[sv], tag=stag)
+                elif d == 2:
+                    # 4-way arithmetic select on ALU: b0=off&1, b1=off>>1
+                    emit_op("alu", ("&", st0, so, s_one), reads=[so, s_one], writes=[st0], tag=stag)  # b0
+                    emit_op("alu", ("*", sa, st0, s_d34), reads=[st0, s_d34], writes=[sa], tag=stag)
+                    emit_op("alu", ("+", sa, sa, s_leaf[3]), reads=[sa, s_leaf[3]], writes=[sa], tag=stag)  # lo
+                    emit_op("alu", ("*", st1, st0, s_d56), reads=[st0, s_d56], writes=[st1], tag=stag)
+                    emit_op("alu", ("+", st1, st1, s_leaf[5]), reads=[st1, s_leaf[5]], writes=[st1], tag=stag)  # hi
+                    emit_op("alu", (">>", st0, so, s_one), reads=[so, s_one], writes=[st0], tag=stag)  # b1
+                    emit_op("alu", ("-", st1, st1, sa), reads=[st1, sa], writes=[st1], tag=stag)  # hi-lo
+                    emit_op("alu", ("*", st0, st0, st1), reads=[st0, st1], writes=[st0], tag=stag)
+                    emit_op("alu", ("+", st0, st0, sa), reads=[st0, sa], writes=[st0], tag=stag)  # node
+                    emit_op("alu", ("^", sv, sv, st0), reads=[sv, st0], writes=[sv], tag=stag)
+                else:
+                    emit_op("alu", ("+", sa, s_base[d], so), reads=[s_base[d], so], writes=[sa], tag=stag)
+                    emit_op("load", ("load", st0, sa), reads=[sa], writes=[st0], tag=stag)
+                    emit_op("alu", ("^", sv, sv, st0), reads=[sv, st0], writes=[sv], tag=stag)
+                # ---- hash (scalar, no multiply_add) ----
+                # stage 0: sv = 4097*sv + C0
+                emit_op("alu", ("*", sv, sv, s_hm4097), reads=[sv, s_hm4097], writes=[sv], tag=stag)
+                emit_op("alu", ("+", sv, sv, s_hc0), reads=[sv, s_hc0], writes=[sv], tag=stag)
+                # stage 1: sv = (sv ^ C1) ^ (sv >> 19)
+                emit_op("alu", (">>", st0, sv, s_hs1), reads=[sv, s_hs1], writes=[st0], tag=stag)
+                emit_op("alu", ("^", st1, sv, s_hc1), reads=[sv, s_hc1], writes=[st1], tag=stag)
+                emit_op("alu", ("^", sv, st1, st0), reads=[st1, st0], writes=[sv], tag=stag)
+                # stages 2+3 fused: sv = (33*sv + (C2+C3)) ^ (33*512*sv + 512*C2)
+                emit_op("alu", ("*", st0, sv, s_hm33), reads=[sv, s_hm33], writes=[st0], tag=stag)
+                emit_op("alu", ("+", st0, st0, s_hfadd), reads=[st0, s_hfadd], writes=[st0], tag=stag)
+                emit_op("alu", ("*", st1, sv, s_hm2s), reads=[sv, s_hm2s], writes=[st1], tag=stag)
+                emit_op("alu", ("+", st1, st1, s_hsadd), reads=[st1, s_hsadd], writes=[st1], tag=stag)
+                emit_op("alu", ("^", sv, st0, st1), reads=[st0, st1], writes=[sv], tag=stag)
+                # stage 4: sv = 9*sv + C4
+                emit_op("alu", ("*", sv, sv, s_hm9), reads=[sv, s_hm9], writes=[sv], tag=stag)
+                emit_op("alu", ("+", sv, sv, s_hc4), reads=[sv, s_hc4], writes=[sv], tag=stag)
+                # stage 5: sv = (sv ^ C5) ^ (sv >> 16)
+                emit_op("alu", (">>", st0, sv, s_hs5), reads=[sv, s_hs5], writes=[st0], tag=stag)
+                emit_op("alu", ("^", st1, sv, s_hc5), reads=[sv, s_hc5], writes=[st1], tag=stag)
+                emit_op("alu", ("^", sv, st1, st0), reads=[st1, st0], writes=[sv], tag=stag)
+                # ---- offset update ----
+                if rnd < rounds - 1 and d != period - 1:
+                    if d == 0:
+                        emit_op("alu", ("&", so, sv, s_one), reads=[sv, s_one], writes=[so], tag=stag)
+                    else:
+                        emit_op("alu", ("&", st0, sv, s_one), reads=[sv, s_one], writes=[st0], tag=stag)
+                        emit_op("alu", ("<<", so, so, s_one), reads=[so, s_one], writes=[so], tag=stag)
+                        emit_op("alu", ("+", so, so, st0), reads=[so, st0], writes=[so], tag=stag)
+            # store scalar result
+            emit_op("flow", ("add_imm", sa, ivp, e), reads=[ivp], writes=[sa], tag=stag)
+            emit_op("store", ("store", sa, sv), reads=[sa, sv], writes=[], tag=stag)
+
+        scheduled = self._schedule(ops, band_size=1)
         for b in scheduled:
             for eng, slots in b.items():
                 for slot in slots:
@@ -409,6 +573,8 @@ class KernelBuilder:
                 asap[c] = max(asap[c], asap[u] + 1)
         cp = max(heights) if n else 0
         slack = [cp - (asap[i] + heights[i]) for i in range(n)]
+
+
 
         # Group ops into "bands" so a handful of groups are raced ahead into
         # gather (load) rounds while later groups still do preload/hash (valu)

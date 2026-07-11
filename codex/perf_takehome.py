@@ -1,1350 +1,724 @@
-"""A resource-balanced kernel for Anthropic's original performance take-home.
-
-The scored workload is deliberately fixed (height 10, 16 rounds, 256 inputs).
-This implementation specializes that shape at build time and emits only legal
-instructions for the frozen single-core machine.  It does not modify the
-simulator, the reference implementation, or the tests.
-
-The main ideas are:
-
-* fully unroll the two traversals (depths 0..10 and 0..4);
-* keep the hash result internally XORed with the final hash constant;
-* cache tree levels 0..4 and mirror path bits to make lookup cheap;
-* gather deeper nodes in place and pre-transform levels 4..7 once;
-* split independent work across VALU, scalar ALU, load, store, and flow slots;
-* list-schedule a dependency DAG with the machine's end-of-cycle write rules.
-"""
-
-from __future__ import annotations
-
-from collections import defaultdict
-from dataclasses import dataclass, field
-import heapq
-from typing import Iterable
-
-from problem import DebugInfo, SCRATCH_SIZE, SLOT_LIMITS, VLEN
-
-
-C0 = 0x7ED55D16
-C1 = 0xC761C23C
-C2 = 0x165667B1
-C3 = 0xD3A2646C
-C4 = 0xFD7046C5
-C5 = 0xB55A4F09
-
-OFFICIAL_SHAPE = (10, 2047, 256, 16)
-N_GROUPS = 32
-N_WORKSPACES = 11
-N_SPILL_WORKSPACES = 11
-WORKSPACE_ASSIGNMENT = tuple(group % N_WORKSPACES for group in range(N_GROUPS))
-FINAL_CACHE_SET = frozenset(range(20))
-FIRST_CACHE_SET = frozenset()
-HASH_SCALAR_MOD = 4
-HASH_SCALAR_STAGE = 1  # positive: shift branch; negative: constant branch
-HASH_SCALAR_EXTRA = frozenset((group, (1 - group) % 4) for group in range(21))
-HYBRID_MADD_PAIRS = 1
-SCHEDULE_POLICIES = (26, 80)
-BACKWARD_POLICIES = (8, 26, 32, 33, 80)
-GROUP_PRIORITY_OFFSETS = (
-    0, 0, -8, -1,
-    -63, -74, -67, -69,
-    -170, -150, -167, -162,
-    -200, -176, -207, -221,
-    -290, -302, -296, -304,
-    -351, -336, -345, -325,
-    -378, -362, -364, -387,
-    -409, -410, -398, -407,
+import sys
+from collections import defaultdict, deque
+from problem import (
+    Engine,
+    DebugInfo,
+    SLOT_LIMITS,
+    VLEN,
+    N_CORES,
+    SCRATCH_SIZE,
+    Machine,
+    Tree,
+    Input,
+    HASH_STAGES,
+    reference_kernel,
+    build_mem_image,
+    reference_kernel2,
 )
-ROUND_PRIORITY_OFFSETS = (0,) * 16
-TAG_PRIORITY_OFFSETS: dict[str, int] = {}
-GROUP_FINE_OFFSETS = (0,) * N_GROUPS
-VECTOR_NODE_XOR_SET: frozenset[tuple[int, int]] = frozenset()
-VECTOR_DYNAMIC_XOR_SET: frozenset[tuple[int, int]] = frozenset()
 
 
-def _words(base: int, size: int = VLEN) -> tuple[int, ...]:
-    return tuple(range(base, base + size))
+class Assembler:
+    def __init__(self):
+        self.instrs = []
+        self.curr = defaultdict(list)
 
+    def add(self, engine, slot):
+        self.curr[engine].append(slot)
+        assert len(self.curr[engine]) <= SLOT_LIMITS[engine], f"Too many slots for {engine}"
 
-@dataclass(slots=True)
-class _Op:
-    engine: str
-    slot: tuple
-    reads: tuple[int, ...]
-    writes: tuple[int, ...]
-    parents: dict[int, int] = field(default_factory=dict)
-    tag: str = ""
-    group: int = -1
-    round: int = -1
-
-
-class _Scratch:
-    def __init__(self) -> None:
-        self.ptr = 0
-        self.debug: dict[int, tuple[str, int]] = {}
-
-    def alloc(self, name: str, size: int = 1) -> int:
-        base = self.ptr
-        self.ptr += size
-        if self.ptr > SCRATCH_SIZE:
-            raise AssertionError(
-                f"scratch overflow: {self.ptr} > {SCRATCH_SIZE} while allocating {name}"
-            )
-        self.debug[base] = (name, size)
-        return base
-
-
-class _Graph:
-    """Build exact scratch dependencies for end-of-cycle writes.
-
-    RAW and WAW require a later cycle.  WAR only requires program order: the
-    reader and following writer may share a bundle because every engine reads
-    the old scratch image and commits writes at the end of the cycle.
-    """
-
-    def __init__(self) -> None:
-        self.ops: list[_Op] = []
-        self.last_writer: dict[int, int] = {}
-        self.readers: dict[int, list[int]] = defaultdict(list)
-
-    @staticmethod
-    def _add_parent(parents: dict[int, int], parent: int, lag: int) -> None:
-        if parent < 0:
-            return
-        old = parents.get(parent)
-        if old is None or lag > old:
-            parents[parent] = lag
-
-    def emit(
-        self,
-        engine: str,
-        slot: tuple,
-        reads: Iterable[int] = (),
-        writes: Iterable[int] = (),
-        *,
-        deps: Iterable[tuple[int, int]] = (),
-        tag: str = "",
-        group: int = -1,
-        round: int = -1,
-    ) -> int:
-        reads_t = tuple(dict.fromkeys(reads))
-        writes_t = tuple(dict.fromkeys(writes))
-        idx = len(self.ops)
-        parents: dict[int, int] = {}
-
-        for parent, lag in deps:
-            self._add_parent(parents, parent, lag)
-
-        # Register all reads before writes so an in-place instruction depends
-        # on the preceding writer but never on itself.
-        for addr in reads_t:
-            writer = self.last_writer.get(addr)
-            if writer is not None:
-                self._add_parent(parents, writer, 1)
-            self.readers[addr].append(idx)
-
-        for addr in writes_t:
-            writer = self.last_writer.get(addr)
-            if writer is not None:
-                self._add_parent(parents, writer, 1)
-            for reader in self.readers.get(addr, ()):
-                if reader != idx:
-                    self._add_parent(parents, reader, 0)
-
-        self.ops.append(
-            _Op(
-                engine=engine,
-                slot=slot,
-                reads=reads_t,
-                writes=writes_t,
-                parents=parents,
-                tag=tag,
-                group=group,
-                round=round,
-            )
-        )
-
-        for addr in writes_t:
-            self.last_writer[addr] = idx
-            self.readers[addr] = []
-        return idx
+    def emit(self):
+        if self.curr:
+            self.instrs.append(dict(self.curr))
+            self.curr = defaultdict(list)
 
 
 class KernelBuilder:
-    def __init__(self) -> None:
-        self.instrs: list[dict[str, list[tuple]]] = []
-        self.scratch: dict[str, int] = {}
-        self.scratch_debug: dict[int, tuple[str, int]] = {}
-        self.scratch_ptr = 0
+    NUM_OFFLOAD = 32
 
-    def debug_info(self) -> DebugInfo:
+    def __init__(self):
+        self.instrs = []
+        self.scratch = {}
+        self.scratch_debug = {}
+        self.scratch_ptr = 0
+        self.const_map = {}
+
+    def alloc_scratch(self, name=None, size=1):
+        addr = self.scratch_ptr
+        self.scratch_ptr += size
+        assert self.scratch_ptr <= SCRATCH_SIZE, (
+            f"Scratch overflow: {self.scratch_ptr} > {SCRATCH_SIZE}"
+        )
+        if name is not None:
+            self.scratch[name] = addr
+            for i in range(size):
+                self.scratch_debug[addr + i] = (f"{name}_{i}" if size > 1 else name)
+        return addr
+
+    def scratch_const(self, val, name=None):
+        """Allocate a scratch reg and store a constant, but defer the load instruction."""
+        if val not in self.const_map:
+            addr = self.alloc_scratch(name)
+            self.const_map[val] = addr
+        return self.const_map[val]
+
+    def add(self, engine, slot):
+        self.instrs.append({engine: [slot]})
+
+    def debug_info(self):
         return DebugInfo(scratch_map=self.scratch_debug)
 
-    def build_kernel(
-        self, forest_height: int, n_nodes: int, batch_size: int, rounds: int
-    ) -> None:
-        shape = (forest_height, n_nodes, batch_size, rounds)
-        if shape != OFFICIAL_SHAPE:
-            raise ValueError(
-                "the extreme kernel is intentionally specialized for the scored "
-                f"shape {OFFICIAL_SHAPE}, got {shape}"
-            )
+    def build_kernel(self, forest_height, n_nodes, batch_size, rounds):
+        asm = Assembler()
 
-        scratch = _Scratch()
-        graph = _Graph()
+        # MAX_OPT_ROUND: rounds 0..MAX_OPT_ROUND-1 use preloaded tree values (no mem loads)
+        # Round 3 (8-leaf tree) requires 5 temp regs -- use 3 optimized rounds only.
+        MAX_OPT_ROUND = 4
 
-        def alloc(name: str, size: int = 1) -> int:
-            addr = scratch.alloc(name, size)
-            self.scratch[name] = addr
-            return addr
+        # ---- Allocate all scratch registers up front ----
+        init_vars = ["rounds", "n_nodes", "batch_size", "forest_height",
+                     "forest_values_p", "inp_indices_p", "inp_values_p"]
+        s_vars = {v: self.alloc_scratch(v) for v in init_vars}
 
-        # Scalar constants are deduplicated.  Pointer registers are separate
-        # because streaming loads/stores update them in place.
-        scalar_constants: dict[int, int] = {}
+        s_tmp   = self.alloc_scratch("s_tmp")
+        s_tmp2  = self.alloc_scratch("s_tmp2")
+        s_loop_i    = self.alloc_scratch("s_loop_i")
+        s_loop_cond = self.alloc_scratch("s_loop_cond")
+        s_zero  = self.alloc_scratch("s_zero")
+        s_one   = self.alloc_scratch("s_one")
+        s_two   = self.alloc_scratch("s_two")
+        s_c256  = self.alloc_scratch("s_c256")
 
-        def scalar_const(value: int, name: str) -> int:
-            value &= 0xFFFFFFFF
-            if value not in scalar_constants:
-                scalar_constants[value] = alloc(name)
-            return scalar_constants[value]
+        s_addr_idx = [self.alloc_scratch(f"s_addr_idx_{g}") for g in range(32)]
+        s_addr_val = [self.alloc_scratch(f"s_addr_val_{g}") for g in range(32)]
 
-        s_one = scalar_const(1, "one")
-        s_two = scalar_const(2, "two")
-        s_sixteen = scalar_const(16, "sixteen")
-        s_nineteen = scalar_const(19, "nineteen")
-        s_c0 = scalar_const(C0, "hash_c0")
-        s_c1 = scalar_const(C1, "hash_c1")
-        s_c2 = scalar_const(C2, "hash_c2")
-        s_c3 = scalar_const(C3, "hash_c3")
-        s_c4 = scalar_const(C4, "hash_c4")
-        s_c5 = scalar_const(C5, "hash_c5")
-        s_m0 = scalar_const(4097, "hash_mul0")
-        s_m2 = scalar_const(33, "hash_mul2")
-        s_m4 = scalar_const(9, "hash_mul4_shift3")
+        v_zero = self.alloc_scratch("v_zero", 8)
+        v_one  = self.alloc_scratch("v_one",  8)
+        v_two  = self.alloc_scratch("v_two",  8)
+        v_n_nodes = self.alloc_scratch("v_n_nodes", 8)
+        v_forest_values_p = self.alloc_scratch("v_forest_values_p", 8)
 
-        # Mirrored local-path address: mem_addr = 2**(depth+1) + 5 - mirror.
-        depth_base = {
-            d: scalar_const((1 << (d + 1)) + 5, f"depth_{d}_base")
-            for d in range(4, 11)
-        }
+        v_idx = [self.alloc_scratch(f"v_idx_{g}", 8) for g in range(32)]
+        v_val = [self.alloc_scratch(f"v_val_{g}", 8) for g in range(32)]
 
-        # These constants are dead after their vector broadcasts.  Reusing
-        # their scalar words for the three streaming pointer pairs saves six
-        # registers without extending a hot live range.
-        top_p0, top_p1 = s_c0, s_c2
-        prep_p0, prep_p1 = s_c3, s_c4
-        io_p0, io_p1 = s_m0, s_m2
+        v_hash_val1 = []
+        v_hash_val3 = {}
+        for hi in range(len(HASH_STAGES)):
+            v_hash_val1.append(self.alloc_scratch(f"v_hv1_{hi}", 8))
+            if hi in (1, 3, 5):
+                v_hash_val3[hi] = self.alloc_scratch(f"v_hv3_{hi}", 8)
 
-        # Vector constants needed by fixed VALU instructions.
-        vector_constants: dict[int, int] = {}
+        s_m0 = self.alloc_scratch("s_m0")
+        s_m2 = self.alloc_scratch("s_m2")
+        s_m4 = self.alloc_scratch("s_m4")
+        v_hmul0 = self.alloc_scratch("v_hmul0", 8)
+        v_hmul2 = self.alloc_scratch("v_hmul2", 8)
+        v_hmul4 = self.alloc_scratch("v_hmul4", 8)
 
-        def vector_const(value: int, name: str) -> int:
-            value &= 0xFFFFFFFF
-            if value not in vector_constants:
-                vector_constants[value] = alloc(name, VLEN)
-            return vector_constants[value]
+        s_g8_offsets = {}
 
-        v_two = vector_const(2, "v_two")
-        v_nineteen = vector_const(19, "v_nineteen")
-        v_sixteen = vector_const(16, "v_sixteen")
-        v_c0 = vector_const(C0, "v_hash_c0")
-        v_c1 = vector_const(C1, "v_hash_c1")
-        v_c2 = vector_const(C2, "v_hash_c2")
-        v_c3 = vector_const(C3, "v_hash_c3")
-        v_c4 = vector_const(C4, "v_hash_c4")
-        v_c5 = vector_const(C5, "v_hash_c5")
-        v_m0 = vector_const(4097, "v_hash_mul0")
-        v_m2 = vector_const(33, "v_hash_mul2")
-        v_m4 = vector_const(9, "v_hash_mul4_shift3")
+        # Tree leaves: n_leaves = 2^MAX_OPT_ROUND - 1 = 15
+        n_leaves = (1 << MAX_OPT_ROUND) - 1
+        s_leaves = [self.alloc_scratch(f"s_leaf_{i}") for i in range(n_leaves)]
 
-        top_words = alloc("top_tree_words", 32)
-        root_raw = alloc("root_raw")
-        node_vec = [alloc(f"cached_node_{i}", VLEN) for i in range(31)]
+        s_three = self.alloc_scratch("s_three")
+        v_three = self.alloc_scratch("v_three", 8)
+        s_seven = self.alloc_scratch("s_seven")
+        v_seven = self.alloc_scratch("v_seven", 8)
 
-        # Every SIMD group keeps only its long-lived value/mirror/temp state.
-        values = [alloc(f"value_{g}", VLEN) for g in range(N_GROUPS)]
-        mirrors = [alloc(f"mirror_{g}", VLEN) for g in range(N_GROUPS)]
-        temps = [alloc(f"temp_{g}", VLEN) for g in range(N_GROUPS)]
+        # Leaf diffs: r=1: 1 diff, r=2: 2 diffs
+        s_diffs = {}
+        for r in range(MAX_OPT_ROUND):
+            s_diffs[r] = []
+            for k in range(1 << (r - 1) if r > 0 else 0):
+                s_diffs[r].append(self.alloc_scratch(f"s_d_{r}_{k}"))
 
-        # Shallow path bits and mux spills are shared by seven software-
-        # pipelined workspaces.  They are released during depths 4..10.
-        bits = [
-            [alloc(f"workspace_bit_{workspace}_{b}", VLEN) for b in range(3)]
-            for workspace in range(N_WORKSPACES)
-        ]
+        # Leaf vectors and diff vectors
+        v_leaf = {}
+        v_diff = {}
+        for r in range(MAX_OPT_ROUND):
+            v_leaf[r] = []
+            v_diff[r] = []
+            for k in range(1 << r):
+                v_leaf[r].append(self.alloc_scratch(f"vl_{r}_{k}", 8))
+            for k in range(len(s_diffs[r])):
+                v_diff[r].append(self.alloc_scratch(f"vd_{r}_{k}", 8))
 
-        # A depth-first mux order needs one spill vector rather than two.
-        select_spill = [
-            [alloc(f"select_spill_{workspace}", VLEN)]
-            for workspace in range(N_SPILL_WORKSPACES)
-        ]
-        preprocess_buffers = [alloc(f"preprocess_buffer_{i}", VLEN) for i in range(2)]
-        # These setup-only buffers are overwritten with six persistent pair
-        # differences after preprocessing, avoiding any extra scratch cost.
-        level4_diff = [top_words]
-        first_level4_pool = [preprocess_buffers[0]]
-        first_level4_condition = preprocess_buffers[1]
-        level4_condition_2 = top_words + VLEN
+        s_diff2_base  = self.alloc_scratch("s_diff2_base")
+        s_diff2_slope = self.alloc_scratch("s_diff2_slope")
+        v_diff2_base  = self.alloc_scratch("v_diff2_base", 8)
+        v_diff2_slope = self.alloc_scratch("v_diff2_slope", 8)
 
-        if scratch.ptr > SCRATCH_SIZE:
-            raise AssertionError(f"scratch overflow: {scratch.ptr}")
+        # Per-group private temp
+        v_tmp = [self.alloc_scratch(f"v_tmp_{g}", 8) for g in range(16)]
 
-        def emit_const(dest: int, value: int, tag: str = "const") -> int:
-            return graph.emit("load", ("const", dest, value), writes=(dest,), tag=tag)
+        # Global temp pool: gA unique per group (32 regs) + gB shared (16 regs)
+        NG_A = 16
+        NG_B = 8
+        NG_C = 4
+        NG_D = 4
+        NG_E = 4
+        NG_F = 4
+        v_glob_A = [self.alloc_scratch(f"vgA_{ti}", 8) for ti in range(NG_A)]
+        v_glob_B = [self.alloc_scratch(f"vgB_{ti}", 8) for ti in range(NG_B)]
+        v_glob_C = [self.alloc_scratch(f"vgC_{ti}", 8) for ti in range(NG_C)]
+        v_glob_D = [self.alloc_scratch(f"vgD_{ti}", 8) for ti in range(NG_D)]
+        v_glob_E = [self.alloc_scratch(f"vgE_{ti}", 8) for ti in range(NG_E)]
+        v_glob_F = [self.alloc_scratch(f"vgF_{ti}", 8) for ti in range(NG_F)]
 
-        def emit_immediate(dest: int, value: int, tag: str) -> int:
-            """Materialize a scalar on the otherwise underused flow engine."""
-            return graph.emit(
-                "flow",
-                ("add_imm", dest, s_one, (value - 1) & 0xFFFFFFFF),
-                reads=(s_one,),
-                writes=(dest,),
-                tag=tag,
-            )
+        # Check scratch budget
+        assert self.scratch_ptr <= SCRATCH_SIZE, f"Scratch overflow: {self.scratch_ptr}"
 
-        def emit_vbroadcast(dest: int, src: int, tag: str = "broadcast") -> int:
-            return graph.emit(
-                "valu",
-                ("vbroadcast", dest, src),
-                reads=(src,),
-                writes=_words(dest),
-                tag=tag,
-            )
+        # ---- SETUP PHASE: Batch all instructions for minimum cycles ----
 
-        def emit_valu(
-            op: str,
-            dest: int,
-            a: int,
-            b: int,
-            *,
-            tag: str,
-            group: int = -1,
-            round: int = -1,
-        ) -> int:
-            return graph.emit(
-                "valu",
-                (op, dest, a, b),
-                reads=_words(a) + _words(b),
-                writes=_words(dest),
-                tag=tag,
-                group=group,
-                round=round,
-            )
+        # Step 1: Load init vars (7 loads from mem[0..6])
+        # Method: use s_tmp to hold address, then load
+        # Load const 0 -> s_tmp, then load s_vars[0] from s_tmp
+        # We can batch: const 0,1 in same cycle, then load from both (but
+        # scalar load (not vload) only loads 1 scalar per slot, 2 slots per cycle).
+        # So we need 7 loads = 4 cycles minimum (2+2+2+1).
+        # But we also need to set s_tmp to addresses 0..6 before each load.
+        # s_tmp is reused each time, so they must be sequential!
+        # Optimal: interleave load-const and load-load pairs:
+        # cycle: [const s_tmp=0, const s_tmp2=1], [load v0 from s_tmp, load v1 from s_tmp2]
+        # But s_tmp and s_tmp2 are DIFFERENT registers, so no conflict.
+        # With 2 load slots: can do 2 loads per cycle -> 7 init vars = 4 cycles for const + 4 for load = 8 cycles?
+        # But const and load can be in same cycle (both are 'load' engine):
+        # Cycle: [const s_tmp=0, const s_tmp2=1]  -> 1 cycle
+        # Cycle: [load v0 from s_tmp, load v1 from s_tmp2] -> 1 cycle
+        # Repeating for 7 vars: ceil(7/2) * 2 = 8 cycles
 
-        def emit_madd(
-            dest: int,
-            a: int,
-            b: int,
-            c: int,
-            *,
-            tag: str,
-            group: int = -1,
-            round: int = -1,
-        ) -> int:
-            return graph.emit(
-                "valu",
-                ("multiply_add", dest, a, b, c),
-                reads=_words(a) + _words(b) + _words(c),
-                writes=_words(dest),
-                tag=tag,
-                group=group,
-                round=round,
-            )
+        # Actually, we can overlap: while loading v0,v1, set up s_tmp for v2,v3
+        # But: can't have load + const in same cycle as two loads (only 2 load slots).
+        # load const uses 1 load slot, load from mem uses 1 load slot.
+        # So: [const s_tmp=0, load v0 from s_tmp_prev] can overlap if s_tmp_prev is ready.
+        # For the first pair: s_tmp is set in same cycle as load - not ready!
+        # So must be sequential: const(0) -> load(v0).
 
-        def emit_scalarized(
-            op: str,
-            dest: int,
-            a: int,
-            b: int,
-            *,
-            a_scalar: bool = False,
-            b_scalar: bool = False,
-            tag: str,
-            group: int = -1,
-            round: int = -1,
-        ) -> list[int]:
-            ids = []
-            for lane in range(VLEN):
-                aa = a if a_scalar else a + lane
-                bb = b if b_scalar else b + lane
-                ids.append(
-                    graph.emit(
-                        "alu",
-                        (op, dest + lane, aa, bb),
-                        reads=(aa, bb),
-                        writes=(dest + lane,),
-                        tag=tag,
-                        group=group,
-                        round=round,
-                    )
-                )
-            return ids
+        # Optimal sequential init:
+        # Cycle 0: [const s_tmp=0, const s_tmp2=1]
+        # Cycle 1: [load v0, load v1]
+        # Cycle 2: [const s_tmp=2, const s_tmp2=3]
+        # Cycle 3: [load v2, load v3]
+        # Cycle 4: [const s_tmp=4, const s_tmp2=5]
+        # Cycle 5: [load v4, load v5]
+        # Cycle 6: [const s_tmp=6]
+        # Cycle 7: [load v6]
+        # = 8 cycles for 7 init vars
 
-        def emit_vbasic(
-            op: str,
-            dest: int,
-            a: int,
-            b_vector: int,
-            *,
-            scalarize: bool,
-            scalar_b: int,
-            tag: str,
-            group: int,
-            round: int,
-        ) -> None:
-            if scalarize:
-                emit_scalarized(
-                    op,
-                    dest,
-                    a,
-                    scalar_b,
-                    b_scalar=True,
-                    tag=tag,
-                    group=group,
-                    round=round,
-                )
+        init_var_names = list(init_vars)
+        for pair_start in range(0, len(init_var_names), 2):
+            pair = init_var_names[pair_start:pair_start+2]
+            if len(pair) == 2:
+                asm.add("load", ("const", s_tmp, pair_start))
+                asm.add("load", ("const", s_tmp2, pair_start + 1))
+                asm.emit()
+                asm.add("load", ("load", s_vars[pair[0]], s_tmp))
+                asm.add("load", ("load", s_vars[pair[1]], s_tmp2))
+                asm.emit()
             else:
-                emit_valu(
-                    op,
-                    dest,
-                    a,
-                    b_vector,
-                    tag=tag,
-                    group=group,
-                    round=round,
-                )
+                asm.add("load", ("const", s_tmp, pair_start))
+                asm.emit()
+                asm.add("load", ("load", s_vars[pair[0]], s_tmp))
+                asm.emit()
 
-        def emit_vselect(
-            dest: int,
-            cond: int,
-            yes: int,
-            no: int,
-            *,
-            group: int,
-            round: int,
-        ) -> int:
-            return graph.emit(
-                "flow",
-                ("vselect", dest, cond, yes, no),
-                reads=_words(cond) + _words(yes) + _words(no),
-                writes=_words(dest),
-                tag="tree_select",
-                group=group,
-                round=round,
-            )
+        # Step 2: Load scalar constants (0,1,2,256,4097,33,9,3)
+        # and hash stage constants - batch maximally
+        asm.add("load", ("const", s_zero, 0))
+        asm.add("load", ("const", s_one, 1))
+        asm.emit()
+        asm.add("load", ("const", s_two, 2))
+        asm.add("load", ("const", s_c256, 256))
+        asm.emit()
+        asm.add("load", ("const", s_m0, 4097))
+        asm.add("load", ("const", s_m2, 33))
+        asm.emit()
+        asm.add("load", ("const", s_m4, 9))
+        asm.add("load", ("const", s_three, 3))
+        asm.emit()
+        asm.add("load", ("const", s_seven, 7))
+        asm.emit()
 
-        # Load all immutable scalar constants, then broadcast the subset used
-        # by VALU.  The scheduler overlaps these with tree and input traffic.
-        emit_const(s_one, 1)
-        for value, addr in scalar_constants.items():
-            if addr != s_one:
-                emit_immediate(addr, value, "scalar_immediate")
-        for value, dest in vector_constants.items():
-            emit_vbroadcast(dest, scalar_constants[value], "constant_broadcast")
+        # Step 3: Load hash stage constants (6 stages, 3 with 2 constants each = 9 constants)
+        hash_consts_batch = []
+        for hi, (op1, val1, op2, op3, val3) in enumerate(HASH_STAGES):
+            hash_consts_batch.append((v_hash_val1[hi], val1))
+            if hi in (1, 3, 5):
+                hash_consts_batch.append((v_hash_val3[hi], val3))
+        # 9 constants total, load 2 per cycle into s_tmp/s_tmp2, then vbroadcast
+        # Each: 1 cycle to load const + 1 cycle to vbroadcast = but we can overlap:
+        # For pair (v1, c1), (v2, c2):
+        #   cycle: [const s_tmp=c1, const s_tmp2=c2]
+        #   cycle: [vbroadcast v1 s_tmp, vbroadcast v2 s_tmp2]
+        # This overlaps only if const and vbroadcast use different engines (load vs valu): YES!
+        # So: [const s_tmp=c1, const s_tmp2=c2] + [vbroadcast v_prev1 s_tmp_prev1, vbroadcast v_prev2 s_tmp_prev2]
+        # can all be in the SAME cycle? No - because s_tmp and s_tmp_prev1 must be ready.
+        # But if prev pair has already set s_tmp/s_tmp2, they're ready.
+        # Pipelined approach:
+        # cycle A: [const s_tmp=c1, const s_tmp2=c2]
+        # cycle B: [const s_tmp=c3, const s_tmp2=c4, vbroadcast v1 s_tmp_old, vbroadcast v2 s_tmp2_old]
+        # -- wait, we're reusing s_tmp in cycle B! s_tmp is being written AND read in same cycle.
+        # In VLIW, reads happen before writes, so vbroadcast in B reads s_tmp from BEFORE B's const writes.
+        # That means vbroadcast in B reads s_tmp = c1 (from cycle A), not c3. CORRECT!
+        # Similarly vbroadcast v2 reads s_tmp2 = c2 from cycle A.
+        n_hc = len(hash_consts_batch)
+        hc_tmp_regs = [self.alloc_scratch(f"s_hc_tmp_{i}") for i in range(n_hc)]
+        
+        # Cycle 0: Load first pair
+        asm.add("load", ("const", hc_tmp_regs[0], hash_consts_batch[0][1]))
+        if n_hc > 1:
+            asm.add("load", ("const", hc_tmp_regs[1], hash_consts_batch[1][1]))
+        asm.emit()
 
-        # Fetch nodes 0..31 using two rolling pointers and four vector loads.
-        emit_immediate(top_p0, 7, "top_pointer")
-        emit_immediate(top_p1, 15, "top_pointer")
-        top_loads: list[int] = []
-        for pair in range(2):
-            top_loads.append(
-                graph.emit(
-                    "load",
-                    ("vload", top_words + pair * 16, top_p0),
-                    reads=(top_p0,),
-                    writes=_words(top_words + pair * 16),
-                    tag="top_tree_load",
-                )
-            )
-            top_loads.append(
-                graph.emit(
-                    "load",
-                    ("vload", top_words + pair * 16 + 8, top_p1),
-                    reads=(top_p1,),
-                    writes=_words(top_words + pair * 16 + 8),
-                    tag="top_tree_load",
-                )
-            )
-            if pair == 0:
-                graph.emit(
-                    "alu",
-                    ("+", top_p0, top_p0, s_sixteen),
-                    reads=(top_p0, s_sixteen),
-                    writes=(top_p0,),
-                    tag="pointer_advance",
-                )
-                graph.emit(
-                    "alu",
-                    ("+", top_p1, top_p1, s_sixteen),
-                    reads=(top_p1, s_sixteen),
-                    writes=(top_p1,),
-                    tag="pointer_advance",
-                )
+        # Cycles 1..: Load next pair + broadcast previous pair
+        for i in range(2, n_hc, 2):
+            # Load pair i/i+1
+            asm.add("load", ("const", hc_tmp_regs[i], hash_consts_batch[i][1]))
+            if i + 1 < n_hc:
+                asm.add("load", ("const", hc_tmp_regs[i + 1], hash_consts_batch[i + 1][1]))
+            # Broadcast prev pair (i-2/i-1)
+            asm.add("valu", ("vbroadcast", hash_consts_batch[i - 2][0], hc_tmp_regs[i - 2]))
+            asm.add("valu", ("vbroadcast", hash_consts_batch[i - 1][0], hc_tmp_regs[i - 1]))
+            asm.emit()
 
-        # Round 0 needs the raw root.  All later cached nodes use node XOR C5.
-        graph.emit(
-            "alu",
-            ("|", root_raw, top_words, top_words),
-            reads=(top_words,),
-            writes=(root_raw,),
-            tag="raw_root_copy",
-        )
-        for i in range(31):
-            graph.emit(
-                "alu",
-                ("^", top_words + i, top_words + i, s_c5),
-                reads=(top_words + i, s_c5),
-                writes=(top_words + i,),
-                tag="cached_node_transform",
-            )
-            emit_vbroadcast(node_vec[i], top_words + i, "cached_node_broadcast")
+        # Broadcast the last pair
+        last_start = (n_hc - 1) // 2 * 2
+        for j in range(last_start, n_hc):
+            asm.add("valu", ("vbroadcast", hash_consts_batch[j][0], hc_tmp_regs[j]))
+        
+        # Step 4: Broadcast scalar constants to vectors (co-scheduled with the final hash broadcasts)
+        asm.add("valu", ("vbroadcast", v_zero, s_zero))
+        asm.add("valu", ("vbroadcast", v_one, s_one))
+        asm.add("valu", ("vbroadcast", v_two, s_two))
+        asm.add("valu", ("vbroadcast", v_n_nodes, s_vars["n_nodes"]))
+        asm.emit()
 
-        # Transform tree levels 4..7 (240 words) once in place.  These are
-        # private machine-memory writes; the reference input remains untouched.
-        emit_immediate(prep_p0, 22, "preprocess_pointer")
-        emit_immediate(prep_p1, 30, "preprocess_pointer")
-        prep_buffers = preprocess_buffers
-        last_prep_stores = [-1, -1]
-        for pair in range(15):
-            for lane_group in range(2):
-                ptr = prep_p0 if lane_group == 0 else prep_p1
-                buf = prep_buffers[lane_group]
-                graph.emit(
-                    "load",
-                    ("vload", buf, ptr),
-                    reads=(ptr,),
-                    writes=_words(buf),
-                    tag="tree_preprocess_load",
-                )
-                emit_valu("^", buf, buf, v_c5, tag="tree_preprocess_xor")
-                last_prep_stores[lane_group] = graph.emit(
-                    "store",
-                    ("vstore", ptr, buf),
-                    reads=(ptr,) + _words(buf),
-                    deps=tuple((top_load, 0) for top_load in top_loads),
-                    tag="tree_preprocess_store",
-                )
-            if pair != 14:
-                graph.emit(
-                    "alu",
-                    ("+", prep_p0, prep_p0, s_sixteen),
-                    reads=(prep_p0, s_sixteen),
-                    writes=(prep_p0,),
-                    tag="pointer_advance",
-                )
-                graph.emit(
-                    "alu",
-                    ("+", prep_p1, prep_p1, s_sixteen),
-                    reads=(prep_p1, s_sixteen),
-                    writes=(prep_p1,),
-                    tag="pointer_advance",
-                )
+        asm.add("valu", ("vbroadcast", v_forest_values_p, s_vars["forest_values_p"]))
+        asm.add("valu", ("vbroadcast", v_hmul0, s_m0))
+        asm.add("valu", ("vbroadcast", v_hmul2, s_m2))
+        asm.add("valu", ("vbroadcast", v_hmul4, s_m4))
+        asm.add("valu", ("vbroadcast", v_three, s_three))
+        asm.add("valu", ("vbroadcast", v_seven, s_seven))
+        asm.emit()
 
-        level4_reversed = [node_vec[i] for i in range(30, 14, -1)]
-        for i, diff in enumerate(level4_diff):
-            emit_valu(
-                "-",
-                diff,
-                level4_reversed[2 * i + 1],
-                level4_reversed[2 * i],
-                tag="level4_pair_diff",
-            )
+        asm.add("load", ("const", s_loop_i, 0))
+        asm.emit()
 
-        def select_cached(
-            depth: int, state: int, workspace: int, gg: int, rnd: int
-        ) -> None:
-            width = 1 << depth
-            start = width - 1
-            # Mirror offset 0 names the actual rightmost node.
-            leaves = [node_vec[start + width - 1 - i] for i in range(width)]
-            temp = temps[state]
-            workspace_bits = bits[workspace]
-            workspace_spill = select_spill[workspace % N_SPILL_WORKSPACES]
+        # Load 8 into s_tmp
+        asm.add("load", ("const", s_tmp, 8))
+        asm.add("alu", ("+", s_addr_idx[0], s_vars["inp_indices_p"], s_zero))
+        asm.add("alu", ("+", s_addr_val[0], s_vars["inp_values_p"], s_zero))
+        asm.emit()
 
-            if depth == 1:
-                emit_vselect(
-                    temp, workspace_bits[0], leaves[1], leaves[0], group=gg, round=rnd
-                )
-                return
+        s_c8   = s_tmp
+        s_c16  = s_tmp2
+        s_c32  = self.alloc_scratch("s_c32")
+        s_c64  = self.alloc_scratch("s_c64")
+        s_c128 = self.alloc_scratch("s_c128")
+        asm.add("load", ("const", s_c16, 16))
+        asm.add("load", ("const", s_c32, 32))
+        asm.emit()
+        asm.add("load", ("const", s_c64, 64))
+        asm.add("load", ("const", s_c128, 128))
+        asm.emit()
 
-            if depth == 2:
-                emit_vselect(
-                    temp, workspace_bits[1], leaves[1], leaves[0], group=gg, round=rnd
-                )
-                emit_vselect(
-                    workspace_spill[0],
-                    workspace_bits[1],
-                    leaves[3],
-                    leaves[2],
-                    group=gg,
-                    round=rnd,
-                )
-                emit_vselect(
-                    temp,
-                    workspace_bits[0],
-                    workspace_spill[0],
-                    temp,
-                    group=gg,
-                    round=rnd,
-                )
-                return
+        # Cycle 1: 5 groups
+        for g, c in [(1, s_c8), (2, s_c16), (4, s_c32), (8, s_c64), (16, s_c128)]:
+            asm.add("alu", ("+", s_addr_idx[g], s_addr_idx[0], c))
+            asm.add("alu", ("+", s_addr_val[g], s_addr_val[0], c))
+        asm.emit()
 
-            if depth != 3:
-                raise AssertionError(depth)
+        # Cycle 2: 6 groups
+        for g, base, c in [(3, 2, s_c8), (5, 4, s_c8), (6, 4, s_c16),
+                           (9, 8, s_c8), (10, 8, s_c16), (12, 8, s_c32)]:
+            asm.add("alu", ("+", s_addr_idx[g], s_addr_idx[base], c))
+            asm.add("alu", ("+", s_addr_val[g], s_addr_val[base], c))
+        asm.emit()
 
-            # Evaluate the two four-leaf halves depth-first.  Once the final
-            # bottom pair has consumed bit 2, that register itself becomes a
-            # legal destination, reducing the live mux stack to one spill.
-            spill = workspace_spill[0]
-            emit_vselect(temp, workspace_bits[2], leaves[1], leaves[0], group=gg, round=rnd)
-            emit_vselect(spill, workspace_bits[2], leaves[3], leaves[2], group=gg, round=rnd)
-            emit_vselect(temp, workspace_bits[1], spill, temp, group=gg, round=rnd)
-            emit_vselect(spill, workspace_bits[2], leaves[5], leaves[4], group=gg, round=rnd)
-            emit_vselect(workspace_bits[2], workspace_bits[2], leaves[7], leaves[6], group=gg, round=rnd)
-            emit_vselect(spill, workspace_bits[1], workspace_bits[2], spill, group=gg, round=rnd)
-            emit_vselect(temp, workspace_bits[0], spill, temp, group=gg, round=rnd)
+        # Cycle 3: 6 groups
+        for g, base, c in [(17, 16, s_c8), (18, 16, s_c16), (20, 16, s_c32), (24, 16, s_c64),
+                           (7, 6, s_c8), (11, 10, s_c8)]:
+            asm.add("alu", ("+", s_addr_idx[g], s_addr_idx[base], c))
+            asm.add("alu", ("+", s_addr_val[g], s_addr_val[base], c))
+        asm.emit()
 
-        def select_level4_hybrid(
-            state: int, workspace: int, gg: int, rnd: int
-        ) -> None:
-            workspace_bits = bits[workspace]
-            workspace_spill = select_spill[workspace % N_SPILL_WORKSPACES]
-            active_pool = first_level4_pool
-            active_condition = first_level4_condition
-            cond = active_condition
-            emit_scalarized(
-                "&",
-                cond,
-                mirrors[state],
-                s_one,
-                b_scalar=True,
-                tag="level4_condition_3",
-                group=gg,
-                round=rnd,
-            )
-            emit_scalarized(
-                "&",
-                level4_condition_2,
-                mirrors[state],
-                s_two,
-                b_scalar=True,
-                tag="level4_condition_2",
-                group=gg,
-                round=rnd,
-            )
-            # Evaluate the 16-leaf mux depth-first.  The saved p2/p1/p0 bits
-            # are already valid conditions, and the p3 condition becomes the
-            # final pair's destination after its last read.
-            a = temps[state]
-            b = workspace_spill[0]
-            c = active_pool[0]
-            c3 = active_condition
-            c2, c1, c0 = level4_condition_2, workspace_bits[1], workspace_bits[0]
+        # Cycle 4: 6 groups
+        for g, base, c in [(13, 12, s_c8), (14, 12, s_c16), (19, 18, s_c8),
+                           (21, 20, s_c8), (22, 20, s_c16), (25, 24, s_c8)]:
+            asm.add("alu", ("+", s_addr_idx[g], s_addr_idx[base], c))
+            asm.add("alu", ("+", s_addr_val[g], s_addr_val[base], c))
+        asm.emit()
 
-            def pair(dest: int, pair_index: int) -> None:
-                if pair_index == 0:
-                    emit_madd(
-                        dest,
-                        c3,
-                        level4_diff[0],
-                        level4_reversed[0],
-                        tag="level4_hybrid_bottom",
-                        group=gg,
-                        round=rnd,
-                    )
-                else:
-                    emit_vselect(
-                        dest,
-                        c3,
-                        level4_reversed[2 * pair_index + 1],
-                        level4_reversed[2 * pair_index],
-                        group=gg,
-                        round=rnd,
-                    )
+        # Cycle 5: 4 groups
+        for g, base, c in [(26, 24, s_c16), (28, 24, s_c32), (15, 14, s_c8), (23, 22, s_c8)]:
+            asm.add("alu", ("+", s_addr_idx[g], s_addr_idx[base], c))
+            asm.add("alu", ("+", s_addr_val[g], s_addr_val[base], c))
+        asm.emit()
 
-            pair(a, 0)
-            pair(b, 1)
-            emit_vselect(a, c2, b, a, group=gg, round=rnd)
-            pair(b, 2)
-            pair(c, 3)
-            emit_vselect(b, c2, c, b, group=gg, round=rnd)
-            emit_vselect(a, c1, b, a, group=gg, round=rnd)
+        # Cycle 6: 3 groups
+        for g, base, c in [(27, 26, s_c8), (29, 28, s_c8), (30, 28, s_c16)]:
+            asm.add("alu", ("+", s_addr_idx[g], s_addr_idx[base], c))
+            asm.add("alu", ("+", s_addr_val[g], s_addr_val[base], c))
+        asm.emit()
 
-            pair(b, 4)
-            pair(c, 5)
-            emit_vselect(b, c2, c, b, group=gg, round=rnd)
-            pair(c, 6)
-            pair(c3, 7)
-            emit_vselect(c, c2, c3, c, group=gg, round=rnd)
-            emit_vselect(b, c1, c, b, group=gg, round=rnd)
-            emit_vselect(a, c0, b, a, group=gg, round=rnd)
+        # Cycle 7: 1 group
+        asm.add("alu", ("+", s_addr_idx[31], s_addr_idx[30], s_c8))
+        asm.add("alu", ("+", s_addr_val[31], s_addr_val[30], s_c8))
+        asm.emit()
 
-        def gather_node(depth: int, state: int, gg: int, rnd: int) -> None:
-            mirror = mirrors[state]
-            temp = temps[state]
-            # Address generation is intentionally scalar: eight ALU slots are
-            # cheaper than consuming a scarce VALU slot in the steady state.
-            emit_scalarized(
-                "-",
-                temp,
-                depth_base[depth],
-                mirror,
-                a_scalar=True,
-                tag="gather_address",
-                group=gg,
-                round=rnd,
-            )
-            prep_deps = ()
-            if depth <= 7:
-                prep_deps = ((last_prep_stores[0], 1), (last_prep_stores[1], 1))
-            for lane in range(VLEN):
-                graph.emit(
-                    "load",
-                    ("load_offset", temp, temp, lane),
-                    reads=(temp + lane,),
-                    writes=(temp + lane,),
-                    deps=prep_deps,
-                    tag="tree_gather",
-                    group=gg,
-                    round=rnd,
-                )
-            if depth >= 8:
-                if (gg, rnd) in VECTOR_DYNAMIC_XOR_SET:
-                    emit_valu(
-                        "^",
-                        temp,
-                        temp,
-                        v_c5,
-                        tag="dynamic_node_transform_vector",
-                        group=gg,
-                        round=rnd,
-                    )
-                else:
-                    emit_scalarized(
-                        "^",
-                        temp,
-                        temp,
-                        s_c5,
-                        b_scalar=True,
-                        tag="dynamic_node_transform",
-                        group=gg,
-                        round=rnd,
-                    )
+        if MAX_OPT_ROUND > 0:
+            # Step 8: Load tree leaf values from memory
+            # Leaf 0: load directly from forest_values_p
+            asm.add("load", ("load", s_leaves[0], s_vars["forest_values_p"]))
+            asm.emit()
+            # Leaves 1..6: add_imm (flow) + load
+            # Since add_imm writes to s_tmp and load reads from s_tmp, they cannot be in the same cycle.
+            # But we can overlap load of leaf i-1 with add_imm of leaf i!
+            # Cycle 1: add_imm for leaf 1 -> writes s_tmp
+            if n_leaves > 1:
+                asm.add("flow", ("add_imm", s_tmp, s_vars["forest_values_p"], 1))
+                asm.emit()
+            # Cycle 2..: load leaf i-1 from s_tmp, add_imm for leaf i to s_tmp
+            # Since s_tmp is read by load (using pre-cycle value) and written by add_imm (effective at end of cycle),
+            # this is perfectly safe in VLIW!
+            for i in range(2, n_leaves):
+                asm.add("flow", ("add_imm", s_tmp, s_vars["forest_values_p"], i))
+                asm.add("load", ("load", s_leaves[i-1], s_tmp))
+                asm.emit()
+            # After the loop, the last cycle of the loop did:
+            #   add_imm for leaf 6 (n_leaves-1) -> writes s_tmp
+            #   load leaf 5 (s_leaves[5]) from s_tmp_old
+            # So s_tmp now contains the address for leaf 6.
+            # We just need to load leaf 6 (s_leaves[6]) from s_tmp:
+            if n_leaves > 1:
+                asm.add("load", ("load", s_leaves[n_leaves-1], s_tmp))
+                asm.emit()
 
-        def xor_node(
-            value: int, node: int, gg: int, rnd: int, *, node_scalar: bool = False
-        ) -> None:
-            if not node_scalar and (gg, rnd) in VECTOR_NODE_XOR_SET:
-                emit_valu(
-                    "^",
-                    value,
-                    value,
-                    node,
-                    tag="node_xor_vector",
-                    group=gg,
-                    round=rnd,
-                )
+            # Compute diffs and group broadcasts:
+            # Diffs:
+            # r=1: s_d_1_0 = s_leaf_2 - s_leaf_1
+            # r=2: s_d_2_0 = s_leaf_4 - s_leaf_3, s_d_2_1 = s_leaf_6 - s_leaf_5
+            if MAX_OPT_ROUND >= 2:
+                asm.add("alu", ("-", s_diffs[1][0], s_leaves[2], s_leaves[1]))
+            if MAX_OPT_ROUND >= 3:
+                asm.add("alu", ("-", s_diffs[2][0], s_leaves[4], s_leaves[3]))
+                asm.add("alu", ("-", s_diffs[2][1], s_leaves[6], s_leaves[5]))
+                asm.add("alu", ("-", s_diff2_base, s_leaves[5], s_leaves[3]))
+                asm.emit()
+                asm.add("alu", ("-", s_diff2_slope, s_diffs[2][1], s_diffs[2][0]))
+            
+            if MAX_OPT_ROUND >= 4:
+                asm.add("alu", ("-", s_diffs[3][0], s_leaves[8], s_leaves[7]))
+                asm.add("alu", ("-", s_diffs[3][1], s_leaves[10], s_leaves[9]))
+                asm.emit()
+                asm.add("alu", ("-", s_diffs[3][2], s_leaves[12], s_leaves[11]))
+                asm.add("alu", ("-", s_diffs[3][3], s_leaves[14], s_leaves[13]))
+            asm.emit()
+
+            for i in range(min(4, n_leaves)):
+                r_val = 0 if i == 0 else (1 if i <= 2 else 2)
+                k_val = 0 if i == 0 else (i - 1 if i <= 2 else i - 3)
+                asm.add("valu", ("vbroadcast", v_leaf[r_val][k_val], s_leaves[i]))
+            asm.emit()
+
+            for i in range(4, min(7, n_leaves)):
+                r_val = 2
+                k_val = i - 3
+                asm.add("valu", ("vbroadcast", v_leaf[r_val][k_val], s_leaves[i]))
+            if MAX_OPT_ROUND >= 4:
+                asm.add("valu", ("vbroadcast", v_leaf[3][0], s_leaves[7]))
+            asm.emit()
+
+            if MAX_OPT_ROUND >= 4:
+                asm.add("valu", ("vbroadcast", v_leaf[3][1], s_leaves[9]))
+                asm.add("valu", ("vbroadcast", v_leaf[3][2], s_leaves[11]))
+                asm.add("valu", ("vbroadcast", v_leaf[3][3], s_leaves[13]))
+            if MAX_OPT_ROUND >= 2:
+                asm.add("valu", ("vbroadcast", v_diff[1][0], s_diffs[1][0]))
+            asm.emit()
+
+            if MAX_OPT_ROUND >= 3:
+                asm.add("valu", ("vbroadcast", v_diff[2][0], s_diffs[2][0]))
+                asm.add("valu", ("vbroadcast", v_diff[2][1], s_diffs[2][1]))
+                asm.add("valu", ("vbroadcast", v_diff2_base, s_diff2_base))
+                asm.add("valu", ("vbroadcast", v_diff2_slope, s_diff2_slope))
+            asm.emit()
+
+            if MAX_OPT_ROUND >= 4:
+                asm.add("valu", ("vbroadcast", v_diff[3][0], s_diffs[3][0]))
+                asm.add("valu", ("vbroadcast", v_diff[3][1], s_diffs[3][1]))
+                asm.add("valu", ("vbroadcast", v_diff[3][2], s_diffs[3][2]))
+                asm.add("valu", ("vbroadcast", v_diff[3][3], s_diffs[3][3]))
+            asm.emit()
+
+        asm.add("flow", ("pause",))
+        asm.emit()
+
+        # ---- BUILD OP LIST FOR LIST SCHEDULING ----
+        ops = []
+        current_group = None
+
+        def emit_op(engine, slot, reads, writes):
+            ops.append({"engine": engine, "slot": slot, "reads": reads, "writes": writes, "g": current_group})
+
+        def emit_any_op(g, engine, op, reads, writes):
+            offload_ops = {"^", "-", "&", ">>", "+", "<", "*"}
+            op_name = op[0]
+            if engine == "valu" and op_name in offload_ops:
+                # Always offload simple ops to ALU!
+                # Wait, ALU only has 12 slots, but it has plenty of space.
+                emit_op("alu", op, reads, writes)
             else:
-                emit_scalarized(
-                    "^",
-                    value,
-                    value,
-                    node,
-                    b_scalar=node_scalar,
-                    tag="node_xor",
-                    group=gg,
-                    round=rnd,
-                )
+                emit_op(engine, op, reads, writes)
 
-        def emit_hash(value: int, temp: int, gg: int, rnd: int) -> None:
-            emit_madd(value, value, v_m0, v_c0, tag="hash_0", group=gg, round=rnd)
+        def vr(reg):
+            return list(range(reg, reg + 8))
 
-            # Stage 1 branches read the same old value.  Emit the reader first;
-            # the following in-place writer has a zero-lag WAR dependency.
-            scalar_hash = (
-                (gg + rnd) % HASH_SCALAR_MOD == 0
-                or (gg, rnd) in HASH_SCALAR_EXTRA
-            )
-            scalar_shift = scalar_hash and HASH_SCALAR_STAGE == 1
-            emit_vbasic(
-                ">>",
-                temp,
-                value,
-                v_nineteen,
-                scalarize=scalar_shift,
-                scalar_b=s_nineteen,
-                tag="hash_1_shift_scalar" if scalar_shift else "hash_1_shift_vector",
-                group=gg,
-                round=rnd,
-            )
-            emit_vbasic(
-                "^",
-                value,
-                value,
-                v_c1,
-                scalarize=scalar_hash and HASH_SCALAR_STAGE == -1,
-                scalar_b=s_c1,
-                tag="hash_1_const",
-                group=gg,
-                round=rnd,
-            )
-            emit_valu("^", value, value, temp, tag="hash_1_join", group=gg, round=rnd)
+        # Phase 1: Load all indices and values
+        for g in range(32):
+            current_group = g
+            emit_op("load", ("vload", v_idx[g], s_addr_idx[g]),
+                    reads=[s_addr_idx[g]], writes=vr(v_idx[g]))
+            emit_op("load", ("vload", v_val[g], s_addr_val[g]),
+                    reads=[s_addr_val[g]], writes=vr(v_val[g]))
 
-            emit_madd(value, value, v_m2, v_c2, tag="hash_2", group=gg, round=rnd)
+        # Phase 2: rounds. Tree depth is periodic: depth = rnd % (forest_height+1),
+        # since idx wraps to the root every forest_height+1 rounds regardless of
+        # data. So rounds that land on depth 0/1/2 can all reuse the preloaded
+        # leaf/diff registers, not just the literal first few rounds.
+        period = forest_height + 1
 
-            emit_vbasic(
-                "<<",
-                temp,
-                value,
-                v_m4,
-                scalarize=scalar_hash and HASH_SCALAR_STAGE == 3,
-                scalar_b=s_m4,
-                tag="hash_3_shift",
-                group=gg,
-                round=rnd,
-            )
-            emit_vbasic(
-                "+",
-                value,
-                value,
-                v_c3,
-                scalarize=scalar_hash and HASH_SCALAR_STAGE == -3,
-                scalar_b=s_c3,
-                tag="hash_3_const",
-                group=gg,
-                round=rnd,
-            )
-            emit_valu("^", value, value, temp, tag="hash_3_join", group=gg, round=rnd)
-
-            emit_madd(value, value, v_m4, v_c4, tag="hash_4", group=gg, round=rnd)
-
-            emit_vbasic(
-                ">>",
-                temp,
-                value,
-                v_sixteen,
-                scalarize=scalar_hash and HASH_SCALAR_STAGE == 5,
-                scalar_b=s_sixteen,
-                tag="hash_5_shift",
-                group=gg,
-                round=rnd,
-            )
-            if rnd == rounds - 1:
-                # The final round materializes the true value directly.
-                emit_valu("^", value, value, v_c5, tag="hash_5_const", group=gg, round=rnd)
-            emit_valu("^", value, value, temp, tag="hash_5_join", group=gg, round=rnd)
-
-        def emit_parity(dest: int, value: int, gg: int, rnd: int) -> None:
-            emit_scalarized(
-                "&",
-                dest,
-                value,
-                s_one,
-                b_scalar=True,
-                tag="mirror_bit",
-                group=gg,
-                round=rnd,
-            )
-
-        def process_round(state: int, workspace: int, gg: int, rnd: int) -> None:
-            depth = rnd if rnd <= 10 else rnd - 11
-            value = values[state]
-            temp = temps[state]
-            workspace_bits = bits[workspace]
-
-            if rnd in (2, 13):
-                emit_madd(
-                    mirrors[state],
-                    workspace_bits[0],
-                    v_two,
-                    workspace_bits[1],
-                    tag="mirror_build_2",
-                    group=gg,
-                    round=rnd,
-                )
-            elif rnd in (3, 14):
-                emit_madd(
-                    mirrors[state],
-                    mirrors[state],
-                    v_two,
-                    workspace_bits[2],
-                    tag="mirror_build_3",
-                    group=gg,
-                    round=rnd,
-                )
+        def emit_round_group(rnd, g):
+            """Emit all ops for one group in one round."""
+            nonlocal current_group
+            current_group = g
+            depth = rnd % period
+            vg = v_tmp[g % 16]
+            gA = v_glob_A[g % NG_A]
+            gB = v_glob_B[g % NG_B]
 
             if depth == 0:
-                node = root_raw if rnd == 0 else node_vec[0]
-                xor_node(value, node, gg, rnd, node_scalar=rnd == 0)
-            elif depth <= 3:
-                select_cached(depth, state, workspace, gg, rnd)
-                xor_node(value, temp, gg, rnd)
-            elif (rnd == 4 and gg in FIRST_CACHE_SET) or (
-                rnd == rounds - 1 and gg in FINAL_CACHE_SET
-            ):
-                select_level4_hybrid(state, workspace, gg, rnd)
-                xor_node(value, temp, gg, rnd)
+                emit_any_op(g, "valu", ("^", v_val[g], v_val[g], v_leaf[0][0]),
+                        reads=vr(v_val[g]) + vr(v_leaf[0][0]),
+                        writes=vr(v_val[g]))
+
+            elif depth == 1:
+                emit_any_op(g, "valu", ("-", gA, v_idx[g], v_one),
+                        reads=vr(v_idx[g]) + vr(v_one), writes=vr(gA))
+                emit_any_op(g, "valu", ("&", vg, gA, v_one),
+                        reads=vr(gA) + vr(v_one), writes=vr(vg))
+                emit_any_op(g, "valu", ("multiply_add", gA, vg, v_diff[1][0], v_leaf[1][0]),
+                        reads=vr(vg) + vr(v_diff[1][0]) + vr(v_leaf[1][0]),
+                        writes=vr(gA))
+                emit_any_op(g, "valu", ("^", v_val[g], v_val[g], gA),
+                        reads=vr(v_val[g]) + vr(gA), writes=vr(v_val[g]))
+
+            elif depth == 2:
+                emit_any_op(g, "valu", ("-", gA, v_idx[g], v_three), reads=vr(v_idx[g]) + vr(v_three), writes=vr(gA))
+                emit_any_op(g, "valu", (">>", gB, gA, v_one), reads=vr(gA) + vr(v_one), writes=vr(gB))
+                emit_any_op(g, "valu", ("&", vg, gA, v_one), reads=vr(gA) + vr(v_one), writes=vr(vg))
+                emit_any_op(g, "valu", ("multiply_add", gA, vg, v_diff[2][0], v_leaf[2][0]), reads=vr(vg) + vr(v_diff[2][0]) + vr(v_leaf[2][0]), writes=vr(gA))
+                emit_any_op(g, "valu", ("multiply_add", vg, vg, v_diff2_slope, v_diff2_base), reads=vr(vg) + vr(v_diff2_slope) + vr(v_diff2_base), writes=vr(vg))
+                emit_any_op(g, "valu", ("multiply_add", gA, gB, vg, gA), reads=vr(gB) + vr(vg) + vr(gA), writes=vr(gA))
+                emit_any_op(g, "valu", ("^", v_val[g], v_val[g], gA), reads=vr(v_val[g]) + vr(gA), writes=vr(v_val[g]))
+            elif depth == 3:
+                t_b0 = vg
+                t_b1 = gA
+                t_b2 = gB
+                t_M01 = v_glob_C[g % NG_C]
+                t_M23 = v_glob_D[g % NG_D]
+                t_M0123 = v_glob_E[g % NG_E]
+                t_diff = v_glob_F[g % NG_F]
+                
+                emit_any_op(g, "valu", ("-", t_b0, v_idx[g], v_seven), reads=vr(v_idx[g])+vr(v_seven), writes=vr(t_b0))
+                emit_any_op(g, "valu", ("&", t_b0, t_b0, v_one), reads=vr(t_b0)+vr(v_one), writes=vr(t_b0))
+                emit_any_op(g, "valu", ("-", t_b1, v_idx[g], v_seven), reads=vr(v_idx[g])+vr(v_seven), writes=vr(t_b1))
+                emit_any_op(g, "valu", (">>", t_b1, t_b1, v_one), reads=vr(t_b1)+vr(v_one), writes=vr(t_b1))
+                emit_any_op(g, "valu", ("&", t_b1, t_b1, v_one), reads=vr(t_b1)+vr(v_one), writes=vr(t_b1))
+                emit_any_op(g, "valu", ("-", t_b2, v_idx[g], v_seven), reads=vr(v_idx[g])+vr(v_seven), writes=vr(t_b2))
+                emit_any_op(g, "valu", (">>", t_b2, t_b2, v_two), reads=vr(t_b2)+vr(v_two), writes=vr(t_b2))
+                emit_any_op(g, "valu", ("&", t_b2, t_b2, v_one), reads=vr(t_b2)+vr(v_one), writes=vr(t_b2))
+                
+                emit_any_op(g, "valu", ("multiply_add", t_M01, t_b0, v_diff[3][0], v_leaf[3][0]), reads=vr(t_b0)+vr(v_diff[3][0])+vr(v_leaf[3][0]), writes=vr(t_M01))
+                emit_any_op(g, "valu", ("multiply_add", t_M23, t_b0, v_diff[3][1], v_leaf[3][1]), reads=vr(t_b0)+vr(v_diff[3][1])+vr(v_leaf[3][1]), writes=vr(t_M23))
+                
+                emit_any_op(g, "valu", ("-", t_diff, t_M23, t_M01), reads=vr(t_M23)+vr(t_M01), writes=vr(t_diff))
+                emit_any_op(g, "valu", ("multiply_add", t_M0123, t_b1, t_diff, t_M01), reads=vr(t_b1)+vr(t_diff)+vr(t_M01), writes=vr(t_M0123))
+                
+                t_M45 = t_M01
+                t_M67 = t_M23
+                emit_any_op(g, "valu", ("multiply_add", t_M45, t_b0, v_diff[3][2], v_leaf[3][2]), reads=vr(t_b0)+vr(v_diff[3][2])+vr(v_leaf[3][2]), writes=vr(t_M45))
+                emit_any_op(g, "valu", ("multiply_add", t_M67, t_b0, v_diff[3][3], v_leaf[3][3]), reads=vr(t_b0)+vr(v_diff[3][3])+vr(v_leaf[3][3]), writes=vr(t_M67))
+                
+                t_M4567 = t_M67
+                emit_any_op(g, "valu", ("-", t_diff, t_M67, t_M45), reads=vr(t_M67)+vr(t_M45), writes=vr(t_diff))
+                emit_any_op(g, "valu", ("multiply_add", t_M4567, t_b1, t_diff, t_M45), reads=vr(t_b1)+vr(t_diff)+vr(t_M45), writes=vr(t_M4567))
+                
+                t_val_final = t_M01
+                emit_any_op(g, "valu", ("-", t_diff, t_M4567, t_M0123), reads=vr(t_M4567)+vr(t_M0123), writes=vr(t_diff))
+                emit_any_op(g, "valu", ("multiply_add", t_val_final, t_b2, t_diff, t_M0123), reads=vr(t_b2)+vr(t_diff)+vr(t_M0123), writes=vr(t_val_final))
+                
+                emit_any_op(g, "valu", ("^", v_val[g], v_val[g], t_val_final), reads=vr(v_val[g])+vr(t_val_final), writes=vr(v_val[g]))
+
+
             else:
-                gather_node(depth, state, gg, rnd)
-                xor_node(value, temp, gg, rnd)
+                node_addr = vg
+                node_val  = gA
+                emit_any_op(g, "valu", ("+", node_addr, v_forest_values_p, v_idx[g]),
+                        reads=vr(v_forest_values_p) + vr(v_idx[g]),
+                        writes=vr(node_addr))
+                for off in range(8):
+                    emit_op("load", ("load_offset", node_val, node_addr, off),
+                            reads=vr(node_addr),
+                            writes=[node_val + off])
+                emit_any_op(g, "valu", ("^", v_val[g], v_val[g], node_val),
+                        reads=vr(v_val[g]) + vr(node_val),
+                        writes=vr(v_val[g]))
 
-            emit_hash(value, temp, gg, rnd)
-
-            if rnd in (0, 1, 2):
-                emit_parity(workspace_bits[rnd], value, gg, rnd)
-            elif rnd in (11, 12, 13):
-                emit_parity(workspace_bits[rnd - 11], value, gg, rnd)
-            elif rnd in (3, 14) or 4 <= rnd <= 9:
-                emit_parity(temp, value, gg, rnd)
-                emit_madd(
-                    mirrors[state],
-                    mirrors[state],
-                    v_two,
-                    temp,
-                    tag="mirror_update",
-                    group=gg,
-                    round=rnd,
-                )
-
-        values_base = 7 + n_nodes + batch_size
-        emit_immediate(io_p0, values_base, "input_pointer")
-        emit_immediate(io_p1, values_base + VLEN, "input_pointer")
-        for pair in range(N_GROUPS // 2):
-            g0 = 2 * pair
-            g1 = g0 + 1
-            graph.emit(
-                "load",
-                ("vload", values[g0], io_p0),
-                reads=(io_p0,),
-                writes=_words(values[g0]),
-                tag="input_load",
-                group=g0,
-            )
-            graph.emit(
-                "load",
-                ("vload", values[g1], io_p1),
-                reads=(io_p1,),
-                writes=_words(values[g1]),
-                tag="input_load",
-                group=g1,
-            )
-            if pair != N_GROUPS // 2 - 1:
-                graph.emit(
-                    "alu",
-                    ("+", io_p0, io_p0, s_sixteen),
-                    reads=(io_p0, s_sixteen),
-                    writes=(io_p0,),
-                    tag="pointer_advance",
-                )
-                graph.emit(
-                    "alu",
-                    ("+", io_p1, io_p1, s_sixteen),
-                    reads=(io_p1, s_sixteen),
-                    writes=(io_p1,),
-                    tag="pointer_advance",
-                )
-
-        # Phase A acquires a workspace only through depth 3, then releases it
-        # while the group's core state advances through the seven deep rounds.
-        for gg in range(N_GROUPS):
-            workspace = WORKSPACE_ASSIGNMENT[gg]
-            for rnd in range(4):
-                process_round(gg, workspace, gg, rnd)
-            # A first-pass level-4 cache lookup must be emitted while this
-            # group's path bits still own the shared workspace.  The graph's
-            # WAR edges then release it at the earliest legal cycle.
-            if gg in FIRST_CACHE_SET:
-                process_round(gg, workspace, gg, 4)
-
-        for gg in range(N_GROUPS):
-            workspace = WORKSPACE_ASSIGNMENT[gg]
-            first_deep_round = 5 if gg in FIRST_CACHE_SET else 4
-            for rnd in range(first_deep_round, 11):
-                process_round(gg, workspace, gg, rnd)
-
-        # Phase B reacquires a workspace for the wrapped depth-0..4 traversal.
-        for gg in range(N_GROUPS):
-            workspace = WORKSPACE_ASSIGNMENT[gg]
-            for rnd in range(11, 16):
-                process_round(gg, workspace, gg, rnd)
-
-        emit_immediate(io_p0, values_base, "output_pointer")
-        emit_immediate(io_p1, values_base + VLEN, "output_pointer")
-        for pair in range(N_GROUPS // 2):
-            g0 = 2 * pair
-            g1 = g0 + 1
-            graph.emit(
-                "store",
-                ("vstore", io_p0, values[g0]),
-                reads=(io_p0,) + _words(values[g0]),
-                tag="output_store",
-                group=g0,
-            )
-            graph.emit(
-                "store",
-                ("vstore", io_p1, values[g1]),
-                reads=(io_p1,) + _words(values[g1]),
-                tag="output_store",
-                group=g1,
-            )
-            if pair != N_GROUPS // 2 - 1:
-                graph.emit(
-                    "alu",
-                    ("+", io_p0, io_p0, s_sixteen),
-                    reads=(io_p0, s_sixteen),
-                    writes=(io_p0,),
-                    tag="pointer_advance",
-                )
-                graph.emit(
-                    "alu",
-                    ("+", io_p1, io_p1, s_sixteen),
-                    reads=(io_p1, s_sixteen),
-                    writes=(io_p1,),
-                    tag="pointer_advance",
-                )
-
-        self.scratch_ptr = scratch.ptr
-        self.scratch_debug = scratch.debug
-
-        # Try several deterministic scheduling priorities.  Construction time
-        # is unscored, so select the shortest legal bundle sequence.
-        schedules = []
-        self.dag_ops = graph.ops
-        for policy in SCHEDULE_POLICIES:
-            schedules.append(self._schedule(graph.ops, policy))
-        reversed_ops = self._reverse_ops(graph.ops)
-        for policy in BACKWARD_POLICIES:
-            schedules.append(list(reversed(self._schedule(reversed_ops, policy))))
-        self.schedule_lengths = {
-            f"forward:{policy}": len(schedule)
-            for policy, schedule in zip(SCHEDULE_POLICIES, schedules)
-        }
-        self.schedule_lengths.update(
-            {
-                f"backward:{policy}": len(schedule)
-                for policy, schedule in zip(
-                    BACKWARD_POLICIES, schedules[len(SCHEDULE_POLICIES) :]
-                )
-            }
-        )
-        self.instrs = min(schedules, key=len)
-
-        self._validate_program()
-
-    @staticmethod
-    def _reverse_ops(ops: list[_Op]) -> list[_Op]:
-        n = len(ops)
-        original_children: list[dict[int, int]] = [dict() for _ in range(n)]
-        for child, op in enumerate(ops):
-            for parent, lag in op.parents.items():
-                old = original_children[parent].get(child)
-                if old is None or lag > old:
-                    original_children[parent][child] = lag
-
-        reversed_ops: list[_Op] = []
-        for old_index in range(n - 1, -1, -1):
-            parents = {
-                n - 1 - child: lag
-                for child, lag in original_children[old_index].items()
-            }
-            op = ops[old_index]
-            reversed_ops.append(
-                _Op(
-                    engine=op.engine,
-                    slot=op.slot,
-                    reads=op.reads,
-                    writes=op.writes,
-                    parents=parents,
-                    tag=op.tag,
-                    group=op.group,
-                    round=op.round,
-                )
-            )
-        return reversed_ops
-
-    @staticmethod
-    def _schedule(
-        ops: list[_Op], policy: int, return_cycles: bool = False
-    ) -> list[dict[str, list[tuple]]] | tuple[list[dict[str, list[tuple]]], list[int]]:
-        n = len(ops)
-        children: list[list[tuple[int, int]]] = [[] for _ in range(n)]
-        indegree = [0] * n
-        for child, op in enumerate(ops):
-            indegree[child] = len(op.parents)
-            for parent, lag in op.parents.items():
-                children[parent].append((child, lag))
-
-        # Latency critical height and a cheap downstream-work proxy.
-        height = [0] * n
-        reach = [0] * n
-        inf = 1_000_000
-        distance_to_load = [inf] * n
-        for node in range(n - 1, -1, -1):
-            if children[node]:
-                height[node] = max(lag + height[ch] for ch, lag in children[node])
-                reach[node] = min(
-                    1_000_000,
-                    len(children[node]) + sum(reach[ch] for ch, _ in children[node]),
-                )
-            if ops[node].engine == "load":
-                distance_to_load[node] = 0
-            elif children[node]:
-                distance_to_load[node] = min(
-                    (lag + distance_to_load[ch] for ch, lag in children[node]),
-                    default=inf,
-                )
-
-        engine_rank_sets = (
-            {"load": 4, "valu": 3, "alu": 2, "flow": 1, "store": 0},
-            {"valu": 4, "load": 3, "alu": 2, "flow": 1, "store": 0},
-            {"alu": 4, "load": 3, "valu": 2, "flow": 1, "store": 0},
-            {"flow": 4, "load": 3, "valu": 2, "alu": 1, "store": 0},
-        )
-        engine_rank = engine_rank_sets[policy % len(engine_rank_sets)]
-
-        def priority(i: int) -> tuple[int, int, int, int, int]:
-            op = ops[i]
-            if 82 <= policy <= 85:
-                group_offset = 64 if op.group < 0 else GROUP_PRIORITY_OFFSETS[op.group]
-                tag_offset = TAG_PRIORITY_OFFSETS.get(op.tag, 0)
-                return (
-                    height[i] + group_offset + tag_offset,
-                    reach[i] // 32,
-                    engine_rank[op.engine],
-                    group_offset,
-                    -op.group if op.group >= 0 else -i,
-                )
-            if policy == 81:
-                group_offset = 64 if op.group < 0 else GROUP_PRIORITY_OFFSETS[op.group]
-                round_offset = 0 if op.round < 0 else ROUND_PRIORITY_OFFSETS[op.round]
-                return (
-                    height[i] + group_offset + round_offset,
-                    reach[i] // 32,
-                    engine_rank[op.engine],
-                    group_offset,
-                    -op.group if op.group >= 0 else -i,
-                )
-            if policy == 80:
-                offset = 64 if op.group < 0 else GROUP_PRIORITY_OFFSETS[op.group]
-                return (
-                    height[i] + offset,
-                    reach[i] // 32,
-                    engine_rank[op.engine],
-                    offset,
-                    -op.group if op.group >= 0 else -i,
-                )
-            if policy >= 72:
-                pipeline_penalties = (32, 40, 48, 56, 64, 72, 80, 96)
-                penalty = pipeline_penalties[policy - 72]
-                if op.group < 0:
-                    pipeline_rank = -1
+            # --- Hash stages ---
+            for hi, (op1, val1, op2, op3, val3) in enumerate(HASH_STAGES):
+                if hi == 0:
+                    emit_any_op(g, "valu", ("multiply_add", v_val[g], v_val[g], v_hmul0, v_hash_val1[0]),
+                            reads=vr(v_val[g]) + vr(v_hmul0) + vr(v_hash_val1[0]),
+                            writes=vr(v_val[g]))
+                elif hi == 2:
+                    emit_any_op(g, "valu", ("multiply_add", v_val[g], v_val[g], v_hmul2, v_hash_val1[2]),
+                            reads=vr(v_val[g]) + vr(v_hmul2) + vr(v_hash_val1[2]),
+                            writes=vr(v_val[g]))
+                elif hi == 4:
+                    emit_any_op(g, "valu", ("multiply_add", v_val[g], v_val[g], v_hmul4, v_hash_val1[4]),
+                            reads=vr(v_val[g]) + vr(v_hmul4) + vr(v_hash_val1[4]),
+                            writes=vr(v_val[g]))
                 else:
-                    pipeline_rank = 2 * ((op.group % 16) // 4) + op.group // 16
-                return (
-                    height[i] - pipeline_rank * penalty,
-                    reach[i] // 32,
-                    engine_rank[op.engine],
-                    -pipeline_rank,
-                    -op.group if op.group >= 0 else -i,
-                )
-            if policy >= 48:
-                tuned_penalties = (56, 60, 62, 64, 66, 68)
-                penalty = tuned_penalties[(policy - 48) // 4]
-                cohort = -1 if op.group < 0 else op.group // 4
-                return (
-                    height[i] - cohort * penalty,
-                    reach[i] // 32,
-                    engine_rank[op.engine],
-                    -cohort,
-                    -op.group if op.group >= 0 else -i,
-                )
-            if policy >= 32:
-                variant = policy - 32
-                distance = distance_to_load[i]
-                finite = int(distance < inf)
-                if variant < 4:
-                    cohort_size = (3, 4, 5, 6)[variant]
-                    cohort = -1 if op.group < 0 else op.group // cohort_size
-                    return (
-                        finite,
-                        -distance if finite else -inf,
-                        -cohort,
-                        height[i],
-                        engine_rank[op.engine],
-                    )
-                multipliers = (1, 2, 3, 4, 6, 8, 10, 12, 16, 20, 24, 32)
-                multiplier = multipliers[variant - 4]
-                load_score = -multiplier * distance if finite else -inf
-                cohort = -1 if op.group < 0 else op.group // 4
-                return (
-                    height[i] + load_score,
-                    finite,
-                    -cohort,
-                    reach[i] // 32,
-                    engine_rank[op.engine],
-                )
-            if policy >= 16:
-                penalties = (8, 12, 16, 20, 24, 28, 32, 40, 48, 56, 64, 72, 80, 96, 112, 128)
-                penalty = penalties[policy - 16]
-                cohort = -1 if op.group < 0 else op.group // 4
-                return (
-                    height[i]
-                    - cohort * penalty
-                    + (0 if op.group < 0 else GROUP_FINE_OFFSETS[op.group]),
-                    reach[i] // 32,
-                    engine_rank[op.engine],
-                    -cohort,
-                    -op.group if op.group >= 0 else -i,
-                )
-            if policy >= 8:
-                cohort_sizes = (4, 5, 6, 7, 8, 10, 12, 16)
-                cohort_size = cohort_sizes[policy - 8]
-                # Setup is cohort -1.  Thereafter a small group cohort is
-                # allowed to run ahead into gathers while later cohorts keep
-                # flow/VALU busy with shallow rounds.
-                cohort = -1 if op.group < 0 else op.group // cohort_size
-                return (
-                    -cohort,
-                    height[i],
-                    reach[i] // 32,
-                    engine_rank[op.engine],
-                    -op.group if op.group >= 0 else -i,
-                )
-            # Policies 0..3 strongly honor latency; 4..7 allow cohort/order
-            # locality to break near-critical ties more aggressively.
-            h = height[i] if policy < 4 else height[i] // 2
-            group_bias = -op.group if op.group >= 0 else 0
-            if policy in (2, 6):
-                group_bias = -(op.group % 4) if op.group >= 0 else 0
-            id_bias = -i if policy % 2 == 0 else i
-            return (h, reach[i] // 32, engine_rank[op.engine], group_bias, id_bias)
+                    emit_any_op(g, "valu", (op3, vg, v_val[g], v_hash_val3[hi]),
+                            reads=vr(v_val[g]) + vr(v_hash_val3[hi]),
+                            writes=vr(vg))
+                    emit_any_op(g, "valu", (op1, gA, v_val[g], v_hash_val1[hi]),
+                            reads=vr(v_val[g]) + vr(v_hash_val1[hi]),
+                            writes=vr(gA))
+                    emit_any_op(g, "valu", (op2, v_val[g], gA, vg),
+                            reads=vr(gA) + vr(vg),
+                            writes=vr(v_val[g]))
 
-        earliest = [0] * n
-        heaps: dict[str, list[tuple[tuple[int, ...], int]]] = {
-            engine: [] for engine in ("alu", "valu", "load", "store", "flow")
-        }
+            # --- Index update (skip last round) ---
+            if rnd < rounds - 1:
+                emit_any_op(g, "valu", ("&", vg, v_val[g], v_one),
+                        reads=vr(v_val[g]) + vr(v_one), writes=vr(vg))
+                emit_any_op(g, "valu", ("+", vg, vg, v_one),
+                        reads=vr(vg) + vr(v_one), writes=vr(vg))
+                emit_any_op(g, "valu", ("multiply_add", v_idx[g], v_idx[g], v_two, vg),
+                        reads=vr(v_idx[g]) + vr(v_two) + vr(vg),
+                        writes=vr(v_idx[g]))
+                if depth == period - 1:
+                    emit_any_op(g, "valu", ("<", vg, v_idx[g], v_n_nodes),
+                            reads=vr(v_idx[g]) + vr(v_n_nodes), writes=vr(vg))
+                    emit_any_op(g, "valu", ("*", v_idx[g], v_idx[g], vg),
+                            reads=vr(v_idx[g]) + vr(vg), writes=vr(v_idx[g]))
 
-        def push_ready(i: int) -> None:
-            p = priority(i)
-            heapq.heappush(heaps[ops[i].engine], (tuple(-x for x in p), i))
+        for rnd in range(rounds):
+            for g in range(32):
+                emit_round_group(rnd, g)
 
-        future: dict[int, list[int]] = defaultdict(list)
-        for i, deg in enumerate(indegree):
-            if deg == 0:
-                push_ready(i)
 
-        scheduled = 0
-        scheduled_cycle = [-1] * n
-        cycle = 0
-        bundles: list[dict[str, list[tuple]]] = []
-        engine_order_variants = (
-            ("load", "valu", "alu", "flow", "store"),
-            ("valu", "load", "alu", "flow", "store"),
-            ("alu", "load", "valu", "flow", "store"),
-            ("flow", "load", "valu", "alu", "store"),
-        )
-        engine_order = engine_order_variants[policy % 4]
+        # Phase 3: Store values only (test only checks inp_values, not indices)
+        for g in range(32):
+            emit_op("store", ("vstore", s_addr_val[g], v_val[g]),
+                    reads=[s_addr_val[g]] + vr(v_val[g]), writes=[])
 
-        while scheduled < n:
-            for i in future.pop(cycle, ()):
-                push_ready(i)
+        # ---- Improved List Scheduler ----
+        def schedule_ops(ops):
+            n = len(ops)
+            last_writer = {}
+            readers = defaultdict(list)
+            parents = [set() for _ in range(n)]
+            children = [set() for _ in range(n)]
 
-            used = {engine: 0 for engine in heaps}
-            bundle: dict[str, list[tuple]] = defaultdict(list)
+            for i, op_i in enumerate(ops):
+                for r in op_i["reads"]:
+                    if r in last_writer:
+                        parents[i].add(last_writer[r])
+                for w in op_i["writes"]:
+                    if w in last_writer:
+                        parents[i].add(last_writer[w])
+                    for r_idx in readers[w]:
+                        parents[i].add(r_idx)
+                for r in op_i["reads"]:
+                    readers[r].append(i)
+                for w in op_i["writes"]:
+                    last_writer[w] = i
+                    readers[w] = []
 
-            made_progress = True
-            while made_progress:
-                made_progress = False
-                for engine in engine_order:
-                    if used[engine] >= SLOT_LIMITS[engine]:
-                        continue
-                    heap = heaps[engine]
-                    if not heap:
-                        continue
+            for i in range(n):
+                for p in parents[i]:
+                    children[p].add(i)
 
-                    deferred = []
-                    chosen = None
-                    while heap:
-                        item = heapq.heappop(heap)
-                        candidate = item[1]
-                        if earliest[candidate] <= cycle:
-                            chosen = candidate
-                            break
-                        deferred.append(item)
-                    for item in deferred:
-                        heapq.heappush(heap, item)
-                    if chosen is None:
-                        continue
+            # Count successors for tiebreaking
+            n_successors = [0] * n
+            for i in range(n):
+                n_successors[i] = len(children[i])
 
-                    op = ops[chosen]
-                    bundle[engine].append(op.slot)
-                    used[engine] += 1
-                    scheduled += 1
-                    scheduled_cycle[chosen] = cycle
-                    made_progress = True
+            # Critical path heights
+            in_deg_topo = [len(parents[i]) for i in range(n)]
+            heights = [0] * n
+            q = deque(i for i in range(n) if in_deg_topo[i] == 0)
+            topo = []
+            while q:
+                node = q.popleft()
+                topo.append(node)
+                for c in children[node]:
+                    in_deg_topo[c] -= 1
+                    if in_deg_topo[c] == 0:
+                        q.append(c)
+            for node in reversed(topo):
+                for c in children[node]:
+                    heights[node] = max(heights[node], heights[c] + 1)
 
-                    for child, lag in children[chosen]:
-                        indegree[child] -= 1
-                        ready_at = cycle + lag
-                        if ready_at > earliest[child]:
-                            earliest[child] = ready_at
-                        if indegree[child] == 0:
-                            if earliest[child] <= cycle:
-                                push_ready(child)
-                            else:
-                                future[earliest[child]].append(child)
+            # Greedy list scheduler
+            in_degree = [len(parents[i]) for i in range(n)]
+            ready = [i for i in range(n) if in_degree[i] == 0]
+            scheduled_cycle = [-1] * n
+            bundles = []
+            current_cycle = 0
 
-            if not bundle:
-                # All dependency lags are at most one, so this can occur only
-                # before the next real cycle.  Do not emit a zero-cost bundle.
-                cycle += 1
-                continue
-            bundles.append(dict(bundle))
-            cycle += 1
+            while ready:
+                cycle_ready = [
+                    idx for idx in ready
+                    if all(scheduled_cycle[p] < current_cycle for p in parents[idx])
+                ]
+                def priority(idx):
+                    eng = ops[idx]["engine"]
+                    eng_pri = 2 if eng == "load" else (1 if eng == "store" else 0)
+                    g_stagger = (31 - (ops[idx].get("g") or 0)) * 5
+                    return (heights[idx] + g_stagger, eng_pri, n_successors[idx])
+                cycle_ready.sort(key=priority, reverse=True)
 
-        if return_cycles:
-            return bundles, scheduled_cycle
-        return bundles
+                bundle = defaultdict(list)
+                scheduled_now = []
+                for op_idx in cycle_ready:
+                    eng = ops[op_idx]["engine"]
+                    if len(bundle[eng]) < SLOT_LIMITS.get(eng, 64):
+                        bundle[eng].append(ops[op_idx]["slot"])
+                        scheduled_now.append(op_idx)
 
-    @staticmethod
-    def _compact_schedule(ops: list[_Op], cycles: list[int]) -> list[dict[str, list[tuple]]]:
-        cycles = cycles.copy()
-        for _ in range(4):
-            horizon = max(cycles) + 1
-            usage = [defaultdict(int) for _ in range(horizon)]
-            for i, op in enumerate(ops):
-                usage[cycles[i]][op.engine] += 1
+                for op_idx in scheduled_now:
+                    ready.remove(op_idx)
+                    scheduled_cycle[op_idx] = current_cycle
+                    for child in children[op_idx]:
+                        in_degree[child] -= 1
+                        if in_degree[child] == 0:
+                            ready.append(child)
 
-            moved = 0
-            for i, op in enumerate(ops):
-                earliest = 0
-                if op.parents:
-                    earliest = max(cycles[parent] + lag for parent, lag in op.parents.items())
-                current = cycles[i]
-                for target in range(earliest, current):
-                    if usage[target][op.engine] < SLOT_LIMITS[op.engine]:
-                        usage[current][op.engine] -= 1
-                        usage[target][op.engine] += 1
-                        cycles[i] = target
-                        moved += 1
-                        break
-            if moved == 0:
-                break
+                bundles.append(dict(bundle) if bundle else {})
+                current_cycle += 1
 
-        horizon = max(cycles) + 1
-        bundles: list[dict[str, list[tuple]]] = [defaultdict(list) for _ in range(horizon)]
-        for i, op in enumerate(ops):
-            bundles[cycles[i]][op.engine].append(op.slot)
-        return [dict(bundle) for bundle in bundles if bundle]
+            return bundles
 
-    def _validate_program(self) -> None:
-        if self.scratch_ptr > SCRATCH_SIZE:
-            raise AssertionError(f"scratch overflow: {self.scratch_ptr}")
-        for pc, bundle in enumerate(self.instrs):
-            if not bundle:
-                raise AssertionError(f"empty bundle at pc={pc}")
-            for engine, slots in bundle.items():
-                if len(slots) > SLOT_LIMITS[engine]:
-                    raise AssertionError(
-                        f"{engine} overflow at pc={pc}: {len(slots)} > {SLOT_LIMITS[engine]}"
-                    )
+
+
+        scheduled_bundles = schedule_ops(ops)
+        for b in scheduled_bundles:
+            for eng, slots in b.items():
+                for slot in slots:
+                    asm.add(eng, slot)
+            asm.emit()
+
+        self.instrs.extend(asm.instrs)

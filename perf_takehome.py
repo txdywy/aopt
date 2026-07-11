@@ -33,6 +33,8 @@ class Assembler:
 
 
 class KernelBuilder:
+    NUM_OFFLOAD = 32
+
     def __init__(self):
         self.instrs = []
         self.scratch = {}
@@ -70,7 +72,7 @@ class KernelBuilder:
 
         # MAX_OPT_ROUND: rounds 0..MAX_OPT_ROUND-1 use preloaded tree values (no mem loads)
         # Round 3 (8-leaf tree) requires 5 temp regs -- use 3 optimized rounds only.
-        MAX_OPT_ROUND = 3
+        MAX_OPT_ROUND = 4
 
         # ---- Allocate all scratch registers up front ----
         init_vars = ["rounds", "n_nodes", "batch_size", "forest_height",
@@ -112,18 +114,16 @@ class KernelBuilder:
         v_hmul2 = self.alloc_scratch("v_hmul2", 8)
         v_hmul4 = self.alloc_scratch("v_hmul4", 8)
 
-        # Pre-allocate scratch_const slots for g*8 offsets (g=1..31)
-        # These will be loaded in batches
-        s_g8_offsets = {}  # g -> scratch addr
-        for g in range(1, 32):
-            s_g8_offsets[g] = self.alloc_scratch(f"s_g8_{g}")
+        s_g8_offsets = {}
 
-        # Tree leaves: n_leaves = 2^MAX_OPT_ROUND - 1 = 7
+        # Tree leaves: n_leaves = 2^MAX_OPT_ROUND - 1 = 15
         n_leaves = (1 << MAX_OPT_ROUND) - 1
         s_leaves = [self.alloc_scratch(f"s_leaf_{i}") for i in range(n_leaves)]
 
         s_three = self.alloc_scratch("s_three")
         v_three = self.alloc_scratch("v_three", 8)
+        s_seven = self.alloc_scratch("s_seven")
+        v_seven = self.alloc_scratch("v_seven", 8)
 
         # Leaf diffs: r=1: 1 diff, r=2: 2 diffs
         s_diffs = {}
@@ -143,14 +143,27 @@ class KernelBuilder:
             for k in range(len(s_diffs[r])):
                 v_diff[r].append(self.alloc_scratch(f"vd_{r}_{k}", 8))
 
-        # Per-group private temp
-        v_tmp = [self.alloc_scratch(f"v_tmp_{g}", 8) for g in range(32)]
+        s_diff2_base  = self.alloc_scratch("s_diff2_base")
+        s_diff2_slope = self.alloc_scratch("s_diff2_slope")
+        v_diff2_base  = self.alloc_scratch("v_diff2_base", 8)
+        v_diff2_slope = self.alloc_scratch("v_diff2_slope", 8)
 
-        # Global temp pool: gA unique per group (32 regs) + gB shared (20 regs)
-        NG_A = 32
-        NG_B = 16
+        # Per-group private temp
+        v_tmp = [self.alloc_scratch(f"v_tmp_{g}", 8) for g in range(16)]
+
+        # Global temp pool: gA unique per group (32 regs) + gB shared (16 regs)
+        NG_A = 16
+        NG_B = 8
+        NG_C = 4
+        NG_D = 4
+        NG_E = 4
+        NG_F = 4
         v_glob_A = [self.alloc_scratch(f"vgA_{ti}", 8) for ti in range(NG_A)]
         v_glob_B = [self.alloc_scratch(f"vgB_{ti}", 8) for ti in range(NG_B)]
+        v_glob_C = [self.alloc_scratch(f"vgC_{ti}", 8) for ti in range(NG_C)]
+        v_glob_D = [self.alloc_scratch(f"vgD_{ti}", 8) for ti in range(NG_D)]
+        v_glob_E = [self.alloc_scratch(f"vgE_{ti}", 8) for ti in range(NG_E)]
+        v_glob_F = [self.alloc_scratch(f"vgF_{ti}", 8) for ti in range(NG_F)]
 
         # Check scratch budget
         assert self.scratch_ptr <= SCRATCH_SIZE, f"Scratch overflow: {self.scratch_ptr}"
@@ -222,6 +235,8 @@ class KernelBuilder:
         asm.add("load", ("const", s_m4, 9))
         asm.add("load", ("const", s_three, 3))
         asm.emit()
+        asm.add("load", ("const", s_seven, 7))
+        asm.emit()
 
         # Step 3: Load hash stage constants (6 stages, 3 with 2 constants each = 9 constants)
         hash_consts_batch = []
@@ -282,96 +297,160 @@ class KernelBuilder:
         asm.add("valu", ("vbroadcast", v_hmul2, s_m2))
         asm.add("valu", ("vbroadcast", v_hmul4, s_m4))
         asm.add("valu", ("vbroadcast", v_three, s_three))
+        asm.add("valu", ("vbroadcast", v_seven, s_seven))
         asm.emit()
 
-        # Step 5: Initialize loop counter early & Pause
         asm.add("load", ("const", s_loop_i, 0))
-        asm.add("flow", ("pause",))
         asm.emit()
 
-        # Step 6 & 7: Interleave loading offsets with group address calculations.
-        # We load offsets in pairs, and since ALU has 12 slots, we can compute addresses
-        # as soon as their offset constants are loaded.
-        # Cycle 0: Load offsets for g=1,2
-        asm.add("load", ("const", s_g8_offsets[1], 8))
-        asm.add("load", ("const", s_g8_offsets[2], 16))
-        # g=0 address calculation requires no offsets
+        # Load 8 into s_tmp
+        asm.add("load", ("const", s_tmp, 8))
         asm.add("alu", ("+", s_addr_idx[0], s_vars["inp_indices_p"], s_zero))
         asm.add("alu", ("+", s_addr_val[0], s_vars["inp_values_p"], s_zero))
         asm.emit()
 
-        # Iterate and pipeline: load offsets for g, g+1 while calculating g-2, g-1 addresses
-        for g in range(1, 31, 2):
-            # Load offsets for g+2, g+3 (if within range)
-            if g + 2 < 32:
-                asm.add("load", ("const", s_g8_offsets[g + 2], (g + 2) * 8))
-            if g + 3 < 32:
-                asm.add("load", ("const", s_g8_offsets[g + 3], (g + 3) * 8))
+        s_c8   = s_tmp
+        s_c16  = s_tmp2
+        s_c32  = self.alloc_scratch("s_c32")
+        s_c64  = self.alloc_scratch("s_c64")
+        s_c128 = self.alloc_scratch("s_c128")
+        asm.add("load", ("const", s_c16, 16))
+        asm.add("load", ("const", s_c32, 32))
+        asm.emit()
+        asm.add("load", ("const", s_c64, 64))
+        asm.add("load", ("const", s_c128, 128))
+        asm.emit()
+
+        # Cycle 1: 5 groups
+        for g, c in [(1, s_c8), (2, s_c16), (4, s_c32), (8, s_c64), (16, s_c128)]:
+            asm.add("alu", ("+", s_addr_idx[g], s_addr_idx[0], c))
+            asm.add("alu", ("+", s_addr_val[g], s_addr_val[0], c))
+        asm.emit()
+
+        # Cycle 2: 6 groups
+        for g, base, c in [(3, 2, s_c8), (5, 4, s_c8), (6, 4, s_c16),
+                           (9, 8, s_c8), (10, 8, s_c16), (12, 8, s_c32)]:
+            asm.add("alu", ("+", s_addr_idx[g], s_addr_idx[base], c))
+            asm.add("alu", ("+", s_addr_val[g], s_addr_val[base], c))
+        asm.emit()
+
+        # Cycle 3: 6 groups
+        for g, base, c in [(17, 16, s_c8), (18, 16, s_c16), (20, 16, s_c32), (24, 16, s_c64),
+                           (7, 6, s_c8), (11, 10, s_c8)]:
+            asm.add("alu", ("+", s_addr_idx[g], s_addr_idx[base], c))
+            asm.add("alu", ("+", s_addr_val[g], s_addr_val[base], c))
+        asm.emit()
+
+        # Cycle 4: 6 groups
+        for g, base, c in [(13, 12, s_c8), (14, 12, s_c16), (19, 18, s_c8),
+                           (21, 20, s_c8), (22, 20, s_c16), (25, 24, s_c8)]:
+            asm.add("alu", ("+", s_addr_idx[g], s_addr_idx[base], c))
+            asm.add("alu", ("+", s_addr_val[g], s_addr_val[base], c))
+        asm.emit()
+
+        # Cycle 5: 4 groups
+        for g, base, c in [(26, 24, s_c16), (28, 24, s_c32), (15, 14, s_c8), (23, 22, s_c8)]:
+            asm.add("alu", ("+", s_addr_idx[g], s_addr_idx[base], c))
+            asm.add("alu", ("+", s_addr_val[g], s_addr_val[base], c))
+        asm.emit()
+
+        # Cycle 6: 3 groups
+        for g, base, c in [(27, 26, s_c8), (29, 28, s_c8), (30, 28, s_c16)]:
+            asm.add("alu", ("+", s_addr_idx[g], s_addr_idx[base], c))
+            asm.add("alu", ("+", s_addr_val[g], s_addr_val[base], c))
+        asm.emit()
+
+        # Cycle 7: 1 group
+        asm.add("alu", ("+", s_addr_idx[31], s_addr_idx[30], s_c8))
+        asm.add("alu", ("+", s_addr_val[31], s_addr_val[30], s_c8))
+        asm.emit()
+
+        if MAX_OPT_ROUND > 0:
+            # Step 8: Load tree leaf values from memory
+            # Leaf 0: load directly from forest_values_p
+            asm.add("load", ("load", s_leaves[0], s_vars["forest_values_p"]))
+            asm.emit()
+            # Leaves 1..6: add_imm (flow) + load
+            # Since add_imm writes to s_tmp and load reads from s_tmp, they cannot be in the same cycle.
+            # But we can overlap load of leaf i-1 with add_imm of leaf i!
+            # Cycle 1: add_imm for leaf 1 -> writes s_tmp
+            if n_leaves > 1:
+                asm.add("flow", ("add_imm", s_tmp, s_vars["forest_values_p"], 1))
+                asm.emit()
+            # Cycle 2..: load leaf i-1 from s_tmp, add_imm for leaf i to s_tmp
+            # Since s_tmp is read by load (using pre-cycle value) and written by add_imm (effective at end of cycle),
+            # this is perfectly safe in VLIW!
+            for i in range(2, n_leaves):
+                asm.add("flow", ("add_imm", s_tmp, s_vars["forest_values_p"], i))
+                asm.add("load", ("load", s_leaves[i-1], s_tmp))
+                asm.emit()
+            # After the loop, the last cycle of the loop did:
+            #   add_imm for leaf 6 (n_leaves-1) -> writes s_tmp
+            #   load leaf 5 (s_leaves[5]) from s_tmp_old
+            # So s_tmp now contains the address for leaf 6.
+            # We just need to load leaf 6 (s_leaves[6]) from s_tmp:
+            if n_leaves > 1:
+                asm.add("load", ("load", s_leaves[n_leaves-1], s_tmp))
+                asm.emit()
+
+            # Compute diffs and group broadcasts:
+            # Diffs:
+            # r=1: s_d_1_0 = s_leaf_2 - s_leaf_1
+            # r=2: s_d_2_0 = s_leaf_4 - s_leaf_3, s_d_2_1 = s_leaf_6 - s_leaf_5
+            if MAX_OPT_ROUND >= 2:
+                asm.add("alu", ("-", s_diffs[1][0], s_leaves[2], s_leaves[1]))
+            if MAX_OPT_ROUND >= 3:
+                asm.add("alu", ("-", s_diffs[2][0], s_leaves[4], s_leaves[3]))
+                asm.add("alu", ("-", s_diffs[2][1], s_leaves[6], s_leaves[5]))
+                asm.add("alu", ("-", s_diff2_base, s_leaves[5], s_leaves[3]))
+                asm.emit()
+                asm.add("alu", ("-", s_diff2_slope, s_diffs[2][1], s_diffs[2][0]))
             
-            # Calculate addresses for g, g+1 (which are ready)
-            asm.add("alu", ("+", s_addr_idx[g], s_vars["inp_indices_p"], s_g8_offsets[g]))
-            asm.add("alu", ("+", s_addr_val[g], s_vars["inp_values_p"], s_g8_offsets[g]))
-            if g + 1 < 32:
-                asm.add("alu", ("+", s_addr_idx[g + 1], s_vars["inp_indices_p"], s_g8_offsets[g + 1]))
-                asm.add("alu", ("+", s_addr_val[g + 1], s_vars["inp_values_p"], s_g8_offsets[g + 1]))
+            if MAX_OPT_ROUND >= 4:
+                asm.add("alu", ("-", s_diffs[3][0], s_leaves[8], s_leaves[7]))
+                asm.add("alu", ("-", s_diffs[3][1], s_leaves[10], s_leaves[9]))
+                asm.emit()
+                asm.add("alu", ("-", s_diffs[3][2], s_leaves[12], s_leaves[11]))
+                asm.add("alu", ("-", s_diffs[3][3], s_leaves[14], s_leaves[13]))
             asm.emit()
 
-        # Final cleanup for g=31 address calculation
-        asm.add("alu", ("+", s_addr_idx[31], s_vars["inp_indices_p"], s_g8_offsets[31]))
-        asm.add("alu", ("+", s_addr_val[31], s_vars["inp_values_p"], s_g8_offsets[31]))
-        asm.emit()
-
-        # Step 8: Load tree leaf values from memory
-        # Leaf 0: load directly from forest_values_p
-        asm.add("load", ("load", s_leaves[0], s_vars["forest_values_p"]))
-        asm.emit()
-        # Leaves 1..6: add_imm (flow) + load
-        # Since add_imm writes to s_tmp and load reads from s_tmp, they cannot be in the same cycle.
-        # But we can overlap load of leaf i-1 with add_imm of leaf i!
-        # Cycle 1: add_imm for leaf 1 -> writes s_tmp
-        asm.add("flow", ("add_imm", s_tmp, s_vars["forest_values_p"], 1))
-        asm.emit()
-        # Cycle 2..: load leaf i-1 from s_tmp, add_imm for leaf i to s_tmp
-        # Since s_tmp is read by load (using pre-cycle value) and written by add_imm (effective at end of cycle),
-        # this is perfectly safe in VLIW!
-        for i in range(2, n_leaves):
-            asm.add("flow", ("add_imm", s_tmp, s_vars["forest_values_p"], i))
-            asm.add("load", ("load", s_leaves[i-1], s_tmp))
+            for i in range(min(4, n_leaves)):
+                r_val = 0 if i == 0 else (1 if i <= 2 else 2)
+                k_val = 0 if i == 0 else (i - 1 if i <= 2 else i - 3)
+                asm.add("valu", ("vbroadcast", v_leaf[r_val][k_val], s_leaves[i]))
             asm.emit()
-        # After the loop, the last cycle of the loop did:
-        #   add_imm for leaf 6 (n_leaves-1) -> writes s_tmp
-        #   load leaf 5 (s_leaves[5]) from s_tmp_old
-        # So s_tmp now contains the address for leaf 6.
-        # We just need to load leaf 6 (s_leaves[6]) from s_tmp:
-        asm.add("load", ("load", s_leaves[n_leaves-1], s_tmp))
-        asm.emit()
 
-        # Compute diffs and group broadcasts:
-        # Diffs:
-        # r=1: s_d_1_0 = s_leaf_2 - s_leaf_1
-        # r=2: s_d_2_0 = s_leaf_4 - s_leaf_3, s_d_2_1 = s_leaf_6 - s_leaf_5
-        asm.add("alu", ("-", s_diffs[1][0], s_leaves[2], s_leaves[1]))
-        asm.add("alu", ("-", s_diffs[2][0], s_leaves[4], s_leaves[3]))
-        asm.add("alu", ("-", s_diffs[2][1], s_leaves[6], s_leaves[5]))
-        
-        # We can broadcast leaf 0..6 immediately since they are fully loaded.
-        # Since SLOT_LIMITS['valu'] is 6, we must split the 7 broadcasts across two cycles (e.g. 4 and 3).
-        for i in range(4):
-            r_val = 0 if i == 0 else (1 if i <= 2 else 2)
-            k_val = 0 if i == 0 else (i - 1 if i <= 2 else i - 3)
-            asm.add("valu", ("vbroadcast", v_leaf[r_val][k_val], s_leaves[i]))
-        asm.emit()
+            for i in range(4, min(7, n_leaves)):
+                r_val = 2
+                k_val = i - 3
+                asm.add("valu", ("vbroadcast", v_leaf[r_val][k_val], s_leaves[i]))
+            if MAX_OPT_ROUND >= 4:
+                asm.add("valu", ("vbroadcast", v_leaf[3][0], s_leaves[7]))
+            asm.emit()
 
-        for i in range(4, 7):
-            r_val = 2
-            k_val = i - 3
-            asm.add("valu", ("vbroadcast", v_leaf[r_val][k_val], s_leaves[i]))
-        asm.emit()
+            if MAX_OPT_ROUND >= 4:
+                asm.add("valu", ("vbroadcast", v_leaf[3][1], s_leaves[9]))
+                asm.add("valu", ("vbroadcast", v_leaf[3][2], s_leaves[11]))
+                asm.add("valu", ("vbroadcast", v_leaf[3][3], s_leaves[13]))
+            if MAX_OPT_ROUND >= 2:
+                asm.add("valu", ("vbroadcast", v_diff[1][0], s_diffs[1][0]))
+            asm.emit()
 
-        # Broadcast the diffs (which are ready in the next cycle)
-        asm.add("valu", ("vbroadcast", v_diff[1][0], s_diffs[1][0]))
-        asm.add("valu", ("vbroadcast", v_diff[2][0], s_diffs[2][0]))
-        asm.add("valu", ("vbroadcast", v_diff[2][1], s_diffs[2][1]))
+            if MAX_OPT_ROUND >= 3:
+                asm.add("valu", ("vbroadcast", v_diff[2][0], s_diffs[2][0]))
+                asm.add("valu", ("vbroadcast", v_diff[2][1], s_diffs[2][1]))
+                asm.add("valu", ("vbroadcast", v_diff2_base, s_diff2_base))
+                asm.add("valu", ("vbroadcast", v_diff2_slope, s_diff2_slope))
+            asm.emit()
+
+            if MAX_OPT_ROUND >= 4:
+                asm.add("valu", ("vbroadcast", v_diff[3][0], s_diffs[3][0]))
+                asm.add("valu", ("vbroadcast", v_diff[3][1], s_diffs[3][1]))
+                asm.add("valu", ("vbroadcast", v_diff[3][2], s_diffs[3][2]))
+                asm.add("valu", ("vbroadcast", v_diff[3][3], s_diffs[3][3]))
+            asm.emit()
+
+        asm.add("flow", ("pause",))
         asm.emit()
 
         # ---- BUILD OP LIST FOR LIST SCHEDULING ----
@@ -380,6 +459,16 @@ class KernelBuilder:
 
         def emit_op(engine, slot, reads, writes):
             ops.append({"engine": engine, "slot": slot, "reads": reads, "writes": writes, "g": current_group})
+
+        def emit_any_op(g, engine, op, reads, writes):
+            offload_ops = {"^", "-", "&", ">>", "+", "<", "*"}
+            op_name = op[0]
+            if engine == "valu" and op_name in offload_ops:
+                # Always offload simple ops to ALU!
+                # Wait, ALU only has 12 slots, but it has plenty of space.
+                emit_op("alu", op, reads, writes)
+            else:
+                emit_op(engine, op, reads, writes)
 
         def vr(reg):
             return list(range(reg, reg + 8))
@@ -403,100 +492,126 @@ class KernelBuilder:
             nonlocal current_group
             current_group = g
             depth = rnd % period
-            vg = v_tmp[g]
-            gA = v_glob_A[g]
+            vg = v_tmp[g % 16]
+            gA = v_glob_A[g % NG_A]
             gB = v_glob_B[g % NG_B]
 
             if depth == 0:
-                emit_op("valu", ("^", v_val[g], v_val[g], v_leaf[0][0]),
+                emit_any_op(g, "valu", ("^", v_val[g], v_val[g], v_leaf[0][0]),
                         reads=vr(v_val[g]) + vr(v_leaf[0][0]),
                         writes=vr(v_val[g]))
 
             elif depth == 1:
-                emit_op("valu", ("-", gA, v_idx[g], v_one),
+                emit_any_op(g, "valu", ("-", gA, v_idx[g], v_one),
                         reads=vr(v_idx[g]) + vr(v_one), writes=vr(gA))
-                emit_op("valu", ("&", vg, gA, v_one),
+                emit_any_op(g, "valu", ("&", vg, gA, v_one),
                         reads=vr(gA) + vr(v_one), writes=vr(vg))
-                emit_op("valu", ("multiply_add", gA, vg, v_diff[1][0], v_leaf[1][0]),
+                emit_any_op(g, "valu", ("multiply_add", gA, vg, v_diff[1][0], v_leaf[1][0]),
                         reads=vr(vg) + vr(v_diff[1][0]) + vr(v_leaf[1][0]),
                         writes=vr(gA))
-                emit_op("valu", ("^", v_val[g], v_val[g], gA),
+                emit_any_op(g, "valu", ("^", v_val[g], v_val[g], gA),
                         reads=vr(v_val[g]) + vr(gA), writes=vr(v_val[g]))
 
             elif depth == 2:
-                emit_op("valu", ("-", gA, v_idx[g], v_three),
-                        reads=vr(v_idx[g]) + vr(v_three), writes=vr(gA))
-                emit_op("valu", (">>", gB, gA, v_one),
-                        reads=vr(gA) + vr(v_one), writes=vr(gB))
-                emit_op("valu", ("&", vg, gA, v_one),
-                        reads=vr(gA) + vr(v_one), writes=vr(vg))
-                emit_op("valu", ("&", gA, gB, v_one),
-                        reads=vr(gB) + vr(v_one), writes=vr(gA))
-                emit_op("valu", ("multiply_add", gB, vg, v_diff[2][0], v_leaf[2][0]),
-                        reads=vr(vg) + vr(v_diff[2][0]) + vr(v_leaf[2][0]),
-                        writes=vr(gB))
-                emit_op("valu", ("multiply_add", vg, vg, v_diff[2][1], v_leaf[2][2]),
-                        reads=vr(vg) + vr(v_diff[2][1]) + vr(v_leaf[2][2]),
-                        writes=vr(vg))
-                emit_op("valu", ("-", vg, vg, gB),
-                        reads=vr(vg) + vr(gB), writes=vr(vg))
-                emit_op("valu", ("multiply_add", gA, gA, vg, gB),
-                        reads=vr(gA) + vr(vg) + vr(gB), writes=vr(gA))
-                emit_op("valu", ("^", v_val[g], v_val[g], gA),
-                        reads=vr(v_val[g]) + vr(gA), writes=vr(v_val[g]))
+                emit_any_op(g, "valu", ("-", gA, v_idx[g], v_three), reads=vr(v_idx[g]) + vr(v_three), writes=vr(gA))
+                emit_any_op(g, "valu", (">>", gB, gA, v_one), reads=vr(gA) + vr(v_one), writes=vr(gB))
+                emit_any_op(g, "valu", ("&", vg, gA, v_one), reads=vr(gA) + vr(v_one), writes=vr(vg))
+                emit_any_op(g, "valu", ("multiply_add", gA, vg, v_diff[2][0], v_leaf[2][0]), reads=vr(vg) + vr(v_diff[2][0]) + vr(v_leaf[2][0]), writes=vr(gA))
+                emit_any_op(g, "valu", ("multiply_add", vg, vg, v_diff2_slope, v_diff2_base), reads=vr(vg) + vr(v_diff2_slope) + vr(v_diff2_base), writes=vr(vg))
+                emit_any_op(g, "valu", ("multiply_add", gA, gB, vg, gA), reads=vr(gB) + vr(vg) + vr(gA), writes=vr(gA))
+                emit_any_op(g, "valu", ("^", v_val[g], v_val[g], gA), reads=vr(v_val[g]) + vr(gA), writes=vr(v_val[g]))
+            elif depth == 3:
+                t_b0 = vg
+                t_b1 = gA
+                t_b2 = gB
+                t_M01 = v_glob_C[g % NG_C]
+                t_M23 = v_glob_D[g % NG_D]
+                t_M0123 = v_glob_E[g % NG_E]
+                t_diff = v_glob_F[g % NG_F]
+                
+                emit_any_op(g, "valu", ("-", t_b0, v_idx[g], v_seven), reads=vr(v_idx[g])+vr(v_seven), writes=vr(t_b0))
+                emit_any_op(g, "valu", ("&", t_b0, t_b0, v_one), reads=vr(t_b0)+vr(v_one), writes=vr(t_b0))
+                emit_any_op(g, "valu", ("-", t_b1, v_idx[g], v_seven), reads=vr(v_idx[g])+vr(v_seven), writes=vr(t_b1))
+                emit_any_op(g, "valu", (">>", t_b1, t_b1, v_one), reads=vr(t_b1)+vr(v_one), writes=vr(t_b1))
+                emit_any_op(g, "valu", ("&", t_b1, t_b1, v_one), reads=vr(t_b1)+vr(v_one), writes=vr(t_b1))
+                emit_any_op(g, "valu", ("-", t_b2, v_idx[g], v_seven), reads=vr(v_idx[g])+vr(v_seven), writes=vr(t_b2))
+                emit_any_op(g, "valu", (">>", t_b2, t_b2, v_two), reads=vr(t_b2)+vr(v_two), writes=vr(t_b2))
+                emit_any_op(g, "valu", ("&", t_b2, t_b2, v_one), reads=vr(t_b2)+vr(v_one), writes=vr(t_b2))
+                
+                emit_any_op(g, "valu", ("multiply_add", t_M01, t_b0, v_diff[3][0], v_leaf[3][0]), reads=vr(t_b0)+vr(v_diff[3][0])+vr(v_leaf[3][0]), writes=vr(t_M01))
+                emit_any_op(g, "valu", ("multiply_add", t_M23, t_b0, v_diff[3][1], v_leaf[3][1]), reads=vr(t_b0)+vr(v_diff[3][1])+vr(v_leaf[3][1]), writes=vr(t_M23))
+                
+                emit_any_op(g, "valu", ("-", t_diff, t_M23, t_M01), reads=vr(t_M23)+vr(t_M01), writes=vr(t_diff))
+                emit_any_op(g, "valu", ("multiply_add", t_M0123, t_b1, t_diff, t_M01), reads=vr(t_b1)+vr(t_diff)+vr(t_M01), writes=vr(t_M0123))
+                
+                t_M45 = t_M01
+                t_M67 = t_M23
+                emit_any_op(g, "valu", ("multiply_add", t_M45, t_b0, v_diff[3][2], v_leaf[3][2]), reads=vr(t_b0)+vr(v_diff[3][2])+vr(v_leaf[3][2]), writes=vr(t_M45))
+                emit_any_op(g, "valu", ("multiply_add", t_M67, t_b0, v_diff[3][3], v_leaf[3][3]), reads=vr(t_b0)+vr(v_diff[3][3])+vr(v_leaf[3][3]), writes=vr(t_M67))
+                
+                t_M4567 = t_M67
+                emit_any_op(g, "valu", ("-", t_diff, t_M67, t_M45), reads=vr(t_M67)+vr(t_M45), writes=vr(t_diff))
+                emit_any_op(g, "valu", ("multiply_add", t_M4567, t_b1, t_diff, t_M45), reads=vr(t_b1)+vr(t_diff)+vr(t_M45), writes=vr(t_M4567))
+                
+                t_val_final = t_M01
+                emit_any_op(g, "valu", ("-", t_diff, t_M4567, t_M0123), reads=vr(t_M4567)+vr(t_M0123), writes=vr(t_diff))
+                emit_any_op(g, "valu", ("multiply_add", t_val_final, t_b2, t_diff, t_M0123), reads=vr(t_b2)+vr(t_diff)+vr(t_M0123), writes=vr(t_val_final))
+                
+                emit_any_op(g, "valu", ("^", v_val[g], v_val[g], t_val_final), reads=vr(v_val[g])+vr(t_val_final), writes=vr(v_val[g]))
+
 
             else:
                 node_addr = vg
                 node_val  = gA
-                emit_op("valu", ("+", node_addr, v_forest_values_p, v_idx[g]),
+                emit_any_op(g, "valu", ("+", node_addr, v_forest_values_p, v_idx[g]),
                         reads=vr(v_forest_values_p) + vr(v_idx[g]),
                         writes=vr(node_addr))
                 for off in range(8):
                     emit_op("load", ("load_offset", node_val, node_addr, off),
                             reads=vr(node_addr),
                             writes=[node_val + off])
-                emit_op("valu", ("^", v_val[g], v_val[g], node_val),
+                emit_any_op(g, "valu", ("^", v_val[g], v_val[g], node_val),
                         reads=vr(v_val[g]) + vr(node_val),
                         writes=vr(v_val[g]))
 
             # --- Hash stages ---
             for hi, (op1, val1, op2, op3, val3) in enumerate(HASH_STAGES):
                 if hi == 0:
-                    emit_op("valu", ("multiply_add", v_val[g], v_val[g], v_hmul0, v_hash_val1[0]),
+                    emit_any_op(g, "valu", ("multiply_add", v_val[g], v_val[g], v_hmul0, v_hash_val1[0]),
                             reads=vr(v_val[g]) + vr(v_hmul0) + vr(v_hash_val1[0]),
                             writes=vr(v_val[g]))
                 elif hi == 2:
-                    emit_op("valu", ("multiply_add", v_val[g], v_val[g], v_hmul2, v_hash_val1[2]),
+                    emit_any_op(g, "valu", ("multiply_add", v_val[g], v_val[g], v_hmul2, v_hash_val1[2]),
                             reads=vr(v_val[g]) + vr(v_hmul2) + vr(v_hash_val1[2]),
                             writes=vr(v_val[g]))
                 elif hi == 4:
-                    emit_op("valu", ("multiply_add", v_val[g], v_val[g], v_hmul4, v_hash_val1[4]),
+                    emit_any_op(g, "valu", ("multiply_add", v_val[g], v_val[g], v_hmul4, v_hash_val1[4]),
                             reads=vr(v_val[g]) + vr(v_hmul4) + vr(v_hash_val1[4]),
                             writes=vr(v_val[g]))
                 else:
-                    emit_op("valu", (op3, vg, v_val[g], v_hash_val3[hi]),
+                    emit_any_op(g, "valu", (op3, vg, v_val[g], v_hash_val3[hi]),
                             reads=vr(v_val[g]) + vr(v_hash_val3[hi]),
                             writes=vr(vg))
-                    emit_op("valu", (op1, gA, v_val[g], v_hash_val1[hi]),
+                    emit_any_op(g, "valu", (op1, gA, v_val[g], v_hash_val1[hi]),
                             reads=vr(v_val[g]) + vr(v_hash_val1[hi]),
                             writes=vr(gA))
-                    emit_op("valu", (op2, v_val[g], gA, vg),
+                    emit_any_op(g, "valu", (op2, v_val[g], gA, vg),
                             reads=vr(gA) + vr(vg),
                             writes=vr(v_val[g]))
 
             # --- Index update (skip last round) ---
             if rnd < rounds - 1:
-                emit_op("valu", ("&", vg, v_val[g], v_one),
+                emit_any_op(g, "valu", ("&", vg, v_val[g], v_one),
                         reads=vr(v_val[g]) + vr(v_one), writes=vr(vg))
-                emit_op("valu", ("+", vg, vg, v_one),
+                emit_any_op(g, "valu", ("+", vg, vg, v_one),
                         reads=vr(vg) + vr(v_one), writes=vr(vg))
-                emit_op("valu", ("multiply_add", v_idx[g], v_idx[g], v_two, vg),
+                emit_any_op(g, "valu", ("multiply_add", v_idx[g], v_idx[g], v_two, vg),
                         reads=vr(v_idx[g]) + vr(v_two) + vr(vg),
                         writes=vr(v_idx[g]))
                 if depth == period - 1:
-                    emit_op("valu", ("<", vg, v_idx[g], v_n_nodes),
+                    emit_any_op(g, "valu", ("<", vg, v_idx[g], v_n_nodes),
                             reads=vr(v_idx[g]) + vr(v_n_nodes), writes=vr(vg))
-                    emit_op("valu", ("*", v_idx[g], v_idx[g], vg),
+                    emit_any_op(g, "valu", ("*", v_idx[g], v_idx[g], vg),
                             reads=vr(v_idx[g]) + vr(vg), writes=vr(v_idx[g]))
 
         for rnd in range(rounds):

@@ -376,15 +376,17 @@ class KernelBuilder:
 
         # ---- BUILD OP LIST FOR LIST SCHEDULING ----
         ops = []
+        current_group = None
 
         def emit_op(engine, slot, reads, writes):
-            ops.append({"engine": engine, "slot": slot, "reads": reads, "writes": writes})
+            ops.append({"engine": engine, "slot": slot, "reads": reads, "writes": writes, "g": current_group})
 
         def vr(reg):
             return list(range(reg, reg + 8))
 
         # Phase 1: Load all indices and values
         for g in range(32):
+            current_group = g
             emit_op("load", ("vload", v_idx[g], s_addr_idx[g]),
                     reads=[s_addr_idx[g]], writes=vr(v_idx[g]))
             emit_op("load", ("vload", v_val[g], s_addr_val[g]),
@@ -394,14 +396,12 @@ class KernelBuilder:
         # since idx wraps to the root every forest_height+1 rounds regardless of
         # data. So rounds that land on depth 0/1/2 can all reuse the preloaded
         # leaf/diff registers, not just the literal first few rounds.
-        #
-        # KEY OPTIMIZATION: Interleave optimized (VALU-only) and non-optimized
-        # (load+VALU) rounds so the scheduler can overlap VALU work from
-        # optimized rounds into load-idle slots during non-optimized rounds.
         period = forest_height + 1
 
         def emit_round_group(rnd, g):
             """Emit all ops for one group in one round."""
+            nonlocal current_group
+            current_group = g
             depth = rnd % period
             vg = v_tmp[g]
             gA = v_glob_A[g]
@@ -499,24 +499,7 @@ class KernelBuilder:
                     emit_op("valu", ("*", v_idx[g], v_idx[g], vg),
                             reads=vr(v_idx[g]) + vr(vg), writes=vr(v_idx[g]))
 
-        # Interleave: pair each non-optimized round with an optimized round
-        opt_rounds = [r for r in range(rounds) if (r % period) < 3]
-        nonopt_rounds = [r for r in range(rounds) if (r % period) >= 3]
-
-        opt_q = list(opt_rounds)
-        for rnd in nonopt_rounds:
-            # Emit non-opt round groups interleaved with opt round groups
-            if opt_q:
-                opt_rnd = opt_q.pop(0)
-                for g in range(32):
-                    emit_round_group(rnd, g)
-                    emit_round_group(opt_rnd, g)
-            else:
-                for g in range(32):
-                    emit_round_group(rnd, g)
-
-        # Emit any remaining opt rounds
-        for rnd in opt_q:
+        for rnd in range(rounds):
             for g in range(32):
                 emit_round_group(rnd, g)
 
@@ -589,7 +572,8 @@ class KernelBuilder:
                 def priority(idx):
                     eng = ops[idx]["engine"]
                     eng_pri = 2 if eng == "load" else (1 if eng == "store" else 0)
-                    return (heights[idx], eng_pri, n_successors[idx])
+                    g_stagger = (31 - (ops[idx].get("g") or 0)) * 5
+                    return (heights[idx] + g_stagger, eng_pri, n_successors[idx])
                 cycle_ready.sort(key=priority, reverse=True)
 
                 bundle = defaultdict(list)

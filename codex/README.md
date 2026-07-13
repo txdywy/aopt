@@ -6,13 +6,14 @@ solution and `tests/` untouched.
 
 Measured with the frozen simulator:
 
-- **1203 cycles**
-- **122.80x** faster than the 147734-cycle baseline
-- 1371 / 1536 scratch words
-- all public speed thresholds pass, including `<1363`
+- **997 cycles** (identical across 64 deterministic seeds)
+- **148.18x** faster than the 147734-cycle baseline
+- 1535 / 1536 scratch words
+- one cycle behind the latest public top-10 snapshot cutoff of 996
 
-For the emitted operation DAG, the tightest simple resource bound is 1067
-cycles (load engine), leaving a 136-cycle scheduling/critical-path gap.
+For the emitted operation DAG, the simple resource lower bounds are 965 ALU,
+986 VALU, 965 load, 31 store, and 895 flow cycles.  The tightest bound is
+therefore 986 cycles, leaving an 11-cycle scheduling/critical-path gap.
 
 Key optimizations are full unrolling, a mirrored local-path representation,
 an internal `value ^ 0xB55A4F09` hash representation, cached shallow tree
@@ -33,3 +34,8 @@ python3 codex/verify.py
 
 `tune_schedule.py` is the offline launch-phase tuner used to search scheduling
 offsets. Kernel construction itself selects the tuned schedule deterministically.
+`repair_schedule.py`, `solve_tail.py`, and `solve_groups.py` provide progressively
+larger CP-SAT neighborhoods for exact schedule compression.  `solve_tail.py`
+also accepts comma-separated `SCALAR_FINAL_C5`, `SCALAR_FINAL_JOIN`,
+`SCALAR_FINAL_SHIFT`, and `SCALAR_FINAL_HASH23_JOIN` environment variables for
+testing resource-balanced epilogue rewrites.

@@ -71,6 +71,9 @@ SCALAR_FINAL_JOIN_SET: frozenset[int] = frozenset()
 SCALAR_FINAL_HASH4_SET: frozenset[int] = frozenset()
 SCALAR_FINAL_SHIFT_SET: frozenset[int] = frozenset()
 SCALAR_FINAL_HASH23_JOIN_SET: frozenset[int] = frozenset()
+SCALAR_HASH1_JOIN_SET: frozenset[tuple[int, int]] = frozenset()
+SCALAR_HASH23_JOIN_SET: frozenset[tuple[int, int]] = frozenset()
+SCALAR_HASH5_JOIN_SET: frozenset[tuple[int, int]] = frozenset()
 FINAL_CACHE_SET = frozenset((0, 1, 3, 4, 5, 6, 7, 9, 10, 29))
 FIRST_CACHE_SET = frozenset(
     (3, 4, 5, 7, 9, 11, 12, 13, 15, 16, 18, 19, 20, 24, 29, 31)
@@ -1099,7 +1102,16 @@ class KernelBuilder:
                 group=gg,
                 round=rnd,
             )
-            emit_valu("^", value, value, temp, tag="hash_1_join", group=gg, round=rnd)
+            if (gg, rnd) in SCALAR_HASH1_JOIN_SET:
+                emit_scalarized(
+                    "^", value, value, temp,
+                    tag="hash_1_join_scalar", group=gg, round=rnd,
+                )
+            else:
+                emit_valu(
+                    "^", value, value, temp,
+                    tag="hash_1_join", group=gg, round=rnd,
+                )
 
             # If y = 33*x + C2, stage 3 is
             #   (y + C3) ^ (y << 9).
@@ -1118,7 +1130,9 @@ class KernelBuilder:
                 group=gg,
                 round=rnd,
             )
-            if rnd == rounds - 1 and gg in SCALAR_FINAL_HASH23_JOIN_SET:
+            if (gg, rnd) in SCALAR_HASH23_JOIN_SET or (
+                rnd == rounds - 1 and gg in SCALAR_FINAL_HASH23_JOIN_SET
+            ):
                 emit_scalarized(
                     "^", value, value, temp,
                     tag="hash_23_join_scalar", group=gg, round=rnd,
@@ -1181,7 +1195,9 @@ class KernelBuilder:
                         group=gg,
                         round=rnd,
                     )
-            if rnd == rounds - 1 and gg in SCALAR_FINAL_JOIN_SET:
+            if (gg, rnd) in SCALAR_HASH5_JOIN_SET or (
+                rnd == rounds - 1 and gg in SCALAR_FINAL_JOIN_SET
+            ):
                 emit_scalarized(
                     "^",
                     value,

@@ -25,6 +25,14 @@ def main() -> None:
     kernel.HASH_SCALAR_EXTRA = frozenset(
         kernel._BASE_SCALAR | set(kernel._SCALAR_CANDIDATES[:scalar_count])
     )
+    def group_set(name: str) -> frozenset[int]:
+        value = os.environ.get(name, "").strip()
+        return frozenset(int(x) for x in value.split(",") if x)
+
+    kernel.SCALAR_FINAL_C5_SET = group_set("SCALAR_FINAL_C5")
+    kernel.SCALAR_FINAL_JOIN_SET = group_set("SCALAR_FINAL_JOIN")
+    kernel.SCALAR_FINAL_SHIFT_SET = group_set("SCALAR_FINAL_SHIFT")
+    kernel.SCALAR_FINAL_HASH23_JOIN_SET = group_set("SCALAR_FINAL_HASH23_JOIN")
     if "OFFSET14" in os.environ:
         offsets = list(kernel.FULL_ROUND_OFFSETS)
         offsets[14] = int(os.environ["OFFSET14"])

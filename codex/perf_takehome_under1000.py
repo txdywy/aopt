@@ -73,21 +73,41 @@ FULL_ROUND_OFFSETS = (
 )
 SCATTERED_OUTPUT_STORES = False
 OUTPUT_POINTER_STREAMS = 2
+FLOW_OUTPUT_POINTER_ADVANCE = False
+FLOW_OUTPUT_ADVANCE_POSITIONS: frozenset[int] = frozenset()
 OUTPUT_GROUP_ORDER = tuple(range(N_GROUPS))
 PER_GROUP_OUTPUT_POINTERS = False
+INDEPENDENT_TAIL_OUTPUTS = True
+PRESERVED_TAIL_OUTPUT_POINTERS = False
 PREPROCESS_MAX_DEPTH = 7
 EARLY_FINAL_CACHE_SET: frozenset[int] = frozenset()
 EARLY_FINAL_ADDRESS_SET: frozenset[int] = frozenset()
 VECTOR_EARLY_FINAL_ADDRESS_SET: frozenset[int] = frozenset()
 BRANCH_FINAL_GROUP = 31
-BRANCH_FINAL_LANES: tuple[int, ...] = (4, 5, 6, 7)
+BRANCH_FINAL_LANES: tuple[int, ...] = tuple(range(VLEN))
+PAIRED_BRANCH_FINAL = True
+PAIRED_EARLY_XOR = False
+SAVED_SECOND_PATH_EXTRA_GROUPS: frozenset[int] = frozenset()
+PIPELINED_DEPTH3_GROUPS: frozenset[int] = frozenset()
+PIPELINED_DEPTH3_WORKSPACE_OVERRIDES: dict[int, int] = {}
+PAIRED_TARGET_SENTINEL = 0xB2A00003
+DIRECT_BRANCH_LOOKUPS: dict[int, tuple[int, ...]] = {28: (0, 1)}
+PAIRED_DIRECT_BRANCH_LOOKUPS: dict[int, tuple[tuple[int, int], ...]] = {}
+DIRECT_PREP_SENTINEL = 0xD1A00001
+DIRECT_JUMP_SENTINEL = 0xD1A00002
+DIRECT_TARGET_SENTINEL = 0xD1A00003
+DIRECT_BRANCH_PRIORITY = 10_000
 MADD_FIRST_DEPTH1 = False
 SCALAR_FIRST_DEPTH1_SET: frozenset[int] = frozenset()
-SCALAR_FINAL_C5_SET: frozenset[int] = frozenset()
-SCALAR_FINAL_JOIN_SET: frozenset[int] = frozenset()
+SCALAR_SECOND_PATH_GROUPS: frozenset[int] = frozenset()
+SCALAR_SECOND_PATH_DEPTH2_GROUPS: frozenset[int] = frozenset()
+SCALAR_SECOND_PATH_DEPTH3_GROUPS: frozenset[int] = frozenset()
+SCALAR_LEVEL4_CONDITION_GROUPS: frozenset[int] = frozenset((0,))
+SCALAR_FINAL_C5_SET: frozenset[int] = frozenset((18, 20))
+SCALAR_FINAL_JOIN_SET: frozenset[int] = frozenset((21,))
 SCALAR_FINAL_HASH4_SET: frozenset[int] = frozenset()
-SCALAR_FINAL_SHIFT_SET: frozenset[int] = frozenset()
-SCALAR_FINAL_HASH23_JOIN_SET: frozenset[int] = frozenset()
+SCALAR_FINAL_SHIFT_SET: frozenset[int] = frozenset((17, 20, 23, 26))
+SCALAR_FINAL_HASH23_JOIN_SET: frozenset[int] = frozenset((17, 26))
 SCALAR_HASH1_JOIN_SET: frozenset[tuple[int, int]] = frozenset()
 SCALAR_HASH23_JOIN_SET: frozenset[tuple[int, int]] = frozenset()
 SCALAR_HASH5_JOIN_SET: frozenset[tuple[int, int]] = frozenset()
@@ -118,11 +138,16 @@ _SELECTED_SCALAR_EXTRA = {
     (19, 14), (9, 14), (7, 14), (1, 14), (8, 14), (0, 14),
     (16, 13), (21, 13), (17, 13), (5, 13),
 }
-HASH_SCALAR_EXTRA = frozenset(_BASE_SCALAR | set(_SCALAR_CANDIDATES[:43]))
+HASH_SCALAR_EXTRA = frozenset(
+    (_BASE_SCALAR | set(_SCALAR_CANDIDATES[:43]))
+    - {(27, 15), (28, 15), (29, 15), (30, 15), (31, 15)}
+)
 HYBRID_MADD_PAIRS = 8
 HYBRID_MADD_OVERRIDES: dict[tuple[int, int], int] = {}
 SCHEDULE_POLICIES = (4,)
 BACKWARD_POLICIES = ()
+SCHEDULE_NOISE_SEED: int | None = None
+SCHEDULE_NOISE_AMPLITUDE = 1
 ENGINE_LOAD_MULTIPLIERS: dict[str, int] = {}
 ENGINE_HEIGHT_MULTIPLIERS: dict[str, int] = {}
 GROUP_PRIORITY_OFFSETS = (
@@ -137,7 +162,36 @@ GROUP_PRIORITY_OFFSETS = (
 )
 ROUND_PRIORITY_OFFSETS = (0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, -6, 0, 0, 0, 0)
 TAG_PRIORITY_OFFSETS: dict[str, int] = {}
-OP_PRIORITY_OFFSETS: dict[tuple[str, int, int], int] = {}
+_FINAL_HASH_TAIL_TAGS = (
+    "hash_23_add",
+    "hash_23_shift",
+    "hash_23_join",
+    "hash_4",
+    "hash_5_shift",
+    "hash_5_const",
+    "hash_5_join",
+)
+_FINAL_HASH_FULL_TAGS = (
+    "paired_branch_select",
+    "paired_branch_node_xor",
+    "hash_0",
+    "hash_1_shift_vector",
+    "hash_1_const",
+    "hash_1_join",
+) + _FINAL_HASH_TAIL_TAGS
+OP_PRIORITY_OFFSETS: dict[tuple[str, int, int], int] = {
+    **{
+        (tag, group, 15): 20_000
+        for tag in _FINAL_HASH_TAIL_TAGS
+        for group in (27, 28, 29, 30)
+    },
+    **{(tag, 31, 15): 1_000 for tag in _FINAL_HASH_FULL_TAGS},
+    **{
+        (tag, group, 15): 50_000
+        for tag in ("tree_gather", "node_xor")
+        for group in (24, 25, 26, 27, 28, 30)
+    },
+}
 GROUP_FINE_OFFSETS = (0, 0, 0, 0, 0, 0, 0, 1) + (0,) * 24
 BASIC_GROUP_OFFSETS = (0,) * N_GROUPS
 BASIC_ROUND_OFFSETS = (0,) * 16
@@ -372,6 +426,39 @@ class KernelBuilder:
         values = [alloc(f"value_{g}", VLEN) for g in range(N_GROUPS)]
         mirrors = [alloc(f"mirror_{g}", VLEN) for g in range(N_GROUPS)]
         temps = [alloc(f"temp_{g}", VLEN) for g in range(N_GROUPS)]
+        paired_candidate_yes = mirrors[0]
+        paired_candidate_no = temps[0]
+        paired_base_registers = [mirrors[1] + pair for pair in range(4)]
+        paired_jump_registers = [temps[1] + pair for pair in range(4)]
+        # The last group is the critical tail.  During its second traversal,
+        # keep the three hash parity bits in registers that are already dead
+        # at the tail instead of rebuilding them from the packed mirror with
+        # five VALU ``&`` instructions.  The first two vectors subsequently
+        # become the paired-dispatch candidates; the third is dead group-2
+        # mirror storage (group 1 is reserved for dispatch bases).
+        saved_second_path_bits = (
+            {
+                BRANCH_FINAL_GROUP: (
+                    paired_candidate_yes,
+                    paired_candidate_no,
+                    mirrors[2],
+                )
+            }
+            if PAIRED_BRANCH_FINAL
+            else {}
+        )
+        saved_second_path_mux = (
+            {
+                BRANCH_FINAL_GROUP: (
+                    temps[2],
+                    mirrors[3],
+                    temps[3],
+                    mirrors[4],
+                )
+            }
+            if PAIRED_BRANCH_FINAL
+            else {}
+        )
 
         # Shallow path bits and mux spills are shared by seven software-
         # pipelined workspaces.  They are released during depths 4..10.
@@ -388,6 +475,14 @@ class KernelBuilder:
             [alloc(f"select_spill_{workspace}", VLEN)]
             for workspace in range(N_SPILL_WORKSPACES)
         ]
+        for group in SAVED_SECOND_PATH_EXTRA_GROUPS:
+            saved_second_path_bits[group] = tuple(bits[8])
+            saved_second_path_mux[group] = (
+                select_spill[8][0],
+                bits[7][0],
+                bits[7][1],
+                bits[7][2],
+            )
         branch_table_base = (
             alloc("branch_table_base") if BRANCH_FINAL_LANES else -1
         )
@@ -891,6 +986,44 @@ class KernelBuilder:
             )
 
         level4_reversed = [node_vec[i] for i in range(30, 14, -1)]
+        direct_branch_records = tuple(
+            (group, lane)
+            for group in sorted(DIRECT_BRANCH_LOOKUPS)
+            for lane in DIRECT_BRANCH_LOOKUPS[group]
+        )
+        if len(direct_branch_records) > 8:
+            raise ValueError("direct branch lookup supports at most eight lanes")
+        direct_branch_index = {
+            record: index for index, record in enumerate(direct_branch_records)
+        }
+        direct_table_offsets = (0, 16, 33, 69, 133, 261, 517, 1029)
+        direct_offset_registers = (
+            -1,
+            s_sixteen,
+            s_m2,
+            depth_base.get(5, -1),
+            depth_base.get(6, -1),
+            depth_base.get(7, -1),
+            depth_base.get(8, -1),
+            depth_base.get(9, -1),
+        )
+        paired_direct_records = tuple(
+            (group, lanes)
+            for group in sorted(PAIRED_DIRECT_BRANCH_LOOKUPS)
+            for lanes in PAIRED_DIRECT_BRANCH_LOOKUPS[group]
+        )
+        if len(paired_direct_records) > 4:
+            raise ValueError("paired direct lookup supports at most four pairs")
+        paired_direct_index = {
+            record: index for index, record in enumerate(paired_direct_records)
+        }
+        paired_direct_offsets = (0, 1029, 2053, 4097)
+        paired_direct_offset_registers = (
+            -1,
+            depth_base.get(9, -1),
+            depth_base.get(10, -1),
+            s_m0,
+        )
         for i, diff in enumerate(level4_diff):
             emit_valu(
                 "-",
@@ -911,12 +1044,17 @@ class KernelBuilder:
             workspace_bits, workspace_spill = workspace_registers(
                 workspace, gg, rnd
             )
+            saved_path = saved_second_path_bits.get(gg) if rnd >= 11 else None
 
             if depth == 1:
                 condition = (
-                    mirrors[state]
-                    if DIRECT_MIRROR_PATH or rnd >= 11
-                    else workspace_bits[0]
+                    saved_path[0]
+                    if saved_path is not None
+                    else (
+                        mirrors[state]
+                        if DIRECT_MIRROR_PATH or rnd >= 11
+                        else workspace_bits[0]
+                    )
                 )
                 if rnd < 11 and gg in SCALAR_FIRST_DEPTH1_SET:
                     emit_scalarized(
@@ -956,31 +1094,88 @@ class KernelBuilder:
                 return
 
             if depth == 2:
-                if DIRECT_MIRROR_PATH or rnd >= 11:
-                    emit_valu(
-                        "&",
-                        workspace_bits[1],
-                        mirrors[state],
-                        v_one,
-                        tag="second_path_condition_1",
+                if saved_path is not None:
+                    condition_1 = saved_path[1]
+                    condition_0 = saved_path[0]
+                    mux = saved_second_path_mux[gg]
+                    # Schedule the mux from the oldest (most-significant)
+                    # path bit toward the newest one.  p0 is available a
+                    # whole hash round before p1, so both half selections can
+                    # execute speculatively while the next parity is still in
+                    # flight; only the final select waits for p1.
+                    emit_vselect(
+                        temp,
+                        condition_0,
+                        leaves[2],
+                        leaves[0],
                         group=gg,
                         round=rnd,
                     )
-                    emit_valu(
-                        "&",
-                        workspace_bits[0],
-                        mirrors[state],
-                        v_two,
-                        tag="second_path_condition_0",
+                    emit_vselect(
+                        mux[0],
+                        condition_0,
+                        leaves[3],
+                        leaves[1],
                         group=gg,
                         round=rnd,
                     )
+                    emit_vselect(
+                        temp,
+                        condition_1,
+                        mux[0],
+                        temp,
+                        group=gg,
+                        round=rnd,
+                    )
+                    return
+                else:
+                    condition_1 = workspace_bits[1]
+                    condition_0 = workspace_bits[0]
+                if saved_path is None and (DIRECT_MIRROR_PATH or rnd >= 11):
+                    for dest, vector_mask, scalar_mask, tag in (
+                        (
+                            workspace_bits[1],
+                            v_one,
+                            s_one,
+                            "second_path_condition_1",
+                        ),
+                        (
+                            workspace_bits[0],
+                            v_two,
+                            s_two,
+                            "second_path_condition_0",
+                        ),
+                    ):
+                        if (
+                            gg in SCALAR_SECOND_PATH_GROUPS
+                            or gg in SCALAR_SECOND_PATH_DEPTH2_GROUPS
+                        ):
+                            emit_scalarized(
+                                "&",
+                                dest,
+                                mirrors[state],
+                                scalar_mask,
+                                b_scalar=True,
+                                tag=tag,
+                                group=gg,
+                                round=rnd,
+                            )
+                        else:
+                            emit_valu(
+                                "&",
+                                dest,
+                                mirrors[state],
+                                vector_mask,
+                                tag=tag,
+                                group=gg,
+                                round=rnd,
+                            )
                 emit_vselect(
-                    temp, workspace_bits[1], leaves[1], leaves[0], group=gg, round=rnd
+                    temp, condition_1, leaves[1], leaves[0], group=gg, round=rnd
                 )
                 emit_vselect(
                     workspace_spill[0],
-                    workspace_bits[1],
+                    condition_1,
                     leaves[3],
                     leaves[2],
                     group=gg,
@@ -988,7 +1183,7 @@ class KernelBuilder:
                 )
                 emit_vselect(
                     temp,
-                    workspace_bits[0],
+                    condition_0,
                     workspace_spill[0],
                     temp,
                     group=gg,
@@ -999,33 +1194,151 @@ class KernelBuilder:
             if depth != 3:
                 raise AssertionError(depth)
 
-            if DIRECT_MIRROR_PATH or rnd >= 11:
-                for dest, mask, tag in (
-                    (workspace_bits[2], v_one, "second_path_condition_2"),
-                    (workspace_bits[1], v_two, "second_path_condition_1"),
-                    (workspace_bits[0], v_four, "second_path_condition_0"),
+            if gg in PIPELINED_DEPTH3_GROUPS and rnd == 14:
+                pipeline_workspace = PIPELINED_DEPTH3_WORKSPACE_OVERRIDES.get(
+                    gg, WORKSPACE_ASSIGNMENT[gg]
+                )
+                pipeline_bits = bits[pipeline_workspace]
+                pipeline_spill = select_spill[
+                    pipeline_workspace % N_SPILL_WORKSPACES
+                ][0]
+                emit_vselect(
+                    temp,
+                    pipeline_spill,
+                    pipeline_bits[2],
+                    pipeline_bits[1],
+                    group=gg,
+                    round=rnd,
+                )
+                return
+
+            if saved_path is not None:
+                condition_2, condition_1, condition_0 = (
+                    saved_path[2],
+                    saved_path[1],
+                    saved_path[0],
+                )
+                mux = saved_second_path_mux[gg]
+                # A conventional depth-first mux waits for the newest p2 bit
+                # before issuing any of its seven flow operations.  Reverse
+                # the tree: issue four p0 selections as soon as round 11
+                # finishes, collapse them with p1 after round 12, and leave
+                # only one select dependent on round-13 parity p2.
+                emit_vselect(
+                    temp, condition_0, leaves[4], leaves[0], group=gg, round=rnd
+                )
+                emit_vselect(
+                    mux[0],
+                    condition_0,
+                    leaves[5],
+                    leaves[1],
+                    group=gg,
+                    round=rnd,
+                )
+                emit_vselect(
+                    mux[1],
+                    condition_0,
+                    leaves[6],
+                    leaves[2],
+                    group=gg,
+                    round=rnd,
+                )
+                emit_vselect(
+                    mux[2],
+                    condition_0,
+                    leaves[7],
+                    leaves[3],
+                    group=gg,
+                    round=rnd,
+                )
+                emit_vselect(
+                    temp,
+                    condition_1,
+                    mux[1],
+                    temp,
+                    group=gg,
+                    round=rnd,
+                )
+                emit_vselect(
+                    mux[3],
+                    condition_1,
+                    mux[2],
+                    mux[0],
+                    group=gg,
+                    round=rnd,
+                )
+                emit_vselect(
+                    temp,
+                    condition_2,
+                    mux[3],
+                    temp,
+                    group=gg,
+                    round=rnd,
+                )
+                return
+            else:
+                condition_2, condition_1, condition_0 = (
+                    workspace_bits[2],
+                    workspace_bits[1],
+                    workspace_bits[0],
+                )
+            if saved_path is None and (DIRECT_MIRROR_PATH or rnd >= 11):
+                for dest, vector_mask, scalar_mask, tag in (
+                    (
+                        workspace_bits[2],
+                        v_one,
+                        s_one,
+                        "second_path_condition_2",
+                    ),
+                    (
+                        workspace_bits[1],
+                        v_two,
+                        s_two,
+                        "second_path_condition_1",
+                    ),
+                    (
+                        workspace_bits[0],
+                        v_four,
+                        s_four,
+                        "second_path_condition_0",
+                    ),
                 ):
-                    emit_valu(
-                        "&",
-                        dest,
-                        mirrors[state],
-                        mask,
-                        tag=tag,
-                        group=gg,
-                        round=rnd,
-                    )
+                    if (
+                        gg in SCALAR_SECOND_PATH_GROUPS
+                        or gg in SCALAR_SECOND_PATH_DEPTH3_GROUPS
+                    ):
+                        emit_scalarized(
+                            "&",
+                            dest,
+                            mirrors[state],
+                            scalar_mask,
+                            b_scalar=True,
+                            tag=tag,
+                            group=gg,
+                            round=rnd,
+                        )
+                    else:
+                        emit_valu(
+                            "&",
+                            dest,
+                            mirrors[state],
+                            vector_mask,
+                            tag=tag,
+                            group=gg,
+                            round=rnd,
+                        )
 
             # Evaluate the two four-leaf halves depth-first.  Once the final
             # bottom pair has consumed bit 2, that register itself becomes a
             # legal destination, reducing the live mux stack to one spill.
             spill = workspace_spill[0]
-            emit_vselect(temp, workspace_bits[2], leaves[1], leaves[0], group=gg, round=rnd)
-            emit_vselect(spill, workspace_bits[2], leaves[3], leaves[2], group=gg, round=rnd)
-            emit_vselect(temp, workspace_bits[1], spill, temp, group=gg, round=rnd)
-            emit_vselect(spill, workspace_bits[2], leaves[5], leaves[4], group=gg, round=rnd)
-            emit_vselect(workspace_bits[2], workspace_bits[2], leaves[7], leaves[6], group=gg, round=rnd)
-            emit_vselect(spill, workspace_bits[1], workspace_bits[2], spill, group=gg, round=rnd)
-            emit_vselect(temp, workspace_bits[0], spill, temp, group=gg, round=rnd)
+            emit_vselect(temp, condition_2, leaves[1], leaves[0], group=gg, round=rnd)
+            emit_vselect(spill, condition_2, leaves[3], leaves[2], group=gg, round=rnd)
+            emit_vselect(temp, condition_1, spill, temp, group=gg, round=rnd)
+            emit_vselect(spill, condition_2, leaves[5], leaves[4], group=gg, round=rnd)
+            emit_vselect(condition_2, condition_2, leaves[7], leaves[6], group=gg, round=rnd)
+            emit_vselect(spill, condition_1, condition_2, spill, group=gg, round=rnd)
+            emit_vselect(temp, condition_0, spill, temp, group=gg, round=rnd)
 
         def select_level4_hybrid(
             state: int,
@@ -1045,21 +1358,33 @@ class KernelBuilder:
             if prepared:
                 pass
             elif DIRECT_MIRROR_PATH or rnd >= 11:
-                for dest, mask, tag in (
-                    (cond, v_one, "level4_condition_3"),
-                    (level4_condition_2, v_two, "level4_condition_2"),
-                    (workspace_bits[1], v_four, "level4_condition_1"),
-                    (workspace_bits[0], v_eight, "level4_condition_0"),
+                for dest, vector_mask, scalar_mask, tag in (
+                    (cond, v_one, s_one, "level4_condition_3"),
+                    (level4_condition_2, v_two, s_two, "level4_condition_2"),
+                    (workspace_bits[1], v_four, s_four, "level4_condition_1"),
+                    (workspace_bits[0], v_eight, s_eight, "level4_condition_0"),
                 ):
-                    emit_valu(
-                        "&",
-                        dest,
-                        mirrors[state],
-                        mask,
-                        tag=tag,
-                        group=gg,
-                        round=rnd,
-                    )
+                    if gg in SCALAR_LEVEL4_CONDITION_GROUPS:
+                        emit_scalarized(
+                            "&",
+                            dest,
+                            mirrors[state],
+                            scalar_mask,
+                            b_scalar=True,
+                            tag=tag,
+                            group=gg,
+                            round=rnd,
+                        )
+                    else:
+                        emit_valu(
+                            "&",
+                            dest,
+                            mirrors[state],
+                            vector_mask,
+                            tag=tag,
+                            group=gg,
+                            round=rnd,
+                        )
             else:
                 emit_scalarized(
                     "&",
@@ -1131,14 +1456,36 @@ class KernelBuilder:
             emit_vselect(b, c1, c, b, group=gg, round=rnd)
             emit_vselect(a, c0, b, a, group=gg, round=rnd)
 
+        direct_global_previous_target = [-1]
+
         def gather_node(depth: int, state: int, gg: int, rnd: int) -> None:
             mirror = mirrors[state]
             temp = temps[state]
             branch_lanes = (
-                frozenset(BRANCH_FINAL_LANES)
+                frozenset(range(VLEN))
+                if PAIRED_BRANCH_FINAL
+                and gg == BRANCH_FINAL_GROUP
+                and rnd == rounds - 1
+                and depth == 4
+                else frozenset(BRANCH_FINAL_LANES)
                 if gg == BRANCH_FINAL_GROUP and rnd == rounds - 1 and depth == 4
                 else frozenset()
             )
+            direct_branch_lanes = (
+                frozenset(DIRECT_BRANCH_LOOKUPS.get(gg, ()))
+                if rnd == rounds - 1 and depth == 4
+                else frozenset()
+            )
+            paired_direct_lanes = (
+                frozenset(
+                    lane
+                    for pair in PAIRED_DIRECT_BRANCH_LOOKUPS.get(gg, ())
+                    for lane in pair
+                )
+                if rnd == rounds - 1 and depth == 4
+                else frozenset()
+            )
+            skipped_lanes = branch_lanes | direct_branch_lanes | paired_direct_lanes
             final_address_prepared = (
                 depth == 4
                 and rnd == rounds - 1
@@ -1173,7 +1520,7 @@ class KernelBuilder:
                 # Address generation is intentionally scalar: eight ALU slots
                 # are cheaper than a scarce VALU slot in steady state.
                 for lane in range(VLEN):
-                    if lane in branch_lanes:
+                    if lane in skipped_lanes:
                         continue
                     graph.emit(
                         "alu",
@@ -1186,7 +1533,7 @@ class KernelBuilder:
                     )
                 address = temp
             for lane in range(VLEN):
-                if lane in branch_lanes:
+                if lane in skipped_lanes:
                     continue
                 # Each deeper level occupies twice as many contiguous vectors.
                 # Explicitly order its gathers after the exact preprocessing
@@ -1217,7 +1564,7 @@ class KernelBuilder:
                     group=gg,
                     round=rnd,
                 )
-            if branch_lanes:
+            if branch_lanes and not PAIRED_BRANCH_FINAL:
                 if SECOND_WORKSPACE_FIXED < 0:
                     raise ValueError("branch lookup requires a fixed second workspace")
                 candidate_yes = bits[SECOND_WORKSPACE_FIXED][0]
@@ -1235,6 +1582,237 @@ class KernelBuilder:
                         reads=(temp + lane, candidate_yes + lane, candidate_no + lane),
                         writes=(temp + lane,),
                         tag="branch_final_select",
+                        group=gg,
+                        round=rnd,
+                    )
+            elif branch_lanes:
+                value = values[state]
+                if PAIRED_EARLY_XOR:
+                    emit_valu(
+                        "-",
+                        paired_candidate_yes,
+                        paired_candidate_yes,
+                        paired_candidate_no,
+                        tag="paired_branch_difference",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_madd(
+                        value,
+                        temp,
+                        paired_candidate_yes,
+                        paired_candidate_no,
+                        tag="paired_branch_select",
+                        group=gg,
+                        round=rnd,
+                    )
+                else:
+                    emit_madd(
+                        temp,
+                        temp,
+                        paired_candidate_yes,
+                        paired_candidate_no,
+                        tag="paired_branch_select",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_valu(
+                        "^",
+                        value,
+                        value,
+                        temp,
+                        tag="paired_branch_node_xor",
+                        group=gg,
+                        round=rnd,
+                    )
+            if direct_branch_lanes:
+                previous_target = direct_global_previous_target[0]
+                for lane in sorted(direct_branch_lanes):
+                    record_index = direct_branch_index[(gg, lane)]
+                    prep = graph.emit(
+                        "alu",
+                        (
+                            "+",
+                            mirror + lane,
+                            mirror + lane,
+                            s_m23,
+                        ),
+                        reads=(mirror + lane, s_m23),
+                        writes=(mirror + lane,),
+                        deps=((previous_target, 1),) if previous_target >= 0 else (),
+                        tag="direct_branch_base",
+                        group=gg,
+                        round=rnd,
+                    )
+                    if record_index:
+                        offset_register = direct_offset_registers[record_index]
+                        if offset_register < 0:
+                            raise ValueError("missing direct branch offset register")
+                        prep = graph.emit(
+                            "alu",
+                            (
+                                "+",
+                                mirror + lane,
+                                mirror + lane,
+                                offset_register,
+                            ),
+                            reads=(mirror + lane, offset_register),
+                            writes=(mirror + lane,),
+                            deps=((prep, 1),),
+                            tag="direct_branch_offset",
+                            group=gg,
+                            round=rnd,
+                        )
+                    jump = graph.emit(
+                        "flow",
+                        ("jump_indirect", mirror + lane),
+                        reads=(mirror + lane,),
+                        deps=((prep, 1),),
+                        tag="direct_branch_jump",
+                        group=gg,
+                        round=rnd,
+                    )
+                    copy = graph.emit(
+                        "alu",
+                        (
+                            "|",
+                            temp + lane,
+                            node_vec[0] + lane,
+                            node_vec[0] + lane,
+                        ),
+                        reads=(node_vec[0] + lane,),
+                        writes=(temp + lane,),
+                        deps=((jump, 1),),
+                        tag="direct_branch_copy",
+                        group=gg,
+                        round=rnd,
+                    )
+                    previous_target = graph.emit(
+                        "flow",
+                        (
+                            "add_imm",
+                            mirror + lane,
+                            mirror + lane,
+                            DIRECT_TARGET_SENTINEL,
+                        ),
+                        deps=((copy, 0),),
+                        tag="direct_branch_target",
+                        group=gg,
+                        round=rnd,
+                    )
+                direct_global_previous_target[0] = previous_target
+            if paired_direct_lanes:
+                previous_target = -1
+                for lanes in PAIRED_DIRECT_BRANCH_LOOKUPS[gg]:
+                    lane0, lane1 = lanes
+                    record_index = paired_direct_index[(gg, lanes)]
+                    prep = graph.emit(
+                        "alu",
+                        ("*", mirror + lane0, mirror + lane0, s_sixteen),
+                        reads=(mirror + lane0, s_sixteen),
+                        writes=(mirror + lane0,),
+                        deps=((previous_target, 1),) if previous_target >= 0 else (),
+                        tag="paired_direct_branch_index_high",
+                        group=gg,
+                        round=rnd,
+                    )
+                    prep = graph.emit(
+                        "alu",
+                        ("+", mirror + lane0, mirror + lane0, mirror + lane1),
+                        reads=(mirror + lane0, mirror + lane1),
+                        writes=(mirror + lane0,),
+                        deps=((prep, 1),),
+                        tag="paired_direct_branch_index_low",
+                        group=gg,
+                        round=rnd,
+                    )
+                    prep = graph.emit(
+                        "alu",
+                        ("*", mirror + lane0, mirror + lane0, s_two),
+                        reads=(mirror + lane0, s_two),
+                        writes=(mirror + lane0,),
+                        deps=((prep, 1),),
+                        tag="paired_direct_branch_stride",
+                        group=gg,
+                        round=rnd,
+                    )
+                    prep = graph.emit(
+                        "alu",
+                        ("*", mirror + lane0, mirror + lane0, s_two),
+                        reads=(mirror + lane0, s_two),
+                        writes=(mirror + lane0,),
+                        deps=((prep, 1),),
+                        tag="paired_direct_branch_stride",
+                        group=gg,
+                        round=rnd,
+                    )
+                    prep = graph.emit(
+                        "alu",
+                        ("+", mirror + lane0, mirror + lane0, s_m23),
+                        reads=(mirror + lane0, s_m23),
+                        writes=(mirror + lane0,),
+                        deps=((prep, 1),),
+                        tag="paired_direct_branch_base",
+                        group=gg,
+                        round=rnd,
+                    )
+                    if record_index:
+                        offset_register = paired_direct_offset_registers[
+                            record_index
+                        ]
+                        prep = graph.emit(
+                            "alu",
+                            (
+                                "+",
+                                mirror + lane0,
+                                mirror + lane0,
+                                offset_register,
+                            ),
+                            reads=(mirror + lane0, offset_register),
+                            writes=(mirror + lane0,),
+                            deps=((prep, 1),),
+                            tag="paired_direct_branch_offset",
+                            group=gg,
+                            round=rnd,
+                        )
+                    jump = graph.emit(
+                        "flow",
+                        ("jump_indirect", mirror + lane0),
+                        reads=(mirror + lane0,),
+                        deps=((prep, 1),),
+                        tag="paired_direct_branch_jump",
+                        group=gg,
+                        round=rnd,
+                    )
+                    copies = []
+                    for lane in lanes:
+                        copies.append(
+                            graph.emit(
+                                "alu",
+                                (
+                                    "|",
+                                    temp + lane,
+                                    node_vec[0] + lane,
+                                    node_vec[0] + lane,
+                                ),
+                                reads=(node_vec[0] + lane,),
+                                writes=(temp + lane,),
+                                deps=((jump, 1),),
+                                tag="paired_direct_branch_copy",
+                                group=gg,
+                                round=rnd,
+                            )
+                        )
+                    previous_target = graph.emit(
+                        "flow",
+                        (
+                            "add_imm",
+                            mirror + lane0,
+                            mirror + lane0,
+                            DIRECT_TARGET_SENTINEL,
+                        ),
+                        deps=tuple((copy, 0) for copy in copies),
+                        tag="paired_direct_branch_target",
                         group=gg,
                         round=rnd,
                     )
@@ -1390,6 +1968,34 @@ class KernelBuilder:
                 group=gg,
                 round=rnd,
             )
+            if (
+                PAIRED_BRANCH_FINAL
+                and PAIRED_EARLY_XOR
+                and gg == BRANCH_FINAL_GROUP
+                and rnd == 14
+            ):
+                for candidate, suffix in (
+                    (paired_candidate_yes, "yes"),
+                    (paired_candidate_no, "no"),
+                ):
+                    emit_valu(
+                        "^",
+                        candidate,
+                        candidate,
+                        value,
+                        tag=f"paired_branch_{suffix}_hash_value",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_valu(
+                        "^",
+                        candidate,
+                        candidate,
+                        temp,
+                        tag=f"paired_branch_{suffix}_hash_shift",
+                        group=gg,
+                        round=rnd,
+                    )
             if rnd == rounds - 1:
                 # The final round materializes the true value directly.
                 if gg in SCALAR_FINAL_C5_SET:
@@ -1512,7 +2118,111 @@ class KernelBuilder:
                     )
             else:
                 gather_node(depth, state, gg, rnd)
-                xor_node(value, temp, gg, rnd)
+                if not (
+                    PAIRED_BRANCH_FINAL
+                    and gg == BRANCH_FINAL_GROUP
+                    and rnd == rounds - 1
+                ):
+                    xor_node(value, temp, gg, rnd)
+
+            if PAIRED_BRANCH_FINAL and gg == BRANCH_FINAL_GROUP and rnd == 14:
+                previous_target = -1
+                paired_start_dep = max(
+                    i
+                    for i, op in enumerate(graph.ops)
+                    if op.tag == "tree_select"
+                    and op.group == gg
+                    and op.round == rnd
+                )
+                for pair in range(4):
+                    lane0 = 2 * pair
+                    lane1 = lane0 + 1
+                    jump_register = paired_jump_registers[pair]
+                    prep = graph.emit(
+                        "alu",
+                        ("*", jump_register, mirrors[state] + lane0, s_eight),
+                        reads=(mirrors[state] + lane0, s_eight),
+                        writes=(jump_register,),
+                        deps=(),
+                        tag="paired_branch_index_high",
+                        group=gg,
+                        round=rnd,
+                    )
+                    prep = graph.emit(
+                        "alu",
+                        (
+                            "+",
+                            jump_register,
+                            jump_register,
+                            mirrors[state] + lane1,
+                        ),
+                        reads=(jump_register, mirrors[state] + lane1),
+                        writes=(jump_register,),
+                        deps=((prep, 1),),
+                        tag="paired_branch_index_low",
+                        group=gg,
+                        round=rnd,
+                    )
+                    prep = graph.emit(
+                        "alu",
+                        (
+                            "+",
+                            jump_register,
+                            jump_register,
+                            paired_base_registers[pair],
+                        ),
+                        reads=(jump_register, paired_base_registers[pair]),
+                        writes=(jump_register,),
+                        deps=((prep, 1),),
+                        tag="paired_branch_table_base",
+                        group=gg,
+                        round=rnd,
+                    )
+                    jump = graph.emit(
+                        "flow",
+                        ("jump_indirect", jump_register),
+                        reads=(jump_register,),
+                        deps=(
+                            ((prep, 1), (previous_target, 1))
+                            if previous_target >= 0
+                            else ((prep, 1), (paired_start_dep, 0))
+                        ),
+                        tag="paired_branch_jump",
+                        group=gg,
+                        round=rnd,
+                    )
+                    copies = []
+                    for dest in (
+                        paired_candidate_yes + lane0,
+                        paired_candidate_no + lane0,
+                        paired_candidate_yes + lane1,
+                        paired_candidate_no + lane1,
+                    ):
+                        copies.append(
+                            graph.emit(
+                                "alu",
+                                ("|", dest, node_vec[0], node_vec[0]),
+                                reads=(node_vec[0],),
+                                writes=(dest,),
+                                deps=((jump, 1),),
+                                tag="paired_branch_copy",
+                                group=gg,
+                                round=rnd,
+                            )
+                        )
+                    previous_target = graph.emit(
+                        "flow",
+                        (
+                            "add_imm",
+                            jump_register,
+                            jump_register,
+                            PAIRED_TARGET_SENTINEL,
+                        ),
+                        deps=tuple((copy, 0) for copy in copies),
+                        tag="paired_branch_target",
+                        group=gg,
+                        round=rnd,
+                    )
 
             if gg in EARLY_FINAL_CACHE_SET and rnd == 14:
                 for dest, mask, tag in (
@@ -1529,6 +2239,57 @@ class KernelBuilder:
                         group=gg,
                         round=rnd,
                     )
+
+            if gg in PIPELINED_DEPTH3_GROUPS and rnd == 13:
+                pipeline_workspace = PIPELINED_DEPTH3_WORKSPACE_OVERRIDES.get(
+                    gg, WORKSPACE_ASSIGNMENT[gg]
+                )
+                pipeline_bits = bits[pipeline_workspace]
+                pipeline_spill = select_spill[
+                    pipeline_workspace % N_SPILL_WORKSPACES
+                ][0]
+                leaves = [node_vec[14 - index] for index in range(8)]
+                emit_valu(
+                    "&",
+                    pipeline_bits[0],
+                    mirrors[state],
+                    v_two,
+                    tag="pipelined_depth3_condition_0",
+                    group=gg,
+                    round=rnd,
+                )
+                emit_vselect(
+                    pipeline_bits[1],
+                    pipeline_bits[0],
+                    leaves[4],
+                    leaves[0],
+                    group=gg,
+                    round=rnd,
+                )
+                emit_vselect(
+                    pipeline_bits[2],
+                    pipeline_bits[0],
+                    leaves[5],
+                    leaves[1],
+                    group=gg,
+                    round=rnd,
+                )
+                emit_vselect(
+                    pipeline_spill,
+                    pipeline_bits[0],
+                    leaves[6],
+                    leaves[2],
+                    group=gg,
+                    round=rnd,
+                )
+                emit_vselect(
+                    pipeline_bits[0],
+                    pipeline_bits[0],
+                    leaves[7],
+                    leaves[3],
+                    group=gg,
+                    round=rnd,
+                )
 
             if (
                 OVERLAP_SHALLOW_ADDRESS
@@ -1658,6 +2419,75 @@ class KernelBuilder:
                     )
             elif rnd in (0, 1, 2):
                 emit_parity(workspace_bits[rnd], value, gg, rnd)
+            elif gg in PIPELINED_DEPTH3_GROUPS and rnd == 13:
+                pipeline_workspace = PIPELINED_DEPTH3_WORKSPACE_OVERRIDES.get(
+                    gg, WORKSPACE_ASSIGNMENT[gg]
+                )
+                pipeline_bits = bits[pipeline_workspace]
+                pipeline_spill = select_spill[
+                    pipeline_workspace % N_SPILL_WORKSPACES
+                ][0]
+                emit_valu(
+                    "&",
+                    temp,
+                    mirrors[state],
+                    v_one,
+                    tag="pipelined_depth3_condition_1",
+                    group=gg,
+                    round=rnd,
+                )
+                emit_vselect(
+                    pipeline_bits[1],
+                    temp,
+                    pipeline_spill,
+                    pipeline_bits[1],
+                    group=gg,
+                    round=rnd,
+                )
+                emit_vselect(
+                    pipeline_bits[2],
+                    temp,
+                    pipeline_bits[0],
+                    pipeline_bits[2],
+                    group=gg,
+                    round=rnd,
+                )
+                emit_parity(pipeline_spill, value, gg, rnd)
+                emit_madd(
+                    mirrors[state],
+                    mirrors[state],
+                    v_two,
+                    pipeline_spill,
+                    tag="mirror_update_pipelined_depth3",
+                    group=gg,
+                    round=rnd,
+                )
+            elif gg in saved_second_path_bits and rnd == 11:
+                emit_parity(saved_second_path_bits[gg][0], value, gg, rnd)
+            elif gg in saved_second_path_bits and rnd in (12, 13):
+                saved_path = saved_second_path_bits[gg]
+                parity = saved_path[rnd - 11]
+                emit_parity(parity, value, gg, rnd)
+                if rnd == 12:
+                    emit_madd(
+                        mirrors[state],
+                        saved_path[0],
+                        v_two,
+                        saved_path[1],
+                        tag="mirror_update_saved_path",
+                        group=gg,
+                        round=rnd,
+                    )
+                else:
+                    emit_madd(
+                        mirrors[state],
+                        mirrors[state],
+                        v_two,
+                        saved_path[2],
+                        tag="mirror_update_saved_path",
+                        group=gg,
+                        round=rnd,
+                    )
             elif rnd == 11:
                 emit_parity(mirrors[state], value, gg, rnd)
             elif gg in EARLY_FINAL_CACHE_SET and rnd == 14:
@@ -1687,6 +2517,11 @@ class KernelBuilder:
                     group=gg,
                     round=rnd,
                 )
+            elif PAIRED_BRANCH_FINAL and gg == BRANCH_FINAL_GROUP and rnd == 14:
+                # The paired final lookup consumes only the new parity bit;
+                # the packed four-bit mirror has no remaining user.  Avoid a
+                # dead MADD and release mirror[31] for its output pointer.
+                emit_parity(temp, value, gg, rnd)
             elif rnd in (12, 13, 14):
                 emit_parity(temp, value, gg, rnd)
                 emit_madd(
@@ -1875,6 +2710,67 @@ class KernelBuilder:
                     tag="output_store",
                     group=group,
                 )
+        elif PRESERVED_TAIL_OUTPUT_POINTERS:
+            # The two input streams naturally finish at groups 30 and 31.
+            # Preserve those endpoint addresses for the last two stores.
+            # Constants whose vector broadcasts are already complete become
+            # independent pointers for groups 26..29, while c0/c23 roll only
+            # through groups 0..25.  This removes all late address-chain
+            # dependencies without any additional scratch allocation.
+            emit_immediate(top_p0, values_base, "output_pointer")
+            emit_immediate(top_p1, values_base + VLEN, "output_pointer")
+            for pair in range(13):
+                g0 = 2 * pair
+                g1 = g0 + 1
+                graph.emit(
+                    "store",
+                    ("vstore", top_p0, values[g0]),
+                    reads=(top_p0,) + _words(values[g0]),
+                    tag="output_store",
+                    group=g0,
+                )
+                graph.emit(
+                    "store",
+                    ("vstore", top_p1, values[g1]),
+                    reads=(top_p1,) + _words(values[g1]),
+                    tag="output_store",
+                    group=g1,
+                )
+                if pair != 12:
+                    for pointer in (top_p0, top_p1):
+                        graph.emit(
+                            "alu",
+                            ("+", pointer, pointer, s_sixteen),
+                            reads=(pointer, s_sixteen),
+                            writes=(pointer,),
+                            tag="pointer_advance",
+                        )
+
+            for group, pointer in zip(
+                range(26, 30),
+                (s_nineteen, s_c2_shift9, s_c4, s_four),
+            ):
+                emit_const(
+                    pointer,
+                    values_base + group * VLEN,
+                    "tail_output_pointer",
+                )
+                graph.emit(
+                    "store",
+                    ("vstore", pointer, values[group]),
+                    reads=(pointer,) + _words(values[group]),
+                    tag="output_store",
+                    group=group,
+                )
+
+            for group, pointer in ((30, io_p0), (31, io_p1)):
+                graph.emit(
+                    "store",
+                    ("vstore", pointer, values[group]),
+                    reads=(pointer,) + _words(values[group]),
+                    tag="output_store",
+                    group=group,
+                )
         elif OUTPUT_POINTER_STREAMS == 4:
             # Profile-guided output chains.  Groups are ordered by their
             # predicted value completion and divided between two pointers.
@@ -1905,6 +2801,42 @@ class KernelBuilder:
                             "flow",
                             ("add_imm", pointer, pointer, delta & 0xFFFFFFFF),
                             reads=(pointer,),
+                            writes=(pointer,),
+                            tag="pointer_advance",
+                        )
+        elif OUTPUT_POINTER_STREAMS == 16:
+            # Four independent modulo-4 store chains.  Five scalar lanes from
+            # group 5's mirror are dead after its final lookup,
+            # so they provide pointer/stride registers without extending any
+            # hash-constant lifetime.  The fifth word holds the 32-word stride, keeping
+            # the total scalar-ALU work below the original two-chain design
+            # while avoiding contention with the critical paired flow trace.
+            output_pointer_base = mirrors[5]
+            output_pointers = tuple(
+                output_pointer_base + stream for stream in range(4)
+            )
+            output_stride = output_pointer_base + 4
+            emit_const(output_stride, 4 * VLEN, "output_stride")
+            for stream, pointer in enumerate(output_pointers):
+                emit_const(
+                    pointer,
+                    values_base + stream * VLEN,
+                    "output_pointer",
+                )
+                groups = tuple(range(stream, N_GROUPS, 4))
+                for position, group in enumerate(groups):
+                    graph.emit(
+                        "store",
+                        ("vstore", pointer, values[group]),
+                        reads=(pointer,) + _words(values[group]),
+                        tag="output_store",
+                        group=group,
+                    )
+                    if position != len(groups) - 1:
+                        graph.emit(
+                            "alu",
+                            ("+", pointer, pointer, output_stride),
+                            reads=(pointer, output_stride),
                             writes=(pointer,),
                             tag="pointer_advance",
                         )
@@ -1994,7 +2926,12 @@ class KernelBuilder:
         else:
             emit_immediate(io_p0, values_base, "output_pointer")
             emit_immediate(io_p1, values_base + VLEN, "output_pointer")
-            for pair in range(N_GROUPS // 2):
+            rolling_pairs = (
+                N_GROUPS // 2
+                if INDEPENDENT_TAIL_OUTPUTS
+                else N_GROUPS // 2
+            )
+            for pair in range(rolling_pairs):
                 g0 = 2 * pair
                 g1 = g0 + 1
                 graph.emit(
@@ -2011,21 +2948,30 @@ class KernelBuilder:
                     tag="output_store",
                     group=g1,
                 )
-                if pair != N_GROUPS // 2 - 1:
-                    graph.emit(
-                        "alu",
-                        ("+", io_p0, io_p0, s_sixteen),
-                        reads=(io_p0, s_sixteen),
-                        writes=(io_p0,),
-                        tag="pointer_advance",
-                    )
-                    graph.emit(
-                        "alu",
-                        ("+", io_p1, io_p1, s_sixteen),
-                        reads=(io_p1, s_sixteen),
-                        writes=(io_p1,),
-                        tag="pointer_advance",
-                    )
+                if pair != rolling_pairs - 1:
+                    for pointer in (io_p0, io_p1):
+                        if FLOW_OUTPUT_POINTER_ADVANCE or pair in FLOW_OUTPUT_ADVANCE_POSITIONS:
+                            graph.emit(
+                                "flow",
+                                ("add_imm", pointer, pointer, 16),
+                                reads=(pointer,),
+                                writes=(pointer,),
+                                tag="pointer_advance",
+                            )
+                        else:
+                            graph.emit(
+                                "alu",
+                                ("+", pointer, pointer, s_sixteen),
+                                reads=(pointer, s_sixteen),
+                                writes=(pointer,),
+                                tag="pointer_advance",
+                            )
+            if INDEPENDENT_TAIL_OUTPUTS:
+                # Tail stores are filled into already-scheduled empty bundles
+                # below.  Keeping them out of the DAG prevents their short
+                # address loads from distorting the global load-distance
+                # heuristic and delaying the actual computation.
+                pass
 
         self.scratch_ptr = scratch.ptr
         self.scratch_debug = scratch.debug
@@ -2036,14 +2982,36 @@ class KernelBuilder:
         self.dag_ops = graph.ops
         forward_cycles: list[list[int]] = []
         for policy in SCHEDULE_POLICIES:
-            if SSA_WORKSPACES:
-                schedule, cycles = self._schedule(
-                    graph.ops, policy, return_cycles=True
-                )
-                schedules.append(schedule)
-                forward_cycles.append(cycles)
-            else:
-                schedules.append(self._schedule(graph.ops, policy))
+            priority_noise = None
+            if SCHEDULE_NOISE_SEED is not None:
+                modulus = 2 * SCHEDULE_NOISE_AMPLITUDE + 1
+                priority_noise = []
+                for index in range(len(graph.ops)):
+                    op = graph.ops[index]
+                    if op.round != 15 and op.tag not in {
+                        "output_store",
+                        "pointer_advance",
+                    }:
+                        priority_noise.append(0)
+                        continue
+                    word = (
+                        SCHEDULE_NOISE_SEED
+                        + 0x9E3779B9 * (index + 1)
+                    ) & 0xFFFFFFFF
+                    word ^= word >> 16
+                    word = (word * 0x7FEB352D) & 0xFFFFFFFF
+                    word ^= word >> 15
+                    priority_noise.append(
+                        word % modulus - SCHEDULE_NOISE_AMPLITUDE
+                    )
+            schedule, cycles = self._schedule(
+                graph.ops,
+                policy,
+                return_cycles=True,
+                priority_noise=priority_noise,
+            )
+            schedules.append(schedule)
+            forward_cycles.append(cycles)
         reversed_ops = self._reverse_ops(graph.ops)
         if SSA_WORKSPACES and BACKWARD_POLICIES:
             raise ValueError("SSA_WORKSPACES currently supports forward scheduling only")
@@ -2190,7 +3158,107 @@ class KernelBuilder:
             self.virtual_workspace_intervals = 0
             self.virtual_workspace_assignment = {}
 
-        if BRANCH_FINAL_LANES:
+        if INDEPENDENT_TAIL_OUTPUTS:
+            if best_index >= len(SCHEDULE_POLICIES):
+                raise ValueError("late tail stores require a forward schedule")
+            op_cycles = forward_cycles[best_index]
+
+            def first_bundle_with_room(engine: str, start: int) -> int:
+                cycle = start
+                while True:
+                    if cycle == len(self.instrs):
+                        self.instrs.append({})
+                    if len(self.instrs[cycle].get(engine, ())) < SLOT_LIMITS[engine]:
+                        return cycle
+                    cycle += 1
+
+            # Retain all rolling stores in the scheduling DAG because their
+            # downstream height is a useful completion heuristic.  Replace
+            # only groups 24..31 after scheduling: setup scalars provide
+            # die during setup provide safe independent pointers, avoiding
+            # both head-of-line blocking and hidden jump-table liveness.
+            tail_groups = tuple(range(N_GROUPS - 8, N_GROUPS))
+            output_indices = [
+                index
+                for index, op in enumerate(graph.ops)
+                if op.tag == "output_store" and op.group in tail_groups
+            ]
+            group23_store = max(
+                index
+                for index, op in enumerate(graph.ops)
+                if op.tag == "output_store" and op.group == N_GROUPS - 9
+            )
+            removable = output_indices + [
+                index
+                for index, op in enumerate(graph.ops)
+                if index > group23_store and op.tag == "pointer_advance"
+            ]
+            for index in removable:
+                op = graph.ops[index]
+                slots = self.instrs[op_cycles[index]].get(op.engine, [])
+                slots.remove(op.slot)
+                if not slots:
+                    self.instrs[op_cycles[index]].pop(op.engine, None)
+
+            value_ready_by_group = {}
+            for group in tail_groups:
+                value_words = set(_words(values[group]))
+                value_ready_by_group[group] = max(
+                    op_cycles[index]
+                    for index, op in enumerate(graph.ops)
+                    if value_words.intersection(op.writes)
+                )
+            pointer_for_group = dict(
+                zip(
+                    tail_groups,
+                    (
+                        s_nineteen,
+                        s_c2_shift9,
+                        s_c0,
+                        s_one,
+                        s_c4,
+                        s_four,
+                        s_m4,
+                        s_c23,
+                    ),
+                )
+            )
+            late_store_jobs: list[tuple[int, int, int]] = []
+            for group in tail_groups:
+                pointer = pointer_for_group[group]
+                pointer_last_use = max(
+                    (
+                        op_cycles[index]
+                        for index, op in enumerate(graph.ops)
+                        if pointer in op.reads or pointer in op.writes
+                    ),
+                    default=-1,
+                )
+                pointer_cycle = first_bundle_with_room(
+                    "load", pointer_last_use + 1
+                )
+                self.instrs[pointer_cycle].setdefault("load", []).append(
+                    ("const", pointer, values_base + group * VLEN)
+                )
+
+                value_ready = value_ready_by_group[group]
+                late_store_jobs.append(
+                    (max(pointer_cycle, value_ready) + 1, group, pointer)
+                )
+
+            # Unit-time, capacity-two jobs with release dates: earliest-release
+            # order is optimal for makespan and avoids group-number ordering
+            # leaving a usable store slot idle before a late critical value.
+            for release, group, pointer in sorted(late_store_jobs):
+                store_cycle = first_bundle_with_room("store", release)
+                self.instrs[store_cycle].setdefault("store", []).append(
+                    ("vstore", pointer, values[group])
+                )
+
+            while self.instrs and not any(self.instrs[-1].values()):
+                self.instrs.pop()
+
+        if BRANCH_FINAL_LANES and not PAIRED_BRANCH_FINAL:
             if SSA_WORKSPACES:
                 raise ValueError("branch final lookup and SSA workspaces are exclusive")
             branch_select_dests = {
@@ -2416,6 +3484,387 @@ class KernelBuilder:
             self.branch_main_cycles = main_length
         else:
             self.branch_main_cycles = 0
+
+        if PAIRED_BRANCH_FINAL:
+            main_length = len(self.instrs)
+            if self.instrs[-1].get("flow"):
+                raise AssertionError("final bundle has no flow slot for paired halt")
+            self.instrs[-1]["flow"] = [("halt",)]
+
+            paired_jump_pcs = []
+            paired_target_pcs = []
+            for pair, jump_register in enumerate(paired_jump_registers):
+                jump_pc = next(
+                    pc
+                    for pc, bundle in enumerate(self.instrs[:main_length])
+                    if ("jump_indirect", jump_register) in bundle.get("flow", ())
+                )
+                target_pc = next(
+                    pc
+                    for pc, bundle in enumerate(self.instrs[:main_length])
+                    if (
+                        "add_imm",
+                        jump_register,
+                        jump_register,
+                        PAIRED_TARGET_SENTINEL,
+                    )
+                    in bundle.get("flow", ())
+                )
+                if target_pc != jump_pc + 1:
+                    raise AssertionError(
+                        f"paired trace {pair} is not contiguous: "
+                        f"{jump_pc},{target_pc}"
+                    )
+                paired_jump_pcs.append(jump_pc)
+                paired_target_pcs.append(target_pc)
+
+            first_base_use_pc = min(
+                pc
+                for pc, bundle in enumerate(self.instrs[:main_length])
+                for slot in bundle.get("alu", ())
+                if slot[0] == "+" and slot[3] in paired_base_registers
+            )
+            base_words = set(paired_base_registers)
+            last_old_base_use = max(
+                pc
+                for pc, bundle in enumerate(self.instrs[:first_base_use_pc])
+                if any(
+                    isinstance(item, int) and item in base_words
+                    for slots in bundle.values()
+                    for slot in slots
+                    for item in slot[1:]
+                )
+            )
+            base_prep_pc = next(
+                pc
+                for pc in range(last_old_base_use + 1, first_base_use_pc)
+                if len(self.instrs[pc].get("alu", ())) <= 8
+            )
+            paired_offsets = (0, 69, 133, 261)
+            paired_offset_registers = (
+                -1,
+                depth_base[5],
+                depth_base[6],
+                depth_base[7],
+            )
+            for pair, base_register in enumerate(paired_base_registers):
+                if pair == 0:
+                    slot = (
+                        "|",
+                        base_register,
+                        branch_table_base,
+                        branch_table_base,
+                    )
+                else:
+                    slot = (
+                        "+",
+                        base_register,
+                        branch_table_base,
+                        paired_offset_registers[pair],
+                    )
+                self.instrs[base_prep_pc].setdefault("alu", []).append(slot)
+
+            load_base_pc = next(
+                pc
+                for pc in range(base_prep_pc)
+                if len(self.instrs[pc].get("load", ())) < SLOT_LIMITS["load"]
+            )
+            self.instrs[load_base_pc].setdefault("load", []).append(
+                ("const", branch_table_base, main_length)
+            )
+
+            paired_table_blocks: list[dict[str, list[tuple]]] = []
+            for pair, target_pc in enumerate(paired_target_pcs):
+                while len(paired_table_blocks) < paired_offsets[pair]:
+                    paired_table_blocks.append({"flow": [("halt",)]})
+                lane0 = 2 * pair
+                lane1 = lane0 + 1
+                placeholders = (
+                    (
+                        "|",
+                        paired_candidate_yes + lane0,
+                        node_vec[0],
+                        node_vec[0],
+                    ),
+                    (
+                        "|",
+                        paired_candidate_no + lane0,
+                        node_vec[0],
+                        node_vec[0],
+                    ),
+                    (
+                        "|",
+                        paired_candidate_yes + lane1,
+                        node_vec[0],
+                        node_vec[0],
+                    ),
+                    (
+                        "|",
+                        paired_candidate_no + lane1,
+                        node_vec[0],
+                        node_vec[0],
+                    ),
+                )
+                for placeholder in placeholders:
+                    if placeholder not in self.instrs[target_pc].get("alu", ()):
+                        raise AssertionError(
+                            f"paired copy is not packetized at pc={target_pc}"
+                        )
+                for combined_index in range(64):
+                    mirror0, mirror1 = divmod(combined_index, 8)
+                    replacements = (
+                        (
+                            level4_reversed[2 * mirror0 + 1] + lane0
+                            if PAIRED_EARLY_XOR
+                            else level4_diff[mirror0] + lane0
+                        ),
+                        level4_reversed[2 * mirror0] + lane0,
+                        (
+                            level4_reversed[2 * mirror1 + 1] + lane1
+                            if PAIRED_EARLY_XOR
+                            else level4_diff[mirror1] + lane1
+                        ),
+                        level4_reversed[2 * mirror1] + lane1,
+                    )
+                    target = {
+                        engine: list(slots)
+                        for engine, slots in self.instrs[target_pc].items()
+                    }
+                    for placeholder, source in zip(placeholders, replacements):
+                        copy_index = target["alu"].index(placeholder)
+                        target["alu"][copy_index] = (
+                            "|",
+                            placeholder[1],
+                            source,
+                            source,
+                        )
+                    target["flow"] = [("jump", target_pc + 1)]
+                    paired_table_blocks.append(target)
+            self.instrs.extend(paired_table_blocks)
+            self.branch_main_cycles = main_length
+
+        if DIRECT_BRANCH_LOOKUPS:
+            if not BRANCH_FINAL_LANES:
+                main_length = len(self.instrs)
+                if self.instrs[-1].get("flow"):
+                    raise AssertionError("final bundle has no flow slot for halt")
+                self.instrs[-1]["flow"] = [("halt",)]
+                self.branch_main_cycles = main_length
+            direct_table_blocks: list[dict[str, list[tuple]]] = []
+            direct_base = len(self.instrs)
+            broadcast_pc = next(
+                pc
+                for pc, bundle in enumerate(
+                    self.instrs[: self.branch_main_cycles]
+                )
+                if ("vbroadcast", v_m23, s_m23) in bundle.get("valu", ())
+            )
+            first_jump_pc = min(
+                pc
+                for pc, bundle in enumerate(
+                    self.instrs[: self.branch_main_cycles]
+                )
+                for slot in bundle.get("flow", ())
+                if slot[0] == "jump_indirect"
+                and any(
+                    slot[1] == mirrors[group] + lane
+                    for group in DIRECT_BRANCH_LOOKUPS
+                    for lane in DIRECT_BRANCH_LOOKUPS[group]
+                )
+            )
+            base_load_pc = next(
+                pc
+                for pc in range(broadcast_pc + 1, first_jump_pc)
+                if len(self.instrs[pc].get("load", ())) < SLOT_LIMITS["load"]
+            )
+            self.instrs[base_load_pc].setdefault("load", []).append(
+                ("const", s_m23, direct_base)
+            )
+            for group in sorted(DIRECT_BRANCH_LOOKUPS):
+                for lane in DIRECT_BRANCH_LOOKUPS[group]:
+                    mirror_word = mirrors[group] + lane
+                    temp_word = temps[group] + lane
+                    jump_pcs = [
+                        pc
+                        for pc, bundle in enumerate(
+                            self.instrs[: self.branch_main_cycles]
+                        )
+                        for slot in bundle.get("flow", ())
+                        if slot == ("jump_indirect", mirror_word)
+                    ]
+                    target_pcs = [
+                        pc
+                        for pc, bundle in enumerate(
+                            self.instrs[: self.branch_main_cycles]
+                        )
+                        for slot in bundle.get("flow", ())
+                        if slot
+                        == (
+                            "add_imm",
+                            mirror_word,
+                            mirror_word,
+                            DIRECT_TARGET_SENTINEL,
+                        )
+                    ]
+                    if not (len(jump_pcs) == len(target_pcs) == 1):
+                        raise AssertionError(
+                            f"missing direct branch trace for group={group} lane={lane}"
+                        )
+                    jump_pc, target_pc = jump_pcs[0], target_pcs[0]
+                    if target_pc != jump_pc + 1:
+                        raise AssertionError(
+                            "direct branch trace is not contiguous: "
+                            f"group={group} lane={lane} pcs="
+                            f"{jump_pc},{target_pc}"
+                        )
+                    record_index = direct_branch_index[(group, lane)]
+                    desired_offset = direct_table_offsets[record_index]
+                    while len(direct_table_blocks) < desired_offset:
+                        direct_table_blocks.append({"flow": [("halt",)]})
+                    placeholder_copy = (
+                        "|",
+                        temp_word,
+                        node_vec[0] + lane,
+                        node_vec[0] + lane,
+                    )
+                    if placeholder_copy not in self.instrs[target_pc].get(
+                        "alu", ()
+                    ):
+                        raise AssertionError(
+                            "direct branch copy is not packetized with target: "
+                            f"group={group} lane={lane} pc={target_pc}"
+                        )
+                    for mirror_value in range(16):
+                        target = {
+                            engine: list(slots)
+                            for engine, slots in self.instrs[target_pc].items()
+                        }
+                        copy_index = target["alu"].index(placeholder_copy)
+                        target["alu"][copy_index] = (
+                            "|",
+                            temp_word,
+                            level4_reversed[mirror_value] + lane,
+                            level4_reversed[mirror_value] + lane,
+                        )
+                        target["flow"] = [("jump", target_pc + 1)]
+                        direct_table_blocks.append(target)
+            self.instrs.extend(direct_table_blocks)
+            self.direct_branch_table_bundles = len(direct_table_blocks)
+        else:
+            self.direct_branch_table_bundles = 0
+
+        if PAIRED_DIRECT_BRANCH_LOOKUPS:
+            if DIRECT_BRANCH_LOOKUPS:
+                raise ValueError("individual and paired direct lookups are exclusive")
+            paired_direct_base = len(self.instrs)
+            first_jump_pc = min(
+                pc
+                for pc, bundle in enumerate(
+                    self.instrs[: self.branch_main_cycles]
+                )
+                for group, lanes in paired_direct_records
+                if ("jump_indirect", mirrors[group] + lanes[0])
+                in bundle.get("flow", ())
+            )
+            broadcast_pc = next(
+                pc
+                for pc, bundle in enumerate(
+                    self.instrs[: self.branch_main_cycles]
+                )
+                if ("vbroadcast", v_m23, s_m23) in bundle.get("valu", ())
+            )
+            base_load_pc = next(
+                pc
+                for pc in range(broadcast_pc + 1, first_jump_pc)
+                if len(self.instrs[pc].get("load", ())) < SLOT_LIMITS["load"]
+            )
+            self.instrs[base_load_pc].setdefault("load", []).append(
+                ("const", s_m23, paired_direct_base)
+            )
+
+            paired_direct_blocks: list[dict[str, list[tuple]]] = []
+            for group, lanes in paired_direct_records:
+                lane0, lane1 = lanes
+                mirror_word = mirrors[group] + lane0
+                jump_pc = next(
+                    pc
+                    for pc, bundle in enumerate(
+                        self.instrs[: self.branch_main_cycles]
+                    )
+                    if ("jump_indirect", mirror_word) in bundle.get("flow", ())
+                )
+                target_pc = next(
+                    pc
+                    for pc, bundle in enumerate(
+                        self.instrs[: self.branch_main_cycles]
+                    )
+                    if (
+                        "add_imm",
+                        mirror_word,
+                        mirror_word,
+                        DIRECT_TARGET_SENTINEL,
+                    )
+                    in bundle.get("flow", ())
+                )
+                trace_length = target_pc - jump_pc
+                if not 1 <= trace_length <= 4:
+                    raise AssertionError(
+                        f"paired direct trace is too long: "
+                        f"group={group} lanes={lanes} pcs={jump_pc},{target_pc}"
+                    )
+                record_index = paired_direct_index[(group, lanes)]
+                while len(paired_direct_blocks) < paired_direct_offsets[record_index]:
+                    paired_direct_blocks.append({"flow": [("halt",)]})
+                placeholders = tuple(
+                    (
+                        "|",
+                        temps[group] + lane,
+                        node_vec[0] + lane,
+                        node_vec[0] + lane,
+                    )
+                    for lane in lanes
+                )
+                copy_pcs = {
+                    pc
+                    for pc in range(jump_pc + 1, target_pc + 1)
+                    if all(
+                        placeholder in self.instrs[pc].get("alu", ())
+                        for placeholder in placeholders
+                    )
+                }
+                if len(copy_pcs) != 1:
+                    raise AssertionError(
+                        f"paired direct copies are split: pcs={sorted(copy_pcs)}"
+                    )
+                copy_pc = next(iter(copy_pcs))
+                for combined_index in range(256):
+                    mirror0, mirror1 = divmod(combined_index, 16)
+                    entry_blocks = []
+                    for trace_pc in range(jump_pc + 1, target_pc + 1):
+                        target = {
+                            engine: list(slots)
+                            for engine, slots in self.instrs[trace_pc].items()
+                        }
+                        if trace_pc == copy_pc:
+                            for placeholder, mirror_value, lane in zip(
+                                placeholders, (mirror0, mirror1), lanes
+                            ):
+                                source = level4_reversed[mirror_value] + lane
+                                copy_index = target["alu"].index(placeholder)
+                                target["alu"][copy_index] = (
+                                    "|",
+                                    placeholder[1],
+                                    source,
+                                    source,
+                                )
+                        if trace_pc == target_pc:
+                            target["flow"] = [("jump", target_pc + 1)]
+                        entry_blocks.append(target)
+                    while len(entry_blocks) < 4:
+                        entry_blocks.append({"flow": [("halt",)]})
+                    paired_direct_blocks.extend(entry_blocks)
+            self.instrs.extend(paired_direct_blocks)
+            self.direct_branch_table_bundles = len(paired_direct_blocks)
 
         self._validate_program()
 
@@ -2743,9 +4192,17 @@ class KernelBuilder:
                 group_bias = -(op.group % 4) if op.group >= 0 else 0
             id_bias = -i if policy % 2 == 0 else i
             op_offset = OP_PRIORITY_OFFSETS.get((op.tag, op.group, op.round), 0)
+            direct_branch_bias = (
+                DIRECT_BRANCH_PRIORITY
+                if op.tag.startswith("direct_branch_")
+                or op.tag.startswith("paired_branch_")
+                or op.tag.startswith("paired_direct_branch_")
+                else 0
+            )
             return (
                 h
                 + op_offset
+                + direct_branch_bias
                 + (0 if priority_noise is None else priority_noise[i]),
                 reach[i] // 32,
                 engine_rank[op.engine],

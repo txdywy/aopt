@@ -116,7 +116,7 @@ def main() -> None:
     solver = cp_model.CpSolver()
     solver.parameters.max_time_in_seconds = limit
     solver.parameters.num_workers = int(os.environ.get("WORKERS", "8"))
-    solver.parameters.repair_hint = True
+    solver.parameters.repair_hint = bool(int(os.environ.get("REPAIR_HINT", "0")))
     solver.parameters.hint_conflict_limit = 200_000
     solver.parameters.cp_model_presolve = True
     solver.parameters.log_search_progress = bool(int(os.environ.get("LOG", "0")))

@@ -39,6 +39,18 @@ OFFICIAL_SHAPE = (10, 2047, 256, 16)
 N_GROUPS = 32
 N_WORKSPACES = 9
 N_SPILL_WORKSPACES = 9
+# Experimental compiler-style workspace renaming.  The normal kernel assigns
+# physical scratch before instruction scheduling, which introduces false
+# dependencies between unrelated groups.  In SSA mode the short-lived mux
+# registers are scheduled virtually and colored back onto this same physical
+# pool afterwards.
+SSA_WORKSPACES = False
+FLOW_SCALAR_CONSTANT_COUNT = 0
+ALU_DERIVED_POWER_COUNT = 0
+ALU_DERIVED_DEPTH_START = 11
+ALU_DERIVED_MISC_SET: frozenset[str] = frozenset(
+    ("nineteen", "m4", "m0", "m2", "m23")
+)
 WORKSPACE_ASSIGNMENT = (
     0, 2, 3, 2, 4, 0, 1, 4, 3, 0, 1, 0, 1, 6, 4, 2,
     3, 2, 3, 2, 5, 4, 3, 0, 7, 6, 5, 1, 1, 7, 5, 5,
@@ -46,6 +58,7 @@ WORKSPACE_ASSIGNMENT = (
 SECOND_WORKSPACE_STRIDE = 3
 SECOND_WORKSPACE_FIXED = 8
 SECOND_WORKSPACE_COUNT = 1
+SECOND_WORKSPACE_ASSIGNMENT: tuple[int, ...] | None = None
 INDEPENDENT_ROOT_CACHE = True
 DIRECT_MIRROR_PATH = False
 OVERLAP_DEEP_ADDRESS = False
@@ -64,6 +77,10 @@ OUTPUT_GROUP_ORDER = tuple(range(N_GROUPS))
 PER_GROUP_OUTPUT_POINTERS = False
 PREPROCESS_MAX_DEPTH = 7
 EARLY_FINAL_CACHE_SET: frozenset[int] = frozenset()
+EARLY_FINAL_ADDRESS_SET: frozenset[int] = frozenset()
+VECTOR_EARLY_FINAL_ADDRESS_SET: frozenset[int] = frozenset()
+BRANCH_FINAL_GROUP = 31
+BRANCH_FINAL_LANES: tuple[int, ...] = (4, 5, 6, 7)
 MADD_FIRST_DEPTH1 = False
 SCALAR_FIRST_DEPTH1_SET: frozenset[int] = frozenset()
 SCALAR_FINAL_C5_SET: frozenset[int] = frozenset()
@@ -120,6 +137,7 @@ GROUP_PRIORITY_OFFSETS = (
 )
 ROUND_PRIORITY_OFFSETS = (0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 3, -6, 0, 0, 0, 0)
 TAG_PRIORITY_OFFSETS: dict[str, int] = {}
+OP_PRIORITY_OFFSETS: dict[tuple[str, int, int], int] = {}
 GROUP_FINE_OFFSETS = (0, 0, 0, 0, 0, 0, 0, 1) + (0,) * 24
 BASIC_GROUP_OFFSETS = (0,) * N_GROUPS
 BASIC_ROUND_OFFSETS = (0,) * 16
@@ -281,8 +299,10 @@ class KernelBuilder:
         s_one = scalar_const(1, "one")
         s_two = scalar_const(2, "two")
         if not OVERLAP_DEEP_ADDRESS:
-            scalar_const(4, "four")
-            scalar_const(8, "eight")
+            s_four = scalar_const(4, "four")
+            s_eight = scalar_const(8, "eight")
+        else:
+            s_four = s_eight = -1
         s_sixteen = scalar_const(16, "sixteen")
         s_nineteen = scalar_const(19, "nineteen")
         s_c0 = scalar_const(C0, "hash_c0")
@@ -368,6 +388,55 @@ class KernelBuilder:
             [alloc(f"select_spill_{workspace}", VLEN)]
             for workspace in range(N_SPILL_WORKSPACES)
         ]
+        branch_table_base = (
+            alloc("branch_table_base") if BRANCH_FINAL_LANES else -1
+        )
+        physical_workspace_vectors = tuple(
+            addr for workspace_bits in bits for addr in workspace_bits
+        ) + tuple(workspace_spill[0] for workspace_spill in select_spill)
+
+        # Virtual addresses deliberately live far outside the architectural
+        # scratch range.  They only exist while constructing and scheduling
+        # the DAG; ``color_virtual_workspaces`` below rewrites every one of
+        # them to an allocated physical vector before validation/execution.
+        virtual_next = 1_000_000
+        virtual_vectors: dict[int, str] = {}
+        virtual_workspaces: dict[tuple[str, int] | tuple[int, int], tuple[list[int], list[int]]] = {}
+
+        def virtual_vector(name: str) -> int:
+            nonlocal virtual_next
+            base = virtual_next
+            virtual_next += VLEN
+            virtual_vectors[base] = name
+            return base
+
+        def workspace_registers(
+            workspace: int, gg: int, rnd: int
+        ) -> tuple[list[int], list[int]]:
+            # The first traversal intentionally uses rotating physical
+            # workspaces: its saved path bits span several rounds and fully
+            # renaming them exceeds the 36-vector register budget.  The second
+            # traversal's conditions are short-lived, so it is both safe and
+            # profitable to allocate those after scheduling.
+            if not SSA_WORKSPACES or rnd < rounds - 1:
+                return bits[workspace], select_spill[workspace % N_SPILL_WORKSPACES]
+
+            # Later cached selections derive their conditions directly from
+            # the mirror and therefore have independent live ranges.
+            key: tuple[str, int] | tuple[int, int]
+            key = (rnd, gg)
+            registers = virtual_workspaces.get(key)
+            if registers is None:
+                key_name = f"{key[0]}_{key[1]}"
+                registers = (
+                    # Keep path conditions on the rotating physical registers:
+                    # the list scheduler may otherwise hoist them hundreds of
+                    # cycles before the mux and create impossible live ranges.
+                    bits[workspace],
+                    [virtual_vector(f"virtual_spill_{key_name}")],
+                )
+                virtual_workspaces[key] = registers
+            return registers
         # Preprocessing borrows the two latest groups' temp vectors.  Keeping
         # these separate from the persistent level-4 mux workspace prevents a
         # global setup barrier; only groups 30/31 wait for preprocessing.
@@ -382,6 +451,7 @@ class KernelBuilder:
         ]
         first_level4_pool = [level4_pool]
         first_level4_condition = level4_condition
+        final_address_vectors_ready = [False]
 
         if scratch.ptr > SCRATCH_SIZE:
             raise AssertionError(f"scratch overflow: {scratch.ptr}")
@@ -533,12 +603,118 @@ class KernelBuilder:
         # Load all immutable scalar constants, then broadcast the subset used
         # by VALU.  The scheduler overlaps these with tree and input traffic.
         emit_const(s_one, 1)
+        misc_addresses = {
+            "nineteen": s_nineteen,
+            "m4": s_m4,
+            "m0": s_m0,
+            "m2": s_m2,
+            "m23": s_m23,
+        }
+        derived_misc_addresses = {
+            misc_addresses[name] for name in ALU_DERIVED_MISC_SET
+        }
+        derived_depth_addresses = {
+            addr for depth, addr in depth_base.items()
+            if depth >= ALU_DERIVED_DEPTH_START
+        }
         for constant_index, (value, addr) in enumerate(scalar_constants.items()):
             if addr != s_one:
-                if constant_index < 0:
+                if addr in derived_depth_addresses or addr in derived_misc_addresses:
+                    continue
+                elif (
+                    value in (2, 4, 8, 16)
+                    and value.bit_length() - 1 <= ALU_DERIVED_POWER_COUNT
+                ):
+                    half = scalar_constants[value // 2]
+                    graph.emit(
+                        "alu",
+                        ("+", addr, half, half),
+                        reads=(half,),
+                        writes=(addr,),
+                        tag="scalar_power_derive",
+                    )
+                elif constant_index < FLOW_SCALAR_CONSTANT_COUNT:
                     emit_immediate(addr, value, "scalar_immediate")
                 else:
                     emit_const(addr, value, "scalar_constant")
+        if "nineteen" in ALU_DERIVED_MISC_SET:
+            graph.emit(
+                "alu", ("+", s_nineteen, s_sixteen, s_two),
+                reads=(s_sixteen, s_two), writes=(s_nineteen,),
+                tag="scalar_misc_derive",
+            )
+            graph.emit(
+                "alu", ("+", s_nineteen, s_nineteen, s_one),
+                reads=(s_nineteen, s_one), writes=(s_nineteen,),
+                tag="scalar_misc_derive",
+            )
+        if "m4" in ALU_DERIVED_MISC_SET:
+            graph.emit(
+                "alu", ("+", s_m4, s_eight, s_one),
+                reads=(s_eight, s_one), writes=(s_m4,),
+                tag="scalar_misc_derive",
+            )
+        if "m0" in ALU_DERIVED_MISC_SET:
+            graph.emit(
+                "alu", ("*", s_m0, s_sixteen, s_sixteen),
+                reads=(s_sixteen,), writes=(s_m0,), tag="scalar_misc_derive",
+            )
+            graph.emit(
+                "alu", ("*", s_m0, s_m0, s_sixteen),
+                reads=(s_m0, s_sixteen), writes=(s_m0,), tag="scalar_misc_derive",
+            )
+            graph.emit(
+                "alu", ("+", s_m0, s_m0, s_one),
+                reads=(s_m0, s_one), writes=(s_m0,), tag="scalar_misc_derive",
+            )
+        if "m2" in ALU_DERIVED_MISC_SET:
+            graph.emit(
+                "alu", ("*", s_m2, s_sixteen, s_two),
+                reads=(s_sixteen, s_two), writes=(s_m2,), tag="scalar_misc_derive",
+            )
+            graph.emit(
+                "alu", ("+", s_m2, s_m2, s_one),
+                reads=(s_m2, s_one), writes=(s_m2,), tag="scalar_misc_derive",
+            )
+        if "m23" in ALU_DERIVED_MISC_SET:
+            graph.emit(
+                "alu", ("<<", s_m23, s_m2, s_m4),
+                reads=(s_m2, s_m4), writes=(s_m23,), tag="scalar_misc_derive",
+            )
+        if derived_depth_addresses:
+            previous = s_sixteen
+            for depth in depth_range:
+                if depth < ALU_DERIVED_DEPTH_START:
+                    previous = depth_base[depth]
+                    continue
+                dest = depth_base[depth]
+                graph.emit(
+                    "alu", ("+", dest, previous, previous),
+                    reads=(previous,), writes=(dest,), tag="depth_base_double",
+                )
+                if depth == 4:
+                    graph.emit(
+                        "alu", ("+", dest, dest, scalar_constants[4]),
+                        reads=(dest, scalar_constants[4]), writes=(dest,),
+                        tag="depth_base_adjust",
+                    )
+                    graph.emit(
+                        "alu", ("+", dest, dest, s_one),
+                        reads=(dest, s_one), writes=(dest,),
+                        tag="depth_base_adjust",
+                    )
+                else:
+                    graph.emit(
+                        "alu", ("-", dest, dest, scalar_constants[4]),
+                        reads=(dest, scalar_constants[4]), writes=(dest,),
+                        tag="depth_base_adjust",
+                    )
+                    graph.emit(
+                        "alu", ("-", dest, dest, s_one),
+                        reads=(dest, s_one), writes=(dest,),
+                        tag="depth_base_adjust",
+                    )
+                previous = dest
         for value, dest in vector_constants.items():
             emit_vbroadcast(dest, scalar_constants[value], "constant_broadcast")
         if OVERLAP_DEEP_ADDRESS:
@@ -732,8 +908,9 @@ class KernelBuilder:
             # Mirror offset 0 names the actual rightmost node.
             leaves = [node_vec[start + width - 1 - i] for i in range(width)]
             temp = temps[state]
-            workspace_bits = bits[workspace]
-            workspace_spill = select_spill[workspace % N_SPILL_WORKSPACES]
+            workspace_bits, workspace_spill = workspace_registers(
+                workspace, gg, rnd
+            )
 
             if depth == 1:
                 condition = (
@@ -858,8 +1035,9 @@ class KernelBuilder:
             *,
             prepared: bool = False,
         ) -> None:
-            workspace_bits = bits[workspace]
-            workspace_spill = select_spill[workspace % N_SPILL_WORKSPACES]
+            workspace_bits, workspace_spill = workspace_registers(
+                workspace, gg, rnd
+            )
             active_pool = first_level4_pool
             active_condition = first_level4_condition
             level4_condition_2 = workspace_bits[2]
@@ -956,11 +1134,26 @@ class KernelBuilder:
         def gather_node(depth: int, state: int, gg: int, rnd: int) -> None:
             mirror = mirrors[state]
             temp = temps[state]
-            if OVERLAP_DEEP_ADDRESS:
+            branch_lanes = (
+                frozenset(BRANCH_FINAL_LANES)
+                if gg == BRANCH_FINAL_GROUP and rnd == rounds - 1 and depth == 4
+                else frozenset()
+            )
+            final_address_prepared = (
+                depth == 4
+                and rnd == rounds - 1
+                and (
+                    gg in EARLY_FINAL_ADDRESS_SET
+                    or gg in VECTOR_EARLY_FINAL_ADDRESS_SET
+                )
+            )
+            if final_address_prepared:
+                address = mirror
+            elif OVERLAP_DEEP_ADDRESS:
                 # At depth 4 the mirror still encodes complemented path bits;
                 # convert it in place to an absolute memory address.  Later
                 # deep rounds keep that address representation directly.
-                if depth == 4 and not (
+                if depth == 4 and not final_address_prepared and not (
                     OVERLAP_SHALLOW_ADDRESS
                     and rnd == 4
                     and gg not in FIRST_CACHE_SET
@@ -979,18 +1172,22 @@ class KernelBuilder:
             else:
                 # Address generation is intentionally scalar: eight ALU slots
                 # are cheaper than a scarce VALU slot in steady state.
-                emit_scalarized(
-                    "-",
-                    temp,
-                    depth_base[depth],
-                    mirror,
-                    a_scalar=True,
-                    tag="gather_address",
-                    group=gg,
-                    round=rnd,
-                )
+                for lane in range(VLEN):
+                    if lane in branch_lanes:
+                        continue
+                    graph.emit(
+                        "alu",
+                        ("-", temp + lane, depth_base[depth], mirror + lane),
+                        reads=(depth_base[depth], mirror + lane),
+                        writes=(temp + lane,),
+                        tag="gather_address",
+                        group=gg,
+                        round=rnd,
+                    )
                 address = temp
             for lane in range(VLEN):
+                if lane in branch_lanes:
+                    continue
                 # Each deeper level occupies twice as many contiguous vectors.
                 # Explicitly order its gathers after the exact preprocessing
                 # stores which transform that level in memory.
@@ -1020,6 +1217,27 @@ class KernelBuilder:
                     group=gg,
                     round=rnd,
                 )
+            if branch_lanes:
+                if SECOND_WORKSPACE_FIXED < 0:
+                    raise ValueError("branch lookup requires a fixed second workspace")
+                candidate_yes = bits[SECOND_WORKSPACE_FIXED][0]
+                candidate_no = bits[SECOND_WORKSPACE_FIXED][1]
+                for lane in sorted(branch_lanes):
+                    graph.emit(
+                        "flow",
+                        (
+                            "select",
+                            temp + lane,
+                            temp + lane,
+                            candidate_yes + lane,
+                            candidate_no + lane,
+                        ),
+                        reads=(temp + lane, candidate_yes + lane, candidate_no + lane),
+                        writes=(temp + lane,),
+                        tag="branch_final_select",
+                        group=gg,
+                        round=rnd,
+                    )
             if 4 <= depth <= PREPROCESS_MAX_DEPTH:
                 # This level was transformed once during setup.
                 pass
@@ -1234,7 +1452,7 @@ class KernelBuilder:
             depth = rnd if rnd <= 10 else rnd - 11
             value = values[state]
             temp = temps[state]
-            workspace_bits = bits[workspace]
+            workspace_bits, _ = workspace_registers(workspace, gg, rnd)
 
             if not DIRECT_MIRROR_PATH and rnd == 2:
                 emit_madd(
@@ -1349,6 +1567,78 @@ class KernelBuilder:
                     group=gg,
                     round=rnd,
                 )
+            elif (
+                OVERLAP_DEEP_ADDRESS
+                and rnd == 14
+                and gg in VECTOR_EARLY_FINAL_ADDRESS_SET
+                and gg not in FINAL_CACHE_SET
+            ):
+                # Once all level-4 cached selections have been emitted, their
+                # first two difference vectors are dead.  Recycle them as
+                # -2 and depth4_base so the final address affine is one MADD
+                # and costs no additional scratch.
+                if not final_address_vectors_ready[0]:
+                    graph.emit(
+                        "flow",
+                        (
+                            "add_imm",
+                            level4_diff[0],
+                            s_one,
+                            (-3) & 0xFFFFFFFF,
+                        ),
+                        reads=(s_one,),
+                        writes=(level4_diff[0],),
+                        tag="final_address_neg_two_immediate",
+                    )
+                    emit_vbroadcast(
+                        level4_diff[0],
+                        level4_diff[0],
+                        "final_address_neg_two_broadcast",
+                    )
+                    emit_vbroadcast(
+                        level4_diff[1],
+                        depth_base[4],
+                        "final_address_base_broadcast",
+                    )
+                    final_address_vectors_ready[0] = True
+                emit_madd(
+                    mirrors[state],
+                    mirrors[state],
+                    level4_diff[0],
+                    level4_diff[1],
+                    tag="final_address_affine_vector_early",
+                    group=gg,
+                    round=rnd,
+                )
+            elif (
+                rnd == 14
+                and gg in EARLY_FINAL_ADDRESS_SET
+                and gg not in FINAL_CACHE_SET
+            ):
+                # The depth-3 lookup is the final consumer of the path
+                # offset.  Compute depth4_base - 2*offset while the hash is
+                # in flight; after the hash only the parity subtraction is
+                # left before the final gather can start.
+                emit_scalarized(
+                    "*",
+                    mirrors[state],
+                    mirrors[state],
+                    s_two,
+                    b_scalar=True,
+                    tag="final_address_double_early",
+                    group=gg,
+                    round=rnd,
+                )
+                emit_scalarized(
+                    "-",
+                    mirrors[state],
+                    depth_base[4],
+                    mirrors[state],
+                    a_scalar=True,
+                    tag="final_address_affine_early",
+                    group=gg,
+                    round=rnd,
+                )
 
             emit_hash(value, temp, gg, rnd)
 
@@ -1378,6 +1668,24 @@ class KernelBuilder:
                     gg,
                     rounds - 1,
                     prepared=True,
+                )
+            elif (
+                rnd == 14
+                and (
+                    gg in EARLY_FINAL_ADDRESS_SET
+                    or gg in VECTOR_EARLY_FINAL_ADDRESS_SET
+                )
+                and gg not in FINAL_CACHE_SET
+            ):
+                emit_parity(temp, value, gg, rnd)
+                emit_scalarized(
+                    "-",
+                    mirrors[state],
+                    mirrors[state],
+                    temp,
+                    tag="final_address_parity_early",
+                    group=gg,
+                    round=rnd,
                 )
             elif rnd in (12, 13, 14):
                 emit_parity(temp, value, gg, rnd)
@@ -1480,7 +1788,9 @@ class KernelBuilder:
         def round_workspace(gg: int, rnd: int) -> int:
             workspace = WORKSPACE_ASSIGNMENT[gg]
             if rnd >= 11:
-                if SECOND_WORKSPACE_FIXED >= 0:
+                if SECOND_WORKSPACE_ASSIGNMENT is not None:
+                    workspace = SECOND_WORKSPACE_ASSIGNMENT[gg]
+                elif SECOND_WORKSPACE_FIXED >= 0:
                     workspace = SECOND_WORKSPACE_FIXED + (
                         (gg + rnd - 11) % SECOND_WORKSPACE_COUNT
                     )
@@ -1724,9 +2034,19 @@ class KernelBuilder:
         # is unscored, so select the shortest legal bundle sequence.
         schedules = []
         self.dag_ops = graph.ops
+        forward_cycles: list[list[int]] = []
         for policy in SCHEDULE_POLICIES:
-            schedules.append(self._schedule(graph.ops, policy))
+            if SSA_WORKSPACES:
+                schedule, cycles = self._schedule(
+                    graph.ops, policy, return_cycles=True
+                )
+                schedules.append(schedule)
+                forward_cycles.append(cycles)
+            else:
+                schedules.append(self._schedule(graph.ops, policy))
         reversed_ops = self._reverse_ops(graph.ops)
+        if SSA_WORKSPACES and BACKWARD_POLICIES:
+            raise ValueError("SSA_WORKSPACES currently supports forward scheduling only")
         for policy in BACKWARD_POLICIES:
             schedules.append(list(reversed(self._schedule(reversed_ops, policy))))
         self.schedule_lengths = {
@@ -1741,7 +2061,361 @@ class KernelBuilder:
                 )
             }
         )
-        self.instrs = min(schedules, key=len)
+        best_index = min(range(len(schedules)), key=lambda i: len(schedules[i]))
+        self.instrs = schedules[best_index]
+
+        if SSA_WORKSPACES:
+            # Calculate conservative live intervals in scheduled-cycle space,
+            # then linear-scan color the virtual SIMD registers.  Intervals
+            # that touch the same cycle conflict because all reads observe the
+            # old scratch image and all writes commit at cycle end.
+            cycles = forward_cycles[best_index]
+            virtual_word_to_base = {
+                base + lane: base
+                for base in virtual_vectors
+                for lane in range(VLEN)
+            }
+            intervals: dict[int, list[int]] = {}
+            physical_word_to_base = {
+                base + lane: base
+                for base in physical_workspace_vectors
+                for lane in range(VLEN)
+            }
+            physical_live_ranges: dict[int, list[list[int]]] = defaultdict(list)
+            physical_current_definition: dict[int, list[int]] = {}
+            for op_index, op in enumerate(graph.ops):
+                cycle = cycles[op_index]
+                for word in op.reads:
+                    base = virtual_word_to_base.get(word)
+                    if base is None:
+                        base = physical_word_to_base.get(word)
+                        if base is not None:
+                            live_range = physical_current_definition.get(base)
+                            if live_range is not None:
+                                live_range[1] = max(live_range[1], cycle)
+                        continue
+                    interval = intervals.get(base)
+                    if interval is None:
+                        intervals[base] = [cycle, cycle]
+                    else:
+                        interval[0] = min(interval[0], cycle)
+                        interval[1] = max(interval[1], cycle)
+                for word in op.writes:
+                    base = virtual_word_to_base.get(word)
+                    if base is None:
+                        base = physical_word_to_base.get(word)
+                        if base is not None:
+                            live_range = [cycle, cycle]
+                            physical_live_ranges[base].append(live_range)
+                            physical_current_definition[base] = live_range
+                        continue
+                    interval = intervals.get(base)
+                    if interval is None:
+                        intervals[base] = [cycle, cycle]
+                    else:
+                        interval[0] = min(interval[0], cycle)
+                        interval[1] = max(interval[1], cycle)
+
+            free_colors = list(physical_workspace_vectors)
+            active: list[tuple[int, int, int]] = []
+            colors: dict[int, int] = {}
+            for base, (start, end) in sorted(
+                intervals.items(), key=lambda item: (item[1][0], item[1][1])
+            ):
+                still_active: list[tuple[int, int, int]] = []
+                for active_end, active_base, color in active:
+                    # Use conservative cycle-disjoint intervals here.  Some
+                    # mux spills are overwritten at their final occurrence,
+                    # so endpoint sharing is not always the safe WAR case.
+                    if active_end < start:
+                        free_colors.append(color)
+                    else:
+                        still_active.append((active_end, active_base, color))
+                active = still_active
+                compatible_index = next(
+                    (
+                        index
+                        for index, candidate in enumerate(free_colors)
+                        if not any(
+                            start <= physical_end and physical_start <= end
+                            for physical_start, physical_end in physical_live_ranges[candidate]
+                        )
+                    ),
+                    None,
+                )
+                if compatible_index is None:
+                    peak = len(active) + 1
+                    live_names = ",".join(
+                        virtual_vectors[active_base]
+                        for _, active_base, _ in active
+                    )
+                    raise AssertionError(
+                        "virtual workspace coloring overflow: "
+                        f"need at least {peak} vectors, have "
+                        f"{len(physical_workspace_vectors)} at cycle {start}; "
+                        f"new={virtual_vectors[base]}; live={live_names}"
+                    )
+                color = free_colors.pop(compatible_index)
+                colors[base] = color
+                active.append((end, base, color))
+                active.sort()
+
+            word_colors = {
+                base + lane: color + lane
+                for base, color in colors.items()
+                for lane in range(VLEN)
+            }
+
+            def recolor_slot(slot: tuple) -> tuple:
+                return tuple(
+                    word_colors.get(item, item) if isinstance(item, int) else item
+                    for item in slot
+                )
+
+            self.instrs = [
+                {
+                    engine: [recolor_slot(slot) for slot in slots]
+                    for engine, slots in bundle.items()
+                }
+                for bundle in self.instrs
+            ]
+            self.virtual_workspace_colors = len(set(colors.values()))
+            self.virtual_workspace_intervals = len(intervals)
+            self.virtual_workspace_assignment = {
+                virtual_vectors[base]: (color, tuple(intervals[base]))
+                for base, color in colors.items()
+            }
+        else:
+            self.virtual_workspace_colors = 0
+            self.virtual_workspace_intervals = 0
+            self.virtual_workspace_assignment = {}
+
+        if BRANCH_FINAL_LANES:
+            if SSA_WORKSPACES:
+                raise ValueError("branch final lookup and SSA workspaces are exclusive")
+            branch_select_dests = {
+                temps[BRANCH_FINAL_GROUP] + lane for lane in BRANCH_FINAL_LANES
+            }
+            select_pcs = [
+                pc
+                for pc, bundle in enumerate(self.instrs)
+                for slot in bundle.get("flow", ())
+                if slot[0] == "select" and slot[1] in branch_select_dests
+            ]
+            if len(select_pcs) != len(BRANCH_FINAL_LANES):
+                raise AssertionError(
+                    f"expected {len(BRANCH_FINAL_LANES)} branch selects, "
+                    f"found {len(select_pcs)}"
+                )
+            first_select_pc = min(select_pcs)
+            last_vselect_pc = max(
+                pc
+                for pc, bundle in enumerate(self.instrs[:first_select_pc])
+                for slot in bundle.get("flow", ())
+                if slot[0] == "vselect"
+            )
+
+            lane_count = len(BRANCH_FINAL_LANES)
+            if lane_count > 4:
+                raise ValueError("precomputed branch tables currently support 4 lanes")
+            dispatch_window: tuple[int, list[int], list[int]] | None = None
+            dead_base_words = set(_words(temps[0]))
+            last_dead_base_use = max(
+                pc
+                for pc, bundle in enumerate(self.instrs)
+                if any(
+                    isinstance(item, int) and item in dead_base_words
+                    for slots in bundle.values()
+                    for slot in slots
+                    for item in slot[1:]
+                )
+            )
+            dispatch_pairs: list[tuple[int, int]] = []
+            pc = last_vselect_pc + 1
+            while pc + 1 < first_select_pc and len(dispatch_pairs) < lane_count:
+                target_pc = pc + 1
+                target_alu = self.instrs[target_pc].get("alu", ())
+                target_fits = len(target_alu) <= 10 or (
+                    len(target_alu) == 11
+                    and any(
+                        slot[0] == "+" and slot[1] == slot[2]
+                        for slot in target_alu
+                    )
+                )
+                if (
+                    not self.instrs[pc].get("flow")
+                    and not self.instrs[target_pc].get("flow")
+                    and target_fits
+                ):
+                    dispatch_pairs.append((pc, target_pc))
+                    pc += 2
+                else:
+                    pc += 1
+
+            if len(dispatch_pairs) == lane_count:
+                base_pc = next(
+                    (
+                        pc
+                        for pc in range(last_dead_base_use + 1, last_vselect_pc + 1)
+                        if len(self.instrs[pc].get("alu", ()))
+                        <= 12 - lane_count
+                    ),
+                    None,
+                )
+                if base_pc is not None:
+                    reserved_copy = {target_pc: 2 for _, target_pc in dispatch_pairs}
+                    prep_use: dict[int, int] = defaultdict(int)
+                    target_pcs: list[int] = []
+                    for jump_pc, _ in dispatch_pairs:
+                        prep_pc = next(
+                            (
+                                candidate
+                                for candidate in range(jump_pc - 1, base_pc, -1)
+                                if len(self.instrs[candidate].get("alu", ()))
+                                + reserved_copy.get(candidate, 0)
+                                + prep_use[candidate]
+                                < SLOT_LIMITS["alu"]
+                            ),
+                            None,
+                        )
+                        if prep_pc is None:
+                            target_pcs = []
+                            break
+                        prep_use[prep_pc] += 1
+                        target_pcs.append(prep_pc)
+                    if len(target_pcs) == lane_count:
+                        dispatch = [pc for pair in dispatch_pairs for pc in pair]
+                        dispatch_window = (base_pc, target_pcs, dispatch)
+            if dispatch_window is None:
+                window_debug = [
+                    (
+                        pc,
+                        len(self.instrs[pc].get("alu", ())),
+                        len(self.instrs[pc].get("flow", ())),
+                        self.instrs[pc].get("alu", ()),
+                    )
+                    for pc in range(last_vselect_pc, first_select_pc)
+                ]
+                raise AssertionError(
+                    "no flow-free dispatch window before final parity selection: "
+                    f"{window_debug}"
+                )
+
+            # The out-of-line dispatch tables are appended after the main
+            # schedule.  Halt in the final real bundle prevents fall-through;
+            # dynamically selected table entries jump back to the next main PC.
+            if self.instrs[-1].get("flow"):
+                raise AssertionError("final bundle has no flow slot for halt")
+            self.instrs[-1]["flow"] = [("halt",)]
+
+            candidate_yes = bits[SECOND_WORKSPACE_FIXED][0]
+            candidate_no = bits[SECOND_WORKSPACE_FIXED][1]
+            jump_vector = bits[SECOND_WORKSPACE_FIXED][2]
+            table_blocks: list[dict[str, list[tuple]]] = []
+            main_length = len(self.instrs)
+            base_pc, target_pcs, dispatch_pcs = dispatch_window
+            load_pc = next(
+                pc
+                for pc, bundle in enumerate(self.instrs[:base_pc])
+                if len(bundle.get("load", ())) < SLOT_LIMITS["load"]
+            )
+            self.instrs[load_pc].setdefault("load", []).append(
+                ("const", branch_table_base, main_length)
+            )
+
+            lane_base_registers = [temps[0] + i for i in range(lane_count)]
+            base_offsets = (None, s_eight, s_sixteen, s_sixteen)
+            for lane_index, lane_base in enumerate(lane_base_registers):
+                if lane_index == 0:
+                    slot = (
+                        "|", lane_base, branch_table_base, branch_table_base
+                    )
+                else:
+                    slot = (
+                        "+",
+                        lane_base,
+                        branch_table_base,
+                        base_offsets[lane_index],
+                    )
+                self.instrs[base_pc].setdefault("alu", []).append(slot)
+
+            if lane_count == 4:
+                lane3_adjust_pc = next(
+                    pc
+                    for pc in range(base_pc + 1, target_pcs[3])
+                    if len(self.instrs[pc].get("alu", ()))
+                    < SLOT_LIMITS["alu"]
+                )
+                self.instrs[lane3_adjust_pc].setdefault("alu", []).append(
+                    (
+                        "+",
+                        lane_base_registers[3],
+                        lane_base_registers[3],
+                        s_sixteen,
+                    )
+                )
+
+            for lane_index, lane in enumerate(BRANCH_FINAL_LANES):
+                self.instrs[target_pcs[lane_index]].setdefault("alu", []).append(
+                    (
+                        "+",
+                        jump_vector + lane,
+                        mirrors[BRANCH_FINAL_GROUP] + lane,
+                        lane_base_registers[lane_index],
+                    )
+                )
+
+            for lane_index, lane in enumerate(BRANCH_FINAL_LANES):
+                jump_pc, target_pc = dispatch_pcs[
+                    2 * lane_index : 2 + 2 * lane_index
+                ]
+                if len(self.instrs[target_pc].get("alu", ())) == 11:
+                    alu_slots = self.instrs[target_pc]["alu"]
+                    move_index = next(
+                        i
+                        for i, slot in enumerate(alu_slots)
+                        if slot[0] == "+" and slot[1] == slot[2]
+                    )
+                    moved = alu_slots.pop(move_index)
+                    move_pc = next(
+                        pc
+                        for pc in range(target_pc + 1, len(self.instrs))
+                        if len(self.instrs[pc].get("alu", ())) < SLOT_LIMITS["alu"]
+                    )
+                    self.instrs[move_pc].setdefault("alu", []).append(moved)
+                self.instrs[jump_pc]["flow"] = [
+                    ("jump_indirect", jump_vector + lane)
+                ]
+                desired_table_offset = (0, 8, 16, 32)[lane_index]
+                while len(table_blocks) < desired_table_offset:
+                    table_blocks.append({"flow": [("halt",)]})
+                for pair_index in range(8):
+                    target = {
+                        engine: list(slots)
+                        for engine, slots in self.instrs[target_pc].items()
+                    }
+                    target.setdefault("alu", []).extend(
+                        [
+                            (
+                                "|",
+                                candidate_yes + lane,
+                                level4_reversed[2 * pair_index + 1] + lane,
+                                level4_reversed[2 * pair_index + 1] + lane,
+                            ),
+                            (
+                                "|",
+                                candidate_no + lane,
+                                level4_reversed[2 * pair_index] + lane,
+                                level4_reversed[2 * pair_index] + lane,
+                            ),
+                        ]
+                    )
+                    target["flow"] = [("jump", target_pc + 1)]
+                    table_blocks.append(target)
+            self.instrs.extend(table_blocks)
+            self.branch_main_cycles = main_length
+        else:
+            self.branch_main_cycles = 0
 
         self._validate_program()
 
@@ -2026,6 +2700,7 @@ class KernelBuilder:
                     + fine_offset
                     + round_offset
                     + TAG_PRIORITY_OFFSETS.get(op.tag, 0)
+                    + OP_PRIORITY_OFFSETS.get((op.tag, op.group, op.round), 0)
                     + (0 if priority_noise is None else priority_noise[i]),
                     finite,
                     -cohort,
@@ -2067,7 +2742,16 @@ class KernelBuilder:
             if policy in (2, 6):
                 group_bias = -(op.group % 4) if op.group >= 0 else 0
             id_bias = -i if policy % 2 == 0 else i
-            return (h, reach[i] // 32, engine_rank[op.engine], group_bias, id_bias)
+            op_offset = OP_PRIORITY_OFFSETS.get((op.tag, op.group, op.round), 0)
+            return (
+                h
+                + op_offset
+                + (0 if priority_noise is None else priority_noise[i]),
+                reach[i] // 32,
+                engine_rank[op.engine],
+                group_bias,
+                id_bias,
+            )
 
         earliest = [0] * n
         heaps: dict[str, list[tuple[tuple[int, ...], int]]] = {

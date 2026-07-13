@@ -150,7 +150,10 @@ def repair_one(
     solver.parameters.max_time_in_seconds = TIME_LIMIT
     solver.parameters.num_workers = WORKERS
     solver.parameters.cp_model_presolve = True
-    solver.parameters.repair_hint = True
+    # OR-Tools 9.15 can abort in MinimizeL1DistanceWithHint when repair_hint
+    # races with multi-worker fixed search on larger neighborhoods.  Keep the
+    # ordinary hints, but make the unstable repair mode explicitly opt-in.
+    solver.parameters.repair_hint = bool(int(os.environ.get("REPAIR_HINT", "0")))
     solver.parameters.hint_conflict_limit = 100_000
     status = solver.solve(model)
     if status not in (cp_model.FEASIBLE, cp_model.OPTIMAL):

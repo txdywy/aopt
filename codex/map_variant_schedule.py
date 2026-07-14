@@ -86,6 +86,14 @@ def configure_target() -> None:
         kernel.INDEPENDENT_INPUT_POINTERS = bool(
             int(os.environ["INDEPENDENT_INPUT_POINTERS"])
         )
+    if "DERIVE_TOP_P1_FROM_P0" in os.environ:
+        kernel.DERIVE_TOP_P1_FROM_P0 = bool(
+            int(os.environ["DERIVE_TOP_P1_FROM_P0"])
+        )
+    if "DERIVE_SETUP_SECOND_POINTERS" in os.environ:
+        kernel.DERIVE_SETUP_SECOND_POINTERS = bool(
+            int(os.environ["DERIVE_SETUP_SECOND_POINTERS"])
+        )
     scalar_sets = {
         "SCALAR_FINAL_C5": "SCALAR_FINAL_C5_SET",
         "SCALAR_FINAL_JOIN": "SCALAR_FINAL_JOIN_SET",

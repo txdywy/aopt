@@ -113,6 +113,8 @@ INDEPENDENT_TOP_P0 = False
 INDEPENDENT_TOP_P1 = False
 INDEPENDENT_RELOCATION_LOAD_POINTERS = False
 INDEPENDENT_INPUT_POINTERS = False
+DERIVE_TOP_P1_FROM_P0 = False
+DERIVE_SETUP_SECOND_POINTERS = False
 EARLY_FINAL_CACHE_SET: frozenset[int] = frozenset()
 EARLY_FINAL_ADDRESS_SET: frozenset[int] = frozenset()
 VECTOR_EARLY_FINAL_ADDRESS_SET: frozenset[int] = frozenset()
@@ -1244,13 +1246,22 @@ class KernelBuilder:
         else:
             emit_immediate(top_p0, 7, "top_pointer")
         if INDEPENDENT_TOP_P1:
-            graph.emit(
-                "flow",
-                ("add_imm", top_p1, top_p1, 15),
-                reads=(top_p1,),
-                writes=(top_p1,),
-                tag="top_pointer",
-            )
+            if DERIVE_TOP_P1_FROM_P0:
+                graph.emit(
+                    "alu",
+                    ("+", top_p1, top_p0, s_eight),
+                    reads=(top_p0, s_eight),
+                    writes=(top_p1,),
+                    tag="top_pointer_derive",
+                )
+            else:
+                graph.emit(
+                    "flow",
+                    ("add_imm", top_p1, top_p1, 15),
+                    reads=(top_p1,),
+                    writes=(top_p1,),
+                    tag="top_pointer",
+                )
         else:
             emit_immediate(top_p1, 15, "top_pointer")
         top_loads: list[int] = []
@@ -1497,10 +1508,19 @@ class KernelBuilder:
                 raise AssertionError("invalid relocation staging assignment")
             stage_loads: list[int] = []
             first_stage_pair = 1 if REUSE_TOP_RELOCATION_LEVEL4 else 0
-            for pointer, initial in (
+            for pointer_index, (pointer, initial) in enumerate((
                 (preprocess_p0, 22 + first_stage_pair * 16),
                 (preprocess_p1, 30 + first_stage_pair * 16),
-            ):
+            )):
+                if DERIVE_SETUP_SECOND_POINTERS and pointer_index == 1:
+                    graph.emit(
+                        "alu",
+                        ("+", pointer, preprocess_p0, s_eight),
+                        reads=(preprocess_p0, s_eight),
+                        writes=(pointer,),
+                        tag="preprocess_pointer_derive",
+                    )
+                    continue
                 if INDEPENDENT_RELOCATION_LOAD_POINTERS:
                     graph.emit(
                         "flow",
@@ -3798,10 +3818,19 @@ class KernelBuilder:
                 )
 
         values_base = 7 + n_nodes + batch_size
-        for pointer, initial in (
+        for pointer_index, (pointer, initial) in enumerate((
             (io_p0, values_base),
             (io_p1, values_base + VLEN),
-        ):
+        )):
+            if DERIVE_SETUP_SECOND_POINTERS and pointer_index == 1:
+                graph.emit(
+                    "alu",
+                    ("+", pointer, io_p0, s_eight),
+                    reads=(io_p0, s_eight),
+                    writes=(pointer,),
+                    tag="input_pointer_derive",
+                )
+                continue
             if INDEPENDENT_INPUT_POINTERS:
                 graph.emit(
                     "flow",

@@ -9,6 +9,7 @@ next repair.  It is dramatically smaller than solving the 20k-op DAG globally.
 from __future__ import annotations
 
 from collections import Counter, defaultdict
+from dataclasses import replace
 import json
 import os
 from pathlib import Path
@@ -17,6 +18,7 @@ import time
 from ortools.sat.python import cp_model
 
 import codex.perf_takehome_under1000 as kernel
+from codex.map_variant_schedule import configure_target, real_tail_ops
 from problem import SLOT_LIMITS
 
 
@@ -26,6 +28,44 @@ TIME_LIMIT = float(os.environ.get("TIME_LIMIT", "8"))
 WORKERS = int(os.environ.get("WORKERS", "8"))
 WINDOWS = tuple(int(x) for x in os.environ.get("WINDOWS", "18,28,42,64").split(","))
 MAX_CANDIDATES = int(os.environ.get("MAX_CANDIDATES", "24"))
+
+
+def model_real_tail_stores(ops: list[kernel._Op]) -> list[kernel._Op]:
+    """Match the independent late-store postpass used by the real kernel."""
+    if not bool(int(os.environ.get("REAL_TAIL_STORES", "1"))):
+        return ops
+    first_tail_group = kernel.N_GROUPS - kernel.INDEPENDENT_TAIL_GROUP_COUNT
+    last_prefix_store = max(
+        i
+        for i, op in enumerate(ops)
+        if op.tag == "output_store"
+        and op.group is not None
+        and op.group < first_tail_group
+    )
+    adjusted = []
+    for i, op in enumerate(ops):
+        if op.tag == "pointer_advance" and i > last_prefix_store:
+            adjusted.append(
+                replace(op, engine="debug", parents={}, reads=(), writes=())
+            )
+        elif (
+            op.tag == "output_store"
+            and op.group is not None
+            and op.group >= first_tail_group
+        ):
+            adjusted.append(
+                replace(
+                    op,
+                    parents={
+                        parent: lag
+                        for parent, lag in op.parents.items()
+                        if ops[parent].tag not in {"output_pointer", "pointer_advance"}
+                    },
+                )
+            )
+        else:
+            adjusted.append(op)
+    return adjusted
 
 
 def validate(ops: list[kernel._Op], cycles: list[int]) -> None:
@@ -62,9 +102,21 @@ def deletion_candidates(
             prefix[engine][t + 1] = prefix[engine][t] + use[t][engine]
 
     ranked = []
+    excluded = {
+        int(value)
+        for value in os.environ.get("DELETE_EXCLUDE", "").split(",")
+        if value
+    }
     margin = radius + 2
     new_width = 2 * radius + 1
-    for deleted in range(margin, horizon - margin):
+    delete_min = max(margin, int(os.environ.get("DELETE_MIN", str(margin))))
+    delete_max = min(
+        horizon - margin,
+        int(os.environ.get("DELETE_MAX", str(horizon - margin))),
+    )
+    for deleted in range(delete_min, delete_max):
+        if deleted in excluded:
+            continue
         # The mapped [d-r, d+r] neighborhood contains old cycles
         # [d-r, d+r+1], hence one extra cycle of work.
         old_lo = deleted - radius
@@ -79,7 +131,9 @@ def deletion_candidates(
             for e in counts
         )
         ranked.append((-normalized_slack, use[deleted]["alu"], deleted))
-    return [item[2] for item in sorted(ranked)[:MAX_CANDIDATES]]
+    ordered = [item[2] for item in sorted(ranked)]
+    offset = int(os.environ.get("CANDIDATE_OFFSET", "0"))
+    return ordered[offset : offset + MAX_CANDIDATES]
 
 
 def repair_one(
@@ -121,6 +175,54 @@ def repair_one(
                 # candidate needs a wider neighborhood including an endpoint.
                 return None
 
+    if bool(int(os.environ.get("PACK_BRANCH_TRACES", "1"))):
+        copy_tags = {
+            "direct_branch_copy",
+            "paired_direct_branch_copy",
+            "paired_branch_copy",
+            "paired_branch_delayed_copy",
+        }
+        target_tags = {
+            "direct_branch_target",
+            "paired_direct_branch_target",
+            "paired_branch_target",
+            "paired_branch_delayed_target",
+        }
+
+        def exact_distance(left: int, right: int, distance: int) -> bool:
+            left_local = left in local_set
+            right_local = right in local_set
+            if left_local and right_local:
+                model.add(starts[left] == starts[right] + distance)
+            elif left_local:
+                model.add(starts[left] == base[right] + distance)
+            elif right_local:
+                model.add(base[left] == starts[right] + distance)
+            elif base[left] != base[right] + distance:
+                return False
+            return True
+
+        for child, op in enumerate(ops):
+            if op.tag in copy_tags:
+                jump_parent = next(
+                    (
+                        parent
+                        for parent in op.parents
+                        if ops[parent].tag.endswith("branch_jump")
+                    ),
+                    None,
+                )
+                if jump_parent is not None and not exact_distance(
+                    child, jump_parent, 1
+                ):
+                    return None
+            elif op.tag in target_tags:
+                for parent in op.parents:
+                    if ops[parent].tag in copy_tags and not exact_distance(
+                        child, parent, 0
+                    ):
+                        return None
+
     # Cumulative resources include one aggregated fixed-profile interval per
     # occupied cycle, avoiding thousands of redundant fixed task variables.
     fixed_use: dict[str, Counter[int]] = defaultdict(Counter)
@@ -155,6 +257,10 @@ def repair_one(
     # ordinary hints, but make the unstable repair mode explicitly opt-in.
     solver.parameters.repair_hint = bool(int(os.environ.get("REPAIR_HINT", "0")))
     solver.parameters.hint_conflict_limit = 100_000
+    solver.parameters.random_seed = int(os.environ.get("RANDOM_SEED", "1"))
+    solver.parameters.randomize_search = bool(
+        int(os.environ.get("RANDOMIZE_SEARCH", "0"))
+    )
     status = solver.solve(model)
     if status not in (cp_model.FEASIBLE, cp_model.OPTIMAL):
         return None
@@ -171,10 +277,24 @@ def save(cycles: list[int]) -> None:
 
 
 def main() -> None:
+    configure_target()
+    input_path = os.environ.get("SCHEDULE_IN")
+    input_cycles = None
+    if input_path:
+        input_cycles = json.loads(Path(input_path).read_text())["cycles"]
+        kernel.SCHEDULE_EXACT_CYCLES = input_cycles
     builder = kernel.KernelBuilder()
     builder.build_kernel(10, 2047, 256, 16)
-    ops = builder.dag_ops
-    _, cycles = builder._schedule(ops, kernel.SCHEDULE_POLICIES[0], return_cycles=True)
+    original_ops = builder.dag_ops
+    if input_cycles is None:
+        _, cycles = builder._schedule(
+            original_ops, kernel.SCHEDULE_POLICIES[0], return_cycles=True
+        )
+        ops = model_real_tail_stores(original_ops)
+    else:
+        cycles = input_cycles
+        ops = real_tail_ops(original_ops)
+        validate(ops, cycles)
     if OUT.exists():
         saved = json.loads(OUT.read_text())
         if len(saved.get("cycles", ())) == len(ops):

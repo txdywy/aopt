@@ -34,6 +34,11 @@ def main() -> None:
         forest = Tree.generate(10)
         inp = Input.generate(forest, 256, 16)
         mem = build_mem_image(forest, inp)
+        if "PRINT_MEMORY" in os.environ:
+            lower, upper = (
+                int(value) for value in os.environ["PRINT_MEMORY"].split(":")
+            )
+            print(f"initial_memory[{lower}:{upper}]={mem[lower:upper]}")
         builder = optimized_builder()
         machine = Machine(
             mem, builder.instrs, builder.debug_info(), n_cores=N_CORES
@@ -76,6 +81,11 @@ def main() -> None:
                 )
             )
             raise
+        if "PRINT_MEMORY" in os.environ:
+            lower, upper = (
+                int(value) for value in os.environ["PRINT_MEMORY"].split(":")
+            )
+            print(f"memory[{lower}:{upper}]={machine.mem[lower:upper]}")
         print(f"diagnostic run completed in {machine.cycle} cycles")
 
     seed_count = int(os.environ.get("SEEDS", "8"))

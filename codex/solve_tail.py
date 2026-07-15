@@ -159,6 +159,12 @@ def main() -> None:
                 if item
             )
         }
+    if "SCALAR_VALU_FINAL_DIFF_SET" in os.environ:
+        kernel.SCALAR_VALU_FINAL_DIFF_SET = frozenset(
+            tuple(int(component) for component in item.split(":"))
+            for item in os.environ["SCALAR_VALU_FINAL_DIFF_SET"].split(",")
+            if item
+        )
     if "EARLY_FINAL_CACHE_SET" in os.environ:
         kernel.EARLY_FINAL_CACHE_SET = group_set("EARLY_FINAL_CACHE_SET")
     if "RELOCATION_STAGE_ORDER" in os.environ:

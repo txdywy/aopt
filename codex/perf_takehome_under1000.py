@@ -57,7 +57,22 @@ SSA_LEVEL4_WORKSPACES = False
 SSA_ALL_WORKSPACES = False
 SSA_FIRST_WORKSPACE_GROUPS: frozenset[int] = frozenset()
 FLOW_SCALAR_CONSTANT_COUNT = 0
+# Sparse resource-aware constant materialization.  The prefix knob above is
+# useful for coarse sweeps, but insertion order puts the latency-critical C0
+# before several independent constants.  An explicit index set lets the
+# offline compiler move only profitable loads onto FLOW immediates without
+# forcing that critical constant across engines.
+FLOW_SCALAR_CONSTANT_SET: frozenset[int] = frozenset()
+# Selected setup constants may use their own architecturally-zero scratch word
+# as the add_imm base.  This removes the otherwise artificial dependency on
+# the loaded scalar one and can pull an entire broadcast fanout forward.
+FLOW_ZERO_BASE_CONSTANT_SET: frozenset[int] = frozenset()
 FLOW_ONE_CONSTANT = False
+# Selected setup immediates may be materialized with the load engine instead
+# of FLOW ``add_imm``.  This is a late resource-balancing knob: setup loads
+# finish before the steady-state gathers, while removing them from FLOW gives
+# the nearly saturated selector schedule more freedom.
+LOAD_IMMEDIATE_TAGS: frozenset[str] = frozenset()
 ALU_DERIVED_POWER_COUNT = 0
 ALU_DERIVED_DEPTH_START = 11
 ALU_DERIVED_MISC_SET: frozenset[str] = frozenset(
@@ -107,6 +122,7 @@ REVERSED_RELOCATED_TREE = False
 # order instead of freeing mirrors 0..31 first by allocation address.
 RELOCATION_STAGE_ORDER = "linear"
 RELOCATION_STORE_STREAMS = 1
+RELOCATION_LOAD_STREAMS = 2
 VECTOR_TOP_C5_BLOCKS = 0
 REUSE_TOP_RELOCATION_LEVEL4 = False
 INDEPENDENT_TOP_P0 = False
@@ -120,6 +136,11 @@ EARLY_FINAL_ADDRESS_SET: frozenset[int] = frozenset()
 VECTOR_EARLY_FINAL_ADDRESS_SET: frozenset[int] = frozenset()
 BRANCH_FINAL_GROUP = 31
 BRANCH_FINAL_LANES: tuple[int, ...] = tuple(range(VLEN))
+BRANCH_DISPATCH_PADDING = False
+BRANCH_DEDICATED_DEAD_REGS = False
+BRANCH_DEAD_CANDIDATE_GROUP = 0
+BRANCH_DEAD_CONTROL_GROUP = 1
+BRANCH_DIRECT_FULL_TABLE = False
 PAIRED_BRANCH_FINAL = True
 PAIRED_EARLY_XOR = False
 PAIRED_FLOW_SELECT = True
@@ -141,6 +162,7 @@ DIRECT_JUMP_SENTINEL = 0xD1A00002
 DIRECT_TARGET_SENTINEL = 0xD1A00003
 DIRECT_BRANCH_PRIORITY = 10_000
 MADD_FIRST_DEPTH1 = False
+MADD_FIRST_DEPTH1_SET: frozenset[int] = frozenset()
 SCALAR_FIRST_DEPTH1_SET: frozenset[int] = frozenset()
 SCALAR_SECOND_PATH_GROUPS: frozenset[int] = frozenset()
 SCALAR_SECOND_PATH_DEPTH2_GROUPS: frozenset[int] = frozenset()
@@ -171,6 +193,7 @@ FINAL_CACHE_SET = frozenset((0, 1, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 23, 28, 29)
 # instructions and is useful when a cached group is added to relieve LOAD.
 VALU_FINAL_CACHE_SET: frozenset[int] = frozenset()
 VALU_FINAL_CACHE_COUNTS: dict[int, int] = {}
+SCALAR_VALU_FINAL_DIFF_SET: frozenset[tuple[int, int]] = frozenset()
 FIRST_CACHE_SET = frozenset(
     (3, 4, 5, 7, 9, 11, 12, 13, 15, 16, 18, 19, 20, 24, 29, 31)
 )
@@ -741,9 +764,7 @@ class KernelBuilder:
 
         top_words = alloc("top_tree_words", 32)
         node_vec = [alloc(f"cached_node_{i}", VLEN) for i in range(31)]
-        depth1_diff = (
-            alloc("depth1_pair_diff", VLEN) if MADD_FIRST_DEPTH1 else -1
-        )
+        depth1_diff = -1
 
         # Every SIMD group keeps only its long-lived value/mirror/temp state.
         values = [alloc(f"value_{g}", VLEN) for g in range(N_GROUPS)]
@@ -847,6 +868,13 @@ class KernelBuilder:
             virtual_next += VLEN
             virtual_vectors[base] = name
             return base
+
+        if MADD_FIRST_DEPTH1 or MADD_FIRST_DEPTH1_SET:
+            # This pair difference is live only through selected first-
+            # traversal depth-1 lookups.  Give it an SSA name and let the
+            # scheduled live-range colorer reuse a not-yet-live group vector;
+            # reserving another architectural vector would exceed scratch.
+            depth1_diff = virtual_vector("depth1_pair_diff")
 
         valu_final_cache_scratch = {
             group: virtual_vector(f"valu_final_cache_scratch_{group}")
@@ -953,6 +981,8 @@ class KernelBuilder:
 
         def emit_immediate(dest: int, value: int, tag: str) -> int:
             """Materialize a scalar on the otherwise underused flow engine."""
+            if tag in LOAD_IMMEDIATE_TAGS:
+                return emit_const(dest, value, tag)
             return graph.emit(
                 "flow",
                 ("add_imm", dest, s_one, (value - 1) & 0xFFFFFFFF),
@@ -1134,8 +1164,20 @@ class KernelBuilder:
                         writes=(addr,),
                         tag="scalar_power_derive",
                     )
-                elif constant_index < FLOW_SCALAR_CONSTANT_COUNT:
-                    emit_immediate(addr, value, "scalar_immediate")
+                elif (
+                    constant_index < FLOW_SCALAR_CONSTANT_COUNT
+                    or constant_index in FLOW_SCALAR_CONSTANT_SET
+                ):
+                    if constant_index in FLOW_ZERO_BASE_CONSTANT_SET:
+                        graph.emit(
+                            "flow",
+                            ("add_imm", addr, addr, value),
+                            reads=(addr,),
+                            writes=(addr,),
+                            tag="scalar_zero_immediate",
+                        )
+                    else:
+                        emit_immediate(addr, value, "scalar_immediate")
                 else:
                     emit_const(addr, value, "scalar_constant")
         if "nineteen" in ALU_DERIVED_MISC_SET:
@@ -1235,7 +1277,9 @@ class KernelBuilder:
                 emit_vbroadcast(v_c5, top_p0, "negative_five_broadcast")
 
         # Fetch nodes 0..31 using two rolling pointers and four vector loads.
-        if INDEPENDENT_TOP_P0:
+        if "top_pointer" in LOAD_IMMEDIATE_TAGS:
+            emit_const(top_p0, 7, "top_pointer")
+        elif INDEPENDENT_TOP_P0:
             graph.emit(
                 "flow",
                 ("add_imm", top_p0, top_p0, 7),
@@ -1245,7 +1289,9 @@ class KernelBuilder:
             )
         else:
             emit_immediate(top_p0, 7, "top_pointer")
-        if INDEPENDENT_TOP_P1:
+        if "top_pointer" in LOAD_IMMEDIATE_TAGS:
+            emit_const(top_p1, 15, "top_pointer")
+        elif INDEPENDENT_TOP_P1:
             if DERIVE_TOP_P1_FROM_P0:
                 graph.emit(
                     "alu",
@@ -1507,10 +1553,16 @@ class KernelBuilder:
             if len(set(stage_vectors)) != 62 or -1 in stage_vectors:
                 raise AssertionError("invalid relocation staging assignment")
             stage_loads: list[int] = []
+            stage_load_for_source: dict[int, int] = {}
             first_stage_pair = 1 if REUSE_TOP_RELOCATION_LEVEL4 else 0
-            for pointer_index, (pointer, initial) in enumerate((
-                (preprocess_p0, 22 + first_stage_pair * 16),
-                (preprocess_p1, 30 + first_stage_pair * 16),
+            base_load_pointers = (preprocess_p0, preprocess_p1)
+            base_load_initials = (
+                22 + first_stage_pair * 16,
+                30 + first_stage_pair * 16,
+            )
+            for pointer_index, (pointer, initial) in enumerate(zip(
+                base_load_pointers,
+                base_load_initials,
             )):
                 if DERIVE_SETUP_SECOND_POINTERS and pointer_index == 1:
                     graph.emit(
@@ -1521,7 +1573,9 @@ class KernelBuilder:
                         tag="preprocess_pointer_derive",
                     )
                     continue
-                if INDEPENDENT_RELOCATION_LOAD_POINTERS:
+                if "preprocess_pointer" in LOAD_IMMEDIATE_TAGS:
+                    emit_const(pointer, initial, "preprocess_pointer")
+                elif INDEPENDENT_RELOCATION_LOAD_POINTERS:
                     graph.emit(
                         "flow",
                         ("add_imm", pointer, pointer, initial),
@@ -1531,29 +1585,89 @@ class KernelBuilder:
                     )
                 else:
                     emit_immediate(pointer, initial, "preprocess_pointer")
-            for pair_index in range(first_stage_pair, 31):
-                for pointer, buffer in zip(
-                    (preprocess_p0, preprocess_p1),
-                    stage_vectors[2 * pair_index : 2 * pair_index + 2],
-                ):
-                    stage_loads.append(
-                        graph.emit(
+
+            if RELOCATION_LOAD_STREAMS == 2:
+                for pair_index in range(first_stage_pair, 31):
+                    for lane_index, (pointer, buffer) in enumerate(zip(
+                            base_load_pointers,
+                            stage_vectors[2 * pair_index : 2 * pair_index + 2],
+                    )):
+                        load_id = graph.emit(
                             "load",
                             ("vload", buffer, pointer),
                             reads=(pointer,),
                             writes=_words(buffer),
                             tag="tree_relocation_stage_load",
                         )
-                    )
-                if pair_index != 30:
-                    for pointer in (preprocess_p0, preprocess_p1):
+                        stage_loads.append(load_id)
+                        stage_load_for_source[
+                            2 * pair_index + lane_index
+                        ] = load_id
+                    if pair_index != 30:
+                        for pointer in base_load_pointers:
+                            graph.emit(
+                                "alu",
+                                ("+", pointer, pointer, s_sixteen),
+                                reads=(pointer, s_sixteen),
+                                writes=(pointer,),
+                                tag="pointer_advance",
+                            )
+            elif RELOCATION_LOAD_STREAMS == 4:
+                # Four scalar streams sustain two vector loads every cycle:
+                # each stream is revisited only after its previous load can
+                # packet with an in-place +32 pointer advance.  Lanes 1/2 of
+                # the two setup-only temp vectors are otherwise dead here.
+                load_pointers = (
+                    preprocess_p0,
+                    preprocess_p1,
+                    preprocess_p0 + 1,
+                    preprocess_p1 + 1,
+                )
+                load_stride = preprocess_p0 + 2
+                graph.emit(
+                    "alu",
+                    ("+", load_pointers[2], preprocess_p0, s_sixteen),
+                    reads=(preprocess_p0, s_sixteen),
+                    writes=(load_pointers[2],),
+                    tag="preprocess_pointer_derive",
+                )
+                graph.emit(
+                    "alu",
+                    ("+", load_pointers[3], preprocess_p1, s_sixteen),
+                    reads=(preprocess_p1, s_sixteen),
+                    writes=(load_pointers[3],),
+                    tag="preprocess_pointer_derive",
+                )
+                graph.emit(
+                    "alu",
+                    ("+", load_stride, s_sixteen, s_sixteen),
+                    reads=(s_sixteen,),
+                    writes=(load_stride,),
+                    tag="preprocess_pointer_stride",
+                )
+                first_source = 2 * first_stage_pair
+                staged_buffers = stage_vectors[first_source:]
+                for load_index, buffer in enumerate(staged_buffers):
+                    pointer = load_pointers[load_index % 4]
+                    load_id = graph.emit(
+                            "load",
+                            ("vload", buffer, pointer),
+                            reads=(pointer,),
+                            writes=_words(buffer),
+                            tag="tree_relocation_stage_load",
+                        )
+                    stage_loads.append(load_id)
+                    stage_load_for_source[first_source + load_index] = load_id
+                    if load_index + 4 < len(staged_buffers):
                         graph.emit(
                             "alu",
-                            ("+", pointer, pointer, s_sixteen),
-                            reads=(pointer, s_sixteen),
+                            ("+", pointer, pointer, load_stride),
+                            reads=(pointer, load_stride),
                             writes=(pointer,),
                             tag="pointer_advance",
                         )
+            else:
+                raise ValueError("relocation load streams must be two or four")
 
             # The copy and the preceding vector transform collapse into eight
             # ALU operations, freeing scarce VALU bandwidth.
@@ -1584,42 +1698,76 @@ class KernelBuilder:
                     writes=(store_pointers[1],),
                     tag="tree_relocation_store_pointer",
                 )
-            memory_barrier = tuple(
-                (load_id, 1) for load_id in top_loads + stage_loads
-            )
-            for output_index, source_index in enumerate(source_order):
-                source = (
-                    top_words + 15 + source_index * VLEN
-                    if REUSE_TOP_RELOCATION_LEVEL4 and source_index < 2
-                    else stage_vectors[source_index]
+            # Derive the read-before-write barrier from actual byte/word
+            # intervals rather than heap levels.  Source block ``s`` occupies
+            # [22+8s, 29+8s], while destination block ``o`` occupies
+            # [16+8o, 23+8o].  Consequently a destination overlaps only source
+            # blocks o and o-1.  The four cached-top loads cover [7, 38] and
+            # are handled by the same interval test.  Loads observe old memory
+            # and stores commit at cycle end, so an overlapping load may share
+            # the store's bundle (lag zero).
+            source_load_intervals = [
+                (22 + VLEN * source_index, 29 + VLEN * source_index, load_id)
+                for source_index, load_id in stage_load_for_source.items()
+            ]
+            top_load_intervals = [
+                (7, 14, top_loads[0]),
+                (15, 22, top_loads[1]),
+                (23, 30, top_loads[2]),
+                (31, 38, top_loads[3]),
+            ]
+            memory_barrier_by_output: dict[
+                int, tuple[tuple[int, int], ...]
+            ] = {}
+            for output_index in range(len(source_order)):
+                destination_lower = 16 + VLEN * output_index
+                destination_upper = destination_lower + VLEN - 1
+                protected = {
+                    load_id
+                    for source_lower, source_upper, load_id in (
+                        source_load_intervals + top_load_intervals
+                    )
+                    if destination_lower <= source_upper
+                    and source_lower <= destination_upper
+                }
+                memory_barrier_by_output[output_index] = tuple(
+                    (load_id, 0) for load_id in sorted(protected)
                 )
+            for output_index, source_index in enumerate(source_order):
+                reused_top = REUSE_TOP_RELOCATION_LEVEL4 and source_index < 2
+                source = stage_vectors[source_index]
                 stream = output_index % RELOCATION_STORE_STREAMS
                 store_pointer = store_pointers[stream]
                 output_buffer = output_buffers[stream]
                 for lane in range(VLEN):
+                    # ``top_words`` is intentionally recycled as four of the
+                    # level-4 staging vectors, so its nodes 15..30 no longer
+                    # survive the global read-before-write phase.  Their
+                    # transformed values are also resident in the immutable
+                    # per-node broadcasts; read lane zero from those vectors
+                    # and retain the two-load saving without extending a live
+                    # range or adding preservation copies.
+                    source_word = (
+                        node_vec[
+                            15
+                            + source_index * VLEN
+                            + (VLEN - 1 - lane)
+                        ]
+                        if reused_top
+                        else source + (VLEN - 1 - lane)
+                    )
                     graph.emit(
                         "alu",
                         (
-                            (
-                                "|"
-                                if REUSE_TOP_RELOCATION_LEVEL4
-                                and source_index < 2
-                                else "^"
-                            ),
+                            "|" if reused_top else "^",
                             output_buffer + lane,
-                            source + (VLEN - 1 - lane),
-                            (
-                                source + (VLEN - 1 - lane)
-                                if REUSE_TOP_RELOCATION_LEVEL4
-                                and source_index < 2
-                                else s_c5
-                            ),
+                            source_word,
+                            source_word if reused_top else s_c5,
                         ),
                         reads=(
-                            (source + (VLEN - 1 - lane),)
-                            if REUSE_TOP_RELOCATION_LEVEL4
-                            and source_index < 2
-                            else (source + (VLEN - 1 - lane), s_c5)
+                            (source_word,)
+                            if reused_top
+                            else (source_word, s_c5)
                         ),
                         writes=(output_buffer + lane,),
                         tag="tree_relocation_reverse_xor",
@@ -1629,7 +1777,7 @@ class KernelBuilder:
                         "store",
                         ("vstore", store_pointer, output_buffer),
                         reads=(store_pointer,) + _words(output_buffer),
-                        deps=memory_barrier,
+                        deps=memory_barrier_by_output[output_index],
                         tag="tree_preprocess_store",
                     )
                 )
@@ -1749,7 +1897,7 @@ class KernelBuilder:
                         tag="pointer_advance",
                     )
 
-        if MADD_FIRST_DEPTH1:
+        if MADD_FIRST_DEPTH1 or MADD_FIRST_DEPTH1_SET:
             # Keep node 2 as the base and turn node 1 into (node1-node2).
             # A depth-1 lookup then needs one MADD and no flow slot.
             emit_valu(
@@ -1868,7 +2016,9 @@ class KernelBuilder:
                         group=gg,
                         round=rnd,
                     )
-                elif MADD_FIRST_DEPTH1 and rnd < 11:
+                elif (
+                    MADD_FIRST_DEPTH1 or gg in MADD_FIRST_DEPTH1_SET
+                ) and rnd < 11:
                     emit_madd(
                         temp,
                         condition,
@@ -2264,6 +2414,7 @@ class KernelBuilder:
                 no: int,
             ) -> None:
                 nonlocal upper_select_index
+                select_index = upper_select_index
                 valu_count = (
                     7
                     if gg in VALU_FINAL_CACHE_SET
@@ -2276,15 +2427,26 @@ class KernelBuilder:
                 upper_select_index += 1
                 if use_valu:
                     scratch = valu_final_cache_scratch[gg]
-                    emit_valu(
-                        "-",
-                        scratch,
-                        yes,
-                        no,
-                        tag="level4_valu_select_difference",
-                        group=gg,
-                        round=rnd,
-                    )
+                    if (gg, select_index) in SCALAR_VALU_FINAL_DIFF_SET:
+                        emit_scalarized(
+                            "-",
+                            scratch,
+                            yes,
+                            no,
+                            tag="level4_scalar_select_difference",
+                            group=gg,
+                            round=rnd,
+                        )
+                    else:
+                        emit_valu(
+                            "-",
+                            scratch,
+                            yes,
+                            no,
+                            tag="level4_valu_select_difference",
+                            group=gg,
+                            round=rnd,
+                        )
                     emit_madd(
                         dest,
                         condition,
@@ -2501,8 +2663,28 @@ class KernelBuilder:
             if branch_lanes and not PAIRED_BRANCH_FINAL:
                 if SECOND_WORKSPACE_FIXED < 0:
                     raise ValueError("branch lookup requires a fixed second workspace")
-                candidate_yes = bits[SECOND_WORKSPACE_FIXED][0]
-                candidate_no = bits[SECOND_WORKSPACE_FIXED][1]
+                if BRANCH_DIRECT_FULL_TABLE:
+                    for lane in sorted(branch_lanes):
+                        graph.emit(
+                            "flow",
+                            ("add_imm", temp + lane, temp + lane, 0),
+                            reads=(mirror + lane,),
+                            writes=(temp + lane,),
+                            tag="branch_final_direct",
+                            group=gg,
+                            round=rnd,
+                        )
+                    return
+                candidate_yes = (
+                    mirrors[BRANCH_DEAD_CANDIDATE_GROUP]
+                    if BRANCH_DEDICATED_DEAD_REGS
+                    else bits[SECOND_WORKSPACE_FIXED][0]
+                )
+                candidate_no = (
+                    temps[BRANCH_DEAD_CANDIDATE_GROUP]
+                    if BRANCH_DEDICATED_DEAD_REGS
+                    else bits[SECOND_WORKSPACE_FIXED][1]
+                )
                 for lane in sorted(branch_lanes):
                     graph.emit(
                         "flow",
@@ -3593,6 +3775,21 @@ class KernelBuilder:
                             group=gg,
                             round=rnd,
                         )
+            elif gg in EARLY_FINAL_CACHE_SET and rnd == 14:
+                saved_path = saved_second_path_bits.get(gg)
+                early_condition = (
+                    saved_path[3]
+                    if saved_path is not None and len(saved_path) >= 4
+                    else first_level4_condition
+                )
+                emit_parity(early_condition, value, gg, rnd)
+                select_level4_hybrid(
+                    state,
+                    workspace,
+                    gg,
+                    rounds - 1,
+                    prepared=True,
+                )
             elif (
                 gg in saved_second_path_bits
                 and len(saved_second_path_bits[gg]) >= 4
@@ -3601,15 +3798,6 @@ class KernelBuilder:
                 emit_parity(saved_second_path_bits[gg][3], value, gg, rnd)
             elif rnd == 11:
                 emit_parity(mirrors[state], value, gg, rnd)
-            elif gg in EARLY_FINAL_CACHE_SET and rnd == 14:
-                emit_parity(first_level4_condition, value, gg, rnd)
-                select_level4_hybrid(
-                    state,
-                    workspace,
-                    gg,
-                    rounds - 1,
-                    prepared=True,
-                )
             elif (
                 rnd == 14
                 and (
@@ -3831,7 +4019,9 @@ class KernelBuilder:
                     tag="input_pointer_derive",
                 )
                 continue
-            if INDEPENDENT_INPUT_POINTERS:
+            if "input_pointer" in LOAD_IMMEDIATE_TAGS:
+                emit_const(pointer, initial, "input_pointer")
+            elif INDEPENDENT_INPUT_POINTERS:
                 graph.emit(
                     "flow",
                     ("add_imm", pointer, pointer, initial),
@@ -4545,7 +4735,108 @@ class KernelBuilder:
             while self.instrs and not any(self.instrs[-1].values()):
                 self.instrs.pop()
 
-        if BRANCH_FINAL_LANES and not PAIRED_BRANCH_FINAL:
+        if (
+            BRANCH_FINAL_LANES
+            and not PAIRED_BRANCH_FINAL
+            and BRANCH_DIRECT_FULL_TABLE
+        ):
+            if SSA_WORKSPACES:
+                raise ValueError("branch final lookup and SSA workspaces are exclusive")
+            if len(BRANCH_FINAL_LANES) != 1:
+                raise ValueError("direct full table currently supports one lane")
+            lane = BRANCH_FINAL_LANES[0]
+            dest = temps[BRANCH_FINAL_GROUP] + lane
+            select_pc = next(
+                pc
+                for pc, bundle in enumerate(self.instrs)
+                for slot in bundle.get("flow", ())
+                if slot[0] == "add_imm"
+                and slot[1] == dest
+                and slot[2] == dest
+                and slot[3] == 0
+            )
+            if BRANCH_DISPATCH_PADDING:
+                # Diagnostic semantic oracle: split the placeholder out of
+                # its densely packed original bundle.  Two leading bundles
+                # host address building and the indirect jump; the third is
+                # the out-of-line table target.  Execution then
+                # returns to the original non-flow bundle, so none of its
+                # simultaneously scheduled work has to fit in a table entry.
+                original_select_pc = select_pc
+                for _ in range(3):
+                    self.instrs.insert(
+                        original_select_pc,
+                        {"alu": [("|", top_p0, top_p0, top_p0)]},
+                    )
+                moved_pc = original_select_pc + 3
+                moved_flow = [
+                    slot
+                    for slot in self.instrs[moved_pc].get("flow", ())
+                    if not (
+                        slot[0] == "add_imm"
+                        and slot[1] == dest
+                        and slot[2] == dest
+                        and slot[3] == 0
+                    )
+                ]
+                if moved_flow:
+                    self.instrs[moved_pc]["flow"] = moved_flow
+                else:
+                    self.instrs[moved_pc].pop("flow", None)
+                select_pc = original_select_pc + 2
+            if select_pc < 2:
+                raise AssertionError("direct branch has no preparation window")
+            prep_pc, jump_pc = select_pc - 2, select_pc - 1
+            if self.instrs[jump_pc].get("flow"):
+                raise AssertionError("direct branch jump bundle already uses flow")
+            if len(self.instrs[prep_pc].get("alu", ())) > 11:
+                raise AssertionError("direct branch prep has no ALU room")
+            target_nonflow = {
+                engine: list(slots)
+                for engine, slots in self.instrs[select_pc].items()
+                if engine != "flow"
+            }
+            if len(target_nonflow.get("alu", ())) > 11:
+                raise AssertionError("direct branch target has no ALU copy slot")
+
+            if self.instrs[-1].get("flow"):
+                raise AssertionError("final bundle has no flow slot for direct halt")
+            self.instrs[-1]["flow"] = [("halt",)]
+            main_length = len(self.instrs)
+            load_pc = next(
+                pc
+                for pc, bundle in enumerate(self.instrs[:prep_pc])
+                if len(bundle.get("load", ())) < SLOT_LIMITS["load"]
+            )
+            self.instrs[load_pc].setdefault("load", []).append(
+                ("const", branch_table_base, main_length)
+            )
+            mirror_lane = mirrors[BRANCH_FINAL_GROUP] + lane
+            self.instrs[prep_pc].setdefault("alu", []).append(
+                ("+", mirror_lane, mirror_lane, branch_table_base)
+            )
+            self.instrs[jump_pc]["flow"] = [
+                ("jump_indirect", mirror_lane)
+            ]
+            table_blocks: list[dict[str, list[tuple]]] = []
+            for node_index in range(16):
+                target = {
+                    engine: list(slots)
+                    for engine, slots in target_nonflow.items()
+                }
+                target.setdefault("alu", []).append(
+                    (
+                        "|",
+                        dest,
+                        level4_reversed[node_index] + lane,
+                        level4_reversed[node_index] + lane,
+                    )
+                )
+                target["flow"] = [("jump", select_pc + 1)]
+                table_blocks.append(target)
+            self.instrs.extend(table_blocks)
+            self.branch_main_cycles = main_length
+        elif BRANCH_FINAL_LANES and not PAIRED_BRANCH_FINAL:
             if SSA_WORKSPACES:
                 raise ValueError("branch final lookup and SSA workspaces are exclusive")
             branch_select_dests = {
@@ -4573,8 +4864,26 @@ class KernelBuilder:
             lane_count = len(BRANCH_FINAL_LANES)
             if lane_count > 4:
                 raise ValueError("precomputed branch tables currently support 4 lanes")
+            if BRANCH_DISPATCH_PADDING:
+                # Diagnostic-only semantic oracle support.  Production
+                # schedules must expose these flow-free pairs naturally.
+                padding_pc = last_vselect_pc + 1
+                for _ in range(2 * lane_count):
+                    self.instrs.insert(
+                        padding_pc,
+                        {"alu": [("|", top_p0, top_p0, top_p0)]},
+                    )
+                first_select_pc += 2 * lane_count
             dispatch_window: tuple[int, list[int], list[int]] | None = None
-            dead_base_words = set(_words(temps[0]))
+            if BRANCH_DEDICATED_DEAD_REGS:
+                dead_base_words = set(
+                    _words(mirrors[BRANCH_DEAD_CANDIDATE_GROUP])
+                    + _words(temps[BRANCH_DEAD_CANDIDATE_GROUP])
+                    + _words(mirrors[BRANCH_DEAD_CONTROL_GROUP])
+                    + _words(temps[BRANCH_DEAD_CONTROL_GROUP])
+                )
+            else:
+                dead_base_words = set(_words(temps[0]))
             last_dead_base_use = max(
                 pc
                 for pc, bundle in enumerate(self.instrs)
@@ -4663,9 +4972,21 @@ class KernelBuilder:
                 raise AssertionError("final bundle has no flow slot for halt")
             self.instrs[-1]["flow"] = [("halt",)]
 
-            candidate_yes = bits[SECOND_WORKSPACE_FIXED][0]
-            candidate_no = bits[SECOND_WORKSPACE_FIXED][1]
-            jump_vector = bits[SECOND_WORKSPACE_FIXED][2]
+            candidate_yes = (
+                mirrors[BRANCH_DEAD_CANDIDATE_GROUP]
+                if BRANCH_DEDICATED_DEAD_REGS
+                else bits[SECOND_WORKSPACE_FIXED][0]
+            )
+            candidate_no = (
+                temps[BRANCH_DEAD_CANDIDATE_GROUP]
+                if BRANCH_DEDICATED_DEAD_REGS
+                else bits[SECOND_WORKSPACE_FIXED][1]
+            )
+            jump_vector = (
+                temps[BRANCH_DEAD_CONTROL_GROUP]
+                if BRANCH_DEDICATED_DEAD_REGS
+                else bits[SECOND_WORKSPACE_FIXED][2]
+            )
             table_blocks: list[dict[str, list[tuple]]] = []
             main_length = len(self.instrs)
             base_pc, target_pcs, dispatch_pcs = dispatch_window
@@ -4678,7 +4999,20 @@ class KernelBuilder:
                 ("const", branch_table_base, main_length)
             )
 
-            lane_base_registers = [temps[0] + i for i in range(lane_count)]
+            lane_base_registers = [
+                (
+                    mirrors[1]
+                    if BRANCH_DEDICATED_DEAD_REGS
+                    else temps[0]
+                )
+                + i
+                for i in range(lane_count)
+            ]
+            if BRANCH_DEDICATED_DEAD_REGS:
+                lane_base_registers = [
+                    mirrors[BRANCH_DEAD_CONTROL_GROUP] + i
+                    for i in range(lane_count)
+                ]
             base_offsets = (None, s_eight, s_sixteen, s_sixteen)
             for lane_index, lane_base in enumerate(lane_base_registers):
                 if lane_index == 0:

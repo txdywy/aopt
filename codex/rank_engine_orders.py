@@ -27,7 +27,12 @@ def main() -> None:
     engine = os.environ.get("ENGINE", "flow")
     ranked = []
     for filename in glob.glob(os.environ["HINT_GLOB"]):
-        cycles = json.loads(Path(filename).read_text())["cycles"]
+        raw_cycles = json.loads(Path(filename).read_text())["cycles"]
+        cycles = (
+            {int(index): int(cycle) for index, cycle in raw_cycles.items()}
+            if isinstance(raw_cycles, dict)
+            else raw_cycles
+        )
         sequence = sorted(
             (i for i, op in enumerate(ops) if op.engine == engine),
             key=lambda i: (cycles[i], i),

@@ -64,12 +64,38 @@ def configure_target() -> None:
             for value in os.environ["ALU_DERIVED_MISC_SET"].split(",")
             if value
         )
+    if "ALU_DERIVED_POWER_COUNT" in os.environ:
+        kernel.ALU_DERIVED_POWER_COUNT = int(
+            os.environ["ALU_DERIVED_POWER_COUNT"]
+        )
+    if "ALU_DERIVED_DEPTH_START" in os.environ:
+        kernel.ALU_DERIVED_DEPTH_START = int(
+            os.environ["ALU_DERIVED_DEPTH_START"]
+        )
     if "FLOW_SCALAR_CONSTANT_COUNT" in os.environ:
         kernel.FLOW_SCALAR_CONSTANT_COUNT = int(
             os.environ["FLOW_SCALAR_CONSTANT_COUNT"]
         )
+    if "FLOW_SCALAR_CONSTANT_SET" in os.environ:
+        kernel.FLOW_SCALAR_CONSTANT_SET = frozenset(
+            int(value)
+            for value in os.environ["FLOW_SCALAR_CONSTANT_SET"].split(",")
+            if value
+        )
+    if "FLOW_ZERO_BASE_CONSTANT_SET" in os.environ:
+        kernel.FLOW_ZERO_BASE_CONSTANT_SET = frozenset(
+            int(value)
+            for value in os.environ["FLOW_ZERO_BASE_CONSTANT_SET"].split(",")
+            if value
+        )
     if "FLOW_ONE_CONSTANT" in os.environ:
         kernel.FLOW_ONE_CONSTANT = bool(int(os.environ["FLOW_ONE_CONSTANT"]))
+    if "LOAD_IMMEDIATE_TAGS" in os.environ:
+        kernel.LOAD_IMMEDIATE_TAGS = frozenset(
+            value
+            for value in os.environ["LOAD_IMMEDIATE_TAGS"].split(",")
+            if value
+        )
     if "REUSE_TOP_RELOCATION_LEVEL4" in os.environ:
         kernel.REUSE_TOP_RELOCATION_LEVEL4 = bool(
             int(os.environ["REUSE_TOP_RELOCATION_LEVEL4"])
@@ -111,12 +137,36 @@ def configure_target() -> None:
     ):
         if env_name in os.environ:
             setattr(kernel, attribute, pair_set(env_name))
+    if "MADD_FIRST_DEPTH1_SET" in os.environ:
+        kernel.MADD_FIRST_DEPTH1_SET = group_set("MADD_FIRST_DEPTH1_SET")
     if "PAIRED_EARLY_XOR" in os.environ:
         kernel.PAIRED_EARLY_XOR = bool(int(os.environ["PAIRED_EARLY_XOR"]))
     if "PAIRED_FLOW_SELECT" in os.environ:
         kernel.PAIRED_FLOW_SELECT = bool(int(os.environ["PAIRED_FLOW_SELECT"]))
     if "PAIRED_BRANCH_FINAL" in os.environ:
         kernel.PAIRED_BRANCH_FINAL = bool(int(os.environ["PAIRED_BRANCH_FINAL"]))
+    if "BRANCH_FINAL_GROUP" in os.environ:
+        kernel.BRANCH_FINAL_GROUP = int(os.environ["BRANCH_FINAL_GROUP"])
+    if "BRANCH_DISPATCH_PADDING" in os.environ:
+        kernel.BRANCH_DISPATCH_PADDING = bool(
+            int(os.environ["BRANCH_DISPATCH_PADDING"])
+        )
+    if "BRANCH_DEDICATED_DEAD_REGS" in os.environ:
+        kernel.BRANCH_DEDICATED_DEAD_REGS = bool(
+            int(os.environ["BRANCH_DEDICATED_DEAD_REGS"])
+        )
+    if "BRANCH_DEAD_CANDIDATE_GROUP" in os.environ:
+        kernel.BRANCH_DEAD_CANDIDATE_GROUP = int(
+            os.environ["BRANCH_DEAD_CANDIDATE_GROUP"]
+        )
+    if "BRANCH_DEAD_CONTROL_GROUP" in os.environ:
+        kernel.BRANCH_DEAD_CONTROL_GROUP = int(
+            os.environ["BRANCH_DEAD_CONTROL_GROUP"]
+        )
+    if "BRANCH_DIRECT_FULL_TABLE" in os.environ:
+        kernel.BRANCH_DIRECT_FULL_TABLE = bool(
+            int(os.environ["BRANCH_DIRECT_FULL_TABLE"])
+        )
     if "BRANCH_FINAL_LANES" in os.environ:
         kernel.BRANCH_FINAL_LANES = tuple(
             int(value)
@@ -141,6 +191,8 @@ def configure_target() -> None:
         kernel.FLOW_OUTPUT_ADVANCE_POSITIONS = group_set(
             "FLOW_OUTPUT_ADVANCE_POSITIONS"
         )
+    if "FIRST_CACHE_SET" in os.environ:
+        kernel.FIRST_CACHE_SET = group_set("FIRST_CACHE_SET")
     if "FINAL_CACHE_SET" in os.environ:
         kernel.FINAL_CACHE_SET = group_set("FINAL_CACHE_SET")
     if "VALU_FINAL_CACHE_SET" in os.environ:
@@ -154,6 +206,10 @@ def configure_target() -> None:
                 if item
             )
         }
+    if "SCALAR_VALU_FINAL_DIFF_SET" in os.environ:
+        kernel.SCALAR_VALU_FINAL_DIFF_SET = pair_set(
+            "SCALAR_VALU_FINAL_DIFF_SET"
+        )
     if "EARLY_FINAL_CACHE_SET" in os.environ:
         kernel.EARLY_FINAL_CACHE_SET = group_set("EARLY_FINAL_CACHE_SET")
     if "REVERSED_RELOCATED_TREE" in os.environ:
@@ -165,6 +221,10 @@ def configure_target() -> None:
     if "RELOCATION_STORE_STREAMS" in os.environ:
         kernel.RELOCATION_STORE_STREAMS = int(
             os.environ["RELOCATION_STORE_STREAMS"]
+        )
+    if "RELOCATION_LOAD_STREAMS" in os.environ:
+        kernel.RELOCATION_LOAD_STREAMS = int(
+            os.environ["RELOCATION_LOAD_STREAMS"]
         )
     if "VECTOR_TOP_C5_BLOCKS" in os.environ:
         kernel.VECTOR_TOP_C5_BLOCKS = int(os.environ["VECTOR_TOP_C5_BLOCKS"])

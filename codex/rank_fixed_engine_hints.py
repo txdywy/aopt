@@ -51,7 +51,12 @@ def main() -> None:
     pattern = os.environ.get("HINT_GLOB", "/tmp/aopt-flow-policy-*.json")
     ranked = []
     for filename in glob.glob(pattern):
-        cycles = json.loads(open(filename).read())["cycles"]
+        raw_cycles = json.loads(open(filename).read())["cycles"]
+        cycles = (
+            {int(index): int(cycle) for index, cycle in raw_cycles.items()}
+            if isinstance(raw_cycles, dict)
+            else raw_cycles
+        )
         earliest = [0] * len(ops)
         valid = True
         for child, op in enumerate(ops):

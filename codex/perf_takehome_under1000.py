@@ -19,7 +19,7 @@ from __future__ import annotations
 
 import base64
 from collections import defaultdict
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 import heapq
 import struct
 from typing import Iterable
@@ -56,6 +56,14 @@ SSA_WORKSPACES = False
 SSA_LEVEL4_WORKSPACES = False
 SSA_ALL_WORKSPACES = False
 SSA_FIRST_WORKSPACE_GROUPS: frozenset[int] = frozenset()
+# Rename only the second traversal's short-lived mux registers.  Unlike the
+# first traversal, rounds 11..15 derive every path condition directly from the
+# per-group mirror (or use the group's saved SSA path), so no condition needs
+# to retain one physical workspace identity across rounds.  Scheduling these
+# registers virtually removes the otherwise global dependency chain through
+# SECOND_WORKSPACE_FIXED without paying the much larger live-range cost of
+# SSA_ALL_WORKSPACES.
+SSA_SECOND_WORKSPACES = False
 FLOW_SCALAR_CONSTANT_COUNT = 0
 # Sparse resource-aware constant materialization.  The prefix knob above is
 # useful for coarse sweeps, but insertion order puts the latency-critical C0
@@ -68,11 +76,48 @@ FLOW_SCALAR_CONSTANT_SET: frozenset[int] = frozenset()
 # the loaded scalar one and can pull an entire broadcast fanout forward.
 FLOW_ZERO_BASE_CONSTANT_SET: frozenset[int] = frozenset()
 FLOW_ONE_CONSTANT = False
+# Delete scalar constant loads that have no consumers after the specialized
+# DAG has been constructed.  This is a deliberately narrow compiler DCE pass:
+# it only removes pure ``const`` operations whose result is provably unused.
+ELIDE_DEAD_SCALAR_CONSTANTS = False
 # Selected setup immediates may be materialized with the load engine instead
 # of FLOW ``add_imm``.  This is a late resource-balancing knob: setup loads
 # finish before the steady-state gathers, while removing them from FLOW gives
 # the nearly saturated selector schedule more freedom.
 LOAD_IMMEDIATE_TAGS: frozenset[str] = frozenset()
+# The store engine is almost idle in the steady-state kernel.  Selected
+# vector constants can therefore be materialized without VALU ``vbroadcast``:
+# store eight copies of an already-available scalar into a private memory
+# block, then vload the block.  All constants reuse the same eight words;
+# explicit memory-dependency edges pipeline the next stores with the previous
+# vload while preserving the machine's end-of-cycle store semantics.
+MEMORY_VECTOR_CONSTANT_SET: frozenset[str] = frozenset()
+MEMORY_VECTOR_CONSTANT_ORDER: tuple[str, ...] = ()
+MEMORY_STAGE_SETUP_C5 = False
+MEMORY_STAGE_NEGATIVE_FIVE = False
+DIRECT_LOAD_VECTOR_CONSTANT_SET: frozenset[str] = frozenset()
+DIRECT_LOAD_SETUP_C5 = False
+DIRECT_LOAD_NEGATIVE_FIVE = False
+MEMORY_CACHED_NODE_SET: frozenset[int] = frozenset()
+# Order Store->Load node broadcasts independently of logical node number.
+# The shared memory staging buffer is throughput-optimal but serial, so a new
+# early node inserted ahead of the relocation-critical 19..30 suffix delays
+# every subsequent gather.  A compiler-selected priority order keeps that
+# critical prefix unchanged and materializes less urgent nodes in the shadow
+# of relocation and input setup.
+MEMORY_CACHED_NODE_ORDER: tuple[int, ...] = ()
+MEMORY_VECTOR_CONSTANT_BASE = 5165
+MEMORY_VECTOR_CONSTANT_SWITCH_AFTER = 0
+MEMORY_VECTOR_CONSTANT_ADDRESS_GROUP = 31
+# Give the setup-only memory address lanes distinct SSA names, then color them
+# onto a vector whose physical live range does not overlap.  Reusing
+# ``values[group]`` directly saves scratch but creates artificial WAW/WAR
+# edges from constant setup into that group's input/hash pipeline.
+SSA_MEMORY_VECTOR_CONSTANT_ADDRESS = False
+# ``raw_root_copy`` is the only remaining non-select FLOW operation.  Moving
+# this scalar copy to ALU frees exactly one FLOW slot for a restored vselect.
+# A dedicated unwritten scratch word supplies architectural zero.
+ALU_RAW_ROOT_COPY = False
 ALU_DERIVED_POWER_COUNT = 0
 ALU_DERIVED_DEPTH_START = 11
 ALU_DERIVED_MISC_SET: frozenset[str] = frozenset(
@@ -131,6 +176,12 @@ INDEPENDENT_RELOCATION_LOAD_POINTERS = False
 INDEPENDENT_INPUT_POINTERS = False
 DERIVE_TOP_P1_FROM_P0 = False
 DERIVE_SETUP_SECOND_POINTERS = False
+DERIVE_OUTPUT_SECOND_POINTER = False
+# Keep the output base in a dedicated setup-time scalar, then copy it into the
+# rolling output pointer with ALU at the tail.  This retimes the materializing
+# load ahead of the long saturated gather window without extending a reused
+# pointer register's false WAW/WAR chain.
+PRESERVE_OUTPUT_BASE = False
 EARLY_FINAL_CACHE_SET: frozenset[int] = frozenset()
 EARLY_FINAL_ADDRESS_SET: frozenset[int] = frozenset()
 VECTOR_EARLY_FINAL_ADDRESS_SET: frozenset[int] = frozenset()
@@ -176,6 +227,12 @@ SCALAR_FINAL_HASH23_JOIN_SET: frozenset[int] = frozenset((0, 1, 17, 31))
 SCALAR_HASH1_JOIN_SET: frozenset[tuple[int, int]] = frozenset(((18, 15),))
 SCALAR_HASH23_JOIN_SET: frozenset[tuple[int, int]] = frozenset()
 SCALAR_HASH5_JOIN_SET: frozenset[tuple[int, int]] = frozenset()
+# The relocated kernel normally applies the final C5 with eight ALU xors
+# because its old C5 vector has been recycled as the -5 address bias.  Tail
+# groups whose final xor can live outside the saturated VALU window may share
+# one post-schedule-colored C5 vector instead.  One delayed broadcast then
+# trades eight scalar ALU operations per selected group for one vector xor.
+VALU_FINAL_C5_SET: frozenset[int] = frozenset()
 # A parity extraction is semantically either eight independent scalar ANDs
 # or one vector AND.  The scalar form has better aggregate throughput on the
 # 12-wide ALU, while the vector form completes every lane atomically and can
@@ -199,6 +256,7 @@ FIRST_CACHE_SET = frozenset(
 )
 HASH_SCALAR_MOD = 4
 HASH_SCALAR_STAGE = -1  # scalarize the independent stage-1 constant XOR
+HASH_VECTOR_FORCE_SET: frozenset[tuple[int, int]] = frozenset()
 _BASE_SCALAR = {(group, (1 - group) % 4) for group in range(21)}
 _SCALAR_CANDIDATES = [
     (group, rnd)
@@ -555,6 +613,7 @@ class _Op:
     tag: str = ""
     group: int = -1
     round: int = -1
+    identity: tuple[object, ...] = ()
 
 
 class _Scratch:
@@ -605,6 +664,7 @@ class _Graph:
         tag: str = "",
         group: int = -1,
         round: int = -1,
+        identity: tuple[object, ...] = (),
     ) -> int:
         reads_t = tuple(dict.fromkeys(reads))
         writes_t = tuple(dict.fromkeys(writes))
@@ -640,6 +700,7 @@ class _Graph:
                 tag=tag,
                 group=group,
                 round=round,
+                identity=identity,
             )
         )
 
@@ -706,6 +767,29 @@ class KernelBuilder:
         s_m4 = scalar_const(9, "hash_mul4_shift3")
         s_m0 = scalar_const(4097, "hash_mul0")
         s_m2 = scalar_const(33, "hash_mul2")
+        s_zero = alloc("architectural_zero") if ALU_RAW_ROOT_COPY else -1
+        preserve_reuses_setup_scalar = bool(
+            PRESERVE_OUTPUT_BASE
+            and BRANCH_FINAL_LANES
+            and BRANCH_DIRECT_FULL_TABLE
+            and not PAIRED_BRANCH_FINAL
+            and not DELAYED_PAIR_BRANCH_GROUPS
+            and ALU_RAW_ROOT_COPY
+        )
+        preserved_output_base = (
+            s_m23
+            if preserve_reuses_setup_scalar
+            else s_zero
+            if PRESERVE_OUTPUT_BASE and ALU_RAW_ROOT_COPY
+            else alloc("preserved_output_base")
+            if PRESERVE_OUTPUT_BASE
+            else -1
+        )
+        memory_address_spare = (
+            alloc("memory_constant_address_spare")
+            if MEMORY_VECTOR_CONSTANT_SWITCH_AFTER
+            else -1
+        )
 
         # Mirrored local-path address: mem_addr = 2**(depth+1) + 5 - mirror.
         depth_range = range(4, 5) if OVERLAP_DEEP_ADDRESS else range(4, 11)
@@ -724,11 +808,13 @@ class KernelBuilder:
 
         # Vector constants needed by fixed VALU instructions.
         vector_constants: dict[int, int] = {}
+        vector_constant_names: dict[int, str] = {}
 
         def vector_const(value: int, name: str) -> int:
             value &= 0xFFFFFFFF
             if value not in vector_constants:
                 vector_constants[value] = alloc(name, VLEN)
+                vector_constant_names[value] = name
             return vector_constants[value]
 
         v_one = vector_const(1, "v_one")
@@ -835,9 +921,23 @@ class KernelBuilder:
             top_p0 = bits[0][2]
         if INDEPENDENT_TOP_P1:
             top_p1 = select_spill[0][0]
+        needs_branch_table_base = bool(
+            BRANCH_FINAL_LANES or DELAYED_PAIR_BRANCH_GROUPS
+        )
+        reuse_zero_for_branch_table = bool(
+            needs_branch_table_base
+            and BRANCH_FINAL_LANES
+            and BRANCH_DIRECT_FULL_TABLE
+            and not PAIRED_BRANCH_FINAL
+            and not DELAYED_PAIR_BRANCH_GROUPS
+            and ALU_RAW_ROOT_COPY
+            and preserved_output_base != s_zero
+        )
         branch_table_base = (
-            alloc("branch_table_base")
-            if BRANCH_FINAL_LANES or DELAYED_PAIR_BRANCH_GROUPS
+            s_zero
+            if reuse_zero_for_branch_table
+            else alloc("branch_table_base")
+            if needs_branch_table_base
             else -1
         )
         physical_workspace_vectors = tuple(
@@ -876,6 +976,12 @@ class KernelBuilder:
             # reserving another architectural vector would exceed scratch.
             depth1_diff = virtual_vector("depth1_pair_diff")
 
+        final_c5_vector = (
+            virtual_vector("final_c5_vector")
+            if VALU_FINAL_C5_SET
+            else -1
+        )
+        final_c5_broadcast = [-1]
         valu_final_cache_scratch = {
             group: virtual_vector(f"valu_final_cache_scratch_{group}")
             for group in VALU_FINAL_CACHE_SET | VALU_FINAL_CACHE_COUNTS.keys()
@@ -910,8 +1016,10 @@ class KernelBuilder:
         def workspace_registers(
             workspace: int, gg: int, rnd: int
         ) -> tuple[list[int], list[int]]:
-            if SSA_ALL_WORKSPACES or (
-                rnd < 11 and gg in SSA_FIRST_WORKSPACE_GROUPS
+            if (
+                SSA_ALL_WORKSPACES
+                or (SSA_SECOND_WORKSPACES and rnd >= 11)
+                or (rnd < 11 and gg in SSA_FIRST_WORKSPACE_GROUPS)
             ):
                 # Bits p0..p2 must share one name across rounds 0..4 of a
                 # first traversal.  Later cached selections derive conditions
@@ -991,13 +1099,20 @@ class KernelBuilder:
                 tag=tag,
             )
 
-        def emit_vbroadcast(dest: int, src: int, tag: str = "broadcast") -> int:
+        def emit_vbroadcast(
+            dest: int,
+            src: int,
+            tag: str = "broadcast",
+            *,
+            identity: tuple[object, ...] = (),
+        ) -> int:
             return graph.emit(
                 "valu",
                 ("vbroadcast", dest, src),
                 reads=(src,),
                 writes=_words(dest),
                 tag=tag,
+                identity=identity,
             )
 
         def emit_valu(
@@ -1009,6 +1124,7 @@ class KernelBuilder:
             tag: str,
             group: int = -1,
             round: int = -1,
+            identity: tuple[object, ...] = (),
         ) -> int:
             return graph.emit(
                 "valu",
@@ -1018,6 +1134,7 @@ class KernelBuilder:
                 tag=tag,
                 group=group,
                 round=round,
+                identity=identity,
             )
 
         def emit_madd(
@@ -1029,6 +1146,7 @@ class KernelBuilder:
             tag: str,
             group: int = -1,
             round: int = -1,
+            identity: tuple[object, ...] = (),
         ) -> int:
             return graph.emit(
                 "valu",
@@ -1038,6 +1156,7 @@ class KernelBuilder:
                 tag=tag,
                 group=group,
                 round=round,
+                identity=identity,
             )
 
         def emit_scalarized(
@@ -1111,6 +1230,7 @@ class KernelBuilder:
             *,
             group: int,
             round: int,
+            identity: tuple[object, ...] = (),
         ) -> int:
             return graph.emit(
                 "flow",
@@ -1120,7 +1240,108 @@ class KernelBuilder:
                 tag="tree_select",
                 group=group,
                 round=round,
+                identity=identity,
             )
+
+        memory_constant_primary_base = (
+            virtual_vector("memory_constant_addresses")
+            if SSA_MEMORY_VECTOR_CONSTANT_ADDRESS
+            else values[MEMORY_VECTOR_CONSTANT_ADDRESS_GROUP]
+        )
+        memory_constant_primary_addresses = tuple(
+            memory_constant_primary_base + lane
+            for lane in range(VLEN)
+        )
+        memory_constant_secondary_addresses = (
+            (
+                s_c0,
+                s_c4,
+                s_m4,
+                s_m0,
+                s_m2,
+                s_m23,
+                s_nineteen,
+                memory_address_spare,
+            )
+            if MEMORY_VECTOR_CONSTANT_SWITCH_AFTER
+            else ()
+        )
+        memory_constant_addresses = memory_constant_primary_addresses
+        memory_constant_ready_buffers: set[tuple[int, ...]] = set()
+        memory_constant_previous_load = -1
+        memory_constant_materializations = 0
+
+        def emit_direct_vector_constant(
+            dest: int,
+            value: int,
+            tag: str,
+        ) -> None:
+            for lane in range(VLEN):
+                emit_const(
+                    dest + lane,
+                    value,
+                    f"{tag}_direct_load",
+                )
+
+        def emit_memory_vector_constant(
+            dest: int,
+            scalar_source: int,
+            tag: str,
+        ) -> int:
+            """Replicate one scalar through private memory using STORE+LOAD."""
+            nonlocal memory_constant_addresses
+            nonlocal memory_constant_previous_load
+            nonlocal memory_constant_materializations
+            if (
+                MEMORY_VECTOR_CONSTANT_SWITCH_AFTER
+                and memory_constant_materializations
+                == MEMORY_VECTOR_CONSTANT_SWITCH_AFTER
+            ):
+                memory_constant_addresses = (
+                    memory_constant_secondary_addresses
+                )
+            if memory_constant_addresses not in memory_constant_ready_buffers:
+                for lane, address_word in enumerate(
+                    memory_constant_addresses
+                ):
+                    emit_const(
+                        address_word,
+                        MEMORY_VECTOR_CONSTANT_BASE + lane,
+                        "memory_constant_address",
+                    )
+                memory_constant_ready_buffers.add(memory_constant_addresses)
+            overwrite_deps = (
+                ((memory_constant_previous_load, 0),)
+                if memory_constant_previous_load >= 0
+                else ()
+            )
+            stores = [
+                graph.emit(
+                    "store",
+                    (
+                        "store",
+                        memory_constant_addresses[lane],
+                        scalar_source,
+                    ),
+                    reads=(
+                        memory_constant_addresses[lane],
+                        scalar_source,
+                    ),
+                    deps=overwrite_deps,
+                    tag=f"{tag}_memory_store",
+                )
+                for lane in range(VLEN)
+            ]
+            memory_constant_previous_load = graph.emit(
+                "load",
+                ("vload", dest, memory_constant_addresses[0]),
+                reads=(memory_constant_addresses[0],),
+                writes=_words(dest),
+                deps=tuple((store, 1) for store in stores),
+                tag=f"{tag}_memory_load",
+            )
+            memory_constant_materializations += 1
+            return memory_constant_previous_load
 
         # Load all immutable scalar constants, then broadcast the subset used
         # by VALU.  The scheduler overlaps these with tree and input traffic.
@@ -1258,8 +1479,86 @@ class KernelBuilder:
                         tag="depth_base_adjust",
                     )
                 previous = dest
-        for value, dest in vector_constants.items():
-            emit_vbroadcast(dest, scalar_constants[value], "constant_broadcast")
+        setup_c5_preloaded = bool(
+            REVERSED_RELOCATED_TREE
+            and VECTOR_TOP_C5_BLOCKS
+            and (MEMORY_STAGE_SETUP_C5 or DIRECT_LOAD_SETUP_C5)
+        )
+        if setup_c5_preloaded:
+            # The cached-top transform is the first consumer in the entire
+            # program, so put C5 at the head of the shared memory pipeline.
+            if MEMORY_STAGE_SETUP_C5 and DIRECT_LOAD_SETUP_C5:
+                raise ValueError("setup C5 cannot use two materializers")
+            if DIRECT_LOAD_SETUP_C5:
+                emit_direct_vector_constant(v_c5, C5, "setup_c5")
+            else:
+                emit_memory_vector_constant(v_c5, s_c5, "setup_c5")
+
+        unknown_memory_constants = (
+            MEMORY_VECTOR_CONSTANT_SET - set(vector_constant_names.values())
+        )
+        if unknown_memory_constants:
+            raise ValueError(
+                "unknown memory vector constants: "
+                + ",".join(sorted(unknown_memory_constants))
+            )
+        unknown_direct_constants = (
+            DIRECT_LOAD_VECTOR_CONSTANT_SET
+            - set(vector_constant_names.values())
+        )
+        if unknown_direct_constants:
+            raise ValueError(
+                "unknown direct-load vector constants: "
+                + ",".join(sorted(unknown_direct_constants))
+            )
+        overlap_constants = (
+            MEMORY_VECTOR_CONSTANT_SET & DIRECT_LOAD_VECTOR_CONSTANT_SET
+        )
+        if overlap_constants:
+            raise ValueError(
+                "vector constants cannot use two materializers: "
+                + ",".join(sorted(overlap_constants))
+            )
+        memory_order = {
+            name: position
+            for position, name in enumerate(MEMORY_VECTOR_CONSTANT_ORDER)
+        }
+        ordered_vector_constants = sorted(
+            vector_constants.items(),
+            key=lambda item: (
+                memory_order.get(
+                    vector_constant_names[item[0]],
+                    len(memory_order),
+                ),
+                tuple(vector_constants).index(item[0]),
+            ),
+        )
+        for value, dest in ordered_vector_constants:
+            name = vector_constant_names[value]
+            if name in DIRECT_LOAD_VECTOR_CONSTANT_SET:
+                emit_direct_vector_constant(dest, value, "constant")
+            elif name in MEMORY_VECTOR_CONSTANT_SET:
+                emit_memory_vector_constant(
+                    dest,
+                    scalar_constants[value],
+                    "constant",
+                )
+            else:
+                emit_vbroadcast(
+                    dest,
+                    scalar_constants[value],
+                    "constant_broadcast",
+                    identity=("vector_constant", name),
+                )
+        if PRESERVE_OUTPUT_BASE and preserved_output_base != s_zero:
+            # Reused scalar constants are dead after this broadcast phase.
+            # Retiming the output base here keeps its load ahead of the
+            # steady-state gather window without allocating another word.
+            emit_const(
+                preserved_output_base,
+                7 + n_nodes + batch_size,
+                "preserved_output_base",
+            )
         if OVERLAP_DEEP_ADDRESS:
             emit_valu("+", v_four, v_two, v_two, tag="derive_v_four")
             emit_valu("+", v_eight, v_four, v_four, tag="derive_v_eight")
@@ -1271,10 +1570,33 @@ class KernelBuilder:
             if VECTOR_TOP_C5_BLOCKS:
                 if not 0 <= VECTOR_TOP_C5_BLOCKS <= 4:
                     raise ValueError("vector top C5 blocks must be in 0..4")
-                emit_vbroadcast(v_c5, s_c5, "setup_c5_broadcast")
+                if not setup_c5_preloaded:
+                    emit_vbroadcast(v_c5, s_c5, "setup_c5_broadcast")
             else:
-                emit_immediate(top_p0, -5, "negative_five_immediate")
-                emit_vbroadcast(v_c5, top_p0, "negative_five_broadcast")
+                if MEMORY_STAGE_NEGATIVE_FIVE and DIRECT_LOAD_NEGATIVE_FIVE:
+                    raise ValueError(
+                        "negative five cannot use two materializers"
+                    )
+                if DIRECT_LOAD_NEGATIVE_FIVE:
+                    emit_direct_vector_constant(
+                        v_c5,
+                        -5,
+                        "negative_five",
+                    )
+                else:
+                    emit_immediate(top_p0, -5, "negative_five_immediate")
+                    if MEMORY_STAGE_NEGATIVE_FIVE:
+                        emit_memory_vector_constant(
+                            v_c5,
+                            top_p0,
+                            "negative_five",
+                        )
+                    else:
+                        emit_vbroadcast(
+                            v_c5,
+                            top_p0,
+                            "negative_five_broadcast",
+                        )
 
         # Fetch nodes 0..31 using two rolling pointers and four vector loads.
         if "top_pointer" in LOAD_IMMEDIATE_TAGS:
@@ -1289,25 +1611,24 @@ class KernelBuilder:
             )
         else:
             emit_immediate(top_p0, 7, "top_pointer")
-        if "top_pointer" in LOAD_IMMEDIATE_TAGS:
+        if DERIVE_TOP_P1_FROM_P0:
+            graph.emit(
+                "alu",
+                ("+", top_p1, top_p0, s_eight),
+                reads=(top_p0, s_eight),
+                writes=(top_p1,),
+                tag="top_pointer_derive",
+            )
+        elif "top_pointer" in LOAD_IMMEDIATE_TAGS:
             emit_const(top_p1, 15, "top_pointer")
         elif INDEPENDENT_TOP_P1:
-            if DERIVE_TOP_P1_FROM_P0:
-                graph.emit(
-                    "alu",
-                    ("+", top_p1, top_p0, s_eight),
-                    reads=(top_p0, s_eight),
-                    writes=(top_p1,),
-                    tag="top_pointer_derive",
-                )
-            else:
-                graph.emit(
-                    "flow",
-                    ("add_imm", top_p1, top_p1, 15),
-                    reads=(top_p1,),
-                    writes=(top_p1,),
-                    tag="top_pointer",
-                )
+            graph.emit(
+                "flow",
+                ("add_imm", top_p1, top_p1, 15),
+                reads=(top_p1,),
+                writes=(top_p1,),
+                tag="top_pointer",
+            )
         else:
             emit_immediate(top_p1, 15, "top_pointer")
         top_loads: list[int] = []
@@ -1350,13 +1671,31 @@ class KernelBuilder:
         # its transformed form.  This removes the global round-0/round-11 root
         # barrier and lets all sixteen rounds form one software wavefront.
         if INDEPENDENT_ROOT_CACHE or DIRECT_MIRROR_PATH:
-            graph.emit(
-                "flow",
-                ("add_imm", raw_root_scalar, top_words, 0),
-                reads=(top_words,),
-                writes=(raw_root_scalar,),
-                tag="raw_root_copy",
-            )
+            if ALU_RAW_ROOT_COPY:
+                graph.emit(
+                    "alu",
+                    ("+", raw_root_scalar, top_words, s_zero),
+                    reads=(top_words, s_zero),
+                    writes=(raw_root_scalar,),
+                    tag="raw_root_copy",
+                )
+            else:
+                graph.emit(
+                    "flow",
+                    ("add_imm", raw_root_scalar, top_words, 0),
+                    reads=(top_words,),
+                    writes=(raw_root_scalar,),
+                    tag="raw_root_copy",
+                )
+            if PRESERVE_OUTPUT_BASE and preserved_output_base == s_zero:
+                # The architectural-zero word is dead immediately after the
+                # ALU root copy.  Recycle it for the long-lived output base so
+                # this retiming transformation costs no additional scratch.
+                emit_const(
+                    preserved_output_base,
+                    7 + n_nodes + batch_size,
+                    "preserved_output_base",
+                )
             if REVERSED_RELOCATED_TREE:
                 for chunk in range(4):
                     if chunk < VECTOR_TOP_C5_BLOCKS:
@@ -1378,8 +1717,37 @@ class KernelBuilder:
                                 tag="cached_nodes_scalar_transform",
                             )
                 if VECTOR_TOP_C5_BLOCKS:
-                    emit_immediate(top_p0, -5, "negative_five_immediate")
-                    emit_vbroadcast(v_c5, top_p0, "negative_five_broadcast")
+                    if (
+                        MEMORY_STAGE_NEGATIVE_FIVE
+                        and DIRECT_LOAD_NEGATIVE_FIVE
+                    ):
+                        raise ValueError(
+                            "negative five cannot use two materializers"
+                        )
+                    if DIRECT_LOAD_NEGATIVE_FIVE:
+                        emit_direct_vector_constant(
+                            v_c5,
+                            -5,
+                            "negative_five",
+                        )
+                    else:
+                        emit_immediate(
+                            top_p0,
+                            -5,
+                            "negative_five_immediate",
+                        )
+                        if MEMORY_STAGE_NEGATIVE_FIVE:
+                            emit_memory_vector_constant(
+                                v_c5,
+                                top_p0,
+                                "negative_five",
+                            )
+                        else:
+                            emit_vbroadcast(
+                                v_c5,
+                                top_p0,
+                                "negative_five_broadcast",
+                            )
             else:
                 for chunk in range(4):
                     emit_valu(
@@ -1389,15 +1757,72 @@ class KernelBuilder:
                         v_c5,
                         tag="cached_nodes_vector_transform",
                     )
-            for i in range(31):
-                emit_vbroadcast(
-                    node_vec[i], top_words + i, "cached_node_broadcast"
+            unknown_memory_nodes = (
+                MEMORY_CACHED_NODE_SET - frozenset(range(31))
+            )
+            if unknown_memory_nodes:
+                raise ValueError(
+                    "unknown cached memory nodes: "
+                    + ",".join(map(str, sorted(unknown_memory_nodes)))
                 )
+            unknown_memory_node_order = (
+                set(MEMORY_CACHED_NODE_ORDER) - set(range(31))
+            )
+            if (
+                unknown_memory_node_order
+                or len(set(MEMORY_CACHED_NODE_ORDER))
+                != len(MEMORY_CACHED_NODE_ORDER)
+            ):
+                raise ValueError(
+                    "MEMORY_CACHED_NODE_ORDER must contain distinct nodes "
+                    "from 0 through 30"
+                )
+            cached_node_order = MEMORY_CACHED_NODE_ORDER + tuple(
+                i for i in range(31) if i not in MEMORY_CACHED_NODE_ORDER
+            )
+            for i in cached_node_order:
+                if i in MEMORY_CACHED_NODE_SET:
+                    emit_memory_vector_constant(
+                        node_vec[i],
+                        top_words + i,
+                        "cached_node",
+                    )
+                else:
+                    emit_vbroadcast(
+                        node_vec[i],
+                        top_words + i,
+                        "cached_node_broadcast",
+                        identity=("cached_node", i),
+                    )
         else:
             # Node vector 0 starts as the raw root for round 0.  It is
             # transformed only after every first-root reader is emitted.
             emit_vbroadcast(node_vec[0], top_words, "raw_root_broadcast")
-            for i in range(1, 31):
+            unknown_memory_nodes = (
+                MEMORY_CACHED_NODE_SET - frozenset(range(1, 31))
+            )
+            if unknown_memory_nodes:
+                raise ValueError(
+                    "unknown cached memory nodes: "
+                    + ",".join(map(str, sorted(unknown_memory_nodes)))
+                )
+            unknown_memory_node_order = (
+                set(MEMORY_CACHED_NODE_ORDER) - set(range(1, 31))
+            )
+            if (
+                unknown_memory_node_order
+                or len(set(MEMORY_CACHED_NODE_ORDER))
+                != len(MEMORY_CACHED_NODE_ORDER)
+            ):
+                raise ValueError(
+                    "MEMORY_CACHED_NODE_ORDER must contain distinct nodes "
+                    "from 1 through 30"
+                )
+            cached_node_order = MEMORY_CACHED_NODE_ORDER + tuple(
+                i for i in range(1, 31)
+                if i not in MEMORY_CACHED_NODE_ORDER
+            )
+            for i in cached_node_order:
                 graph.emit(
                     "alu",
                     ("^", top_words + i, top_words + i, s_c5),
@@ -1405,7 +1830,19 @@ class KernelBuilder:
                     writes=(top_words + i,),
                     tag="cached_node_transform",
                 )
-                emit_vbroadcast(node_vec[i], top_words + i, "cached_node_broadcast")
+                if i in MEMORY_CACHED_NODE_SET:
+                    emit_memory_vector_constant(
+                        node_vec[i],
+                        top_words + i,
+                        "cached_node",
+                    )
+                else:
+                    emit_vbroadcast(
+                        node_vec[i],
+                        top_words + i,
+                        "cached_node_broadcast",
+                        identity=("cached_node", i),
+                    )
 
         # Optional one-time tree preprocessing experiment.
         # every SIMD group.  Transform them once in private machine memory so
@@ -2394,6 +2831,7 @@ class KernelBuilder:
                         tag="level4_hybrid_bottom",
                         group=gg,
                         round=rnd,
+                        identity=("level4_pair", pair_index),
                     )
                 else:
                     emit_vselect(
@@ -2403,6 +2841,7 @@ class KernelBuilder:
                         level4_reversed[2 * pair_index],
                         group=gg,
                         round=rnd,
+                        identity=("level4_pair", pair_index),
                     )
 
             upper_select_index = 0
@@ -2446,6 +2885,10 @@ class KernelBuilder:
                             tag="level4_valu_select_difference",
                             group=gg,
                             round=rnd,
+                            identity=(
+                                "level4_upper_select_difference",
+                                select_index,
+                            ),
                         )
                     emit_madd(
                         dest,
@@ -2455,6 +2898,7 @@ class KernelBuilder:
                         tag="level4_valu_select",
                         group=gg,
                         round=rnd,
+                        identity=("level4_upper_select", select_index),
                     )
                 else:
                     emit_vselect(
@@ -2464,6 +2908,7 @@ class KernelBuilder:
                         no,
                         group=gg,
                         round=rnd,
+                        identity=("level4_upper_select", select_index),
                     )
 
             pair(a, 0)
@@ -3056,8 +3501,11 @@ class KernelBuilder:
             # Stage 1 branches read the same old value.  Emit the reader first;
             # the following in-place writer has a zero-lag WAR dependency.
             scalar_hash = (
-                (gg + rnd) % HASH_SCALAR_MOD == 0
-                or (gg, rnd) in HASH_SCALAR_EXTRA
+                (gg, rnd) not in HASH_VECTOR_FORCE_SET
+                and (
+                    (gg + rnd) % HASH_SCALAR_MOD == 0
+                    or (gg, rnd) in HASH_SCALAR_EXTRA
+                )
             )
             scalar_shift = scalar_hash and HASH_SCALAR_STAGE == 1
             emit_vbasic(
@@ -3182,7 +3630,40 @@ class KernelBuilder:
                     )
             if rnd == rounds - 1:
                 # The final round materializes the true value directly.
-                if REVERSED_RELOCATED_TREE or gg in SCALAR_FINAL_C5_SET:
+                if gg in VALU_FINAL_C5_SET:
+                    if final_c5_broadcast[0] < 0:
+                        # Anchor the shared broadcast to the first selected
+                        # final value, rather than allowing a critical-height
+                        # scheduler to hoist it through the whole kernel and
+                        # create an unnecessarily long virtual live range.
+                        value_writers = {
+                            graph.last_writer[word]
+                            for word in _words(value)
+                            if word in graph.last_writer
+                        }
+                        final_c5_broadcast[0] = graph.emit(
+                            "valu",
+                            ("vbroadcast", final_c5_vector, s_c5),
+                            reads=(s_c5,),
+                            writes=_words(final_c5_vector),
+                            deps=tuple(
+                                (writer, 0)
+                                for writer in sorted(value_writers)
+                            ),
+                            tag="final_c5_broadcast",
+                            group=gg,
+                            round=rnd,
+                        )
+                    emit_valu(
+                        "^",
+                        value,
+                        value,
+                        final_c5_vector,
+                        tag="hash_5_const_vector_tail",
+                        group=gg,
+                        round=rnd,
+                    )
+                elif REVERSED_RELOCATED_TREE or gg in SCALAR_FINAL_C5_SET:
                     emit_scalarized(
                         "^",
                         value,
@@ -3444,20 +3925,34 @@ class KernelBuilder:
                     )
 
             if gg in EARLY_FINAL_CACHE_SET and rnd == 14:
-                for dest, mask, tag in (
-                    (workspace_bits[2], v_one, "early_level4_condition_2"),
-                    (workspace_bits[1], v_two, "early_level4_condition_1"),
-                    (workspace_bits[0], v_four, "early_level4_condition_0"),
-                ):
-                    emit_valu(
-                        "&",
-                        dest,
-                        mirrors[state],
-                        mask,
-                        tag=tag,
-                        group=gg,
-                        round=rnd,
-                    )
+                saved_path = saved_second_path_bits.get(gg)
+                if saved_path is None or len(saved_path) < 4:
+                    for dest, mask, tag in (
+                        (
+                            workspace_bits[2],
+                            v_one,
+                            "early_level4_condition_2",
+                        ),
+                        (
+                            workspace_bits[1],
+                            v_two,
+                            "early_level4_condition_1",
+                        ),
+                        (
+                            workspace_bits[0],
+                            v_four,
+                            "early_level4_condition_0",
+                        ),
+                    ):
+                        emit_valu(
+                            "&",
+                            dest,
+                            mirrors[state],
+                            mask,
+                            tag=tag,
+                            group=gg,
+                            round=rnd,
+                        )
 
             if gg in PIPELINED_DEPTH3_GROUPS and rnd == 13:
                 pipeline_workspace = PIPELINED_DEPTH3_WORKSPACE_OVERRIDES.get(
@@ -4370,8 +4865,35 @@ class KernelBuilder:
                     group=group,
                 )
         else:
-            emit_immediate(io_p0, values_base, "output_pointer")
-            emit_immediate(io_p1, values_base + VLEN, "output_pointer")
+            if PRESERVE_OUTPUT_BASE:
+                graph.emit(
+                    "alu",
+                    (
+                        "|",
+                        io_p0,
+                        preserved_output_base,
+                        preserved_output_base,
+                    ),
+                    reads=(preserved_output_base,),
+                    writes=(io_p0,),
+                    tag="output_pointer_copy",
+                )
+            else:
+                emit_immediate(io_p0, values_base, "output_pointer")
+            if DERIVE_OUTPUT_SECOND_POINTER:
+                graph.emit(
+                    "alu",
+                    ("+", io_p1, io_p0, s_eight),
+                    reads=(io_p0, s_eight),
+                    writes=(io_p1,),
+                    tag="output_pointer_derive",
+                )
+            else:
+                emit_immediate(
+                    io_p1,
+                    values_base + VLEN,
+                    "output_pointer",
+                )
             rolling_pairs = (
                 N_GROUPS // 2
                 if INDEPENDENT_TAIL_OUTPUTS
@@ -4418,6 +4940,37 @@ class KernelBuilder:
                 # address loads from distorting the global load-distance
                 # heuristic and delaying the actual computation.
                 pass
+
+        if ELIDE_DEAD_SCALAR_CONSTANTS:
+            child_counts = [0] * len(graph.ops)
+            for op in graph.ops:
+                for parent in op.parents:
+                    child_counts[parent] += 1
+            removed = {
+                index
+                for index, op in enumerate(graph.ops)
+                if op.engine == "load"
+                and op.tag == "scalar_constant"
+                and child_counts[index] == 0
+            }
+            if removed:
+                remap: dict[int, int] = {}
+                compacted: list[_Op] = []
+                for old_index, op in enumerate(graph.ops):
+                    if old_index in removed:
+                        continue
+                    remap[old_index] = len(compacted)
+                    compacted.append(op)
+                graph.ops = [
+                    replace(
+                        op,
+                        parents={
+                            remap[parent]: lag
+                            for parent, lag in op.parents.items()
+                        },
+                    )
+                    for op in compacted
+                ]
 
         self.scratch_ptr = scratch.ptr
         self.scratch_debug = scratch.debug
@@ -4803,10 +5356,27 @@ class KernelBuilder:
                 raise AssertionError("final bundle has no flow slot for direct halt")
             self.instrs[-1]["flow"] = [("halt",)]
             main_length = len(self.instrs)
+            load_start = 0
+            if branch_table_base == s_zero and s_zero >= 0:
+                # The table base aliases architectural zero.  Do not clobber
+                # it until the scheduled raw-root copy has consumed the zero.
+                load_start = 1 + max(
+                    (
+                        pc
+                        for pc, bundle in enumerate(self.instrs[:prep_pc])
+                        if any(
+                            s_zero in slot[1:]
+                            for slots in bundle.values()
+                            for slot in slots
+                        )
+                    ),
+                    default=-1,
+                )
             load_pc = next(
                 pc
                 for pc, bundle in enumerate(self.instrs[:prep_pc])
-                if len(bundle.get("load", ())) < SLOT_LIMITS["load"]
+                if pc >= load_start
+                and len(bundle.get("load", ())) < SLOT_LIMITS["load"]
             )
             self.instrs[load_pc].setdefault("load", []).append(
                 ("const", branch_table_base, main_length)

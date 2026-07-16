@@ -246,6 +246,9 @@ def main() -> None:
             rng = random.Random(seed)
             early_weight = rng.choice((2, 4, 8, 16, 32, 64, 128))
             ancestor_divisor = rng.choice((8, 16, 32, 64, 128, 256, 512))
+            unlock_reach_divisor = rng.choice(
+                (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024)
+            )
             fanin_weight = rng.choice((0, 1, 2, 4, 8, 16, 32))
             unlock_weight = rng.choice((0, 16, 32, 64, 128, 256, 512, 1024))
             group_weight = rng.choice((-8, -4, -2, -1, 0, 1, 2, 4, 8))
@@ -268,8 +271,16 @@ def main() -> None:
 
             def priority(i: int) -> tuple[int, ...]:
                 op = ops[i]
+                # In a backwards schedule the valuable action is often to
+                # schedule the final remaining child of a high-fanout root,
+                # making that root ready while there is still room near the
+                # start of the horizon.  Ancestor count alone gets this
+                # exactly backwards for constants and input loads: they have
+                # few ancestors but gate a very large downstream cone.
                 unlock = sum(
-                    1 + ancestor_count[parent] // ancestor_divisor
+                    1
+                    + ancestor_count[parent] // ancestor_divisor
+                    + projected_reach[parent] // unlock_reach_divisor
                     for parent in projected[i]
                     if successor_count[parent] == 1
                 )
@@ -489,6 +500,63 @@ def main() -> None:
         i: model.new_int_var(bounds[i][0], bounds[i][1], f"s{i}")
         for i in selected
     }
+    saturated_windows: dict[str, tuple[int, int]] = {}
+    for raw_window in os.environ.get(
+        "SATURATED_HALL_WINDOWS", ""
+    ).split(","):
+        if not raw_window:
+            continue
+        engine, raw_left, raw_right = raw_window.split(":")
+        if engine not in engines:
+            raise ValueError(
+                f"saturated Hall engine {engine!r} is not selected"
+            )
+        left, right = int(raw_left), int(raw_right)
+        if not 0 <= left <= right < horizon:
+            raise ValueError(
+                f"invalid saturated Hall window {engine}:{left}:{right}"
+            )
+        saturated_windows[engine] = (left, right)
+        trapped = {
+            i
+            for i in selected
+            if ops[i].engine == engine
+            and earliest[i] >= left
+            and horizon - 1 - tail[i] <= right
+        }
+        required = SLOT_LIMITS[engine] * (right - left + 1)
+        if len(trapped) != required:
+            raise ValueError(
+                f"{engine} Hall window is not saturated: "
+                f"jobs={len(trapped)} capacity={required}"
+            )
+        for i in selected:
+            if ops[i].engine != engine or i in trapped:
+                continue
+            lower, upper = bounds[i]
+            if upper < left or lower > right:
+                continue
+            can_be_early = lower <= left - 1
+            can_be_late = upper >= right + 1
+            if can_be_early and can_be_late:
+                early_side = model.new_bool_var(f"hall_early_{engine}_{i}")
+                model.add(starts[i] <= left - 1).only_enforce_if(
+                    early_side
+                )
+                model.add(starts[i] >= right + 1).only_enforce_if(
+                    early_side.negated()
+                )
+            elif can_be_early:
+                model.add(starts[i] <= left - 1)
+            elif can_be_late:
+                model.add(starts[i] >= right + 1)
+            else:
+                model.add_bool_or([])
+        print(
+            f"saturated_hall_window engine={engine} "
+            f"window={left}:{right} trapped={len(trapped)}",
+            flush=True,
+        )
     domain_sizes = {
         engine: sum(
             bounds[i][1] - bounds[i][0] + 1
@@ -507,8 +575,32 @@ def main() -> None:
         if value
     )
     assignments: dict[tuple[int, int], cp_model.IntVar] = {}
+    microslot_engines = frozenset(
+        value
+        for value in os.environ.get("MICROSLOT_ENGINES", "").split(",")
+        if value
+    )
     for engine in engines:
         engine_ops = [i for i in selected if ops[i].engine == engine]
+        if engine in microslot_engines:
+            capacity = SLOT_LIMITS[engine]
+            microslots = []
+            for i in engine_ops:
+                lower, upper = bounds[i]
+                if capacity == 1:
+                    microslots.append(starts[i])
+                    continue
+                lane = model.new_int_var(
+                    0, capacity - 1, f"lane_{engine}_{i}"
+                )
+                microslot = model.new_int_var(
+                    capacity * lower,
+                    capacity * upper + capacity - 1,
+                    f"microslot_{engine}_{i}",
+                )
+                model.add(microslot == capacity * starts[i] + lane)
+                microslots.append(microslot)
+            model.add_all_different(microslots)
         if engine in time_indexed_engines:
             for i in engine_ops:
                 choices = []

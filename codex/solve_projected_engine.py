@@ -242,6 +242,33 @@ def main() -> None:
         f"projected_edges={projected_edge_count}",
         flush=True,
     )
+    if "ANALYZE_NODE" in os.environ:
+        node = int(os.environ["ANALYZE_NODE"])
+        chain = []
+        seen = set()
+        while node not in seen:
+            seen.add(node)
+            chain.append(node)
+            candidates = [
+                (earliest[parent] + lag, parent)
+                for parent, lag in ops[node].parents.items()
+                if earliest[parent] + lag == earliest[node]
+            ]
+            if not candidates:
+                break
+            _, node = max(candidates)
+        chain.reverse()
+        print("node_release_chain", flush=True)
+        for index in chain:
+            op = ops[index]
+            print(
+                f"i={index:5d} e={earliest[index]:3d} tail={tail[index]:3d} "
+                f"{op.engine:5s} g={op.group:2d} r={op.round:2d} "
+                f"{op.tag} slot={op.slot!r}",
+                flush=True,
+            )
+        if bool(int(os.environ.get("ANALYZE_ONLY", "0"))):
+            return
     if bool(int(os.environ.get("ANALYZE_HALL", "0"))):
         latest = [horizon - 1 - value for value in tail]
         best_overload = -10**9
@@ -344,6 +371,53 @@ def main() -> None:
         if projected_hint is None:
             raise ValueError("projected analysis requires PROJECTED_HINT")
         order = sorted(selected, key=lambda i: (projected_hint[i], i))
+        if bool(int(os.environ.get("ANALYZE_ORDER_HOLES", "0"))):
+            usage = Counter(projected_hint.values())
+            holes = [
+                cycle
+                for cycle in range(max(projected_hint.values()) + 1)
+                if usage[cycle] < capacity
+            ]
+            print(
+                f"order_holes count={len(holes)} values={holes}",
+                flush=True,
+            )
+        prefix = int(os.environ.get("ANALYZE_ORDER_PREFIX", "0"))
+        if prefix:
+            for position, index in enumerate(order[:prefix]):
+                op = ops[index]
+                print(
+                    f"order_prefix p={position:3d} i={index:5d} "
+                    f"hint={projected_hint[index]:3d} "
+                    f"release={earliest[index]:3d} tail={tail[index]:3d} "
+                    f"g={op.group:2d} r={op.round:2d} {op.tag}",
+                    flush=True,
+                )
+        suffix = int(os.environ.get("ANALYZE_ORDER_SUFFIX", "0"))
+        if suffix:
+            for position, index in enumerate(
+                order[-suffix:], start=max(0, len(order) - suffix)
+            ):
+                op = ops[index]
+                print(
+                    f"order_suffix p={position:3d} i={index:5d} "
+                    f"hint={projected_hint[index]:3d} "
+                    f"release={earliest[index]:3d} tail={tail[index]:3d} "
+                    f"g={op.group:2d} r={op.round:2d} {op.tag}",
+                    flush=True,
+                )
+        release_max = int(os.environ.get("ANALYZE_RELEASE_MAX", "-1"))
+        if release_max >= 0:
+            for position, index in enumerate(order):
+                if earliest[index] > release_max:
+                    continue
+                op = ops[index]
+                print(
+                    f"order_release p={position:3d} i={index:5d} "
+                    f"release={earliest[index]:3d} tail={tail[index]:3d} "
+                    f"g={op.group:2d} r={op.round:2d} {op.tag}",
+                    flush=True,
+                )
         ordered_parents = {i: dict(projected[i]) for i in selected}
         edge_kind = {
             (parent, child): "dag"
@@ -386,7 +460,50 @@ def main() -> None:
             f"endpoint={endpoint} chain={len(chain)}",
             flush=True,
         )
-        for index in chain[-int(os.environ.get("ANALYZE_TAIL", "120")):]:
+        if bool(int(os.environ.get("ANALYZE_CRITICAL_GAPS", "0"))):
+            previous_delta = None
+            previous_cycle = None
+            previous_earliest = None
+            for index in chain:
+                delta = ordered_earliest[index] - projected_hint[index]
+                cycle_gap = (
+                    0
+                    if previous_cycle is None
+                    else projected_hint[index] - previous_cycle
+                )
+                earliest_gap = (
+                    0
+                    if previous_earliest is None
+                    else ordered_earliest[index] - previous_earliest
+                )
+                if (
+                    previous_delta is None
+                    or delta != previous_delta
+                    or earliest_gap != cycle_gap
+                ):
+                    op = ops[index]
+                    parent = reason.get(index, -1)
+                    print(
+                        f"critical_gap i={index:5d} "
+                        f"c={projected_hint[index]:3d} "
+                        f"e={ordered_earliest[index]:3d} "
+                        f"delta={delta:3d} dc={cycle_gap:3d} "
+                        f"de={earliest_gap:3d} "
+                        f"via={edge_kind.get((parent, index), 'root'):8s} "
+                        f"g={op.group:2d} r={op.round:2d} {op.tag}",
+                        flush=True,
+                    )
+                previous_delta = delta
+                previous_cycle = projected_hint[index]
+                previous_earliest = ordered_earliest[index]
+            return
+        analyze_head = int(os.environ.get("ANALYZE_HEAD", "0"))
+        displayed_chain = (
+            chain[:analyze_head]
+            if analyze_head
+            else chain[-int(os.environ.get("ANALYZE_TAIL", "120")):]
+        )
+        for index in displayed_chain:
             op = ops[index]
             parent = reason.get(index, -1)
             print(
@@ -1216,11 +1333,101 @@ def main() -> None:
         for parent, lag in projected[child].items():
             model.add(starts[child] >= starts[parent] + lag)
 
-    intervals = [
-        model.new_fixed_size_interval_var(starts[i], 1, f"i{i}")
-        for i in selected
-    ]
-    model.add_cumulative(intervals, [1] * len(intervals), capacity)
+    saturated_window = None
+    saturated_trapped: set[int] = set()
+    if "SATURATED_HALL_WINDOW" in os.environ:
+        saturated_window = tuple(
+            int(value)
+            for value in os.environ["SATURATED_HALL_WINDOW"].split(":")
+        )
+        if len(saturated_window) != 2:
+            raise ValueError("SATURATED_HALL_WINDOW must be left:right")
+        window_left, window_right = saturated_window
+        saturated_trapped = {
+            i
+            for i in selected
+            if earliest[i] >= window_left
+            and horizon - 1 - tail[i] <= window_right
+        }
+        required = capacity * (window_right - window_left + 1)
+        if len(saturated_trapped) != required:
+            raise ValueError(
+                "requested Hall window is not exactly saturated: "
+                f"jobs={len(saturated_trapped)} capacity={required}"
+            )
+        for i in selected:
+            if i in saturated_trapped:
+                continue
+            lower = earliest[i]
+            upper = horizon - 1 - tail[i]
+            if upper < window_left or lower > window_right:
+                continue
+            early_side = model.new_bool_var(f"hall_early_{i}")
+            model.add(starts[i] <= window_left - 1).only_enforce_if(
+                early_side
+            )
+            model.add(starts[i] >= window_right + 1).only_enforce_if(
+                early_side.negated()
+            )
+        print(
+            f"saturated_hall_window={window_left}:{window_right} "
+            f"trapped={len(saturated_trapped)}",
+            flush=True,
+        )
+
+    time_indexed = bool(int(os.environ.get("TIME_INDEXED", "0")))
+    assignments: dict[tuple[int, int], cp_model.IntVar] = {}
+    if time_indexed:
+        for i in selected:
+            choices = []
+            lower = earliest[i]
+            upper = horizon - 1 - tail[i]
+            for cycle in range(lower, upper + 1):
+                if (
+                    saturated_window is not None
+                    and i not in saturated_trapped
+                    and saturated_window[0] <= cycle <= saturated_window[1]
+                ):
+                    continue
+                choice = model.new_bool_var(f"x{i}_{cycle}")
+                assignments[i, cycle] = choice
+                choices.append(choice)
+            model.add_exactly_one(choices)
+            model.add(
+                starts[i]
+                == sum(
+                    cycle * assignments[i, cycle]
+                    for cycle in range(lower, upper + 1)
+                )
+            )
+        for cycle in range(horizon):
+            choices = [
+                assignments[i, cycle]
+                for i in selected
+                if (i, cycle) in assignments
+            ]
+            if bool(int(os.environ.get("SATURATE_TIME_INDEXED", "1"))):
+                hole = model.new_int_var(
+                    0, capacity, f"hole_{engine}_{cycle}"
+                )
+                model.add(sum(choices) + hole == capacity)
+            else:
+                model.add(sum(choices) <= capacity)
+        print(
+            f"time_indexed=1 assignment_variables={len(assignments)}",
+            flush=True,
+        )
+    elif capacity == 1 and bool(
+        int(os.environ.get("ALL_DIFFERENT", "0"))
+    ):
+        model.add_all_different([starts[i] for i in selected])
+        print("all_different=1", flush=True)
+    else:
+        intervals = [
+            model.new_fixed_size_interval_var(starts[i], 1, f"i{i}")
+            for i in selected
+        ]
+        model.add_cumulative(intervals, [1] * len(intervals), capacity)
     if projected_hint is not None:
         projected_hint_shift = int(
             os.environ.get("PROJECTED_HINT_SHIFT", "0")
@@ -1233,6 +1440,23 @@ def main() -> None:
                     max(earliest[i], projected_hint[i] - projected_hint_shift),
                 ),
             )
+            if time_indexed:
+                hinted = min(
+                    horizon - 1 - tail[i],
+                    max(
+                        earliest[i],
+                        projected_hint[i] - projected_hint_shift,
+                    ),
+                )
+                for cycle in range(
+                    earliest[i], horizon - tail[i]
+                ):
+                    if (i, cycle) not in assignments:
+                        continue
+                    model.add_hint(
+                        assignments[i, cycle],
+                        int(cycle == hinted),
+                    )
     elif source_cycles is not None:
         for i in selected:
             model.add_hint(

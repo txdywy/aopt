@@ -25,6 +25,7 @@ def main() -> None:
     ops = real_tail_ops(builder.dag_ops)
     horizon = int(os.environ.get("TARGET", "959"))
     engine = os.environ.get("ENGINE", "flow")
+    verbose = bool(int(os.environ.get("VERBOSE", "0")))
     ranked = []
     for filename in glob.glob(os.environ["HINT_GLOB"]):
         raw_cycles = json.loads(Path(filename).read_text())["cycles"]
@@ -57,6 +58,10 @@ def main() -> None:
                 if indegree[child] == 0:
                     heapq.heappush(ready, child)
         if len(order) != len(ops):
+            if verbose:
+                print(
+                    f"skip=cycle visited={len(order)}/{len(ops)} {filename}"
+                )
             continue
         earliest = [0] * len(ops)
         for child in order:
@@ -71,6 +76,22 @@ def main() -> None:
                 default=horizon - 1,
             )
         if any(left > right for left, right in zip(earliest, latest)):
+            if verbose:
+                worst = max(
+                    (
+                        left - right,
+                        index,
+                        left,
+                        right,
+                    )
+                    for index, (left, right) in enumerate(
+                        zip(earliest, latest)
+                    )
+                )
+                print(
+                    f"skip=window worst={worst} dag={max(earliest) + 1} "
+                    f"{filename}"
+                )
             continue
         overloads = tuple(
             hall_overload(ops, earliest, latest, target, horizon)

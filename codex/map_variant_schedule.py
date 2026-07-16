@@ -46,6 +46,22 @@ def direct_lookup_map(name: str) -> dict[int, tuple[int, ...]]:
     }
 
 
+def paired_direct_lookup_map(
+    name: str,
+) -> dict[int, tuple[tuple[int, int], ...]]:
+    return {
+        int(group): tuple(
+            (2 * pair, 2 * pair + 1)
+            for pair in range(int(count))
+        )
+        for group, count in (
+            item.split(":")
+            for item in os.environ.get(name, "").split(",")
+            if item
+        )
+    }
+
+
 def hybrid_override_map(name: str) -> dict[tuple[int, int], int]:
     return {
         (int(group), int(rnd)): int(count)
@@ -58,6 +74,63 @@ def hybrid_override_map(name: str) -> dict[tuple[int, int], int]:
 
 
 def configure_target() -> None:
+    if "FULL_ROUND_OFFSETS" in os.environ:
+        offsets = tuple(
+            int(value)
+            for value in os.environ["FULL_ROUND_OFFSETS"].split(",")
+            if value
+        )
+        if len(offsets) != kernel.N_GROUPS or min(offsets) < 0:
+            raise ValueError(
+                "FULL_ROUND_OFFSETS must contain 32 non-negative integers"
+            )
+        kernel.FULL_ROUND_OFFSETS = offsets
+        # The coarse hash-engine balancing knob selects a prefix ordered by
+        # launch phase.  Recompute that order after retiming the software
+        # pipeline; otherwise an offset search silently evaluates the scalar
+        # choices of the original schedule.
+        kernel._SCALAR_CANDIDATES.sort(
+            key=lambda pair: (
+                pair[1],
+                kernel.FULL_ROUND_OFFSETS[pair[0]],
+            ),
+            reverse=True,
+        )
+    if "WORKSPACE_ASSIGNMENT" in os.environ:
+        assignment = tuple(
+            int(value)
+            for value in os.environ["WORKSPACE_ASSIGNMENT"].split(",")
+            if value
+        )
+        if (
+            len(assignment) != kernel.N_GROUPS
+            or min(assignment) < 0
+            or max(assignment) >= kernel.N_WORKSPACES
+        ):
+            raise ValueError(
+                "WORKSPACE_ASSIGNMENT must contain 32 workspace indices"
+            )
+        kernel.WORKSPACE_ASSIGNMENT = assignment
+    if "SECOND_WORKSPACE_ASSIGNMENT" in os.environ:
+        raw_assignment = os.environ["SECOND_WORKSPACE_ASSIGNMENT"]
+        if raw_assignment:
+            assignment = tuple(
+                int(value)
+                for value in raw_assignment.split(",")
+                if value
+            )
+            if (
+                len(assignment) != kernel.N_GROUPS
+                or min(assignment) < 0
+                or max(assignment) >= kernel.N_WORKSPACES
+            ):
+                raise ValueError(
+                    "SECOND_WORKSPACE_ASSIGNMENT must contain 32 "
+                    "workspace indices"
+                )
+            kernel.SECOND_WORKSPACE_ASSIGNMENT = assignment
+        else:
+            kernel.SECOND_WORKSPACE_ASSIGNMENT = None
     if "ALU_DERIVED_MISC_SET" in os.environ:
         kernel.ALU_DERIVED_MISC_SET = frozenset(
             value
@@ -90,12 +163,80 @@ def configure_target() -> None:
         )
     if "FLOW_ONE_CONSTANT" in os.environ:
         kernel.FLOW_ONE_CONSTANT = bool(int(os.environ["FLOW_ONE_CONSTANT"]))
+    if "ELIDE_DEAD_SCALAR_CONSTANTS" in os.environ:
+        kernel.ELIDE_DEAD_SCALAR_CONSTANTS = bool(
+            int(os.environ["ELIDE_DEAD_SCALAR_CONSTANTS"])
+        )
     if "LOAD_IMMEDIATE_TAGS" in os.environ:
         kernel.LOAD_IMMEDIATE_TAGS = frozenset(
             value
             for value in os.environ["LOAD_IMMEDIATE_TAGS"].split(",")
             if value
         )
+    if "MEMORY_VECTOR_CONSTANT_SET" in os.environ:
+        kernel.MEMORY_VECTOR_CONSTANT_SET = frozenset(
+            value
+            for value in os.environ["MEMORY_VECTOR_CONSTANT_SET"].split(",")
+            if value
+        )
+    if "MEMORY_VECTOR_CONSTANT_ORDER" in os.environ:
+        kernel.MEMORY_VECTOR_CONSTANT_ORDER = tuple(
+            value
+            for value in os.environ["MEMORY_VECTOR_CONSTANT_ORDER"].split(",")
+            if value
+        )
+    if "MEMORY_STAGE_SETUP_C5" in os.environ:
+        kernel.MEMORY_STAGE_SETUP_C5 = bool(
+            int(os.environ["MEMORY_STAGE_SETUP_C5"])
+        )
+    if "MEMORY_STAGE_NEGATIVE_FIVE" in os.environ:
+        kernel.MEMORY_STAGE_NEGATIVE_FIVE = bool(
+            int(os.environ["MEMORY_STAGE_NEGATIVE_FIVE"])
+        )
+    if "DIRECT_LOAD_VECTOR_CONSTANT_SET" in os.environ:
+        kernel.DIRECT_LOAD_VECTOR_CONSTANT_SET = frozenset(
+            value
+            for value in os.environ[
+                "DIRECT_LOAD_VECTOR_CONSTANT_SET"
+            ].split(",")
+            if value
+        )
+    if "DIRECT_LOAD_SETUP_C5" in os.environ:
+        kernel.DIRECT_LOAD_SETUP_C5 = bool(
+            int(os.environ["DIRECT_LOAD_SETUP_C5"])
+        )
+    if "DIRECT_LOAD_NEGATIVE_FIVE" in os.environ:
+        kernel.DIRECT_LOAD_NEGATIVE_FIVE = bool(
+            int(os.environ["DIRECT_LOAD_NEGATIVE_FIVE"])
+        )
+    if "MEMORY_CACHED_NODE_SET" in os.environ:
+        kernel.MEMORY_CACHED_NODE_SET = group_set(
+            "MEMORY_CACHED_NODE_SET"
+        )
+    if "MEMORY_CACHED_NODE_ORDER" in os.environ:
+        kernel.MEMORY_CACHED_NODE_ORDER = tuple(
+            int(value)
+            for value in os.environ["MEMORY_CACHED_NODE_ORDER"].split(",")
+            if value
+        )
+    if "MEMORY_VECTOR_CONSTANT_BASE" in os.environ:
+        kernel.MEMORY_VECTOR_CONSTANT_BASE = int(
+            os.environ["MEMORY_VECTOR_CONSTANT_BASE"]
+        )
+    if "MEMORY_VECTOR_CONSTANT_SWITCH_AFTER" in os.environ:
+        kernel.MEMORY_VECTOR_CONSTANT_SWITCH_AFTER = int(
+            os.environ["MEMORY_VECTOR_CONSTANT_SWITCH_AFTER"]
+        )
+    if "MEMORY_VECTOR_CONSTANT_ADDRESS_GROUP" in os.environ:
+        kernel.MEMORY_VECTOR_CONSTANT_ADDRESS_GROUP = int(
+            os.environ["MEMORY_VECTOR_CONSTANT_ADDRESS_GROUP"]
+        )
+    if "SSA_MEMORY_VECTOR_CONSTANT_ADDRESS" in os.environ:
+        kernel.SSA_MEMORY_VECTOR_CONSTANT_ADDRESS = bool(
+            int(os.environ["SSA_MEMORY_VECTOR_CONSTANT_ADDRESS"])
+        )
+    if "ALU_RAW_ROOT_COPY" in os.environ:
+        kernel.ALU_RAW_ROOT_COPY = bool(int(os.environ["ALU_RAW_ROOT_COPY"]))
     if "REUSE_TOP_RELOCATION_LEVEL4" in os.environ:
         kernel.REUSE_TOP_RELOCATION_LEVEL4 = bool(
             int(os.environ["REUSE_TOP_RELOCATION_LEVEL4"])
@@ -120,12 +261,21 @@ def configure_target() -> None:
         kernel.DERIVE_SETUP_SECOND_POINTERS = bool(
             int(os.environ["DERIVE_SETUP_SECOND_POINTERS"])
         )
+    if "DERIVE_OUTPUT_SECOND_POINTER" in os.environ:
+        kernel.DERIVE_OUTPUT_SECOND_POINTER = bool(
+            int(os.environ["DERIVE_OUTPUT_SECOND_POINTER"])
+        )
+    if "PRESERVE_OUTPUT_BASE" in os.environ:
+        kernel.PRESERVE_OUTPUT_BASE = bool(
+            int(os.environ["PRESERVE_OUTPUT_BASE"])
+        )
     scalar_sets = {
         "SCALAR_FINAL_C5": "SCALAR_FINAL_C5_SET",
         "SCALAR_FINAL_JOIN": "SCALAR_FINAL_JOIN_SET",
         "SCALAR_FINAL_SHIFT": "SCALAR_FINAL_SHIFT_SET",
         "SCALAR_FINAL_HASH23_JOIN": "SCALAR_FINAL_HASH23_JOIN_SET",
         "SCALAR_FINAL_HASH4": "SCALAR_FINAL_HASH4_SET",
+        "VALU_FINAL_C5": "VALU_FINAL_C5_SET",
     }
     for env_name, attribute in scalar_sets.items():
         if env_name in os.environ:
@@ -183,6 +333,10 @@ def configure_target() -> None:
         )
     if "DIRECT_BRANCH_LOOKUPS" in os.environ:
         kernel.DIRECT_BRANCH_LOOKUPS = direct_lookup_map("DIRECT_BRANCH_LOOKUPS")
+    if "PAIRED_DIRECT_BRANCH_LOOKUPS" in os.environ:
+        kernel.PAIRED_DIRECT_BRANCH_LOOKUPS = paired_direct_lookup_map(
+            "PAIRED_DIRECT_BRANCH_LOOKUPS"
+        )
     if "CHAINED_DIRECT_BRANCH_BASE" in os.environ:
         kernel.CHAINED_DIRECT_BRANCH_BASE = bool(
             int(os.environ["CHAINED_DIRECT_BRANCH_BASE"])
@@ -238,6 +392,10 @@ def configure_target() -> None:
         kernel.SSA_ALL_WORKSPACES = bool(
             int(os.environ["SSA_ALL_WORKSPACES"])
         )
+    if "SSA_SECOND_WORKSPACES" in os.environ:
+        kernel.SSA_SECOND_WORKSPACES = bool(
+            int(os.environ["SSA_SECOND_WORKSPACES"])
+        )
     if "SSA_FIRST_WORKSPACE_GROUPS" in os.environ:
         kernel.SSA_FIRST_WORKSPACE_GROUPS = group_set(
             "SSA_FIRST_WORKSPACE_GROUPS"
@@ -266,6 +424,18 @@ def configure_target() -> None:
         kernel.HASH_SCALAR_EXTRA = frozenset(
             kernel._BASE_SCALAR | set(kernel._SCALAR_CANDIDATES[:count])
         )
+    if "HASH_SCALAR_EXTRA_ADD_AFTER" in os.environ:
+        kernel.HASH_SCALAR_EXTRA = frozenset(
+            set(kernel.HASH_SCALAR_EXTRA)
+            | set(pair_set("HASH_SCALAR_EXTRA_ADD_AFTER"))
+        )
+    if "HASH_SCALAR_EXTRA_REMOVE_AFTER" in os.environ:
+        kernel.HASH_SCALAR_EXTRA = frozenset(
+            set(kernel.HASH_SCALAR_EXTRA)
+            - set(pair_set("HASH_SCALAR_EXTRA_REMOVE_AFTER"))
+        )
+    if "HASH_VECTOR_FORCE_SET" in os.environ:
+        kernel.HASH_VECTOR_FORCE_SET = pair_set("HASH_VECTOR_FORCE_SET")
 
 
 def real_tail_ops(ops: list[kernel._Op]) -> list[kernel._Op]:
@@ -303,8 +473,19 @@ def real_tail_ops(ops: list[kernel._Op]) -> list[kernel._Op]:
     return adjusted
 
 
-def op_key(op: kernel._Op) -> tuple:
-    return (op.engine, op.slot, op.tag, op.group, op.round)
+def op_key(op: kernel._Op) -> tuple[object, ...]:
+    """Identify an operation by semantics rather than register allocation.
+
+    Structural experiments deliberately change virtual/physical register
+    assignments.  Including the complete instruction tuple in this key made
+    every such renaming look like a new operation, so the "local" repair
+    model unnecessarily rescheduled most of the kernel.  Construction order
+    disambiguates repeated lane operations through the per-key deque below.
+    """
+    if op.identity:
+        return (op.engine, "identity", op.group, op.round, op.identity)
+    opcode = op.slot[0] if op.slot else None
+    return (op.engine, opcode, op.tag, op.group, op.round)
 
 
 def validate(ops: list[kernel._Op], cycles: list[int]) -> None:
@@ -341,6 +522,10 @@ def main() -> None:
     if "SOURCE_DIRECT_BRANCH_LOOKUPS" in os.environ:
         kernel.DIRECT_BRANCH_LOOKUPS = direct_lookup_map(
             "SOURCE_DIRECT_BRANCH_LOOKUPS"
+        )
+    if "SOURCE_PAIRED_DIRECT_BRANCH_LOOKUPS" in os.environ:
+        kernel.PAIRED_DIRECT_BRANCH_LOOKUPS = paired_direct_lookup_map(
+            "SOURCE_PAIRED_DIRECT_BRANCH_LOOKUPS"
         )
     if "SOURCE_CHAINED_DIRECT_BRANCH_BASE" in os.environ:
         kernel.CHAINED_DIRECT_BRANCH_BASE = bool(
@@ -442,6 +627,13 @@ def main() -> None:
         for i, cycle in enumerate(result)
         if cycle >= cutoff or cycle >= horizon
     )
+    prefix_cutoff = int(os.environ.get("PREFIX_CUTOFF", "-1"))
+    if prefix_cutoff >= 0:
+        unmatched_set.update(
+            i
+            for i, cycle in enumerate(result)
+            if 0 <= cycle <= prefix_cutoff
+        )
     local_groups = group_set("LOCAL_GROUPS")
     if local_groups:
         unmatched_set.update(
@@ -456,6 +648,18 @@ def main() -> None:
         unmatched_set.update(
             i for i, op in enumerate(target_ops) if op.engine in local_engines
         )
+    local_indices = {
+        int(value)
+        for value in os.environ.get("LOCAL_INDICES", "").split(",")
+        if value
+    }
+    if local_indices:
+        invalid_indices = sorted(
+            i for i in local_indices if not 0 <= i < len(target_ops)
+        )
+        if invalid_indices:
+            raise ValueError(f"invalid LOCAL_INDICES: {invalid_indices}")
+        unmatched_set.update(local_indices)
     print(
         f"source_ops={len(source_ops)} target_ops={len(target_ops)} "
         f"unmatched={len(unmatched)} horizon={horizon}",
@@ -544,9 +748,21 @@ def main() -> None:
     unmatched = sorted(unmatched_set)
     print(
         f"repair_ops={len(unmatched)} cutoff={cutoff} "
+        f"prefix_cutoff={prefix_cutoff} "
         f"boundary_closure_rounds={closure_round}",
         flush=True,
     )
+    if bool(int(os.environ.get("PRINT_REPAIR_OPS", "0"))):
+        for i in unmatched:
+            op = target_ops[i]
+            print(
+                f"repair i={i:5d} old={result[i]:4d} "
+                f"window=[{boundary_earliest[i]:3d},"
+                f"{boundary_latest[i]:3d}] "
+                f"{op.engine:5s} g={op.group:2d} r={op.round:2d} "
+                f"{op.tag} {op.slot[0] if op.slot else None}",
+                flush=True,
+            )
     if boundary_conflicts:
         examples = [
             (
@@ -577,6 +793,12 @@ def main() -> None:
             upper = min(horizon - 1, old_cycle + hint_radius)
         else:
             lower, upper = 0, horizon - 1
+        lower = max(lower, boundary_earliest[i])
+        upper = min(upper, boundary_latest[i])
+        if lower > upper:
+            raise ValueError(
+                f"empty repair domain for op {i}: [{lower},{upper}]"
+            )
         domains[i] = (lower, upper)
         starts[i] = model.new_int_var(lower, upper, f"s{i}")
         if time_indexed:
@@ -657,6 +879,126 @@ def main() -> None:
     for i, op in enumerate(target_ops):
         if i not in unmatched_set:
             fixed_use[op.engine][result[i]] += 1
+    fixed_overloads = {
+        engine: sorted(
+            (
+                (cycle, demand - SLOT_LIMITS[engine])
+                for cycle, demand in usage.items()
+                if engine != "debug" and demand > SLOT_LIMITS[engine]
+            ),
+            key=lambda item: (-item[1], item[0]),
+        )
+        for engine, usage in fixed_use.items()
+    }
+    fixed_overloads = {
+        engine: overloads
+        for engine, overloads in fixed_overloads.items()
+        if overloads
+    }
+    if fixed_overloads:
+        print(
+            "fixed_overloads="
+            + repr(
+                {
+                    engine: overloads[:12]
+                    for engine, overloads in fixed_overloads.items()
+                }
+            ),
+            flush=True,
+        )
+    repair_hall: dict[str, tuple[int, int, int, int, int]] = {}
+    for engine, capacity in SLOT_LIMITS.items():
+        if engine == "debug":
+            continue
+        local = [i for i in unmatched if target_ops[i].engine == engine]
+        if not local:
+            continue
+        residual = [
+            capacity - fixed_use[engine][cycle]
+            for cycle in range(horizon)
+        ]
+        residual_prefix = [0]
+        for available in residual:
+            residual_prefix.append(residual_prefix[-1] + available)
+        best = (-10**9, 0, 0, 0, 0)
+        for left in range(horizon):
+            histogram = [0] * horizon
+            for i in local:
+                if boundary_earliest[i] >= left:
+                    histogram[boundary_latest[i]] += 1
+            contained = 0
+            for right in range(left, horizon):
+                contained += histogram[right]
+                available = residual_prefix[right + 1] - residual_prefix[left]
+                overload = contained - available
+                if overload > best[0]:
+                    best = (overload, left, right, contained, available)
+        repair_hall[engine] = best
+    if repair_hall:
+        print(f"repair_hall={repair_hall}", flush=True)
+    if bool(int(os.environ.get("PRINT_HALL_BLOCKERS", "0"))):
+        natural_earliest = [0] * len(target_ops)
+        children: list[list[tuple[int, int]]] = [
+            [] for _ in target_ops
+        ]
+        for child, op in enumerate(target_ops):
+            for parent, lag in op.parents.items():
+                natural_earliest[child] = max(
+                    natural_earliest[child],
+                    natural_earliest[parent] + lag,
+                )
+                children[parent].append((child, lag))
+        natural_tail = [0] * len(target_ops)
+        for parent in reversed(range(len(target_ops))):
+            natural_tail[parent] = max(
+                (
+                    lag + natural_tail[child]
+                    for child, lag in children[parent]
+                ),
+                default=0,
+            )
+        natural_latest = [
+            horizon - 1 - tail for tail in natural_tail
+        ]
+        for engine, (overload, left, right, _, _) in repair_hall.items():
+            if overload <= 0:
+                continue
+            blockers = [
+                i
+                for i, op in enumerate(target_ops)
+                if i not in unmatched_set
+                and op.engine == engine
+                and left <= result[i] <= right
+                and (
+                    natural_earliest[i] < left
+                    or natural_latest[i] > right
+                )
+            ]
+            blockers.sort(
+                key=lambda i: (
+                    -max(
+                        left - natural_earliest[i],
+                        natural_latest[i] - right,
+                    ),
+                    result[i],
+                    i,
+                )
+            )
+            print(
+                f"hall_blockers engine={engine} "
+                f"window=[{left},{right}] overload={overload}",
+                flush=True,
+            )
+            for i in blockers[:40]:
+                op = target_ops[i]
+                print(
+                    f"  i={i:5d} old={result[i]:3d} "
+                    f"natural=[{natural_earliest[i]:3d},"
+                    f"{natural_latest[i]:3d}] "
+                    f"g={op.group:2d} r={op.round:2d} "
+                    f"{op.tag} {op.slot[0] if op.slot else None}",
+                    flush=True,
+                )
     for engine, capacity in SLOT_LIMITS.items():
         if engine == "debug":
             continue

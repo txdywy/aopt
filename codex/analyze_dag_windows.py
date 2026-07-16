@@ -13,11 +13,18 @@ from problem import SLOT_LIMITS
 
 def main() -> None:
     configure_target()
-    kernel.SCHEDULE_EXACT_CYCLES = None
+    # Window analysis only needs the dependency graph.  Deliberately install
+    # an empty exact schedule in fast mode: build_kernel exposes ``dag_ops``
+    # immediately before validating that schedule, avoiding an otherwise
+    # wasted full list-scheduling and virtual-register-coloring pass for every
+    # compiler-parameter candidate.
+    kernel.SCHEDULE_EXACT_CYCLES = (
+        [] if bool(int(os.environ.get("SKIP_SCHEDULE", "0"))) else None
+    )
     builder = kernel.KernelBuilder()
     try:
         builder.build_kernel(10, 2047, 256, 16)
-    except (AssertionError, StopIteration):
+    except (AssertionError, StopIteration, ValueError):
         if not hasattr(builder, "dag_ops"):
             raise
     ops = real_tail_ops(builder.dag_ops)

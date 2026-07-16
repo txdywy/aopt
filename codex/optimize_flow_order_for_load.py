@@ -30,6 +30,7 @@ def main() -> None:
         for value in os.environ.get("LOAD_WINDOW", "73:839").split(":")
     )
     global_hall = bool(int(os.environ.get("GLOBAL_HALL", "0")))
+    span_target = int(os.environ.get("SPAN_TARGET", "0"))
     hall_engines = tuple(
         engine
         for engine in os.environ.get("HALL_ENGINES", "load").split(",")
@@ -119,6 +120,16 @@ def main() -> None:
         ]
         for engine in hall_engines
     }
+    selected_tail = [full_tail[i] for i in selected]
+
+    def ordered_span(earliest: list[int]) -> int:
+        return max(
+            (
+                earliest[local] + selected_tail[local]
+                for local in range(count)
+            ),
+            default=0,
+        ) + 1
 
     def worst_hall_cut(
         earliest: list[int], latest: list[int], engine: str
@@ -225,6 +236,15 @@ def main() -> None:
         remaining = [node for node in order if node not in block_set]
         insertion = min(len(remaining), max(0, insertion))
         order = remaining[:insertion] + block + remaining[insertion:]
+    for raw_move in os.environ.get("INITIAL_NODE_MOVES", "").split(","):
+        if not raw_move:
+            continue
+        node, insertion = map(int, raw_move.split(":"))
+        if node not in order:
+            raise ValueError(f"missing initial FLOW node {node}")
+        order.remove(node)
+        insertion = min(len(order), max(0, insertion))
+        order.insert(insertion, node)
 
     active_cut_history: list[tuple[str, int, int]] = []
 
@@ -270,6 +290,7 @@ def main() -> None:
             latest[parent] = upper
         if any(earliest[i] > latest[i] for i in range(count)):
             return None
+        dag_span = ordered_span(earliest)
 
         if global_hall:
             cuts = (
@@ -284,7 +305,7 @@ def main() -> None:
                 )
             )
             overloads = tuple(cut[0] for cut in cuts)
-            key = (
+            hall_key = (
                 max(overloads),
                 sum(max(0, overload) for overload in overloads),
                 sum(overloads),
@@ -300,8 +321,17 @@ def main() -> None:
                 fixed_right,
             )
             overload, _, _, _, margin, boundary_pressure = cut
-            key = (overload, margin, boundary_pressure)
+            hall_key = (overload, margin, boundary_pressure)
             cuts = (cut,)
+        key = (
+            (
+                max(0, dag_span - span_target),
+                *hall_key,
+                dag_span,
+            )
+            if span_target
+            else hall_key
+        )
         return key, earliest, latest, cuts
 
     rng = random.Random(int(os.environ.get("RANDOM_SEED", "1")))
@@ -345,6 +375,121 @@ def main() -> None:
 
     best_cuts = current_cuts
     save()
+
+    def target_reached(key: tuple[int, ...]) -> bool:
+        if span_target:
+            # With a span target the leading component is schedule-span
+            # excess, followed by the Hall overload.  Stopping on key[0]
+            # alone incorrectly treats every already-short-enough schedule as
+            # Hall-feasible after its first secondary-score improvement.
+            return key[0] <= 0 and key[1] <= 0
+        return key[0] <= 0
+
+    ejection_passes = int(os.environ.get("EJECTION_SCAN_PASSES", "0"))
+    if ejection_passes:
+        from_min = int(os.environ.get("EJECTION_FROM_MIN", "0"))
+        from_max = int(
+            os.environ.get("EJECTION_FROM_MAX", str(len(order) - 1))
+        )
+        to_min = int(os.environ.get("EJECTION_TO_MIN", str(len(order) - 1)))
+        to_max = int(os.environ.get("EJECTION_TO_MAX", str(len(order))))
+        stride = int(os.environ.get("EJECTION_STRIDE", "1"))
+        allow_backward = bool(
+            int(os.environ.get("EJECTION_ALLOW_BACKWARD", "0"))
+        )
+        print_feasible = bool(
+            int(os.environ.get("EJECTION_PRINT_FEASIBLE", "0"))
+        )
+        for scan_pass in range(ejection_passes):
+            scan_best = None
+            attempted = feasible = 0
+            upper_from = min(from_max, len(order) - 1)
+            upper_to = min(to_max, len(order))
+            for source_position in range(
+                max(0, from_min), upper_from + 1, stride
+            ):
+                node = order[source_position]
+                for insertion in range(
+                    (
+                        max(0, to_min)
+                        if allow_backward
+                        else max(to_min, source_position + 1)
+                    ),
+                    upper_to + 1,
+                    stride,
+                ):
+                    if insertion in (
+                        source_position,
+                        source_position + 1,
+                    ):
+                        continue
+                    attempted += 1
+                    trial = order.copy()
+                    trial.pop(source_position)
+                    trial.insert(min(insertion, len(trial)), node)
+                    candidate = evaluate(trial, exact_hall=False)
+                    if candidate is None:
+                        continue
+                    feasible += 1
+                    if print_feasible:
+                        print(
+                            f"ejection_feasible pass={scan_pass} "
+                            f"move={source_position}:{insertion} "
+                            f"key={candidate[0]}",
+                            flush=True,
+                        )
+                    item = (
+                        candidate[0],
+                        source_position,
+                        insertion,
+                        candidate,
+                        trial,
+                    )
+                    if scan_best is None or item[:3] < scan_best[:3]:
+                        scan_best = item
+            if scan_best is None:
+                print(
+                    f"ejection_stuck pass={scan_pass} "
+                    f"attempted={attempted} feasible={feasible}",
+                    flush=True,
+                )
+                break
+            _, source_position, insertion, _, trial = scan_best
+            exact_candidate = evaluate(trial, exact_hall=True)
+            if exact_candidate is None:
+                raise AssertionError("ejection candidate changed feasibility")
+            if exact_candidate[0] >= current_key:
+                print(
+                    f"ejection_no_improvement pass={scan_pass} "
+                    f"best={exact_candidate[0]} current={current_key} "
+                    f"attempted={attempted} feasible={feasible}",
+                    flush=True,
+                )
+                break
+            order = trial
+            (
+                current_key,
+                current_earliest,
+                current_latest,
+                current_cuts,
+            ) = exact_candidate
+            for engine, cut in zip(hall_engines, current_cuts):
+                cut_spec = (engine, cut[1], cut[2])
+                if cut_spec not in active_cut_history:
+                    active_cut_history.append(cut_spec)
+            if current_key < best_key:
+                best_key = current_key
+                best_order = order.copy()
+                best_earliest = current_earliest
+                best_cuts = current_cuts
+                save()
+            print(
+                f"ejection_best={current_key} pass={scan_pass} "
+                f"move={source_position}:{insertion} "
+                f"attempted={attempted} feasible={feasible}",
+                flush=True,
+            )
+
     stagnant = 0
     for iteration in range(iterations):
         ranking_current = (
@@ -362,6 +507,15 @@ def main() -> None:
                 for _, left, right, *_ in current_cuts
             )
         ]
+        current_span = ordered_span(current_earliest)
+        if span_target and current_span > span_target:
+            focus.extend(
+                p
+                for p, node in enumerate(order)
+                if current_earliest[local_of[node]] + full_tail[node]
+                >= current_span - 4
+            )
+            focus = sorted(set(focus))
         if not focus:
             focus = list(range(len(order)))
         mutations: set[tuple[tuple[str, int, int], ...]] = set()
@@ -488,7 +642,7 @@ def main() -> None:
                 f"iteration={iteration} {description}",
                 flush=True,
             )
-            if best_key[0] <= 0:
+            if target_reached(best_key):
                 break
         elif iteration % 10 == 0:
             print(

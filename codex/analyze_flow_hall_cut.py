@@ -103,13 +103,19 @@ def main() -> None:
     trapped = [
         i for i in indices if earliest[i] >= left and latest[i] <= right
     ]
+    early_eligible = [i for i in indices if earliest[i] < left]
+    late_eligible = [i for i in indices if latest[i] > right]
+    summary_only = bool(int(os.environ.get("SUMMARY_ONLY", "0")))
     print(
         f"engine={engine} overload={overload} cut={left}:{right} "
-        f"trapped={len(trapped)} capacity={capacity * (right - left + 1)}"
+        f"trapped={len(trapped)} capacity={capacity * (right - left + 1)} "
+        f"total={len(indices)} early_eligible={len(early_eligible)} "
+        f"late_eligible={len(late_eligible)}"
     )
-    print("trapped_group_round=" + repr(Counter(
-        (ops[i].group, ops[i].round) for i in trapped
-    ).most_common()))
+    if not summary_only:
+        print("trapped_group_round=" + repr(Counter(
+            (ops[i].group, ops[i].round) for i in trapped
+        ).most_common()))
 
     def flow_root(start: int, reasons: list[int]) -> int:
         node = start
@@ -136,23 +142,86 @@ def main() -> None:
                 f"g={op.group:2d} r={op.round:2d} {op.tag} i={node}"
             )
 
-    print("early_flow_roots")
-    describe(early_roots)
-    print("late_flow_roots")
-    describe(late_roots)
+    if not summary_only:
+        print("early_flow_roots")
+        describe(early_roots)
+        print("late_flow_roots")
+        describe(late_roots)
 
-    radius = int(os.environ.get("BOUNDARY_RADIUS", "32"))
-    for boundary in (left, right):
-        print(f"flow_boundary={boundary}")
-        for node in flow_order:
-            if abs(earliest[node] - boundary) > radius:
-                continue
-            op = ops[node]
+    if bool(int(os.environ.get("DETAIL_BOUNDARY", "0"))):
+        detail_limit = int(os.environ.get("BOUNDARY_DETAIL_LIMIT", "64"))
+
+        def describe_boundary(
+            title: str,
+            candidates: list[int],
+            reasons: list[int],
+        ) -> None:
+            print(title)
             print(
-                f"pos={flow_position[node]:3d} e={earliest[node]:3d} "
-                f"l={latest[node]:3d} g={op.group:2d} r={op.round:2d} "
-                f"{op.tag} i={node}"
+                "tag_counts="
+                + repr(Counter(ops[i].tag for i in candidates).most_common())
             )
+            for index in candidates[:detail_limit]:
+                op = ops[index]
+                chain = []
+                node = index
+                seen = set()
+                while node >= 0 and node not in seen and len(chain) < 10:
+                    seen.add(node)
+                    parent = reasons[node]
+                    if parent < 0:
+                        break
+                    parent_op = ops[parent]
+                    chain.append(
+                        (
+                            parent,
+                            parent_op.engine,
+                            parent_op.tag,
+                            parent_op.group,
+                            parent_op.round,
+                            earliest[parent],
+                            latest[parent],
+                        )
+                    )
+                    node = parent
+                print(
+                    f"i={index} e={earliest[index]} l={latest[index]} "
+                    f"g={op.group} r={op.round} tag={op.tag} "
+                    f"slot={op.slot!r} chain={chain!r}"
+                )
+
+        describe_boundary(
+            "early_boundary_trapped",
+            [
+                i
+                for i in trapped
+                if earliest[i] == left
+            ],
+            early_reason,
+        )
+        describe_boundary(
+            "late_boundary_trapped",
+            [
+                i
+                for i in trapped
+                if latest[i] == right
+            ],
+            late_reason,
+        )
+
+    if not summary_only:
+        radius = int(os.environ.get("BOUNDARY_RADIUS", "32"))
+        for boundary in (left, right):
+            print(f"flow_boundary={boundary}")
+            for node in flow_order:
+                if abs(earliest[node] - boundary) > radius:
+                    continue
+                op = ops[node]
+                print(
+                    f"pos={flow_position[node]:3d} e={earliest[node]:3d} "
+                    f"l={latest[node]:3d} g={op.group:2d} r={op.round:2d} "
+                    f"{op.tag} i={node}"
+                )
 
 
 if __name__ == "__main__":

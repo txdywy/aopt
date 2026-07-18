@@ -569,6 +569,59 @@ def main() -> None:
     for child in selected:
         for parent, lag in projected[child].items():
             model.add(starts[child] >= starts[parent] + lag)
+    fixed_hint_orders = frozenset(
+        value
+        for value in os.environ.get("FIX_HINT_ORDERS", "").split(",")
+        if value
+    )
+    for payload in hint_payloads:
+        hint_engine = payload["engine"]
+        if hint_engine not in fixed_hint_orders:
+            continue
+        capacity = SLOT_LIMITS[hint_engine]
+        ordered = sorted(
+            (
+                (int(cycle), int(index))
+                for index, cycle in payload["cycles"].items()
+                if int(index) in starts
+            )
+        )
+        cycle_counts = Counter(cycle for cycle, _ in ordered)
+        if max(cycle_counts.values(), default=0) > capacity:
+            raise ValueError(f"hint for {hint_engine} exceeds capacity")
+        for (_, parent), (_, child) in zip(ordered, ordered[capacity:]):
+            model.add(starts[child] >= starts[parent] + 1)
+        print(
+            f"fixed_hint_order engine={hint_engine} jobs={len(ordered)}",
+            flush=True,
+        )
+    fixed_hint_cycles = frozenset(
+        value
+        for value in os.environ.get("FIX_HINT_CYCLES", "").split(",")
+        if value
+    )
+    for payload in hint_payloads:
+        hint_engine = payload["engine"]
+        if hint_engine not in fixed_hint_cycles:
+            continue
+        fixed = 0
+        for raw_index in payload["cycles"]:
+            index = int(raw_index)
+            if index not in starts:
+                continue
+            cycle = hint_targets[index]
+            lower, upper = bounds[index]
+            if not lower <= cycle <= upper:
+                raise ValueError(
+                    f"fixed {hint_engine} hint cycle outside domain: "
+                    f"i={index} cycle={cycle} domain={lower}:{upper}"
+                )
+            model.add(starts[index] == cycle)
+            fixed += 1
+        print(
+            f"fixed_hint_cycles engine={hint_engine} jobs={fixed}",
+            flush=True,
+        )
     time_indexed_engines = frozenset(
         value
         for value in os.environ.get("TIME_INDEXED_ENGINES", "").split(",")
@@ -600,6 +653,23 @@ def main() -> None:
                 )
                 model.add(microslot == capacity * starts[i] + lane)
                 microslots.append(microslot)
+            # Near-saturated engines are much easier to propagate as a full
+            # permutation.  The unrestricted hole variables name the few
+            # unused microslots; with exactly one variable per domain value,
+            # AllDifferent then proves that jobs plus holes cover the entire
+            # horizon instead of merely being pairwise distinct.
+            if bool(int(os.environ.get("SATURATE_MICROSLOTS", "0"))):
+                hole_count = capacity * horizon - len(engine_ops)
+                if hole_count < 0:
+                    model.add_bool_or([])
+                for hole in range(hole_count):
+                    microslots.append(
+                        model.new_int_var(
+                            0,
+                            capacity * horizon - 1,
+                            f"microslot_hole_{engine}_{hole}",
+                        )
+                    )
             model.add_all_different(microslots)
         if engine in time_indexed_engines:
             for i in engine_ops:

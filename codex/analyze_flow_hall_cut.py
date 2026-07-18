@@ -27,18 +27,30 @@ def main() -> None:
     ops = real_tail_ops(builder.dag_ops)
     horizon = int(os.environ.get("TARGET", "959"))
     engine = os.environ.get("ENGINE", "load")
+    order_engine = os.environ.get("ORDER_ENGINE", "flow")
+    if order_engine == engine:
+        raise ValueError("ORDER_ENGINE and ENGINE must differ")
 
     payload = json.loads(Path(os.environ["FLOW_HINT"]).read_text())
     raw_cycles = {int(i): int(c) for i, c in payload["cycles"].items()}
-    flow_set = {i for i, op in enumerate(ops) if op.engine == "flow"}
+    flow_set = {
+        i for i, op in enumerate(ops) if op.engine == order_engine
+    }
     if set(raw_cycles) != flow_set:
         raise ValueError("FLOW_HINT does not match the target DAG")
     flow_order = sorted(flow_set, key=lambda i: (raw_cycles[i], i))
     flow_position = {node: position for position, node in enumerate(flow_order)}
+    fixed_flow_cycles = bool(int(os.environ.get("FIX_FLOW_CYCLES", "0")))
 
     parents = [dict(op.parents) for op in ops]
-    for previous, current in zip(flow_order, flow_order[1:]):
-        parents[current][previous] = max(parents[current].get(previous, 0), 1)
+    if not fixed_flow_cycles:
+        capacity = SLOT_LIMITS[order_engine]
+        for previous, current in zip(
+            flow_order, flow_order[capacity:]
+        ):
+            parents[current][previous] = max(
+                parents[current].get(previous, 0), 1
+            )
     children: list[list[tuple[int, int]]] = [[] for _ in ops]
     indegree = [len(item) for item in parents]
     for child, child_parents in enumerate(parents):
@@ -60,19 +72,33 @@ def main() -> None:
     earliest = [0] * len(ops)
     early_reason = [-1] * len(ops)
     for child in topological:
+        release = 0
         for parent, lag in parents[child].items():
             value = earliest[parent] + lag
-            if value > earliest[child]:
-                earliest[child] = value
+            if value > release:
+                release = value
                 early_reason[child] = parent
+        if fixed_flow_cycles and child in flow_set:
+            if release > raw_cycles[child]:
+                raise ValueError("fixed FLOW cycle precedes its release")
+            earliest[child] = raw_cycles[child]
+        else:
+            earliest[child] = release
     latest = [horizon - 1] * len(ops)
     late_reason = [-1] * len(ops)
     for parent in reversed(topological):
+        deadline = horizon - 1
         for child, lag in children[parent]:
             value = latest[child] - lag
-            if value < latest[parent]:
-                latest[parent] = value
+            if value < deadline:
+                deadline = value
                 late_reason[parent] = child
+        if fixed_flow_cycles and parent in flow_set:
+            if raw_cycles[parent] > deadline:
+                raise ValueError("fixed FLOW cycle exceeds its deadline")
+            latest[parent] = raw_cycles[parent]
+        else:
+            latest[parent] = deadline
     if any(left > right for left, right in zip(earliest, latest)):
         raise ValueError("fixed FLOW order does not fit the horizon")
 
@@ -92,13 +118,16 @@ def main() -> None:
         dtype=np.int32,
     )
     best = (-10**9, 0, 0)
+    row_candidates: list[tuple[int, int, int]] = []
     capacity = SLOT_LIMITS[engine]
     for left in range(horizon):
         overloads = contained[left, left:] - capacity * np.arange(
             1, horizon - left + 1, dtype=np.int32
         )
         offset = int(np.argmax(overloads))
-        best = max(best, (int(overloads[offset]), left, left + offset))
+        candidate = (int(overloads[offset]), left, left + offset)
+        row_candidates.append(candidate)
+        best = max(best, candidate)
     overload, left, right = best
     trapped = [
         i for i in indices if earliest[i] >= left and latest[i] <= right
@@ -112,6 +141,28 @@ def main() -> None:
         f"total={len(indices)} early_eligible={len(early_eligible)} "
         f"late_eligible={len(late_eligible)}"
     )
+    top_cut_count = int(os.environ.get("TOP_CUTS", "0"))
+    if top_cut_count:
+        separation = int(os.environ.get("TOP_CUT_SEPARATION", "16"))
+        chosen: list[tuple[int, int, int]] = []
+        for candidate in sorted(row_candidates, reverse=True):
+            if candidate[0] <= 0:
+                break
+            _, candidate_left, candidate_right = candidate
+            if any(
+                abs(candidate_left - other_left) < separation
+                and abs(candidate_right - other_right) < separation
+                for _, other_left, other_right in chosen
+            ):
+                continue
+            chosen.append(candidate)
+            if len(chosen) >= top_cut_count:
+                break
+        for candidate_overload, candidate_left, candidate_right in chosen:
+            print(
+                f"candidate_cut={candidate_left}:{candidate_right} "
+                f"overload={candidate_overload}"
+            )
     if not summary_only:
         print("trapped_group_round=" + repr(Counter(
             (ops[i].group, ops[i].round) for i in trapped
@@ -122,7 +173,7 @@ def main() -> None:
         seen = set()
         while node >= 0 and node not in seen:
             seen.add(node)
-            if ops[node].engine == "flow":
+            if ops[node].engine == order_engine:
                 return node
             node = reasons[node]
         return -1

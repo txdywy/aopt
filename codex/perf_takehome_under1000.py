@@ -99,6 +99,10 @@ DIRECT_LOAD_VECTOR_CONSTANT_SET: frozenset[str] = frozenset()
 DIRECT_LOAD_SETUP_C5 = False
 DIRECT_LOAD_NEGATIVE_FIVE = False
 MEMORY_CACHED_NODE_SET: frozenset[int] = frozenset()
+# A third broadcast lowering for schedules with spare scalar-ALU bandwidth.
+# Eight independent identity operations replicate a scalar without consuming
+# either the saturated VALU broadcast slot or a staged Load dependency.
+ALU_CACHED_NODE_SET: frozenset[int] = frozenset()
 # Order Store->Load node broadcasts independently of logical node number.
 # The shared memory staging buffer is throughput-optimal but serial, so a new
 # early node inserted ahead of the relocation-critical 19..30 suffix delays
@@ -106,8 +110,25 @@ MEMORY_CACHED_NODE_SET: frozenset[int] = frozenset()
 # critical prefix unchanged and materializes less urgent nodes in the shadow
 # of relocation and input setup.
 MEMORY_CACHED_NODE_ORDER: tuple[int, ...] = ()
+# Materialize a staging buffer's consecutive addresses with one load followed
+# by a seven-deep scalar +1 chain.  This trades seven early Load slots for ALU
+# work, which is profitable after vectorizing selected final C5 stages and
+# also lets stores begin as soon as their individual address lane is ready.
+ALU_CHAIN_MEMORY_CONSTANT_ADDRESSES = False
+# Materialize each staging-buffer base with an early FLOW add_imm instead of a
+# LOAD const.  This is especially useful near the load-engine lower bound;
+# these operations naturally sit before the steady-state one-slot FLOW window.
+FLOW_MEMORY_CONSTANT_BASES = False
+# Seed the two safe staging-address vectors from the already materialized top
+# tree pointers (7 and 15).  This replaces two LOAD constants with early ALU
+# copies and lets the ordinary address-chain derivation continue unchanged.
+COPY_MEMORY_CONSTANT_BASES_FROM_TOP_POINTERS = False
 MEMORY_VECTOR_CONSTANT_BASE = 5165
 MEMORY_VECTOR_CONSTANT_SWITCH_AFTER = 0
+# Optional round-robin staging across more than the legacy one/two buffers.
+# The scored kernel's four top-tree vloads retire memory words 7..38, so up
+# to four eight-word buffers can safely reuse that dead input region.
+MEMORY_VECTOR_CONSTANT_BUFFER_COUNT = 0
 MEMORY_VECTOR_CONSTANT_ADDRESS_GROUP = 31
 # Give the setup-only memory address lanes distinct SSA names, then color them
 # onto a vector whose physical live range does not overlap.  Reusing
@@ -168,12 +189,25 @@ REVERSED_RELOCATED_TREE = False
 RELOCATION_STAGE_ORDER = "linear"
 RELOCATION_STORE_STREAMS = 1
 RELOCATION_LOAD_STREAMS = 2
+# Seed the relocation destination pointer by copying the already-live scalar
+# 16 instead of spending a FLOW immediate slot on the same value.
+COPY_RELOCATION_STORE_POINTER_FROM_SIXTEEN = False
+# Further setup-only FLOW relief.  These rewrites reuse registers/constants
+# already live in the relocation prologue and therefore add no scratch.
+DERIVE_RELOCATION_LOAD_POINTER_FROM_TOP = False
+ALU_DERIVED_NEGATIVE_FIVE = False
+ALU_DERIVED_TREE_REFLECT = False
 VECTOR_TOP_C5_BLOCKS = 0
 REUSE_TOP_RELOCATION_LEVEL4 = False
 INDEPENDENT_TOP_P0 = False
 INDEPENDENT_TOP_P1 = False
 INDEPENDENT_RELOCATION_LOAD_POINTERS = False
 INDEPENDENT_INPUT_POINTERS = False
+# Number of rolling vector-load pointers used by the input prologue.  The
+# default two-stream form is retained byte-for-byte for the embedded schedule;
+# four streams can borrow setup-dead hash temporaries and expose substantially
+# more first-round ILP without allocating persistent scratch.
+INPUT_POINTER_STREAMS = 2
 DERIVE_TOP_P1_FROM_P0 = False
 DERIVE_SETUP_SECOND_POINTERS = False
 DERIVE_OUTPUT_SECOND_POINTER = False
@@ -182,6 +216,9 @@ DERIVE_OUTPUT_SECOND_POINTER = False
 # load ahead of the long saturated gather window without extending a reused
 # pointer register's false WAW/WAR chain.
 PRESERVE_OUTPUT_BASE = False
+# The output base equals the initial input value pointer.  Copy it before that
+# rolling pointer advances instead of independently loading the same constant.
+COPY_PRESERVED_OUTPUT_BASE_FROM_INPUT = False
 EARLY_FINAL_CACHE_SET: frozenset[int] = frozenset()
 EARLY_FINAL_ADDRESS_SET: frozenset[int] = frozenset()
 VECTOR_EARLY_FINAL_ADDRESS_SET: frozenset[int] = frozenset()
@@ -788,6 +825,7 @@ class KernelBuilder:
         memory_address_spare = (
             alloc("memory_constant_address_spare")
             if MEMORY_VECTOR_CONSTANT_SWITCH_AFTER
+            and not SSA_MEMORY_VECTOR_CONSTANT_ADDRESS
             else -1
         )
 
@@ -856,8 +894,25 @@ class KernelBuilder:
         values = [alloc(f"value_{g}", VLEN) for g in range(N_GROUPS)]
         mirrors = [alloc(f"mirror_{g}", VLEN) for g in range(N_GROUPS)]
         temps = [alloc(f"temp_{g}", VLEN) for g in range(N_GROUPS)]
-        if INDEPENDENT_INPUT_POINTERS:
+        if not 2 <= INPUT_POINTER_STREAMS <= 8:
+            raise ValueError("input pointer streams must be in 2..8")
+        input_pointers: list[int]
+        input_pointer_stride = -1
+        if INPUT_POINTER_STREAMS > 2:
+            # These hash temporaries are dead until all input loads finish.
+            # Their first words are therefore safe scalar pointer registers;
+            # another dead lane holds the shared byte/word stride.
+            input_pointers = [
+                temps[24 + stream]
+                for stream in range(INPUT_POINTER_STREAMS)
+            ]
+            io_p0, io_p1 = input_pointers[:2]
+            input_pointer_stride = temps[23] + VLEN - 1
+        elif INDEPENDENT_INPUT_POINTERS:
             io_p0, io_p1 = temps[26], temps[27]
+            input_pointers = [io_p0, io_p1]
+        else:
+            input_pointers = [io_p0, io_p1]
         paired_candidate_yes = mirrors[0]
         paired_candidate_no = temps[0]
         paired_base_registers = [
@@ -1252,8 +1307,28 @@ class KernelBuilder:
             memory_constant_primary_base + lane
             for lane in range(VLEN)
         )
+        memory_constant_buffer_count = (
+            MEMORY_VECTOR_CONSTANT_BUFFER_COUNT
+            if MEMORY_VECTOR_CONSTANT_BUFFER_COUNT
+            else 2 if MEMORY_VECTOR_CONSTANT_SWITCH_AFTER else 1
+        )
+        if not 1 <= memory_constant_buffer_count <= 4:
+            raise ValueError("memory constant buffer count must be in 1..4")
+        if memory_constant_buffer_count > 2 and not SSA_MEMORY_VECTOR_CONSTANT_ADDRESS:
+            raise ValueError("more than two staging buffers require SSA addresses")
+        memory_constant_secondary_base = (
+            virtual_vector("memory_constant_addresses_secondary")
+            if memory_constant_buffer_count >= 2
+            and SSA_MEMORY_VECTOR_CONSTANT_ADDRESS
+            else -1
+        )
         memory_constant_secondary_addresses = (
-            (
+            tuple(
+                memory_constant_secondary_base + lane
+                for lane in range(VLEN)
+            )
+            if memory_constant_secondary_base >= 0
+            else (
                 s_c0,
                 s_c4,
                 s_m4,
@@ -1263,13 +1338,89 @@ class KernelBuilder:
                 s_nineteen,
                 memory_address_spare,
             )
-            if MEMORY_VECTOR_CONSTANT_SWITCH_AFTER
+            if memory_constant_buffer_count >= 2
             else ()
+        )
+        memory_constant_extra_addresses = tuple(
+            tuple(
+                virtual_vector(f"memory_constant_addresses_{buffer}") + lane
+                for lane in range(VLEN)
+            )
+            for buffer in range(2, memory_constant_buffer_count)
+        )
+        memory_constant_address_buffers = (
+            (memory_constant_primary_addresses,)
+            + ((memory_constant_secondary_addresses,)
+               if memory_constant_buffer_count >= 2 else ())
+            + memory_constant_extra_addresses
         )
         memory_constant_addresses = memory_constant_primary_addresses
         memory_constant_ready_buffers: set[tuple[int, ...]] = set()
-        memory_constant_previous_load = -1
+        memory_constant_previous_load: dict[tuple[int, ...], int] = {}
+        memory_constant_external_deps: tuple[tuple[int, int], ...] = ()
         memory_constant_materializations = 0
+
+        def initialize_memory_constant_buffer(
+            addresses: tuple[int, ...],
+            buffer_base: int,
+            source: int = -1,
+            source_add: int = -1,
+        ) -> None:
+            if addresses in memory_constant_ready_buffers:
+                return
+            if ALU_CHAIN_MEMORY_CONSTANT_ADDRESSES:
+                if source >= 0:
+                    if source_add >= 0:
+                        graph.emit(
+                            "alu",
+                            ("+", addresses[0], source, source_add),
+                            reads=(source, source_add),
+                            writes=(addresses[0],),
+                            tag="memory_constant_address_derive",
+                        )
+                    else:
+                        graph.emit(
+                            "alu",
+                            ("|", addresses[0], source, source),
+                            reads=(source,),
+                            writes=(addresses[0],),
+                            tag="memory_constant_address_copy",
+                        )
+                elif FLOW_MEMORY_CONSTANT_BASES:
+                    emit_immediate(
+                        addresses[0],
+                        buffer_base,
+                        "memory_constant_address",
+                    )
+                else:
+                    emit_const(
+                        addresses[0],
+                        buffer_base,
+                        "memory_constant_address",
+                    )
+                for previous, address_word in zip(
+                    addresses,
+                    addresses[1:],
+                ):
+                    graph.emit(
+                        "alu",
+                        ("+", address_word, previous, s_one),
+                        reads=(previous, s_one),
+                        writes=(address_word,),
+                        tag="memory_constant_address_derive",
+                    )
+            else:
+                if source >= 0:
+                    raise ValueError(
+                        "copying staging bases requires chained addresses"
+                    )
+                for lane, address_word in enumerate(addresses):
+                    emit_const(
+                        address_word,
+                        buffer_base + lane,
+                        "memory_constant_address",
+                    )
+            memory_constant_ready_buffers.add(addresses)
 
         def emit_direct_vector_constant(
             dest: int,
@@ -1290,9 +1441,13 @@ class KernelBuilder:
         ) -> int:
             """Replicate one scalar through private memory using STORE+LOAD."""
             nonlocal memory_constant_addresses
-            nonlocal memory_constant_previous_load
             nonlocal memory_constant_materializations
-            if (
+            if MEMORY_VECTOR_CONSTANT_BUFFER_COUNT:
+                memory_constant_addresses = memory_constant_address_buffers[
+                    memory_constant_materializations
+                    % memory_constant_buffer_count
+                ]
+            elif (
                 MEMORY_VECTOR_CONSTANT_SWITCH_AFTER
                 and memory_constant_materializations
                 == MEMORY_VECTOR_CONSTANT_SWITCH_AFTER
@@ -1301,19 +1456,20 @@ class KernelBuilder:
                     memory_constant_secondary_addresses
                 )
             if memory_constant_addresses not in memory_constant_ready_buffers:
-                for lane, address_word in enumerate(
-                    memory_constant_addresses
-                ):
-                    emit_const(
-                        address_word,
-                        MEMORY_VECTOR_CONSTANT_BASE + lane,
-                        "memory_constant_address",
-                    )
-                memory_constant_ready_buffers.add(memory_constant_addresses)
-            overwrite_deps = (
-                ((memory_constant_previous_load, 0),)
-                if memory_constant_previous_load >= 0
-                else ()
+                buffer_index = len(memory_constant_ready_buffers)
+                buffer_base = (
+                    MEMORY_VECTOR_CONSTANT_BASE + buffer_index * VLEN
+                )
+                initialize_memory_constant_buffer(
+                    memory_constant_addresses,
+                    buffer_base,
+                )
+            previous_load = memory_constant_previous_load.get(
+                memory_constant_addresses,
+                -1,
+            )
+            overwrite_deps = memory_constant_external_deps + (
+                ((previous_load, 0),) if previous_load >= 0 else ()
             )
             stores = [
                 graph.emit(
@@ -1332,7 +1488,7 @@ class KernelBuilder:
                 )
                 for lane in range(VLEN)
             ]
-            memory_constant_previous_load = graph.emit(
+            materialized_load = graph.emit(
                 "load",
                 ("vload", dest, memory_constant_addresses[0]),
                 reads=(memory_constant_addresses[0],),
@@ -1340,8 +1496,11 @@ class KernelBuilder:
                 deps=tuple((store, 1) for store in stores),
                 tag=f"{tag}_memory_load",
             )
+            memory_constant_previous_load[
+                memory_constant_addresses
+            ] = materialized_load
             memory_constant_materializations += 1
-            return memory_constant_previous_load
+            return materialized_load
 
         # Load all immutable scalar constants, then broadcast the subset used
         # by VALU.  The scheduler overlaps these with tree and input traffic.
@@ -1550,7 +1709,11 @@ class KernelBuilder:
                     "constant_broadcast",
                     identity=("vector_constant", name),
                 )
-        if PRESERVE_OUTPUT_BASE and preserved_output_base != s_zero:
+        if (
+            PRESERVE_OUTPUT_BASE
+            and preserved_output_base != s_zero
+            and not COPY_PRESERVED_OUTPUT_BASE_FROM_INPUT
+        ):
             # Reused scalar constants are dead after this broadcast phase.
             # Retiming the output base here keeps its load ahead of the
             # steady-state gather window without allocating another word.
@@ -1631,6 +1794,32 @@ class KernelBuilder:
             )
         else:
             emit_immediate(top_p1, 15, "top_pointer")
+        if COPY_MEMORY_CONSTANT_BASES_FROM_TOP_POINTERS:
+            if (
+                memory_constant_buffer_count < 2
+                or MEMORY_VECTOR_CONSTANT_BASE != 7
+            ):
+                raise ValueError(
+                    "top-pointer staging bases require buffers at 7 and 15"
+                )
+            initialize_memory_constant_buffer(
+                memory_constant_primary_addresses,
+                7,
+                top_p0,
+            )
+            initialize_memory_constant_buffer(
+                memory_constant_secondary_addresses,
+                15,
+                top_p1,
+            )
+            for buffer in range(2, memory_constant_buffer_count):
+                addresses = memory_constant_address_buffers[buffer]
+                initialize_memory_constant_buffer(
+                    addresses,
+                    7 + buffer * VLEN,
+                    top_p0 if buffer == 2 else top_p1,
+                    source_add=s_sixteen,
+                )
         top_loads: list[int] = []
         for pair in range(2):
             top_loads.append(
@@ -1667,6 +1856,24 @@ class KernelBuilder:
                     tag="pointer_advance",
                 )
 
+        # Tree nodes 0..31 are fully resident in ``top_words`` after these
+        # four loads and are never fetched from memory again.  Their original
+        # memory cells are therefore a safe private staging area.  Explicit
+        # lag-0 alias edges allow the loads and first stores in the same VLIW
+        # cycle (loads observe old memory; stores commit at cycle end).
+        staging_lower = MEMORY_VECTOR_CONSTANT_BASE
+        staging_upper = staging_lower + memory_constant_buffer_count * VLEN
+        top_lower = 7
+        top_upper = top_lower + 32
+        if staging_lower < top_upper and top_lower < staging_upper:
+            if memory_constant_materializations:
+                raise ValueError(
+                    "top-tree staging memory was overwritten before top loads"
+                )
+            memory_constant_external_deps = tuple(
+                (load, 0) for load in top_loads
+            )
+
         # The direct-path variant preserves one raw scalar root and broadcasts
         # its transformed form.  This removes the global round-0/round-11 root
         # barrier and lets all sixteen rounds form one software wavefront.
@@ -1687,7 +1894,11 @@ class KernelBuilder:
                     writes=(raw_root_scalar,),
                     tag="raw_root_copy",
                 )
-            if PRESERVE_OUTPUT_BASE and preserved_output_base == s_zero:
+            if (
+                PRESERVE_OUTPUT_BASE
+                and preserved_output_base == s_zero
+                and not COPY_PRESERVED_OUTPUT_BASE_FROM_INPUT
+            ):
                 # The architectural-zero word is dead immediately after the
                 # ALU root copy.  Recycle it for the long-lived output base so
                 # this retiming transformation costs no additional scratch.
@@ -1731,11 +1942,31 @@ class KernelBuilder:
                             "negative_five",
                         )
                     else:
-                        emit_immediate(
-                            top_p0,
-                            -5,
-                            "negative_five_immediate",
-                        )
+                        if ALU_DERIVED_NEGATIVE_FIVE:
+                            if s_zero < 0:
+                                raise ValueError(
+                                    "ALU negative five requires architectural zero"
+                                )
+                            graph.emit(
+                                "alu",
+                                ("-", top_p0, s_zero, s_four),
+                                reads=(s_zero, s_four),
+                                writes=(top_p0,),
+                                tag="negative_five_derive",
+                            )
+                            graph.emit(
+                                "alu",
+                                ("-", top_p0, top_p0, s_one),
+                                reads=(top_p0, s_one),
+                                writes=(top_p0,),
+                                tag="negative_five_derive",
+                            )
+                        else:
+                            emit_immediate(
+                                top_p0,
+                                -5,
+                                "negative_five_immediate",
+                            )
                         if MEMORY_STAGE_NEGATIVE_FIVE:
                             emit_memory_vector_constant(
                                 v_c5,
@@ -1765,6 +1996,18 @@ class KernelBuilder:
                     "unknown cached memory nodes: "
                     + ",".join(map(str, sorted(unknown_memory_nodes)))
                 )
+            unknown_alu_nodes = ALU_CACHED_NODE_SET - frozenset(range(31))
+            if unknown_alu_nodes:
+                raise ValueError(
+                    "unknown ALU cached nodes: "
+                    + ",".join(map(str, sorted(unknown_alu_nodes)))
+                )
+            overlap_nodes = MEMORY_CACHED_NODE_SET & ALU_CACHED_NODE_SET
+            if overlap_nodes:
+                raise ValueError(
+                    "cached nodes cannot use both memory and ALU broadcast: "
+                    + ",".join(map(str, sorted(overlap_nodes)))
+                )
             unknown_memory_node_order = (
                 set(MEMORY_CACHED_NODE_ORDER) - set(range(31))
             )
@@ -1787,6 +2030,16 @@ class KernelBuilder:
                         top_words + i,
                         "cached_node",
                     )
+                elif i in ALU_CACHED_NODE_SET:
+                    emit_scalarized(
+                        "|",
+                        node_vec[i],
+                        top_words + i,
+                        top_words + i,
+                        a_scalar=True,
+                        b_scalar=True,
+                        tag="cached_node_alu_broadcast",
+                    )
                 else:
                     emit_vbroadcast(
                         node_vec[i],
@@ -1805,6 +2058,18 @@ class KernelBuilder:
                 raise ValueError(
                     "unknown cached memory nodes: "
                     + ",".join(map(str, sorted(unknown_memory_nodes)))
+                )
+            unknown_alu_nodes = ALU_CACHED_NODE_SET - frozenset(range(1, 31))
+            if unknown_alu_nodes:
+                raise ValueError(
+                    "unknown ALU cached nodes: "
+                    + ",".join(map(str, sorted(unknown_alu_nodes)))
+                )
+            overlap_nodes = MEMORY_CACHED_NODE_SET & ALU_CACHED_NODE_SET
+            if overlap_nodes:
+                raise ValueError(
+                    "cached nodes cannot use both memory and ALU broadcast: "
+                    + ",".join(map(str, sorted(overlap_nodes)))
                 )
             unknown_memory_node_order = (
                 set(MEMORY_CACHED_NODE_ORDER) - set(range(1, 31))
@@ -1835,6 +2100,16 @@ class KernelBuilder:
                         node_vec[i],
                         top_words + i,
                         "cached_node",
+                    )
+                elif i in ALU_CACHED_NODE_SET:
+                    emit_scalarized(
+                        "|",
+                        node_vec[i],
+                        top_words + i,
+                        top_words + i,
+                        a_scalar=True,
+                        b_scalar=True,
+                        tag="cached_node_alu_broadcast",
                     )
                 else:
                     emit_vbroadcast(
@@ -2001,6 +2276,25 @@ class KernelBuilder:
                 base_load_pointers,
                 base_load_initials,
             )):
+                if (
+                    DERIVE_RELOCATION_LOAD_POINTER_FROM_TOP
+                    and pointer_index == 0
+                ):
+                    graph.emit(
+                        "alu",
+                        ("+", pointer, top_p0, s_sixteen),
+                        reads=(top_p0, s_sixteen),
+                        writes=(pointer,),
+                        tag="preprocess_pointer_derive",
+                    )
+                    graph.emit(
+                        "alu",
+                        ("-", pointer, pointer, s_one),
+                        reads=(pointer, s_one),
+                        writes=(pointer,),
+                        tag="preprocess_pointer_derive",
+                    )
+                    continue
                 if DERIVE_SETUP_SECOND_POINTERS and pointer_index == 1:
                     graph.emit(
                         "alu",
@@ -2112,9 +2406,25 @@ class KernelBuilder:
                 raise ValueError("relocation store streams must be one or two")
             store_pointers = [s_c2_shift9]
             output_buffers = [temps[30]]
-            emit_immediate(
-                store_pointers[0], 16, "tree_relocation_store_pointer"
-            )
+            if COPY_RELOCATION_STORE_POINTER_FROM_SIXTEEN:
+                graph.emit(
+                    "alu",
+                    (
+                        "|",
+                        store_pointers[0],
+                        s_sixteen,
+                        s_sixteen,
+                    ),
+                    reads=(s_sixteen,),
+                    writes=(store_pointers[0],),
+                    tag="tree_relocation_store_pointer_copy",
+                )
+            else:
+                emit_immediate(
+                    store_pointers[0],
+                    16,
+                    "tree_relocation_store_pointer",
+                )
             if RELOCATION_STORE_STREAMS == 2:
                 # The two load-stream pointers are dead once global staging
                 # completes.  Reuse one for odd destination blocks and the
@@ -2243,9 +2553,41 @@ class KernelBuilder:
             # depth-8/depth-9 boundary.  After the last relocated update the
             # address is 512+mirror; the original depth-9 location is
             # 1029-mirror = 1541-(512+mirror).
-            emit_immediate(
-                store_pointers[0], 1541, "tree_original_layout_reflect"
-            )
+            if ALU_DERIVED_TREE_REFLECT:
+                if RELOCATION_LOAD_STREAMS != 4:
+                    raise ValueError(
+                        "ALU tree reflection requires four relocation streams"
+                    )
+                graph.emit(
+                    "alu",
+                    (
+                        "+",
+                        store_pointers[0],
+                        preprocess_p1 + 1,
+                        s_two,
+                    ),
+                    reads=(preprocess_p1 + 1, s_two),
+                    writes=(store_pointers[0],),
+                    tag="tree_original_layout_reflect_derive",
+                )
+                graph.emit(
+                    "alu",
+                    (
+                        "+",
+                        store_pointers[0],
+                        store_pointers[0],
+                        depth_base[9],
+                    ),
+                    reads=(store_pointers[0], depth_base[9]),
+                    writes=(store_pointers[0],),
+                    tag="tree_original_layout_reflect_derive",
+                )
+            else:
+                emit_immediate(
+                    store_pointers[0],
+                    1541,
+                    "tree_original_layout_reflect",
+                )
             preprocess_pairs = 0
         elif PREPROCESS_MAX_DEPTH == 4:
             emit_const(preprocess_p0, 22, "preprocess_pointer")
@@ -4501,15 +4843,28 @@ class KernelBuilder:
                 )
 
         values_base = 7 + n_nodes + batch_size
-        for pointer_index, (pointer, initial) in enumerate((
-            (io_p0, values_base),
-            (io_p1, values_base + VLEN),
-        )):
+        for pointer_index, pointer in enumerate(input_pointers):
+            initial = values_base + pointer_index * VLEN
             if DERIVE_SETUP_SECOND_POINTERS and pointer_index == 1:
                 graph.emit(
                     "alu",
                     ("+", pointer, io_p0, s_eight),
                     reads=(io_p0, s_eight),
+                    writes=(pointer,),
+                    tag="input_pointer_derive",
+                )
+                continue
+            if INPUT_POINTER_STREAMS > 2 and pointer_index >= 2:
+                if pointer_index % 2 == 0:
+                    source = input_pointers[pointer_index - 2]
+                    increment = s_sixteen
+                else:
+                    source = input_pointers[pointer_index - 1]
+                    increment = s_eight
+                graph.emit(
+                    "alu",
+                    ("+", pointer, source, increment),
+                    reads=(source, increment),
                     writes=(pointer,),
                     tag="input_pointer_derive",
                 )
@@ -4526,40 +4881,94 @@ class KernelBuilder:
                 )
             else:
                 emit_immediate(pointer, initial, "input_pointer")
-        for pair in range(N_GROUPS // 2):
-            g0 = 2 * pair
-            g1 = g0 + 1
+        if COPY_PRESERVED_OUTPUT_BASE_FROM_INPUT:
+            if not PRESERVE_OUTPUT_BASE:
+                raise ValueError(
+                    "input-base copy requires a preserved output base"
+                )
             graph.emit(
-                "load",
-                ("vload", values[g0], io_p0),
-                reads=(io_p0,),
-                writes=_words(values[g0]),
-                tag="input_load",
-                group=g0,
+                "alu",
+                (
+                    "|",
+                    preserved_output_base,
+                    input_pointers[0],
+                    input_pointers[0],
+                ),
+                reads=(input_pointers[0],),
+                writes=(preserved_output_base,),
+                tag="preserved_output_base_copy",
             )
-            graph.emit(
-                "load",
-                ("vload", values[g1], io_p1),
-                reads=(io_p1,),
-                writes=_words(values[g1]),
-                tag="input_load",
-                group=g1,
-            )
-            if pair != N_GROUPS // 2 - 1:
+        if INPUT_POINTER_STREAMS == 2:
+            for pair in range(N_GROUPS // 2):
+                g0 = 2 * pair
+                g1 = g0 + 1
                 graph.emit(
-                    "alu",
-                    ("+", io_p0, io_p0, s_sixteen),
-                    reads=(io_p0, s_sixteen),
-                    writes=(io_p0,),
-                    tag="pointer_advance",
+                    "load",
+                    ("vload", values[g0], io_p0),
+                    reads=(io_p0,),
+                    writes=_words(values[g0]),
+                    tag="input_load",
+                    group=g0,
                 )
                 graph.emit(
-                    "alu",
-                    ("+", io_p1, io_p1, s_sixteen),
-                    reads=(io_p1, s_sixteen),
-                    writes=(io_p1,),
-                    tag="pointer_advance",
+                    "load",
+                    ("vload", values[g1], io_p1),
+                    reads=(io_p1,),
+                    writes=_words(values[g1]),
+                    tag="input_load",
+                    group=g1,
                 )
+                if pair != N_GROUPS // 2 - 1:
+                    graph.emit(
+                        "alu",
+                        ("+", io_p0, io_p0, s_sixteen),
+                        reads=(io_p0, s_sixteen),
+                        writes=(io_p0,),
+                        tag="pointer_advance",
+                    )
+                    graph.emit(
+                        "alu",
+                        ("+", io_p1, io_p1, s_sixteen),
+                        reads=(io_p1, s_sixteen),
+                        writes=(io_p1,),
+                        tag="pointer_advance",
+                    )
+        else:
+            stride = INPUT_POINTER_STREAMS * VLEN
+            if stride in (24, 32):
+                stride_rhs = s_eight if stride == 24 else s_sixteen
+                graph.emit(
+                    "alu",
+                    ("+", input_pointer_stride, s_sixteen, stride_rhs),
+                    reads=(s_sixteen, stride_rhs),
+                    writes=(input_pointer_stride,),
+                    tag="input_pointer_stride",
+                )
+            else:
+                emit_const(
+                    input_pointer_stride,
+                    stride,
+                    "input_pointer_stride",
+                )
+            for group in range(N_GROUPS):
+                stream = group % INPUT_POINTER_STREAMS
+                pointer = input_pointers[stream]
+                graph.emit(
+                    "load",
+                    ("vload", values[group], pointer),
+                    reads=(pointer,),
+                    writes=_words(values[group]),
+                    tag="input_load",
+                    group=group,
+                )
+                if group + INPUT_POINTER_STREAMS < N_GROUPS:
+                    graph.emit(
+                        "alu",
+                        ("+", pointer, pointer, input_pointer_stride),
+                        reads=(pointer, input_pointer_stride),
+                        writes=(pointer,),
+                        tag="pointer_advance",
+                    )
 
         def round_workspace(gg: int, rnd: int) -> int:
             workspace = WORKSPACE_ASSIGNMENT[gg]

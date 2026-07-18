@@ -213,15 +213,33 @@ def configure_target() -> None:
         kernel.MEMORY_CACHED_NODE_SET = group_set(
             "MEMORY_CACHED_NODE_SET"
         )
+    if "ALU_CACHED_NODE_SET" in os.environ:
+        kernel.ALU_CACHED_NODE_SET = group_set("ALU_CACHED_NODE_SET")
     if "MEMORY_CACHED_NODE_ORDER" in os.environ:
         kernel.MEMORY_CACHED_NODE_ORDER = tuple(
             int(value)
             for value in os.environ["MEMORY_CACHED_NODE_ORDER"].split(",")
             if value
         )
+    if "ALU_CHAIN_MEMORY_CONSTANT_ADDRESSES" in os.environ:
+        kernel.ALU_CHAIN_MEMORY_CONSTANT_ADDRESSES = bool(
+            int(os.environ["ALU_CHAIN_MEMORY_CONSTANT_ADDRESSES"])
+        )
+    if "FLOW_MEMORY_CONSTANT_BASES" in os.environ:
+        kernel.FLOW_MEMORY_CONSTANT_BASES = bool(
+            int(os.environ["FLOW_MEMORY_CONSTANT_BASES"])
+        )
+    if "COPY_MEMORY_CONSTANT_BASES_FROM_TOP_POINTERS" in os.environ:
+        kernel.COPY_MEMORY_CONSTANT_BASES_FROM_TOP_POINTERS = bool(
+            int(os.environ["COPY_MEMORY_CONSTANT_BASES_FROM_TOP_POINTERS"])
+        )
     if "MEMORY_VECTOR_CONSTANT_BASE" in os.environ:
         kernel.MEMORY_VECTOR_CONSTANT_BASE = int(
             os.environ["MEMORY_VECTOR_CONSTANT_BASE"]
+        )
+    if "MEMORY_VECTOR_CONSTANT_BUFFER_COUNT" in os.environ:
+        kernel.MEMORY_VECTOR_CONSTANT_BUFFER_COUNT = int(
+            os.environ["MEMORY_VECTOR_CONSTANT_BUFFER_COUNT"]
         )
     if "MEMORY_VECTOR_CONSTANT_SWITCH_AFTER" in os.environ:
         kernel.MEMORY_VECTOR_CONSTANT_SWITCH_AFTER = int(
@@ -253,6 +271,10 @@ def configure_target() -> None:
         kernel.INDEPENDENT_INPUT_POINTERS = bool(
             int(os.environ["INDEPENDENT_INPUT_POINTERS"])
         )
+    if "INPUT_POINTER_STREAMS" in os.environ:
+        kernel.INPUT_POINTER_STREAMS = int(
+            os.environ["INPUT_POINTER_STREAMS"]
+        )
     if "DERIVE_TOP_P1_FROM_P0" in os.environ:
         kernel.DERIVE_TOP_P1_FROM_P0 = bool(
             int(os.environ["DERIVE_TOP_P1_FROM_P0"])
@@ -268,6 +290,10 @@ def configure_target() -> None:
     if "PRESERVE_OUTPUT_BASE" in os.environ:
         kernel.PRESERVE_OUTPUT_BASE = bool(
             int(os.environ["PRESERVE_OUTPUT_BASE"])
+        )
+    if "COPY_PRESERVED_OUTPUT_BASE_FROM_INPUT" in os.environ:
+        kernel.COPY_PRESERVED_OUTPUT_BASE_FROM_INPUT = bool(
+            int(os.environ["COPY_PRESERVED_OUTPUT_BASE_FROM_INPUT"])
         )
     scalar_sets = {
         "SCALAR_FINAL_C5": "SCALAR_FINAL_C5_SET",
@@ -375,6 +401,26 @@ def configure_target() -> None:
     if "RELOCATION_STORE_STREAMS" in os.environ:
         kernel.RELOCATION_STORE_STREAMS = int(
             os.environ["RELOCATION_STORE_STREAMS"]
+        )
+    if "COPY_RELOCATION_STORE_POINTER_FROM_SIXTEEN" in os.environ:
+        kernel.COPY_RELOCATION_STORE_POINTER_FROM_SIXTEEN = bool(
+            int(os.environ[
+                "COPY_RELOCATION_STORE_POINTER_FROM_SIXTEEN"
+            ])
+        )
+    if "DERIVE_RELOCATION_LOAD_POINTER_FROM_TOP" in os.environ:
+        kernel.DERIVE_RELOCATION_LOAD_POINTER_FROM_TOP = bool(
+            int(os.environ[
+                "DERIVE_RELOCATION_LOAD_POINTER_FROM_TOP"
+            ])
+        )
+    if "ALU_DERIVED_NEGATIVE_FIVE" in os.environ:
+        kernel.ALU_DERIVED_NEGATIVE_FIVE = bool(
+            int(os.environ["ALU_DERIVED_NEGATIVE_FIVE"])
+        )
+    if "ALU_DERIVED_TREE_REFLECT" in os.environ:
+        kernel.ALU_DERIVED_TREE_REFLECT = bool(
+            int(os.environ["ALU_DERIVED_TREE_REFLECT"])
         )
     if "RELOCATION_LOAD_STREAMS" in os.environ:
         kernel.RELOCATION_LOAD_STREAMS = int(

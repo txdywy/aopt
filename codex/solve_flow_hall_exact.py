@@ -1,10 +1,12 @@
 """Solve FLOW order directly against one or more LOAD Hall cuts.
 
-For a fixed horizon and a Hall window ``[0, right]``, a load can be placed
-after the window iff every closest downstream FLOW operation starts strictly
-after the load-to-FLOW path distance plus ``right``.  This gives a compact
-exact model with only the FLOW start variables and one Boolean per
-load/cut, instead of jointly time-indexing all FLOW and LOAD operations.
+For a fixed horizon and a Hall window ``[left, right]``, a load can escape on
+the left iff every closest upstream FLOW operation finishes its path to the
+load before ``left``.  It can escape on the right iff every closest downstream
+FLOW operation starts strictly after the load-to-FLOW path distance plus
+``right``.  This gives a compact exact model with only the FLOW start
+variables and a few Booleans per load/cut, instead of jointly time-indexing
+all FLOW and LOAD operations.
 """
 
 from __future__ import annotations
@@ -82,8 +84,9 @@ def worst_hall(
     earliest: list[int],
     latest: list[int],
     horizon: int,
+    engine: str = "load",
 ) -> tuple[int, int, int, int]:
-    loads = [i for i, op in enumerate(ops) if op.engine == "load"]
+    loads = [i for i, op in enumerate(ops) if op.engine == engine]
     matrix = np.zeros((horizon, horizon), dtype=np.int16)
     np.add.at(
         matrix,
@@ -99,7 +102,7 @@ def worst_hall(
         dtype=np.int32,
     )
     best = (-10**9, 0, 0, 0)
-    capacity = SLOT_LIMITS["load"]
+    capacity = SLOT_LIMITS[engine]
     for left in range(horizon):
         overloads = contained[left, left:] - capacity * np.arange(
             1, horizon - left + 1, dtype=np.int32
@@ -128,13 +131,28 @@ def main() -> None:
             raise
     ops = real_tail_ops(builder.dag_ops)
     horizon = int(os.environ.get("TARGET", "959"))
-    rights = tuple(
-        int(value)
-        for value in os.environ.get("RIGHTS", "853").split(",")
+    order_engine = os.environ.get("ORDER_ENGINE", "flow")
+    hall_engine = os.environ.get("HALL_ENGINE", "load")
+    if order_engine == hall_engine:
+        raise ValueError("ORDER_ENGINE and HALL_ENGINE must differ")
+    cuts = [
+        (0, int(value))
+        for value in os.environ.get("RIGHTS", "").split(",")
+        if value
+    ]
+    cuts.extend(
+        tuple(int(component) for component in value.split(":"))
+        for value in os.environ.get("CUTS", "").split(",")
         if value
     )
-    if not rights or any(right < 0 or right >= horizon for right in rights):
-        raise ValueError("RIGHTS must contain cycles inside the horizon")
+    if not cuts:
+        cuts = [(0, 853)]
+    cuts = list(dict.fromkeys(cuts))
+    if any(
+        len(cut) != 2 or not 0 <= cut[0] <= cut[1] < horizon
+        for cut in cuts
+    ):
+        raise ValueError("CUTS must contain left:right cycles in the horizon")
 
     topological, children = topological_order(ops)
     position = {index: rank for rank, index in enumerate(topological)}
@@ -144,9 +162,11 @@ def main() -> None:
     if any(left > right for left, right in zip(earliest, latest)):
         raise ValueError("bare DAG does not fit the requested horizon")
 
-    flow = [i for i in topological if ops[i].engine == "flow"]
+    flow = [i for i in topological if ops[i].engine == order_engine]
     flow_set = set(flow)
-    loads = [i for i in topological if ops[i].engine == "load"]
+    loads = [i for i in topological if ops[i].engine == hall_engine]
+    order_capacity = SLOT_LIMITS[order_engine]
+    hall_capacity = SLOT_LIMITS[hall_engine]
 
     # Project all paths between consecutive FLOW operations.
     frontier: list[dict[int, int]] = [{} for _ in ops]
@@ -186,6 +206,22 @@ def main() -> None:
         reduced[child] = kept
         ancestor_distance[child] = implied
     projected = reduced
+
+    # The forward projection above also gives the closest upstream FLOW
+    # sources for every non-FLOW operation.  Separately retain the longest
+    # root-to-operation path that never crosses FLOW; it is the
+    # order-independent part of an operation's release time.
+    upstream_flow = frontier
+    root_release = [-1] * len(ops)
+    for child in topological:
+        if child in flow_set:
+            root_release[child] = -1
+            continue
+        release = 0 if not ops[child].parents else -1
+        for parent, lag in ops[child].parents.items():
+            if parent not in flow_set and root_release[parent] >= 0:
+                release = max(release, root_release[parent] + lag)
+        root_release[child] = release
 
     # Reverse projection: for every non-FLOW operation, retain the closest
     # downstream FLOW operations and the longest path to a terminal that does
@@ -242,7 +278,40 @@ def main() -> None:
     for child, child_parents in projected.items():
         for parent, lag in child_parents.items():
             model.add(starts[child] >= starts[parent] + lag)
-    model.add_all_different(starts.values())
+    if order_capacity == 1:
+        model.add_all_different(starts.values())
+    else:
+        intervals = [
+            model.new_fixed_size_interval_var(starts[i], 1, f"i{i}")
+            for i in flow
+        ]
+        model.add_cumulative(
+            intervals, [1] * len(intervals), order_capacity
+        )
+        if bool(int(os.environ.get("SATURATE_ORDER_MICROSLOTS", "0"))):
+            microslots = []
+            for i in flow:
+                lane = model.new_int_var(
+                    0, order_capacity - 1, f"lane_{i}"
+                )
+                microslot = model.new_int_var(
+                    order_capacity * bounds[i][0],
+                    order_capacity * bounds[i][1] + order_capacity - 1,
+                    f"microslot_{i}",
+                )
+                model.add(
+                    microslot == order_capacity * starts[i] + lane
+                )
+                microslots.append(microslot)
+            for hole in range(order_capacity * horizon - len(flow)):
+                microslots.append(
+                    model.new_int_var(
+                        0,
+                        order_capacity * horizon - 1,
+                        f"microslot_hole_{hole}",
+                    )
+                )
+            model.add_all_different(microslots)
     if hint:
         hint_order = sorted(flow, key=lambda i: (hint[i], i))
         fixed_prefix = int(os.environ.get("FIX_HINT_PREFIX", "0"))
@@ -262,54 +331,155 @@ def main() -> None:
             flush=True,
         )
 
-    escape_variables: dict[tuple[int, int], cp_model.IntVar] = {}
-    required_by_right: dict[int, int] = {}
-    for right in rights:
+    # A cut's left-escape predicate depends only on ``(load, left)`` and its
+    # right-escape predicate only on ``(load, right)``.  Cutting-plane runs
+    # deliberately accumulate many overlapping windows, so sharing these
+    # literals removes hundreds of thousands of duplicate reified path
+    # constraints from the later exact models.
+    early_variables: dict[
+        tuple[int, int], tuple[cp_model.IntVar, int | None]
+    ] = {}
+    late_variables: dict[
+        tuple[int, int], tuple[cp_model.IntVar, int | None]
+    ] = {}
+    constants = {
+        value: model.new_constant(value)
+        for value in (0, 1)
+    }
+
+    def early_variable(
+        load: int, left: int
+    ) -> tuple[cp_model.IntVar, int | None]:
+        key = (load, left)
+        if key in early_variables:
+            return early_variables[key]
+        impossible = (
+            root_release[load] >= 0
+            and root_release[load] >= left
+        )
+        thresholds = []
+        for source, distance in upstream_flow[load].items():
+            threshold = left - 1 - distance
+            if threshold < bounds[source][0]:
+                impossible = True
+                break
+            thresholds.append((source, threshold))
+        if impossible:
+            result = (constants[0], 0)
+        elif not thresholds:
+            result = (constants[1], 1)
+        else:
+            variable = model.new_bool_var(f"early_{load}_{left}")
+            for source, threshold in thresholds:
+                model.add(starts[source] <= threshold).only_enforce_if(
+                    variable
+                )
+            result = (variable, None)
+        early_variables[key] = result
+        return result
+
+    def late_variable(
+        load: int, right: int
+    ) -> tuple[cp_model.IntVar, int | None]:
+        key = (load, right)
+        if key in late_variables:
+            return late_variables[key]
+        impossible = (
+            terminal_tail[load] >= 0
+            and horizon - 1 - terminal_tail[load] <= right
+        )
+        thresholds = []
+        for target, distance in downstream_flow[load].items():
+            threshold = right + distance + 1
+            if threshold > bounds[target][1]:
+                impossible = True
+                break
+            thresholds.append((target, threshold))
+        if impossible:
+            result = (constants[0], 0)
+        elif not thresholds:
+            result = (constants[1], 1)
+        else:
+            variable = model.new_bool_var(f"late_{load}_{right}")
+            for target, threshold in thresholds:
+                model.add(starts[target] >= threshold).only_enforce_if(
+                    variable
+                )
+            result = (variable, None)
+        late_variables[key] = result
+        return result
+
+    escape_variables: dict[tuple[int, int, int], cp_model.IntVar] = {}
+    required_by_cut: dict[tuple[int, int], int] = {}
+    overload_allowance = int(os.environ.get("HALL_OVERLOAD_ALLOWANCE", "0"))
+    margin_cap = int(os.environ.get("MAXIMIZE_MARGIN_CAP", "0"))
+    margin_variables: list[cp_model.IntVar] = []
+    for left, right in cuts:
         required = max(
             0,
-            len(loads) - SLOT_LIMITS["load"] * (right + 1),
+            len(loads) - hall_capacity * (right - left + 1),
         )
-        required_by_right[right] = required
+        enforced_required = max(0, required - overload_allowance)
+        required_by_cut[left, right] = enforced_required
         variables = []
         for load in loads:
-            escape = model.new_bool_var(f"late_{load}_{right}")
-            escape_variables[load, right] = escape
-            impossible = (
-                terminal_tail[load] >= 0
-                and horizon - 1 - terminal_tail[load] <= right
-            )
-            thresholds = []
-            for target, distance in downstream_flow[load].items():
-                threshold = right + distance + 1
-                if threshold > bounds[target][1]:
-                    impossible = True
-                    break
-                thresholds.append((target, threshold))
-            if impossible:
-                model.add(escape == 0)
+            early, early_fixed = early_variable(load, left)
+            late, late_fixed = late_variable(load, right)
+            if early_fixed == 1 or late_fixed == 1:
+                escape = constants[1]
+            elif early_fixed == 0 and late_fixed == 0:
+                escape = constants[0]
+            elif early_fixed == 0:
+                escape = late
+            elif late_fixed == 0:
+                escape = early
             else:
-                for target, threshold in thresholds:
-                    model.add(starts[target] >= threshold).only_enforce_if(
-                        escape
-                    )
+                escape = model.new_bool_var(
+                    f"escape_{load}_{left}_{right}"
+                )
+                # Exact OR channeling prevents a wide-window load from
+                # counting twice when it can escape on both sides.
+                model.add(escape >= early)
+                model.add(escape >= late)
+                model.add(escape <= early + late)
+            escape_variables[load, left, right] = escape
             variables.append(escape)
         if bool(int(os.environ.get("ENFORCE_CUTS", "1"))):
-            model.add(sum(variables) >= required)
+            model.add(sum(variables) >= enforced_required)
+        if margin_cap > 0:
+            # A capped margin objective is much better behaved than the raw
+            # total number of escapes: already-easy cuts stop contributing
+            # after ``margin_cap``, so CP-SAT spends its effort pulling every
+            # near-binding Hall cut away from the feasibility boundary.
+            margin = model.new_int_var(
+                0, margin_cap, f"margin_{left}_{right}"
+            )
+            model.add(margin <= sum(variables) - enforced_required)
+            margin_variables.append(margin)
         print(
-            f"cut=0:{right} required_late={required} "
-            f"current_capacity={SLOT_LIMITS['load'] * (right + 1)}",
+            f"cut={left}:{right} required_escape={enforced_required} "
+            f"zero_overload_escape={required} "
+            f"current_capacity={hall_capacity * (right - left + 1)}",
             flush=True,
         )
+    print(
+        f"shared_predicates early={len(early_variables)} "
+        f"late={len(late_variables)} escapes={len(escape_variables)}",
+        flush=True,
+    )
 
-    if bool(int(os.environ.get("MAXIMIZE_ESCAPES", "1"))):
-        # Smaller rights are harder and receive the larger lexicographic-like
-        # weight.  The solved schedule is still checked against every Hall
-        # window afterwards.
+    if margin_variables:
+        model.maximize(sum(margin_variables))
+    elif bool(int(os.environ.get("MAXIMIZE_ESCAPES", "1"))):
+        # Shorter windows are harder and receive the larger
+        # lexicographic-like weight.  The solved schedule is still checked
+        # against every Hall window afterwards.
         objective = []
-        for rank, right in enumerate(sorted(rights)):
-            weight = len(rights) - rank
+        ordered_cuts = sorted(cuts, key=lambda cut: cut[1] - cut[0])
+        for rank, (left, right) in enumerate(ordered_cuts):
+            weight = len(cuts) - rank
             objective.extend(
-                weight * escape_variables[load, right]
+                weight * escape_variables[load, left, right]
                 for load in loads
             )
         model.maximize(sum(objective))
@@ -337,28 +507,86 @@ def main() -> None:
         int(os.environ.get("LOG", "0"))
     )
     status = solver.solve(model)
-    print(f"status={solver.status_name(status)}", flush=True)
+    print(
+        f"status={solver.status_name(status)} "
+        f"objective={solver.objective_value:g} "
+        f"bound={solver.best_objective_bound:g} "
+        f"wall={solver.wall_time:g}",
+        flush=True,
+    )
     if status not in (cp_model.FEASIBLE, cp_model.OPTIMAL):
         return
 
     result = {i: solver.value(starts[i]) for i in flow}
-    for right in rights:
+    for left, right in cuts:
         realized = sum(
-            solver.value(escape_variables[load, right])
+            solver.value(escape_variables[load, left, right])
             for load in loads
         )
         print(
-            f"cut=0:{right} modeled_late={realized} "
-            f"required={required_by_right[right]}",
+            f"cut={left}:{right} modeled_escape={realized} "
+            f"required={required_by_cut[left, right]}",
             flush=True,
         )
+
+    # Keep CP-SAT's exact FLOW placement as well as its order.  The horizon
+    # has a small but valuable number of FLOW holes; left-compacting those
+    # holes can destroy a late escape that the exact Hall model intentionally
+    # created.  Fixed FLOW cycles are legitimate resource decisions, so
+    # propagate them through the remaining DAG to obtain exact LOAD windows.
+    exact_earliest = [0] * len(ops)
+    for child in topological:
+        release = max(
+            (
+                exact_earliest[parent] + lag
+                for parent, lag in ops[child].parents.items()
+            ),
+            default=0,
+        )
+        if child in flow_set:
+            exact_earliest[child] = result[child]
+            if release > result[child]:
+                raise AssertionError("fixed FLOW cycle precedes its release")
+        else:
+            exact_earliest[child] = release
+    exact_latest = [horizon - 1] * len(ops)
+    for parent in reversed(topological):
+        deadline = min(
+            (
+                exact_latest[child] - lag
+                for child, lag in children[parent]
+            ),
+            default=horizon - 1,
+        )
+        if parent in flow_set:
+            exact_latest[parent] = result[parent]
+            if result[parent] > deadline:
+                raise AssertionError("fixed FLOW cycle exceeds its deadline")
+        else:
+            exact_latest[parent] = deadline
+    if any(
+        left > right
+        for left, right in zip(exact_earliest, exact_latest)
+    ):
+        raise AssertionError("fixed FLOW cycles make the DAG infeasible")
+    exact_overload, exact_left, exact_right, exact_trapped = worst_hall(
+        ops, exact_earliest, exact_latest, horizon, hall_engine
+    )
+    exact_span = max(exact_earliest) + 1
+    print(
+        f"exact_span={exact_span} hall_overload={exact_overload} "
+        f"window={exact_left}:{exact_right} trapped={exact_trapped}",
+        flush=True,
+    )
 
     # Convert the chosen start times to the canonical unary FLOW order, then
     # recompute exact full-DAG windows.  This removes any dependence on CP's
     # arbitrary idle-cycle placement.
     flow_order = sorted(flow, key=lambda i: (result[i], i))
     ordered_parents = [dict(op.parents) for op in ops]
-    for previous, current in zip(flow_order, flow_order[1:]):
+    for previous, current in zip(
+        flow_order, flow_order[order_capacity:]
+    ):
         ordered_parents[current][previous] = max(
             ordered_parents[current].get(previous, 0), 1
         )
@@ -378,12 +606,12 @@ def main() -> None:
     ):
         raise AssertionError("solved FLOW order does not fit the horizon")
     overload, left, right, trapped = worst_hall(
-        ops, ordered_earliest, ordered_latest, horizon
+        ops, ordered_earliest, ordered_latest, horizon, hall_engine
     )
     span = max(ordered_earliest) + 1
     usage = Counter(ordered_earliest[i] for i in flow)
-    if max(usage.values(), default=0) > 1:
-        raise AssertionError("FLOW capacity overflow")
+    if max(usage.values(), default=0) > order_capacity:
+        raise AssertionError(f"{order_engine} capacity overflow")
     print(
         f"canonical_span={span} hall_overload={overload} "
         f"window={left}:{right} trapped={trapped}",
@@ -396,14 +624,20 @@ def main() -> None:
     output.write_text(
         json.dumps(
             {
-                "engine": "flow",
+                "engine": order_engine,
+                "hall_engine": hall_engine,
                 "horizon": horizon,
                 "cycles": {
+                    str(i): result[i] for i in flow
+                },
+                "canonical_cycles": {
                     str(i): ordered_earliest[i] for i in flow
                 },
                 "order": flow_order,
-                "hall_overload": overload,
-                "hall_window": [left, right],
+                "hall_overload": exact_overload,
+                "hall_window": [exact_left, exact_right],
+                "canonical_hall_overload": overload,
+                "canonical_hall_window": [left, right],
             }
         )
     )

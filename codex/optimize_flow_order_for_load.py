@@ -36,6 +36,8 @@ def main() -> None:
         for engine in os.environ.get("HALL_ENGINES", "load").split(",")
         if engine
     )
+    order_engine = os.environ.get("ORDER_ENGINE", "flow")
+    order_capacity = SLOT_LIMITS[order_engine]
 
     full_children: list[list[tuple[int, int]]] = [[] for _ in ops]
     full_earliest = [0] * len(ops)
@@ -57,7 +59,7 @@ def main() -> None:
     # through all omitted operations.  FLOW+LOAD has only ~2.8k vertices,
     # making each local-search evaluation about seven times cheaper than a
     # traversal of the complete ~20k-op DAG without changing any windows.
-    selected_engines = frozenset(("flow", *hall_engines))
+    selected_engines = frozenset((order_engine, *hall_engines))
     selected = [
         i for i, op in enumerate(ops) if op.engine in selected_engines
     ]
@@ -217,9 +219,13 @@ def main() -> None:
 
     payload = json.loads(Path(os.environ["FLOW_HINT"]).read_text())
     flow_cycles = {int(i): int(cycle) for i, cycle in payload["cycles"].items()}
-    expected = {i for i, op in enumerate(ops) if op.engine == "flow"}
+    expected = {
+        i for i, op in enumerate(ops) if op.engine == order_engine
+    }
     if set(flow_cycles) != expected:
-        raise ValueError("FLOW_HINT does not match the target DAG")
+        raise ValueError(
+            f"FLOW_HINT does not match the target {order_engine} DAG"
+        )
     order = sorted(expected, key=lambda i: (flow_cycles[i], i))
     for raw_move in os.environ.get("INITIAL_BLOCK_MOVES", "").split(","):
         if not raw_move:
@@ -252,7 +258,7 @@ def main() -> None:
         extra_children: list[list[int]] = [[] for _ in selected]
         indegree = base_indegree.copy()
         for previous_global, current_global in zip(
-            candidate_order, candidate_order[1:]
+            candidate_order, candidate_order[order_capacity:]
         ):
             previous = local_of[previous_global]
             current = local_of[current_global]
@@ -360,7 +366,7 @@ def main() -> None:
         output.write_text(
             json.dumps(
                 {
-                    "engine": "flow",
+                    "engine": order_engine,
                     "horizon": horizon,
                     "cycles": {
                         str(i): best_earliest[local_of[i]] for i in expected
@@ -384,6 +390,147 @@ def main() -> None:
             # Hall-feasible after its first secondary-score improvement.
             return key[0] <= 0 and key[1] <= 0
         return key[0] <= 0
+
+    block_scan_passes = int(os.environ.get("BLOCK_SCAN_PASSES", "0"))
+    if block_scan_passes:
+        block_rounds = frozenset(
+            int(value)
+            for value in os.environ.get(
+                "BLOCK_SCAN_ROUNDS", "1,2,3,4,12,13,14,15"
+            ).split(",")
+            if value
+        )
+        block_stride = int(os.environ.get("BLOCK_SCAN_STRIDE", "4"))
+        exact_limit = int(os.environ.get("BLOCK_SCAN_EXACT_LIMIT", "32"))
+        for scan_pass in range(block_scan_passes):
+            ranking_current = (
+                evaluate(order, exact_hall=False)[0]
+                if global_hall
+                else current_key
+            )
+            blocks: dict[tuple[int, int], list[int]] = {}
+            for node in order:
+                op = ops[node]
+                key = (op.group, op.round)
+                if (
+                    op.group is not None
+                    and op.group >= 0
+                    and op.round in block_rounds
+                ):
+                    blocks.setdefault(key, []).append(node)
+            position = {node: p for p, node in enumerate(order)}
+            ranked_blocks = []
+            attempted = feasible = 0
+            for (group, rnd), block in blocks.items():
+                member_set = set(block)
+                first = min(position[node] for node in block)
+                last = max(position[node] for node in block)
+                # Opening a load window means launching its early FLOW block
+                # sooner or retiring its late FLOW block later.  Include both
+                # directions for middle blocks because an active Hall cut can
+                # be rooted on either side of them.
+                if rnd <= 4:
+                    insertions = range(0, first + 1, block_stride)
+                elif rnd >= 12:
+                    insertions = range(last + 1, len(order) + 1, block_stride)
+                else:
+                    insertions = range(0, len(order) + 1, block_stride)
+                remaining = [
+                    node for node in order if node not in member_set
+                ]
+                for raw_insertion in insertions:
+                    attempted += 1
+                    removed_before = sum(
+                        position[node] < raw_insertion for node in block
+                    )
+                    insertion = min(
+                        len(remaining),
+                        max(0, raw_insertion - removed_before),
+                    )
+                    trial = (
+                        remaining[:insertion]
+                        + block
+                        + remaining[insertion:]
+                    )
+                    if trial == order:
+                        continue
+                    candidate = evaluate(trial, exact_hall=not global_hall)
+                    if candidate is None:
+                        continue
+                    feasible += 1
+                    ranked_blocks.append(
+                        (
+                            candidate[0],
+                            group,
+                            rnd,
+                            raw_insertion,
+                            candidate,
+                            trial,
+                        )
+                    )
+            ranked_blocks.sort(key=lambda item: item[:4])
+            if global_hall:
+                exact_ranked = []
+                for item in ranked_blocks[:exact_limit]:
+                    exact_candidate = evaluate(item[5], exact_hall=True)
+                    if exact_candidate is not None:
+                        exact_ranked.append(
+                            (
+                                exact_candidate[0],
+                                item[1],
+                                item[2],
+                                item[3],
+                                exact_candidate,
+                                item[5],
+                            )
+                        )
+                exact_ranked.sort(key=lambda item: item[:4])
+                ranked_blocks = exact_ranked
+            if not ranked_blocks or ranked_blocks[0][0] >= current_key:
+                approximate = (
+                    ranked_blocks[0][0] if ranked_blocks else None
+                )
+                print(
+                    f"block_scan_no_improvement pass={scan_pass} "
+                    f"attempted={attempted} feasible={feasible} "
+                    f"best={approximate} current={current_key} "
+                    f"ranking_current={ranking_current}",
+                    flush=True,
+                )
+                break
+            (
+                _,
+                group,
+                rnd,
+                insertion,
+                candidate,
+                trial,
+            ) = ranked_blocks[0]
+            order = trial
+            (
+                current_key,
+                current_earliest,
+                current_latest,
+                current_cuts,
+            ) = candidate
+            for engine, cut in zip(hall_engines, current_cuts):
+                cut_spec = (engine, cut[1], cut[2])
+                if cut_spec not in active_cut_history:
+                    active_cut_history.append(cut_spec)
+            if current_key < best_key:
+                best_key = current_key
+                best_order = order.copy()
+                best_earliest = current_earliest
+                best_cuts = current_cuts
+                save()
+            print(
+                f"block_scan_best={current_key} pass={scan_pass} "
+                f"block={group}:{rnd} insertion={insertion} "
+                f"attempted={attempted} feasible={feasible}",
+                flush=True,
+            )
+            if target_reached(best_key):
+                break
 
     ejection_passes = int(os.environ.get("EJECTION_SCAN_PASSES", "0"))
     if ejection_passes:

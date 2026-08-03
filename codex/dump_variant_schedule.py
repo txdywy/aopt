@@ -12,7 +12,14 @@ from codex.map_variant_schedule import configure_target, real_tail_ops, validate
 
 def main() -> None:
     configure_target()
-    kernel.SCHEDULE_EXACT_CYCLES = None
+    use_embedded = bool(int(os.environ.get("USE_EMBEDDED", "0")))
+    embedded_cycles = (
+        list(kernel.SCHEDULE_EXACT_CYCLES)
+        if use_embedded and kernel.SCHEDULE_EXACT_CYCLES is not None
+        else None
+    )
+    if not use_embedded:
+        kernel.SCHEDULE_EXACT_CYCLES = None
     builder = kernel.KernelBuilder()
     try:
         builder.build_kernel(10, 2047, 256, 16)
@@ -35,14 +42,36 @@ def main() -> None:
         chain.append(node)
         node = reason[node]
     chain.reverse()
-    _, cycles = builder._schedule(
-        builder.dag_ops,
-        int(os.environ.get("POLICY", str(kernel.SCHEDULE_POLICIES[0]))),
-        return_cycles=True,
-    )
+    if embedded_cycles is None:
+        _, cycles = builder._schedule(
+            builder.dag_ops,
+            int(os.environ.get("POLICY", str(kernel.SCHEDULE_POLICIES[0]))),
+            return_cycles=True,
+        )
+    else:
+        cycles = embedded_cycles
     validate(ops, cycles)
     output = Path(os.environ.get("OUT", "/tmp/aopt-variant-list.json"))
     output.write_text(json.dumps({"makespan": max(cycles) + 1, "cycles": cycles}))
+    if prefix := os.environ.get("OUT_PREFIX", ""):
+        for engine in sorted({op.engine for op in ops if op.engine != "debug"}):
+            Path(f"{prefix}-{engine}.json").write_text(
+                json.dumps(
+                    {
+                        "engine": engine,
+                        "horizon": max(cycles) + 1,
+                        "cycles": {
+                            str(index): cycles[index]
+                            for index, op in enumerate(ops)
+                            if op.engine == engine
+                        },
+                        "order": sorted(
+                            (index for index, op in enumerate(ops) if op.engine == engine),
+                            key=lambda index: (cycles[index], index),
+                        ),
+                    }
+                )
+            )
     print(
         f"makespan={max(cycles) + 1} dag_lb={earliest[endpoint] + 1} "
         f"ops={len(cycles)} output={output}"

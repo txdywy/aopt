@@ -250,6 +250,31 @@ def main() -> None:
         downstream_flow[parent] = outgoing
         terminal_tail[parent] = terminal
 
+    # A handful of late LOADs fan out to almost the entire FLOW stream.  The
+    # exact escape predicate is then expensive because every candidate cut
+    # gets one reified inequality per downstream FLOW target.  During an
+    # exploratory cut pass, retain only the strongest (largest-lag) targets;
+    # the resulting order is always audited against the untrimmed projection
+    # below and can be fed back through another cut round.  The default keeps
+    # the mathematically exact model unchanged.
+    downstream_limit = int(os.environ.get("HALL_DOWNSTREAM_LIMIT", "0"))
+    if downstream_limit > 0:
+        trimmed = 0
+        for index, targets in enumerate(downstream_flow):
+            if len(targets) <= downstream_limit:
+                continue
+            keep = sorted(
+                targets.items(),
+                key=lambda item: (item[1], item[0]),
+                reverse=True,
+            )[:downstream_limit]
+            downstream_flow[index] = dict(keep)
+            trimmed += len(targets) - len(keep)
+        print(
+            f"hall_downstream_limit={downstream_limit} trimmed={trimmed}",
+            flush=True,
+        )
+
     hint: dict[int, int] = {}
     if "FLOW_HINT" in os.environ:
         payload = json.loads(Path(os.environ["FLOW_HINT"]).read_text())
@@ -312,8 +337,94 @@ def main() -> None:
                     )
                 )
             model.add_all_different(microslots)
+
+    # Optional direct separation oracle: schedule every target-engine job
+    # inside the release/deadline window induced by the chosen order-engine
+    # placement.  This compact bipartite matching model enforces *all* Hall
+    # intervals at once.  It intentionally omits target-to-target precedence;
+    # that is added later by the joint projected-engine model.
+    hall_starts: dict[int, cp_model.IntVar] = {}
+    if bool(int(os.environ.get("EXACT_HALL_SCHEDULE", "0"))):
+        for job in loads:
+            lower = earliest[job]
+            upper = latest[job]
+            hall_start = model.new_int_var(lower, upper, f"hall_s{job}")
+            hall_starts[job] = hall_start
+            if root_release[job] >= 0:
+                model.add(hall_start >= root_release[job])
+            if terminal_tail[job] >= 0:
+                model.add(hall_start <= horizon - 1 - terminal_tail[job])
+            for source, distance in upstream_flow[job].items():
+                model.add(hall_start >= starts[source] + distance)
+            for target, distance in downstream_flow[job].items():
+                model.add(hall_start <= starts[target] - distance)
+        hall_intervals = [
+            model.new_fixed_size_interval_var(
+                hall_starts[job], 1, f"hall_i{job}"
+            )
+            for job in loads
+        ]
+        model.add_cumulative(
+            hall_intervals, [1] * len(hall_intervals), hall_capacity
+        )
+        if bool(int(os.environ.get("SATURATE_HALL_MICROSLOTS", "1"))):
+            hall_microslots = []
+            for job in loads:
+                if hall_capacity == 1:
+                    hall_microslots.append(hall_starts[job])
+                    continue
+                lane = model.new_int_var(
+                    0, hall_capacity - 1, f"hall_lane{job}"
+                )
+                microslot = model.new_int_var(
+                    hall_capacity * earliest[job],
+                    hall_capacity * latest[job] + hall_capacity - 1,
+                    f"hall_m{job}",
+                )
+                model.add(
+                    microslot == hall_capacity * hall_starts[job] + lane
+                )
+                hall_microslots.append(microslot)
+            for hole in range(hall_capacity * horizon - len(loads)):
+                hall_microslots.append(
+                    model.new_int_var(
+                        0,
+                        hall_capacity * horizon - 1,
+                        f"hall_hole{hole}",
+                    )
+                )
+            model.add_all_different(hall_microslots)
+        print(
+            f"exact_hall_schedule engine={hall_engine} jobs={len(loads)} "
+            f"capacity={hall_capacity}",
+            flush=True,
+        )
     if hint:
         hint_order = sorted(flow, key=lambda i: (hint[i], i))
+        free_hint_cycle_range = os.environ.get("FREE_HINT_CYCLE_RANGE", "")
+        if free_hint_cycle_range:
+            free_left, free_right = (
+                int(value) for value in free_hint_cycle_range.split(":")
+            )
+            if not 0 <= free_left <= free_right < horizon:
+                raise ValueError(
+                    "FREE_HINT_CYCLE_RANGE must be left:right in the horizon"
+                )
+            fixed_outside = 0
+            for i in flow:
+                if free_left <= hint[i] <= free_right:
+                    continue
+                if not bounds[i][0] <= hint[i] <= bounds[i][1]:
+                    raise ValueError(
+                        "fixed outside-range hint cycle lies outside its domain"
+                    )
+                model.add(starts[i] == hint[i])
+                fixed_outside += 1
+            print(
+                f"free_hint_cycle_range={free_left}:{free_right} "
+                f"fixed_outside={fixed_outside}",
+                flush=True,
+            )
         fixed_prefix = int(os.environ.get("FIX_HINT_PREFIX", "0"))
         fixed_prefix = min(len(hint_order), max(0, fixed_prefix))
         for previous, current in zip(
@@ -346,6 +457,57 @@ def main() -> None:
         value: model.new_constant(value)
         for value in (0, 1)
     }
+    compact_escape = bool(int(os.environ.get("COMPACT_ESCAPE", "0")))
+    compact_release: dict[int, cp_model.IntVar] = {}
+    compact_deadline: dict[int, cp_model.IntVar] = {}
+    if compact_escape:
+        # Each literal Hall predicate otherwise repeats one implication for
+        # every weighted FLOW predecessor/successor of a LOAD.  Collapse the
+        # same exact projections once per LOAD: its release is a max and its
+        # deadline is a min.  Cut predicates then need one comparison per
+        # side, while AddMax/MinEquality preserves the original semantics.
+        for load in loads:
+            release_expressions = [
+                starts[source] + distance
+                for source, distance in upstream_flow[load].items()
+            ]
+            if root_release[load] >= 0:
+                release_expressions.append(root_release[load])
+            if not release_expressions:
+                release_expressions = [0]
+            release = model.new_int_var(
+                0,
+                horizon
+                + max(
+                    (distance for _, distance in upstream_flow[load].items()),
+                    default=0,
+                ),
+                f"release_max_{load}",
+            )
+            model.add_max_equality(release, release_expressions)
+            compact_release[load] = release
+
+            deadline_expressions = [
+                starts[target] - distance
+                for target, distance in downstream_flow[load].items()
+            ]
+            deadline_expressions.append(
+                horizon - 1 - terminal_tail[load]
+                if terminal_tail[load] >= 0
+                else horizon - 1
+            )
+            deadline = model.new_int_var(
+                -horizon,
+                2 * horizon,
+                f"deadline_min_{load}",
+            )
+            model.add_min_equality(deadline, deadline_expressions)
+            compact_deadline[load] = deadline
+        print(
+            f"compact_escape=1 release_vars={len(compact_release)} "
+            f"deadline_vars={len(compact_deadline)}",
+            flush=True,
+        )
 
     def early_variable(
         load: int, left: int
@@ -353,6 +515,14 @@ def main() -> None:
         key = (load, left)
         if key in early_variables:
             return early_variables[key]
+        if compact_escape:
+            variable = model.new_bool_var(f"early_{load}_{left}")
+            release = compact_release[load]
+            model.add(release <= left - 1).only_enforce_if(variable)
+            model.add(release >= left).only_enforce_if(variable.negated())
+            result = (variable, None)
+            early_variables[key] = result
+            return result
         impossible = (
             root_release[load] >= 0
             and root_release[load] >= left
@@ -384,6 +554,14 @@ def main() -> None:
         key = (load, right)
         if key in late_variables:
             return late_variables[key]
+        if compact_escape:
+            variable = model.new_bool_var(f"late_{load}_{right}")
+            deadline = compact_deadline[load]
+            model.add(deadline >= right + 1).only_enforce_if(variable)
+            model.add(deadline <= right).only_enforce_if(variable.negated())
+            result = (variable, None)
+            late_variables[key] = result
+            return result
         impossible = (
             terminal_tail[load] >= 0
             and horizon - 1 - terminal_tail[load] <= right
@@ -489,6 +667,19 @@ def main() -> None:
             model.add_hint(
                 start,
                 min(bounds[i][1], max(bounds[i][0], hint[i])),
+            )
+    if hall_starts and "HALL_HINT" in os.environ:
+        hall_payload = json.loads(Path(os.environ["HALL_HINT"]).read_text())
+        hall_hint = {
+            int(index): int(cycle)
+            for index, cycle in hall_payload["cycles"].items()
+        }
+        if set(hall_hint) != set(loads):
+            raise ValueError("HALL_HINT does not match this target engine")
+        for job, start in hall_starts.items():
+            model.add_hint(
+                start,
+                min(latest[job], max(earliest[job], hall_hint[job])),
             )
 
     solver = cp_model.CpSolver()
@@ -638,6 +829,10 @@ def main() -> None:
                 "hall_window": [exact_left, exact_right],
                 "canonical_hall_overload": overload,
                 "canonical_hall_window": [left, right],
+                "hall_cycles": {
+                    str(i): solver.value(start)
+                    for i, start in hall_starts.items()
+                },
             }
         )
     )

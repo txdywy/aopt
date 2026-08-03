@@ -282,9 +282,26 @@ def main() -> None:
     input_cycles = None
     if input_path:
         input_cycles = json.loads(Path(input_path).read_text())["cycles"]
-        kernel.SCHEDULE_EXACT_CYCLES = input_cycles
+        # This tool operates on the effective dependency DAG, not on the
+        # production register-colouring pass.  A semantically legal external
+        # schedule can intentionally overlap virtual workspaces more than the
+        # current production colouring permits, so replaying it while building
+        # the kernel may fail before we even inspect the DAG.  Keep colouring
+        # on the normal builder schedule unless an experiment explicitly asks
+        # to replay the input during construction.
+        if bool(int(os.environ.get("USE_INPUT_FOR_COLORING", "0"))):
+            kernel.SCHEDULE_EXACT_CYCLES = input_cycles
+        else:
+            kernel.SCHEDULE_EXACT_CYCLES = None
     builder = kernel.KernelBuilder()
-    builder.build_kernel(10, 2047, 256, 16)
+    try:
+        builder.build_kernel(10, 2047, 256, 16)
+    except (AssertionError, StopIteration):
+        # Structural candidates can expose their DAG before the production
+        # heuristic fails to find a colourable bundle schedule.  The exact
+        # repair model needs only that DAG and validates its own output.
+        if not hasattr(builder, "dag_ops"):
+            raise
     original_ops = builder.dag_ops
     if input_cycles is None:
         _, cycles = builder._schedule(

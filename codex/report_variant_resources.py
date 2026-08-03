@@ -35,6 +35,12 @@ def main() -> None:
     print(f"counts={dict(counts)}")
     print(f"floors={floors}")
     print(f"slack_at_959={slack}")
+    if bool(int(os.environ.get("PRINT_TAG_COUNTS", "0"))):
+        tags = Counter((op.engine, op.tag, op.slot[0]) for op in ops)
+        for (engine, tag, opcode), count in sorted(
+            tags.items(), key=lambda item: (-item[1], item[0])
+        ):
+            print(f"{count:5d} {engine:5s} {opcode:16s} {tag}")
 
 
 if __name__ == "__main__":

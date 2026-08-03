@@ -35,6 +35,19 @@ def pair_set(name: str) -> frozenset[tuple[int, int]]:
     )
 
 
+def triple_set(name: str) -> frozenset[tuple[int, int, int]]:
+    """Parse ``group:round:path-bit`` condition-lowering selectors."""
+    result: set[tuple[int, int, int]] = set()
+    for item in os.environ.get(name, "").split(","):
+        if not item:
+            continue
+        parts = item.split(":")
+        if len(parts) != 3:
+            raise ValueError(f"{name} entries must be group:round:path-bit")
+        result.add(tuple(int(component) for component in parts))
+    return frozenset(result)
+
+
 def direct_lookup_map(name: str) -> dict[int, tuple[int, ...]]:
     return {
         int(group): tuple(range(int(count)))
@@ -74,6 +87,28 @@ def hybrid_override_map(name: str) -> dict[tuple[int, int], int]:
 
 
 def configure_target() -> None:
+    if "SCHEDULE_POLICIES" in os.environ:
+        kernel.SCHEDULE_POLICIES = tuple(
+            int(value)
+            for value in os.environ["SCHEDULE_POLICIES"].split(",")
+            if value
+        )
+        if not kernel.SCHEDULE_POLICIES:
+            raise ValueError("SCHEDULE_POLICIES must contain at least one policy")
+    if "TAIL_GROUP_ORDER" in os.environ:
+        order = tuple(
+            int(value)
+            for value in os.environ["TAIL_GROUP_ORDER"].split(",")
+            if value
+        )
+        if (
+            len(order) != kernel.N_GROUPS
+            or set(order) != set(range(kernel.N_GROUPS))
+        ):
+            raise ValueError(
+                "TAIL_GROUP_ORDER must be a permutation of all group indices"
+            )
+        kernel.TAIL_GROUP_ORDER = order
     if "FULL_ROUND_OFFSETS" in os.environ:
         offsets = tuple(
             int(value)
@@ -141,6 +176,18 @@ def configure_target() -> None:
         kernel.ALU_DERIVED_POWER_COUNT = int(
             os.environ["ALU_DERIVED_POWER_COUNT"]
         )
+    if "ALU_DERIVED_POWER_SET" in os.environ:
+        kernel.ALU_DERIVED_POWER_SET = frozenset(
+            int(value)
+            for value in os.environ["ALU_DERIVED_POWER_SET"].split(",")
+            if value
+        )
+    if "LOAD_POWER_SET" in os.environ:
+        kernel.LOAD_POWER_SET = frozenset(
+            int(value)
+            for value in os.environ["LOAD_POWER_SET"].split(",")
+            if value
+        )
     if "ALU_DERIVED_DEPTH_START" in os.environ:
         kernel.ALU_DERIVED_DEPTH_START = int(
             os.environ["ALU_DERIVED_DEPTH_START"]
@@ -153,6 +200,12 @@ def configure_target() -> None:
         kernel.FLOW_SCALAR_CONSTANT_SET = frozenset(
             int(value)
             for value in os.environ["FLOW_SCALAR_CONSTANT_SET"].split(",")
+            if value
+        )
+    if "LOAD_IMMEDIATE_SCALAR_CONSTANT_SET" in os.environ:
+        kernel.LOAD_IMMEDIATE_SCALAR_CONSTANT_SET = frozenset(
+            int(value)
+            for value in os.environ["LOAD_IMMEDIATE_SCALAR_CONSTANT_SET"].split(",")
             if value
         )
     if "FLOW_ZERO_BASE_CONSTANT_SET" in os.environ:
@@ -208,6 +261,10 @@ def configure_target() -> None:
     if "DIRECT_LOAD_NEGATIVE_FIVE" in os.environ:
         kernel.DIRECT_LOAD_NEGATIVE_FIVE = bool(
             int(os.environ["DIRECT_LOAD_NEGATIVE_FIVE"])
+        )
+    if "ELIDE_V_EIGHT_BROADCAST" in os.environ:
+        kernel.ELIDE_V_EIGHT_BROADCAST = bool(
+            int(os.environ["ELIDE_V_EIGHT_BROADCAST"])
         )
     if "MEMORY_CACHED_NODE_SET" in os.environ:
         kernel.MEMORY_CACHED_NODE_SET = group_set(
@@ -271,6 +328,29 @@ def configure_target() -> None:
         kernel.INDEPENDENT_INPUT_POINTERS = bool(
             int(os.environ["INDEPENDENT_INPUT_POINTERS"])
         )
+    # Address/path representations are deliberately exposed as explicit
+    # target knobs.  They used to be hard-coded globals, which made it
+    # impossible for the offline compiler search to compare the direct
+    # mirror and overlapping-address pipelines against the relocated-tree
+    # incumbent without editing the module between runs.
+    for env_name, attribute in (
+        ("DIRECT_MIRROR_PATH", "DIRECT_MIRROR_PATH"),
+        ("OVERLAP_DEEP_ADDRESS", "OVERLAP_DEEP_ADDRESS"),
+        ("OVERLAP_SHALLOW_ADDRESS", "OVERLAP_SHALLOW_ADDRESS"),
+        ("FLOW_OUTPUT_POINTER_ADVANCE", "FLOW_OUTPUT_POINTER_ADVANCE"),
+        ("REUSE_CACHED_LEVEL4_PREPROCESS", "REUSE_CACHED_LEVEL4_PREPROCESS"),
+        ("INDEPENDENT_ROOT_CACHE", "INDEPENDENT_ROOT_CACHE"),
+    ):
+        if env_name in os.environ:
+            setattr(kernel, attribute, bool(int(os.environ[env_name])))
+    if "TAIL_EMISSION_MODE" in os.environ:
+        kernel.TAIL_EMISSION_MODE = os.environ["TAIL_EMISSION_MODE"]
+    if "TAIL_EMISSION_STAGGER" in os.environ:
+        kernel.TAIL_EMISSION_STAGGER = int(os.environ["TAIL_EMISSION_STAGGER"])
+    if "TAIL_EMISSION_COHORTS" in os.environ:
+        kernel.TAIL_EMISSION_COHORTS = int(os.environ["TAIL_EMISSION_COHORTS"])
+    if "SCALAR_DYNAMIC_XOR_SET" in os.environ:
+        kernel.SCALAR_DYNAMIC_XOR_SET = pair_set("SCALAR_DYNAMIC_XOR_SET")
     if "INPUT_POINTER_STREAMS" in os.environ:
         kernel.INPUT_POINTER_STREAMS = int(
             os.environ["INPUT_POINTER_STREAMS"]
@@ -291,6 +371,10 @@ def configure_target() -> None:
         kernel.PRESERVE_OUTPUT_BASE = bool(
             int(os.environ["PRESERVE_OUTPUT_BASE"])
         )
+    if "PRESERVED_TAIL_POINTERS_USE_FLOW" in os.environ:
+        kernel.PRESERVED_TAIL_POINTERS_USE_FLOW = bool(
+            int(os.environ["PRESERVED_TAIL_POINTERS_USE_FLOW"])
+        )
     if "COPY_PRESERVED_OUTPUT_BASE_FROM_INPUT" in os.environ:
         kernel.COPY_PRESERVED_OUTPUT_BASE_FROM_INPUT = bool(
             int(os.environ["COPY_PRESERVED_OUTPUT_BASE_FROM_INPUT"])
@@ -309,12 +393,47 @@ def configure_target() -> None:
     for env_name, attribute in (
         ("SCALAR_HASH1_JOIN", "SCALAR_HASH1_JOIN_SET"),
         ("SCALAR_HASH23_JOIN", "SCALAR_HASH23_JOIN_SET"),
+        ("SCALAR_HASH23_MADD", "SCALAR_HASH23_MADD_SET"),
+        ("SCALAR_HASH23_ADD", "SCALAR_HASH23_ADD_SET"),
+        ("SCALAR_HASH23_SHIFT", "SCALAR_HASH23_SHIFT_SET"),
         ("SCALAR_HASH5_JOIN", "SCALAR_HASH5_JOIN_SET"),
+        ("SCALAR_HASH0", "SCALAR_HASH0_SET"),
+        ("EARLY_HASH5_PARITY", "EARLY_HASH5_PARITY_SET"),
+        ("GATHER_DEPTH3", "GATHER_DEPTH3_SET"),
+        ("GATHER_LEVEL4", "GATHER_LEVEL4_SET"),
+        ("VALU_DEPTH3_FINAL", "VALU_DEPTH3_FINAL_SET"),
+        ("VALU_DEPTH3_FIRST", "VALU_DEPTH3_FIRST_SET"),
+        ("VALU_DEPTH2_FINAL", "VALU_DEPTH2_FINAL_SET"),
+        ("VALU_DEPTH2_FIRST", "VALU_DEPTH2_FIRST_SET"),
+        ("SCALAR_DEPTH3_FINAL", "SCALAR_DEPTH3_FINAL_SET"),
+        ("SCALAR_DEPTH3_FULL", "SCALAR_DEPTH3_FULL_SET"),
     ):
         if env_name in os.environ:
             setattr(kernel, attribute, pair_set(env_name))
+    # These selectors affect construction of the target graph.  Keep them in
+    # the target-side configuration block (the similarly named SOURCE_…
+    # options below are only for rebuilding the source incumbent).
+    if "SCALAR_RELOCATED_PARITY" in os.environ:
+        kernel.SCALAR_RELOCATED_PARITY_SET = pair_set("SCALAR_RELOCATED_PARITY")
+    if "EARLY_RELOCATED_PARITY" in os.environ:
+        kernel.EARLY_RELOCATED_PARITY_SET = pair_set("EARLY_RELOCATED_PARITY")
+    if "PIPELINED_DEPTH3_GROUPS" in os.environ:
+        kernel.PIPELINED_DEPTH3_GROUPS = group_set("PIPELINED_DEPTH3_GROUPS")
+    if "PIPELINED_DEPTH3_WORKSPACE_OVERRIDES" in os.environ:
+        kernel.PIPELINED_DEPTH3_WORKSPACE_OVERRIDES = {
+            int(group): int(workspace)
+            for group, workspace in (
+                item.split(":")
+                for item in os.environ["PIPELINED_DEPTH3_WORKSPACE_OVERRIDES"].split(",")
+                if item
+            )
+        }
     if "MADD_FIRST_DEPTH1_SET" in os.environ:
         kernel.MADD_FIRST_DEPTH1_SET = group_set("MADD_FIRST_DEPTH1_SET")
+    if "MADD_LATE_DEPTH1_SET" in os.environ:
+        kernel.MADD_LATE_DEPTH1_SET = group_set("MADD_LATE_DEPTH1_SET")
+    if "SCALAR_LATE_DEPTH1_SET" in os.environ:
+        kernel.SCALAR_LATE_DEPTH1_SET = group_set("SCALAR_LATE_DEPTH1_SET")
     if "PAIRED_EARLY_XOR" in os.environ:
         kernel.PAIRED_EARLY_XOR = bool(int(os.environ["PAIRED_EARLY_XOR"]))
     if "PAIRED_FLOW_SELECT" in os.environ:
@@ -357,6 +476,18 @@ def configure_target() -> None:
         kernel.SAVED_SECOND_PATH_EXTRA_GROUPS = group_set(
             "SAVED_SECOND_PATH_EXTRA_GROUPS"
         )
+    for env_name, attribute in (
+        ("SCALAR_SECOND_PATH_GROUPS", "SCALAR_SECOND_PATH_GROUPS"),
+        ("SCALAR_SECOND_PATH_DEPTH2_GROUPS", "SCALAR_SECOND_PATH_DEPTH2_GROUPS"),
+        ("SCALAR_SECOND_PATH_DEPTH3_GROUPS", "SCALAR_SECOND_PATH_DEPTH3_GROUPS"),
+        ("SCALAR_LEVEL4_CONDITION_GROUPS", "SCALAR_LEVEL4_CONDITION_GROUPS"),
+    ):
+        if env_name in os.environ:
+            setattr(kernel, attribute, group_set(env_name))
+    if "SCALAR_SECOND_PATH_DEPTH3_SET" in os.environ:
+        kernel.SCALAR_SECOND_PATH_DEPTH3_SET = pair_set(
+            "SCALAR_SECOND_PATH_DEPTH3_SET"
+        )
     if "DIRECT_BRANCH_LOOKUPS" in os.environ:
         kernel.DIRECT_BRANCH_LOOKUPS = direct_lookup_map("DIRECT_BRANCH_LOOKUPS")
     if "PAIRED_DIRECT_BRANCH_LOOKUPS" in os.environ:
@@ -367,9 +498,55 @@ def configure_target() -> None:
         kernel.CHAINED_DIRECT_BRANCH_BASE = bool(
             int(os.environ["CHAINED_DIRECT_BRANCH_BASE"])
         )
+    if "ELIDE_DIRECT_BRANCH_TARGET" in os.environ:
+        kernel.ELIDE_DIRECT_BRANCH_TARGET = bool(
+            int(os.environ["ELIDE_DIRECT_BRANCH_TARGET"])
+        )
+    if "FUSE_PAIRED_DIRECT_STRIDE" in os.environ:
+        kernel.FUSE_PAIRED_DIRECT_STRIDE = bool(
+            int(os.environ["FUSE_PAIRED_DIRECT_STRIDE"])
+        )
+    if "PAIRED_DIRECT_BASE_ON_FLOW" in os.environ:
+        kernel.PAIRED_DIRECT_BASE_ON_FLOW = bool(
+            int(os.environ["PAIRED_DIRECT_BASE_ON_FLOW"])
+        )
+    if "PAIRED_DIRECT_BASE_ALU_RECORDS" in os.environ:
+        kernel.PAIRED_DIRECT_BASE_ALU_RECORDS = frozenset(
+            int(value)
+            for value in os.environ["PAIRED_DIRECT_BASE_ALU_RECORDS"].split(",")
+            if value
+        )
     if "FLOW_OUTPUT_ADVANCE_POSITIONS" in os.environ:
         kernel.FLOW_OUTPUT_ADVANCE_POSITIONS = group_set(
             "FLOW_OUTPUT_ADVANCE_POSITIONS"
+        )
+    if "OUTPUT_POINTER_STREAMS" in os.environ:
+        kernel.OUTPUT_POINTER_STREAMS = int(os.environ["OUTPUT_POINTER_STREAMS"])
+    if "PER_GROUP_OUTPUT_POINTERS" in os.environ:
+        kernel.PER_GROUP_OUTPUT_POINTERS = bool(
+            int(os.environ["PER_GROUP_OUTPUT_POINTERS"])
+        )
+    if "PRESERVED_TAIL_OUTPUT_POINTERS" in os.environ:
+        kernel.PRESERVED_TAIL_OUTPUT_POINTERS = bool(
+            int(os.environ["PRESERVED_TAIL_OUTPUT_POINTERS"])
+        )
+    if "INDEPENDENT_TAIL_OUTPUTS" in os.environ:
+        kernel.INDEPENDENT_TAIL_OUTPUTS = bool(
+            int(os.environ["INDEPENDENT_TAIL_OUTPUTS"])
+        )
+    if "INDEPENDENT_TAIL_GROUP_COUNT" in os.environ:
+        kernel.INDEPENDENT_TAIL_GROUP_COUNT = int(
+            os.environ["INDEPENDENT_TAIL_GROUP_COUNT"]
+        )
+    if "SCATTERED_OUTPUT_STORES" in os.environ:
+        kernel.SCATTERED_OUTPUT_STORES = bool(
+            int(os.environ["SCATTERED_OUTPUT_STORES"])
+        )
+    if "OUTPUT_GROUP_ORDER" in os.environ:
+        kernel.OUTPUT_GROUP_ORDER = tuple(
+            int(value)
+            for value in os.environ["OUTPUT_GROUP_ORDER"].split(",")
+            if value
         )
     if "FIRST_CACHE_SET" in os.environ:
         kernel.FIRST_CACHE_SET = group_set("FIRST_CACHE_SET")
@@ -386,9 +563,26 @@ def configure_target() -> None:
                 if item
             )
         }
+    if "VALU_LEVEL4_CACHE_COUNTS" in os.environ:
+        kernel.VALU_LEVEL4_CACHE_COUNTS = {
+            (int(group), int(round_)): int(count)
+            for group, round_, count in (
+                item.split(":")
+                for item in os.environ["VALU_LEVEL4_CACHE_COUNTS"].split(",")
+                if item
+            )
+        }
     if "SCALAR_VALU_FINAL_DIFF_SET" in os.environ:
         kernel.SCALAR_VALU_FINAL_DIFF_SET = pair_set(
             "SCALAR_VALU_FINAL_DIFF_SET"
+        )
+    if "SCALAR_FLOW_FINAL_DIFF_SET" in os.environ:
+        kernel.SCALAR_FLOW_FINAL_DIFF_SET = pair_set(
+            "SCALAR_FLOW_FINAL_DIFF_SET"
+        )
+    if "SCALAR_FLOW_FINAL_MADD_SET" in os.environ:
+        kernel.SCALAR_FLOW_FINAL_MADD_SET = pair_set(
+            "SCALAR_FLOW_FINAL_MADD_SET"
         )
     if "EARLY_FINAL_CACHE_SET" in os.environ:
         kernel.EARLY_FINAL_CACHE_SET = group_set("EARLY_FINAL_CACHE_SET")
@@ -396,6 +590,67 @@ def configure_target() -> None:
         kernel.REVERSED_RELOCATED_TREE = bool(
             int(os.environ["REVERSED_RELOCATED_TREE"])
         )
+    if "VECTOR_RESTORE_LAYOUT_SET" in os.environ:
+        kernel.VECTOR_RESTORE_LAYOUT_SET = group_set(
+            "VECTOR_RESTORE_LAYOUT_SET"
+        )
+    if "VECTOR_ORIGINAL_ADDRESS_PARITY_SET" in os.environ:
+        kernel.VECTOR_ORIGINAL_ADDRESS_PARITY_SET = group_set(
+            "VECTOR_ORIGINAL_ADDRESS_PARITY_SET"
+        )
+    if "SCALAR_MIRROR_UPDATE_SET" in os.environ:
+        kernel.SCALAR_MIRROR_UPDATE_SET = pair_set(
+            "SCALAR_MIRROR_UPDATE_SET"
+        )
+    if "VECTOR_DYNAMIC_XOR_SET" in os.environ:
+        kernel.VECTOR_DYNAMIC_XOR_SET = pair_set("VECTOR_DYNAMIC_XOR_SET")
+    if "SCALAR_HASH1_SHIFT_SET" in os.environ:
+        kernel.SCALAR_HASH1_SHIFT_SET = pair_set("SCALAR_HASH1_SHIFT_SET")
+    if "SCALAR_HASH5_SHIFT_SET" in os.environ:
+        kernel.SCALAR_HASH5_SHIFT_SET = pair_set("SCALAR_HASH5_SHIFT_SET")
+    if "SCALAR_HASH4_SET" in os.environ:
+        kernel.SCALAR_HASH4_SET = pair_set("SCALAR_HASH4_SET")
+    for env_name, attribute in (
+        ("SCALAR_SECOND_PATH_GROUPS", "SCALAR_SECOND_PATH_GROUPS"),
+        (
+            "SCALAR_SECOND_PATH_DEPTH2_GROUPS",
+            "SCALAR_SECOND_PATH_DEPTH2_GROUPS",
+        ),
+        (
+            "SCALAR_SECOND_PATH_DEPTH3_GROUPS",
+            "SCALAR_SECOND_PATH_DEPTH3_GROUPS",
+        ),
+        (
+            "SCALAR_LEVEL4_CONDITION_GROUPS",
+            "SCALAR_LEVEL4_CONDITION_GROUPS",
+        ),
+    ):
+        if env_name in os.environ:
+            setattr(kernel, attribute, group_set(env_name))
+    if "SCALAR_SECOND_PATH_DEPTH3_SET" in os.environ:
+        kernel.SCALAR_SECOND_PATH_DEPTH3_SET = pair_set(
+            "SCALAR_SECOND_PATH_DEPTH3_SET"
+        )
+    if "SCALAR_TREE_CONDITION_SET" in os.environ:
+        kernel.SCALAR_TREE_CONDITION_SET = triple_set(
+            "SCALAR_TREE_CONDITION_SET"
+        )
+    if "SSA_LEVEL4_FULL_TREE_SET" in os.environ:
+        kernel.SSA_LEVEL4_FULL_TREE_SET = pair_set(
+            "SSA_LEVEL4_FULL_TREE_SET"
+        )
+    if "LEVEL4_STATIC_UPPER0_MADD_SET" in os.environ:
+        kernel.LEVEL4_STATIC_UPPER0_MADD_SET = pair_set(
+            "LEVEL4_STATIC_UPPER0_MADD_SET"
+        )
+    if "LEVEL4_STATIC_UPPER0_ALU_COEFF_SET" in os.environ:
+        kernel.LEVEL4_STATIC_UPPER0_ALU_COEFF_SET = pair_set(
+            "LEVEL4_STATIC_UPPER0_ALU_COEFF_SET"
+        )
+    if "EARLY_HASH_PARITY_SET" in os.environ:
+        kernel.EARLY_HASH_PARITY_SET = pair_set("EARLY_HASH_PARITY_SET")
+    if "EARLY_HASH5_PARITY_SET" in os.environ:
+        kernel.EARLY_HASH5_PARITY_SET = pair_set("EARLY_HASH5_PARITY_SET")
     if "RELOCATION_STAGE_ORDER" in os.environ:
         kernel.RELOCATION_STAGE_ORDER = os.environ["RELOCATION_STAGE_ORDER"]
     if "RELOCATION_STORE_STREAMS" in os.environ:
@@ -434,6 +689,15 @@ def configure_target() -> None:
         )
     if "SSA_WORKSPACES" in os.environ:
         kernel.SSA_WORKSPACES = bool(int(os.environ["SSA_WORKSPACES"]))
+    for env_name, attribute in (
+        ("SSA_LEVEL4_WORKSPACES", "SSA_LEVEL4_WORKSPACES"),
+        ("SSA_ALL_WORKSPACES", "SSA_ALL_WORKSPACES"),
+        ("SSA_SECOND_WORKSPACES", "SSA_SECOND_WORKSPACES"),
+        ("SSA_ROUND_TEMPS", "SSA_ROUND_TEMPS"),
+        ("INDEPENDENT_ROOT_CACHE", "INDEPENDENT_ROOT_CACHE"),
+    ):
+        if env_name in os.environ:
+            setattr(kernel, attribute, bool(int(os.environ[env_name])))
     if "SSA_ALL_WORKSPACES" in os.environ:
         kernel.SSA_ALL_WORKSPACES = bool(
             int(os.environ["SSA_ALL_WORKSPACES"])
@@ -612,6 +876,22 @@ def main() -> None:
     ):
         if env_name in os.environ:
             setattr(kernel, attribute, pair_set(env_name))
+    if "SOURCE_SCALAR_HASH5_SHIFT" in os.environ:
+        kernel.SCALAR_HASH5_SHIFT_SET = pair_set("SOURCE_SCALAR_HASH5_SHIFT")
+    if "SCALAR_RELOCATED_PARITY" in os.environ:
+        kernel.SCALAR_RELOCATED_PARITY_SET = pair_set("SCALAR_RELOCATED_PARITY")
+    if "SOURCE_SCALAR_RELOCATED_PARITY" in os.environ:
+        kernel.SCALAR_RELOCATED_PARITY_SET = pair_set(
+            "SOURCE_SCALAR_RELOCATED_PARITY"
+        )
+    if "SOURCE_LEVEL4_STATIC_UPPER0_MADD_SET" in os.environ:
+        kernel.LEVEL4_STATIC_UPPER0_MADD_SET = pair_set(
+            "SOURCE_LEVEL4_STATIC_UPPER0_MADD_SET"
+        )
+    if "SOURCE_LEVEL4_STATIC_UPPER0_ALU_COEFF_SET" in os.environ:
+        kernel.LEVEL4_STATIC_UPPER0_ALU_COEFF_SET = pair_set(
+            "SOURCE_LEVEL4_STATIC_UPPER0_ALU_COEFF_SET"
+        )
     # Rebuilding the source graph with its own exact schedule serves two
     # purposes: it accepts non-default structural incumbents and computes the
     # physical coloring of their virtual saved-path registers from the proven

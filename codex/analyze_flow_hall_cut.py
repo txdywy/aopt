@@ -80,7 +80,13 @@ def main() -> None:
                 early_reason[child] = parent
         if fixed_flow_cycles and child in flow_set:
             if release > raw_cycles[child]:
-                raise ValueError("fixed FLOW cycle precedes its release")
+                op = ops[child]
+                raise ValueError(
+                    "fixed FLOW cycle precedes its release: "
+                    f"i={child} cycle={raw_cycles[child]} release={release} "
+                    f"g={op.group} r={op.round} tag={op.tag} "
+                    f"parent={early_reason[child]}"
+                )
             earliest[child] = raw_cycles[child]
         else:
             earliest[child] = release
@@ -95,7 +101,13 @@ def main() -> None:
                 late_reason[parent] = child
         if fixed_flow_cycles and parent in flow_set:
             if raw_cycles[parent] > deadline:
-                raise ValueError("fixed FLOW cycle exceeds its deadline")
+                op = ops[parent]
+                raise ValueError(
+                    "fixed FLOW cycle exceeds its deadline: "
+                    f"i={parent} cycle={raw_cycles[parent]} deadline={deadline} "
+                    f"g={op.group} r={op.round} tag={op.tag} "
+                    f"child={late_reason[parent]}"
+                )
             latest[parent] = raw_cycles[parent]
         else:
             latest[parent] = deadline

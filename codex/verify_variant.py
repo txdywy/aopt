@@ -14,8 +14,16 @@ from codex.map_variant_schedule import configure_target
 
 def main() -> None:
     configure_target()
-    schedule = json.loads(Path(os.environ["SCHEDULE"]).read_text())
-    kernel.SCHEDULE_EXACT_CYCLES = schedule["cycles"]
+    schedule_path = os.environ.get("SCHEDULE")
+    if schedule_path:
+        schedule = json.loads(Path(schedule_path).read_text())
+        kernel.SCHEDULE_EXACT_CYCLES = schedule["cycles"]
+    else:
+        # Research mode: let KernelBuilder choose its configured forward
+        # policy.  The normal submission path still supplies an exact cycle
+        # file, which remains the safest way to replay a proven calendar.
+        schedule = {"makespan": 0, "cycles": []}
+        kernel.SCHEDULE_EXACT_CYCLES = None
 
     # Import only after mutating the shared kernel module so the cached builder
     # in verify.py is constructed with this variant rather than the default.

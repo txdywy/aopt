@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from collections import Counter
+
 import os
 
 import numpy as np
@@ -105,6 +107,13 @@ def main() -> None:
                 and earliest[index] >= left
                 and latest[index] <= right
             ]
+            tag_counts = Counter(ops[index].tag for index in contained_indices)
+            group_round_counts = Counter(
+                (ops[index].group, ops[index].round, ops[index].tag)
+                for index in contained_indices
+            )
+            print(f"  tags={tag_counts.most_common(32)}")
+            print(f"  group_round_tags={group_round_counts.most_common(32)}")
             boundary = sorted(
                 contained_indices,
                 key=lambda index: (

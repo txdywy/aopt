@@ -24,6 +24,23 @@ from codex.map_variant_schedule import configure_target, real_tail_ops
 from problem import SLOT_LIMITS
 
 
+def resource_sequence(
+    payload: dict[str, object],
+    selected: set[int],
+    cycles: dict[int, int],
+    path: Path,
+    engine: str,
+) -> list[int]:
+    """Choose the hinted capacity-lane sequence, preserving explicit ties."""
+    raw_order = payload.get("order")
+    if raw_order is None:
+        return sorted(selected, key=lambda index: (cycles[index], index))
+    sequence = [int(index) for index in raw_order]
+    if len(sequence) != len(selected) or set(sequence) != selected:
+        raise ValueError(f"{path} has invalid explicit {engine} order")
+    return sequence
+
+
 def main() -> None:
     configure_target()
     kernel.SCHEDULE_EXACT_CYCLES = None
@@ -43,6 +60,7 @@ def main() -> None:
     if "ORDER_HINTS" in os.environ or "PARTIAL_ORDER_HINTS" in os.environ:
         conditioned_parents = [dict(op.parents) for op in ops]
         conditioned_engines: set[str] = set()
+        conditioned_resource_edges: set[tuple[int, int]] = set()
         for raw_path in os.environ.get("ORDER_HINTS", "").split(","):
             if not raw_path:
                 continue
@@ -64,9 +82,8 @@ def main() -> None:
                     f"{path} does not cover every {fixed_engine} operation"
                 )
             fixed_capacity = SLOT_LIMITS[fixed_engine]
-            sequence = sorted(
-                fixed_selected,
-                key=lambda index: (fixed_cycles[index], index),
+            sequence = resource_sequence(
+                payload, fixed_selected, fixed_cycles, path, fixed_engine
             )
             for previous, current in zip(sequence, sequence[fixed_capacity:]):
                 if fixed_cycles[previous] >= fixed_cycles[current]:
@@ -76,6 +93,7 @@ def main() -> None:
                 conditioned_parents[current][previous] = max(
                     conditioned_parents[current].get(previous, 0), 1
                 )
+                conditioned_resource_edges.add((previous, current))
         for raw_path in os.environ.get("PARTIAL_ORDER_HINTS", "").split(","):
             if not raw_path:
                 continue
@@ -124,15 +142,21 @@ def main() -> None:
             ):
                 raise ValueError(f"{path} has invalid matched indices")
             fixed_capacity = SLOT_LIMITS[fixed_engine]
-            sequence = sorted(
-                matched, key=lambda index: (fixed_cycles[index], index)
-            )
-            for previous, current in zip(
-                sequence, sequence[fixed_capacity:]
-            ):
+            resource_edges = payload.get("resource_edges")
+            if resource_edges is None:
+                sequence = sorted(
+                    matched, key=lambda index: (fixed_cycles[index], index)
+                )
+                resource_edges = zip(sequence, sequence[fixed_capacity:])
+            for previous, current in resource_edges:
+                previous = int(previous)
+                current = int(current)
+                if previous not in matched or current not in matched:
+                    continue
                 conditioned_parents[current][previous] = max(
                     conditioned_parents[current].get(previous, 0), 1
                 )
+                conditioned_resource_edges.add((previous, current))
         ops = [
             replace(op, parents=conditioned_parents[i])
             for i, op in enumerate(ops)
@@ -159,6 +183,32 @@ def main() -> None:
             if not indegree[child]:
                 heapq.heappush(ready, child)
     if len(topological) != len(ops):
+        residual = {i for i, degree in enumerate(indegree) if degree}
+        walk: list[int] = []
+        seen_at: dict[int, int] = {}
+        node = next(iter(residual))
+        while node not in seen_at:
+            seen_at[node] = len(walk)
+            walk.append(node)
+            node = next(
+                parent
+                for parent in conditioned_parents[node]
+                if parent in residual
+            )
+        cycle = walk[seen_at[node]:] + [node]
+        print(f"condition_cycle length={len(cycle) - 1}", flush=True)
+        for child, parent in zip(cycle, cycle[1:]):
+            child_op = ops[child]
+            parent_op = ops[parent]
+            print(
+                f"condition_cycle_edge resource="
+                f"{int((parent, child) in conditioned_resource_edges)} "
+                f"parent={parent}:{parent_op.engine}:g{parent_op.group}:"
+                f"r{parent_op.round}:{parent_op.tag} -> "
+                f"child={child}:{child_op.engine}:g{child_op.group}:"
+                f"r{child_op.round}:{child_op.tag}",
+                flush=True,
+            )
         raise ValueError("conditioned resource orders introduce a cycle")
     topological_position = {
         index: position for position, index in enumerate(topological)
@@ -601,6 +651,14 @@ def main() -> None:
                 for i in selected:
                     old = current[i]
                     if old < deleted:
+                        # A deletion after this operation still shortens the
+                        # global horizon.  It is safe to keep the operation
+                        # fixed only when its downstream tail fits in that
+                        # shorter horizon; otherwise the CP model would omit
+                        # its deadline and could return a false repair.
+                        if old + tail[i] >= new_span:
+                            impossible = True
+                            break
                         lower = upper = old
                     else:
                         base = old - 1
@@ -872,6 +930,8 @@ def main() -> None:
                 "OUT", f"/tmp/aopt-{engine}-projected-delete-repair.json"
             )
         )
+        max_steps = int(os.environ.get("DELETE_MAX_STEPS", "0"))
+        completed_steps = 0
         while current_span > repair_target:
             repaired = None
             attempts = 0
@@ -904,6 +964,7 @@ def main() -> None:
                 break
             current = repaired
             current_span -= 1
+            completed_steps += 1
             output.write_text(
                 json.dumps(
                     {
@@ -915,6 +976,12 @@ def main() -> None:
                     }
                 )
             )
+            if max_steps and completed_steps >= max_steps:
+                print(
+                    f"delete_step_limit={max_steps} current_span={current_span}",
+                    flush=True,
+                )
+                break
         print(f"delete_final={current_span} output={output}", flush=True)
         return
 
@@ -1133,13 +1200,21 @@ def main() -> None:
 
         def greedy_backward(seed: int) -> tuple[int, dict[int, int]]:
             rng = random.Random(seed)
-            early_weight = rng.choice((2, 4, 8, 16, 32, 64))
-            ancestor_divisor = rng.choice((8, 16, 32, 64, 128, 256))
-            fanin_weight = rng.choice((0, 1, 2, 4, 8, 16))
-            group_bias = rng.choice((-8, -4, -2, -1, 0, 1, 2, 4, 8))
-            noise_amplitude = rng.choice((0, 1, 2, 4, 8, 16, 32))
+            # Fixed knobs make it possible to sweep the priority lattice
+            # without rebuilding a separate compiler for every point.  They
+            # are research-only and preserve the historical random behavior
+            # when unset.
+            def choose(name: str, values: tuple[int, ...]) -> int:
+                fixed = os.environ.get(f"GREEDY_FIXED_{name}")
+                return int(fixed) if fixed is not None else rng.choice(values)
+
+            early_weight = choose("EARLY", (2, 4, 8, 16, 32, 64))
+            ancestor_divisor = choose("ANCESTOR", (8, 16, 32, 64, 128, 256))
+            fanin_weight = choose("FANIN", (0, 1, 2, 4, 8, 16))
+            group_bias = choose("GROUP", (-8, -4, -2, -1, 0, 1, 2, 4, 8))
+            noise_amplitude = choose("NOISE", (0, 1, 2, 4, 8, 16, 32))
             dynamic_unlock = bool(int(os.environ.get("DYNAMIC_UNLOCK", "0")))
-            unlock_weight = rng.choice((16, 32, 64, 128, 256, 512, 1024))
+            unlock_weight = choose("UNLOCK", (16, 32, 64, 128, 256, 512, 1024))
             noise = {
                 i: rng.randrange(-noise_amplitude, noise_amplitude + 1)
                 for i in selected
@@ -1323,12 +1398,34 @@ def main() -> None:
         return
 
     model = cp_model.CpModel()
+    # A structurally mapped incumbent is often globally close but locally
+    # invalid: new scalar/vector implementations add a handful of edges that
+    # its old issue times did not satisfy.  Restricting the repair to a
+    # bounded displacement around that incumbent turns the otherwise huge
+    # resource-order search into a useful local calendar solve.  Negative
+    # retains the historic full earliest/latest domain.
+    projected_hint_radius = int(
+        os.environ.get("PROJECTED_HINT_RADIUS", "-1")
+    )
+    bounds: dict[int, tuple[int, int]] = {}
+    for i in selected:
+        lower = earliest[i]
+        upper = horizon - 1 - tail[i]
+        if projected_hint is not None and projected_hint_radius >= 0:
+            lower = max(lower, projected_hint[i] - projected_hint_radius)
+            upper = min(upper, projected_hint[i] + projected_hint_radius)
+        if lower > upper:
+            raise ValueError(
+                f"empty projected hint domain for {i}: [{lower}, {upper}]"
+            )
+        bounds[i] = (lower, upper)
     starts = {
-        i: model.new_int_var(
-            earliest[i], horizon - 1 - tail[i], f"s{i}"
-        )
-        for i in selected
+        i: model.new_int_var(*bounds[i], f"s{i}") for i in selected
     }
+    if projected_hint is not None and projected_hint_radius >= 0:
+        print(
+            f"projected_hint_radius={projected_hint_radius}", flush=True
+        )
     for child in selected:
         for parent, lag in projected[child].items():
             model.add(starts[child] >= starts[parent] + lag)
@@ -1380,8 +1477,7 @@ def main() -> None:
     if time_indexed:
         for i in selected:
             choices = []
-            lower = earliest[i]
-            upper = horizon - 1 - tail[i]
+            lower, upper = bounds[i]
             for cycle in range(lower, upper + 1):
                 if (
                     saturated_window is not None
@@ -1436,21 +1532,19 @@ def main() -> None:
             model.add_hint(
                 starts[i],
                 min(
-                    horizon - 1 - tail[i],
-                    max(earliest[i], projected_hint[i] - projected_hint_shift),
+                    bounds[i][1],
+                    max(bounds[i][0], projected_hint[i] - projected_hint_shift),
                 ),
             )
             if time_indexed:
                 hinted = min(
-                    horizon - 1 - tail[i],
+                    bounds[i][1],
                     max(
-                        earliest[i],
+                        bounds[i][0],
                         projected_hint[i] - projected_hint_shift,
                     ),
                 )
-                for cycle in range(
-                    earliest[i], horizon - tail[i]
-                ):
+                for cycle in range(bounds[i][0], bounds[i][1] + 1):
                     if (i, cycle) not in assignments:
                         continue
                     model.add_hint(
@@ -1463,6 +1557,26 @@ def main() -> None:
                 starts[i],
                 min(horizon - 1 - tail[i], max(earliest[i], source_cycles[i])),
             )
+
+    proximity_objective = bool(
+        int(os.environ.get("PROJECTED_HINT_PROXIMITY", "0"))
+    )
+    if proximity_objective and projected_hint is None:
+        raise ValueError("PROJECTED_HINT_PROXIMITY requires PROJECTED_HINT")
+    if proximity_objective and bool(int(os.environ.get("OPTIMIZE", "0"))):
+        raise ValueError("choose either PROJECTED_HINT_PROXIMITY or OPTIMIZE")
+    if proximity_objective:
+        deviations = []
+        for i in selected:
+            target = min(bounds[i][1], max(bounds[i][0], projected_hint[i]))
+            deviation = model.new_int_var(
+                0, max(target - bounds[i][0], bounds[i][1] - target),
+                f"hint_delta_{i}",
+            )
+            model.add_abs_equality(deviation, starts[i] - target)
+            deviations.append(deviation)
+        model.minimize(sum(deviations))
+        print("projected_hint_proximity=1", flush=True)
 
     makespan = None
     if bool(int(os.environ.get("OPTIMIZE", "0"))):
@@ -1494,6 +1608,53 @@ def main() -> None:
             f"best_bound={solver.best_objective_bound + 1}",
             flush=True,
         )
+    elif proximity_objective:
+        print(
+            f"hint_distance={solver.objective_value} "
+            f"best_bound={solver.best_objective_bound}",
+            flush=True,
+        )
+    # CP-SAT may return UNKNOWN at a time limit after it has already found a
+    # valid incumbent (notably for the nearly full LOAD calendar).  The
+    # objective line above is enough to distinguish that case from a cold
+    # search, but the historic driver discarded the incumbent.  Opt-in export
+    # lets the strict full-DAG verifier audit it instead of throwing away a
+    # useful calendar merely because optimality was not proven.
+    if status == cp_model.UNKNOWN and bool(
+        int(os.environ.get("WRITE_UNKNOWN_INCUMBENT", "0"))
+    ):
+        try:
+            candidate = {i: solver.value(starts[i]) for i in selected}
+            print(
+                f"unknown_incumbent_probe min={min(candidate.values(), default=-1)} "
+                f"max={max(candidate.values(), default=-1)} "
+                f"objective={solver.objective_value}",
+                flush=True,
+            )
+            if max(candidate.values(), default=-1) >= horizon:
+                print("unknown_incumbent_rejected=out_of_horizon", flush=True)
+                return
+            usage = Counter(candidate.values())
+            if max(usage.values(), default=0) > capacity:
+                print("unknown_incumbent_rejected=capacity", flush=True)
+                return
+            output = Path(
+                os.environ.get("OUT", f"/tmp/aopt-{engine}-projected-unknown.json")
+            )
+            output.write_text(
+                json.dumps(
+                    {
+                        "engine": engine,
+                        "horizon": horizon,
+                        "cycles": {str(i): cycle for i, cycle in candidate.items()},
+                        "status": "UNKNOWN_INCUMBENT",
+                    }
+                )
+            )
+            print(f"unknown_incumbent_output={output}", flush=True)
+        except Exception as error:
+            print(f"unknown_incumbent_discarded={error}", flush=True)
+        return
     if status not in (cp_model.FEASIBLE, cp_model.OPTIMAL):
         return
     result = {str(i): solver.value(starts[i]) for i in selected}

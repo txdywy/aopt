@@ -64,6 +64,15 @@ SSA_FIRST_WORKSPACE_GROUPS: frozenset[int] = frozenset()
 # SECOND_WORKSPACE_FIXED without paying the much larger live-range cost of
 # SSA_ALL_WORKSPACES.
 SSA_SECOND_WORKSPACES = False
+# Give each late software-pipeline round its own virtual temporary.  The
+# ordinary implementation reuses ``temps[group]`` for both the depth-10
+# gather and the second-traversal selectors.  Those values are not
+# semantically live across rounds, but the physical reuse creates long
+# cross-engine WAW/WAR edges in the dependency graph.  The post-schedule
+# virtual-register colorer maps these short intervals back onto the existing
+# scratch image.  This is opt-in because it increases the compiler graph and
+# should only be enabled after strict schedule/semantic validation.
+SSA_ROUND_TEMPS = False
 FLOW_SCALAR_CONSTANT_COUNT = 0
 # Sparse resource-aware constant materialization.  The prefix knob above is
 # useful for coarse sweeps, but insertion order puts the latency-critical C0
@@ -71,6 +80,12 @@ FLOW_SCALAR_CONSTANT_COUNT = 0
 # offline compiler move only profitable loads onto FLOW immediates without
 # forcing that critical constant across engines.
 FLOW_SCALAR_CONSTANT_SET: frozenset[int] = frozenset()
+# When scalar immediates are split between FLOW and LOAD, this optional set
+# names the exact scalar-constant indices that take the LOAD lowering.  An
+# empty set preserves the historical all-or-nothing LOAD_IMMEDIATE_TAGS
+# behavior; a non-empty set lets the compiler trade only the latency-critical
+# constants while keeping enough LOAD slack for the saturated gather window.
+LOAD_IMMEDIATE_SCALAR_CONSTANT_SET: frozenset[int] = frozenset()
 # Selected setup constants may use their own architecturally-zero scratch word
 # as the add_imm base.  This removes the otherwise artificial dependency on
 # the loaded scalar one and can pull an entire broadcast fanout forward.
@@ -98,6 +113,7 @@ MEMORY_STAGE_NEGATIVE_FIVE = False
 DIRECT_LOAD_VECTOR_CONSTANT_SET: frozenset[str] = frozenset()
 DIRECT_LOAD_SETUP_C5 = False
 DIRECT_LOAD_NEGATIVE_FIVE = False
+ELIDE_V_EIGHT_BROADCAST = False
 MEMORY_CACHED_NODE_SET: frozenset[int] = frozenset()
 # A third broadcast lowering for schedules with spare scalar-ALU bandwidth.
 # Eight independent identity operations replicate a scalar without consuming
@@ -140,6 +156,16 @@ SSA_MEMORY_VECTOR_CONSTANT_ADDRESS = False
 # A dedicated unwritten scratch word supplies architectural zero.
 ALU_RAW_ROOT_COPY = False
 ALU_DERIVED_POWER_COUNT = 0
+# Fine-grained replacement for ``ALU_DERIVED_POWER_COUNT``.  The count knob
+# was useful while finding the first resource-balanced variants, but it forces
+# the powers 2,4,8,16 into one fixed dependency chain.  A set lets the offline
+# compiler keep only the profitable members of that chain and materialize the
+# others as ordinary scalar loads.  Empty preserves the count semantics.
+ALU_DERIVED_POWER_SET: frozenset[int] = frozenset()
+# Powers named here bypass derivation and are loaded directly.  This is kept
+# separate from LOAD_IMMEDIATE_SCALAR_CONSTANT_SET because power constants are
+# handled before the generic scalar-immediate policy in the builder.
+LOAD_POWER_SET: frozenset[int] = frozenset()
 ALU_DERIVED_DEPTH_START = 11
 ALU_DERIVED_MISC_SET: frozenset[str] = frozenset(
     ("nineteen", "m4", "m0", "m2", "m23")
@@ -173,6 +199,11 @@ PER_GROUP_OUTPUT_POINTERS = False
 INDEPENDENT_TAIL_OUTPUTS = True
 INDEPENDENT_TAIL_GROUP_COUNT = 8
 PRESERVED_TAIL_OUTPUT_POINTERS = False
+# Materialize the four late pointers used by the preserved-tail epilogue with
+# FLOW immediates instead of scalar LOAD constants.  This is off for the
+# incumbent; target-variant experiments can enable it to trade four LOAD
+# packets for four independent FLOW packets.
+PRESERVED_TAIL_POINTERS_USE_FLOW = False
 PREPROCESS_MAX_DEPTH = 7
 REUSE_CACHED_LEVEL4_PREPROCESS = False
 # Experimental memory-layout retiming.  Preprocess depths 4..8 into reversed
@@ -180,6 +211,43 @@ REUSE_CACHED_LEVEL4_PREPROCESS = False
 # an address after one base add and advances as ``2 * address + parity``.
 # This trades setup-only scalar work for a large steady-state address-ALU cut.
 REVERSED_RELOCATED_TREE = False
+# The round-8 conversion back to the original heap layout is naturally a
+# vector subtraction.  It is scalarized by default because VALU is the global
+# resource bottleneck, but selected groups may spend one of the few remaining
+# VALU slots to replace eight ALU operations and keep the address chain on one
+# engine.  This is also a cross-engine critical-path retiming knob.
+VECTOR_RESTORE_LAYOUT_SET: frozenset[int] = frozenset()
+# At round 9 of the reversed-tree traversal the mirror is converted back to
+# the original heap address by subtracting the parity vector.  The historical
+# lowering scalarizes that subtraction into eight ALU packets.  A selected
+# group can instead keep the operation as one VALU vector subtract; this is a
+# scheduler-facing register-renaming choice (the result is identical) and
+# frees seven ALU issue slots for a latency-critical scalar hash epilogue.
+VECTOR_ORIGINAL_ADDRESS_PARITY_SET: frozenset[int] = frozenset()
+# Selected ordinary mirror updates (``mirror = 2*mirror + parity``) can be
+# scalarized into two ALU packets per lane.  This is intentionally separate
+# from the address-only parity lowering above: late mirror updates feed the
+# next FLOW tree-select, so changing their engine can break a VALU->FLOW
+# bottleneck even though it spends sixteen ALU packets.
+SCALAR_MIRROR_UPDATE_SET: frozenset[tuple[int, int]] = frozenset()
+VECTOR_DYNAMIC_XOR_SET: frozenset[tuple[int, int]] = frozenset()
+# Retiming knob for the reversed-tree address stream.  A scalarized parity
+# extraction spends eight ALU slots but removes one VALU instruction from the
+# hot ``parity -> address_update`` chain.  It is kept pair-selective because
+# the ALU budget is only a few packets below its H959 floor.
+SCALAR_RELOCATED_PARITY_SET: frozenset[tuple[int, int]] = frozenset()
+# Compute the relocated-tree path bit from the stage-5 operands before the
+# full vector ``hash_5_join`` writes the value register.  For rounds 4..8 the
+# final C5 is not applied yet, so
+#
+#     (value ^ (value >> 16)) & 1
+#
+# is exactly the parity consumed by ``relocated_address_update``.  The
+# scalarized form costs sixteen ALU instructions but lets the address update
+# run in parallel with the vector join, shortening the FLOW->LOAD path by one
+# cycle at selected cells.  It is opt-in because ALU is nearly saturated at
+# the 959-cycle target.
+EARLY_RELOCATED_PARITY_SET: frozenset[tuple[int, int]] = frozenset()
 # The relocation copy frees each staging vector as soon as its source block is
 # consumed.  Choosing which physical vector stages which block is therefore a
 # register-release scheduling decision, even though it does not change the
@@ -245,16 +313,79 @@ DIRECT_BRANCH_LOOKUPS: dict[int, tuple[int, ...]] = {}
 CHAINED_DIRECT_BRANCH_BASE = True
 PAIRED_DIRECT_BRANCH_LOOKUPS: dict[int, tuple[tuple[int, int], ...]] = {}
 FUSED_DIRECT_BRANCH_XOR = True
+# The final direct-lookup target marker only rewrites the mirror/address
+# scratch lane with a dead sentinel.  Out-of-line table entries can instead
+# jump directly to the bundle after the copy, eliminating one FLOW operation
+# per lookup.  Keep this opt-in until the full semantic verifier has covered
+# every branch/table combination.
+ELIDE_DIRECT_BRANCH_TARGET = False
+# The paired table index is ``(hi * 16 + lo) * 4``.  The historical form
+# materialized the final factor as two ``*2`` ALU packets; using the already
+# loaded scalar four is algebraically identical and frees one ALU slot per
+# pair.
+FUSE_PAIRED_DIRECT_STRIDE = False
+# Encode the paired table base as a FLOW immediate (patched with the final
+# out-of-line table PC during assembly) instead of an ALU read of the shared
+# table-base scalar.  This is safe because the base is link-time constant and
+# the mirror index itself is already scalar in each pair's jump register.
+PAIRED_DIRECT_BASE_ON_FLOW = False
+PAIRED_DIRECT_BASE_ALU_RECORDS: frozenset[int] = frozenset()
 DIRECT_PREP_SENTINEL = 0xD1A00001
 DIRECT_JUMP_SENTINEL = 0xD1A00002
 DIRECT_TARGET_SENTINEL = 0xD1A00003
 DIRECT_BRANCH_PRIORITY = 10_000
 MADD_FIRST_DEPTH1 = False
 MADD_FIRST_DEPTH1_SET: frozenset[int] = frozenset()
+# Late-pipeline depth-1 affine select lowering.  The ordinary first-path
+# switch above intentionally applies only to rounds < 11; this separate set
+# lets the offline compiler retime a late FLOW select onto VALU when a
+# saturated LOAD->FLOW cut is the limiting resource cycle.
+MADD_LATE_DEPTH1_SET: frozenset[int] = frozenset()
+SCALAR_LATE_DEPTH1_SET: frozenset[int] = frozenset()
 SCALAR_FIRST_DEPTH1_SET: frozenset[int] = frozenset()
 SCALAR_SECOND_PATH_GROUPS: frozenset[int] = frozenset()
 SCALAR_SECOND_PATH_DEPTH2_GROUPS: frozenset[int] = frozenset()
 SCALAR_SECOND_PATH_DEPTH3_GROUPS: frozenset[int] = frozenset()
+# A single late depth-3 lookup round has only two or three vector condition
+# extractions.  Selecting it independently keeps the V-to-F retiming budget
+# below one ALU packet per cycle, unlike converting every depth-3 round of a
+# group at once.
+SCALAR_SECOND_PATH_DEPTH3_SET: frozenset[tuple[int, int]] = frozenset()
+# Scalarizing a complete late lookup group is too coarse: it spends 16--24
+# ALU operations even when just one vector condition is on the critical
+# V-to-F cut.  This is the precise lowering knob, keyed by
+# ``(SIMD group, round, path-bit)``.  Each selected entry replaces one vector
+# condition AND with its eight lane-local ALU operations, preserving the
+# vector condition value and therefore the surrounding select semantics.
+SCALAR_TREE_CONDITION_SET: frozenset[tuple[int, int, int]] = frozenset()
+# The compact depth-first level-4 mux reuses three physical vectors.  That is
+# normally desirable for register pressure, but at the final tail it creates
+# zero-lag WAR edges such as ``upper_select -> next pair`` and forces an
+# otherwise independent VALU bottom pair to wait for FLOW.  Chosen lookups can
+# instead be emitted as an SSA-balanced tree.  The post-schedule vector
+# colorer maps its short-lived virtual values back to existing registers.
+SSA_LEVEL4_FULL_TREE_SET: frozenset[tuple[int, int]] = frozenset()
+# For a selected level-4 lookup, replace its first three-operation cell
+#
+#   ``pair0 = l0 + p3*(l1-l0)``
+#   ``pair1 = l2 + p3*(l3-l2)``
+#   ``select(p2, pair1, pair0)``
+#
+# with three VALU MADDs.  The two static finite-difference vectors are built
+# once from the cached tree, so the replacement is ``pair0``,
+# ``coeff = (l2-l0) + p3*((l3-l2)-(l1-l0))``, and
+# ``pair0 + p2*coeff``.  This is a one-for-one Flow-to-VALU exchange rather
+# than the ordinary runtime ``difference + MADD`` lowering, and specifically
+# targets the r4/r15 V--Flow cells isolated by the exact model.
+LEVEL4_STATIC_UPPER0_MADD_SET: frozenset[tuple[int, int]] = frozenset()
+# Same finite-difference lowering as ``LEVEL4_STATIC_UPPER0_MADD_SET``, but
+# form its two invariant coefficient vectors lane-by-lane on the wide scalar
+# ALU rather than spending two VALU slots.  At H=959 the balanced hash193
+# graph has materially more ALU slack than VALU slack; paying this one-time
+# 16-ALU setup makes every selected Flow-to-VALU exchange cost just one VALU
+# slot.  The two modes deliberately remain disjoint because they share the
+# same persistent coefficient registers.
+LEVEL4_STATIC_UPPER0_ALU_COEFF_SET: frozenset[tuple[int, int]] = frozenset()
 SCALAR_LEVEL4_CONDITION_GROUPS: frozenset[int] = frozenset((0,))
 SCALAR_FINAL_C5_SET: frozenset[int] = frozenset((18, 20, 22, 24, 25, 30))
 SCALAR_FINAL_JOIN_SET: frozenset[int] = frozenset((21, 22))
@@ -263,7 +394,78 @@ SCALAR_FINAL_SHIFT_SET: frozenset[int] = frozenset((17, 18, 20, 22, 23, 26, 29))
 SCALAR_FINAL_HASH23_JOIN_SET: frozenset[int] = frozenset((0, 1, 17, 31))
 SCALAR_HASH1_JOIN_SET: frozenset[tuple[int, int]] = frozenset(((18, 15),))
 SCALAR_HASH23_JOIN_SET: frozenset[tuple[int, int]] = frozenset()
+# Per-cell lowering for the affine stage-3 MADDs.  A vector MADD is replaced
+# by eight scalar multiply/add pairs.  This is intentionally separate from
+# ``SCALAR_HASH23_JOIN_SET``: the join is already scalar in several final
+# groups, while the two MADDs are the remaining VALU critical-chain nodes.
+# The switch is used only by offline structural searches; the default is
+# empty so the proven submission graph is unchanged.
+SCALAR_HASH23_MADD_SET: frozenset[tuple[int, int]] = frozenset()
+# Finer-grained forms used while searching the ALU/VALU trade-off.  Each
+# selected MADD costs sixteen scalar ALU operations (eight multiplies plus
+# eight adds), so the two sets can be budgeted independently.
+SCALAR_HASH23_ADD_SET: frozenset[tuple[int, int]] = frozenset()
+SCALAR_HASH23_SHIFT_SET: frozenset[tuple[int, int]] = frozenset()
 SCALAR_HASH5_JOIN_SET: frozenset[tuple[int, int]] = frozenset()
+# Research-only lowering for the first affine hash stage.  A selected
+# vector ``x*m0+c0`` becomes eight scalar multiply/add pairs on ALU.  Besides
+# its VALU/ALU trade-off this can deliberately cut a LOAD->VALU phase edge at
+# a saturated load/VALU boundary.  It is opt-in and empty in the incumbent.
+SCALAR_HASH0_SET: frozenset[tuple[int, int]] = frozenset()
+# Selected depth-3 cache lookups may be lowered to ordinary gathers.  A
+# gather spends the otherwise lightly loaded scalar/load engines but removes
+# the seven-Flow selector chain and its Flow-to-VALU WAR edges.  Keep this
+# empty in the baseline; the target-specific compiler pass opts in only for
+# proven phase cuts.
+GATHER_DEPTH3_SET: frozenset[tuple[int, int]] = frozenset()
+# Whole level-4 cached lookups selected for address-generation + gather
+# lowering.  Each replacement removes the eight VALU bottom/upper cells and
+# seven Flow selectors of the cached mux, paying eight scalar address ALU
+# slots and eight loads instead.  This is the main phase-balancing knob for
+# the nearly saturated VALU/Flow pair.
+GATHER_LEVEL4_SET: frozenset[tuple[int, int]] = frozenset()
+# Lower only the final depth-3 mux cell to a static-leaf difference plus one
+# VALU MADD.  The difference scratch is an already-live spill register and is
+# consumed immediately, so this trades two VALU slots for one Flow slot with
+# no additional scratch allocation.
+VALU_DEPTH3_FINAL_SET: frozenset[tuple[int, int]] = frozenset()
+# Same lowering applied to the first depth-3 mux cell.  This is kept
+# separate because its scratch lifetime and cross-engine cut differ from the
+# terminal cell.
+VALU_DEPTH3_FIRST_SET: frozenset[tuple[int, int]] = frozenset()
+# Replace the terminal depth-2 mux select with a vector affine select.  The
+# two preceding pair selects remain ordinary Flow operations; the final
+# ``select(c1, hi, lo)`` becomes ``diff = hi-lo; lo += c1*diff``.  This is a
+# deliberately per-lookup retiming knob for breaking a single Flow/VALU
+# phase cycle without paying the eight scalar loads of a depth-2 gather.
+VALU_DEPTH2_FINAL_SET: frozenset[tuple[int, int]] = frozenset()
+# Same affine lowering for the first (oldest-condition) depth-2 pair select.
+# It is separate because the first and final Flow nodes sit on opposite sides
+# of the hash/lookup phase cut and therefore break different resource cycles.
+VALU_DEPTH2_FIRST_SET: frozenset[tuple[int, int]] = frozenset()
+# Scalar-difference variant of the depth-3 final cell.  Eight ALU lanes form
+# the leaf difference, followed by one VALU MADD; this spends scalar bandwidth
+# to keep the VALU increase to one slot instead of two.
+SCALAR_DEPTH3_FINAL_SET: frozenset[tuple[int, int]] = frozenset()
+# Full scalar variant of the depth-3 terminal cell.  In contrast to
+# ``SCALAR_DEPTH3_FINAL_SET`` this also lowers the affine select itself to
+# scalar multiply/add pairs.  It is deliberately separate because it costs
+# sixteen ALU operations instead of one VALU MADD, but can remove the final
+# FLOW-to-VALU edge at a saturated phase boundary.
+SCALAR_DEPTH3_FULL_SET: frozenset[tuple[int, int]] = frozenset()
+# A selected non-final stage-5 shift may be scalarized when its immediately
+# following path predicate is also scalar.  This is not an aggregate
+# throughput win (eight ALU shifts replace one VALU shift), but it cuts the
+# V-to-Flow edge at a known tight branch point: the predicate can then be
+# produced entirely on ALU after ``hash_4`` while the vector hash join is free
+# to occupy a later VALU slot.  It is intentionally keyed per group/round so
+# the compiler can spend the small remaining ALU budget only at a proven cut.
+SCALAR_HASH5_SHIFT_SET: frozenset[tuple[int, int]] = frozenset()
+# Research-only retiming: scalarize the affine hash_4 multiply/add pair at
+# selected non-final group/round cells.  The normal lowering keeps hash_4 as a
+# single VALU MADD; this opt-in form is useful when its result feeds a Flow
+# tree selector on a saturated cross-engine cut.
+SCALAR_HASH4_SET: frozenset[tuple[int, int]] = frozenset()
 # The relocated kernel normally applies the final C5 with eight ALU xors
 # because its old C5 vector has been recycled as the -5 address bias.  Tail
 # groups whose final xor can live outside the saturated VALU window may share
@@ -279,6 +481,21 @@ VALU_FINAL_C5_SET: frozenset[int] = frozenset()
 VECTOR_PARITY_SET: frozenset[tuple[int, int]] = frozenset(
     ((31, 11), (31, 12), (31, 13), (31, 14), (16, 14), (21, 13), (21, 14))
 )
+# Selected shallow rounds form the next path bit directly from the stage-5
+# operands ``e`` and ``e >> 16``.  The ordinary vector join still materializes
+# the full internal hash value, but the following tree lookup no longer waits
+# on that VALU write.  One scalar XOR packet replaces the later parity packet
+# for each chosen round, trading eight ALU slots for a tighter V-to-F cut.
+EARLY_HASH_PARITY_SET: frozenset[tuple[int, int]] = frozenset()
+# Compute the branch bit from the stage-5 operands before ``hash_5_join``
+# commits the internal hash value.  The normal lowering emits the parity after
+# the join, which inserts an unnecessary VALU -> ALU -> FLOW phase between two
+# consecutive shallow lookups.  For rounds 0..2 the corresponding workspace
+# bit is dead after the lookup, so it is a safe zero-scratch retiming target.
+# Unlike ``EARLY_RELOCATED_PARITY_SET`` this is useful for the ordinary cached
+# path as well: the next round's FLOW selector can start one cycle earlier
+# while the full vector join remains in flight.
+EARLY_HASH5_PARITY_SET: frozenset[tuple[int, int]] = frozenset()
 FINAL_CACHE_SET = frozenset((0, 1, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 23, 28, 29))
 # Final cached depth-4 lookups normally spend seven scarce FLOW slots on
 # vselect.  Selected groups instead use a short-lived, post-schedule-colored
@@ -287,13 +504,33 @@ FINAL_CACHE_SET = frozenset((0, 1, 3, 4, 5, 6, 7, 9, 10, 11, 12, 17, 23, 28, 29)
 # instructions and is useful when a cached group is added to relieve LOAD.
 VALU_FINAL_CACHE_SET: frozenset[int] = frozenset()
 VALU_FINAL_CACHE_COUNTS: dict[int, int] = {}
+# General level-4 mux retiming.  Unlike the historical final-round-only
+# lowering above, this map permits selected cached lookups in any round to
+# replace their upper Flow selectors with ``difference + MADD`` pairs.  It is
+# intentionally opt-in because each selected Flow selector costs two VALU
+# operations and a short virtual scratch vector.
+VALU_LEVEL4_CACHE_COUNTS: dict[tuple[int, int], int] = {}
 SCALAR_VALU_FINAL_DIFF_SET: frozenset[tuple[int, int]] = frozenset()
+# Selected upper selectors of a final cached level-4 lookup can be lowered as
+# ``scalar difference + vector MADD`` even when the selector would otherwise
+# remain a FLOW vselect.  This trades one FLOW issue slot for eight scalar ALU
+# lanes and one VALU MADD.  It is deliberately opt-in: unlike
+# ``SCALAR_VALU_FINAL_DIFF_SET`` (which only changes an already-VALU selector),
+# this knob changes the selector's engine assignment and therefore must be
+# checked against the ALU Hall windows.
+SCALAR_FLOW_FINAL_DIFF_SET: frozenset[tuple[int, int]] = frozenset()
+# An even more aggressive variant also scalarizes the final affine merge.  It
+# removes both the FLOW selector and its VALU MADD, at the cost of 24 ALU
+# instructions (8 for the difference and 16 for the multiply/add).  This is
+# useful only for carefully chosen selectors with spare scalar capacity.
+SCALAR_FLOW_FINAL_MADD_SET: frozenset[tuple[int, int]] = frozenset()
 FIRST_CACHE_SET = frozenset(
     (3, 4, 5, 7, 9, 11, 12, 13, 15, 16, 18, 19, 20, 24, 29, 31)
 )
 HASH_SCALAR_MOD = 4
 HASH_SCALAR_STAGE = -1  # scalarize the independent stage-1 constant XOR
 HASH_VECTOR_FORCE_SET: frozenset[tuple[int, int]] = frozenset()
+SCALAR_HASH1_SHIFT_SET: frozenset[tuple[int, int]] = frozenset()
 _BASE_SCALAR = {(group, (1 - group) % 4) for group in range(21)}
 _SCALAR_CANDIDATES = [
     (group, rnd)
@@ -830,6 +1067,9 @@ class KernelBuilder:
         )
 
         # Mirrored local-path address: mem_addr = 2**(depth+1) + 5 - mirror.
+        # The normal relocated tree starts address generation at level 4.
+        # Depth-3 gathers use a recycled dead top-tree lane for their base, so
+        # the baseline scalar-constant footprint remains unchanged.
         depth_range = range(4, 5) if OVERLAP_DEEP_ADDRESS else range(4, 11)
         depth_base = {
             d: scalar_const((1 << (d + 1)) + 5, f"depth_{d}_base")
@@ -887,6 +1127,8 @@ class KernelBuilder:
         )
 
         top_words = alloc("top_tree_words", 32)
+        depth3_base = top_words + 31
+        depth3_base_ready = [False]
         node_vec = [alloc(f"cached_node_{i}", VLEN) for i in range(31)]
         depth1_diff = -1
 
@@ -1007,6 +1249,16 @@ class KernelBuilder:
             physical_workspace_vectors
             + tuple(mirrors[5:31])
             + tuple(temps[4:31])
+            # The low mirror/temp vectors were historically reserved for the
+            # paired dispatch epilogue.  Their live ranges are tracked by the
+            # same allocator below, so they are safe spill colors whenever
+            # that epilogue is not simultaneously live.  Exposing them here
+            # materially enlarges the color pool for aggressive SSA lowering
+            # (especially independent memory-constant address streams)
+            # without changing the architectural scratch footprint.
+            + tuple(mirrors[:5])
+            + tuple(temps[:4])
+            + tuple(values)
         )
 
         # Virtual addresses deliberately live far outside the architectural
@@ -1024,6 +1276,27 @@ class KernelBuilder:
             virtual_vectors[base] = name
             return base
 
+        round_temp_virtuals: dict[tuple[int, int], int] = {}
+
+        def round_temp_register(state: int, gg: int, rnd: int) -> int:
+            """Return the short-lived temporary for one software round.
+
+            The architectural ``temps[state]`` is still used by setup and by
+            the paired branch epilogue.  Late rounds can instead use a fresh
+            virtual vector: all uses in a round remain connected, while the
+            next round no longer inherits a false physical WAW edge from a
+            deep gather.  Group 31 is excluded because its paired dispatch
+            intentionally owns the low scratch vectors after the final hash.
+            """
+            if not SSA_ROUND_TEMPS or rnd < 11 or gg == BRANCH_FINAL_GROUP:
+                return temps[state]
+            key = (gg, rnd)
+            register = round_temp_virtuals.get(key)
+            if register is None:
+                register = virtual_vector(f"ssa_round_temp_{gg}_{rnd}")
+                round_temp_virtuals[key] = register
+            return register
+
         if MADD_FIRST_DEPTH1 or MADD_FIRST_DEPTH1_SET:
             # This pair difference is live only through selected first-
             # traversal depth-1 lookups.  Give it an SSA name and let the
@@ -1039,7 +1312,13 @@ class KernelBuilder:
         final_c5_broadcast = [-1]
         valu_final_cache_scratch = {
             group: virtual_vector(f"valu_final_cache_scratch_{group}")
-            for group in VALU_FINAL_CACHE_SET | VALU_FINAL_CACHE_COUNTS.keys()
+            for group in (
+                VALU_FINAL_CACHE_SET
+                | VALU_FINAL_CACHE_COUNTS.keys()
+                | {group for group, _ in SCALAR_FLOW_FINAL_DIFF_SET}
+                | {group for group, _ in SCALAR_FLOW_FINAL_MADD_SET}
+                | {group for group, _ in VALU_LEVEL4_CACHE_COUNTS}
+            )
         }
         ssa_level4_pools: dict[tuple[int, int], int] = {}
         ssa_level4_conditions: dict[tuple[int, int], int] = {}
@@ -1154,6 +1433,16 @@ class KernelBuilder:
                 tag=tag,
             )
 
+        def emit_flow_immediate(dest: int, value: int, tag: str) -> int:
+            """Materialize an immediate on FLOW regardless of tag policy."""
+            return graph.emit(
+                "flow",
+                ("add_imm", dest, s_one, (value - 1) & 0xFFFFFFFF),
+                reads=(s_one,),
+                writes=(dest,),
+                tag=tag,
+            )
+
         def emit_vbroadcast(
             dest: int,
             src: int,
@@ -1212,6 +1501,32 @@ class KernelBuilder:
                 group=group,
                 round=round,
                 identity=identity,
+            )
+
+        def emit_scalar_madd(
+            dest: int,
+            a: int,
+            b: int,
+            c: int,
+            *,
+            tag: str,
+            group: int = -1,
+            round: int = -1,
+        ) -> None:
+            """Lower a vector multiply-add to eight scalar ALU pairs.
+
+            The scalar ALU has no fused multiply-add opcode.  Keep the
+            intermediate in the destination lanes, exactly mirroring
+            ``dest = a*b + c`` while exposing the compiler's real ALU
+            capacity cost (16 operations per vector MADD).
+            """
+            emit_scalarized(
+                "*", dest, a, b, b_scalar=True,
+                tag=f"{tag}_mul", group=group, round=round,
+            )
+            emit_scalarized(
+                "+", dest, dest, c, b_scalar=True,
+                tag=f"{tag}_add", group=group, round=round,
             )
 
         def emit_scalarized(
@@ -1359,6 +1674,7 @@ class KernelBuilder:
         memory_constant_previous_load: dict[tuple[int, ...], int] = {}
         memory_constant_external_deps: tuple[tuple[int, int], ...] = ()
         memory_constant_materializations = 0
+        deferred_memory_vector_constants: list[tuple[int, int, str]] = []
 
         def initialize_memory_constant_buffer(
             addresses: tuple[int, ...],
@@ -1532,9 +1848,19 @@ class KernelBuilder:
             if addr != s_one:
                 if addr in derived_depth_addresses or addr in derived_misc_addresses:
                     continue
+                elif value in LOAD_POWER_SET:
+                    # A selected power is deliberately kept off the serial
+                    # ALU doubling chain.  Loading it costs one LOAD slot but
+                    # removes the ALU->scalar->broadcast dependency from all
+                    # vector consumers of that constant.
+                    emit_const(addr, value, "scalar_power_load")
                 elif (
                     value in (2, 4, 8, 16)
-                    and value.bit_length() - 1 <= ALU_DERIVED_POWER_COUNT
+                    and (
+                        value in ALU_DERIVED_POWER_SET
+                        if ALU_DERIVED_POWER_SET
+                        else value.bit_length() - 1 <= ALU_DERIVED_POWER_COUNT
+                    )
                 ):
                     half = scalar_constants[value // 2]
                     graph.emit(
@@ -1548,7 +1874,19 @@ class KernelBuilder:
                     constant_index < FLOW_SCALAR_CONSTANT_COUNT
                     or constant_index in FLOW_SCALAR_CONSTANT_SET
                 ):
-                    if constant_index in FLOW_ZERO_BASE_CONSTANT_SET:
+                    # A zero-base add_imm is normally the cheapest way to
+                    # materialize small setup constants: the simulator's
+                    # scratch starts at zero, so FLOW can form the value in
+                    # one packet without spending a LOAD slot.  Near the
+                    # H=959 frontier, however, the setup FLOW packets are on
+                    # the negative-start cut while LOAD still has headroom.
+                    # Treating ``scalar_zero_immediate`` as a loadable tag
+                    # lets the target compiler retime exactly those constants
+                    # without changing the value or the steady-state graph.
+                    if (
+                        constant_index in FLOW_ZERO_BASE_CONSTANT_SET
+                        and "scalar_zero_immediate" not in LOAD_IMMEDIATE_TAGS
+                    ):
                         graph.emit(
                             "flow",
                             ("add_imm", addr, addr, value),
@@ -1556,8 +1894,22 @@ class KernelBuilder:
                             writes=(addr,),
                             tag="scalar_zero_immediate",
                         )
+                    elif "scalar_zero_immediate" in LOAD_IMMEDIATE_TAGS:
+                        emit_const(addr, value, "scalar_zero_immediate")
+                    elif (
+                        "scalar_immediate" in LOAD_IMMEDIATE_TAGS
+                        and (
+                            not LOAD_IMMEDIATE_SCALAR_CONSTANT_SET
+                            or constant_index
+                            in LOAD_IMMEDIATE_SCALAR_CONSTANT_SET
+                        )
+                    ):
+                        emit_const(addr, value, "scalar_immediate")
                     else:
-                        emit_immediate(addr, value, "scalar_immediate")
+                        # A non-empty scalar set is an explicit split policy:
+                        # the remaining selected FLOW constants must bypass
+                        # the tag-wide LOAD_IMMEDIATE_TAGS test.
+                        emit_flow_immediate(addr, value, "scalar_immediate")
                 else:
                     emit_const(addr, value, "scalar_constant")
         if "nineteen" in ALU_DERIVED_MISC_SET:
@@ -1694,13 +2046,23 @@ class KernelBuilder:
         )
         for value, dest in ordered_vector_constants:
             name = vector_constant_names[value]
+            if name == "v_eight" and ELIDE_V_EIGHT_BROADCAST:
+                # Some scalarized level-4 variants never read the eighth
+                # condition mask.  The register remains reserved for ABI
+                # stability, but its broadcast is genuinely dead.
+                continue
             if name in DIRECT_LOAD_VECTOR_CONSTANT_SET:
                 emit_direct_vector_constant(dest, value, "constant")
             elif name in MEMORY_VECTOR_CONSTANT_SET:
-                emit_memory_vector_constant(
-                    dest,
-                    scalar_constants[value],
-                    "constant",
+                # The scored kernel intentionally reuses the already-dead
+                # top-tree words as Store->Load broadcast buffers.  General
+                # vector constants are discovered before those four top-tree
+                # loads are emitted, so defer their materialization until the
+                # old memory contents have been consumed.  Their consumers
+                # are emitted later and the ordinary register dependencies
+                # retain the required ordering.
+                deferred_memory_vector_constants.append(
+                    (dest, scalar_constants[value], "constant")
                 )
             else:
                 emit_vbroadcast(
@@ -1874,6 +2236,9 @@ class KernelBuilder:
                 (load, 0) for load in top_loads
             )
 
+        for dest, scalar_source, tag in deferred_memory_vector_constants:
+            emit_memory_vector_constant(dest, scalar_source, tag)
+
         # The direct-path variant preserves one raw scalar root and broadcasts
         # its transformed form.  This removes the global round-0/round-11 root
         # barrier and lets all sixteen rounds form one software wavefront.
@@ -1919,6 +2284,13 @@ class KernelBuilder:
                         )
                     else:
                         for lane in range(VLEN):
+                            # The fixed workload has cached tree nodes 0..30;
+                            # the final word of the four-word staging block is
+                            # node 31 and is never read by the kernel.  Do not
+                            # spend an ALU issue slot transforming that dead
+                            # staging word.
+                            if chunk == 3 and lane == VLEN - 1:
+                                continue
                             word = top_words + chunk * VLEN + lane
                             graph.emit(
                                 "alu",
@@ -2730,7 +3102,7 @@ class KernelBuilder:
             for group in sorted(PAIRED_DIRECT_BRANCH_LOOKUPS)
             for lanes in PAIRED_DIRECT_BRANCH_LOOKUPS[group]
         )
-        if len(paired_direct_records) > 4:
+        if len(paired_direct_records) > 4 and not ELIDE_DIRECT_BRANCH_TARGET:
             raise ValueError("paired direct lookup supports at most four pairs")
         paired_direct_index = {
             record: index for index, record in enumerate(paired_direct_records)
@@ -2751,14 +3123,36 @@ class KernelBuilder:
                 tag="level4_pair_diff",
             )
 
+        # In SSA level-4 mode these two original compact-mux registers are
+        # dead after relocation setup: each real lookup has its own virtual
+        # pool/condition value.  Reuse them as persistent finite-difference
+        # coefficients instead of extending the already-full scratch image
+        # or relying on a long-lived virtual-register color.
+        level4_static_upper0_coefficients: tuple[int, int] | None = None
+
+        if (
+            LEVEL4_STATIC_UPPER0_MADD_SET
+            and LEVEL4_STATIC_UPPER0_ALU_COEFF_SET
+        ):
+            raise ValueError(
+                "choose either vector or ALU coefficients for the level-4 "
+                "static upper0 lowering, not both"
+            )
+
         def select_cached(
-            depth: int, state: int, workspace: int, gg: int, rnd: int
+            depth: int,
+            state: int,
+            workspace: int,
+            gg: int,
+            rnd: int,
+            *,
+            temp_reg: int | None = None,
         ) -> None:
             width = 1 << depth
             start = width - 1
             # Mirror offset 0 names the actual rightmost node.
             leaves = [node_vec[start + width - 1 - i] for i in range(width)]
-            temp = temps[state]
+            temp = temps[state] if temp_reg is None else temp_reg
             workspace_bits, workspace_spill = workspace_registers(
                 workspace, gg, rnd
             )
@@ -2807,6 +3201,48 @@ class KernelBuilder:
                         group=gg,
                         round=rnd,
                     )
+                elif rnd >= 11 and gg in MADD_LATE_DEPTH1_SET:
+                    # The late depth-1 pair has the same affine identity as
+                    # its first-path counterpart.  Keep the difference in
+                    # the per-lookup spill and consume it immediately, so
+                    # this is exactly two VALU slots for one FLOW slot.
+                    emit_valu(
+                        "-",
+                        workspace_spill[0],
+                        leaves[1],
+                        leaves[0],
+                        tag="late_depth1_static_difference",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_madd(
+                        temp,
+                        condition,
+                        workspace_spill[0],
+                        leaves[0],
+                        tag="late_depth1_static_select",
+                        group=gg,
+                        round=rnd,
+                    )
+                elif rnd >= 11 and gg in SCALAR_LATE_DEPTH1_SET:
+                    emit_scalarized(
+                        "-",
+                        workspace_spill[0],
+                        leaves[1],
+                        leaves[0],
+                        tag="late_depth1_scalar_difference",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_scalar_madd(
+                        temp,
+                        condition,
+                        workspace_spill[0],
+                        leaves[0],
+                        tag="late_depth1_scalar_select",
+                        group=gg,
+                        round=rnd,
+                    )
                 else:
                     emit_vselect(
                         temp, condition, leaves[1], leaves[0], group=gg, round=rnd
@@ -2823,14 +3259,34 @@ class KernelBuilder:
                     # whole hash round before p1, so both half selections can
                     # execute speculatively while the next parity is still in
                     # flight; only the final select waits for p1.
-                    emit_vselect(
-                        temp,
-                        condition_0,
-                        leaves[2],
-                        leaves[0],
-                        group=gg,
-                        round=rnd,
-                    )
+                    if (gg, rnd) in VALU_DEPTH2_FIRST_SET:
+                        emit_valu(
+                            "-",
+                            mux[1],
+                            leaves[2],
+                            leaves[0],
+                            tag="depth2_static_difference",
+                            group=gg,
+                            round=rnd,
+                        )
+                        emit_madd(
+                            temp,
+                            condition_0,
+                            mux[1],
+                            leaves[0],
+                            tag="depth2_static_select",
+                            group=gg,
+                            round=rnd,
+                        )
+                    else:
+                        emit_vselect(
+                            temp,
+                            condition_0,
+                            leaves[2],
+                            leaves[0],
+                            group=gg,
+                            round=rnd,
+                        )
                     emit_vselect(
                         mux[0],
                         condition_0,
@@ -2839,27 +3295,53 @@ class KernelBuilder:
                         group=gg,
                         round=rnd,
                     )
-                    emit_vselect(
-                        temp,
-                        condition_1,
-                        mux[0],
-                        temp,
-                        group=gg,
-                        round=rnd,
-                    )
+                    if (gg, rnd) in VALU_DEPTH2_FINAL_SET:
+                        # The final depth-2 select is affine in its bit
+                        # predicate.  Reuse the just-produced high half as
+                        # the difference scratch; it is dead after the
+                        # select and therefore needs no new vector register.
+                        emit_valu(
+                            "-",
+                            mux[0],
+                            mux[0],
+                            temp,
+                            tag="depth2_static_difference",
+                            group=gg,
+                            round=rnd,
+                        )
+                        emit_madd(
+                            temp,
+                            condition_1,
+                            mux[0],
+                            temp,
+                            tag="depth2_static_select",
+                            group=gg,
+                            round=rnd,
+                        )
+                    else:
+                        emit_vselect(
+                            temp,
+                            condition_1,
+                            mux[0],
+                            temp,
+                            group=gg,
+                            round=rnd,
+                        )
                     return
                 else:
                     condition_1 = workspace_bits[1]
                     condition_0 = workspace_bits[0]
                 if saved_path is None and (DIRECT_MIRROR_PATH or rnd >= 11):
-                    for dest, vector_mask, scalar_mask, tag in (
+                    for path_bit, dest, vector_mask, scalar_mask, tag in (
                         (
+                            1,
                             workspace_bits[1],
                             v_one,
                             s_one,
                             "second_path_condition_1",
                         ),
                         (
+                            0,
                             workspace_bits[0],
                             v_two,
                             s_two,
@@ -2869,6 +3351,7 @@ class KernelBuilder:
                         if (
                             gg in SCALAR_SECOND_PATH_GROUPS
                             or gg in SCALAR_SECOND_PATH_DEPTH2_GROUPS
+                            or (gg, rnd, path_bit) in SCALAR_TREE_CONDITION_SET
                         ):
                             emit_scalarized(
                                 "&",
@@ -2890,9 +3373,29 @@ class KernelBuilder:
                                 group=gg,
                                 round=rnd,
                             )
-                emit_vselect(
-                    temp, condition_1, leaves[1], leaves[0], group=gg, round=rnd
-                )
+                if (gg, rnd) in VALU_DEPTH2_FIRST_SET:
+                    emit_valu(
+                        "-",
+                        workspace_spill[0],
+                        leaves[1],
+                        leaves[0],
+                        tag="depth2_static_difference",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_madd(
+                        temp,
+                        condition_1,
+                        workspace_spill[0],
+                        leaves[0],
+                        tag="depth2_static_select",
+                        group=gg,
+                        round=rnd,
+                    )
+                else:
+                    emit_vselect(
+                        temp, condition_1, leaves[1], leaves[0], group=gg, round=rnd
+                    )
                 emit_vselect(
                     workspace_spill[0],
                     condition_1,
@@ -2901,14 +3404,34 @@ class KernelBuilder:
                     group=gg,
                     round=rnd,
                 )
-                emit_vselect(
-                    temp,
-                    condition_0,
-                    workspace_spill[0],
-                    temp,
-                    group=gg,
-                    round=rnd,
-                )
+                if (gg, rnd) in VALU_DEPTH2_FINAL_SET:
+                    emit_valu(
+                        "-",
+                        workspace_spill[0],
+                        workspace_spill[0],
+                        temp,
+                        tag="depth2_static_difference",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_madd(
+                        temp,
+                        condition_0,
+                        workspace_spill[0],
+                        temp,
+                        tag="depth2_static_select",
+                        group=gg,
+                        round=rnd,
+                    )
+                else:
+                    emit_vselect(
+                        temp,
+                        condition_0,
+                        workspace_spill[0],
+                        temp,
+                        group=gg,
+                        round=rnd,
+                    )
                 return
 
             if depth != 3:
@@ -2944,9 +3467,29 @@ class KernelBuilder:
                 # the tree: issue four p0 selections as soon as round 11
                 # finishes, collapse them with p1 after round 12, and leave
                 # only one select dependent on round-13 parity p2.
-                emit_vselect(
-                    temp, condition_0, leaves[4], leaves[0], group=gg, round=rnd
-                )
+                if (gg, rnd) in VALU_DEPTH3_FIRST_SET:
+                    emit_valu(
+                        "-",
+                        mux[0],
+                        leaves[4],
+                        leaves[0],
+                        tag="depth3_static_difference",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_madd(
+                        temp,
+                        condition_0,
+                        mux[0],
+                        leaves[0],
+                        tag="depth3_static_select",
+                        group=gg,
+                        round=rnd,
+                    )
+                else:
+                    emit_vselect(
+                        temp, condition_0, leaves[4], leaves[0], group=gg, round=rnd
+                    )
                 emit_vselect(
                     mux[0],
                     condition_0,
@@ -2987,14 +3530,72 @@ class KernelBuilder:
                     group=gg,
                     round=rnd,
                 )
-                emit_vselect(
-                    temp,
-                    condition_2,
-                    mux[3],
-                    temp,
-                    group=gg,
-                    round=rnd,
-                )
+                if (gg, rnd) in SCALAR_DEPTH3_FULL_SET:
+                    emit_scalarized(
+                        "-",
+                        mux[3],
+                        mux[3],
+                        temp,
+                        tag="depth3_scalar_difference",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_scalar_madd(
+                        temp,
+                        condition_2,
+                        mux[3],
+                        temp,
+                        tag="depth3_scalar_select",
+                        group=gg,
+                        round=rnd,
+                    )
+                elif (gg, rnd) in SCALAR_DEPTH3_FINAL_SET:
+                    emit_scalarized(
+                        "-",
+                        mux[3],
+                        mux[3],
+                        temp,
+                        tag="depth3_scalar_difference",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_madd(
+                        temp,
+                        condition_2,
+                        mux[3],
+                        temp,
+                        tag="depth3_static_select",
+                        group=gg,
+                        round=rnd,
+                    )
+                elif (gg, rnd) in VALU_DEPTH3_FINAL_SET:
+                    emit_valu(
+                        "-",
+                        mux[3],
+                        mux[3],
+                        temp,
+                        tag="depth3_static_difference",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_madd(
+                        temp,
+                        condition_2,
+                        mux[3],
+                        temp,
+                        tag="depth3_static_select",
+                        group=gg,
+                        round=rnd,
+                    )
+                else:
+                    emit_vselect(
+                        temp,
+                        condition_2,
+                        mux[3],
+                        temp,
+                        group=gg,
+                        round=rnd,
+                    )
                 return
             else:
                 condition_2, condition_1, condition_0 = (
@@ -3003,20 +3604,23 @@ class KernelBuilder:
                     workspace_bits[0],
                 )
             if saved_path is None and (DIRECT_MIRROR_PATH or rnd >= 11):
-                for dest, vector_mask, scalar_mask, tag in (
+                for path_bit, dest, vector_mask, scalar_mask, tag in (
                     (
+                        2,
                         workspace_bits[2],
                         v_one,
                         s_one,
                         "second_path_condition_2",
                     ),
                     (
+                        1,
                         workspace_bits[1],
                         v_two,
                         s_two,
                         "second_path_condition_1",
                     ),
                     (
+                        0,
                         workspace_bits[0],
                         v_four,
                         s_four,
@@ -3026,6 +3630,8 @@ class KernelBuilder:
                     if (
                         gg in SCALAR_SECOND_PATH_GROUPS
                         or gg in SCALAR_SECOND_PATH_DEPTH3_GROUPS
+                        or (gg, rnd) in SCALAR_SECOND_PATH_DEPTH3_SET
+                        or (gg, rnd, path_bit) in SCALAR_TREE_CONDITION_SET
                     ):
                         emit_scalarized(
                             "&",
@@ -3052,13 +3658,96 @@ class KernelBuilder:
             # bottom pair has consumed bit 2, that register itself becomes a
             # legal destination, reducing the live mux stack to one spill.
             spill = workspace_spill[0]
-            emit_vselect(temp, condition_2, leaves[1], leaves[0], group=gg, round=rnd)
+            if (gg, rnd) in VALU_DEPTH3_FIRST_SET:
+                emit_valu(
+                    "-",
+                    spill,
+                    leaves[1],
+                    leaves[0],
+                    tag="depth3_static_difference",
+                    group=gg,
+                    round=rnd,
+                )
+                emit_madd(
+                    temp,
+                    condition_2,
+                    spill,
+                    leaves[0],
+                    tag="depth3_static_select",
+                    group=gg,
+                    round=rnd,
+                )
+            else:
+                emit_vselect(temp, condition_2, leaves[1], leaves[0], group=gg, round=rnd)
             emit_vselect(spill, condition_2, leaves[3], leaves[2], group=gg, round=rnd)
             emit_vselect(temp, condition_1, spill, temp, group=gg, round=rnd)
             emit_vselect(spill, condition_2, leaves[5], leaves[4], group=gg, round=rnd)
             emit_vselect(condition_2, condition_2, leaves[7], leaves[6], group=gg, round=rnd)
             emit_vselect(spill, condition_1, condition_2, spill, group=gg, round=rnd)
-            emit_vselect(temp, condition_0, spill, temp, group=gg, round=rnd)
+            if (
+                (gg, rnd) in VALU_DEPTH3_FINAL_SET
+                or (gg, rnd) in SCALAR_DEPTH3_FINAL_SET
+                or (gg, rnd) in SCALAR_DEPTH3_FULL_SET
+            ):
+                if (gg, rnd) in SCALAR_DEPTH3_FULL_SET:
+                    emit_scalarized(
+                        "-",
+                        spill,
+                        spill,
+                        temp,
+                        tag="depth3_scalar_difference",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_scalar_madd(
+                        temp,
+                        condition_0,
+                        spill,
+                        temp,
+                        tag="depth3_scalar_select",
+                        group=gg,
+                        round=rnd,
+                    )
+                elif (gg, rnd) in SCALAR_DEPTH3_FINAL_SET:
+                    emit_scalarized(
+                        "-",
+                        spill,
+                        spill,
+                        temp,
+                        tag="depth3_scalar_difference",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_madd(
+                        temp,
+                        condition_0,
+                        spill,
+                        temp,
+                        tag="depth3_static_select",
+                        group=gg,
+                        round=rnd,
+                    )
+                else:
+                    emit_valu(
+                        "-",
+                        spill,
+                        spill,
+                        temp,
+                        tag="depth3_static_difference",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_madd(
+                        temp,
+                        condition_0,
+                        spill,
+                        temp,
+                        tag="depth3_static_select",
+                        group=gg,
+                        round=rnd,
+                    )
+            else:
+                emit_vselect(temp, condition_0, spill, temp, group=gg, round=rnd)
 
         def select_level4_hybrid(
             state: int,
@@ -3067,7 +3756,9 @@ class KernelBuilder:
             rnd: int,
             *,
             prepared: bool = False,
+            temp_reg: int | None = None,
         ) -> None:
+            nonlocal level4_static_upper0_coefficients
             workspace_bits, workspace_spill = workspace_registers(
                 workspace, gg, rnd
             )
@@ -3101,13 +3792,16 @@ class KernelBuilder:
             elif saved_level4 is not None:
                 pass
             elif DIRECT_MIRROR_PATH or rnd >= 11:
-                for dest, vector_mask, scalar_mask, tag in (
-                    (cond, v_one, s_one, "level4_condition_3"),
-                    (level4_condition_2, v_two, s_two, "level4_condition_2"),
-                    (workspace_bits[1], v_four, s_four, "level4_condition_1"),
-                    (workspace_bits[0], v_eight, s_eight, "level4_condition_0"),
+                for path_bit, dest, vector_mask, scalar_mask, tag in (
+                    (3, cond, v_one, s_one, "level4_condition_3"),
+                    (2, level4_condition_2, v_two, s_two, "level4_condition_2"),
+                    (1, workspace_bits[1], v_four, s_four, "level4_condition_1"),
+                    (0, workspace_bits[0], v_eight, s_eight, "level4_condition_0"),
                 ):
-                    if gg in SCALAR_LEVEL4_CONDITION_GROUPS:
+                    if (
+                        gg in SCALAR_LEVEL4_CONDITION_GROUPS
+                        or (gg, rnd, path_bit) in SCALAR_TREE_CONDITION_SET
+                    ):
                         emit_scalarized(
                             "&",
                             dest,
@@ -3152,7 +3846,7 @@ class KernelBuilder:
             # Evaluate the 16-leaf mux depth-first.  The saved p2/p1/p0 bits
             # are already valid conditions, and the p3 condition becomes the
             # final pair's destination after its last read.
-            a = temps[state]
+            a = temps[state] if temp_reg is None else temp_reg
             b = workspace_spill[0]
             c = active_pool[0]
             c3 = active_condition
@@ -3198,12 +3892,13 @@ class KernelBuilder:
                 select_index = upper_select_index
                 valu_count = (
                     7
-                    if gg in VALU_FINAL_CACHE_SET
+                    if rnd == rounds - 1 and gg in VALU_FINAL_CACHE_SET
                     else VALU_FINAL_CACHE_COUNTS.get(gg, 0)
+                    if rnd == rounds - 1
+                    else VALU_LEVEL4_CACHE_COUNTS.get((gg, rnd), 0)
                 )
                 use_valu = (
-                    rnd == rounds - 1
-                    and upper_select_index < valu_count
+                    upper_select_index < valu_count
                 )
                 upper_select_index += 1
                 if use_valu:
@@ -3242,6 +3937,54 @@ class KernelBuilder:
                         round=rnd,
                         identity=("level4_upper_select", select_index),
                     )
+                elif (gg, select_index) in SCALAR_FLOW_FINAL_MADD_SET:
+                    # Fully scalar affine lowering: no FLOW selector and no
+                    # VALU MADD remain.  ``emit_scalar_madd`` preserves the
+                    # lane-wise condition*diff+no semantics exactly.
+                    scratch = valu_final_cache_scratch[gg]
+                    emit_scalarized(
+                        "-",
+                        scratch,
+                        yes,
+                        no,
+                        tag="level4_scalar_flow_select_difference",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_scalar_madd(
+                        dest,
+                        condition,
+                        scratch,
+                        no,
+                        tag="level4_scalar_flow_select",
+                        group=gg,
+                        round=rnd,
+                    )
+                elif (gg, select_index) in SCALAR_FLOW_FINAL_DIFF_SET:
+                    # The scalar difference is the same affine lowering used
+                    # for a VALU selector above.  Keeping the final affine
+                    # merge as one vector MADD preserves the selector's
+                    # semantics while replacing a FLOW slot with ALU work.
+                    scratch = valu_final_cache_scratch[gg]
+                    emit_scalarized(
+                        "-",
+                        scratch,
+                        yes,
+                        no,
+                        tag="level4_scalar_flow_select_difference",
+                        group=gg,
+                        round=rnd,
+                    )
+                    emit_madd(
+                        dest,
+                        condition,
+                        scratch,
+                        no,
+                        tag="level4_scalar_flow_select",
+                        group=gg,
+                        round=rnd,
+                        identity=("level4_scalar_flow_upper_select", select_index),
+                    )
                 else:
                     emit_vselect(
                         dest,
@@ -3253,22 +3996,163 @@ class KernelBuilder:
                         identity=("level4_upper_select", select_index),
                     )
 
-            pair(a, 0)
-            pair(b, 1)
-            upper_select(a, c2, b, a)
-            pair(b, 2)
-            pair(c, 3)
-            upper_select(b, c2, c, b)
-            upper_select(a, c1, b, a)
+            static_upper0 = (
+                (gg, rnd) in LEVEL4_STATIC_UPPER0_MADD_SET
+                or (gg, rnd) in LEVEL4_STATIC_UPPER0_ALU_COEFF_SET
+            )
+            if (gg, rnd) in SSA_LEVEL4_FULL_TREE_SET:
+                if static_upper0:
+                    raise ValueError(
+                        "the level-4 static upper0 lowering is incompatible "
+                        "with SSA_LEVEL4_FULL_TREE_SET for the same lookup"
+                    )
+                # This is the same selector network as the compact sequence
+                # below, expressed in SSA form.  In particular the operand
+                # ordering of every upper select remains ``yes, no``.  Do not
+                # reuse ``a``, ``b``, or ``c`` for intermediates here: their
+                # reuse is precisely what inserts the Flow-to-VALU WAR edges
+                # that this targeted lowering is intended to remove.
+                pair_values = [
+                    virtual_vector(f"ssa_level4_pair_{gg}_{rnd}_{pair_index}")
+                    for pair_index in range(8)
+                ]
+                for pair_index, dest in enumerate(pair_values):
+                    pair(dest, pair_index)
 
-            pair(b, 4)
-            pair(c, 5)
-            upper_select(b, c2, c, b)
-            pair(c, 6)
-            pair(c3, 7)
-            upper_select(c, c2, c3, c)
-            upper_select(b, c1, c, b)
-            upper_select(a, c0, b, a)
+                lower_left = virtual_vector(
+                    f"ssa_level4_lower_left_{gg}_{rnd}"
+                )
+                lower_right = virtual_vector(
+                    f"ssa_level4_lower_right_{gg}_{rnd}"
+                )
+                upper_select(
+                    lower_left, c2, pair_values[1], pair_values[0]
+                )
+                upper_select(
+                    lower_right, c2, pair_values[3], pair_values[2]
+                )
+                left_half = virtual_vector(f"ssa_level4_left_{gg}_{rnd}")
+                upper_select(left_half, c1, lower_right, lower_left)
+
+                upper_lower_left = virtual_vector(
+                    f"ssa_level4_upper_lower_left_{gg}_{rnd}"
+                )
+                upper_lower_right = virtual_vector(
+                    f"ssa_level4_upper_lower_right_{gg}_{rnd}"
+                )
+                upper_select(
+                    upper_lower_left, c2, pair_values[5], pair_values[4]
+                )
+                upper_select(
+                    upper_lower_right, c2, pair_values[7], pair_values[6]
+                )
+                right_half = virtual_vector(f"ssa_level4_right_{gg}_{rnd}")
+                upper_select(right_half, c1, upper_lower_right, upper_lower_left)
+                upper_select(a, c0, right_half, left_half)
+            else:
+                pair(a, 0)
+                if static_upper0:
+                    if not SSA_LEVEL4_WORKSPACES:
+                        raise ValueError(
+                            "the level-4 static upper0 lowering requires "
+                            "SSA_LEVEL4_WORKSPACES=1"
+                        )
+                    coefficients = level4_static_upper0_coefficients
+                    if coefficients is None:
+                        base = level4_pool
+                        delta = level4_condition
+                        if LEVEL4_STATIC_UPPER0_ALU_COEFF_SET:
+                            # These vectors are immutable finite differences
+                            # of cached leaves.  Scalarize only this one-time
+                            # setup: the later conditional affine evaluation
+                            # remains a single VALU MADD per selected lookup.
+                            emit_scalarized(
+                                "-",
+                                base,
+                                level4_reversed[2],
+                                level4_reversed[0],
+                                tag="level4_static_upper0_base_scalar",
+                                group=gg,
+                                round=rnd,
+                            )
+                            emit_scalarized(
+                                "-",
+                                delta,
+                                level4_diff[1],
+                                level4_diff[0],
+                                tag="level4_static_upper0_delta_scalar",
+                                group=gg,
+                                round=rnd,
+                            )
+                        else:
+                            emit_valu(
+                                "-",
+                                base,
+                                level4_reversed[2],
+                                level4_reversed[0],
+                                tag="level4_static_upper0_base",
+                                group=gg,
+                                round=rnd,
+                            )
+                            emit_valu(
+                                "-",
+                                delta,
+                                level4_diff[1],
+                                level4_diff[0],
+                                tag="level4_static_upper0_delta",
+                                group=gg,
+                                round=rnd,
+                            )
+                        coefficients = (base, delta)
+                        level4_static_upper0_coefficients = coefficients
+                    level4_static_upper0_base, level4_static_upper0_delta = (
+                        coefficients
+                    )
+                    # ``b`` is a short-lived coefficient, not the ordinary
+                    # pair-1 result.  This exactly evaluates
+                    # ``pair0 + c2 * (pair1 - pair0)`` while avoiding the
+                    # unary Flow select; the second-order difference was
+                    # precomputed from the immutable cached leaves above.
+                    emit_madd(
+                        b,
+                        c3,
+                        level4_static_upper0_delta,
+                        level4_static_upper0_base,
+                        tag="level4_static_upper0_coefficient",
+                        group=gg,
+                        round=rnd,
+                        identity=("level4_static_upper0_coefficient",),
+                    )
+                    emit_madd(
+                        a,
+                        c2,
+                        b,
+                        a,
+                        tag="level4_static_upper0_select",
+                        group=gg,
+                        round=rnd,
+                        identity=("level4_static_upper0_select",),
+                    )
+                    # The ordinary first upper mux has been consumed, so
+                    # subsequent upper nodes retain their original indices
+                    # for any final-cache lowering policy.
+                    upper_select_index = 1
+                else:
+                    pair(b, 1)
+                    upper_select(a, c2, b, a)
+                pair(b, 2)
+                pair(c, 3)
+                upper_select(b, c2, c, b)
+                upper_select(a, c1, b, a)
+
+                pair(b, 4)
+                pair(c, 5)
+                upper_select(b, c2, c, b)
+                pair(c, 6)
+                pair(c3, 7)
+                upper_select(c, c2, c3, c)
+                upper_select(b, c1, c, b)
+                upper_select(a, c0, b, a)
 
         direct_global_previous_target = [-1]
         delayed_pair_previous_barrier: list[int] = []
@@ -3290,9 +4174,16 @@ class KernelBuilder:
                 tag="delayed_pair_table_stride",
             )
 
-        def gather_node(depth: int, state: int, gg: int, rnd: int) -> None:
+        def gather_node(
+            depth: int,
+            state: int,
+            gg: int,
+            rnd: int,
+            *,
+            temp_reg: int | None = None,
+        ) -> None:
             mirror = mirrors[state]
-            temp = temps[state]
+            temp = temps[state] if temp_reg is None else temp_reg
             value = values[state]
             branch_lanes = (
                 frozenset(range(VLEN))
@@ -3402,13 +4293,23 @@ class KernelBuilder:
             else:
                 # Address generation is intentionally scalar: eight ALU slots
                 # are cheaper than a scarce VALU slot in steady state.
+                base = depth_base.get(depth, -1)
+                if depth == 3:
+                    # The top-tree staging block is dead after setup; recycle
+                    # its final scalar lane for the level-3 address base.  A
+                    # single constant materialization is shared by all opted-
+                    # in depth-3 gathers.
+                    if not depth3_base_ready[0]:
+                        emit_const(depth3_base, (1 << 4) + 5, "depth3_gather_base")
+                        depth3_base_ready[0] = True
+                    base = depth3_base
                 for lane in range(VLEN):
                     if lane in skipped_lanes:
                         continue
                     graph.emit(
                         "alu",
-                        ("-", temp + lane, depth_base[depth], mirror + lane),
-                        reads=(depth_base[depth], mirror + lane),
+                        ("-", temp + lane, base, mirror + lane),
+                        reads=(base, mirror + lane),
                         writes=(temp + lane,),
                         tag="gather_address",
                         group=gg,
@@ -3643,19 +4544,27 @@ class KernelBuilder:
                         group=gg,
                         round=rnd,
                     )
-                    previous_target = graph.emit(
-                        "flow",
-                        (
-                            "add_imm",
-                            mirror + lane,
-                            mirror + lane,
-                            DIRECT_TARGET_SENTINEL,
-                        ),
-                        deps=((copy, 0),),
-                        tag="direct_branch_target",
-                        group=gg,
-                        round=rnd,
-                    )
+                    if ELIDE_DIRECT_BRANCH_TARGET:
+                        # The marker only poisoned the now-dead final mirror
+                        # lane so the table builder could discover the return
+                        # PC.  The table can return to the instruction after
+                        # ``copy`` directly; retain the copy as the ordering
+                        # token for the next chained base update.
+                        previous_target = copy
+                    else:
+                        previous_target = graph.emit(
+                            "flow",
+                            (
+                                "add_imm",
+                                mirror + lane,
+                                mirror + lane,
+                                DIRECT_TARGET_SENTINEL,
+                            ),
+                            deps=((copy, 0),),
+                            tag="direct_branch_target",
+                            group=gg,
+                            round=rnd,
+                        )
                 direct_global_previous_target[0] = previous_target
             if paired_direct_lanes:
                 previous_target = -1
@@ -3682,37 +4591,83 @@ class KernelBuilder:
                         group=gg,
                         round=rnd,
                     )
-                    prep = graph.emit(
-                        "alu",
-                        ("*", mirror + lane0, mirror + lane0, s_two),
-                        reads=(mirror + lane0, s_two),
-                        writes=(mirror + lane0,),
-                        deps=((prep, 1),),
-                        tag="paired_direct_branch_stride",
-                        group=gg,
-                        round=rnd,
+                    if ELIDE_DIRECT_BRANCH_TARGET:
+                        # The elided form uses one table bundle per combined
+                        # 8-bit index, so the index is already in instruction
+                        # units (``hi * 16 + lo``); no *4 stride is needed.
+                        pass
+                    elif FUSE_PAIRED_DIRECT_STRIDE:
+                        if s_four < 0:
+                            raise ValueError(
+                                "fused paired direct stride requires scalar four"
+                            )
+                        prep = graph.emit(
+                            "alu",
+                            ("*", mirror + lane0, mirror + lane0, s_four),
+                            reads=(mirror + lane0, s_four),
+                            writes=(mirror + lane0,),
+                            deps=((prep, 1),),
+                            tag="paired_direct_branch_stride_fused",
+                            group=gg,
+                            round=rnd,
+                        )
+                    else:
+                        prep = graph.emit(
+                            "alu",
+                            ("*", mirror + lane0, mirror + lane0, s_two),
+                            reads=(mirror + lane0, s_two),
+                            writes=(mirror + lane0,),
+                            deps=((prep, 1),),
+                            tag="paired_direct_branch_stride",
+                            group=gg,
+                            round=rnd,
+                        )
+                        prep = graph.emit(
+                            "alu",
+                            ("*", mirror + lane0, mirror + lane0, s_two),
+                            reads=(mirror + lane0, s_two),
+                            writes=(mirror + lane0,),
+                            deps=((prep, 1),),
+                            tag="paired_direct_branch_stride",
+                            group=gg,
+                            round=rnd,
+                        )
+                    use_flow_base = (
+                        PAIRED_DIRECT_BASE_ON_FLOW
+                        and record_index not in PAIRED_DIRECT_BASE_ALU_RECORDS
                     )
-                    prep = graph.emit(
-                        "alu",
-                        ("*", mirror + lane0, mirror + lane0, s_two),
-                        reads=(mirror + lane0, s_two),
-                        writes=(mirror + lane0,),
-                        deps=((prep, 1),),
-                        tag="paired_direct_branch_stride",
-                        group=gg,
-                        round=rnd,
-                    )
-                    prep = graph.emit(
-                        "alu",
-                        ("+", mirror + lane0, mirror + lane0, s_c0),
-                        reads=(mirror + lane0, s_c0),
-                        writes=(mirror + lane0,),
-                        deps=((prep, 1),),
-                        tag="paired_direct_branch_base",
-                        group=gg,
-                        round=rnd,
-                    )
-                    if record_index:
+                    if use_flow_base:
+                        prep = graph.emit(
+                            "flow",
+                            (
+                                "add_imm",
+                                mirror + lane0,
+                                mirror + lane0,
+                                DIRECT_PREP_SENTINEL,
+                            ),
+                            reads=(mirror + lane0,),
+                            writes=(mirror + lane0,),
+                            deps=((prep, 1),),
+                            tag="paired_direct_branch_base_flow",
+                            group=gg,
+                            round=rnd,
+                        )
+                    else:
+                        prep = graph.emit(
+                            "alu",
+                            ("+", mirror + lane0, mirror + lane0, s_c0),
+                            reads=(mirror + lane0, s_c0),
+                            writes=(mirror + lane0,),
+                            deps=((prep, 1),),
+                            tag="paired_direct_branch_base",
+                            group=gg,
+                            round=rnd,
+                        )
+                    if record_index and not (
+                        ELIDE_DIRECT_BRANCH_TARGET
+                        and PAIRED_DIRECT_BASE_ON_FLOW
+                        and record_index not in PAIRED_DIRECT_BASE_ALU_RECORDS
+                    ):
                         offset_register = paired_direct_offset_registers[
                             record_index
                         ]
@@ -3765,23 +4720,32 @@ class KernelBuilder:
                                 round=rnd,
                             )
                         )
-                    previous_target = graph.emit(
-                        "flow",
-                        (
-                            "add_imm",
-                            mirror + lane0,
-                            mirror + lane0,
-                            DIRECT_TARGET_SENTINEL,
-                        ),
-                        deps=tuple((copy, 0) for copy in copies),
-                        tag="paired_direct_branch_target",
-                        group=gg,
-                        round=rnd,
-                    )
+                    if ELIDE_DIRECT_BRANCH_TARGET:
+                        # See the scalar direct-branch case above.  The last
+                        # copy is a conservative serialisation token for the
+                        # next pair's shared table-base arithmetic.
+                        previous_target = copies[-1]
+                    else:
+                        previous_target = graph.emit(
+                            "flow",
+                            (
+                                "add_imm",
+                                mirror + lane0,
+                                mirror + lane0,
+                                DIRECT_TARGET_SENTINEL,
+                            ),
+                            deps=tuple((copy, 0) for copy in copies),
+                            tag="paired_direct_branch_target",
+                            group=gg,
+                            round=rnd,
+                        )
             if 4 <= depth <= PREPROCESS_MAX_DEPTH:
                 # This level was transformed once during setup.
                 pass
-            elif REVERSED_RELOCATED_TREE or (gg, rnd) in SCALAR_DYNAMIC_XOR_SET:
+            elif (
+                REVERSED_RELOCATED_TREE
+                or (gg, rnd) in SCALAR_DYNAMIC_XOR_SET
+            ) and (gg, rnd) not in VECTOR_DYNAMIC_XOR_SET:
                 emit_scalarized(
                     "^",
                     temp,
@@ -3837,8 +4801,36 @@ class KernelBuilder:
                         round=rnd,
                     )
 
-        def emit_hash(value: int, temp: int, gg: int, rnd: int) -> None:
-            emit_madd(value, value, v_m0, v_c0, tag="hash_0", group=gg, round=rnd)
+        def emit_hash(
+            value: int,
+            temp: int,
+            gg: int,
+            rnd: int,
+            *,
+            early_parity_dest: int = -1,
+            early_hash5_parity_dest: int = -1,
+            early_relocated_parity_dest: int = -1,
+        ) -> None:
+            if (gg, rnd) in SCALAR_HASH0_SET:
+                emit_scalar_madd(
+                    value,
+                    value,
+                    s_m0,
+                    s_c0,
+                    tag="hash_0_scalar",
+                    group=gg,
+                    round=rnd,
+                )
+            else:
+                emit_madd(
+                    value,
+                    value,
+                    v_m0,
+                    v_c0,
+                    tag="hash_0",
+                    group=gg,
+                    round=rnd,
+                )
 
             # Stage 1 branches read the same old value.  Emit the reader first;
             # the following in-place writer has a zero-lag WAR dependency.
@@ -3849,7 +4841,9 @@ class KernelBuilder:
                     or (gg, rnd) in HASH_SCALAR_EXTRA
                 )
             )
-            scalar_shift = scalar_hash and HASH_SCALAR_STAGE == 1
+            scalar_shift = (
+                scalar_hash and HASH_SCALAR_STAGE == 1
+            ) or (gg, rnd) in SCALAR_HASH1_SHIFT_SET
             emit_vbasic(
                 ">>",
                 temp,
@@ -3861,6 +4855,33 @@ class KernelBuilder:
                 group=gg,
                 round=rnd,
             )
+            if early_parity_dest >= 0:
+                # For the internal representation q = e ^ (e >> 16), the
+                # branch predicate is q&1.  Compute that one bit from the
+                # two stage-5 operands before the vector q join writes
+                # ``value``.  The write-after-read edge lets the scalar XOR
+                # and vector join share a cycle, while the later tree select
+                # depends only on this scalar result.
+                emit_scalarized(
+                    "^",
+                    early_parity_dest,
+                    value,
+                    temp,
+                    tag="early_hash_parity_xor",
+                    group=gg,
+                    round=rnd,
+                )
+                emit_scalarized(
+                    "&",
+                    early_parity_dest,
+                    early_parity_dest,
+                    s_one,
+                    b_scalar=True,
+                    tag="early_hash_parity",
+                    group=gg,
+                    round=rnd,
+                )
+
             emit_vbasic(
                 "^",
                 value,
@@ -3888,18 +4909,43 @@ class KernelBuilder:
             # Both branches are affine in x, so two independent MADDs compute
             # them directly and the join follows one cycle later.  This saves
             # one VALU instruction and one dependency level per hash.
-            emit_madd(
-                temp, value, v_m2, v_c23, tag="hash_23_add", group=gg, round=rnd
+            scalar_hash23_add = (
+                (gg, rnd) in SCALAR_HASH23_MADD_SET
+                or (gg, rnd) in SCALAR_HASH23_ADD_SET
             )
-            emit_madd(
-                value,
-                value,
-                v_m23,
-                v_c2_shift9,
-                tag="hash_23_shift",
-                group=gg,
-                round=rnd,
+            scalar_hash23_shift = (
+                (gg, rnd) in SCALAR_HASH23_MADD_SET
+                or (gg, rnd) in SCALAR_HASH23_SHIFT_SET
             )
+            if scalar_hash23_add:
+                emit_scalar_madd(
+                    temp, value, s_m2, s_c23,
+                    tag="hash_23_add_scalar",
+                    group=gg,
+                    round=rnd,
+                )
+            else:
+                emit_madd(
+                    temp, value, v_m2, v_c23,
+                    tag="hash_23_add", group=gg, round=rnd
+                )
+            if scalar_hash23_shift:
+                emit_scalar_madd(
+                    value, value, s_m23, s_c2_shift9,
+                    tag="hash_23_shift_scalar",
+                    group=gg,
+                    round=rnd,
+                )
+            else:
+                emit_madd(
+                    value,
+                    value,
+                    v_m23,
+                    v_c2_shift9,
+                    tag="hash_23_shift",
+                    group=gg,
+                    round=rnd,
+                )
             if (gg, rnd) in SCALAR_HASH23_JOIN_SET or (
                 rnd == rounds - 1 and gg in SCALAR_FINAL_HASH23_JOIN_SET
             ):
@@ -3913,7 +4959,9 @@ class KernelBuilder:
                     tag="hash_23_join", group=gg, round=rnd,
                 )
 
-            if rnd == rounds - 1 and gg in SCALAR_FINAL_HASH4_SET:
+            if (gg, rnd) in SCALAR_HASH4_SET or (
+                rnd == rounds - 1 and gg in SCALAR_FINAL_HASH4_SET
+            ):
                 emit_scalarized(
                     "*", temp, value, s_m4,
                     b_scalar=True,
@@ -3936,12 +4984,64 @@ class KernelBuilder:
                 value,
                 v_sixteen,
                 scalarize=(scalar_hash and HASH_SCALAR_STAGE == 5)
+                or (gg, rnd) in SCALAR_HASH5_SHIFT_SET
                 or (rnd == rounds - 1 and gg in SCALAR_FINAL_SHIFT_SET),
                 scalar_b=s_sixteen,
                 tag="hash_5_shift",
                 group=gg,
                 round=rnd,
             )
+            if early_hash5_parity_dest >= 0:
+                # For non-final rounds the architectural branch bit is the
+                # low bit of the internal representation
+                # ``value ^ (value >> 16)`` (the final C5 is deliberately
+                # deferred).  Form it before the vector hash-5 join writes
+                # ``value``; the scalar lanes and the vector join can then
+                # occupy the same issue cycle.
+                emit_scalarized(
+                    "^",
+                    early_hash5_parity_dest,
+                    value,
+                    temp,
+                    tag="early_hash5_parity_xor",
+                    group=gg,
+                    round=rnd,
+                )
+                emit_scalarized(
+                    "&",
+                    early_hash5_parity_dest,
+                    early_hash5_parity_dest,
+                    s_one,
+                    b_scalar=True,
+                    tag="early_hash5_parity",
+                    group=gg,
+                    round=rnd,
+                )
+            if early_relocated_parity_dest >= 0:
+                # Rounds 4..8 of the reversed-tree representation do not
+                # apply the final C5.  The next address therefore needs only
+                # the low bit of ``value ^ (value >> 16)``.  Form it in the
+                # scalar lanes while the ordinary vector hash join remains
+                # free to consume ``value`` and ``temp``.
+                emit_scalarized(
+                    "^",
+                    early_relocated_parity_dest,
+                    value,
+                    temp,
+                    tag="early_relocated_parity_xor",
+                    group=gg,
+                    round=rnd,
+                )
+                emit_scalarized(
+                    "&",
+                    early_relocated_parity_dest,
+                    early_relocated_parity_dest,
+                    s_one,
+                    b_scalar=True,
+                    tag="early_relocated_parity",
+                    group=gg,
+                    round=rnd,
+                )
             if (
                 PAIRED_BRANCH_FINAL
                 and PAIRED_EARLY_XOR
@@ -4076,8 +5176,10 @@ class KernelBuilder:
             nonlocal delayed_pair_previous_barrier
             depth = rnd if rnd <= 10 else rnd - 11
             value = values[state]
-            temp = temps[state]
-            workspace_bits, _ = workspace_registers(workspace, gg, rnd)
+            temp = round_temp_register(state, gg, rnd)
+            workspace_bits, workspace_spill = workspace_registers(
+                workspace, gg, rnd
+            )
 
             if not DIRECT_MIRROR_PATH and rnd == 2:
                 emit_madd(
@@ -4100,22 +5202,51 @@ class KernelBuilder:
                     round=rnd,
                 )
 
+            # A complete final-round direct/paired table lookup bypasses the
+            # vector level-4 mux even when this group would normally use the
+            # cached shallow tree.  The branch table returns the selected
+            # level-4 node directly; retaining the mux here would duplicate
+            # the lookup and erase the whole point of the lowering.  Partial
+            # lane maps still use the vector mux because a lane-wise masked
+            # vselect is not available in this ISA.
+            final_direct_lanes = (
+                frozenset(DIRECT_BRANCH_LOOKUPS.get(gg, ()))
+                | frozenset(
+                    lane
+                    for pair in PAIRED_DIRECT_BRANCH_LOOKUPS.get(gg, ())
+                    for lane in pair
+                )
+                if rnd == rounds - 1 and depth == 4
+                else frozenset()
+            )
+            complete_final_direct = final_direct_lanes == frozenset(range(VLEN))
+
             if depth == 0:
                 if (INDEPENDENT_ROOT_CACHE or DIRECT_MIRROR_PATH) and rnd == 0:
                     xor_node(value, raw_root_scalar, gg, rnd, node_scalar=True)
                 else:
                     xor_node(value, node_vec[0], gg, rnd)
             elif depth <= 3:
-                select_cached(depth, state, workspace, gg, rnd)
+                if (gg, rnd) in GATHER_DEPTH3_SET:
+                    gather_node(depth, state, gg, rnd, temp_reg=temp)
+                else:
+                    select_cached(
+                        depth, state, workspace, gg, rnd, temp_reg=temp
+                    )
                 xor_node(value, temp, gg, rnd)
             elif (rnd == 4 and gg in FIRST_CACHE_SET) or (
                 rnd == rounds - 1 and gg in FINAL_CACHE_SET
+                and not complete_final_direct
             ):
-                if not (
+                if (gg, rnd) in GATHER_LEVEL4_SET:
+                    gather_node(depth, state, gg, rnd, temp_reg=temp)
+                elif not (
                     gg in EARLY_FINAL_CACHE_SET
                     and rnd == rounds - 1
                 ):
-                    select_level4_hybrid(state, workspace, gg, rnd)
+                    select_level4_hybrid(
+                        state, workspace, gg, rnd, temp_reg=temp
+                    )
                 xor_node(value, temp, gg, rnd)
                 if REVERSED_RELOCATED_TREE and rnd == 4:
                     emit_scalarized(
@@ -4147,7 +5278,7 @@ class KernelBuilder:
                         round=rnd,
                     )
             else:
-                gather_node(depth, state, gg, rnd)
+                gather_node(depth, state, gg, rnd, temp_reg=temp)
                 if not (
                     PAIRED_BRANCH_FINAL
                     and gg == BRANCH_FINAL_GROUP
@@ -4471,38 +5602,114 @@ class KernelBuilder:
                     round=rnd,
                 )
 
-            emit_hash(value, temp, gg, rnd)
+            early_parity_dest = -1
+            if (gg, rnd) in EARLY_HASH_PARITY_SET:
+                # Rounds 0..2 have a dedicated live path-bit vector, so
+                # moving its computation inside ``emit_hash`` does not alias
+                # the stage-5 temporary.  Later rounds need a separate
+                # virtual predicate value and are deliberately not enabled by
+                # this narrow first lowering.
+                if not 0 <= rnd <= 2:
+                    raise ValueError(
+                        "EARLY_HASH_PARITY_SET currently supports rounds 0..2"
+                    )
+                early_parity_dest = workspace_bits[rnd]
+            early_hash5_parity_dest = -1
+            if (gg, rnd) in EARLY_HASH5_PARITY_SET:
+                # The first traversal's shallow path bits are consumed by
+                # the lookup before this hash runs.  Rounds 0..2 therefore
+                # have a dead bit vector available for the early stage-5
+                # parity, with no extra architectural scratch or coloring
+                # pressure.  Final-round parity is intentionally excluded:
+                # that round applies C5 and has no following lookup anyway.
+                if not 0 <= rnd <= 2:
+                    raise ValueError(
+                        "EARLY_HASH5_PARITY currently supports rounds 0..2"
+                    )
+                early_hash5_parity_dest = workspace_bits[rnd]
+            early_relocated_parity_dest = -1
+            if (gg, rnd) in EARLY_RELOCATED_PARITY_SET:
+                if not REVERSED_RELOCATED_TREE or not 4 <= rnd <= 8:
+                    raise ValueError(
+                        "EARLY_RELOCATED_PARITY currently supports only "
+                        "reversed-tree rounds 4..8"
+                    )
+                # The first traversal has no cached mux live range at rounds
+                # 4..8, so its physical workspace spill is dead and can hold
+                # this short-lived parity vector.  Reusing it avoids creating
+                # another long-lived virtual vector in the setup prologue,
+                # where the memory-constant SSA pools otherwise leave no
+                # coloring headroom.
+                early_relocated_parity_dest = workspace_spill[0]
+            emit_hash(
+                value,
+                temp,
+                gg,
+                rnd,
+                early_parity_dest=early_parity_dest,
+                early_hash5_parity_dest=early_hash5_parity_dest,
+                early_relocated_parity_dest=early_relocated_parity_dest,
+            )
 
             if REVERSED_RELOCATED_TREE and 4 <= rnd <= 8:
-                emit_valu(
-                    "&",
-                    temp,
-                    value,
-                    v_one,
-                    tag="relocated_parity",
-                    group=gg,
-                    round=rnd,
-                )
+                if early_relocated_parity_dest >= 0:
+                    # The early lowering already materialized the exact
+                    # parity before hash_5_join; avoid a duplicate VALU AND.
+                    pass
+                elif (gg, rnd) in SCALAR_RELOCATED_PARITY_SET:
+                    emit_scalarized(
+                        "&",
+                        temp,
+                        value,
+                        s_one,
+                        b_scalar=True,
+                        tag="relocated_parity_scalar",
+                        group=gg,
+                        round=rnd,
+                    )
+                else:
+                    emit_valu(
+                        "&",
+                        temp,
+                        value,
+                        v_one,
+                        tag="relocated_parity",
+                        group=gg,
+                        round=rnd,
+                    )
                 emit_madd(
                     mirrors[state],
                     mirrors[state],
                     v_two,
-                    temp,
+                    early_relocated_parity_dest
+                    if early_relocated_parity_dest >= 0
+                    else temp,
                     tag="relocated_address_update",
                     group=gg,
                     round=rnd,
                 )
                 if rnd == 8:
-                    emit_scalarized(
-                        "-",
-                        mirrors[state],
-                        s_c2_shift9,
-                        mirrors[state],
-                        a_scalar=True,
-                        tag="restore_original_tree_layout",
-                        group=gg,
-                        round=rnd,
-                    )
+                    if gg in VECTOR_RESTORE_LAYOUT_SET:
+                        emit_valu(
+                            "-",
+                            mirrors[state],
+                            v_c2_shift9,
+                            mirrors[state],
+                            tag="restore_original_tree_layout_vector",
+                            group=gg,
+                            round=rnd,
+                        )
+                    else:
+                        emit_scalarized(
+                            "-",
+                            mirrors[state],
+                            s_c2_shift9,
+                            mirrors[state],
+                            a_scalar=True,
+                            tag="restore_original_tree_layout",
+                            group=gg,
+                            round=rnd,
+                        )
             elif REVERSED_RELOCATED_TREE and rnd == 9:
                 emit_valu(
                     "&",
@@ -4513,31 +5720,54 @@ class KernelBuilder:
                     group=gg,
                     round=rnd,
                 )
-                emit_scalarized(
-                    "-",
-                    mirrors[state],
-                    mirrors[state],
-                    temp,
-                    tag="original_address_parity_subtract",
-                    group=gg,
-                    round=rnd,
-                )
+                if gg in VECTOR_ORIGINAL_ADDRESS_PARITY_SET:
+                    emit_valu(
+                        "-",
+                        mirrors[state],
+                        mirrors[state],
+                        temp,
+                        tag="original_address_parity_subtract_vector",
+                        group=gg,
+                        round=rnd,
+                    )
+                else:
+                    emit_scalarized(
+                        "-",
+                        mirrors[state],
+                        mirrors[state],
+                        temp,
+                        tag="original_address_parity_subtract",
+                        group=gg,
+                        round=rnd,
+                    )
             elif DIRECT_MIRROR_PATH:
                 if rnd in (0, 11):
                     emit_parity(mirrors[state], value, gg, rnd)
                 elif rnd not in (10, rounds - 1):
                     emit_parity(temp, value, gg, rnd)
-                    emit_madd(
-                        mirrors[state],
-                        mirrors[state],
-                        v_two,
-                        temp,
-                        tag="mirror_update",
-                        group=gg,
-                        round=rnd,
-                    )
+                    if (gg, rnd) in SCALAR_MIRROR_UPDATE_SET:
+                        emit_scalar_madd(
+                            mirrors[state],
+                            mirrors[state],
+                            s_two,
+                            temp,
+                            tag="mirror_update_scalar",
+                            group=gg,
+                            round=rnd,
+                        )
+                    else:
+                        emit_madd(
+                            mirrors[state],
+                            mirrors[state],
+                            v_two,
+                            temp,
+                            tag="mirror_update",
+                            group=gg,
+                            round=rnd,
+                        )
             elif rnd in (0, 1, 2):
-                emit_parity(workspace_bits[rnd], value, gg, rnd)
+                if early_parity_dest < 0 and early_hash5_parity_dest < 0:
+                    emit_parity(workspace_bits[rnd], value, gg, rnd)
             elif gg in PIPELINED_DEPTH3_GROUPS and rnd == 13:
                 pipeline_workspace = PIPELINED_DEPTH3_WORKSPACE_OVERRIDES.get(
                     gg, WORKSPACE_ASSIGNMENT[gg]
@@ -4613,20 +5843,30 @@ class KernelBuilder:
                             round=rnd,
                         )
             elif gg in EARLY_FINAL_CACHE_SET and rnd == 14:
-                saved_path = saved_second_path_bits.get(gg)
-                early_condition = (
-                    saved_path[3]
-                    if saved_path is not None and len(saved_path) >= 4
-                    else first_level4_condition
+                direct_group_lanes = (
+                    frozenset(DIRECT_BRANCH_LOOKUPS.get(gg, ()))
+                    | frozenset(
+                        lane
+                        for pair in PAIRED_DIRECT_BRANCH_LOOKUPS.get(gg, ())
+                        for lane in pair
+                    )
                 )
-                emit_parity(early_condition, value, gg, rnd)
-                select_level4_hybrid(
-                    state,
-                    workspace,
-                    gg,
-                    rounds - 1,
-                    prepared=True,
-                )
+                if direct_group_lanes != frozenset(range(VLEN)):
+                    saved_path = saved_second_path_bits.get(gg)
+                    early_condition = (
+                        saved_path[3]
+                        if saved_path is not None and len(saved_path) >= 4
+                        else first_level4_condition
+                    )
+                    emit_parity(early_condition, value, gg, rnd)
+                    select_level4_hybrid(
+                        state,
+                        workspace,
+                        gg,
+                        rounds - 1,
+                        prepared=True,
+                        temp_reg=temp,
+                    )
             elif (
                 gg in saved_second_path_bits
                 and len(saved_second_path_bits[gg]) >= 4
@@ -4660,15 +5900,26 @@ class KernelBuilder:
                 emit_parity(temp, value, gg, rnd)
             elif rnd in (12, 13, 14):
                 emit_parity(temp, value, gg, rnd)
-                emit_madd(
-                    mirrors[state],
-                    mirrors[state],
-                    v_two,
-                    temp,
-                    tag="mirror_update",
-                    group=gg,
-                    round=rnd,
-                )
+                if (gg, rnd) in SCALAR_MIRROR_UPDATE_SET:
+                    emit_scalar_madd(
+                        mirrors[state],
+                        mirrors[state],
+                        s_two,
+                        temp,
+                        tag="mirror_update_scalar",
+                        group=gg,
+                        round=rnd,
+                    )
+                else:
+                    emit_madd(
+                        mirrors[state],
+                        mirrors[state],
+                        v_two,
+                        temp,
+                        tag="mirror_update",
+                        group=gg,
+                        round=rnd,
+                    )
             elif (
                 OVERLAP_SHALLOW_ADDRESS
                 and gg not in FIRST_CACHE_SET
@@ -4697,15 +5948,26 @@ class KernelBuilder:
                 )
             elif rnd == 3 or 4 <= rnd <= 9:
                 emit_parity(temp, value, gg, rnd)
-                emit_madd(
-                    mirrors[state],
-                    mirrors[state],
-                    v_two,
-                    temp,
-                    tag="mirror_update",
-                    group=gg,
-                    round=rnd,
-                )
+                if (gg, rnd) in SCALAR_MIRROR_UPDATE_SET:
+                    emit_scalar_madd(
+                        mirrors[state],
+                        mirrors[state],
+                        s_two,
+                        temp,
+                        tag="mirror_update_scalar",
+                        group=gg,
+                        round=rnd,
+                    )
+                else:
+                    emit_madd(
+                        mirrors[state],
+                        mirrors[state],
+                        v_two,
+                        temp,
+                        tag="mirror_update",
+                        group=gg,
+                        round=rnd,
+                    )
 
             if gg in DELAYED_PAIR_BRANCH_GROUPS and rnd == rounds - 2:
                 # The round-14 mirror now contains the complete 4-bit level-4
@@ -4786,12 +6048,12 @@ class KernelBuilder:
                                 "alu",
                                 (
                                     "|",
-                                    temps[state] + lane,
+                                    temp + lane,
                                     node_vec[0],
                                     node_vec[0],
                                 ),
                                 reads=(node_vec[0],),
-                                writes=(temps[state] + lane,),
+                                writes=(temp + lane,),
                                 deps=((jump, 1),),
                                 tag="paired_branch_delayed_copy",
                                 group=gg,
@@ -5100,11 +6362,18 @@ class KernelBuilder:
                 range(26, 30),
                 (s_nineteen, s_c2_shift9, s_c4, s_four),
             ):
-                emit_const(
-                    pointer,
-                    values_base + group * VLEN,
-                    "tail_output_pointer",
-                )
+                if PRESERVED_TAIL_POINTERS_USE_FLOW:
+                    emit_immediate(
+                        pointer,
+                        values_base + group * VLEN,
+                        "tail_output_pointer",
+                    )
+                else:
+                    emit_const(
+                        pointer,
+                        values_base + group * VLEN,
+                        "tail_output_pointer",
+                    )
                 graph.emit(
                     "store",
                     ("vstore", pointer, values[group]),
@@ -6446,20 +7715,49 @@ class KernelBuilder:
                         for slot in bundle.get("flow", ())
                         if slot == ("jump_indirect", mirror_word)
                     ]
-                    target_pcs = [
-                        pc
-                        for pc, bundle in enumerate(
-                            self.instrs[: self.branch_main_cycles]
+                    placeholder_copy = (
+                        (
+                            "^",
+                            values[group] + lane,
+                            values[group] + lane,
+                            node_vec[0] + lane,
                         )
-                        for slot in bundle.get("flow", ())
-                        if slot
-                        == (
-                            "add_imm",
-                            mirror_word,
-                            mirror_word,
-                            DIRECT_TARGET_SENTINEL,
+                        if FUSED_DIRECT_BRANCH_XOR
+                        else (
+                            "|",
+                            temp_word,
+                            node_vec[0] + lane,
+                            node_vec[0] + lane,
                         )
-                    ]
+                    )
+                    if ELIDE_DIRECT_BRANCH_TARGET:
+                        # With the dead target marker removed, the copy
+                        # bundle itself is the table trace's return point.
+                        # It is emitted one cycle after the indirect jump and
+                        # is uniquely identified by the placeholder operands.
+                        target_pcs = [
+                            pc
+                            for pc, bundle in enumerate(
+                                self.instrs[: self.branch_main_cycles]
+                            )
+                            if pc > (jump_pcs[0] if jump_pcs else -1)
+                            and placeholder_copy in bundle.get("alu", ())
+                        ]
+                    else:
+                        target_pcs = [
+                            pc
+                            for pc, bundle in enumerate(
+                                self.instrs[: self.branch_main_cycles]
+                            )
+                            for slot in bundle.get("flow", ())
+                            if slot
+                            == (
+                                "add_imm",
+                                mirror_word,
+                                mirror_word,
+                                DIRECT_TARGET_SENTINEL,
+                            )
+                        ]
                     if not (len(jump_pcs) == len(target_pcs) == 1):
                         raise AssertionError(
                             f"missing direct branch trace for group={group} lane={lane}"
@@ -6479,21 +7777,6 @@ class KernelBuilder:
                     )
                     while len(direct_table_blocks) < desired_offset:
                         direct_table_blocks.append({"flow": [("halt",)]})
-                    placeholder_copy = (
-                        (
-                            "^",
-                            values[group] + lane,
-                            values[group] + lane,
-                            node_vec[0] + lane,
-                        )
-                        if FUSED_DIRECT_BRANCH_XOR
-                        else (
-                            "|",
-                            temp_word,
-                            node_vec[0] + lane,
-                            node_vec[0] + lane,
-                        )
-                    )
                     if placeholder_copy not in self.instrs[target_pc].get(
                         "alu", ()
                     ):
@@ -6526,7 +7809,9 @@ class KernelBuilder:
             self.direct_branch_table_bundles = 0
 
         if PAIRED_DIRECT_BRANCH_LOOKUPS:
-            if DIRECT_BRANCH_LOOKUPS:
+            if DIRECT_BRANCH_LOOKUPS and not (
+                ELIDE_DIRECT_BRANCH_TARGET and PAIRED_DIRECT_BASE_ON_FLOW
+            ):
                 raise ValueError("individual and paired direct lookups are exclusive")
             paired_direct_base = len(self.instrs)
             first_jump_pc = min(
@@ -6542,30 +7827,60 @@ class KernelBuilder:
                 mirrors[group] + lanes[0]
                 for group, lanes in paired_direct_records
             }
-            first_base_prep_pc = min(
-                pc
-                for pc, bundle in enumerate(
-                    self.instrs[: self.branch_main_cycles]
+            paired_base_alu_records = set(PAIRED_DIRECT_BASE_ALU_RECORDS)
+            if paired_base_alu_records:
+                unsupported = {
+                    index
+                    for index in paired_base_alu_records
+                    if index != 0
+                }
+                if unsupported:
+                    raise ValueError(
+                        "ALU paired table-base records require index zero: "
+                        f"{sorted(unsupported)}"
+                    )
+            use_flow_base_for_setup = (
+                PAIRED_DIRECT_BASE_ON_FLOW and not paired_base_alu_records
+            )
+            if use_flow_base_for_setup:
+                first_base_prep_pc = min(
+                    pc
+                    for pc, bundle in enumerate(
+                        self.instrs[: self.branch_main_cycles]
+                    )
+                    for slot in bundle.get("flow", ())
+                    if len(slot) >= 4
+                    and slot[0] == "add_imm"
+                    and slot[3] == DIRECT_PREP_SENTINEL
+                    and slot[1] == slot[2]
+                    and slot[1] in paired_dest_words
                 )
-                for slot in bundle.get("alu", ())
-                if slot[0] == "+"
-                and slot[1] == slot[2]
-                and slot[1] in paired_dest_words
-                and slot[3] == s_c0
-            )
-            last_old_base_use = max(
-                pc
-                for pc, bundle in enumerate(self.instrs[:first_base_prep_pc])
-                if bundle_mentions_scalar(bundle, s_c0)
-            )
-            base_load_pc = next(
-                pc
-                for pc in range(last_old_base_use + 1, first_base_prep_pc)
-                if len(self.instrs[pc].get("load", ())) < SLOT_LIMITS["load"]
-            )
-            self.instrs[base_load_pc].setdefault("load", []).append(
-                ("const", s_c0, paired_direct_base)
-            )
+            else:
+                first_base_prep_pc = min(
+                    pc
+                    for pc, bundle in enumerate(
+                        self.instrs[: self.branch_main_cycles]
+                    )
+                    for slot in bundle.get("alu", ())
+                    if slot[0] == "+"
+                    and slot[1] == slot[2]
+                    and slot[1] in paired_dest_words
+                    and slot[3] == s_c0
+                )
+            if not use_flow_base_for_setup:
+                last_old_base_use = max(
+                    pc
+                    for pc, bundle in enumerate(self.instrs[:first_base_prep_pc])
+                    if bundle_mentions_scalar(bundle, s_c0)
+                )
+                base_load_pc = next(
+                    pc
+                    for pc in range(last_old_base_use + 1, first_base_prep_pc)
+                    if len(self.instrs[pc].get("load", ())) < SLOT_LIMITS["load"]
+                )
+                self.instrs[base_load_pc].setdefault("load", []).append(
+                    ("const", s_c0, paired_direct_base)
+                )
 
             paired_direct_blocks: list[dict[str, list[tuple]]] = []
             for group, lanes in paired_direct_records:
@@ -6578,28 +7893,6 @@ class KernelBuilder:
                     )
                     if ("jump_indirect", mirror_word) in bundle.get("flow", ())
                 )
-                target_pc = next(
-                    pc
-                    for pc, bundle in enumerate(
-                        self.instrs[: self.branch_main_cycles]
-                    )
-                    if (
-                        "add_imm",
-                        mirror_word,
-                        mirror_word,
-                        DIRECT_TARGET_SENTINEL,
-                    )
-                    in bundle.get("flow", ())
-                )
-                trace_length = target_pc - jump_pc
-                if not 1 <= trace_length <= 4:
-                    raise AssertionError(
-                        f"paired direct trace is too long: "
-                        f"group={group} lanes={lanes} pcs={jump_pc},{target_pc}"
-                    )
-                record_index = paired_direct_index[(group, lanes)]
-                while len(paired_direct_blocks) < paired_direct_offsets[record_index]:
-                    paired_direct_blocks.append({"flow": [("halt",)]})
                 placeholders = tuple(
                     (
                         (
@@ -6618,6 +7911,83 @@ class KernelBuilder:
                     )
                     for lane in lanes
                 )
+                if ELIDE_DIRECT_BRANCH_TARGET:
+                    target_pc = next(
+                        pc
+                        for pc in range(jump_pc + 1, self.branch_main_cycles)
+                        if all(
+                            placeholder in self.instrs[pc].get("alu", ())
+                            for placeholder in placeholders
+                        )
+                    )
+                else:
+                    target_pc = next(
+                        pc
+                        for pc, bundle in enumerate(
+                            self.instrs[: self.branch_main_cycles]
+                        )
+                        if (
+                            "add_imm",
+                            mirror_word,
+                            mirror_word,
+                            DIRECT_TARGET_SENTINEL,
+                        )
+                        in bundle.get("flow", ())
+                    )
+                trace_length = target_pc - jump_pc
+                if not 1 <= trace_length <= 4:
+                    raise AssertionError(
+                        f"paired direct trace is too long: "
+                        f"group={group} lanes={lanes} pcs={jump_pc},{target_pc}"
+                    )
+                record_index = paired_direct_index[(group, lanes)]
+                use_flow_base = (
+                    PAIRED_DIRECT_BASE_ON_FLOW
+                    and record_index not in paired_base_alu_records
+                )
+                if use_flow_base:
+                    patched_base = (
+                        "add_imm",
+                        mirror_word,
+                        mirror_word,
+                        paired_direct_base
+                        + (256 * record_index if ELIDE_DIRECT_BRANCH_TARGET else 0),
+                    )
+                    base_pc = next(
+                        pc
+                        for pc, bundle in enumerate(
+                            self.instrs[: self.branch_main_cycles]
+                        )
+                        if (
+                            "add_imm",
+                            mirror_word,
+                            mirror_word,
+                            DIRECT_PREP_SENTINEL,
+                        )
+                        in bundle.get("flow", ())
+                    )
+                    base_slots = self.instrs[base_pc].get("flow", ())
+                    for index, slot in enumerate(base_slots):
+                        if slot == (
+                            "add_imm",
+                            mirror_word,
+                            mirror_word,
+                            DIRECT_PREP_SENTINEL,
+                        ):
+                            base_slots[index] = patched_base
+                            break
+                    else:
+                        raise AssertionError(
+                            "missing paired flow table-base placeholder: "
+                            f"group={group} lanes={lanes}"
+                        )
+                desired_offset = (
+                    256 * record_index
+                    if ELIDE_DIRECT_BRANCH_TARGET
+                    else paired_direct_offsets[record_index]
+                )
+                while len(paired_direct_blocks) < desired_offset:
+                    paired_direct_blocks.append({"flow": [("halt",)]})
                 copy_pcs = {
                     pc
                     for pc in range(jump_pc + 1, target_pc + 1)
@@ -6658,7 +8028,9 @@ class KernelBuilder:
                         if trace_pc == target_pc:
                             target["flow"] = [("jump", target_pc + 1)]
                         entry_blocks.append(target)
-                    while len(entry_blocks) < 4:
+                    while len(entry_blocks) < (
+                        1 if ELIDE_DIRECT_BRANCH_TARGET else 4
+                    ):
                         entry_blocks.append({"flow": [("halt",)]})
                     paired_direct_blocks.extend(entry_blocks)
             self.instrs.extend(paired_direct_blocks)

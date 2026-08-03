@@ -226,7 +226,15 @@ def main() -> None:
         raise ValueError(
             f"FLOW_HINT does not match the target {order_engine} DAG"
         )
-    order = sorted(expected, key=lambda i: (flow_cycles[i], i))
+    raw_order = payload.get("order")
+    if raw_order is None:
+        order = sorted(expected, key=lambda i: (flow_cycles[i], i))
+    else:
+        order = [int(index) for index in raw_order]
+        if len(order) != len(expected) or set(order) != expected:
+            raise ValueError(
+                f"FLOW_HINT has invalid explicit {order_engine} order"
+            )
     for raw_move in os.environ.get("INITIAL_BLOCK_MOVES", "").split(","):
         if not raw_move:
             continue

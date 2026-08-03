@@ -21,6 +21,29 @@ from codex.map_variant_schedule import configure_target, real_tail_ops, validate
 from problem import SLOT_LIMITS
 
 
+def resource_sequence(
+    payload: dict[str, object],
+    selected: set[int],
+    cycles: dict[int, int],
+    path: Path,
+) -> list[int]:
+    """Return the capacity-lane order encoded by a projected hint.
+
+    Newer global-order searches may deliberately choose a non-canonical
+    matching between simultaneous operations.  Their explicit ``order`` is
+    therefore part of the schedule, rather than merely diagnostic metadata.
+    Older hints have no such field, so retain the historic deterministic
+    cycle/index order for them.
+    """
+    raw_order = payload.get("order")
+    if raw_order is None:
+        return sorted(selected, key=lambda index: (cycles[index], index))
+    sequence = [int(index) for index in raw_order]
+    if len(sequence) != len(selected) or set(sequence) != selected:
+        raise ValueError(f"{path} has invalid explicit order")
+    return sequence
+
+
 def main() -> None:
     configure_target()
     kernel.SCHEDULE_EXACT_CYCLES = None
@@ -53,7 +76,7 @@ def main() -> None:
                 f"{path} covers {len(cycles)} {engine} ops; expected {len(selected)}"
             )
         capacity = SLOT_LIMITS[engine]
-        sequence = sorted(selected, key=lambda index: (cycles[index], index))
+        sequence = resource_sequence(payload, selected, cycles, path)
         for previous, current in zip(sequence, sequence[capacity:]):
             if cycles[previous] >= cycles[current]:
                 raise ValueError(

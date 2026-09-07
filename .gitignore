@@ -2,3 +2,6 @@ trace.json
 **/*.pyc
 .hypothesis
 .DS_Store
+.pet-runs/
+.search959/
+codex/search_resource_orders

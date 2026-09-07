@@ -710,6 +710,20 @@ def main() -> None:
                 model.add(starts[index] == cycle)
                 fixed += 1
 
+    # Optional exact optimization mode.  The normal tool is a feasibility
+    # oracle at a caller-supplied horizon; when a complete incumbent is
+    # available, minimizing one shared makespan variable lets CP-SAT search
+    # for a strictly shorter calendar without changing the production graph.
+    # Keep this opt-in because the extra 20k precedence bounds are expensive
+    # for the usual diagnostic feasibility runs.
+    minimize_makespan = bool(int(os.environ.get("MINIMIZE_MAKESPAN", "0")))
+    makespan_var = None
+    if minimize_makespan:
+        makespan_var = model.new_int_var(0, horizon, "makespan")
+        for start in starts:
+            model.add(makespan_var >= start + 1)
+        model.minimize(makespan_var)
+
     proto = model.proto
     print(
         f"model starts={len(starts)} precedence={edge_count} "
@@ -725,6 +739,7 @@ def main() -> None:
         f"capacity_exempt_scoped_rounds={sorted(scoped_exempt_rounds)} "
         f"capacity_exempt_tag_group_rounds={sorted(exempt_tag_group_rounds)} "
         f"fix_baseline={int(fix_baseline)} "
+        f"minimize_makespan={int(minimize_makespan)} "
         f"proto_vars={len(proto.variables)} proto_constraints={len(proto.constraints)}",
         flush=True,
     )
@@ -777,15 +792,28 @@ def main() -> None:
         solver.parameters.max_num_cuts = int(os.environ["MAX_NUM_CUTS"])
     solver.parameters.log_search_progress = bool(int(os.environ.get("LOG", "0")))
     status = solver.solve(model)
+    result = (
+        [solver.value(start) for start in starts]
+        if status in (cp_model.FEASIBLE, cp_model.OPTIMAL)
+        else []
+    )
+    if status in (cp_model.FEASIBLE, cp_model.OPTIMAL):
+        solved_makespan = (
+            solver.value(makespan_var)
+            if minimize_makespan and makespan_var is not None
+            else max(result) + 1
+        )
+    else:
+        solved_makespan = None
     print(
         f"status={solver.status_name(status)} wall={solver.wall_time:.3f}s "
-        f"conflicts={solver.num_conflicts} branches={solver.num_branches}",
+        f"conflicts={solver.num_conflicts} branches={solver.num_branches} "
+        f"objective={solved_makespan if solved_makespan is not None else '-'}",
         flush=True,
     )
     if status not in (cp_model.FEASIBLE, cp_model.OPTIMAL):
         return
 
-    result = [solver.value(start) for start in starts]
     validate_solution(
         raw_ops,
         result,
@@ -799,7 +827,7 @@ def main() -> None:
             Path(diagnostic_out).write_text(
                 json.dumps(
                     {
-                        "makespan": max(result) + 1,
+                        "makespan": solved_makespan,
                         "cycles": result,
                         "strict_precedence": True,
                         "diagnostic_capacity_engines": sorted(capacity_engines),
@@ -823,14 +851,14 @@ def main() -> None:
     output.write_text(
         json.dumps(
             {
-                "makespan": max(result) + 1,
+                "makespan": solved_makespan,
                 "cycles": result,
                 "strict_full_dag": True,
                 "horizon": horizon,
             }
         )
     )
-    print(f"validated_makespan={max(result) + 1} output={output}", flush=True)
+    print(f"validated_makespan={solved_makespan} output={output}", flush=True)
 
 
 if __name__ == "__main__":

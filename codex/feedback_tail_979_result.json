@@ -1,0 +1,14 @@
+{
+  "cycles": 979,
+  "full32_seeds": 100,
+  "boundary_patterns": 3,
+  "instructions": 4064537,
+  "command": "/tmp/aopt-smt/bin/python -m codex.inspect_feedback_tail --combine",
+  "tail_graph_sha256": "0de2b3438481554b9542b65489c09aa1dd959b750459aed20928453ee47039cd",
+  "tail_horizon": 10,
+  "tail_solver_status": "sat",
+  "standalone_exported": false,
+  "official_full_suite_verified": true,
+  "official_tests_passed": 9,
+  "verification_scope": "Frozen simulator and unchanged official tests on generated input-independent program; standalone export remains unverified"
+}

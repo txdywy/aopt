@@ -1,0 +1,24 @@
+{
+  "status": "work reduction verified; no cycle improvement; default disabled",
+  "option": "--scalar-level4-cache",
+  "base_configuration": "table_981_result.json",
+  "base_override": {"seeds": 20},
+  "cycles": 982,
+  "correct_full32_seeds": 20,
+  "instruction_packets": 4064539,
+  "scratch_words": 1536,
+  "dag_operations": {"load":1877,"alu":10911,"valu":5641,"flow":846,"store":62},
+  "dag_delta": {"alu":16,"valu":-16},
+  "arithmetic_lane_work_removed": 112,
+  "final_gather12_configuration": {
+    "base_configuration": "final_gather12_result.json",
+    "cycles":995,
+    "correct_full32_seeds":20,
+    "instruction_packets":5637416
+  },
+  "unverified_scheduling_screen": {
+    "last_group_lead_to_preflight_packets":{"0":986,"4":993,"6":986,"10":984,"12":984}
+  },
+  "regression_tests": "10 tests passed: codex.test_dead_values and codex.test_tail_speculation",
+  "remaining": "No portable export or boundary-pattern validation. Does not improve best 981. Scratch allocation unchanged."
+}

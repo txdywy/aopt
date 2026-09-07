@@ -198,6 +198,7 @@ OUTPUT_GROUP_ORDER = tuple(range(N_GROUPS))
 PER_GROUP_OUTPUT_POINTERS = False
 INDEPENDENT_TAIL_OUTPUTS = True
 INDEPENDENT_TAIL_GROUP_COUNT = 8
+LOWER_TAIL_BEFORE_SCHEDULE = False
 PRESERVED_TAIL_OUTPUT_POINTERS = False
 # Materialize the four late pointers used by the preserved-tail epilogue with
 # FLOW immediates instead of scalar LOAD constants.  This is off for the
@@ -310,8 +311,43 @@ PIPELINED_DEPTH3_GROUPS: frozenset[int] = frozenset()
 PIPELINED_DEPTH3_WORKSPACE_OVERRIDES: dict[int, int] = {}
 PAIRED_TARGET_SENTINEL = 0xB2A00003
 DIRECT_BRANCH_LOOKUPS: dict[int, tuple[int, ...]] = {}
+# Direct table dispatch is normally used only for the final traversal.  Keep
+# the round explicit so the same lowering can be evaluated at another
+# traversal without duplicating the table bookkeeping.  A single round is
+# retained for individual-lane tables. Paired tables may opt into additional
+# rounds with separate (group, round, lanes) identities and return traces.
+DIRECT_BRANCH_ROUND = 15
+DIRECT_BRANCH_ROUND_OVERRIDES: dict[int, int] = {}
+PAIRED_DIRECT_EXTRA_ROUNDS: dict[int, tuple[int, ...]] = {}
+HORNER_PAIRED_DIRECT_INDEX = False
+OMIT_LEVEL4_DIFF_SETUP = False
+PRIORITIZE_PAIRED_COPIES = False
+DYNAMIC_VECTOR_TO_ALU = False
+SCHEDULE_PREFLIGHT_ONLY = False
+SCALAR_LEVEL4_TABLE_CACHE = False
+OMIT_FUSED_DIRECT_NODE_TRANSFORM = False
+VECTOR_DEPTH3_DIRECT_INDEX = False
+
+
+def direct_round_for(group: int) -> int:
+    return DIRECT_BRANCH_ROUND_OVERRIDES.get(group, DIRECT_BRANCH_ROUND)
+
+
+def paired_rounds_for(group: int) -> tuple[int, ...]:
+    return tuple(sorted(set((direct_round_for(group), *PAIRED_DIRECT_EXTRA_ROUNDS.get(group, ())))))
+
+
+def paired_at(group: int, rnd: int) -> bool:
+    return group in PAIRED_DIRECT_BRANCH_LOOKUPS and rnd in paired_rounds_for(group)
+
+# The indirect table lowering is deliberately depth-parametric.  Depth 4 is
+# the incumbent use (16x16 table index); depth 3 uses the same paired
+# dispatch machinery with an 8x8 table and can replace the seven-select
+# cached lookup when every lane in a group takes the table path.
+DIRECT_BRANCH_DEPTH = 4
 CHAINED_DIRECT_BRANCH_BASE = True
-PAIRED_DIRECT_BRANCH_LOOKUPS: dict[int, tuple[tuple[int, int], ...]] = {}
+PAIRED_DIRECT_BRANCH_LOOKUPS: dict[int, tuple[tuple[int, ...], ...]] = {}
+DIRECT_BRANCH_ARITY = 2
 FUSED_DIRECT_BRANCH_XOR = True
 # The final direct-lookup target marker only rewrites the mirror/address
 # scratch lane with a dead sentinel.  Out-of-line table entries can instead
@@ -324,6 +360,25 @@ ELIDE_DIRECT_BRANCH_TARGET = False
 # loaded scalar four is algebraically identical and frees one ALU slot per
 # pair.
 FUSE_PAIRED_DIRECT_STRIDE = False
+# Research-only extension for the elided paired table.  The ordinary form
+# keeps four pre-materialized offset constants; this mode chains one scalar
+# table base through every pair and therefore scales to many groups without
+# allocating one offset register per trace.  It is disabled in the incumbent
+# schedule and requires the target marker to be elided.
+CHAINED_PAIRED_DIRECT_BASE = False
+PARALLEL_PAIRED_DIRECT_PREP = False
+PAIRED_DIRECT_PACKET_REPAIR = True
+COMPACT_PAIRED_DIRECT_RETURN = False
+RECYCLE_PAIRED_DIRECT_STRIDE = False
+ALU_PAIRED_DIRECT_STRIDE = False
+RELAX_PAIRED_DIRECT_JUMP = False
+VECTOR_PAIRED_DIRECT_INDEX = False
+# When a direct depth-4 dispatch consumes a saved four-bit path, form the
+# per-lane index in the previous (round-14) temporary.  The final round then
+# only has to combine the two lanes of each pair, moving four VALU operations
+# off the dispatch critical path.  This is an opt-in experiment because the
+# ordinary round temporary is not persistent when SSA_ROUND_TEMPS is enabled.
+PREPACK_PAIRED_DIRECT_INDEX = False
 # Encode the paired table base as a FLOW immediate (patched with the final
 # out-of-line table PC during assembly) instead of an ALU read of the shared
 # table-base scalar.  This is safe because the base is link-time constant and
@@ -918,6 +973,7 @@ class _Graph:
         self.ops: list[_Op] = []
         self.last_writer: dict[int, int] = {}
         self.readers: dict[int, list[int]] = defaultdict(list)
+        self.omitted_definitions: set[int] = set()
 
     @staticmethod
     def _add_parent(parents: dict[int, int], parent: int, lag: int) -> None:
@@ -942,6 +998,10 @@ class _Graph:
     ) -> int:
         reads_t = tuple(dict.fromkeys(reads))
         writes_t = tuple(dict.fromkeys(writes))
+        missing = self.omitted_definitions.intersection(reads_t)
+        if missing:
+            raise ValueError(f"omitted scratch definition consumed by {tag}: {sorted(missing)}")
+        self.omitted_definitions.difference_update(writes_t)
         idx = len(self.ops)
         parents: dict[int, int] = {}
 
@@ -1006,6 +1066,16 @@ class KernelBuilder:
 
         scratch = _Scratch()
         graph = _Graph()
+        if SCALAR_LEVEL4_TABLE_CACHE and (
+            not OMIT_LEVEL4_DIFF_SETUP
+            or not (INDEPENDENT_ROOT_CACHE or DIRECT_MIRROR_PATH)
+            or DIRECT_BRANCH_DEPTH != 4
+            or REVERSED_RELOCATED_TREE
+        ):
+            raise ValueError(
+                "scalar level4 cache requires transformed top nodes, depth4 "
+                "tables, omitted differences, and non-relocated layout"
+            )
 
         def alloc(name: str, size: int = 1) -> int:
             addr = scratch.alloc(name, size)
@@ -1041,6 +1111,20 @@ class KernelBuilder:
         s_m4 = scalar_const(9, "hash_mul4_shift3")
         s_m0 = scalar_const(4097, "hash_mul0")
         s_m2 = scalar_const(33, "hash_mul2")
+        # A chained paired-direct table advances one shared scalar base by a
+        # fixed record stride after every lookup.  This must be a dedicated
+        # scalar word: borrowing a lane from ``direct_index_base`` is unsafe
+        # because that vector is also used as a short-lived saved-path index
+        # and can be overwritten by a later group before the global chain
+        # reaches its next record.
+        paired_direct_stride_scalar = (
+            s_m23 if RECYCLE_PAIRED_DIRECT_STRIDE else scalar_const(
+                1 << (DIRECT_BRANCH_ARITY * DIRECT_BRANCH_DEPTH),
+                "paired_direct_table_stride",
+            )
+            if CHAINED_PAIRED_DIRECT_BASE and PAIRED_DIRECT_BRANCH_LOOKUPS
+            else -1
+        )
         s_zero = alloc("architectural_zero") if ALU_RAW_ROOT_COPY else -1
         preserve_reuses_setup_scalar = bool(
             PRESERVE_OUTPUT_BASE
@@ -2396,7 +2480,13 @@ class KernelBuilder:
                 i for i in range(31) if i not in MEMORY_CACHED_NODE_ORDER
             )
             for i in cached_node_order:
-                if i in MEMORY_CACHED_NODE_SET:
+                if SCALAR_LEVEL4_TABLE_CACHE and i >= 15:
+                    if not OMIT_LEVEL4_DIFF_SETUP:
+                        raise ValueError("scalar level4 cache requires omitted difference setup")
+                    graph.emit("alu", ("|", node_vec[i], top_words + i, top_words + i),
+                               reads=(top_words + i,), writes=(node_vec[i],), tag="scalar_level4_table_cache")
+                    graph.omitted_definitions.update(range(node_vec[i] + 1, node_vec[i] + VLEN))
+                elif i in MEMORY_CACHED_NODE_SET:
                     emit_memory_vector_constant(
                         node_vec[i],
                         top_words + i,
@@ -3075,6 +3165,41 @@ class KernelBuilder:
             )
 
         level4_reversed = [node_vec[i] for i in range(30, 14, -1)]
+        direct_reversed = (
+            [node_vec[14 - i] for i in range(8)]
+            if DIRECT_BRANCH_DEPTH == 3
+            else level4_reversed
+        )
+        direct_source_lane_stride = 0 if SCALAR_LEVEL4_TABLE_CACHE and DIRECT_BRANCH_DEPTH == 4 else 1
+        direct_deep_radix = -1
+        if DIRECT_BRANCH_DEPTH == 5:
+            if REVERSED_RELOCATED_TREE or OVERLAP_DEEP_ADDRESS or PREPROCESS_MAX_DEPTH < 5:
+                raise ValueError("depth-5 direct cache requires ordinary preprocessed layout")
+            if DIRECT_BRANCH_ROUND != 5 or DIRECT_BRANCH_LOOKUPS:
+                raise ValueError("depth-5 direct cache supports paired first-pass dispatch only")
+            # Unlike the shallow SIMD mux cache, indirect copies only need
+            # one scalar word per node. Reserve 34 words in research builds;
+            # the caller must reduce workspace storage to stay within 1536.
+            direct_deep_cache = alloc("direct_depth5_cache", 32)
+            direct_deep_pointer = alloc("direct_depth5_pointer")
+            direct_deep_radix = alloc("direct_depth5_radix")
+            emit_const(direct_deep_pointer, 38, "direct_depth5_pointer")
+            emit_const(direct_deep_radix, 32, "direct_depth5_radix")
+            # Tree preprocessing has been emitted above. Its stores must
+            # complete before these scalar-cache loads read the same memory.
+            setup_stores = tuple((i, 1) for i, op in enumerate(graph.ops) if op.engine == "store")
+            for chunk in range(4):
+                graph.emit("load", ("vload", direct_deep_cache + 8 * chunk, direct_deep_pointer),
+                           reads=(direct_deep_pointer,), writes=_words(direct_deep_cache + 8 * chunk),
+                           deps=setup_stores, tag="direct_depth5_cache_load")
+                if chunk != 3:
+                    graph.emit("alu", ("+", direct_deep_pointer, direct_deep_pointer, s_eight),
+                               reads=(direct_deep_pointer, s_eight), writes=(direct_deep_pointer,),
+                               tag="direct_depth5_cache_advance")
+            direct_reversed = [direct_deep_cache + i for i in reversed(range(32))]
+            direct_source_lane_stride = 0
+        elif DIRECT_BRANCH_DEPTH not in (3, 4):
+            raise ValueError("direct branch depth must be 3, 4, or 5")
         direct_branch_records = tuple(
             (group, lane)
             for group in sorted(DIRECT_BRANCH_LOOKUPS)
@@ -3098,15 +3223,59 @@ class KernelBuilder:
             s_m23,
         )
         paired_direct_records = tuple(
-            (group, lanes)
+            (group, selected_round, lanes)
             for group in sorted(PAIRED_DIRECT_BRANCH_LOOKUPS)
+            for selected_round in paired_rounds_for(group)
             for lanes in PAIRED_DIRECT_BRANCH_LOOKUPS[group]
         )
-        if len(paired_direct_records) > 4 and not ELIDE_DIRECT_BRANCH_TARGET:
+        if PAIRED_DIRECT_EXTRA_ROUNDS and (not CHAINED_PAIRED_DIRECT_BASE or DIRECT_BRANCH_LOOKUPS):
+            raise ValueError("multi-round paired tables require exclusive chained dispatch")
+        if set(PAIRED_DIRECT_EXTRA_ROUNDS) - set(PAIRED_DIRECT_BRANCH_LOOKUPS):
+            raise ValueError("extra rounds require a paired lane map for the group")
+        for group, selected_round, _ in paired_direct_records:
+            if not 0 <= selected_round < rounds or selected_round % (forest_height + 1) != DIRECT_BRANCH_DEPTH:
+                raise ValueError("direct lookup round must match its configured tree depth")
+        if VECTOR_PAIRED_DIRECT_INDEX and DIRECT_BRANCH_ROUND != 4:
+            raise ValueError("vector direct packing requires a first-pass round-4 configuration")
+        if paired_direct_records and DIRECT_BRANCH_ARITY not in (2, 4):
+            raise ValueError("direct table arity must be two or four")
+        for group, records in PAIRED_DIRECT_BRANCH_LOOKUPS.items():
+            lanes = [lane for record in records for lane in record]
+            if len(lanes) != len(set(lanes)) or any(lane not in range(VLEN) for lane in lanes):
+                raise ValueError(f"invalid or overlapping direct lanes for group {group}")
+        if any(len(lanes) != DIRECT_BRANCH_ARITY for _, _, lanes in paired_direct_records):
+            raise ValueError("direct table records must match DIRECT_BRANCH_ARITY")
+        if DIRECT_BRANCH_ARITY != 2 and not (
+            CHAINED_PAIRED_DIRECT_BASE
+            and (ELIDE_DIRECT_BRANCH_TARGET or COMPACT_PAIRED_DIRECT_RETURN)
+        ):
+            raise ValueError("wider direct tables require chained elided dispatch")
+        if len(paired_direct_records) > 4 and not (
+            ELIDE_DIRECT_BRANCH_TARGET or COMPACT_PAIRED_DIRECT_RETURN
+        ):
             raise ValueError("paired direct lookup supports at most four pairs")
-        paired_direct_index = {
-            record: index for index, record in enumerate(paired_direct_records)
-        }
+        if CHAINED_PAIRED_DIRECT_BASE and not (
+            ELIDE_DIRECT_BRANCH_TARGET or COMPACT_PAIRED_DIRECT_RETURN
+        ):
+            raise ValueError(
+                "chained paired direct lookup requires an elided target"
+            )
+        if CHAINED_PAIRED_DIRECT_BASE and PAIRED_DIRECT_BASE_ON_FLOW:
+            raise ValueError(
+                "chained paired direct lookup uses the scalar base register"
+            )
+        # In chained mode the records are numbered in graph-emission order,
+        # not by group number.  The shared base register is advanced in that
+        # same order, so the out-of-line 256-entry blocks must use identical
+        # numbering when the final program is assembled.
+        paired_direct_index = (
+            {}
+            if CHAINED_PAIRED_DIRECT_BASE
+            else {
+                record: index for index, record in enumerate(paired_direct_records)
+            }
+        )
+        paired_direct_emission_order: list[tuple[int, int, tuple[int, ...]]] = []
         paired_direct_offsets = (0, 1029, 2053, 4097)
         paired_direct_offset_registers = (
             -1,
@@ -3115,6 +3284,11 @@ class KernelBuilder:
             s_m0,
         )
         for i, diff in enumerate(level4_diff):
+            if OMIT_LEVEL4_DIFF_SETUP:
+                if not (PAIRED_EARLY_XOR or PAIRED_FLOW_SELECT):
+                    raise ValueError("paired table assembly may consume omitted level4 differences")
+                graph.omitted_definitions.update(_words(diff))
+                continue
             emit_valu(
                 "-",
                 diff,
@@ -4155,6 +4329,50 @@ class KernelBuilder:
                 upper_select(a, c0, b, a)
 
         direct_global_previous_target = [-1]
+        # Chained paired-direct tables use the otherwise dead scalar C0
+        # register as a monotonically advancing table base.  Keep one global
+        # barrier because the same base is shared by all groups; the ordinary
+        # form intentionally keeps each group's four traces independent.
+        def emit_saved_direct_index(dst, saved_path, gg, rnd, *, prepack=False):
+            prefix = "direct_branch_saved_index_" + ("prepack_" if prepack else "")
+            if HORNER_PAIRED_DIRECT_INDEX:
+                for position in range(1, 4):
+                    emit_madd(
+                        dst, saved_path[0] if position == 1 else dst,
+                        v_two, saved_path[position],
+                        tag=prefix + f"horner{position}", group=gg, round=rnd,
+                    )
+            else:
+                emit_valu("*", dst, saved_path[0], v_eight,
+                          tag=prefix + "high4", group=gg, round=rnd)
+                emit_madd(dst, saved_path[1], v_four, dst,
+                          tag=prefix + "high3", group=gg, round=rnd)
+                emit_madd(dst, saved_path[2], v_two, dst,
+                          tag=prefix + "high2", group=gg, round=rnd)
+                emit_valu("+", dst, dst, saved_path[3],
+                          tag=prefix + "low", group=gg, round=rnd)
+
+        paired_direct_global_previous_target = [-1]
+        paired_direct_stride_register = [-1]
+        if RECYCLE_PAIRED_DIRECT_STRIDE and paired_direct_records:
+            if SCALAR_HASH23_MADD_SET or SCALAR_HASH23_SHIFT_SET or DIRECT_BRANCH_LOOKUPS:
+                raise ValueError("recycled direct stride conflicts with scalar M23 users")
+            if ALU_PAIRED_DIRECT_STRIDE:
+                if DIRECT_BRANCH_DEPTH != 4 or DIRECT_BRANCH_ARITY not in (2, 4):
+                    raise ValueError("ALU direct stride requires depth 4 and arity 2 or 4")
+                shift_register = s_eight if DIRECT_BRANCH_ARITY == 2 else s_sixteen
+                graph.emit(
+                    "alu",
+                    ("<<", paired_direct_stride_scalar, s_one, shift_register),
+                    reads=(s_one, shift_register), writes=(paired_direct_stride_scalar,),
+                    tag="paired_direct_table_stride_derive",
+                )
+            else:
+                emit_const(
+                    paired_direct_stride_scalar,
+                    1 << (DIRECT_BRANCH_ARITY * DIRECT_BRANCH_DEPTH),
+                    "paired_direct_recycled_stride",
+                )
         delayed_pair_previous_barrier: list[int] = []
         delayed_pair_dispatch_order: list[int] = []
 
@@ -4197,7 +4415,7 @@ class KernelBuilder:
             )
             direct_branch_lanes = (
                 frozenset(DIRECT_BRANCH_LOOKUPS.get(gg, ()))
-                if rnd == rounds - 1 and depth == 4
+                if rnd == direct_round_for(gg) and depth == DIRECT_BRANCH_DEPTH
                 else frozenset()
             )
             paired_direct_lanes = (
@@ -4206,9 +4424,83 @@ class KernelBuilder:
                     for pair in PAIRED_DIRECT_BRANCH_LOOKUPS.get(gg, ())
                     for lane in pair
                 )
-                if rnd == rounds - 1 and depth == 4
+                if paired_at(gg, rnd) and depth == DIRECT_BRANCH_DEPTH
                 else frozenset()
             )
+            # A depth-3 dispatch happens before the final depth-4 gather, so
+            # its address arithmetic must not destroy the packed mirror.
+            # Use the per-round temporary as the jump word.  Saved-path groups
+            # do not maintain a packed mirror; form p0*4+p1*2+p2 there.
+            direct_index_base = mirror
+            vector_paired_index = False
+            depth3_vector_index = (
+                VECTOR_DEPTH3_DIRECT_INDEX and DIRECT_BRANCH_DEPTH == 3
+                and (rnd < 11 or gg not in saved_second_path_bits)
+            )
+            if (VECTOR_PAIRED_DIRECT_INDEX and rnd == 4 or depth3_vector_index) and paired_direct_lanes:
+                if (
+                    (rnd != 4 and not depth3_vector_index) or REVERSED_RELOCATED_TREE or SSA_ROUND_TEMPS
+                    or direct_branch_lanes
+                    or any(
+                        lanes != tuple(range(lanes[0], lanes[0] + len(lanes)))
+                        or lanes[0] % 2 or len(lanes) not in (2, 4)
+                        for lanes in PAIRED_DIRECT_BRANCH_LOOKUPS[gg]
+                    )
+                ):
+                    raise ValueError("vector direct packing requires ordinary first-pass adjacent lanes")
+                vector_paired_index = True
+            if direct_branch_lanes or paired_direct_lanes:
+                saved_path = saved_second_path_bits.get(gg) if rnd >= 11 else None
+                if DIRECT_BRANCH_DEPTH == 4 and saved_path is not None and len(saved_path) >= 4:
+                    # Saved late paths deliberately stop updating the packed
+                    # mirror after round 11.  A depth-4 direct table still
+                    # needs the complete four-bit index.  With the optional
+                    # prepack pass, round 14 has already formed it in the
+                    # same temporary; otherwise form it here as before.
+                    if not (
+                        PREPACK_PAIRED_DIRECT_INDEX
+                        and not SSA_ROUND_TEMPS
+                        and (rnd == direct_round_for(gg) or paired_at(gg, rnd))
+                    ):
+                        emit_saved_direct_index(temp, saved_path, gg, rnd)
+                    direct_index_base = temp
+                elif DIRECT_BRANCH_DEPTH == 3 or rnd != rounds - 1:
+                    if saved_path is None:
+                        if vector_paired_index:
+                            # Even lanes contain adjacent pairs after one
+                            # overlapping-source MADD.  Odd lanes are dead.
+                            emit_madd(
+                                temp, mirror, v_eight if depth3_vector_index else v_sixteen, mirror + 1,
+                                tag="paired_direct_branch_vector_pack",
+                                group=gg, round=rnd,
+                            )
+                        else:
+                            graph.emit(
+                                "valu",
+                                ("|", temp, mirror, mirror),
+                                reads=_words(mirror),
+                                writes=_words(temp),
+                                tag="direct_branch_index_copy",
+                                group=gg,
+                                round=rnd,
+                            )
+                    else:
+                        emit_valu(
+                            "*", temp, saved_path[1], v_two,
+                            tag="direct_branch_saved_index_scale",
+                            group=gg, round=rnd,
+                        )
+                        emit_madd(
+                            temp, saved_path[0], v_four, temp,
+                            tag="direct_branch_saved_index_high",
+                            group=gg, round=rnd,
+                        )
+                        emit_valu(
+                            "+", temp, temp, saved_path[2],
+                            tag="direct_branch_saved_index_low",
+                            group=gg, round=rnd,
+                        )
+                    direct_index_base = temp
             delayed_pair_lanes = (
                 frozenset(range(VLEN))
                 if gg in DELAYED_PAIR_BRANCH_GROUPS
@@ -4484,12 +4776,12 @@ class KernelBuilder:
                         "alu",
                         (
                             "+",
-                            mirror + lane,
-                            mirror + lane,
+                            direct_index_base + lane,
+                            direct_index_base + lane,
                             s_c0,
                         ),
-                        reads=(mirror + lane, s_c0),
-                        writes=(mirror + lane,),
+                        reads=(direct_index_base + lane, s_c0),
+                        writes=(direct_index_base + lane,),
                         deps=((base_ready, 1),) if base_ready >= 0 else (),
                         tag="direct_branch_base",
                         group=gg,
@@ -4503,12 +4795,12 @@ class KernelBuilder:
                             "alu",
                             (
                                 "+",
-                                mirror + lane,
-                                mirror + lane,
+                                direct_index_base + lane,
+                                direct_index_base + lane,
                                 offset_register,
                             ),
-                            reads=(mirror + lane, offset_register),
-                            writes=(mirror + lane,),
+                            reads=(direct_index_base + lane, offset_register),
+                            writes=(direct_index_base + lane,),
                             deps=((prep, 1),),
                             tag="direct_branch_offset",
                             group=gg,
@@ -4516,8 +4808,8 @@ class KernelBuilder:
                         )
                     jump = graph.emit(
                         "flow",
-                        ("jump_indirect", mirror + lane),
-                        reads=(mirror + lane,),
+                        ("jump_indirect", direct_index_base + lane),
+                        reads=(direct_index_base + lane,),
                         deps=((prep, 1),),
                         tag="direct_branch_jump",
                         group=gg,
@@ -4556,8 +4848,8 @@ class KernelBuilder:
                             "flow",
                             (
                                 "add_imm",
-                                mirror + lane,
-                                mirror + lane,
+                                direct_index_base + lane,
+                                direct_index_base + lane,
                                 DIRECT_TARGET_SENTINEL,
                             ),
                             deps=((copy, 0),),
@@ -4567,31 +4859,75 @@ class KernelBuilder:
                         )
                 direct_global_previous_target[0] = previous_target
             if paired_direct_lanes:
-                previous_target = -1
+                if vector_paired_index and depth3_vector_index and DIRECT_BRANCH_ARITY == 4:
+                    # Odd pack lanes are unused. Materialize radix squared
+                    # in lane7 without extending scratch allocation.
+                    graph.emit("alu", ("*", direct_index_base + 7, s_eight, s_eight),
+                               reads=(s_eight,), writes=(direct_index_base + 7,),
+                               tag="paired_depth3_quad_radix", group=gg, round=rnd)
+                previous_target = (
+                    paired_direct_global_previous_target[0]
+                    if CHAINED_PAIRED_DIRECT_BASE
+                    else -1
+                )
                 for lanes in PAIRED_DIRECT_BRANCH_LOOKUPS[gg]:
-                    lane0, lane1 = lanes
-                    record_index = paired_direct_index[(gg, lanes)]
-                    prep = graph.emit(
-                        "alu",
-                        ("*", mirror + lane0, mirror + lane0, s_sixteen),
-                        reads=(mirror + lane0, s_sixteen),
-                        writes=(mirror + lane0,),
-                        deps=((previous_target, 1),) if previous_target >= 0 else (),
-                        tag="paired_direct_branch_index_high",
-                        group=gg,
-                        round=rnd,
+                    lane0 = lanes[0]
+                    record = (gg, rnd, lanes)
+                    if CHAINED_PAIRED_DIRECT_BASE:
+                        record_index = paired_direct_index.get(record)
+                        if record_index is None:
+                            record_index = len(paired_direct_emission_order)
+                            paired_direct_index[record] = record_index
+                            paired_direct_emission_order.append(record)
+                    else:
+                        record_index = paired_direct_index[record]
+                    prep = (
+                        previous_target if not PARALLEL_PAIRED_DIRECT_PREP else -1
                     )
-                    prep = graph.emit(
-                        "alu",
-                        ("+", mirror + lane0, mirror + lane0, mirror + lane1),
-                        reads=(mirror + lane0, mirror + lane1),
-                        writes=(mirror + lane0,),
-                        deps=((prep, 1),),
-                        tag="paired_direct_branch_index_low",
-                        group=gg,
-                        round=rnd,
-                    )
-                    if ELIDE_DIRECT_BRANCH_TARGET:
+                    for next_lane in (lanes[2::2] if vector_paired_index else lanes[1:]):
+                        multiplier = (
+                            direct_index_base + 7 if vector_paired_index and depth3_vector_index else
+                            direct_deep_radix if DIRECT_BRANCH_DEPTH == 5 else
+                            s_eight if vector_paired_index or DIRECT_BRANCH_DEPTH == 3 else s_sixteen
+                        )
+                        prep = graph.emit(
+                            "alu",
+                            (
+                                "<<" if vector_paired_index and not depth3_vector_index else "*", direct_index_base + lane0,
+                                direct_index_base + lane0,
+                                multiplier,
+                            ),
+                            reads=(
+                                direct_index_base + lane0,
+                                multiplier,
+                            ),
+                            writes=(direct_index_base + lane0,),
+                            deps=((prep, 1),) if prep >= 0 else (),
+                            tag="paired_direct_branch_index_high",
+                            group=gg, round=rnd,
+                        )
+                        prep = graph.emit(
+                            "alu",
+                            (
+                                "+", direct_index_base + lane0,
+                                direct_index_base + lane0,
+                                direct_index_base + next_lane,
+                            ),
+                            reads=(direct_index_base + lane0, direct_index_base + next_lane),
+                            writes=(direct_index_base + lane0,),
+                            deps=((prep, 1),),
+                            tag="paired_direct_branch_index_low",
+                            group=gg, round=rnd,
+                        )
+                    if (
+                        CHAINED_PAIRED_DIRECT_BASE
+                        and paired_direct_stride_register[0] < 0
+                    ):
+                        # Keep the stride in a dedicated persistent scalar
+                        # register rather than in a lane of the packed index
+                        # vector.  The latter is recycled by other groups.
+                        paired_direct_stride_register[0] = paired_direct_stride_scalar
+                    if ELIDE_DIRECT_BRANCH_TARGET or COMPACT_PAIRED_DIRECT_RETURN:
                         # The elided form uses one table bundle per combined
                         # 8-bit index, so the index is already in instruction
                         # units (``hi * 16 + lo``); no *4 stride is needed.
@@ -4603,9 +4939,9 @@ class KernelBuilder:
                             )
                         prep = graph.emit(
                             "alu",
-                            ("*", mirror + lane0, mirror + lane0, s_four),
-                            reads=(mirror + lane0, s_four),
-                            writes=(mirror + lane0,),
+                            ("*", direct_index_base + lane0, direct_index_base + lane0, s_four),
+                            reads=(direct_index_base + lane0, s_four),
+                            writes=(direct_index_base + lane0,),
                             deps=((prep, 1),),
                             tag="paired_direct_branch_stride_fused",
                             group=gg,
@@ -4614,9 +4950,9 @@ class KernelBuilder:
                     else:
                         prep = graph.emit(
                             "alu",
-                            ("*", mirror + lane0, mirror + lane0, s_two),
-                            reads=(mirror + lane0, s_two),
-                            writes=(mirror + lane0,),
+                            ("*", direct_index_base + lane0, direct_index_base + lane0, s_two),
+                            reads=(direct_index_base + lane0, s_two),
+                            writes=(direct_index_base + lane0,),
                             deps=((prep, 1),),
                             tag="paired_direct_branch_stride",
                             group=gg,
@@ -4624,9 +4960,9 @@ class KernelBuilder:
                         )
                         prep = graph.emit(
                             "alu",
-                            ("*", mirror + lane0, mirror + lane0, s_two),
-                            reads=(mirror + lane0, s_two),
-                            writes=(mirror + lane0,),
+                            ("*", direct_index_base + lane0, direct_index_base + lane0, s_two),
+                            reads=(direct_index_base + lane0, s_two),
+                            writes=(direct_index_base + lane0,),
                             deps=((prep, 1),),
                             tag="paired_direct_branch_stride",
                             group=gg,
@@ -4641,12 +4977,12 @@ class KernelBuilder:
                             "flow",
                             (
                                 "add_imm",
-                                mirror + lane0,
-                                mirror + lane0,
+                                direct_index_base + lane0,
+                                direct_index_base + lane0,
                                 DIRECT_PREP_SENTINEL,
                             ),
-                            reads=(mirror + lane0,),
-                            writes=(mirror + lane0,),
+                            reads=(direct_index_base + lane0,),
+                            writes=(direct_index_base + lane0,),
                             deps=((prep, 1),),
                             tag="paired_direct_branch_base_flow",
                             group=gg,
@@ -4655,15 +4991,15 @@ class KernelBuilder:
                     else:
                         prep = graph.emit(
                             "alu",
-                            ("+", mirror + lane0, mirror + lane0, s_c0),
-                            reads=(mirror + lane0, s_c0),
-                            writes=(mirror + lane0,),
+                            ("+", direct_index_base + lane0, direct_index_base + lane0, s_c0),
+                            reads=(direct_index_base + lane0, s_c0),
+                            writes=(direct_index_base + lane0,),
                             deps=((prep, 1),),
                             tag="paired_direct_branch_base",
                             group=gg,
                             round=rnd,
                         )
-                    if record_index and not (
+                    if record_index and not CHAINED_PAIRED_DIRECT_BASE and not (
                         ELIDE_DIRECT_BRANCH_TARGET
                         and PAIRED_DIRECT_BASE_ON_FLOW
                         and record_index not in PAIRED_DIRECT_BASE_ALU_RECORDS
@@ -4675,22 +5011,49 @@ class KernelBuilder:
                             "alu",
                             (
                                 "+",
-                                mirror + lane0,
-                                mirror + lane0,
+                                direct_index_base + lane0,
+                                direct_index_base + lane0,
                                 offset_register,
                             ),
-                            reads=(mirror + lane0, offset_register),
-                            writes=(mirror + lane0,),
+                            reads=(direct_index_base + lane0, offset_register),
+                            writes=(direct_index_base + lane0,),
                             deps=((prep, 1),),
                             tag="paired_direct_branch_offset",
                             group=gg,
                             round=rnd,
                         )
+                    # A table jump changes control flow before the following
+                    # copy bundle executes.  Therefore the jump itself must
+                    # wait for every value read by those copies; leaving
+                    # this as a copy-only dependency lets a latency scheduler
+                    # jump dozens of cycles before the hash result is live.
+                    jump_deps = [(prep, 1)]
+                    for lane in lanes:
+                        value_parent = graph.last_writer[value + lane]
+                        if value_parent >= 0:
+                            jump_deps.append((value_parent, 0 if RELAX_PAIRED_DIRECT_JUMP else 1))
+                        # Every possible table source must be ready for the
+                        # following copy cycle, including sources absent from
+                        # the representative node-zero placeholder.
+                        for source_vector in direct_reversed:
+                            source_parent = graph.last_writer.get(source_vector + lane * direct_source_lane_stride, -1)
+                            if source_parent >= 0:
+                                jump_deps.append((source_parent, 0))
+                        # In-place value writes carry zero-lag anti-
+                        # dependencies from readers emitted by an earlier
+                        # round.  The table copy is reached through control
+                        # flow, so those readers must also complete before
+                        # the jump—not merely before the unreachable linear
+                        # copy placeholder.
+                        jump_deps.extend(
+                            (reader, 0)
+                            for reader in graph.readers.get(value + lane, ())
+                        )
                     jump = graph.emit(
                         "flow",
-                        ("jump_indirect", mirror + lane0),
-                        reads=(mirror + lane0,),
-                        deps=((prep, 1),),
+                        ("jump_indirect", direct_index_base + lane0),
+                        reads=(direct_index_base + lane0,),
+                        deps=tuple(jump_deps),
                         tag="paired_direct_branch_jump",
                         group=gg,
                         round=rnd,
@@ -4730,8 +5093,8 @@ class KernelBuilder:
                             "flow",
                             (
                                 "add_imm",
-                                mirror + lane0,
-                                mirror + lane0,
+                                direct_index_base + lane0,
+                                direct_index_base + lane0,
                                 DIRECT_TARGET_SENTINEL,
                             ),
                             deps=tuple((copy, 0) for copy in copies),
@@ -4739,7 +5102,40 @@ class KernelBuilder:
                             group=gg,
                             round=rnd,
                         )
-            if 4 <= depth <= PREPROCESS_MAX_DEPTH:
+                    if CHAINED_PAIRED_DIRECT_BASE:
+                        previous_target = graph.emit(
+                            "alu",
+                            (
+                                "+",
+                                s_c0,
+                                s_c0,
+                                paired_direct_stride_register[0],
+                            ),
+                            reads=(s_c0, paired_direct_stride_register[0]),
+                            writes=(s_c0,),
+                            # The shared base is dead after the address add
+                            # reads it, regardless of when the jump executes.
+                            # Reads see the old value within the same bundle.
+                            deps=(
+                                ((prep, 0),)
+                                if PARALLEL_PAIRED_DIRECT_PREP
+                                else ((previous_target, 1),)
+                            ),
+                            tag="paired_direct_table_base_advance",
+                            group=gg,
+                            round=rnd,
+                        )
+                if CHAINED_PAIRED_DIRECT_BASE:
+                    paired_direct_global_previous_target[0] = previous_target
+            if (
+                OMIT_FUSED_DIRECT_NODE_TRANSFORM
+                and FUSED_DIRECT_BRANCH_XOR
+                and direct_branch_lanes | paired_direct_lanes == frozenset(range(VLEN))
+            ):
+                # Every node XOR has already written value inside its table.
+                # No lane consumes temp as a node after this gather.
+                pass
+            elif 4 <= depth <= PREPROCESS_MAX_DEPTH:
                 # This level was transformed once during setup.
                 pass
             elif (
@@ -5209,17 +5605,17 @@ class KernelBuilder:
             # the lookup and erase the whole point of the lowering.  Partial
             # lane maps still use the vector mux because a lane-wise masked
             # vselect is not available in this ISA.
-            final_direct_lanes = (
+            direct_lanes = (
                 frozenset(DIRECT_BRANCH_LOOKUPS.get(gg, ()))
                 | frozenset(
                     lane
                     for pair in PAIRED_DIRECT_BRANCH_LOOKUPS.get(gg, ())
                     for lane in pair
                 )
-                if rnd == rounds - 1 and depth == 4
+                if (rnd == direct_round_for(gg) or paired_at(gg, rnd)) and depth == DIRECT_BRANCH_DEPTH
                 else frozenset()
             )
-            complete_final_direct = final_direct_lanes == frozenset(range(VLEN))
+            complete_direct = direct_lanes == frozenset(range(VLEN))
 
             if depth == 0:
                 if (INDEPENDENT_ROOT_CACHE or DIRECT_MIRROR_PATH) and rnd == 0:
@@ -5227,16 +5623,36 @@ class KernelBuilder:
                 else:
                     xor_node(value, node_vec[0], gg, rnd)
             elif depth <= 3:
-                if (gg, rnd) in GATHER_DEPTH3_SET:
+                if complete_direct and depth == DIRECT_BRANCH_DEPTH:
+                    # A complete paired table covers every lane, so the
+                    # cached depth-3 mux is replaced by the same branch
+                    # lowering used for deep gathers.  The table copy fuses
+                    # the node XOR; the lane-wise skip below keeps the old
+                    # value from being XORed a second time.
+                    gather_node(depth, state, gg, rnd, temp_reg=temp)
+                elif (gg, rnd) in GATHER_DEPTH3_SET:
                     gather_node(depth, state, gg, rnd, temp_reg=temp)
                 else:
                     select_cached(
                         depth, state, workspace, gg, rnd, temp_reg=temp
                     )
-                xor_node(value, temp, gg, rnd)
-            elif (rnd == 4 and gg in FIRST_CACHE_SET) or (
+                xor_node(
+                    value,
+                    temp,
+                    gg,
+                    rnd,
+                    skip_lanes=direct_lanes if complete_direct else frozenset(),
+                )
+            elif (
+                (
+                    rnd == 4
+                    and gg in FIRST_CACHE_SET
+                    and not complete_direct
+                )
+                or (
                 rnd == rounds - 1 and gg in FINAL_CACHE_SET
-                and not complete_final_direct
+                and not complete_direct
+                )
             ):
                 if (gg, rnd) in GATHER_LEVEL4_SET:
                     gather_node(depth, state, gg, rnd, temp_reg=temp)
@@ -5292,8 +5708,8 @@ class KernelBuilder:
                             for lane in pair
                         )
                         if FUSED_DIRECT_BRANCH_XOR
-                        and rnd == rounds - 1
-                        and depth == 4
+                        and (rnd == direct_round_for(gg) or paired_at(gg, rnd))
+                        and depth == DIRECT_BRANCH_DEPTH
                         else frozenset()
                     )
                     xor_node(value, temp, gg, rnd, skip_lanes=fused_lanes)
@@ -5969,6 +6385,25 @@ class KernelBuilder:
                         round=rnd,
                     )
 
+            # Saved final-cache groups keep p11..p14 in separate vectors and
+            # therefore do not materialize the ordinary packed mirror.  Form
+            # the four-bit index one round early when the direct dispatch is
+            # enabled; the final pair prep can then start from this value
+            # without four VALU operations on its critical path.
+            if (
+                PREPACK_PAIRED_DIRECT_INDEX
+                and not SSA_ROUND_TEMPS
+                and DIRECT_BRANCH_DEPTH == 4
+                and paired_at(gg, rnd + 1)
+                and gg in PAIRED_DIRECT_BRANCH_LOOKUPS
+                and gg in saved_second_path_bits
+            ):
+                saved_path = saved_second_path_bits[gg]
+                if len(saved_path) < 4:
+                    raise ValueError("prepacked direct index requires four saved path bits")
+                prepack_temp = temps[state]
+                emit_saved_direct_index(prepack_temp, saved_path, gg, rnd, prepack=True)
+
             if gg in DELAYED_PAIR_BRANCH_GROUPS and rnd == rounds - 2:
                 # The round-14 mirror now contains the complete 4-bit level-4
                 # index for every lane.  Four 16x16 indirect tables copy two
@@ -6573,8 +7008,8 @@ class KernelBuilder:
                     "output_pointer",
                 )
             rolling_pairs = (
-                N_GROUPS // 2
-                if INDEPENDENT_TAIL_OUTPUTS
+                (N_GROUPS - INDEPENDENT_TAIL_GROUP_COUNT) // 2
+                if INDEPENDENT_TAIL_OUTPUTS and LOWER_TAIL_BEFORE_SCHEDULE
                 else N_GROUPS // 2
             )
             for pair in range(rolling_pairs):
@@ -6617,7 +7052,26 @@ class KernelBuilder:
                 # below.  Keeping them out of the DAG prevents their short
                 # address loads from distorting the global load-distance
                 # heuristic and delaying the actual computation.
-                pass
+                if LOWER_TAIL_BEFORE_SCHEDULE:
+                    if INDEPENDENT_TAIL_GROUP_COUNT not in (2, 4, 6, 8, 10):
+                        raise ValueError("early tail lowering requires an even tail of at most ten groups")
+                    pointer_pool = (
+                        s_c1, s_m23, s_nineteen, s_c2_shift9, s_c0,
+                        s_one, s_c4, s_four, s_m4, s_c23,
+                    )
+                    for group, pointer in zip(
+                        range(N_GROUPS - INDEPENDENT_TAIL_GROUP_COUNT, N_GROUPS),
+                        pointer_pool[-INDEPENDENT_TAIL_GROUP_COUNT:],
+                    ):
+                        graph.emit(
+                            "load", ("const", pointer, values_base + group * VLEN),
+                            writes=(pointer,), tag="tail_output_pointer", group=group,
+                        )
+                        graph.emit(
+                            "store", ("vstore", pointer, values[group]),
+                            reads=(pointer,) + _words(values[group]),
+                            tag="output_store", group=group,
+                        )
 
         if ELIDE_DEAD_SCALAR_CONSTANTS:
             child_counts = [0] * len(graph.ops)
@@ -6706,6 +7160,79 @@ class KernelBuilder:
                 )
             schedules.append(schedule)
             forward_cycles.append(cycles)
+
+        # An indirect branch jumps out to an out-of-line replay of the target
+        # VLIW packet.  The scheduler normally only orders the branch against
+        # the copied value, so unrelated slots co-issued in that packet can
+        # still have a producer scheduled after the jump.  In that case the
+        # replay observes a stale value even though the linear packet was
+        # legal.  Use the first scheduling pass as a dependency oracle: for
+        # every branch whose copy packet is the immediately following cycle,
+        # add that packet's non-branch parents to the jump, then reschedule.
+        # This keeps the table trace contiguous while making every replayed
+        # slot data-ready before control leaves the main stream.
+        if SCHEDULE_EXACT_CYCLES is None and (
+            DIRECT_BRANCH_LOOKUPS or PAIRED_DIRECT_BRANCH_LOOKUPS
+        ):
+            repair_edges: set[tuple[int, int, int]] = set()
+            for cycles in forward_cycles:
+                for jump_index, jump_op in enumerate(graph.ops):
+                    if not (
+                        jump_op.tag.endswith("direct_branch_jump")
+                        or jump_op.tag.endswith("paired_direct_branch_jump")
+                    ):
+                        continue
+                    if (
+                        not PAIRED_DIRECT_PACKET_REPAIR
+                        and (ELIDE_DIRECT_BRANCH_TARGET or COMPACT_PAIRED_DIRECT_RETURN)
+                        and jump_op.tag == "paired_direct_branch_jump"
+                    ):
+                        # Elided paired entries execute only the two copied
+                        # lanes before returning to the original packet.
+                        # Their operands already gate the jump explicitly.
+                        continue
+                    jump_cycle = cycles[jump_index]
+                    target_ids = [
+                        target_index
+                        for target_index, target_op in enumerate(graph.ops)
+                        if cycles[target_index] == jump_cycle + 1
+                        and target_op.group == jump_op.group
+                        and target_op.round == jump_op.round
+                        and target_op.tag.endswith("direct_branch_copy")
+                    ]
+                    if not target_ids:
+                        continue
+                    # Include every operation in the target packet: the
+                    # direct-copy op itself is excluded because it already
+                    # depends on this jump, while all other parents must be
+                    # complete before the replay executes.
+                    for target_index, target_op in enumerate(graph.ops):
+                        if cycles[target_index] != jump_cycle + 1:
+                            continue
+                        if target_op.tag.endswith("direct_branch_copy") or target_op.tag.endswith("branch_target"):
+                            continue
+                        for parent in target_op.parents:
+                            if parent == jump_index or graph.ops[parent].tag.endswith("direct_branch_copy"):
+                                continue
+                            repair_edges.add((jump_index, parent, 1))
+            if repair_edges:
+                for jump_index, parent, lag in repair_edges:
+                    old_lag = graph.ops[jump_index].parents.get(parent, -1)
+                    if lag > old_lag:
+                        graph.ops[jump_index].parents[parent] = lag
+                schedules = []
+                forward_cycles = []
+                for policy in SCHEDULE_POLICIES:
+                    schedule, cycles = self._schedule(
+                        graph.ops,
+                        policy,
+                        return_cycles=True,
+                        external_scores=SCHEDULE_EXTERNAL_SCORES,
+                        height_weight=SCHEDULE_EXTERNAL_HEIGHT_WEIGHT,
+                        tie_scores=SCHEDULE_EXTERNAL_TIE_SCORES,
+                    )
+                    schedules.append(schedule)
+                    forward_cycles.append(cycles)
         reversed_ops = self._reverse_ops(graph.ops)
         if virtual_vectors and BACKWARD_POLICIES:
             raise ValueError("virtual workspaces currently support forward scheduling only")
@@ -6857,7 +7384,7 @@ class KernelBuilder:
             self.virtual_workspace_intervals = 0
             self.virtual_workspace_assignment = {}
 
-        if INDEPENDENT_TAIL_OUTPUTS:
+        if INDEPENDENT_TAIL_OUTPUTS and not LOWER_TAIL_BEFORE_SCHEDULE:
             if best_index >= len(SCHEDULE_POLICIES):
                 raise ValueError("late tail stores require a forward schedule")
             op_cycles = forward_cycles[best_index]
@@ -6965,6 +7492,10 @@ class KernelBuilder:
 
             while self.instrs and not any(self.instrs[-1].values()):
                 self.instrs.pop()
+
+        if SCHEDULE_PREFLIGHT_ONLY:
+            self.preflight_packet_count = len(self.instrs)
+            raise ValueError("schedule preflight only; tables not assembled")
 
         if (
             BRANCH_FINAL_LANES
@@ -7486,11 +8017,6 @@ class KernelBuilder:
             paired_jump_pcs = []
             paired_target_pcs = []
             for pair, jump_register in enumerate(paired_jump_registers):
-                jump_pc = next(
-                    pc
-                    for pc, bundle in enumerate(self.instrs[:main_length])
-                    if ("jump_indirect", jump_register) in bundle.get("flow", ())
-                )
                 target_pc = next(
                     pc
                     for pc, bundle in enumerate(self.instrs[:main_length])
@@ -7502,7 +8028,11 @@ class KernelBuilder:
                     )
                     in bundle.get("flow", ())
                 )
-                if target_pc != jump_pc + 1:
+                # Other direct tables may use this scratch word earlier.
+                # The unique paired-return marker, not the register name,
+                # identifies this final trace. Its jump must be adjacent.
+                jump_pc = target_pc - 1
+                if jump_pc < 0 or ("jump_indirect", jump_register) not in self.instrs[jump_pc].get("flow", ()):
                     raise AssertionError(
                         f"paired trace {pair} is not contiguous: "
                         f"{jump_pc},{target_pc}"
@@ -7606,17 +8136,17 @@ class KernelBuilder:
                     mirror0, mirror1 = divmod(combined_index, 8)
                     replacements = (
                         (
-                            level4_reversed[2 * mirror0 + 1] + lane0
+                            level4_reversed[2 * mirror0 + 1] + (0 if SCALAR_LEVEL4_TABLE_CACHE else lane0)
                             if PAIRED_EARLY_XOR or PAIRED_FLOW_SELECT
                             else level4_diff[mirror0] + lane0
                         ),
-                        level4_reversed[2 * mirror0] + lane0,
+                        level4_reversed[2 * mirror0] + (0 if SCALAR_LEVEL4_TABLE_CACHE else lane0),
                         (
-                            level4_reversed[2 * mirror1 + 1] + lane1
+                            level4_reversed[2 * mirror1 + 1] + (0 if SCALAR_LEVEL4_TABLE_CACHE else lane1)
                             if PAIRED_EARLY_XOR or PAIRED_FLOW_SELECT
                             else level4_diff[mirror1] + lane1
                         ),
-                        level4_reversed[2 * mirror1] + lane1,
+                        level4_reversed[2 * mirror1] + (0 if SCALAR_LEVEL4_TABLE_CACHE else lane1),
                     )
                     target = {
                         engine: list(slots)
@@ -7653,6 +8183,17 @@ class KernelBuilder:
             return False
 
         if DIRECT_BRANCH_LOOKUPS:
+            direct_entry_count = 1 << DIRECT_BRANCH_DEPTH
+            direct_index_bases = {
+                group: (
+                    temps[group]
+                    if DIRECT_BRANCH_DEPTH == 3
+                    or direct_round_for(group) != rounds - 1
+                    or (DIRECT_BRANCH_DEPTH == 4 and len(saved_second_path_bits.get(group, ())) >= 4)
+                    else mirrors[group]
+                )
+                for group in DIRECT_BRANCH_LOOKUPS
+            }
             if not BRANCH_FINAL_LANES and not DELAYED_PAIR_BRANCH_GROUPS:
                 main_length = len(self.instrs)
                 if self.instrs[-1].get("flow"):
@@ -7669,13 +8210,13 @@ class KernelBuilder:
                 for slot in bundle.get("flow", ())
                 if slot[0] == "jump_indirect"
                 and any(
-                    slot[1] == mirrors[group] + lane
+                    slot[1] == direct_index_bases[group] + lane
                     for group in DIRECT_BRANCH_LOOKUPS
                     for lane in DIRECT_BRANCH_LOOKUPS[group]
                 )
             )
             direct_dest_words = {
-                mirrors[group] + lane
+                direct_index_bases[group] + lane
                 for group in DIRECT_BRANCH_LOOKUPS
                 for lane in DIRECT_BRANCH_LOOKUPS[group]
             }
@@ -7705,7 +8246,7 @@ class KernelBuilder:
             )
             for group in sorted(DIRECT_BRANCH_LOOKUPS):
                 for lane in DIRECT_BRANCH_LOOKUPS[group]:
-                    mirror_word = mirrors[group] + lane
+                    mirror_word = direct_index_bases[group] + lane
                     temp_word = temps[group] + lane
                     jump_pcs = [
                         pc
@@ -7784,13 +8325,13 @@ class KernelBuilder:
                             "direct branch copy is not packetized with target: "
                             f"group={group} lane={lane} pc={target_pc}"
                         )
-                    for mirror_value in range(16):
+                    for mirror_value in range(direct_entry_count):
                         target = {
                             engine: list(slots)
                             for engine, slots in self.instrs[target_pc].items()
                         }
                         copy_index = target["alu"].index(placeholder_copy)
-                        source = level4_reversed[mirror_value] + lane
+                        source = direct_reversed[mirror_value] + lane
                         target["alu"][copy_index] = (
                             (
                                 "^",
@@ -7809,23 +8350,53 @@ class KernelBuilder:
             self.direct_branch_table_bundles = 0
 
         if PAIRED_DIRECT_BRANCH_LOOKUPS:
+            paired_direct_entry_count = 1 << (DIRECT_BRANCH_ARITY * DIRECT_BRANCH_DEPTH)
+            paired_direct_index_bases = {
+                (group, selected_round): (
+                    temps[group]
+                    if DIRECT_BRANCH_DEPTH == 3
+                    or selected_round != rounds - 1
+                    or (DIRECT_BRANCH_DEPTH == 4 and len(saved_second_path_bits.get(group, ())) >= 4)
+                    else mirrors[group]
+                )
+                for group, selected_round, _lanes in paired_direct_records
+            }
+            # A standalone paired table does not have the historical
+            # branch-final epilogue to establish the linear main length.
+            if not self.branch_main_cycles:
+                main_length = len(self.instrs)
+                if self.instrs[-1].get("flow"):
+                    raise AssertionError(
+                        "final bundle has no flow slot for paired direct halt"
+                    )
+                self.instrs[-1]["flow"] = [("halt",)]
+                self.branch_main_cycles = main_length
             if DIRECT_BRANCH_LOOKUPS and not (
                 ELIDE_DIRECT_BRANCH_TARGET and PAIRED_DIRECT_BASE_ON_FLOW
             ):
                 raise ValueError("individual and paired direct lookups are exclusive")
             paired_direct_base = len(self.instrs)
+            paired_direct_table_records = tuple(
+                paired_direct_emission_order
+                if CHAINED_PAIRED_DIRECT_BASE
+                else paired_direct_records
+            )
+            if len(paired_direct_table_records) != len(paired_direct_index):
+                raise AssertionError(
+                    "paired direct table records were not fully emitted"
+                )
             first_jump_pc = min(
                 pc
                 for pc, bundle in enumerate(
                     self.instrs[: self.branch_main_cycles]
                 )
-                for group, lanes in paired_direct_records
-                if ("jump_indirect", mirrors[group] + lanes[0])
+                for group, selected_round, lanes in paired_direct_table_records
+                if ("jump_indirect", paired_direct_index_bases[group, selected_round] + lanes[0])
                 in bundle.get("flow", ())
             )
             paired_dest_words = {
-                mirrors[group] + lanes[0]
-                for group, lanes in paired_direct_records
+                paired_direct_index_bases[group, selected_round] + lanes[0]
+                for group, selected_round, lanes in paired_direct_table_records
             }
             paired_base_alu_records = set(PAIRED_DIRECT_BASE_ALU_RECORDS)
             if paired_base_alu_records:
@@ -7883,16 +8454,19 @@ class KernelBuilder:
                 )
 
             paired_direct_blocks: list[dict[str, list[tuple]]] = []
-            for group, lanes in paired_direct_records:
-                lane0, lane1 = lanes
-                mirror_word = mirrors[group] + lane0
+            last_paired_jump: dict[int, int] = {}
+            for group, selected_round, lanes in paired_direct_table_records:
+                lane0 = lanes[0]
+                mirror_word = paired_direct_index_bases[group, selected_round] + lane0
                 jump_pc = next(
                     pc
                     for pc, bundle in enumerate(
                         self.instrs[: self.branch_main_cycles]
                     )
-                    if ("jump_indirect", mirror_word) in bundle.get("flow", ())
+                    if pc > last_paired_jump.get(mirror_word, -1)
+                    and ("jump_indirect", mirror_word) in bundle.get("flow", ())
                 )
+                last_paired_jump[mirror_word] = jump_pc
                 placeholders = tuple(
                     (
                         (
@@ -7926,7 +8500,7 @@ class KernelBuilder:
                         for pc, bundle in enumerate(
                             self.instrs[: self.branch_main_cycles]
                         )
-                        if (
+                        if pc > jump_pc and (
                             "add_imm",
                             mirror_word,
                             mirror_word,
@@ -7935,12 +8509,19 @@ class KernelBuilder:
                         in bundle.get("flow", ())
                     )
                 trace_length = target_pc - jump_pc
+                # Both modes index table entries with unit stride. Emitting
+                # a longer trace silently shifts every subsequent entry/base.
+                if (COMPACT_PAIRED_DIRECT_RETURN or ELIDE_DIRECT_BRANCH_TARGET) and trace_length != 1:
+                    raise AssertionError(
+                        "single-packet direct return requires an adjacent copy packet: "
+                        f"group={group} lanes={lanes} pcs={jump_pc},{target_pc}"
+                    )
                 if not 1 <= trace_length <= 4:
                     raise AssertionError(
                         f"paired direct trace is too long: "
                         f"group={group} lanes={lanes} pcs={jump_pc},{target_pc}"
                     )
-                record_index = paired_direct_index[(group, lanes)]
+                record_index = paired_direct_index[(group, selected_round, lanes)]
                 use_flow_base = (
                     PAIRED_DIRECT_BASE_ON_FLOW
                     and record_index not in paired_base_alu_records
@@ -7951,7 +8532,11 @@ class KernelBuilder:
                         mirror_word,
                         mirror_word,
                         paired_direct_base
-                        + (256 * record_index if ELIDE_DIRECT_BRANCH_TARGET else 0),
+                        + (
+                            paired_direct_entry_count * record_index
+                            if ELIDE_DIRECT_BRANCH_TARGET
+                            else 0
+                        ),
                     )
                     base_pc = next(
                         pc
@@ -7982,8 +8567,8 @@ class KernelBuilder:
                             f"group={group} lanes={lanes}"
                         )
                 desired_offset = (
-                    256 * record_index
-                    if ELIDE_DIRECT_BRANCH_TARGET
+                    paired_direct_entry_count * record_index
+                    if ELIDE_DIRECT_BRANCH_TARGET or COMPACT_PAIRED_DIRECT_RETURN
                     else paired_direct_offsets[record_index]
                 )
                 while len(paired_direct_blocks) < desired_offset:
@@ -8001,21 +8586,34 @@ class KernelBuilder:
                         f"paired direct copies are split: pcs={sorted(copy_pcs)}"
                     )
                 copy_pc = next(iter(copy_pcs))
-                for combined_index in range(256):
-                    mirror0, mirror1 = divmod(combined_index, 16)
+                for combined_index in range(paired_direct_entry_count):
+                    mirror_indices = tuple(
+                        (combined_index >> (DIRECT_BRANCH_DEPTH * position))
+                        & ((1 << DIRECT_BRANCH_DEPTH) - 1)
+                        for position in reversed(range(DIRECT_BRANCH_ARITY))
+                    )
                     entry_blocks = []
                     for trace_pc in range(jump_pc + 1, target_pc + 1):
-                        target = {
-                            engine: list(slots)
-                            for engine, slots in self.instrs[trace_pc].items()
-                        }
+                        if ELIDE_DIRECT_BRANCH_TARGET and trace_pc == copy_pc:
+                            # Return to the original target packet so all of
+                            # its unrelated VLIW slots execute in their normal
+                            # context.  The out-of-line packet carries only
+                            # the selected direct copies; replaying loads or
+                            # selectors here would either clobber their input
+                            # addresses or consume a FLOW slot needed for the
+                            # return jump.
+                            target = {"alu": []}
+                        else:
+                            target = {
+                                engine: list(slots)
+                                for engine, slots in self.instrs[trace_pc].items()
+                            }
                         if trace_pc == copy_pc:
                             for placeholder, mirror_value, lane in zip(
-                                placeholders, (mirror0, mirror1), lanes
+                                placeholders, mirror_indices, lanes
                             ):
-                                source = level4_reversed[mirror_value] + lane
-                                copy_index = target["alu"].index(placeholder)
-                                target["alu"][copy_index] = (
+                                source = direct_reversed[mirror_value] + lane * direct_source_lane_stride
+                                copy_op = (
                                     (
                                         "^",
                                         values[group] + lane,
@@ -8025,17 +8623,56 @@ class KernelBuilder:
                                     if FUSED_DIRECT_BRANCH_XOR
                                     else ("|", placeholder[1], source, source)
                                 )
+                                if placeholder in target.get("alu", ()):
+                                    copy_index = target["alu"].index(placeholder)
+                                    target["alu"][copy_index] = copy_op
+                                else:
+                                    # Keep this fallback for hand-built
+                                    # packets that elide the placeholder.
+                                    target.setdefault("alu", []).append(copy_op)
                         if trace_pc == target_pc:
-                            target["flow"] = [("jump", target_pc + 1)]
+                            target["flow"] = [
+                                ("jump", target_pc if ELIDE_DIRECT_BRANCH_TARGET else target_pc + 1)
+                            ]
                         entry_blocks.append(target)
                     while len(entry_blocks) < (
-                        1 if ELIDE_DIRECT_BRANCH_TARGET else 4
+                        1 if ELIDE_DIRECT_BRANCH_TARGET or COMPACT_PAIRED_DIRECT_RETURN else 4
                     ):
                         entry_blocks.append({"flow": [("halt",)]})
                     paired_direct_blocks.extend(entry_blocks)
+                if ELIDE_DIRECT_BRANCH_TARGET:
+                    # The table replay carries the selected direct copies; the
+                    # main target packet runs next with those placeholders
+                    # removed, retaining every unrelated slot and flow op.  A
+                    # packet may consist solely of the copied lanes (this is
+                    # common when the lowering covers every final lookup in a
+                    # group).  Keep the VLIW word non-empty with value-preserving
+                    # ALU operations in that case; an empty word would be a
+                    # zero-cost simulator step and is not a legal schedule.
+                    self.instrs[copy_pc]["alu"] = [
+                        slot
+                        for slot in self.instrs[copy_pc].get("alu", ())
+                        if slot not in placeholders
+                    ]
+                    if not any(self.instrs[copy_pc].values()):
+                        self.instrs[copy_pc] = {
+                            "alu": [
+                                ("|", placeholder[1], placeholder[1], placeholder[1])
+                                for placeholder in placeholders
+                            ]
+                        }
             self.instrs.extend(paired_direct_blocks)
             self.direct_branch_table_bundles = len(paired_direct_blocks)
 
+        # A multi-group elided table can remove the last copied ALU slot from
+        # a main-stream packet that was otherwise only a placeholder.  Keep
+        # such a packet as a real, value-preserving VLIW cycle; silently
+        # leaving an empty dictionary would make the simulator advance the PC
+        # without charging a cycle and would invalidate the schedule model.
+        if PAIRED_DIRECT_BRANCH_LOOKUPS:
+            for bundle in self.instrs:
+                if not any(bundle.values()):
+                    bundle["alu"] = [("|", s_one, s_one, s_one)]
         self._validate_program()
 
     @staticmethod
@@ -8429,15 +9066,20 @@ class KernelBuilder:
                 for engine in engine_order:
                     if used[engine] >= SLOT_LIMITS[engine]:
                         continue
-                    if engine == "flow" and any(
+                    if engine == "flow" and used["alu"] < SLOT_LIMITS["alu"] and any(
                         ops[item[1]].tag
                         in {
                             "paired_branch_delayed_copy",
+                            "paired_branch_copy",
                             "direct_branch_copy",
                             "paired_direct_branch_copy",
                         }
                         and earliest[item[1]] <= cycle
                         for item in heaps["alu"]
+                    ) and not any(
+                        ops[item[1]].tag.endswith("branch_target")
+                        and earliest[item[1]] <= cycle
+                        for item in heaps["flow"]
                     ):
                         # Packetize all delayed-table copy placeholders before
                         # choosing the sole flow op.  Their target marker then
@@ -8451,7 +9093,42 @@ class KernelBuilder:
 
                     deferred = []
                     chosen = None
+                    if engine == "alu" and PRIORITIZE_PAIRED_COPIES:
+                        copy_index = next((index for index, item in enumerate(heap)
+                                           if ops[item[1]].tag == "paired_direct_branch_copy"
+                                           and earliest[item[1]] <= cycle), None)
+                        if copy_index is not None:
+                            chosen = heap[copy_index][1]
+                            heap[copy_index] = heap[-1]
+                            heap.pop()
+                            if copy_index < len(heap):
+                                heapq.heapify(heap)
+                    if engine == "flow":
+                        # A branch target marker is the return edge for an
+                        # indirect-table trace.  It is legal to co-issue with
+                        # the preceding ALU copies (all dependencies are
+                        # lag-0), and doing so is required for a contiguous
+                        # jump/copy/target trace.  Reserve the sole FLOW slot
+                        # for a ready target before considering unrelated
+                        # selectors.
+                        target_item_index = next(
+                            (
+                                index
+                                for index, item in enumerate(heap)
+                                if ops[item[1]].tag.endswith("branch_target")
+                                and earliest[item[1]] <= cycle
+                            ),
+                            None,
+                        )
+                        if target_item_index is not None:
+                            chosen = heap[target_item_index][1]
+                            heap[target_item_index] = heap[-1]
+                            heap.pop()
+                            if target_item_index < len(heap):
+                                heapq.heapify(heap)
                     while heap:
+                        if chosen is not None:
+                            break
                         item = heapq.heappop(heap)
                         candidate = item[1]
                         if earliest[candidate] <= cycle:
@@ -8481,7 +9158,39 @@ class KernelBuilder:
                             else:
                                 future[earliest[child]].append(child)
 
+            # Whole-vector expansion preserves the original dependency node:
+            # all eight lanes still read the old image and commit together.
+            if DYNAMIC_VECTOR_TO_ALU and used["valu"] == SLOT_LIMITS["valu"] and used["alu"] + VLEN <= SLOT_LIMITS["alu"]:
+                candidates = [(item, index) for index, item in enumerate(heaps["valu"])
+                              if earliest[item[1]] <= cycle
+                              and ops[item[1]].slot[0] in {"+", "-", "*", "^", "&", "|", "<<", ">>", "%", "//", "<", "=="}]
+                if candidates:
+                    (_, chosen), index = min(candidates)
+                    heap = heaps["valu"]
+                    heap[index] = heap[-1]
+                    heap.pop()
+                    if index < len(heap):
+                        heapq.heapify(heap)
+                    opcode, dest, left, right = ops[chosen].slot
+                    bundle["alu"].extend((opcode, dest + lane, left + lane, right + lane)
+                                         for lane in range(VLEN))
+                    used["alu"] += VLEN
+                    scheduled += 1
+                    scheduled_cycle[chosen] = cycle
+                    for child, lag in children[chosen]:
+                        indegree[child] -= 1
+                        earliest[child] = max(earliest[child], cycle + lag)
+                        if indegree[child] == 0:
+                            if earliest[child] <= cycle:
+                                push_ready(child)
+                            else:
+                                future[earliest[child]].append(child)
+
             if not bundle:
+                if not future and not any(heaps.values()):
+                    raise ValueError(
+                        f"instruction dependencies contain a cycle: {n - scheduled} operations remain"
+                    )
                 # All dependency lags are at most one, so this can occur only
                 # before the next real cycle.  Do not emit a zero-cost bundle.
                 cycle += 1

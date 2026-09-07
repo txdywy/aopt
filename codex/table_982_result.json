@@ -1,0 +1,11 @@
+{
+  "status": "experimental; not exported as a portable submission",
+  "cycles": 982,
+  "verified_full32_seeds": 100,
+  "verified_boundary_patterns": ["zero", "ones", "alternating"],
+  "boundary_runs": 9,
+  "instruction_packets": 4064539,
+  "scratch_words": 1536,
+  "command": "/opt/homebrew/bin/python3.12 codex/experiment_paired_base.py --arity 4 --group-ids 3,4,5,7,9,11,12,13,15,16,18,19,20,24,29,31 --also-final-group-ids 0,1,3,4,5,6,7,9,10,11,12,17,23,28,29 --round 4 --keep-final --compact-return --recycle-stride --relax-jump --no-packet-repair --vector-index --horner-index --omit-level4-diffs --prioritize-copies --parallel --restore-hash-count 88 --dispatch-lead 32 --teacher-weight 1024 --last-group-lead 8 --seeds 100 --pattern full32",
+  "remaining_validation": ["official submission integration", "portable export and size compatibility"]
+}

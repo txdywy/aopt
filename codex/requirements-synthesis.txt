@@ -1,0 +1,2 @@
+# Optional offline research dependency; not required by the submission kernel.
+z3-solver==5.1.0.0

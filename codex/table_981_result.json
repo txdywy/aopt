@@ -1,0 +1,20 @@
+{
+  "status": "standalone export locally verified; browser judge compatibility unverified",
+  "standalone_file": "codex/perf_takehome_981.py",
+  "standalone_bytes": 91975,
+  "standalone_sha256": "38eb7a6e4dd5f7c9dbb37289e1d1b8f54cbc56e5d2daf2939bfc415aaef61905",
+  "standalone_validation": "100 full32 seeds, 3 boundary patterns, all 9 unchanged official tests: 981 cycles; execution without __file__",
+  "export_validation": "all 62*65536 table packets compared exactly to original generator; unchanged 1306-packet prefix",
+  "cycles": 981,
+  "verified_full32_seeds": 100,
+  "verified_boundary_patterns": ["zero", "ones", "alternating"],
+  "executed_slots": {"alu": 10891, "valu": 5657, "load": 1887, "store": 62, "flow": 847},
+  "unchanged_load_bound": 944,
+  "relaxed_arithmetic_bound": 936,
+  "target_899_load_slot_excess": 89,
+  "target_899_arithmetic_lane_work_excess": 2207,
+  "instruction_packets": 4064538,
+  "scratch_words": 1536,
+  "command": "/opt/homebrew/bin/python3.12 codex/experiment_paired_base.py --arity 4 --group-ids 3,4,5,7,9,11,12,13,15,16,18,19,20,24,29,31 --also-final-group-ids 0,1,3,4,5,6,7,9,10,11,12,17,23,28,29 --round 4 --keep-final --compact-return --recycle-stride --relax-jump --no-packet-repair --vector-index --horner-index --omit-level4-diffs --prioritize-copies --parallel --restore-hash-count 88 --dispatch-lead 32 --teacher-weight 1024 --last-group-lead 8 --policy 3 --seeds 100 --pattern full32",
+  "remaining_validation": ["browser judge runtime memory and upload compatibility"]
+}

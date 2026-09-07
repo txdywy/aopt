@@ -490,6 +490,10 @@ def configure_target() -> None:
         )
     if "DIRECT_BRANCH_LOOKUPS" in os.environ:
         kernel.DIRECT_BRANCH_LOOKUPS = direct_lookup_map("DIRECT_BRANCH_LOOKUPS")
+    if "DIRECT_BRANCH_ROUND" in os.environ:
+        kernel.DIRECT_BRANCH_ROUND = int(os.environ["DIRECT_BRANCH_ROUND"])
+    if "DIRECT_BRANCH_DEPTH" in os.environ:
+        kernel.DIRECT_BRANCH_DEPTH = int(os.environ["DIRECT_BRANCH_DEPTH"])
     if "PAIRED_DIRECT_BRANCH_LOOKUPS" in os.environ:
         kernel.PAIRED_DIRECT_BRANCH_LOOKUPS = paired_direct_lookup_map(
             "PAIRED_DIRECT_BRANCH_LOOKUPS"
@@ -505,6 +509,14 @@ def configure_target() -> None:
     if "FUSE_PAIRED_DIRECT_STRIDE" in os.environ:
         kernel.FUSE_PAIRED_DIRECT_STRIDE = bool(
             int(os.environ["FUSE_PAIRED_DIRECT_STRIDE"])
+        )
+    if "CHAINED_PAIRED_DIRECT_BASE" in os.environ:
+        kernel.CHAINED_PAIRED_DIRECT_BASE = bool(
+            int(os.environ["CHAINED_PAIRED_DIRECT_BASE"])
+        )
+    if "PREPACK_PAIRED_DIRECT_INDEX" in os.environ:
+        kernel.PREPACK_PAIRED_DIRECT_INDEX = bool(
+            int(os.environ["PREPACK_PAIRED_DIRECT_INDEX"])
         )
     if "PAIRED_DIRECT_BASE_ON_FLOW" in os.environ:
         kernel.PAIRED_DIRECT_BASE_ON_FLOW = bool(

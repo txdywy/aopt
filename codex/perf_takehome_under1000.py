@@ -325,6 +325,8 @@ PRIORITIZE_PAIRED_COPIES = False
 DYNAMIC_VECTOR_TO_ALU = False
 SCHEDULE_PREFLIGHT_ONLY = False
 SCALAR_LEVEL4_TABLE_CACHE = False
+ALIAS_LEVEL4_TABLE_CACHE = False
+PRIVATE_CACHE_WORKSPACE_GROUPS = ()
 OMIT_FUSED_DIRECT_NODE_TRANSFORM = False
 VECTOR_DEPTH3_DIRECT_INDEX = False
 
@@ -348,6 +350,9 @@ DIRECT_BRANCH_DEPTH = 4
 CHAINED_DIRECT_BRANCH_BASE = True
 PAIRED_DIRECT_BRANCH_LOOKUPS: dict[int, tuple[tuple[int, ...], ...]] = {}
 DIRECT_BRANCH_ARITY = 2
+ISOLATE_PAIRED_DIRECT_JUMPS = False
+PAIRED_JUMP_FILL_ENGINES = frozenset()
+PAIRED_DIRECT_ADDRESS_LEAD = 1
 FUSED_DIRECT_BRANCH_XOR = True
 # The final direct-lookup target marker only rewrites the mirror/address
 # scratch lane with a dead sentinel.  Out-of-line table entries can instead
@@ -1066,6 +1071,14 @@ class KernelBuilder:
 
         scratch = _Scratch()
         graph = _Graph()
+        if ALIAS_LEVEL4_TABLE_CACHE and not SCALAR_LEVEL4_TABLE_CACHE:
+            raise ValueError("aliased level4 cache requires scalar level4 cache")
+        if PRIVATE_CACHE_WORKSPACE_GROUPS and (
+            not ALIAS_LEVEL4_TABLE_CACHE or len(PRIVATE_CACHE_WORKSPACE_GROUPS)>3
+            or len(set(PRIVATE_CACHE_WORKSPACE_GROUPS))!=len(PRIVATE_CACHE_WORKSPACE_GROUPS)
+            or any(g not in range(32) for g in PRIVATE_CACHE_WORKSPACE_GROUPS)
+        ):
+            raise ValueError("private cache workspaces require alias cache and at most3 unique groups")
         if SCALAR_LEVEL4_TABLE_CACHE and (
             not OMIT_LEVEL4_DIFF_SETUP
             or not (INDEPENDENT_ROOT_CACHE or DIRECT_MIRROR_PATH)
@@ -1434,6 +1447,9 @@ class KernelBuilder:
         def workspace_registers(
             workspace: int, gg: int, rnd: int
         ) -> tuple[list[int], list[int]]:
+            if rnd<11 and gg in PRIVATE_CACHE_WORKSPACE_GROUPS:
+                base=self.scratch['cached_node_15']+32*PRIVATE_CACHE_WORKSPACE_GROUPS.index(gg)
+                return [base,base+8,base+16],[base+24]
             if (
                 SSA_ALL_WORKSPACES
                 or (SSA_SECOND_WORKSPACES and rnd >= 11)
@@ -2483,9 +2499,13 @@ class KernelBuilder:
                 if SCALAR_LEVEL4_TABLE_CACHE and i >= 15:
                     if not OMIT_LEVEL4_DIFF_SETUP:
                         raise ValueError("scalar level4 cache requires omitted difference setup")
-                    graph.emit("alu", ("|", node_vec[i], top_words + i, top_words + i),
-                               reads=(top_words + i,), writes=(node_vec[i],), tag="scalar_level4_table_cache")
-                    graph.omitted_definitions.update(range(node_vec[i] + 1, node_vec[i] + VLEN))
+                    if ALIAS_LEVEL4_TABLE_CACHE:
+                        graph.omitted_definitions.update(range(node_vec[i],node_vec[i]+VLEN))
+                        node_vec[i]=top_words+i
+                    else:
+                        graph.emit("alu", ("|", node_vec[i], top_words + i, top_words + i),
+                                   reads=(top_words + i,), writes=(node_vec[i],), tag="scalar_level4_table_cache")
+                        graph.omitted_definitions.update(range(node_vec[i] + 1, node_vec[i] + VLEN))
                 elif i in MEMORY_CACHED_NODE_SET:
                     emit_memory_vector_constant(
                         node_vec[i],
@@ -3237,14 +3257,18 @@ class KernelBuilder:
                 raise ValueError("direct lookup round must match its configured tree depth")
         if VECTOR_PAIRED_DIRECT_INDEX and DIRECT_BRANCH_ROUND != 4:
             raise ValueError("vector direct packing requires a first-pass round-4 configuration")
-        if paired_direct_records and DIRECT_BRANCH_ARITY not in (2, 4):
-            raise ValueError("direct table arity must be two or four")
+        if paired_direct_records and DIRECT_BRANCH_ARITY not in (2, 3, 4):
+            raise ValueError("direct table arity must be two, three or four")
+        if paired_direct_records and DIRECT_BRANCH_ARITY == 3 and VECTOR_DEPTH3_DIRECT_INDEX:
+            raise ValueError("three-lane vector packing currently supports depth4 only")
         for group, records in PAIRED_DIRECT_BRANCH_LOOKUPS.items():
             lanes = [lane for record in records for lane in record]
             if len(lanes) != len(set(lanes)) or any(lane not in range(VLEN) for lane in lanes):
                 raise ValueError(f"invalid or overlapping direct lanes for group {group}")
-        if any(len(lanes) != DIRECT_BRANCH_ARITY for _, _, lanes in paired_direct_records):
-            raise ValueError("direct table records must match DIRECT_BRANCH_ARITY")
+        if any(not (len(lanes) == DIRECT_BRANCH_ARITY or
+                    DIRECT_BRANCH_ARITY == 3 and len(lanes) == 2)
+               for _, _, lanes in paired_direct_records):
+            raise ValueError("direct table records must match arity, except padded arity3 pairs")
         if DIRECT_BRANCH_ARITY != 2 and not (
             CHAINED_PAIRED_DIRECT_BASE
             and (ELIDE_DIRECT_BRANCH_TARGET or COMPACT_PAIRED_DIRECT_RETURN)
@@ -4443,7 +4467,8 @@ class KernelBuilder:
                     or direct_branch_lanes
                     or any(
                         lanes != tuple(range(lanes[0], lanes[0] + len(lanes)))
-                        or lanes[0] % 2 or len(lanes) not in (2, 4)
+                        or (lanes[0] % 2 and DIRECT_BRANCH_ARITY != 3)
+                        or len(lanes) not in ((2, 3) if DIRECT_BRANCH_ARITY == 3 else (2, 4))
                         for lanes in PAIRED_DIRECT_BRANCH_LOOKUPS[gg]
                     )
                 ):
@@ -4598,10 +4623,21 @@ class KernelBuilder:
                 for lane in range(VLEN):
                     if lane in skipped_lanes:
                         continue
+                    # Saved-path groups no longer maintain a complete mirror
+                    # in the second traversal. Partial direct tables reconstruct
+                    # all eight indices in direct_index_base; use those same
+                    # indices for the ordinary-gather remainder as well.
+                    index_word = (
+                        direct_index_base + lane
+                        if depth == 4 and rnd >= 11
+                        and (direct_branch_lanes or paired_direct_lanes)
+                        and saved_second_path_bits.get(gg) is not None
+                        else mirror + lane
+                    )
                     graph.emit(
                         "alu",
-                        ("-", temp + lane, base, mirror + lane),
-                        reads=(base, mirror + lane),
+                        ("-", temp + lane, base, index_word),
+                        reads=(base, index_word),
                         writes=(temp + lane,),
                         tag="gather_address",
                         group=gg,
@@ -4888,6 +4924,7 @@ class KernelBuilder:
                         multiplier = (
                             direct_index_base + 7 if vector_paired_index and depth3_vector_index else
                             direct_deep_radix if DIRECT_BRANCH_DEPTH == 5 else
+                            s_four if vector_paired_index and DIRECT_BRANCH_ARITY == 3 else
                             s_eight if vector_paired_index or DIRECT_BRANCH_DEPTH == 3 else s_sixteen
                         )
                         prep = graph.emit(
@@ -4906,14 +4943,16 @@ class KernelBuilder:
                             tag="paired_direct_branch_index_high",
                             group=gg, round=rnd,
                         )
+                        low_word = (mirror if vector_paired_index and DIRECT_BRANCH_ARITY == 3
+                                    else direct_index_base) + next_lane
                         prep = graph.emit(
                             "alu",
                             (
                                 "+", direct_index_base + lane0,
                                 direct_index_base + lane0,
-                                direct_index_base + next_lane,
+                                low_word,
                             ),
-                            reads=(direct_index_base + lane0, direct_index_base + next_lane),
+                            reads=(direct_index_base + lane0, low_word),
                             writes=(direct_index_base + lane0,),
                             deps=((prep, 1),),
                             tag="paired_direct_branch_index_low",
@@ -5027,7 +5066,9 @@ class KernelBuilder:
                     # wait for every value read by those copies; leaving
                     # this as a copy-only dependency lets a latency scheduler
                     # jump dozens of cycles before the hash result is live.
-                    jump_deps = [(prep, 1)]
+                    if PAIRED_DIRECT_ADDRESS_LEAD < 1:
+                        raise ValueError("paired address lead must be positive")
+                    jump_deps = [(prep, PAIRED_DIRECT_ADDRESS_LEAD)]
                     for lane in lanes:
                         value_parent = graph.last_writer[value + lane]
                         if value_parent >= 0:
@@ -5663,7 +5704,11 @@ class KernelBuilder:
                     select_level4_hybrid(
                         state, workspace, gg, rnd, temp_reg=temp
                     )
-                xor_node(value, temp, gg, rnd)
+                xor_node(
+                    value, temp, gg, rnd,
+                    skip_lanes=(direct_lanes if (gg, rnd) in GATHER_LEVEL4_SET
+                                and FUSED_DIRECT_BRANCH_XOR else frozenset()),
+                )
                 if REVERSED_RELOCATED_TREE and rnd == 4:
                     emit_scalarized(
                         "+",
@@ -8590,7 +8635,7 @@ class KernelBuilder:
                     mirror_indices = tuple(
                         (combined_index >> (DIRECT_BRANCH_DEPTH * position))
                         & ((1 << DIRECT_BRANCH_DEPTH) - 1)
-                        for position in reversed(range(DIRECT_BRANCH_ARITY))
+                        for position in reversed(range(len(lanes)))
                     )
                     entry_blocks = []
                     for trace_pc in range(jump_pc + 1, target_pc + 1):
@@ -9052,6 +9097,8 @@ class KernelBuilder:
             ("flow", "load", "valu", "alu", "store"),
         )
         engine_order = engine_order_variants[policy % 4]
+        if ISOLATE_PAIRED_DIRECT_JUMPS:
+            engine_order = ("flow", "load", "valu", "alu", "store")
 
         while scheduled < n:
             for i in future.pop(cycle, ()):
@@ -9059,11 +9106,14 @@ class KernelBuilder:
 
             used = {engine: 0 for engine in heaps}
             bundle: dict[str, list[tuple]] = defaultdict(list)
+            isolated_jump = False
 
             made_progress = True
             while made_progress:
                 made_progress = False
                 for engine in engine_order:
+                    if isolated_jump and engine not in PAIRED_JUMP_FILL_ENGINES:
+                        continue
                     if used[engine] >= SLOT_LIMITS[engine]:
                         continue
                     if engine == "flow" and used["alu"] < SLOT_LIMITS["alu"] and any(
@@ -9141,6 +9191,11 @@ class KernelBuilder:
                         continue
 
                     op = ops[chosen]
+                    if ISOLATE_PAIRED_DIRECT_JUMPS and op.tag == "paired_direct_branch_jump":
+                        if any(used.values()):
+                            push_ready(chosen)
+                            continue
+                        isolated_jump = True
                     bundle[engine].append(op.slot)
                     used[engine] += 1
                     scheduled += 1

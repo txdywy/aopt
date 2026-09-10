@@ -9,7 +9,7 @@ import sys
 import zlib
 
 
-def render():
+def capture_original():
     from codex import experiment_paired_base as driver
     class Captured(Exception):
         pass
@@ -26,10 +26,15 @@ def render():
             driver.main()
     except Captured:
         pass
-    program = captured[0]
+    return captured[0]
+
+
+def render(program=None):
+    if program is None:
+        program = capture_original()
     size = 65536
     start = len(program) - 62*size
-    assert len(program) == 4064538 and start == 1306
+    assert (len(program), start) in ((4064538,1306),(4064537,1305))
     recipes = []
     for block in range(62):
         offset = start + block*size

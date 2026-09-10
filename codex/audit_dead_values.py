@@ -25,4 +25,8 @@ def report(ops):
     return {"warning": "DAG-only candidates; assembled tables may add consumers",
             "count": len(candidates),
             "by_engine_tag": dict(Counter(
-                f"{ops[i].engine}:{ops[i].tag}" for i in candidates))}
+                f"{ops[i].engine}:{ops[i].tag}" for i in candidates)),
+            "candidate_details": [
+                {"index":i,"engine":ops[i].engine,"tag":ops[i].tag,
+                 "slot":ops[i].slot,"group":ops[i].group,"round":ops[i].round}
+                for i in candidates]}

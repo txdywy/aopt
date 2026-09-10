@@ -8,7 +8,7 @@ import sys
 from codex import experiment_paired_base as driver
 
 
-def capture():
+def capture(scalar_cache=False):
     class Captured(Exception):
         pass
     programs = []
@@ -19,6 +19,8 @@ def capture():
     driver.Machine = CaptureMachine
     command = json.loads(Path(__file__).with_name('table_981_result.json').read_text())['command']
     sys.argv = shlex.split(command)[1:] + ['--feedback-rounds','4','--feedback-percent','10']
+    if scalar_cache:
+        sys.argv.append('--scalar-level4-cache')
     try:
         with contextlib.redirect_stdout(io.StringIO()):
             driver.main()
@@ -29,7 +31,13 @@ def capture():
 
 if __name__ == '__main__':
     combine = '--combine' in sys.argv
-    program = capture()
+    export = '--export' in sys.argv
+    drop_constant = '--drop-unused-constant' in sys.argv
+    program = capture(scalar_cache='--scalar-cache' in sys.argv)
+    if drop_constant:
+        assert ('vbroadcast',47,3) in program[3]['valu']
+        program[3]['valu'].remove(('vbroadcast',47,3))
+        assert any(program[3].values())
     if not combine:
         print(json.dumps({'instructions':len(program),
                           'tail':[(i,program[i]) for i in range(966,981)]}))
@@ -78,6 +86,13 @@ if __name__ == '__main__':
             assert machine.mem[ref[6]:ref[6]+256]==ref[ref[6]:ref[6]+256],seed
             assert machine.cycle==979,(seed,machine.cycle)
             scores.append(machine.cycle)
+        if export:
+            from codex.export_table_981 import render
+            source=render(program).replace('Standalone 981-cycle','Standalone 979-cycle').replace('4,064,538','4,064,537')
+            print('*** Begin Patch\n*** Add File: /Users/yiwei/x/aopt/codex/perf_takehome_979.py')
+            print('\n'.join('+'+line for line in source.splitlines()))
+            print('*** End Patch',flush=True)
+            raise SystemExit(0)
         print(json.dumps({'cycles':scores,'certificate':certificate}),flush=True)
         import types
         import runpy

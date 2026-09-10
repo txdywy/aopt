@@ -1,0 +1,14 @@
+{
+  "base_configuration": "final_gather12_result.json",
+  "additional_flags": "--feedback-rounds 4 --feedback-percent 10 --scalar-level4-cache --seeds 20 --profile-slots",
+  "cycles": 991,
+  "full32_seeds": 20,
+  "instruction_packets": 5637412,
+  "scratch_words": 1536,
+  "executed_slots": {"alu":11003,"valu":5641,"load":1791,"flow":895,"store":62},
+  "relaxed_arithmetic_bound": 936,
+  "target_899_arithmetic_lane_work_excess": 2191,
+  "main_stream_cycles": 901,
+  "table_cycles": 90,
+  "standalone_exported": false
+}

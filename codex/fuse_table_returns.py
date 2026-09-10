@@ -53,6 +53,8 @@ def fuse_returns(program, main_length):
                     sites[target].append(pc)
     accepted = []
     rejected = defaultdict(int)
+    capacity_sites = defaultdict(int)
+    capacity_excess = defaultdict(int)
     for target, entries in sites.items():
         following = program[target]
         later_reads, later_writes = set(), set()
@@ -65,8 +67,13 @@ def fuse_returns(program, main_length):
             reason = None
             for pc in entries:
                 earlier = program[pc]
-                if any(len(earlier.get(e, [])) + len(following.get(e, [])) > cap
-                       for e, cap in LIMITS.items() if e != "flow"):
+                overflow = {e:len(earlier.get(e,[]))+len(following.get(e,[]))-cap
+                            for e,cap in LIMITS.items() if e!='flow'
+                            and len(earlier.get(e,[]))+len(following.get(e,[]))>cap}
+                if overflow:
+                    for engine,amount in overflow.items():
+                        capacity_sites[engine]+=1
+                        capacity_excess[engine]+=amount
                     reason = "capacity"
                     break
                 if earlier.get("store") and (following.get("load") or following.get("store")):
@@ -95,4 +102,6 @@ def fuse_returns(program, main_length):
             merged["flow"] = list(following["flow"])
             program[pc] = merged
         accepted.append(target)
-    return {"sites": len(sites), "fused_sites": accepted, "rejected": dict(rejected)}
+    return {"sites": len(sites), "fused_sites": accepted, "rejected": dict(rejected),
+            "first_conflicting_variant_capacity_sites":dict(capacity_sites),
+            "first_conflicting_variant_excess_slots":dict(capacity_excess)}

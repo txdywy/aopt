@@ -34,9 +34,29 @@ def main():
         solver.add(z3.BitVecVal(value, 32) * multiplier + bias ==
                    z3.BitVecVal(-5 - (value & 1), 32))
     results["q*M+B"] = str(solver.check())
-    print(json.dumps({"scope": "listed one-operation constant families only; division/cdiv excluded",
+    # Frozen cdiv evaluates the addition without uint32 truncation, then
+    # truncates its result. Use33 bits for that intermediate, unlike add ISA.
+    for name in ('//','%','cdiv'):
+        constant=z3.BitVec('divisor',32)
+        solver=z3.Solver()
+        solver.set(timeout=5000)
+        solver.add(constant!=0)
+        for value in samples:
+            q=z3.BitVecVal(value,32)
+            if name=='//':expression=z3.UDiv(q,constant)
+            elif name=='%':expression=z3.URem(q,constant)
+            else:
+                wide=z3.UDiv(z3.ZeroExt(1,q)+z3.ZeroExt(1,constant)-1,
+                             z3.ZeroExt(1,constant))
+                expression=z3.Extract(31,0,wide)
+            solver.add(expression==z3.BitVecVal(-5-(value&1),32))
+        results['q op C:'+name]=str(solver.check())
+        # C op q is undefined on q=0 in the frozen ISA: no total uint32
+        # function can use this family without an additional guard/operation.
+        results['C op q:'+name]='undefined_at_zero'
+    print(json.dumps({"scope": "listed one-operation constant families only; unsigned division/modulo and wide cdiv included",
                       "samples": samples, "results": results}, indent=2))
-    assert all(result == "unsat" for result in results.values())
+    assert all(result in ("unsat","undefined_at_zero") for result in results.values())
 
 
 if __name__ == "__main__":

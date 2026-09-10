@@ -102,3 +102,44 @@ then ran all9 unchanged official tests using the already generated ISA list
 (avoids a second4-million-packet allocation). All outputs match and every
 execution is979 cycles. This validates the generated program, not a future
 standalone export or browser memory compatibility. Result JSON updated.
+
+##2026-09-08: nearby-weight screen closes this local sweep
+
+Four feedback rounds at weights7,8,9,11,12,20 produced compacted preflight
+lengths981,981,980,980,980,980 respectively. All six subprocesses exited0;
+none was executed as a new kernel because none improved the already verified
+10-percent scheduling result. These are scheduling screens, not new scores.
+Together with the earlier5/10/15/25/50 tests, this is evidence of a local
+plateau, not a reason to continue fine-grained weight sweeps. Retain10 percent
+and focus subsequent work on changing the operation mix or a substantially
+different scheduling representation. Best executed result remains979.
+
+## Scalar-cache work reduction now retains979
+
+The old scalar level4-cache rewrite formerly cost a cycle with the original
+calendar. Combining it with10-percent feedback produces a980 pre-tail program.
+`inspect_feedback_tail --combine --scalar-cache` then passes100 full32 seeds,
+3 boundary patterns and all9 official tests at979. The pre-tail DAG changes
+from10895 ALU/5657 VALU to10911 ALU/5641 VALU:16 broadcasts become16 scalar
+copies, reducing arithmetic lane-work by112 without increasing executed cycles.
+This is reduced work at the same best score, not a sub979 claim. Separate
+result recorded in `feedback_scalar_tail_979_result.json`; neither standalone
+submission was overwritten. Keep this lower-work variant for further work.
+
+## Preprocessing on the lower-work feedback graph
+
+Screened depths5,6,8 with scalar cache,10-percent feedback and4 rounds.
+Best raw lengths986,987,1010 compact to984,985,1006, respectively. All three
+screens exited0; no execution score is claimed for them. Depth7 remains the
+980 pre-tail/979 combined baseline. The lower-load alternatives still lose
+to additional hash-node transformations and schedule effects in this graph.
+This closes the uniform-depth sweep for this configuration, not every
+possible selective or partial-node preprocessing design.
+
+## Local engine-placement screen
+
+On the scalar-cache/10-percent-feedback configuration, restore-hash-count
+80,84,92,96 each produced raw lengths986,984,984,984,984 and compacted preflight
+980, matching restore88. All four screens exited0, but no new executed score
+is claimed. This closes this nearby placement sweep; retain88 rather than
+changing parameters without an end-to-end gain. Standalone979 remains best.

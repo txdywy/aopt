@@ -14,8 +14,12 @@ from codex.fuse_table_returns import accesses, LIMITS
 
 
 def schedule_tail(program, start=976, stop=986, horizon=9, timeout_ms=45000, certificate=None,
-                  allow_data_flow=False, allow_memory=False, exit_pc=None):
+                  allow_data_flow=False, allow_memory=False, exit_pc=None,
+                  advance_only=None):
+    if advance_only is not None and (type(advance_only) is not int or advance_only < 0):
+        raise ValueError("advance_only must be a nonnegative integer")
     ops, packets, edges = [], [], {}
+    domains = []
     writer, readers = {}, defaultdict(set)
     memory_reads, memory_writes = [], []
     for pc in range(start, stop):
@@ -31,6 +35,8 @@ def schedule_tail(program, start=976, stop=986, horizon=9, timeout_ms=45000, cer
                 read, write = accesses(engine, slot)
                 i = len(ops)
                 ops.append((engine, slot, read, write))
+                if advance_only is not None:
+                    domains.append((max(0, pc-start-advance_only), min(horizon-1, pc-start)))
                 packet_nodes.append(i)
                 if allow_memory:
                     if engine == "load" and slot[0] != "const":
@@ -40,7 +46,9 @@ def schedule_tail(program, start=976, stop=986, horizon=9, timeout_ms=45000, cer
                         for old in memory_reads:
                             edges[old, i] = 0
                         for old in memory_writes:
-                            edges[old, i] = 1
+                            # Same-packet stores retain their original slot
+                            # order, preserving last-write-wins on overlap.
+                            edges[old, i] = 0
                 for word in read:
                     if word in writer:
                         edges[writer[word], i] = 1
@@ -80,7 +88,9 @@ def schedule_tail(program, start=976, stop=986, horizon=9, timeout_ms=45000, cer
         issue = certificate["issue_cycles"]
         report = dict(certificate)
     else:
-        report, issue = solve(ops, edges, horizon, timeout_ms)
+        report, issue = solve(ops, edges, horizon, timeout_ms, domains=domains or None)
+        if advance_only is not None:
+            report["advance_only"] = advance_only
         report["graph_sha256"] = digest
         if issue is None:
             return None, report
@@ -88,6 +98,8 @@ def schedule_tail(program, start=976, stop=986, horizon=9, timeout_ms=45000, cer
     # Independently validate certificates as well as solver-produced plans.
     if len(issue) != len(ops) or any(type(t) is not int or not 0 <= t < horizon for t in issue):
         raise ValueError("invalid issue cycles")
+    if domains and any(not low <= t <= high for t, (low, high) in zip(issue, domains)):
+        raise ValueError("schedule violates movement bounds")
     for (parent, child), lag in edges.items():
         if issue[child] < issue[parent] + lag:
             raise ValueError("schedule violates a register dependency")
@@ -109,7 +121,7 @@ def schedule_tail(program, start=976, stop=986, horizon=9, timeout_ms=45000, cer
     return result, report
 
 
-def solve(ops, edges, horizon, timeout_ms):
+def solve(ops, edges, horizon, timeout_ms, domains=None):
     import z3
     earliest = [0] * len(ops)
     predecessor = {}
@@ -132,7 +144,11 @@ def solve(ops, edges, horizon, timeout_ms):
         if last not in predecessor:
             break
         last = predecessor[last]
+    dependency_floor = max(earliest)+1
     latest = [horizon-1] * len(ops)
+    if domains:
+        earliest = [max(t, bound[0]) for t, bound in zip(earliest, domains)]
+        latest = [min(t, bound[1]) for t, bound in zip(latest, domains)]
     for _ in ops:
         changed = False
         for (parent, child), lag in edges.items():
@@ -163,7 +179,8 @@ def solve(ops, edges, horizon, timeout_ms):
                 solver.add(z3.PbLe(terms, cap - (engine == "flow" and cycle == horizon-1)))
     status = solver.check()
     report = {"status": str(status), "operations": len(ops), "edges": len(edges), "horizon": horizon,
-              "dependency_floor": max(earliest)+1, "critical_chain": list(reversed(chain)),
+              "dependency_floor": dependency_floor, "release_floor": max(earliest)+1,
+              "critical_chain": list(reversed(chain)),
               "store_earliest": [{"slot": op[1], "cycle": earliest[i]} for i, op in enumerate(ops) if op[0] == "store"]}
     if status != z3.sat:
         report["reason"] = solver.reason_unknown() if status == z3.unknown else "fixed instruction graph infeasible"

@@ -1,0 +1,10 @@
+{
+  "command": "/tmp/aopt-smt/bin/python -m codex.inspect_feedback_tail --combine --scalar-cache",
+  "cycles": 979,
+  "full32_seeds": 100,
+  "boundary_patterns": 3,
+  "official_tests_passed": 9,
+  "pre_tail_dag_operations": {"load": 1877, "alu": 10911, "valu": 5641, "flow": 846, "store": 62},
+  "pre_tail_arithmetic_lane_work_saved_vs_vector_cache": 112,
+  "standalone_exported": false
+}

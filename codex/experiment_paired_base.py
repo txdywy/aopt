@@ -63,7 +63,11 @@ def main() -> None:
     parser.add_argument("--groups", type=int, default=15)
     parser.add_argument("--group-ids", default="")
     parser.add_argument("--also-final-group-ids", default="")
-    parser.add_argument("--arity", type=int, choices=(2, 4), default=2)
+    parser.add_argument("--arity", type=int, choices=(2, 3, 4), default=2)
+    parser.add_argument("--cover-remainder", action="store_true")
+    parser.add_argument("--isolate-jumps", action="store_true")
+    parser.add_argument("--jump-fill", choices=("none", "alu", "load", "valu"), default="none")
+    parser.add_argument("--jump-address-lead", type=int, choices=(1, 2, 3), default=1)
     parser.add_argument("--round", type=int, choices=(3, 4, 5, 14, 15), default=15)
     parser.add_argument("--graph-only", action="store_true")
     parser.add_argument("--schedule-only", action="store_true")
@@ -79,6 +83,8 @@ def main() -> None:
     parser.add_argument("--horner-index", action="store_true")
     parser.add_argument("--omit-level4-diffs", action="store_true")
     parser.add_argument("--scalar-level4-cache", action="store_true")
+    parser.add_argument("--alias-level4-cache", action="store_true")
+    parser.add_argument("--private-cache-groups", default="")
     parser.add_argument("--omit-fused-node-transform", action="store_true")
     parser.add_argument("--vector-depth3-index", action="store_true")
     parser.add_argument("--prioritize-copies", action="store_true")
@@ -88,6 +94,8 @@ def main() -> None:
     parser.add_argument("--restore-hash-count", type=int, default=0)
     parser.add_argument("--preprocess-depth", type=int, choices=(0, 4, 5, 6, 7, 8))
     parser.add_argument("--profile-slots", action="store_true")
+    parser.add_argument("--profile-json", action="store_true",
+                        help="Count default JSON bytes incrementally without allocating one huge string")
     parser.add_argument("--policy", type=int, default=4)
     parser.add_argument("--teacher-weight", type=int, default=0)
     parser.add_argument("--feedback-rounds", type=int, default=0,
@@ -160,7 +168,7 @@ def main() -> None:
     if any(group not in range(32) for group in groups):
         raise ValueError("groups must be in 0..31")
     kernel.PAIRED_DIRECT_BRANCH_LOOKUPS = {
-        group: tuple(tuple(range(lane, lane + args.arity)) for lane in range(0, 8, args.arity))
+        group: tuple(tuple(range(lane, lane + args.arity)) for lane in range(0, 9-args.arity, args.arity))
         for group in groups
     }
     if args.also_final_group_ids:
@@ -170,10 +178,28 @@ def main() -> None:
         kernel.DIRECT_BRANCH_ROUND_OVERRIDES = {g: 15 for g in final_groups if g not in groups}
         kernel.PAIRED_DIRECT_EXTRA_ROUNDS = {g: (15,) for g in final_groups if g in groups}
         kernel.PAIRED_DIRECT_BRANCH_LOOKUPS.update({
-            g: tuple(tuple(range(lane, lane + args.arity)) for lane in range(0, 8, args.arity))
+            g: tuple(tuple(range(lane, lane + args.arity)) for lane in range(0, 9-args.arity, args.arity))
             for g in final_groups
         })
     kernel.DIRECT_BRANCH_ARITY = args.arity
+    kernel.ISOLATE_PAIRED_DIRECT_JUMPS = args.isolate_jumps
+    kernel.PAIRED_JUMP_FILL_ENGINES = frozenset() if args.jump_fill == "none" else frozenset((args.jump_fill,))
+    kernel.PAIRED_DIRECT_ADDRESS_LEAD = args.jump_address_lead
+    if args.cover_remainder:
+        if args.arity != 3:
+            raise ValueError("cover-remainder currently requires arity3")
+        kernel.PAIRED_DIRECT_BRANCH_LOOKUPS = {
+            g: records + ((6, 7),) for g, records in kernel.PAIRED_DIRECT_BRANCH_LOOKUPS.items()
+        }
+    if args.arity == 3:
+        # Two three-lane records cover lanes0..5. The remaining two lanes
+        # use ordinary gathers, not a full-vector cached mux with omitted
+        # finite-difference definitions.
+        kernel.GATHER_LEVEL4_SET |= frozenset(
+            (g, r) for g in kernel.PAIRED_DIRECT_BRANCH_LOOKUPS
+            for r in (kernel.DIRECT_BRANCH_ROUND_OVERRIDES.get(g, args.round),)
+                     + kernel.PAIRED_DIRECT_EXTRA_ROUNDS.get(g, ())
+        )
     kernel.ELIDE_DIRECT_BRANCH_TARGET = not args.compact_return
     kernel.COMPACT_PAIRED_DIRECT_RETURN = args.compact_return
     kernel.RECYCLE_PAIRED_DIRECT_STRIDE = args.recycle_stride
@@ -183,6 +209,8 @@ def main() -> None:
     kernel.HORNER_PAIRED_DIRECT_INDEX = args.horner_index
     kernel.OMIT_LEVEL4_DIFF_SETUP = args.omit_level4_diffs
     kernel.SCALAR_LEVEL4_TABLE_CACHE = args.scalar_level4_cache
+    kernel.ALIAS_LEVEL4_TABLE_CACHE = args.alias_level4_cache
+    kernel.PRIVATE_CACHE_WORKSPACE_GROUPS = tuple(int(g) for g in args.private_cache_groups.split(',') if g)
     kernel.OMIT_FUSED_DIRECT_NODE_TRANSFORM = args.omit_fused_node_transform
     kernel.VECTOR_DEPTH3_DIRECT_INDEX = args.vector_depth3_index
     kernel.PRIORITIZE_PAIRED_COPIES = args.prioritize_copies
@@ -315,11 +343,14 @@ def main() -> None:
             counts = {engine: profile.get("main_" + engine, 0) + profile.get("table_" + engine, 0)
                       for engine in LIMITS}
             executed_resource_bounds.append({"slots": counts, **gap(counts, 899)})
+    json_bytes = (sum(len(chunk.encode()) for chunk in json.JSONEncoder().iterencode(builder.instrs))
+                  if args.profile_json else None)
     print(json.dumps({
         **vars(args), "cycles": scores, "main_cycles": builder.branch_main_cycles,
         "instructions": len(builder.instrs), "scratch": builder.scratch_ptr,
         "operations": dict(Counter(op.engine for op in builder.dag_ops)),
         "return_fusion": fusion,
+        "instruction_json_bytes": json_bytes,
         "slot_profiles": slot_profiles,
         "executed_resource_bounds_target_899": executed_resource_bounds,
         "seconds": round(time.monotonic() - started, 3),

@@ -15,6 +15,24 @@ def middle(x):
 
 
 class SynthesisSemanticsTests(unittest.TestCase):
+    def test_first_mad_forms_cover_all_operand_choices(self):
+        import itertools
+        x, k0, k1 = z3.BitVecs('form_x form_k0 form_k1', 32)
+        values = (x, k0, k1)
+        for a, b, c in itertools.product(range(3), repeat=3):
+            if a == b == 0:
+                expected = x*x + values[c]
+                # This is precisely square-input or square-constant.
+            else:
+                linear = (values[b] if a == 0 else 0) + (values[a] if b == 0 else 0)
+                constant = values[a]*values[b] if a != 0 and b != 0 else 0
+                linear = linear + (1 if c == 0 else 0)
+                constant = constant + (values[c] if c != 0 else 0)
+                expected = linear*x + constant
+            solver = z3.SolverFor('QF_BV')
+            solver.add(values[a]*values[b]+values[c] != expected)
+            self.assertEqual(solver.check(), z3.unsat, (a,b,c))
+
     def test_first_slice_high_bit_propagation(self):
         x = z3.BitVec('first_high_bit_x', 32)
         def first(value):

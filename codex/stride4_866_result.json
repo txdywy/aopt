@@ -1,0 +1,48 @@
+{
+  "cycles": 866,
+  "scratch_words": 1301,
+  "operations": {
+    "load": 1674,
+    "valu": 5177,
+    "flow": 846,
+    "alu": 10328,
+    "store": 374
+  },
+  "total_operations": 18399,
+  "source_bytes": 153311,
+  "instruction_json_bytes": 496232,
+  "program_sha256": "ec0733891e8d7768495d31f81c9afbcae2f1508743e105a23ff3431d17b975a4",
+  "source_sha256": "f28f38b182fb58ccddfc28e04fa83ceb401887166f9edc0e909ca4e43adc8079",
+  "schedule_sha256": "cbfe9e53d870e0656db5537f67e09c4663662febbbc21bba361a0e173112b972",
+  "model_sha256": "b71a8668052d03f529e4b36f9db6ba194f54d73d19747260eaa225030b699971",
+  "validation": {
+    "official_tests": 9,
+    "extended_cases": 270,
+    "full32_seeds": 256,
+    "normal_seeds": 8,
+    "boundary_patterns": 6,
+    "json_round_trip": true,
+    "runtime_memory_bounds_checked": true,
+    "frozen_tests_and_problem_unchanged": true,
+    "exact_source_reproduced": true,
+    "standalone_two_file_build": true
+  },
+  "workload": {
+    "height": 10,
+    "nodes": 2047,
+    "batch": 256,
+    "rounds": 16,
+    "initial_indices": 0,
+    "comparison": "final values only"
+  },
+  "search": {
+    "seed": 953,
+    "iterations": 1000,
+    "nodes": 39133,
+    "groups": 3848
+  },
+  "target": {
+    "cycles_less_than": 864,
+    "achieved": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "cycles": 866,
+  "scratch": 1302,
+  "verified_full_width_seeds": 20,
+  "arithmetic_lane_work": 51671,
+  "counts": {
+    "load": 1683,
+    "valu": 5168,
+    "flow": 850,
+    "alu": 10327,
+    "store": 490
+  },
+  "compiler": "codex/research_bootstrap864.py",
+  "arguments": "--thirds --coefficients --sink 0 --literals 0 --literal-flow 6",
+  "seed": 1111,
+  "iterations": 1200,
+  "program_sha256": "ab7d881a627374e6ef7e50dd8e82007b4665e261634c8f7a1ca5e9edb1af62fc",
+  "schedule_sha256": "a6fd914219a3efa547180ca7cb3fca8d624824f5385a6c76d5e5811f547b6a63",
+  "model_sha256": "45e5eed274c0413dc38c6a82298c39db4b8e7f43d5fe4d997cd50fdec2a0c598",
+  "is_active_submission": false,
+  "target_sub864_reached": false
+}

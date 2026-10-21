@@ -1,0 +1,24 @@
+{
+  "cycles": 866,
+  "scratch": 1289,
+  "verified_full_width_seeds": 20,
+  "official_9_and_extended_270": "not run for this alternative; production 866 retains those checks",
+  "arithmetic_lane_work": 51669,
+  "counts": {
+    "load": 1684,
+    "valu": 5169,
+    "flow": 851,
+    "alu": 10317,
+    "store": 490
+  },
+  "program_sha256": "46058eb2e78f7296993971344e3de308f8e48b640981e4e7b220e242a9d6a7b1",
+  "schedule_sha256": "3f1bd4f1f6490774b9aaf8a23572312040e53c99d114abae40487c8a31b86440",
+  "model_sha256": "e04ef5ca00df4e931b5ce9a6356b0bf2732541a9fdc90b90ca11fb67d1d63801",
+  "compiler": "codex/research_bootstrap864.py",
+  "arguments": "--thirds --coefficients --sink 0 --literals 2 --literal-flow 7",
+  "seed": 1091,
+  "iterations": 1500,
+  "is_active_submission": false,
+  "target_sub864_reached": false,
+  "exact_calendar_reproduction_verified": true
+}

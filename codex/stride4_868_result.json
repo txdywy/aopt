@@ -1,0 +1,45 @@
+{
+  "cycles": 868,
+  "scratch_words": 1335,
+  "operations": {
+    "load": 1672,
+    "valu": 5190,
+    "flow": 854,
+    "alu": 10338,
+    "store": 374
+  },
+  "total_operations": 18428,
+  "source_bytes": 151945,
+  "instruction_json_bytes": 486761,
+  "program_sha256": "3e89c7172e69bd17504d63abf1bc9102162558b268aee74511818a9d3a833367",
+  "source_sha256": "0a1e4b67f25ae354420d9e389200321aa5fbc47ad88de5c93d9f7ef78faa6910",
+  "schedule_sha256": "e298c0f5478a8c4d5ae89f0c9c201c158507a7579634e418f221beb1a1ef7acf",
+  "model_sha256": "007148a5c37b76f1558ac1df24f76109a26cbc864a1e2ae2a48ec83b14f05b67",
+  "validation": {
+    "official_tests": 9,
+    "full32_seeds": 256,
+    "normal_seeds": 8,
+    "boundary_patterns": 6,
+    "extended_cases": 270,
+    "json_round_trip": true,
+    "runtime_memory_bounds_checked": true,
+    "frozen_tests_and_problem_unchanged": true,
+    "standalone_two_file_build": true,
+    "readable_compiler_and_saved_schedule_reproduce_exact_source": true
+  },
+  "workload": {
+    "height": 10,
+    "nodes": 2047,
+    "batch": 256,
+    "rounds": 16,
+    "initial_indices": 0,
+    "comparison": "final values only"
+  },
+  "search": {
+    "seed": 743,
+    "nodes": 39120,
+    "groups": 3848,
+    "iteration_limit": 5000,
+    "stopped_after_reaching_cycles": 868
+  }
+}

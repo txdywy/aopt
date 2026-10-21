@@ -1,4 +1,4 @@
-"""Run the repository's unchanged submission tests against codex.KernelBuilder."""
+"""Run unchanged submission tests against the current standalone kernel."""
 
 from __future__ import annotations
 
@@ -10,9 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tests"))
 sys.path.insert(0, str(ROOT))
 
-from codex import perf_takehome_983 as optimized
+import perf_takehome as optimized
 
-# submission_tests imports the root module name.  Supplying our independent
-# module through the import cache avoids copying over the user's root solution.
+# Keep the public suite's import bound to the current standalone submission.
 sys.modules["perf_takehome"] = optimized
 runpy.run_path(str(ROOT / "tests" / "submission_tests.py"), run_name="__main__")

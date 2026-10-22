@@ -1,0 +1,15 @@
+{
+  "cycles": 868,
+  "verified_full32_cases": 20,
+  "scratch_words": 1270,
+  "arithmetic_lanes": 51671,
+  "load": 1688,
+  "flow": 851,
+  "store": 522,
+  "packed_before": 570,
+  "actual_prefix_waste": 52,
+  "model_text_sha256": "665d4d73682327b19076ad2b888c57e8107980ae73c343171715ff401af077e2",
+  "schedule_sha256": "b2e3237ba5b0589ee071b87c9b7f78e72515e12b82e440decae5652a3da3776d",
+  "recipe": "python3.12 -m codex.research_stage864 --prefix /tmp/joint450 --stage-hash final --stage-uniform=-60,-40 --cheap-coeff --head-fill --head-flow --alu-layout --tail-transposes 29,31 --tail-low --low-alu --bootstrap-flow 2 --scalar-leaves --sink 8 --literals 3",
+  "scope": "868 is replayed for 20 full32 cases. Compute cycles 1..569 are full; prefix LOAD loses one slot and FLOW loses zero."
+}

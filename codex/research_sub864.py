@@ -232,6 +232,7 @@ def clean(builder):
                     for v in arg:uses[v]=min(uses.get(v,10**9),op.time)
         candidates=[op for op in builder.ops if op.engine=='alu' and len(op.args[0])==1
                     and op.args[0][0] in known
+                    and op.args[0][0] not in getattr(builder,'protected_alu',())
                     and (builder.packed_constants or op.args[0][0] not in packed)]
         candidates.sort(key=lambda op:uses.get(op.args[0][0],-1),reverse=True)
         for op in candidates[:builder.sink]:

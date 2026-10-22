@@ -1,11 +1,11 @@
 # Optimized Python submission
 
 The current standalone submission is [`../perf_takehome.py`](../perf_takehome.py).
-An identical, separately preserved 865-cycle copy is
-[`perf_takehome_865.py`](perf_takehome_865.py).
-It executes **865 cycles**, a **170.79x** speedup over the 147734-cycle baseline.
-This improves the previous 866 result by one cycle. The current target of
-**fewer than 864 cycles remains open**.
+An identical, separately preserved 864-cycle copy is
+[`perf_takehome_864.py`](perf_takehome_864.py).
+It executes **864 cycles**, a **170.99x** speedup over the 147734-cycle baseline.
+This improves the previous 865 result by one cycle and reaches the 864 target.
+The previous [`perf_takehome_865.py`](perf_takehome_865.py) is unchanged.
 It specializes `(height=10, nodes=2047, batch=256, rounds=16)`, initial indices
 all zero, and the **Without Indices / final values only** contract.
 
@@ -14,20 +14,20 @@ scheduler are implemented locally. Signed-parity bilinear addressing and
 stride-four records were informed by [Josu San Martin's public research
 log](https://github.com/josusanmartin/josusanmartin.github.io/blob/master/vliw/chat.log).
 [Sakauma's preserved 880-cycle kernel](https://github.com/Sakauma/my_original_performance_takehome/blob/cb2e0554735ef7d0dfde1a04bc2c12c4bb2ed38d/perf_takehome.py)
-supplied initial hash scheduling priorities. The final 865-cycle program is a
+supplied initial hash scheduling priorities. The final 864-cycle program is a
 new, locally generated instruction stream. The original source notice and
 attribution are retained; no claim of global optimality is made.
 
 Validation on the unchanged frozen simulator:
 
-- All 9 unchanged official tests pass at 865 cycles.
+- All 9 unchanged official tests pass at 864 cycles.
 - 256 full-width random seeds, 8 ordinary seeds, and 6 boundary patterns pass.
 - Those 270 cases execute instructions after a JSON serialization round trip.
 - Every packet satisfies engine slot and full-vector scratch-address limits;
   no scratch location has two writes in the same packet.
 - Runtime memory reads and writes stay within the original allocation.
-- 1294 scratch words; 865 instruction packets; 18494 operations.
-- Python source: 153007 bytes. Default instruction-list JSON: 489061 bytes.
+- 1301 scratch words; 864 instruction packets; 18558 operations.
+- Python source: 153921 bytes. Default instruction-list JSON: 490657 bytes.
 - `tests/` and `problem.py` are unchanged from `origin/main`.
 
 Consumed header, tree, index and already-loaded input-value memory is used for
@@ -50,11 +50,33 @@ known-mask FLOW select plus scalar copies. The 865 revision uses three-word
 FLOW broadcasts, selected STORE/reload broadcasts, an early native constant
 broadcast, and scheduler priority for native vector instructions.
 
-See [the 865 result and exact reproduction note](SUB864_865_RESULT_20261021.md).
+The 864 revision adds constant staging, scalar deepest-leaf loads and raw-hash
+reassociation, then jointly repairs compute and memory scheduling. It uses
+51,665 arithmetic lanes; after startup and drain, only seven middle lanes
+are idle. See [the verified 864 result and reproduction recipe](SUB864_864_RESULT_20261023.md).
+
+Earlier results remain in [the 865 reproduction note](SUB864_865_RESULT_20261021.md).
+The [next research pass](SUB864_CONTINUATION_20261021.md) preserves 20 further
+configurations and a graph-specific 865-cycle lower bound. It did not improve
+the active score or reach fewer than 864 cycles.
+The [2026-10-22 frontier study](SUB864_FRONTIER_20261022.md) adds 122 startup
+configurations, joint constant and pointer packing, and a terminal address-table
+experiment. Its candidate took 867 cycles. Productive-work and fixed-stream
+bounds rejected those tested graphs.
+The [next 864 study](STAGE864_RESEARCH_20261022.md) builds different constant
+packs, scalar deepest-leaf loads and one-arm drain transposes. Its best new
+graph is verified at 866, while another verified graph reaches 51,665
+arithmetic lanes. That study passed the necessary 864 budget checks but did
+not yet produce a complete 864 program.
+The [Astra review](ASTRA864_RESEARCH_20261022.md) adds a verified 867-cycle
+constant-4 staging variant with six fewer arithmetic lanes. The rawfold
+branch produced a dense 670-cycle prefix and a separate 864 LF relaxation.
+The Astra graph subsequently became the verified 864 submission through the
+joint scheduling and exact suffix solve described in the new result note.
 Further three-word FLOW broadcast experiments reduced arithmetic work from
 51744 to 51669 lanes and passed 20 full-width cases, but still took 866
 cycles. Those alternatives are preserved in the [866 research note](SUB864_RESEARCH_20261021.md).
-The active 865 submission has completed its own official and 270-case validation.
+The active 864 submission has completed its own official and 270-case validation.
 The [868-cycle note](SUB870_BREAKTHROUGH_20261021.md) preserves the earlier result. The
 [880-cycle reproduction note](SUB900_BREAKTHROUGH_20261021.md) remains historical.
 
@@ -74,15 +96,15 @@ the unchanged frozen simulator and reference. No optimizer or extra data file
 is needed to build the standalone submission.
 
 Program SHA256 (compact instruction JSON):
-`91f09dee8f416e1eb40358e30e6c3cfa368407e9a98e8801d62a07ba25bd0c51`.
+`3f4cc919d7c5b05d105b5e41ba2ea3502020a03ec1318388a1138718abf2d4f1`.
 
 The payload is compressed ISA, independent of runtime tree/input values.
 All tree transformations, loads and hashes execute on the original machine.
 The readable compiler is `stride4_family.py` with `research_sub864.py`
-and `research_bootstrap864.py`;
+and `research_stage864.py` (built on `research_bootstrap864.py`);
 `word_ssa.py`, `packet_modes.py`
 and `packet_mode_search.cpp` handle scheduling and register allocation.
-`stride4_865_schedule.txt` preserves the verified calendar so the exact result
+`stage_astra_constant4_864_schedule.txt` preserves the verified calendar so the exact result
 can be regenerated without running the heuristic search again.
 
 ## Preserved experiments

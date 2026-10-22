@@ -1,0 +1,14 @@
+{
+  "cycles": 870,
+  "verified_full32_cases": 20,
+  "scratch_words": 1337,
+  "arithmetic_lanes": 51665,
+  "load": 1686,
+  "flow": 852,
+  "store": 522,
+  "actual_prefix300_waste": 52,
+  "model_text_sha256": "f51cad2beb570acc7e58f076aca6846b8fbd69cd5ba38f721bccd8eeb189a180",
+  "schedule_sha256": "390c5126b891822b1566af7555f543074fb6190e81e8942840c4f48465afe522",
+  "recipe": "python3.12 -m codex.research_stage864 --prefix /tmp/lowwork870 --stage-hash coeff,add,final --stage-uniform=-60,-40 --cheap-coeff --head-fill --head-flow --alu-layout --tail-transposes 29,31 --tail-low --low-alu --tail-single --bootstrap-flow 4 --bootstrap-early 1 --scalar-leaves --sink 8 --literals 3",
+  "scope": "870 is verified; the necessary 864 arithmetic budget has 7 lane units of slack, not a runnable 864 program."
+}

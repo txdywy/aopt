@@ -1,0 +1,15 @@
+{
+  "target_cycles": 864,
+  "active_best_cycles": 865,
+  "new_verified_cycles": 866,
+  "full32_cases": 20,
+  "scratch_words": 1281,
+  "arithmetic_lanes": 51671,
+  "load": 1690,
+  "flow": 849,
+  "store": 522,
+  "model_sha256": "52a41d26c466e2aaa3ffe9a7ba3e9f2f536b1e641673e97093bc2b4521251158",
+  "schedule_sha256": "cd066268d1cc274af663da317ef6803c521faf3af20b5d2cd0a0f62c17d8e679",
+  "recipe": "python3.12 -m codex.research_stage864 --prefix /tmp/stage866 --stage-hash final --stage-uniform=-60,-40 --cheap-coeff --head-fill --head-flow --alu-layout --tail-transposes 29,31 --tail-low --low-alu --early-literals --sink 8 --literals 3",
+  "claim_scope": "866 frozen-machine cycles verified. 864 budget is necessary, not an achieved calendar."
+}

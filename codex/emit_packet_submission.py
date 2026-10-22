@@ -30,8 +30,8 @@ instructions. The compressed payload contains instructions only. Building
 requires Python's standard library and the original problem module.
 
 The readable compiler and search tools are in codex/stride4_family.py,
-codex/research_sub864.py, codex/research_bootstrap864.py, codex/word_ssa.py
-and codex/packet_modes.py.
+codex/research_sub864.py, codex/research_bootstrap864.py,
+codex/research_stage864.py, codex/word_ssa.py and codex/packet_modes.py.
 Signed-parity bilinear addresses
 and stride-four records were informed by Josu San Martin's public research:
 https://github.com/josusanmartin/josusanmartin.github.io/blob/master/vliw/chat.log

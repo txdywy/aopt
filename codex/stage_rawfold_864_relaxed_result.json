@@ -1,0 +1,21 @@
+{
+  "horizon": 864,
+  "freeze_before": 670,
+  "inconsistent_nodes": [],
+  "positive_windows": 0,
+  "cuts": [],
+  "supplied_tail_waste": 116,
+  "scope": "fixed LF calendar and frozen compute prefix; necessary tests only",
+  "source_verified_cycles": 867,
+  "source_packed_before": 670,
+  "changed_stream_instructions": {
+    "load": 153,
+    "store": 140,
+    "flow": 121
+  },
+  "energy_cut_rounds": 5,
+  "accumulated_energy_cuts": 18,
+  "relaxed_calendar_sha256": "d3c1e39a00e19270a71569fe0d38ae103834dbf5ebee408eee0c82667473f433",
+  "model_text_sha256": "0b8d368b2df1b061045ad6ae701ffb276fe34c616123961f29079c092ffcd587",
+  "remaining_requirement": "Exact compute packing, scratch allocation and frozen-machine replay. This is NOT an achieved cycle score."
+}

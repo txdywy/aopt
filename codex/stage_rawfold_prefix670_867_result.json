@@ -1,0 +1,21 @@
+{
+  "cycles": 867,
+  "verified_full32_cases": 20,
+  "scratch_words": 1298,
+  "arithmetic_lanes": 51671,
+  "operations": {
+    "load": 1688,
+    "valu": 5170,
+    "flow": 851,
+    "alu": 10311,
+    "store": 522
+  },
+  "packed_before": 670,
+  "actual_prefix_waste": 52,
+  "prefix_load_unused_slots": 1,
+  "prefix_flow_unused_slots": 0,
+  "model_text_sha256": "0b8d368b2df1b061045ad6ae701ffb276fe34c616123961f29079c092ffcd587",
+  "schedule_sha256": "426c615a3f2d4cff447a5286eb6909309d83e2462e40677f3b5afab256a7e0f6",
+  "recipe": "python3.12 -m codex.research_stage864 --prefix /tmp/rawfold670 --stage-hash final --stage-uniform=-60,-40 --cheap-coeff --head-fill --head-flow --alu-layout --tail-transposes 29,31 --tail-low --low-alu --bootstrap-flow 2 --scalar-leaves --fold-raw-hash --sink 8 --literals 3",
+  "scope": "867 frozen-machine replay. Compute cycles 1..669 are full. 864 has not been achieved; active submission remains 865."
+}

@@ -1,0 +1,17 @@
+{
+  "cycles": 867,
+  "verified_full32_cases": 20,
+  "scratch_words": 1280,
+  "arithmetic_lanes": 51665,
+  "operations": {
+    "load": 1688,
+    "valu": 5183,
+    "flow": 851,
+    "alu": 10201,
+    "store": 530
+  },
+  "model_text_sha256": "1056dba0ee2473f439bf96e291df70a7b62d50860d07d100f389cdda8629c6f9",
+  "schedule_sha256": "4bab33f47294c0e51a455388efa835e3db2fca58b66dca8edffa31f981b718cf",
+  "recipe": "/opt/homebrew/bin/python3.12 -m codex.research_stage864 --prefix /tmp/astra4 --small-stage 4 --early-small-low-bank --stage-hash final --stage-uniform=-60,-40 --cheap-coeff --head-fill --head-flow --alu-layout --tail-transposes 29,31 --tail-low --low-alu --bootstrap-flow 2 --scalar-leaves --fold-raw-hash --sink 8 --literals 2",
+  "scope": "Verified 867 with an early 0..7 memory epoch; original root load and d7 image writes retain ordinary memory dependencies. Active submission remains 865."
+}

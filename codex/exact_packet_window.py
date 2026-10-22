@@ -30,6 +30,13 @@ def main():
     ap.add_argument('--radius',type=int,
                     help='reschedule the whole graph within this distance of the old calendar')
     ap.add_argument('--fixed-modes',action='store_true')
+    ap.add_argument('--lane-budget',action='store_true',
+                    help='add a redundant 60-lane arithmetic resource and proven end caps')
+    ap.add_argument('--fixed-memory',action='store_true',
+                    help='freeze the supplied LOAD/STORE/FLOW calendar while repairing compute')
+    ap.add_argument('--local-radius',type=int,
+                    help='limit movement inside the selected window')
+    ap.add_argument('--repair-hint',action='store_true')
     args=ap.parse_args();prefix=str(args.prefix)
     ir=pickle.loads(Path(prefix+'.pkl').read_bytes())
     old=list(map(int,Path(prefix+'.sol').read_text().split()))
@@ -56,6 +63,11 @@ def main():
         if args.radius is not None:
             earliest=max(0,ts[j]-args.radius)
             latest=min(limit-1,ts[j]+args.radius)
+        if args.local_radius is not None:
+            earliest=max(earliest,ts[j]-args.local_radius)
+            latest=min(latest,ts[j]+args.local_radius)
+        if args.fixed_memory and ir.ops[j].engine in ('load','store','flow'):
+            earliest=latest=ts[j]
         for p,lag in ir.deps[j].items():
             if p not in chosen:earliest=max(earliest,ts[p]+lag)
         for q,lag in ir.succ[j]:
@@ -87,6 +99,28 @@ def main():
             if p in chosen:model.add(times[j]>=times[p]+lag)
     for e,cap in enumerate((12,6,2,2,1)):
         model.add_cumulative(intervals[e],[1]*len(intervals[e]),cap)
+    if args.lane_budget:
+        lane_intervals=[];lane_demands=[]
+        for j in chosen:
+            if ir.ops[j].engine not in ('alu','valu'):continue
+            lane_intervals.append(model.new_fixed_size_interval_var(times[j],1,f'lane{j}'))
+            lane_demands.append(8 if ir.ops[j].engine=='valu' else 1)
+        horizon=oldh+limit-hi
+        initial_work=sum(8 if op.engine=='valu' else 1 for j,op in enumerate(ir.ops)
+                         if op.engine in ('alu','valu') and not ir.deps[j])
+        if initial_work<60:
+            lane_intervals.append(model.new_fixed_size_interval_var(0,1,'head_padding'))
+            lane_demands.append(60-initial_work)
+        if args.lo==0 and args.radius is not None:
+            from codex.packet_budget_bound import boundary
+            suffix=boundary(ir,2,True,3,1)
+            # This is an upper bound for ALL arithmetic in the last two
+            # cycles, so it is also a valid cap for the penultimate cycle.
+            cap=suffix['objective_upper_bound']
+            if cap<60:
+                lane_intervals.append(model.new_fixed_size_interval_var(horizon-2,1,'tail_padding'))
+                lane_demands.append(60-cap)
+        model.add_cumulative(lane_intervals,lane_demands,60)
     if args.pack_before is not None:
         early=[]
         for j in chosen:
@@ -110,6 +144,9 @@ def main():
     solver.parameters.max_time_in_seconds=args.seconds
     solver.parameters.num_search_workers=args.workers
     solver.parameters.random_seed=args.seed
+    if args.repair_hint:
+        solver.parameters.repair_hint=True
+        solver.parameters.hint_conflict_limit=100000
     print({'window':[args.lo,hi],'limit':limit,'nodes':len(chosen),
            'flexible_groups':len(freegroups)},flush=True)
     status=solver.solve(model)

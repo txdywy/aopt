@@ -1,0 +1,57 @@
+{
+  "arithmetic_lanes": 51665,
+  "prefix": {
+    "side": "prefix",
+    "width": 12,
+    "status": "OPTIMAL",
+    "eligible_ops": 1862,
+    "objective_incumbent": 668.0,
+    "objective_upper_bound": 668,
+    "waste_lower_bound": 52,
+    "structural_upper_bound": null,
+    "seconds": 5.033384000000001,
+    "conditional_horizon": 864,
+    "canonical_start_constrained": true
+  },
+  "suffix": {
+    "side": "suffix",
+    "width": 3,
+    "status": "OPTIMAL",
+    "eligible_ops": 800,
+    "objective_incumbent": 64.0,
+    "objective_upper_bound": 64,
+    "waste_lower_bound": 116,
+    "structural_upper_bound": 64,
+    "seconds": 0.17919400000000002
+  },
+  "arithmetic_cycle_lower_bound": 864,
+  "fixed_stream_bounds": {
+    "load": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 0,
+      "suffix_at_least": 21,
+      "instructions": 1684,
+      "capacity": 2
+    },
+    "store": {
+      "cycle_lower_bound": 345,
+      "prefix_at_least": 72,
+      "suffix_at_least": 237,
+      "instructions": 72,
+      "capacity": 2
+    },
+    "flow": {
+      "cycle_lower_bound": 861,
+      "prefix_at_least": 0,
+      "suffix_at_least": 10,
+      "instructions": 851,
+      "capacity": 1
+    }
+  },
+  "cycle_lower_bound": 864,
+  "boundary_windows_disjoint_by_compute_bound": true,
+  "model_file_sha256": "316d46eb1b236d7982e721bf547604ccdf220dbe06140f12dbe5986872420bba",
+  "model_text_sha256": "5f088c550592a1a349413aa33ec1186c0ed38f37a133613cedd9efffaaeb3946",
+  "scope": "this IR and its exported scalar/native groups; no instruction elimination; the specified canonical startup is fixed",
+  "independent_unused_scalar_lanes_relaxed": false
+}

@@ -1,0 +1,136 @@
+{
+  "horizon": 864,
+  "freeze_before": 670,
+  "inconsistent_nodes": [],
+  "positive_windows": 279,
+  "cuts": [
+    {
+      "a": 755,
+      "b": 864,
+      "demand": 6489,
+      "capacity": 6424,
+      "excess": 65
+    },
+    {
+      "a": 733,
+      "b": 864,
+      "demand": 7804,
+      "capacity": 7744,
+      "excess": 60
+    },
+    {
+      "a": 714,
+      "b": 861,
+      "demand": 8874,
+      "capacity": 8820,
+      "excess": 54
+    },
+    {
+      "a": 714,
+      "b": 864,
+      "demand": 8938,
+      "capacity": 8884,
+      "excess": 54
+    },
+    {
+      "a": 694,
+      "b": 864,
+      "demand": 10137,
+      "capacity": 10084,
+      "excess": 53
+    },
+    {
+      "a": 775,
+      "b": 861,
+      "demand": 5185,
+      "capacity": 5160,
+      "excess": 25
+    },
+    {
+      "a": 686,
+      "b": 860,
+      "demand": 10456,
+      "capacity": 10440,
+      "excess": 16
+    },
+    {
+      "a": 750,
+      "b": 861,
+      "demand": 6667,
+      "capacity": 6660,
+      "excess": 7
+    },
+    {
+      "a": 703,
+      "b": 860,
+      "demand": 9424,
+      "capacity": 9420,
+      "excess": 4
+    },
+    {
+      "a": 730,
+      "b": 861,
+      "demand": 7862,
+      "capacity": 7860,
+      "excess": 2
+    },
+    {
+      "a": 706,
+      "b": 861,
+      "demand": 9338,
+      "capacity": 9300,
+      "excess": 38
+    },
+    {
+      "a": 706,
+      "b": 864,
+      "demand": 9402,
+      "capacity": 9364,
+      "excess": 38
+    },
+    {
+      "a": 684,
+      "b": 864,
+      "demand": 10692,
+      "capacity": 10684,
+      "excess": 8
+    },
+    {
+      "a": 693,
+      "b": 861,
+      "demand": 10083,
+      "capacity": 10080,
+      "excess": 3
+    },
+    {
+      "a": 709,
+      "b": 861,
+      "demand": 9140,
+      "capacity": 9120,
+      "excess": 20
+    },
+    {
+      "a": 709,
+      "b": 864,
+      "demand": 9204,
+      "capacity": 9184,
+      "excess": 20
+    },
+    {
+      "a": 708,
+      "b": 861,
+      "demand": 9190,
+      "capacity": 9180,
+      "excess": 10
+    },
+    {
+      "a": 708,
+      "b": 864,
+      "demand": 9254,
+      "capacity": 9244,
+      "excess": 10
+    }
+  ],
+  "supplied_tail_waste": 116,
+  "scope": "fixed LF calendar and frozen compute prefix; necessary tests only"
+}

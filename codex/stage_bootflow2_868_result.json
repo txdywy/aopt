@@ -1,0 +1,19 @@
+{
+  "cycles": 868,
+  "verified_full32_cases": 20,
+  "scratch_words": 1319,
+  "prefix12_arithmetic_lanes": 668,
+  "actual_prefix40_waste": 52,
+  "arithmetic_lanes": 51671,
+  "load": 1688,
+  "flow": 851,
+  "store": 522,
+  "model_text_sha256": "2d01c4924d04fd948e25c8c9ec7a024ea971de505a113464820441463350f768",
+  "schedule_sha256": "7e1007cf94142eaa52027f06e8a186e02a30a085f049de7fc292976a11d540f7",
+  "recipe": "python3.12 -m codex.research_stage864 --prefix /tmp/boot2 --stage-hash final --stage-uniform=-60,-40 --cheap-coeff --head-fill --head-flow --alu-layout --tail-transposes 29,31 --tail-low --low-alu --bootstrap-flow 2 --sink 8 --literals 3",
+  "scope": "868 is replayed; 864 remains only a necessary budget target.",
+  "actual_prefix300_waste": 52,
+  "prefix350_waste": 52,
+  "prefix300_load_idle_slots": 1,
+  "prefix300_flow_idle_slots": 0
+}

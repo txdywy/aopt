@@ -87,6 +87,7 @@ class Builder(research.Builder):
                        if op.engine!='store' and op.args[0]==self.vectors[2])
         self.ops[insertion:insertion]=added
         selected={old_vectors[v]:scalars[v] for v in self.small_stage}
+        staged_outputs=set(selected)
         # The 9 and 19 vector operations remain useful head fillers. Feed them
         # scalar constants instead of waiting for the staged vector of threes.
         if 3 in self.small_stage:
@@ -95,7 +96,8 @@ class Builder(research.Builder):
         for op in self.ops:
             if op.engine=='valu' and op.args[0] in selected:
                 out=op.args[0]
-                if out in (old_vectors[9],old_vectors[19]) and 3 in self.small_stage:
+                if (out in (old_vectors[9],old_vectors[19]) and 3 in self.small_stage
+                        and out not in staged_outputs):
                     op.code='vbroadcast';op.kinds=kinds('valu','vbroadcast')
                     op.args=[out,selected[out]];op.time=2 if out==old_vectors[9] else 3
                 else:

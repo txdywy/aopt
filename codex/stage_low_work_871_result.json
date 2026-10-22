@@ -1,0 +1,14 @@
+{
+  "cycles": 871,
+  "verified_full32_cases": 20,
+  "scratch_words": 1309,
+  "arithmetic_lanes": 51665,
+  "load": 1686,
+  "flow": 852,
+  "store": 522,
+  "actual_prefix12_waste": 455,
+  "model_text_sha256": "f015e6f71eaf28708caa32820cc62365de3bc1bac4c70768054bc032fc5a2002",
+  "schedule_sha256": "f585b49759cd9d847737121b7f18e2e624ba7dcd241ddc2472b209e6c6c533d9",
+  "recipe": "python3.12 -m codex.research_stage864 --prefix /tmp/lowwork --stage-hash coeff,add,final --stage-uniform=-60,-40 --cheap-coeff --head-fill --head-flow --alu-layout --tail-transposes 29,31 --tail-low --low-alu --tail-single --bootstrap-flow 4 --scalar-leaves --sink 8 --literals 3",
+  "scope": "871 is verified. Free reverse passes can change bootstrap pins; this calendar has startup waste 455. The independent 864 budget certificate only constrains its own canonical bootstrap relaxation."
+}

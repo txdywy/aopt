@@ -1,0 +1,61 @@
+{
+  "cycles": 864,
+  "source_bytes": 153921,
+  "json_bytes": 490657,
+  "scratch_words": 1301,
+  "operations": {
+    "load": 1688,
+    "valu": 5168,
+    "flow": 851,
+    "alu": 10321,
+    "store": 530
+  },
+  "program_sha256": "3f4cc919d7c5b05d105b5e41ba2ea3502020a03ec1318388a1138718abf2d4f1",
+  "arithmetic_lanes": 51665,
+  "verified_full32_initial_cases": 20,
+  "official_tests_passed": 9,
+  "extended_validation": {
+    "cycles": [
+      864
+    ],
+    "cases": 270,
+    "full32_seeds": 256,
+    "normal_seeds": 8,
+    "boundary_patterns": 6,
+    "scratch_words": 1301,
+    "packets": 864,
+    "max_scratch_address": 1300,
+    "operations": {
+      "load": 1688,
+      "valu": 5168,
+      "flow": 851,
+      "alu": 10321,
+      "store": 530
+    },
+    "total_operations": 18558,
+    "json_round_trip": true,
+    "runtime_memory_bounds_checked": true,
+    "instruction_json_bytes": 490657,
+    "source_bytes": 153921,
+    "program_sha256": "3f4cc919d7c5b05d105b5e41ba2ea3502020a03ec1318388a1138718abf2d4f1"
+  },
+  "model_text_sha256": "5f088c550592a1a349413aa33ec1186c0ed38f37a133613cedd9efffaaeb3946",
+  "schedule_sha256": "e96b8f6c888a0542dd772a977fda1a837837d931998b4ba27ef3db05dd363492",
+  "standalone_sha256": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+  "preserved_865_sha256": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44",
+  "recipe": "/opt/homebrew/bin/python3.12 -m codex.research_stage864 --prefix /tmp/astra4 --small-stage 4 --stage-hash final --stage-uniform=-60,-40 --cheap-coeff --head-fill --head-flow --alu-layout --tail-transposes 29,31 --tail-low --low-alu --bootstrap-flow 2 --scalar-leaves --fold-raw-hash --sink 8 --literals 2",
+  "compute_prefix_waste_before_832": 59,
+  "last_three_compute_lanes": [
+    48,
+    16,
+    0
+  ],
+  "scope": "Complete 864-cycle program, scratch allocated and executed on the unchanged frozen machine; no global optimality claim.",
+  "fresh_compiler_reproduction": {
+    "model_digest_matches": true,
+    "allocated_program_digest_matches": true,
+    "frozen_machine_cases": 20,
+    "cycles": 864,
+    "scratch_words": 1301
+  }
+}

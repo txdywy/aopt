@@ -6,6 +6,9 @@ An identical, separately preserved 864-cycle copy is
 It executes **864 cycles**, a **170.99x** speedup over the 147734-cycle baseline.
 This improves the previous 865 result by one cycle and reaches the 864 target.
 The previous [`perf_takehome_865.py`](perf_takehome_865.py) is unchanged.
+The [sub-863 structural audit](SUB863_STRUCTURAL_AUDIT_20261023.md) proves a
+864 lower bound for the current graph and records 32 unsuccessful structural
+variants. It does not claim a universal lower bound or a new executable score.
 It specializes `(height=10, nodes=2047, batch=256, rounds=16)`, initial indices
 all zero, and the **Without Indices / final values only** contract.
 

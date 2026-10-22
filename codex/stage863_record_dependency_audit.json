@@ -1,0 +1,521 @@
+{
+  "groups": 32,
+  "retained_arithmetic_lanes": 256,
+  "rows": [
+    {
+      "group": 0,
+      "depth9_address_op": 1181,
+      "depth10_address_op": 1210,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        3425,
+        3426,
+        3427,
+        3428,
+        3429,
+        3430,
+        3431,
+        3432
+      ]
+    },
+    {
+      "group": 1,
+      "depth9_address_op": 1526,
+      "depth10_address_op": 1555,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        5621,
+        5622,
+        5623,
+        5624,
+        5625,
+        5626,
+        5627,
+        5628
+      ]
+    },
+    {
+      "group": 2,
+      "depth9_address_op": 1871,
+      "depth10_address_op": 1900,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        7817,
+        7818,
+        7819,
+        7820,
+        7821,
+        7822,
+        7823,
+        7824
+      ]
+    },
+    {
+      "group": 3,
+      "depth9_address_op": 2216,
+      "depth10_address_op": 2245,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        10013,
+        10014,
+        10015,
+        10016,
+        10017,
+        10018,
+        10019,
+        10020
+      ]
+    },
+    {
+      "group": 4,
+      "depth9_address_op": 2561,
+      "depth10_address_op": 2590,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        12209,
+        12210,
+        12211,
+        12212,
+        12213,
+        12214,
+        12215,
+        12216
+      ]
+    },
+    {
+      "group": 5,
+      "depth9_address_op": 2906,
+      "depth10_address_op": 2935,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        14405,
+        14406,
+        14407,
+        14408,
+        14409,
+        14410,
+        14411,
+        14412
+      ]
+    },
+    {
+      "group": 6,
+      "depth9_address_op": 3251,
+      "depth10_address_op": 3280,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        16601,
+        16602,
+        16603,
+        16604,
+        16605,
+        16606,
+        16607,
+        16608
+      ]
+    },
+    {
+      "group": 7,
+      "depth9_address_op": 3596,
+      "depth10_address_op": 3625,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        18797,
+        18798,
+        18799,
+        18800,
+        18801,
+        18802,
+        18803,
+        18804
+      ]
+    },
+    {
+      "group": 8,
+      "depth9_address_op": 3941,
+      "depth10_address_op": 3970,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        20993,
+        20994,
+        20995,
+        20996,
+        20997,
+        20998,
+        20999,
+        21000
+      ]
+    },
+    {
+      "group": 9,
+      "depth9_address_op": 4286,
+      "depth10_address_op": 4315,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        23189,
+        23190,
+        23191,
+        23192,
+        23193,
+        23194,
+        23195,
+        23196
+      ]
+    },
+    {
+      "group": 10,
+      "depth9_address_op": 4631,
+      "depth10_address_op": 4660,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        25385,
+        25386,
+        25387,
+        25388,
+        25389,
+        25390,
+        25391,
+        25392
+      ]
+    },
+    {
+      "group": 11,
+      "depth9_address_op": 4976,
+      "depth10_address_op": 5005,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        27581,
+        27582,
+        27583,
+        27584,
+        27585,
+        27586,
+        27587,
+        27588
+      ]
+    },
+    {
+      "group": 12,
+      "depth9_address_op": 5321,
+      "depth10_address_op": 5350,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        29777,
+        29778,
+        29779,
+        29780,
+        29781,
+        29782,
+        29783,
+        29784
+      ]
+    },
+    {
+      "group": 13,
+      "depth9_address_op": 5666,
+      "depth10_address_op": 5695,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        31973,
+        31974,
+        31975,
+        31976,
+        31977,
+        31978,
+        31979,
+        31980
+      ]
+    },
+    {
+      "group": 14,
+      "depth9_address_op": 6011,
+      "depth10_address_op": 6040,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        34169,
+        34170,
+        34171,
+        34172,
+        34173,
+        34174,
+        34175,
+        34176
+      ]
+    },
+    {
+      "group": 15,
+      "depth9_address_op": 6356,
+      "depth10_address_op": 6385,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        36365,
+        36366,
+        36367,
+        36368,
+        36369,
+        36370,
+        36371,
+        36372
+      ]
+    },
+    {
+      "group": 16,
+      "depth9_address_op": 6701,
+      "depth10_address_op": 6730,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        38561,
+        38562,
+        38563,
+        38564,
+        38565,
+        38566,
+        38567,
+        38568
+      ]
+    },
+    {
+      "group": 17,
+      "depth9_address_op": 7046,
+      "depth10_address_op": 7075,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        40757,
+        40758,
+        40759,
+        40760,
+        40761,
+        40762,
+        40763,
+        40764
+      ]
+    },
+    {
+      "group": 18,
+      "depth9_address_op": 7391,
+      "depth10_address_op": 7420,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        42953,
+        42954,
+        42955,
+        42956,
+        42957,
+        42958,
+        42959,
+        42960
+      ]
+    },
+    {
+      "group": 19,
+      "depth9_address_op": 7736,
+      "depth10_address_op": 7765,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        45149,
+        45150,
+        45151,
+        45152,
+        45153,
+        45154,
+        45155,
+        45156
+      ]
+    },
+    {
+      "group": 20,
+      "depth9_address_op": 8081,
+      "depth10_address_op": 8110,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        47345,
+        47346,
+        47347,
+        47348,
+        47349,
+        47350,
+        47351,
+        47352
+      ]
+    },
+    {
+      "group": 21,
+      "depth9_address_op": 8426,
+      "depth10_address_op": 8455,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        49541,
+        49542,
+        49543,
+        49544,
+        49545,
+        49546,
+        49547,
+        49548
+      ]
+    },
+    {
+      "group": 22,
+      "depth9_address_op": 8771,
+      "depth10_address_op": 8800,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        51737,
+        51738,
+        51739,
+        51740,
+        51741,
+        51742,
+        51743,
+        51744
+      ]
+    },
+    {
+      "group": 23,
+      "depth9_address_op": 9116,
+      "depth10_address_op": 9145,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        53933,
+        53934,
+        53935,
+        53936,
+        53937,
+        53938,
+        53939,
+        53940
+      ]
+    },
+    {
+      "group": 24,
+      "depth9_address_op": 9461,
+      "depth10_address_op": 9490,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        56129,
+        56130,
+        56131,
+        56132,
+        56133,
+        56134,
+        56135,
+        56136
+      ]
+    },
+    {
+      "group": 25,
+      "depth9_address_op": 9806,
+      "depth10_address_op": 9835,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        58325,
+        58326,
+        58327,
+        58328,
+        58329,
+        58330,
+        58331,
+        58332
+      ]
+    },
+    {
+      "group": 26,
+      "depth9_address_op": 10151,
+      "depth10_address_op": 10180,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        60521,
+        60522,
+        60523,
+        60524,
+        60525,
+        60526,
+        60527,
+        60528
+      ]
+    },
+    {
+      "group": 27,
+      "depth9_address_op": 10496,
+      "depth10_address_op": 10525,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        62717,
+        62718,
+        62719,
+        62720,
+        62721,
+        62722,
+        62723,
+        62724
+      ]
+    },
+    {
+      "group": 28,
+      "depth9_address_op": 10841,
+      "depth10_address_op": 10870,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        64913,
+        64914,
+        64915,
+        64916,
+        64917,
+        64918,
+        64919,
+        64920
+      ]
+    },
+    {
+      "group": 29,
+      "depth9_address_op": 11186,
+      "depth10_address_op": 11215,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        67109,
+        67110,
+        67111,
+        67112,
+        67113,
+        67114,
+        67115,
+        67116
+      ]
+    },
+    {
+      "group": 30,
+      "depth9_address_op": 11510,
+      "depth10_address_op": 11539,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        69305,
+        69306,
+        69307,
+        69308,
+        69309,
+        69310,
+        69311,
+        69312
+      ]
+    },
+    {
+      "group": 31,
+      "depth9_address_op": 11855,
+      "depth10_address_op": 11884,
+      "retained_arithmetic_lanes": 8,
+      "pointer_words": [
+        71501,
+        71502,
+        71503,
+        71504,
+        71505,
+        71506,
+        71507,
+        71508
+      ]
+    }
+  ],
+  "conclusion": "All 32 depth-9 address vectors feed depth-10 addressing. Removing depth-9 gathers alone cannot remove these 256 arithmetic lanes.",
+  "scope": "Dependency audit only; does not rule out a different depth-10 layout.",
+  "model_sha256": "9b96f913e59453ee3ab39accbfbf6e5433564689b686485e44cfeeb9a8c2cb2a"
+}

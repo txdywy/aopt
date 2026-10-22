@@ -1,0 +1,2018 @@
+[
+  {
+    "config": {
+      "small_stage": "4",
+      "stage_hash": "final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51665,
+    "counts": {
+      "load": 1688,
+      "valu": 6093,
+      "flow": 851,
+      "alu": 2921,
+      "store": 530
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 431,
+      "objective_incumbent": 308.0,
+      "objective_upper_bound": 308,
+      "waste_lower_bound": 52,
+      "structural_upper_bound": null,
+      "seconds": 0.17899400000000001
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.09378900000000001
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51833,
+    "cycle_lower_bound": 864,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 0
+  },
+  {
+    "config": {
+      "small_stage": "4",
+      "stage_hash": "coeff,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51662,
+    "counts": {
+      "load": 1689,
+      "valu": 6093,
+      "flow": 851,
+      "alu": 2918,
+      "store": 538
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 427,
+      "objective_incumbent": 308.0,
+      "objective_upper_bound": 308,
+      "waste_lower_bound": 52,
+      "structural_upper_bound": null,
+      "seconds": 0.182453
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.17186300000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1685,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 349,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 472,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51830,
+    "cycle_lower_bound": 864,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 1
+  },
+  {
+    "config": {
+      "small_stage": "4",
+      "stage_hash": "coeff,add,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51659,
+    "counts": {
+      "load": 1690,
+      "valu": 6093,
+      "flow": 850,
+      "alu": 2915,
+      "store": 546
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 424,
+      "objective_incumbent": 308.0,
+      "objective_upper_bound": 308,
+      "waste_lower_bound": 52,
+      "structural_upper_bound": null,
+      "seconds": 0.16576200000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.147372
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1686,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 353,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 480,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 860,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 850,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51827,
+    "cycle_lower_bound": 864,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 2
+  },
+  {
+    "config": {
+      "small_stage": "4,-2",
+      "stage_hash": "final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51658,
+    "counts": {
+      "load": 1689,
+      "valu": 6092,
+      "flow": 851,
+      "alu": 2922,
+      "store": 538
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 424,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.160057
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.09405400000000001
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1685,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 349,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 472,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51834,
+    "cycle_lower_bound": 864,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 3
+  },
+  {
+    "config": {
+      "small_stage": "4,-2",
+      "stage_hash": "coeff,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51655,
+    "counts": {
+      "load": 1690,
+      "valu": 6092,
+      "flow": 851,
+      "alu": 2919,
+      "store": 546
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 420,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.172606
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.13762000000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1686,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 353,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 480,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51831,
+    "cycle_lower_bound": 864,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 4
+  },
+  {
+    "config": {
+      "small_stage": "4,-2",
+      "stage_hash": "coeff,add,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51652,
+    "counts": {
+      "load": 1691,
+      "valu": 6092,
+      "flow": 850,
+      "alu": 2916,
+      "store": 554
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 417,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.16996
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.128174
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 865,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1687,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 357,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 488,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 860,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 850,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51828,
+    "cycle_lower_bound": 865,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 5
+  },
+  {
+    "config": {
+      "small_stage": "4,9",
+      "stage_hash": "final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51658,
+    "counts": {
+      "load": 1689,
+      "valu": 6092,
+      "flow": 851,
+      "alu": 2922,
+      "store": 538
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 433,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.174761
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.096113
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1685,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 347,
+        "prefix_at_least": 2,
+        "suffix_at_least": 109,
+        "instructions": 472,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51834,
+    "cycle_lower_bound": 864,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 6
+  },
+  {
+    "config": {
+      "small_stage": "4,9",
+      "stage_hash": "coeff,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51655,
+    "counts": {
+      "load": 1690,
+      "valu": 6092,
+      "flow": 851,
+      "alu": 2919,
+      "store": 546
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 420,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.26045
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.138824
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1686,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 353,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 480,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51831,
+    "cycle_lower_bound": 864,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 7
+  },
+  {
+    "config": {
+      "small_stage": "4,9",
+      "stage_hash": "coeff,add,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51652,
+    "counts": {
+      "load": 1691,
+      "valu": 6092,
+      "flow": 850,
+      "alu": 2916,
+      "store": 554
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 417,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.156996
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.128079
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 865,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1687,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 357,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 488,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 860,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 850,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51828,
+    "cycle_lower_bound": 865,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 8
+  },
+  {
+    "config": {
+      "small_stage": "4,19",
+      "stage_hash": "final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51659,
+    "counts": {
+      "load": 1689,
+      "valu": 6092,
+      "flow": 851,
+      "alu": 2923,
+      "store": 538
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 410,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.20494400000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.09141600000000001
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1685,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 348,
+        "prefix_at_least": 3,
+        "suffix_at_least": 109,
+        "instructions": 472,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51835,
+    "cycle_lower_bound": 864,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 9
+  },
+  {
+    "config": {
+      "small_stage": "4,19",
+      "stage_hash": "coeff,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51656,
+    "counts": {
+      "load": 1690,
+      "valu": 6092,
+      "flow": 851,
+      "alu": 2920,
+      "store": 546
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 406,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.13292
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.16139900000000001
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1686,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 352,
+        "prefix_at_least": 3,
+        "suffix_at_least": 109,
+        "instructions": 480,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51832,
+    "cycle_lower_bound": 864,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 10
+  },
+  {
+    "config": {
+      "small_stage": "4,19",
+      "stage_hash": "coeff,add,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51653,
+    "counts": {
+      "load": 1691,
+      "valu": 6092,
+      "flow": 850,
+      "alu": 2917,
+      "store": 554
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 403,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.21655300000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.13040500000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 865,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1687,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 356,
+        "prefix_at_least": 3,
+        "suffix_at_least": 109,
+        "instructions": 488,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 860,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 850,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51829,
+    "cycle_lower_bound": 865,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 11
+  },
+  {
+    "config": {
+      "small_stage": "4,9,19",
+      "stage_hash": "final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51652,
+    "counts": {
+      "load": 1690,
+      "valu": 6091,
+      "flow": 851,
+      "alu": 2924,
+      "store": 546
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 411,
+      "objective_incumbent": 292.0,
+      "objective_upper_bound": 292,
+      "waste_lower_bound": 68,
+      "structural_upper_bound": null,
+      "seconds": 0.300868
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.136711
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1686,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 352,
+        "prefix_at_least": 3,
+        "suffix_at_least": 109,
+        "instructions": 480,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51836,
+    "cycle_lower_bound": 864,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 12
+  },
+  {
+    "config": {
+      "small_stage": "4,9,19",
+      "stage_hash": "coeff,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51649,
+    "counts": {
+      "load": 1691,
+      "valu": 6091,
+      "flow": 851,
+      "alu": 2921,
+      "store": 554
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 399,
+      "objective_incumbent": 292.0,
+      "objective_upper_bound": 292,
+      "waste_lower_bound": 68,
+      "structural_upper_bound": null,
+      "seconds": 0.22648400000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.15452200000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 865,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1687,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 356,
+        "prefix_at_least": 3,
+        "suffix_at_least": 109,
+        "instructions": 488,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51833,
+    "cycle_lower_bound": 865,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 13
+  },
+  {
+    "config": {
+      "small_stage": "4,9,19",
+      "stage_hash": "coeff,add,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51646,
+    "counts": {
+      "load": 1692,
+      "valu": 6091,
+      "flow": 850,
+      "alu": 2918,
+      "store": 562
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 396,
+      "objective_incumbent": 292.0,
+      "objective_upper_bound": 292,
+      "waste_lower_bound": 68,
+      "structural_upper_bound": null,
+      "seconds": 0.45793
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.18879700000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 865,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1688,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 360,
+        "prefix_at_least": 3,
+        "suffix_at_least": 109,
+        "instructions": 496,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 860,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 850,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51830,
+    "cycle_lower_bound": 865,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 14
+  },
+  {
+    "config": {
+      "small_stage": "3,4",
+      "stage_hash": "final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51660,
+    "counts": {
+      "load": 1689,
+      "valu": 6092,
+      "flow": 851,
+      "alu": 2924,
+      "store": 538
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 412,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.153766
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.16628500000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1685,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 349,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 472,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51836,
+    "cycle_lower_bound": 864,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 15
+  },
+  {
+    "config": {
+      "small_stage": "3,4",
+      "stage_hash": "coeff,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51657,
+    "counts": {
+      "load": 1690,
+      "valu": 6092,
+      "flow": 851,
+      "alu": 2921,
+      "store": 546
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 417,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.19090800000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.38163600000000003
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1686,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 352,
+        "prefix_at_least": 3,
+        "suffix_at_least": 109,
+        "instructions": 480,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51833,
+    "cycle_lower_bound": 864,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 16
+  },
+  {
+    "config": {
+      "small_stage": "3,4",
+      "stage_hash": "coeff,add,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51654,
+    "counts": {
+      "load": 1691,
+      "valu": 6092,
+      "flow": 850,
+      "alu": 2918,
+      "store": 554
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 414,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.128833
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.09428
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 865,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1687,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 356,
+        "prefix_at_least": 3,
+        "suffix_at_least": 109,
+        "instructions": 488,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 860,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 850,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51830,
+    "cycle_lower_bound": 865,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 17
+  },
+  {
+    "config": {
+      "small_stage": "3,4,-2",
+      "stage_hash": "final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51653,
+    "counts": {
+      "load": 1690,
+      "valu": 6091,
+      "flow": 851,
+      "alu": 2925,
+      "store": 546
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 405,
+      "objective_incumbent": 292.0,
+      "objective_upper_bound": 292,
+      "waste_lower_bound": 68,
+      "structural_upper_bound": null,
+      "seconds": 0.14921
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.158805
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1686,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 353,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 480,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51837,
+    "cycle_lower_bound": 864,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 18
+  },
+  {
+    "config": {
+      "small_stage": "3,4,-2",
+      "stage_hash": "coeff,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51650,
+    "counts": {
+      "load": 1691,
+      "valu": 6091,
+      "flow": 851,
+      "alu": 2922,
+      "store": 554
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 410,
+      "objective_incumbent": 292.0,
+      "objective_upper_bound": 292,
+      "waste_lower_bound": 68,
+      "structural_upper_bound": null,
+      "seconds": 0.139823
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.163908
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 865,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1687,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 356,
+        "prefix_at_least": 3,
+        "suffix_at_least": 109,
+        "instructions": 488,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51834,
+    "cycle_lower_bound": 865,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 19
+  },
+  {
+    "config": {
+      "small_stage": "3,4,-2",
+      "stage_hash": "coeff,add,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51647,
+    "counts": {
+      "load": 1692,
+      "valu": 6091,
+      "flow": 850,
+      "alu": 2919,
+      "store": 562
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 407,
+      "objective_incumbent": 292.0,
+      "objective_upper_bound": 292,
+      "waste_lower_bound": 68,
+      "structural_upper_bound": null,
+      "seconds": 0.208381
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.096429
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 865,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1688,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 360,
+        "prefix_at_least": 3,
+        "suffix_at_least": 109,
+        "instructions": 496,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 860,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 850,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51831,
+    "cycle_lower_bound": 865,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 20
+  },
+  {
+    "config": {
+      "small_stage": "3,4,-2,9,19",
+      "stage_hash": "final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51637,
+    "counts": {
+      "load": 1692,
+      "valu": 6089,
+      "flow": 851,
+      "alu": 2925,
+      "store": 562
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 396,
+      "objective_incumbent": 276.0,
+      "objective_upper_bound": 276,
+      "waste_lower_bound": 84,
+      "structural_upper_bound": null,
+      "seconds": 0.171986
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.14395000000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 865,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1688,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 360,
+        "prefix_at_least": 3,
+        "suffix_at_least": 109,
+        "instructions": 496,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51837,
+    "cycle_lower_bound": 865,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 21
+  },
+  {
+    "config": {
+      "small_stage": "3,4,-2,9,19",
+      "stage_hash": "coeff,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51634,
+    "counts": {
+      "load": 1693,
+      "valu": 6089,
+      "flow": 851,
+      "alu": 2922,
+      "store": 570
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 393,
+      "objective_incumbent": 276.0,
+      "objective_upper_bound": 276,
+      "waste_lower_bound": 84,
+      "structural_upper_bound": null,
+      "seconds": 0.27192500000000003
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.136551
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 866,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1689,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 364,
+        "prefix_at_least": 3,
+        "suffix_at_least": 109,
+        "instructions": 504,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51834,
+    "cycle_lower_bound": 866,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 22
+  },
+  {
+    "config": {
+      "small_stage": "3,4,-2,9,19",
+      "stage_hash": "coeff,add,final",
+      "stage_uniform": "-60,-40",
+      "cheap_coeff": true,
+      "head_fill": true,
+      "head_flow": true,
+      "alu_layout": true,
+      "tail_transposes": "29,31",
+      "tail_low": true,
+      "low_alu": true,
+      "tail_single": false,
+      "early_small_low_bank": false,
+      "sink": 8,
+      "literals": 2,
+      "literal_flow": 7,
+      "early_literals": false,
+      "bootstrap_flow": 2,
+      "bootstrap_early": 2,
+      "scalar_leaves": true,
+      "scalar_root_head": false,
+      "root_flow_exchange": false,
+      "fold_raw_hash": true,
+      "low_bank_records": false
+    },
+    "arithmetic_lanes": 51631,
+    "counts": {
+      "load": 1694,
+      "valu": 6089,
+      "flow": 850,
+      "alu": 2919,
+      "store": 578
+    },
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 390,
+      "objective_incumbent": 276.0,
+      "objective_upper_bound": 276,
+      "waste_lower_bound": 84,
+      "structural_upper_bound": null,
+      "seconds": 0.191441
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.161553
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 866,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1690,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 368,
+        "prefix_at_least": 3,
+        "suffix_at_least": 109,
+        "instructions": 512,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 860,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 850,
+        "capacity": 1
+      }
+    },
+    "effective_budget": 51831,
+    "cycle_lower_bound": 866,
+    "scope": "Necessary bound for this graph; no canonical startup fixed; not a feasible schedule or a universal algorithm bound",
+    "id": 23
+  }
+]

@@ -1,0 +1,869 @@
+{
+  "width": 11,
+  "domain_size": 2048,
+  "parameter_cases": 50368566,
+  "rows": [
+    {
+      "family": "affine_b",
+      "indices": [],
+      "xor_live": 0,
+      "tested": 4194304,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "affine_a",
+      "indices": [],
+      "xor_live": 0,
+      "tested": 4194304,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "mixed_ba",
+      "indices": [],
+      "xor_live": 0,
+      "tested": 4194304,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "mixed_ab",
+      "indices": [],
+      "xor_live": 0,
+      "tested": 4194304,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        0,
+        0
+      ],
+      "xor_live": 0,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        0,
+        0
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        0,
+        1
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        0,
+        2
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        0,
+        1
+      ],
+      "xor_live": 0,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        1,
+        0
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        1,
+        1
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        1,
+        2
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        0,
+        2
+      ],
+      "xor_live": 0,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        2,
+        0
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        2,
+        1
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        2,
+        2
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        1,
+        1
+      ],
+      "xor_live": 0,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        1,
+        0
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        1,
+        1
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        1,
+        2
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        1,
+        2
+      ],
+      "xor_live": 0,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        2,
+        0
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        2,
+        1
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        2,
+        2
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        2,
+        2
+      ],
+      "xor_live": 0,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        2,
+        2,
+        0
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        2,
+        2,
+        1
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        2,
+        2,
+        2
+      ],
+      "xor_live": 0,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "affine_b",
+      "indices": [],
+      "xor_live": 1,
+      "tested": 4194304,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "affine_a",
+      "indices": [],
+      "xor_live": 1,
+      "tested": 4194304,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "mixed_ba",
+      "indices": [],
+      "xor_live": 1,
+      "tested": 4194304,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "mixed_ab",
+      "indices": [],
+      "xor_live": 1,
+      "tested": 4194304,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        0,
+        0
+      ],
+      "xor_live": 1,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        0,
+        0
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        0,
+        1
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        0,
+        2
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        0,
+        1
+      ],
+      "xor_live": 1,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        1,
+        0
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        1,
+        1
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        1,
+        2
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        0,
+        2
+      ],
+      "xor_live": 1,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        2,
+        0
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        2,
+        1
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        2,
+        2
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        1,
+        1
+      ],
+      "xor_live": 1,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        1,
+        0
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        1,
+        1
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        1,
+        2
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        1,
+        2
+      ],
+      "xor_live": 1,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        2,
+        0
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        2,
+        1
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        2,
+        2
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        2,
+        2
+      ],
+      "xor_live": 1,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        2,
+        2,
+        0
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        2,
+        2,
+        1
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        2,
+        2,
+        2
+      ],
+      "xor_live": 1,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "affine_b",
+      "indices": [],
+      "xor_live": 2,
+      "tested": 4194304,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "affine_a",
+      "indices": [],
+      "xor_live": 2,
+      "tested": 4194304,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "mixed_ba",
+      "indices": [],
+      "xor_live": 2,
+      "tested": 4194304,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "mixed_ab",
+      "indices": [],
+      "xor_live": 2,
+      "tested": 4194304,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        0,
+        0
+      ],
+      "xor_live": 2,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        0,
+        0
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        0,
+        1
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        0,
+        2
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        0,
+        1
+      ],
+      "xor_live": 2,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        1,
+        0
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        1,
+        1
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        1,
+        2
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        0,
+        2
+      ],
+      "xor_live": 2,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        2,
+        0
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        2,
+        1
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        0,
+        2,
+        2
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        1,
+        1
+      ],
+      "xor_live": 2,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        1,
+        0
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        1,
+        1
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        1,
+        2
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        1,
+        2
+      ],
+      "xor_live": 2,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        2,
+        0
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        2,
+        1
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        1,
+        2,
+        2
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_key",
+      "indices": [
+        2,
+        2
+      ],
+      "xor_live": 2,
+      "tested": 2048,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        2,
+        2,
+        0
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        2,
+        2,
+        1
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    },
+    {
+      "family": "product_live",
+      "indices": [
+        2,
+        2,
+        2
+      ],
+      "xor_live": 2,
+      "tested": 1,
+      "survivors_id_scale_offset": []
+    }
+  ],
+  "survivors": 0,
+  "excluded": true,
+  "seconds": 1.002,
+  "scope": "first MAD arbitrary over b,a,prior and constants; u=t XOR {b,a,prior}; output=D*u+E. No constant XOR key, other final-MAD roles, shifts, or whole-kernel bound."
+}

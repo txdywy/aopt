@@ -1,0 +1,182 @@
+[
+  {
+    "sequence": [
+      "mad",
+      "^",
+      "mad"
+    ],
+    "width": 11,
+    "samples": 64,
+    "timeout_ms": 10000,
+    "control": false,
+    "pin_control": false,
+    "custom_target": true,
+    "last_mad_role": [
+      5,
+      6,
+      2
+    ],
+    "middle_uses_first": true,
+    "result": "sat",
+    "live_pool": [
+      "b",
+      "a=b XOR C1",
+      "prior=(a-C0)/4097",
+      "zero"
+    ],
+    "verification": "unsat",
+    "program": [
+      {
+        "op": "mad",
+        "selectors_constants": [
+          0,
+          4,
+          5,
+          33,
+          1041
+        ]
+      },
+      {
+        "op": "^",
+        "selectors_constants": [
+          1,
+          4,
+          0,
+          0,
+          9
+        ]
+      },
+      {
+        "op": "mad",
+        "selectors_constants": [
+          5,
+          6,
+          2,
+          1033,
+          0
+        ]
+      }
+    ],
+    "seconds": 0.421
+  },
+  {
+    "sequence": [
+      "mad",
+      "&",
+      "mad"
+    ],
+    "width": 11,
+    "samples": 64,
+    "timeout_ms": 10000,
+    "control": false,
+    "pin_control": false,
+    "custom_target": true,
+    "last_mad_role": [
+      5,
+      6,
+      2
+    ],
+    "middle_uses_first": true,
+    "result": "sat",
+    "live_pool": [
+      "b",
+      "a=b XOR C1",
+      "prior=(a-C0)/4097",
+      "zero"
+    ],
+    "verification": "unsat",
+    "program": [
+      {
+        "op": "mad",
+        "selectors_constants": [
+          0,
+          5,
+          4,
+          17,
+          33
+        ]
+      },
+      {
+        "op": "&",
+        "selectors_constants": [
+          1,
+          4,
+          0,
+          1246,
+          1750
+        ]
+      },
+      {
+        "op": "mad",
+        "selectors_constants": [
+          5,
+          6,
+          2,
+          9,
+          0
+        ]
+      }
+    ],
+    "seconds": 0.158
+  },
+  {
+    "sequence": [
+      "mad",
+      "|",
+      "mad"
+    ],
+    "width": 11,
+    "samples": 64,
+    "timeout_ms": 10000,
+    "control": false,
+    "pin_control": false,
+    "custom_target": true,
+    "last_mad_role": [
+      5,
+      6,
+      2
+    ],
+    "middle_uses_first": true,
+    "result": "sat",
+    "live_pool": [
+      "b",
+      "a=b XOR C1",
+      "prior=(a-C0)/4097",
+      "zero"
+    ],
+    "verification": "unsat",
+    "program": [
+      {
+        "op": "mad",
+        "selectors_constants": [
+          0,
+          5,
+          4,
+          17,
+          33
+        ]
+      },
+      {
+        "op": "|",
+        "selectors_constants": [
+          1,
+          4,
+          0,
+          0,
+          589
+        ]
+      },
+      {
+        "op": "mad",
+        "selectors_constants": [
+          5,
+          6,
+          2,
+          9,
+          0
+        ]
+      }
+    ],
+    "seconds": 0.161
+  }
+]

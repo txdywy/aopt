@@ -1,5 +1,13 @@
 # Remaining routes below 864
 
+**Later continuation:** the live-input experiment below has now been completed
+by structural partitions. All 64 unshifted three-op orders are excluded even
+with the specified extra first-stage intermediates; the two remaining first-slice
+MAD/SHR/MAD-related orders are also closed. See
+[new proofs, evidence and remaining scope](SUB863_LIVE_AND_SHIFT_20261023.md).
+The original timeout results below remain a record of that earlier experiment,
+not the current closure status. The executable best is still 864.
+
 The verified submission is still **864 cycles**. This continuation found no
 replacement program and makes no global optimality claim. It adds a complete
 bounded-instruction result for an isolated hash slice and a distinct experiment

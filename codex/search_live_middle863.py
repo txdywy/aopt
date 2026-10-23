@@ -27,7 +27,9 @@ def target(x):
     return 9*((33*x+0xE9F8CC1D) ^ (16896*x+0xACCF6200))+0xFD7046C5
 
 
-def search(sequence, width=12, timeout_ms=5000, control=False, pin_control=False):
+def search(sequence, width=12, timeout_ms=5000, control=False, pin_control=False,
+           target_fn=None, last_mad_role=None, middle_uses_first=False,
+           middle_other=None):
     if not 1 <= width <= 19:
         raise ValueError('width must be 1..19 for the zero-SHR necessary condition')
     if len(sequence) != 3 or any(op not in OPS or op in ('<<', '>>') for op in sequence):
@@ -36,6 +38,17 @@ def search(sequence, width=12, timeout_ms=5000, control=False, pin_control=False
         raise ValueError('timeout must be positive')
     if pin_control and (not control or list(sequence) != ['mad', 'mad', '^']):
         raise ValueError('pinned control requires control and mad,mad,^')
+    if target_fn is not None and (control or pin_control):
+        raise ValueError('custom target and built-in controls are mutually exclusive')
+    if last_mad_role is not None:
+        if (sequence[-1] != 'mad' or len(last_mad_role) != 3 or
+                any(not 0 <= i < 8 for i in last_mad_role) or last_mad_role[0] > last_mad_role[1]):
+            raise ValueError('last MAD role must be three canonical final-pool indices')
+    if middle_uses_first and (sequence[0] != 'mad' or sequence[1] not in ('^','&','|')
+                             or sequence[2] != 'mad'):
+        raise ValueError('middle split requires MAD,bitwise,MAD')
+    if middle_other is not None and (not middle_uses_first or middle_other not in (0,1,2,5)):
+        raise ValueError('middle source split requires first-result use and b/a/prior/K')
     solver = z3.SolverFor('QF_BV')
     solver.set(timeout=timeout_ms)
     spec = []
@@ -49,6 +62,17 @@ def search(sequence, width=12, timeout_ms=5000, control=False, pin_control=False
         if op != 'mad':
             solver.add(c == 0)
         spec.append((op, a, b, c, k0, k1))
+    if last_mad_role is not None:
+        solver.add(*(v == index for v,index in zip(spec[-1][1:4],last_mad_role)))
+    if middle_uses_first:
+        a,b = spec[1][1:3]
+        # t OP b/a/prior/K. Constants are interchangeable and OP is commutative.
+        # t OP t and bypassing t reduce to polynomial/prefix-bitwise cases.
+        solver.add(z3.Or(*(z3.And(a == i,b == j) for i,j in
+                          ((0,4),(1,4),(2,4),(4,5)))))
+        if middle_other is not None:
+            i,j=sorted((4,middle_other))
+            solver.add(a == i,b == j)
     if pin_control:
         # Validate the encoding and full-domain verifier on a known program.
         # This is a supplied positive witness, not a discovered optimization.
@@ -67,6 +91,8 @@ def search(sequence, width=12, timeout_ms=5000, control=False, pin_control=False
         return z3.simplify(values[-1])
 
     def reference(x):
+        if target_fn is not None:
+            return target_fn(x)
         if control:
             a = live_words(x, width)[1]
             return (33*x+17) ^ (512*a+29)
@@ -82,6 +108,9 @@ def search(sequence, width=12, timeout_ms=5000, control=False, pin_control=False
     status = solver.check()
     result = {'sequence': sequence, 'width': width, 'samples': len(samples),
               'timeout_ms': timeout_ms, 'control': control, 'pin_control': pin_control,
+              'custom_target': target_fn is not None,
+              'last_mad_role': last_mad_role, 'middle_uses_first': middle_uses_first,
+              'middle_other': middle_other,
               'result': str(status),
               'live_pool': ['b', 'a=b XOR C1', 'prior=(a-C0)/4097', 'zero']}
     if status == z3.unknown:

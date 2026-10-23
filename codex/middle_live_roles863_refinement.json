@@ -1,0 +1,1475 @@
+{
+  "width": 11,
+  "source": "codex/middle_live_roles863_results.json",
+  "canonical_unknown_roles": 13,
+  "counts": {
+    "unsat": 44,
+    "unknown": 8
+  },
+  "rows": [
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 0,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.001
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 1,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 2,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 5,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 3.015
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 0,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.105
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 1,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.109
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 2,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.12
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 5,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 1.625
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 0,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.111
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 1,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.118
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 2,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.115
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 5,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 1.21
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        4,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 0,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.111
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        4,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 1,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.102
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        4,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 2,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.116
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        4,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 5,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 3.016
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        5,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 0,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.102
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        5,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 1,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.102
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        5,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 2,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.219
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        5,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 5,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 3.016
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 0,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.088
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 1,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.092
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 2,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.202
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 5,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 3.011
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 0,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.138
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 1,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.138
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 2,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.135
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 5,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 3.122
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        0
+      ],
+      "middle_uses_first": true,
+      "middle_other": 0,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.171
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        0
+      ],
+      "middle_uses_first": true,
+      "middle_other": 1,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.129
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        0
+      ],
+      "middle_uses_first": true,
+      "middle_other": 2,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.143
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        0
+      ],
+      "middle_uses_first": true,
+      "middle_other": 5,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 3.017
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 0,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.321
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 1,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.164
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 2,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.306
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 5,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 3.018
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 0,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.005
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 1,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 2,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.002
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        0,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 5,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 3.015
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        5,
+        6
+      ],
+      "middle_uses_first": true,
+      "middle_other": 0,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.137
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        5,
+        6
+      ],
+      "middle_uses_first": true,
+      "middle_other": 1,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.12
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        5,
+        6
+      ],
+      "middle_uses_first": true,
+      "middle_other": 2,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.125
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        5,
+        6
+      ],
+      "middle_uses_first": true,
+      "middle_other": 5,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 1.786
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 0,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.11
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 1,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.111
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 2,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.113
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        4,
+        6,
+        5
+      ],
+      "middle_uses_first": true,
+      "middle_other": 5,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 2.5
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 0,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.196
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 1,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.191
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 2,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 0.225
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "samples": 64,
+      "timeout_ms": 3000,
+      "control": false,
+      "pin_control": false,
+      "custom_target": false,
+      "last_mad_role": [
+        5,
+        6,
+        4
+      ],
+      "middle_uses_first": true,
+      "middle_other": 5,
+      "result": "unsat",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "seconds": 2.568
+    }
+  ]
+}

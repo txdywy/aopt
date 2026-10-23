@@ -298,3 +298,20 @@ not zero modulo2^s. The script asserts both witnesses and exhaustively checks
 the interval permutation criterion on3076 smaller word/coefficient cases.
 This proof requires the shifted source to be a itself; it does not silently
 cover b=x>>s or arbitrary nonlinear shifted sources. No full-kernel gain.
+
+## 2026-10-23: remaining affine branch fully closed
+
+`prove_first_affine_shift863.py` closes affine MAD / arbitrary logical right
+shift / MAD. It partitions all 75 final operand shapes, excludes even first
+multipliers even when the final MAD directly uses x, and handles every literal
+shift using parity, interval, sum and finite-difference certificates. For a
+variable affine shift count, an arbitrary-quadratic necessary relaxation is
+UNSAT on 128 full32 inputs; constructive unpinned controls are SAT.
+
+Both non-affine first-MAD branches were independently reconfirmed UNSAT at
+full32 with unrestricted shift operands, in `first_square_shift863_results.json`.
+Thus MAD/SHR/MAD and its multiplication-first subfamily are closed. The earlier
+48-order partition now has no unresolved order, within its stated one-input
+grammar. This does not prove optimality over all three-instruction ISA programs.
+See [the complete argument](SUB863_LIVE_AND_SHIFT_20261023.md) and
+`first_affine_shift863_results.json`. The verified kernel remains 864 cycles.

@@ -2,8 +2,10 @@
 
 Update, 2026-10-23: the [cross-stage audit](SUB863_MIDDLE_CROSS_STAGE_20261023.md)
 now excludes all three orders containing exactly two MADs and one XOR for
-this target with one input and arbitrary constants. The timeout statements
-below describe earlier experiments; the AND/OR extensions remain unresolved.
+this target with one input and arbitrary constants. A subsequent
+[remaining-routes audit](SUB863_REMAINING_ROUTES_20261023.md) closes all 64
+length-three orders over MAD/XOR/AND/OR. The timeout statements below
+describe historical experiments; additional live-input searches remain open.
 
 Target (all arithmetic uint32):
 

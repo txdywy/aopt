@@ -1,6 +1,7 @@
 """Split affine MAD,XOR,MAD by XOR source and final operand roles.
 
-This searches only t=A*x+B; u=t XOR x/K. It is not a complete three-op
+This searches only t=A*x+B; u=t OP x/K for OP in XOR, AND, OR.
+It is not a complete three-op
 grammar. Every UNSAT row excludes its stated low-bit family. UNKNOWN is
 inconclusive, and even a low-bit equivalent needs uint32 verification.
 """
@@ -21,17 +22,19 @@ def roles():
             for c in range(5) if 2 in (a, b, c)]
 
 
-def expression(x, constants, xor_source, role):
+def expression(x, constants, xor_source, role, bitwise='^'):
     a, b, key, k0, k1 = constants
     t = a*x+b
-    u = t ^ (x if xor_source == 'input' else key)
+    other = x if xor_source == 'input' else key
+    u = {'^': lambda: t ^ other, '&': lambda: t & other,
+         '|': lambda: t | other}[bitwise]()
     values = (x, t, u, k0, k1)
     i, j, k = role
     return values[i]*values[j]+values[k]
 
 
 def check(xor_source, role, width=11, timeout_ms=2000, fn=target,
-          injective_cut=False):
+          injective_cut=False, bitwise='^'):
     mask = (1 << width)-1
     rng = random.Random(864)
     samples = list(dict.fromkeys([x & mask for x in list(range(64))+
@@ -50,10 +53,10 @@ def check(xor_source, role, width=11, timeout_ms=2000, fn=target,
         solver.add(constants[0] & 1 == 1)
     for value in samples:
         x = z3.BitVecVal(value, width)
-        solver.add(expression(x, constants, xor_source, role) == fn(x))
+        solver.add(expression(x, constants, xor_source, role, bitwise) == fn(x))
     started = time.monotonic()
     status = solver.check()
-    result = {'xor_source': xor_source, 'role': role, 'samples': len(samples),
+    result = {'bitwise': bitwise, 'xor_source': xor_source, 'role': role, 'samples': len(samples),
               'injective_cut': injective_cut, 'result': str(status)}
     if status == z3.unknown:
         result['reason'] = solver.reason_unknown()
@@ -64,7 +67,7 @@ def check(xor_source, role, width=11, timeout_ms=2000, fn=target,
         x = z3.BitVec('verify_x', width)
         verify = z3.SolverFor('QF_BV')
         verify.set(timeout=timeout_ms)
-        verify.add(expression(x, values, xor_source, role) != fn(x))
+        verify.add(expression(x, values, xor_source, role, bitwise) != fn(x))
         verified = verify.check()
         result['verification'] = str(verified)
         if verified == z3.sat:
@@ -79,16 +82,17 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--width', type=int, default=11)
     parser.add_argument('--timeout-ms', type=int, default=2000)
+    parser.add_argument('--bitwise', choices=('^', '&', '|'), default='^')
     parser.add_argument('--output', required=True)
     args = parser.parse_args()
     if not 1 <= args.width <= 32 or args.timeout_ms <= 0:
         parser.error('width must be 1..32; timeout must be positive')
     rows = []
     for xor_source, role in itertools.product(('input', 'constant'), roles()):
-        row = check(xor_source, role, args.width, args.timeout_ms)
+        row = check(xor_source, role, args.width, args.timeout_ms, bitwise=args.bitwise)
         rows.append(row)
         print(json.dumps(row), flush=True)
-    report = {'width': args.width, 'timeout_ms': args.timeout_ms,
+    report = {'width': args.width, 'timeout_ms': args.timeout_ms, 'bitwise': args.bitwise,
               'z3': z3.get_version_string(), 'operand_pool': ['x', 't', 'u', 'k0', 'k1'],
               'counts': dict(Counter(row['result'] for row in rows)), 'rows': rows}
     with open(args.output, 'w') as output:

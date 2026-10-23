@@ -1,6 +1,6 @@
-"""Necessary degree-four polynomial test for XOR,MAD,MAD (no shifts).
+"""Necessary degree-four polynomial test for bitwise,MAD,MAD (no shifts).
 
-First XOR can only produce x XOR K or a constant. Constant cases are covered
+First XOR/AND/OR can only produce x OP K or a constant. Constant cases are covered
 by K=0. Two subsequent MADs produce a polynomial in x,y of total degree <=4.
 We allow ALL 15 monomials with independent coefficients: a strict relaxation.
 Exclusion at a low width excludes uint32 programs; survival proves nothing.
@@ -65,6 +65,7 @@ def main():
     parser.add_argument('--width', type=int, default=11)
     parser.add_argument('--control', action='store_true')
     parser.add_argument('--slice', choices=('absorb-c1', 'middle'), default='absorb-c1')
+    parser.add_argument('--bitwise', choices=('^', '&', '|'), default='^')
     args = parser.parse_args()
     if not 1 <= args.width <= 12:
         parser.error('width must be 1..12')
@@ -76,17 +77,21 @@ def main():
         if args.slice == 'middle':
             return 9*((33*x+0xE9F8CC1D) ^ (16896*x+0xACCF6200))+0xFD7046C5
         return target(x)
-    rhs = [((x * (x ^ 37) + 19)**2 + x if args.control else selected_target(x)) & mask
+    def bitwise(x, key):
+        return {'^': lambda: x ^ key, '&': lambda: x & key,
+                '|': lambda: x | key}[args.bitwise]()
+    rhs = [((x * bitwise(x, 37) + 19)**2 + x if args.control else selected_target(x)) & mask
            for x in samples]
     start = time.monotonic()
     survivors = []
     for key in range(mask+1):
-        matrix = [monomials(x, x ^ key, mask) for x in samples]
+        matrix = [monomials(x, bitwise(x, key), mask) for x in samples]
         if consistent(matrix, rhs, args.width):
             survivors.append(key)
     if args.control:
         assert (37 & mask) in survivors
     print(json.dumps({'width': args.width, 'slice': args.slice, 'samples': len(samples),
+                      'bitwise': args.bitwise,
                       'tested_keys': mask+1, 'survivors': survivors,
                       'control': args.control,
                       'seconds': round(time.monotonic()-start, 3)}))

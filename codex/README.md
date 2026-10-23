@@ -12,6 +12,9 @@ variants. It does not claim a universal lower bound or a new executable score.
 The [cross-stage hash audit](SUB863_MIDDLE_CROSS_STAGE_20261023.md) additionally
 excludes every ordering of two MADs and one XOR for the four-operation middle
 hash with one input and arbitrary constants; the executable remains 864 cycles.
+The [remaining-routes audit](SUB863_REMAINING_ROUTES_20261023.md) extends that
+result to all 64 three-instruction MAD/XOR/AND/OR orders and records nine
+inconclusive searches with additional live intermediates.
 It specializes `(height=10, nodes=2047, batch=256, rounds=16)`, initial indices
 all zero, and the **Without Indices / final values only** contract.
 

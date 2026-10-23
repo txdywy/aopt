@@ -1,5 +1,10 @@
 # Middle hash plus outer MAD synthesis
 
+Update, 2026-10-23: the [cross-stage audit](SUB863_MIDDLE_CROSS_STAGE_20261023.md)
+now excludes all three orders containing exactly two MADs and one XOR for
+this target with one input and arbitrary constants. The timeout statements
+below describe earlier experiments; the AND/OR extensions remain unresolved.
+
 Target (all arithmetic uint32):
 
 ```

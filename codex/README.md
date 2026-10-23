@@ -9,6 +9,9 @@ The previous [`perf_takehome_865.py`](perf_takehome_865.py) is unchanged.
 The [sub-863 structural audit](SUB863_STRUCTURAL_AUDIT_20261023.md) proves a
 864 lower bound for the current graph and records 32 unsuccessful structural
 variants. It does not claim a universal lower bound or a new executable score.
+The [cross-stage hash audit](SUB863_MIDDLE_CROSS_STAGE_20261023.md) additionally
+excludes every ordering of two MADs and one XOR for the four-operation middle
+hash with one input and arbitrary constants; the executable remains 864 cycles.
 It specializes `(height=10, nodes=2047, batch=256, rounds=16)`, initial indices
 all zero, and the **Without Indices / final values only** contract.
 

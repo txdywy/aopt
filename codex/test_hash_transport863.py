@@ -8,8 +8,10 @@ import z3
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tests'))
 from frozen_problem import Machine
-from codex.search_hash_transport863 import MASK, OPS, operation, search, target
+from codex.search_hash_transport863 import (MASK, OPS, FIRST_FORMS,
+    first_operation, operation, search, target)
 from codex.prove_middle_quadratic863 import certificate
+from codex.prove_first_form_coverage863 import prove
 
 
 class TransportTests(unittest.TestCase):
@@ -37,6 +39,37 @@ class TransportTests(unittest.TestCase):
         for code in ('//','%','cdiv'):
             _, valid = operation(code,z3.BitVecVal(MASK,32),z3.BitVecVal(0,32),z3.BitVecVal(0,32))
             self.assertTrue(z3.is_false(z3.simplify(valid)))
+
+    def test_first_forms_match_frozen_machine(self):
+        machine = Machine([],[],None)
+        core = machine.cores[0]
+        rng = random.Random(864)
+        for form in FIRST_FORMS:
+            for original_x in [0,1,31,32,63,MASK] + [rng.getrandbits(32) for _ in range(12)]:
+                x,d,e = original_x,rng.getrandbits(32) or 1,rng.getrandbits(32)
+                # Avoid allocating enormous Python ints for left shifts.
+                if form in ('constant-shl','self-shl'): x %= 64
+                if form == 'shr': d = d % 31 + 1
+                if form == 'shr16': d = 16
+                if form == 'affine': code,args = 'mad',(x,d,e)
+                elif form == 'square': code,args = 'mad',(x,x,d)
+                elif form == 'square-input': code,args = 'mad',(x,x,x)
+                elif form.startswith('constant-'):
+                    code,args = ('<<' if form.endswith('shl') else '>>'),(d,x,0)
+                elif form.startswith('self-'):
+                    code,args = ('<<' if form.endswith('shl') else '>>'),(x,x,0)
+                elif form in ('less-than','greater-than','equal'):
+                    code = '==' if form == 'equal' else '<'
+                    args = (d,x,0) if form == 'greater-than' else (x,d,0)
+                else: code,args = ('>>' if form in ('shr','shr16') else form),(x,d,0)
+                core.scratch[:24] = [args[0]]*8+[args[1]]*8+[args[2]]*8
+                machine.scratch_write = {}
+                if code == 'mad': machine.valu(core,'multiply_add',24,0,8,16)
+                else: machine.alu(core,code,24,0,8)
+                value,valid = first_operation(form,*(z3.BitVecVal(v,32) for v in (x,d,e)))
+                self.assertTrue(z3.is_true(z3.simplify(valid)))
+                self.assertEqual(z3.simplify(value).as_long(),machine.scratch_write[24],
+                                 (form,x,d,e))
 
     def test_linear_transport_identity_all_uint32(self):
         x,n = z3.BitVecs('state node',32)
@@ -83,6 +116,14 @@ class TransportTests(unittest.TestCase):
     def test_mad_after_any_fixed_right_shift_is_excluded(self):
         result = search('mad',10,first='shr')
         self.assertEqual(result['status'],'unsat',result)
+
+    def test_first_form_symbolic_coverage(self):
+        result = prove()
+        self.assertEqual(result['first_instruction_shapes'],60)
+        self.assertEqual(result['normalized'],54)
+        self.assertEqual(result['invalid_at_zero'],6)
+        forms = {form for row in result['rows'] for form in row.get('families',[])}
+        self.assertEqual(forms,set(FIRST_FORMS)-{'shr16'})
 
 
 if __name__ == '__main__':

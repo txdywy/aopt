@@ -1,0 +1,204 @@
+{
+  "z3": "5.1.0",
+  "first": "self-shr",
+  "objective": "head-xor",
+  "grammar": "First operation x OP D followed by one ISA op; operand pool x, first_result, K0, K1; arbitrary uint32 K0/K1. D is 16 for SHR16, 1..31 for SHR, any nonzero uint32 for division/remainder. Affine is x*D+E; square is x*x+D; bitwise families use arbitrary D. square-input is x*x+x; constant shifts are D OP x; self shifts are x OP x; comparisons are x<D, D<x, x==D. Controls use SHR16.",
+  "results": [
+    {
+      "op": "^",
+      "control": "xor",
+      "status": "proved_equivalent",
+      "classification": "full_uint32_equivalence",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 0.007628540974110365,
+      "operands": [
+        0,
+        1,
+        0
+      ],
+      "first_constant": 16,
+      "first_offset": 0,
+      "constants": [
+        131072,
+        1073872897
+      ],
+      "first": "shr16"
+    },
+    {
+      "op": "mad",
+      "control": "mad",
+      "status": "proved_equivalent",
+      "classification": "full_uint32_equivalence",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 0.5424852089490741,
+      "operands": [
+        0,
+        2,
+        1
+      ],
+      "first_constant": 16,
+      "first_offset": 0,
+      "constants": [
+        4097,
+        4294905840
+      ],
+      "first": "shr16"
+    },
+    {
+      "op": "+",
+      "control": null,
+      "status": "unsat",
+      "classification": "grammar_excluded",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 0.008861166192218661,
+      "reason": null,
+      "first": "self-shr"
+    },
+    {
+      "op": "-",
+      "control": null,
+      "status": "unsat",
+      "classification": "grammar_excluded",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 0.006611791905015707,
+      "reason": null,
+      "first": "self-shr"
+    },
+    {
+      "op": "^",
+      "control": null,
+      "status": "unsat",
+      "classification": "grammar_excluded",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 0.003700458910316229,
+      "reason": null,
+      "first": "self-shr"
+    },
+    {
+      "op": "&",
+      "control": null,
+      "status": "unsat",
+      "classification": "grammar_excluded",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 0.004938666941598058,
+      "reason": null,
+      "first": "self-shr"
+    },
+    {
+      "op": "|",
+      "control": null,
+      "status": "unsat",
+      "classification": "grammar_excluded",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 0.004173292079940438,
+      "reason": null,
+      "first": "self-shr"
+    },
+    {
+      "op": "*",
+      "control": null,
+      "status": "unsat",
+      "classification": "grammar_excluded",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 0.11180316610261798,
+      "reason": null,
+      "first": "self-shr"
+    },
+    {
+      "op": "mad",
+      "control": null,
+      "status": "unsat",
+      "classification": "grammar_excluded",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 0.14656895818188787,
+      "reason": null,
+      "first": "self-shr"
+    },
+    {
+      "op": "<<",
+      "control": null,
+      "status": "unsat",
+      "classification": "grammar_excluded",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 0.055355750024318695,
+      "reason": null,
+      "first": "self-shr"
+    },
+    {
+      "op": ">>",
+      "control": null,
+      "status": "unsat",
+      "classification": "grammar_excluded",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 0.031123582972213626,
+      "reason": null,
+      "first": "self-shr"
+    },
+    {
+      "op": "//",
+      "control": null,
+      "status": "unsat",
+      "classification": "grammar_excluded",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 1.2298643339890987,
+      "reason": null,
+      "first": "self-shr"
+    },
+    {
+      "op": "%",
+      "control": null,
+      "status": "unsat",
+      "classification": "grammar_excluded",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 1.1649661660194397,
+      "reason": null,
+      "first": "self-shr"
+    },
+    {
+      "op": "cdiv",
+      "control": null,
+      "status": "unsat",
+      "classification": "grammar_excluded",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 1.9252469579223543,
+      "reason": null,
+      "first": "self-shr"
+    },
+    {
+      "op": "<",
+      "control": null,
+      "status": "unsat",
+      "classification": "grammar_excluded",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 0.0004042908549308777,
+      "reason": null,
+      "first": "self-shr"
+    },
+    {
+      "op": "==",
+      "control": null,
+      "status": "unsat",
+      "classification": "grammar_excluded",
+      "samples": 61,
+      "iterations": 1,
+      "seconds": 0.0002811660524457693,
+      "reason": null,
+      "first": "self-shr"
+    }
+  ]
+}

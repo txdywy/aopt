@@ -7,7 +7,8 @@ only rearranging startup. This search fixes the first instruction to SHR16
 and allows one subsequent original-ISA operation with arbitrary uint32
 constants and operands from x, the first result, K0, K1. Optional first-step
 families search other right shifts, division, remainder, affine maps, square
-plus a constant, or a bitwise operation with a constant.
+plus a constant, bitwise operations with constants, input-dependent shifts,
+comparisons, and square plus input.
 The other objectives target the middle after an invertible affine change of
 variable, and the XOR/right-shift/constant slice of the first hash stage.
 
@@ -26,6 +27,9 @@ import z3
 
 
 OPS = ('+', '-', '^', '&', '|', '*', 'mad', '<<', '>>', '//', '%', 'cdiv', '<', '==')
+FIRST_FORMS = ('shr16','shr','//','%','cdiv','affine','square','^','&','|',
+               'square-input','constant-shl','constant-shr','self-shl','self-shr',
+               'less-than','greater-than','equal')
 MASK = (1 << 32) - 1
 
 
@@ -85,7 +89,22 @@ def samples():
     return list(dict.fromkeys(values))
 
 
+def first_operation(first, x, constant, offset):
+    if first == 'affine': return x*constant+offset, z3.BoolVal(True)
+    if first == 'square': return x*x+constant, z3.BoolVal(True)
+    if first == 'square-input': return x*x+x, z3.BoolVal(True)
+    if first in ('constant-shl','constant-shr'):
+        return operation('<<' if first.endswith('shl') else '>>',constant,x,x)
+    if first in ('self-shl','self-shr'):
+        return operation('<<' if first.endswith('shl') else '>>',x,x,x)
+    if first in ('less-than','greater-than','equal'):
+        a,b = (constant,x) if first == 'greater-than' else (x,constant)
+        return operation('==' if first == 'equal' else '<',a,b,x)
+    return operation('>>' if first in ('shr16','shr') else first,x,constant,x)
+
+
 def search(code, seconds=15, control=None, first='shr16', objective='transport'):
+    if first not in FIRST_FORMS: raise ValueError(first)
     solver = z3.SolverFor('QF_BV')
     a, b, c = z3.BitVecs('a b c', 2)
     k0, k1 = z3.BitVecs('k0 k1', 32)
@@ -102,11 +121,7 @@ def search(code, seconds=15, control=None, first='shr16', objective='transport')
         fields = (a, b, c, k0, k1, divisor, offset)
         aa, bb, cc, ka, kb, dd, ff = [model.eval(v, model_completion=True) if model is not None else v
                               for v in fields]
-        if first == 'affine': first_value, first_valid = x*dd+ff, z3.BoolVal(True)
-        elif first == 'square': first_value, first_valid = x*x+dd, z3.BoolVal(True)
-        else:
-            first_value, first_valid = operation('>>' if first in ('shr16','shr') else first,
-                                                 x, dd, x)
+        first_value, first_valid = first_operation(first,x,dd,ff)
         pool = [x, first_value, ka, kb]
         result, valid = operation(code, choose(aa, pool), choose(bb, pool), choose(cc, pool))
         return result, z3.And(first_valid, valid)
@@ -161,7 +176,7 @@ def main():
     ap.add_argument('--output', type=Path, required=True)
     ap.add_argument('--seconds', type=float, default=15)
     ap.add_argument('--objective', choices=('transport','middle-tail','head-xor'), default='transport')
-    ap.add_argument('--first', choices=('shr16','shr','//','%','cdiv','affine','square','^','&','|'), default='shr16',
+    ap.add_argument('--first', choices=FIRST_FORMS, default='shr16',
         help='First operation; SHR searches every fixed shift 1..31; division/remainder use any nonzero uint32 divisor')
     args = ap.parse_args()
     if args.seconds <= 0: ap.error('--seconds must be positive')
@@ -169,7 +184,9 @@ def main():
         grammar='First operation x OP D followed by one ISA op; operand pool '
         'x, first_result, K0, K1; arbitrary uint32 K0/K1. D is 16 for SHR16, '
         '1..31 for SHR, any nonzero uint32 for division/remainder. Affine is '
-        'x*D+E; square is x*x+D; bitwise families use arbitrary D. Controls use SHR16.', results=[])
+        'x*D+E; square is x*x+D; bitwise families use arbitrary D. '
+        'square-input is x*x+x; constant shifts are D OP x; self shifts are x OP x; '
+        'comparisons are x<D, D<x, x==D. Controls use SHR16.', results=[])
     for code, control in [('^','xor'), ('mad','mad')] + [(op,None) for op in OPS]:
         first = 'shr16' if control else args.first
         row = search(code, args.seconds, control, first, args.objective)

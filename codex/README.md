@@ -62,6 +62,10 @@ the current graph and records 32 alternative construction checks.
 The [hash rewrite study](SUB863_HASH_RESEARCH_20261023.md) checks 406 templates
 across three hash slices: 405 are excluded by SMT and one by an independently
 checked polynomial certificate. It does not improve the verified 864 score.
+The [public-source refresh and coverage extension](PUBLIC_RESEARCH_20261023.md)
+adds 336 checks and proves first-instruction coverage for these isolated
+two-arithmetic-op searches. This closes that restricted search space, not
+whole-hash or whole-kernel optimality; the verified score remains 864.
 
 Earlier results remain in [the 865 reproduction note](SUB864_865_RESULT_20261021.md).
 The [next research pass](SUB864_CONTINUATION_20261021.md) preserves 20 further

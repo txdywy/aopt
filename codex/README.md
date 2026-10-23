@@ -57,6 +57,11 @@ The 864 revision adds constant staging, scalar deepest-leaf loads and raw-hash
 reassociation, then jointly repairs compute and memory scheduling. It uses
 51,665 arithmetic lanes; after startup and drain, only seven middle lanes
 are idle. See [the verified 864 result and reproduction recipe](SUB864_864_RESULT_20261023.md).
+The [structural audit](SUB863_STRUCTURAL_AUDIT_20261023.md) excludes 863 for
+the current graph and records 32 alternative construction checks.
+The [hash rewrite study](SUB863_HASH_RESEARCH_20261023.md) checks 406 templates
+across three hash slices: 405 are excluded by SMT and one by an independently
+checked polynomial certificate. It does not improve the verified 864 score.
 
 Earlier results remain in [the 865 reproduction note](SUB864_865_RESULT_20261021.md).
 The [next research pass](SUB864_CONTINUATION_20261021.md) preserves 20 further

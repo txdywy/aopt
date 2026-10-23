@@ -1,0 +1,311 @@
+{
+  "verified_cycles": 864,
+  "templates": 406,
+  "batches": 29,
+  "positive_controls_proved": 58,
+  "smt_statuses": {
+    "unsat": 405,
+    "unknown": 1
+  },
+  "independently_excluded_smt_unknowns": 1,
+  "unresolved_templates": 0,
+  "scope": "Only the explicitly listed two-instruction grammars; first-operation families overlap; no global lower bound and no new kernel.",
+  "certificate": {
+    "file": "codex/hash_middle_tail863_quadratic_certificate.json",
+    "sha256": "3bf6290d451897bc9d3e7ec109e40000efbda01bcd6a169fd307db3e7edf21b7"
+  },
+  "research_tests_passed": 7,
+  "results": [
+    {
+      "file": "codex/hash_head_xor863_affine_result.json",
+      "objective": "head-xor",
+      "first": "affine",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "a5305596e63451b4ed59e38d56b2bed0b5e13d8c5b554aac11608664f8fe16ed"
+    },
+    {
+      "file": "codex/hash_head_xor863_and_result.json",
+      "objective": "head-xor",
+      "first": "&",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "9e379904b6bbfdb12ef950dc5a46c46671ed6e5aedc40226edd9fc523403323d"
+    },
+    {
+      "file": "codex/hash_head_xor863_ceil_division_result.json",
+      "objective": "head-xor",
+      "first": "cdiv",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "ef171f5b292040a6c879e8413d9da54f8b3f62882717ba9bf8acdf71e8f037b6"
+    },
+    {
+      "file": "codex/hash_head_xor863_division_result.json",
+      "objective": "head-xor",
+      "first": "//",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "d9aa7199653d0a711bd0e6694bf598f0ec0db3f895a1d51ee383d97ef16dae52"
+    },
+    {
+      "file": "codex/hash_head_xor863_fixed_shift_result.json",
+      "objective": "head-xor",
+      "first": "shr16",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "fb2d31159bd5b1cd0d58b14017147415b2bc5574b78985f980265223848ac4af"
+    },
+    {
+      "file": "codex/hash_head_xor863_or_result.json",
+      "objective": "head-xor",
+      "first": "|",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "1339bd0af94aad6ad5335765498f7691f0e9ee2eb5758188d2e6a057b8cceb5d"
+    },
+    {
+      "file": "codex/hash_head_xor863_remainder_result.json",
+      "objective": "head-xor",
+      "first": "%",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "21b570efb8aef1e3376208f1dd51f2407fa6b4fe5baabaf2cb4ff53eb8d63dc5"
+    },
+    {
+      "file": "codex/hash_head_xor863_shifts_result.json",
+      "objective": "head-xor",
+      "first": "shr",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "33b9877211871d1ac5be6e0aa3f775eb49a1d8b4c851e8f2296dd15760f7132a"
+    },
+    {
+      "file": "codex/hash_head_xor863_square_result.json",
+      "objective": "head-xor",
+      "first": "square",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "46a13e024baaca7b8a760d184ac55041b5f7543206a9abd3429c1c30f5dae02a"
+    },
+    {
+      "file": "codex/hash_head_xor863_xor_result.json",
+      "objective": "head-xor",
+      "first": "^",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "0f2ed83b1069ac142d7be47f5ba9170e37fc6ddcf31011e01e84b956abcafb96"
+    },
+    {
+      "file": "codex/hash_middle_tail863_affine_result.json",
+      "objective": "middle-tail",
+      "first": "affine",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 13,
+        "unknown": 1
+      },
+      "sha256": "b8e2727edd3aa075c8958ba07c813ecd171f13e66619f94feed63ef927e15e80"
+    },
+    {
+      "file": "codex/hash_middle_tail863_and_result.json",
+      "objective": "middle-tail",
+      "first": "&",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "698df2bb4f0128486e453af5ac7a93f45664c092f6a53ac18daa01338e71d3f2"
+    },
+    {
+      "file": "codex/hash_middle_tail863_ceil_division_result.json",
+      "objective": "middle-tail",
+      "first": "cdiv",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "dfcd025f432adb3e19079c3be13f9bd4b4d85266d30271e8304a37315f9b118f"
+    },
+    {
+      "file": "codex/hash_middle_tail863_division_result.json",
+      "objective": "middle-tail",
+      "first": "//",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "6a0a181e27d797859ff39c58ee2c829e7b62731d99a3653cc7dfe9ce5cb79c8f"
+    },
+    {
+      "file": "codex/hash_middle_tail863_or_result.json",
+      "objective": "middle-tail",
+      "first": "|",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "3b568d985c9caabc692aa66956cf2f29c68f254c043e88a293bebec1cf1424ac"
+    },
+    {
+      "file": "codex/hash_middle_tail863_remainder_result.json",
+      "objective": "middle-tail",
+      "first": "%",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "89ef952d4a49199d4f4e0dbe2b1b1c5651e2efc2973d8f3c38df524c2680d3d8"
+    },
+    {
+      "file": "codex/hash_middle_tail863_shifts_result.json",
+      "objective": "middle-tail",
+      "first": "shr",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "da0a873a1143e01771656c89fa8be0b5a2615efdff32e427a49b5a9fbd727dfd"
+    },
+    {
+      "file": "codex/hash_middle_tail863_square_result.json",
+      "objective": "middle-tail",
+      "first": "square",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "40b3075205900ff883d5285cec3b18c0a0b3bf56224217c0630ec01d8bc16097"
+    },
+    {
+      "file": "codex/hash_middle_tail863_xor_result.json",
+      "objective": "middle-tail",
+      "first": "^",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "53ab9f3c95784c37e5b94cae58a17bb2b00e28fe1140fc92c8a47fd23c728793"
+    },
+    {
+      "file": "codex/hash_transport863_affine_result.json",
+      "objective": "transport",
+      "first": "affine",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "998125c726707c1362228951ab5e465658569cf6fb84af4f013825f3a9bf387e"
+    },
+    {
+      "file": "codex/hash_transport863_and_result.json",
+      "objective": "transport",
+      "first": "&",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "3402bd505404963d4ba2f78ce24515e78055ecfaf6e2ddef1a0f04e2f6f403ea"
+    },
+    {
+      "file": "codex/hash_transport863_ceil_division_result.json",
+      "objective": "transport",
+      "first": "cdiv",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "09cc164186f6246bef026f1792ff91b908b203a2303696e8f72d2661f50f992b"
+    },
+    {
+      "file": "codex/hash_transport863_division_result.json",
+      "objective": "transport",
+      "first": "//",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "e096ab0420317591f6b4696ee77942c88cea541961420036cd63a56e87de44b1"
+    },
+    {
+      "file": "codex/hash_transport863_or_result.json",
+      "objective": "transport",
+      "first": "|",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "f3c9d8e114c1f39ac6c38c37941fa4b6210319fd41c3b8bd0d92214bd06c2809"
+    },
+    {
+      "file": "codex/hash_transport863_remainder_result.json",
+      "objective": "transport",
+      "first": "%",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "04ec02dc8298865c7f5ce1ae14e9847c5d448cf62fcb1f38238398bd103d7009"
+    },
+    {
+      "file": "codex/hash_transport863_result.json",
+      "objective": "transport",
+      "first": "shr16",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "413888871c88c03f8d20d613d201c2bb8866e7275ad0d2aab9948a20070b78fe"
+    },
+    {
+      "file": "codex/hash_transport863_shifts_result.json",
+      "objective": "transport",
+      "first": "shr",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "bf5beae428bb389bf81054d3ffcadcf1140a4fa4b0189bfbba0fef1585b21ad3"
+    },
+    {
+      "file": "codex/hash_transport863_square_result.json",
+      "objective": "transport",
+      "first": "square",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "3113781f18202f7ce73902b858beb4d2e035ec2a4afd3ab7831ea84a9b481ea7"
+    },
+    {
+      "file": "codex/hash_transport863_xor_result.json",
+      "objective": "transport",
+      "first": "^",
+      "templates": 14,
+      "smt_statuses": {
+        "unsat": 14
+      },
+      "sha256": "ac803dc717b189905d9e16f43297b2ea42d2475ac13aad65e10461b0021dcd0c"
+    }
+  ]
+}

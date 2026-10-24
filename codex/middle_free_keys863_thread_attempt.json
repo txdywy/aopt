@@ -1,0 +1,6 @@
+{
+  "result": "process_error",
+  "stage": "before_solver_check",
+  "reason": "Z3 default context is not thread-safe; rerun each query in an independent subprocess",
+  "new_executable": false
+}

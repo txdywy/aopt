@@ -15,6 +15,10 @@ hash with one input and arbitrary constants; the executable remains 864 cycles.
 The [remaining-routes audit](SUB863_REMAINING_ROUTES_20261023.md) extends that
 result to all 64 three-instruction MAD/XOR/AND/OR orders and records nine
 inconclusive searches with additional live intermediates.
+The [direct-input and free-encoding continuation](SUB863_ENCODING_FRONTIER_20261024.md)
+adds 336 joint queries, automatic recovery of the full32 six-op control,
+and two affine-family exclusions with arbitrary endpoint XOR keys.
+General three-op encoded programs remain unresolved; the verified score is still 864.
 It specializes `(height=10, nodes=2047, batch=256, rounds=16)`, initial indices
 all zero, and the **Without Indices / final values only** contract.
 

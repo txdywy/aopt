@@ -1,0 +1,593 @@
+{
+  "certificate": {
+    "width": 32,
+    "shift": 16,
+    "inputs": [
+      0,
+      65536,
+      131072
+    ],
+    "outputs": [
+      1818560943,
+      687623478,
+      2954089945
+    ],
+    "low16_outputs": [
+      2479,
+      19766,
+      54745
+    ],
+    "target_second_difference_mod65536": 17692,
+    "required_second_difference": 0,
+    "scope": "Any number of constant-factor MADs and exactly one SHR16; all initial live values affine in b, with arbitrary constants",
+    "new_executable": false
+  },
+  "rows": [
+    {
+      "source": "codex/joint_direct_arbitrary_bbranches863_results.json",
+      "sequence": [
+        ">>",
+        "^",
+        "^"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bbranches863_results.json",
+      "sequence": [
+        ">>",
+        "^",
+        "mad"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bbranches863_results.json",
+      "sequence": [
+        ">>",
+        "mad",
+        "^"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bbranches863_results.json",
+      "sequence": [
+        ">>",
+        "mad",
+        "mad"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "excluded_by_affine_fold_certificate",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bbranches863_results.json",
+      "sequence": [
+        "^",
+        ">>",
+        "^"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bbranches863_results.json",
+      "sequence": [
+        "^",
+        ">>",
+        "mad"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bbranches863_results.json",
+      "sequence": [
+        "^",
+        "^",
+        ">>"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bbranches863_results.json",
+      "sequence": [
+        "^",
+        "mad",
+        ">>"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bbranches863_results.json",
+      "sequence": [
+        "mad",
+        ">>",
+        "^"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bbranches863_results.json",
+      "sequence": [
+        "mad",
+        ">>",
+        "mad"
+      ],
+      "original_result": "unknown",
+      "result": "excluded_by_affine_fold_certificate",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bbranches863_results.json",
+      "sequence": [
+        "mad",
+        "^",
+        ">>"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bbranches863_results.json",
+      "sequence": [
+        "mad",
+        "mad",
+        ">>"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "excluded_by_affine_fold_certificate",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        ">>",
+        "^",
+        "^",
+        "^"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        ">>",
+        "^",
+        "^",
+        "mad"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        ">>",
+        "^",
+        "mad",
+        "^"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        ">>",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        ">>",
+        "mad",
+        "^",
+        "^"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        ">>",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        ">>",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        ">>",
+        "mad",
+        "mad",
+        "mad"
+      ],
+      "original_result": "unknown",
+      "result": "excluded_by_affine_fold_certificate",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "^",
+        ">>",
+        "^",
+        "^"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "^",
+        ">>",
+        "^",
+        "mad"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "^",
+        ">>",
+        "mad",
+        "^"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "^",
+        ">>",
+        "mad",
+        "mad"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "^",
+        "^",
+        ">>",
+        "^"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "^",
+        "^",
+        ">>",
+        "mad"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "^",
+        "^",
+        "^",
+        ">>"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "^",
+        "^",
+        "mad",
+        ">>"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "^",
+        "mad",
+        ">>",
+        "^"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "^",
+        "mad",
+        ">>",
+        "mad"
+      ],
+      "original_result": "unknown",
+      "result": "unknown",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "^",
+        "mad",
+        "^",
+        ">>"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        ">>"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "mad",
+        ">>",
+        "^",
+        "^"
+      ],
+      "original_result": "unknown",
+      "result": "unknown",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "mad",
+        ">>",
+        "^",
+        "mad"
+      ],
+      "original_result": "unknown",
+      "result": "unknown",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "mad",
+        ">>",
+        "mad",
+        "^"
+      ],
+      "original_result": "unknown",
+      "result": "unknown",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "mad",
+        ">>",
+        "mad",
+        "mad"
+      ],
+      "original_result": "unknown",
+      "result": "excluded_by_affine_fold_certificate",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "mad",
+        "^",
+        ">>",
+        "^"
+      ],
+      "original_result": "unknown",
+      "result": "unknown",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "mad",
+        "^",
+        ">>",
+        "mad"
+      ],
+      "original_result": "unknown",
+      "result": "unknown",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "mad",
+        "^",
+        "^",
+        ">>"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        ">>"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "mad",
+        "mad",
+        ">>",
+        "^"
+      ],
+      "original_result": "unknown",
+      "result": "unknown",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "mad",
+        "mad",
+        ">>",
+        "mad"
+      ],
+      "original_result": "unknown",
+      "result": "excluded_by_affine_fold_certificate",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        ">>"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "finite_grammar_unsat",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    },
+    {
+      "source": "codex/joint_direct_arbitrary_bu863_results.json",
+      "sequence": [
+        "mad",
+        "mad",
+        "mad",
+        ">>"
+      ],
+      "original_result": "finite_grammar_unsat",
+      "result": "excluded_by_affine_fold_certificate",
+      "arbitrary_constant_factors": true,
+      "extra_arbitrary_constants": 2
+    }
+  ],
+  "totals": {
+    "finite_grammar_unsat": 30,
+    "excluded_by_affine_fold_certificate": 7,
+    "unknown": 7
+  },
+  "new_executable": false
+}

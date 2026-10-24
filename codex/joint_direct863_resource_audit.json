@@ -1,0 +1,40 @@
+{
+  "scope": "Read-only resource audit of verified 864 IR; no candidate layout",
+  "counts": {
+    "load": 1688,
+    "valu": 6093,
+    "flow": 851,
+    "alu": 2921,
+    "store": 530
+  },
+  "stream_bounds": {
+    "load": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 0,
+      "suffix_at_least": 21,
+      "instructions": 1684,
+      "capacity": 2
+    },
+    "store": {
+      "cycle_lower_bound": 345,
+      "prefix_at_least": 72,
+      "suffix_at_least": 237,
+      "instructions": 72,
+      "capacity": 2
+    },
+    "flow": {
+      "cycle_lower_bound": 861,
+      "prefix_at_least": 0,
+      "suffix_at_least": 10,
+      "instructions": 851,
+      "capacity": 1
+    }
+  },
+  "new_executable": false,
+  "arithmetic_lanes": 51665,
+  "files": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  }
+}

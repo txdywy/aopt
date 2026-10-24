@@ -5,9 +5,11 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+import random
 import z3
 
-from codex.synthesize_hash_cegis import OPS, apply
+from codex.synthesize_hash_cegis import OPS, apply, middle_reference
+from codex.search_encoded_middle_dag863 import KEYS, prefix_certificate, sequences
 
 
 def middle(x):
@@ -15,6 +17,71 @@ def middle(x):
 
 
 class SynthesisSemanticsTests(unittest.TestCase):
+    def test_encoded_middle_full32_semantics_and_projection(self):
+        rng = random.Random(870)
+        for ik, ok in KEYS.values():
+            for x in (0, 1, 0xffffffff, 1 << 31, *[rng.getrandbits(32) for _ in range(30)]):
+                expected = (middle(x ^ ik) ^ ok) & 0xffffffff
+                self.assertEqual(expected, middle_reference(x, ik, ok))
+                symbolic = middle_reference(z3.BitVecVal(x, 32), ik, ok)
+                self.assertEqual(expected, z3.simplify(symbolic).as_long())
+                for width in (1, 8, 11, 16, 31):
+                    projected = middle_reference(z3.BitVecVal(x, width), ik, ok)
+                    self.assertEqual(expected & ((1 << width)-1), z3.simplify(projected).as_long())
+        for keys in ((-1, 0), (0, 1 << 32)):
+            with self.assertRaises(ValueError):
+                middle_reference(0, *keys)
+
+    def test_encoded_middle_cli_controls_and_exhaustive_verification(self):
+        for mode, (ik, ok) in KEYS.items():
+            cmd = [sys.executable, '-m', 'codex.synthesize_hash_cegis', '--slice', 'middle',
+                '--width', '8', '--instructions', '3', '--op-sequence=^,mad,^',
+                '--middle-input-xor', hex(ik), '--middle-output-xor', hex(ok),
+                '--canonical-operands', '--consecutive-samples', '16',
+                '--seconds', '10', '--check-ms', '9000']
+            proc = subprocess.run(cmd, capture_output=True, text=True, timeout=15)
+            self.assertEqual(0, proc.returncode, proc.stderr)
+            report = json.loads(proc.stdout.splitlines()[-1])
+            self.assertEqual('proved_equivalent_modulo', report['result'], (mode, report))
+            self.assertEqual((ik, ok), (report['middle_input_xor'], report['middle_output_xor']))
+            for x in range(256):
+                values = [x]
+                for row in report['program']:
+                    pool = values + row['constants']
+                    a, b, c = [pool[i] for i in row['operands']]
+                    value = a*b+c if row['op'] == 'mad' else a ^ b
+                    values.append(value & 255)
+                self.assertEqual((middle(x ^ ik) ^ ok)&255, values[-1])
+
+    def test_encoded_middle_cli_rejects_mismatched_target(self):
+        for args in (['--middle-input-xor', '-1'], ['--middle-output-xor', '0x100000000'],
+                     ['--slice', 'first', '--middle-input-xor', '1']):
+            proc = subprocess.run([sys.executable, '-m', 'codex.synthesize_hash_cegis', *args],
+                                  capture_output=True, text=True, timeout=5)
+            self.assertEqual(2, proc.returncode)
+
+    def test_encoded_bitwise_prefix_certificate_with_high_degree_controls(self):
+        self.assertEqual(10, len(sequences()))
+        rng = random.Random(871)
+        count = 0
+        for mode in KEYS:
+            for order in sequences():
+                cert = prefix_certificate(mode, order)
+                if cert is None:
+                    continue
+                count += 1
+                row = cert['rectangle']
+                self.assertNotEqual(0, row['mixed_difference'])
+                for _ in range(30):
+                    k1, k2, c1, c2 = [rng.getrandbits(32) for _ in range(4)]
+                    values = []
+                    for x in row['inputs']:
+                        q, t = x ^ k1, x ^ k2
+                        values.append((c1*pow(x, 5, 2048)*pow(q, 3, 2048)
+                            +c2*pow(t, 4, 2048)*pow(q, 2, 2048)) & 2047)
+                    self.assertEqual(0, (values[0]-values[1]-values[2]+values[3]) & 2047)
+        self.assertEqual(6, count)
+
     def test_first_mad_forms_cover_all_operand_choices(self):
         import itertools
         x, k0, k1 = z3.BitVecs('form_x form_k0 form_k1', 32)

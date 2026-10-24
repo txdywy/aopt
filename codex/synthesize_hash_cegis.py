@@ -14,6 +14,19 @@ import z3
 OPS = ("+", "-", "^", "&", "|", "<<", ">>", "*", "mad")
 
 
+def middle_reference(x, input_key=0, output_key=0):
+    """Full uint32 middle hash, optionally with XOR encodings at its ends.
+
+    The same expression supports Python integers and Z3 bitvectors. Without
+    shifts, truncating all operands to a smaller width is a sound projection.
+    """
+    if not 0 <= input_key <= 0xffffffff or not 0 <= output_key <= 0xffffffff:
+        raise ValueError("middle XOR keys must be uint32")
+    y = x ^ input_key
+    return ((9*((33*y+0xE9F8CC1D) ^ (16896*y+0xACCF6200))
+             +0xFD7046C5) ^ output_key) & 0xffffffff
+
+
 def choose(index, values):
     result = values[-1]
     for i in reversed(range(len(values)-1)):
@@ -46,6 +59,10 @@ def main():
     parser.add_argument("--first-injective-cut", action="store_true",
                         help="For fixed positive SHR in MAD/SHR/MAD, retain an unshifted input")
     parser.add_argument("--slice", choices=("xor-shift", "middle", "first", "absorb-c1"), default="xor-shift")
+    parser.add_argument("--middle-input-xor", type=lambda value: int(value, 0), default=0,
+                        help="Input XOR key for --slice middle")
+    parser.add_argument("--middle-output-xor", type=lambda value: int(value, 0), default=0,
+                        help="Output XOR key for --slice middle")
     parser.add_argument("--width", type=int, default=32,
                         help="Low-bit screening for middle without shifts; UNSAT excludes full-width programs in this grammar")
     parser.add_argument("--op-sequence", help="Comma-separated fixed opcodes, e.g. mad,mad,^,mad")
@@ -55,6 +72,11 @@ def main():
                         help="Fix A in the affine first MAD; leaves its offset arbitrary")
     parser.add_argument("--last-mad-operands", help="Fix final MAD operand indices, e.g. 2,3,1")
     args = parser.parse_args()
+    if any(not 0 <= key <= 0xffffffff for key in
+           (args.middle_input_xor, args.middle_output_xor)):
+        parser.error('middle XOR keys must be uint32')
+    if args.slice != 'middle' and (args.middle_input_xor or args.middle_output_xor):
+        parser.error('middle XOR keys require --slice middle')
     if args.first_boundaries and args.slice != 'first':
         parser.error('first-boundaries requires --slice first')
     if not 1 <= args.instructions <= 4:
@@ -147,7 +169,7 @@ def main():
             b = x ^ (0 if args.control else 0xC761C23C)
             return (33*b+0xE9F8CC1D) ^ (16896*b+0xACCF6200)
         if args.slice == "middle":
-            return 9*((33*x+0xE9F8CC1D) ^ (16896*x+0xACCF6200))+0xFD7046C5
+            return middle_reference(x, args.middle_input_xor, args.middle_output_xor)
         if args.slice == "first":
             a = 4097*x + 0x7ED55D16
             return a ^ z3.LShR(a, 19) ^ (0 if args.control else 0xC761C23C)
@@ -174,6 +196,10 @@ def main():
         x = z3.BitVecVal(value, args.width)
         solver.add(program(x) == reference(x))
     deadline = time.monotonic() + args.seconds
+    target_metadata = dict(slice=args.slice, width=args.width,
+                           op_sequence=sequence,
+                           middle_input_xor=args.middle_input_xor,
+                           middle_output_xor=args.middle_output_xor)
     iteration = 0
     while time.monotonic() < deadline:
         iteration += 1
@@ -181,8 +207,8 @@ def main():
         status = solver.check()
         print(json.dumps({"iteration": iteration, "samples": len(samples), "synthesis": str(status)}), flush=True)
         if status != z3.sat:
-            print(json.dumps({"result": "grammar_unsatisfiable" if status == z3.unsat else "inconclusive",
-                              "width": args.width, "op_sequence": sequence,
+            print(json.dumps({**target_metadata,
+                              "result": "grammar_unsatisfiable" if status == z3.unsat else "inconclusive",
                               "right_shift_amount": args.right_shift_amount,
                               "reason": solver.reason_unknown() if status == z3.unknown else None}))
             return
@@ -198,18 +224,20 @@ def main():
             for row in spec:
                 op, a, b, c, k0, k1 = [model.eval(v, model_completion=True).as_long() for v in row]
                 decoded.append({"op": OPS[op], "operands": [a, b, c], "constants": [k0, k1]})
-            print(json.dumps({"result": "proved_equivalent" if args.width == 32 else "proved_equivalent_modulo",
-                              "width": args.width, "program": decoded,
+            print(json.dumps({**target_metadata,
+                              "result": "proved_equivalent" if args.width == 32 else "proved_equivalent_modulo",
+                              "program": decoded,
                               "expression": str(candidate), "z3": z3.get_version_string()}))
             return
         if status == z3.unknown:
-            print(json.dumps({"result": "inconclusive_verification", "reason": verify.reason_unknown()}))
+            print(json.dumps({**target_metadata, "result": "inconclusive_verification",
+                              "reason": verify.reason_unknown()}))
             return
         value = verify.model().eval(x).as_long()
         samples.append(value)
         concrete = z3.BitVecVal(value, args.width)
         solver.add(program(concrete) == reference(concrete))
-    print(json.dumps({"result": "deadline", "samples": len(samples)}))
+    print(json.dumps({**target_metadata, "result": "deadline", "samples": len(samples)}))
 
 
 if __name__ == "__main__":

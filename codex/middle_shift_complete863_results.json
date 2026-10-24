@@ -1,0 +1,8288 @@
+{
+  "z3": "5.1.0",
+  "bitwise": {
+    "literal_shifts": [
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 0,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          4,
+          13
+        ],
+        "base": 0,
+        "width": 15,
+        "inputs": [
+          0,
+          16,
+          8192,
+          8208
+        ],
+        "values": [
+          1818584522,
+          1811280986,
+          1107314122,
+          1104876634
+        ],
+        "mixed_difference": 16384,
+        "shift": 1,
+        "horizontal_mask": 24,
+        "vertical_mask": 12288,
+        "valuations": [
+          3,
+          12
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          6,
+          15
+        ],
+        "base": 0,
+        "width": 17,
+        "inputs": [
+          0,
+          64,
+          32768,
+          32832
+        ],
+        "values": [
+          1818584522,
+          1808871434,
+          1667753418,
+          1677504522
+        ],
+        "mixed_difference": 65536,
+        "shift": 2,
+        "horizontal_mask": 80,
+        "vertical_mask": 40960,
+        "valuations": [
+          4,
+          13
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          8,
+          17
+        ],
+        "base": 0,
+        "width": 19,
+        "inputs": [
+          0,
+          256,
+          131072,
+          131328
+        ],
+        "values": [
+          1818584522,
+          1772506826,
+          2954061258,
+          2985840330
+        ],
+        "mixed_difference": 262144,
+        "shift": 3,
+        "horizontal_mask": 288,
+        "vertical_mask": 147456,
+        "valuations": [
+          5,
+          14
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          10,
+          19
+        ],
+        "base": 0,
+        "width": 21,
+        "inputs": [
+          0,
+          1024,
+          524288,
+          525312
+        ],
+        "values": [
+          1818584522,
+          1661995466,
+          331179466,
+          184027594
+        ],
+        "mixed_difference": 1048576,
+        "shift": 4,
+        "horizontal_mask": 1088,
+        "vertical_mask": 557056,
+        "valuations": [
+          6,
+          15
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          12,
+          21
+        ],
+        "base": 0,
+        "width": 23,
+        "inputs": [
+          0,
+          4096,
+          2097152,
+          2101248
+        ],
+        "values": [
+          1818584522,
+          523498954,
+          386229706,
+          336852426
+        ],
+        "mixed_difference": 4194304,
+        "shift": 5,
+        "horizontal_mask": 4224,
+        "vertical_mask": 2162688,
+        "valuations": [
+          7,
+          16
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          14,
+          23
+        ],
+        "base": 0,
+        "width": 25,
+        "inputs": [
+          0,
+          16384,
+          8388608,
+          8404992
+        ],
+        "values": [
+          1818584522,
+          254944714,
+          166028746,
+          2209490378
+        ],
+        "mixed_difference": 16777216,
+        "shift": 6,
+        "horizontal_mask": 16640,
+        "vertical_mask": 8519680,
+        "valuations": [
+          8,
+          17
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          5,
+          6
+        ],
+        "base": 12,
+        "width": 11,
+        "inputs": [
+          12,
+          44,
+          76,
+          108
+        ],
+        "values": [
+          1810938806,
+          1806045398,
+          1801188854,
+          1797465878
+        ],
+        "mixed_difference": 1024,
+        "shift": 7,
+        "horizontal_mask": 32,
+        "vertical_mask": 64,
+        "valuations": [
+          5,
+          6
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          4,
+          7
+        ],
+        "base": 290,
+        "width": 11,
+        "inputs": [
+          290,
+          306,
+          418,
+          434
+        ],
+        "values": [
+          1768544828,
+          1770825932,
+          1749266108,
+          1751685452
+        ],
+        "mixed_difference": 1024,
+        "shift": 8,
+        "horizontal_mask": 16,
+        "vertical_mask": 128,
+        "valuations": [
+          4,
+          7
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 9,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 10,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 11,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 12,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 13,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 14,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 15,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 16,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 17,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 18,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 19,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 20,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 21,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 22,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 23,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 24,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 25,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 26,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 27,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 28,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 29,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 30,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 31,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024,
+        "shift": 32,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": false,
+        "target_xor_input": false
+      }
+    ],
+    "input_count_zero_domain": {
+      "bits": [
+        3,
+        8
+      ],
+      "base": 32,
+      "width": 11,
+      "inputs": [
+        32,
+        40,
+        288,
+        296
+      ],
+      "values": [
+        1813727978,
+        1805435954,
+        1767650282,
+        1768786226
+      ],
+      "mixed_difference": 1024
+    },
+    "xor_count_disjoint_blocks": [
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 32,
+        "width": 11,
+        "inputs": [
+          32,
+          40,
+          288,
+          296
+        ],
+        "values": [
+          1813727978,
+          1805435954,
+          1767650282,
+          1768786226
+        ],
+        "mixed_difference": 1024
+      }
+    ],
+    "or_count_zero_domain": {
+      "bits": [
+        3,
+        8
+      ],
+      "base": 32,
+      "width": 11,
+      "inputs": [
+        32,
+        40,
+        288,
+        296
+      ],
+      "values": [
+        1813727978,
+        1805435954,
+        1767650282,
+        1768786226
+      ],
+      "mixed_difference": 1024
+    },
+    "and_count_high_bits": [
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 32,
+        "width": 11,
+        "inputs": [
+          32,
+          40,
+          288,
+          296
+        ],
+        "values": [
+          1813727978,
+          1805435954,
+          1767650282,
+          1768786226
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 5
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 64,
+        "width": 11,
+        "inputs": [
+          64,
+          72,
+          320,
+          328
+        ],
+        "values": [
+          1808871434,
+          1800579410,
+          1762793738,
+          1763929682
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 6
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 128,
+        "width": 11,
+        "inputs": [
+          128,
+          136,
+          384,
+          392
+        ],
+        "values": [
+          1790900810,
+          1792045970,
+          1754260298,
+          1755396242
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 7
+      },
+      {
+        "bits": [
+          4,
+          7
+        ],
+        "base": 290,
+        "width": 11,
+        "inputs": [
+          290,
+          306,
+          418,
+          434
+        ],
+        "values": [
+          1768544828,
+          1770825932,
+          1749266108,
+          1751685452
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 8
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 512,
+        "width": 11,
+        "inputs": [
+          512,
+          520,
+          768,
+          776
+        ],
+        "values": [
+          1735267274,
+          1736486162,
+          1698626762,
+          1699781138
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 9
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 1024,
+        "width": 11,
+        "inputs": [
+          1024,
+          1032,
+          1280,
+          1288
+        ],
+        "values": [
+          1661995466,
+          1653703442,
+          2219897546,
+          2221033490
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 10
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2048,
+        "width": 11,
+        "inputs": [
+          2048,
+          2056,
+          2304,
+          2312
+        ],
+        "values": [
+          2110565834,
+          2102273810,
+          2064488138,
+          2065624082
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 11
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 4096,
+        "width": 11,
+        "inputs": [
+          4096,
+          4104,
+          4352,
+          4360
+        ],
+        "values": [
+          523498954,
+          517566226,
+          479780554,
+          478557202
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 12
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 8192,
+        "width": 11,
+        "inputs": [
+          8192,
+          8200,
+          8448,
+          8456
+        ],
+        "values": [
+          1107314122,
+          1103814418,
+          1065365194,
+          1066574866
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 13
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 16384,
+        "width": 11,
+        "inputs": [
+          16384,
+          16392,
+          16640,
+          16648
+        ],
+        "values": [
+          254944714,
+          256163602,
+          293801674,
+          295011346
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 14
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 32768,
+        "width": 11,
+        "inputs": [
+          32768,
+          32776,
+          33024,
+          33032
+        ],
+        "values": [
+          1667753418,
+          1678409490,
+          1112067786,
+          1113277458
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 15
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 65536,
+        "width": 11,
+        "inputs": [
+          65536,
+          65544,
+          65792,
+          65800
+        ],
+        "values": [
+          687629770,
+          679411474,
+          717049546,
+          718259218
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 16
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 131072,
+        "width": 11,
+        "inputs": [
+          131072,
+          131080,
+          131328,
+          131336
+        ],
+        "values": [
+          2954061258,
+          2948202258,
+          2985840330,
+          2984690706
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 17
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 262144,
+        "width": 11,
+        "inputs": [
+          262144,
+          262152,
+          262400,
+          262408
+        ],
+        "values": [
+          1371629002,
+          1368129298,
+          1481264842,
+          1482474514
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 18
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 524288,
+        "width": 11,
+        "inputs": [
+          524288,
+          524296,
+          524544,
+          524552
+        ],
+        "values": [
+          331179466,
+          332398354,
+          68046538,
+          69256210
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 19
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 1048576,
+        "width": 11,
+        "inputs": [
+          1048576,
+          1048584,
+          1048832,
+          1048840
+        ],
+        "values": [
+          611673546,
+          622329618,
+          659967690,
+          661177362
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 20
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2097152,
+        "width": 11,
+        "inputs": [
+          2097152,
+          2097160,
+          2097408,
+          2097416
+        ],
+        "values": [
+          386229706,
+          378011410,
+          415649482,
+          416859154
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 21
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 4194304,
+        "width": 11,
+        "inputs": [
+          4194304,
+          4194312,
+          4194560,
+          4194568
+        ],
+        "values": [
+          3559220682,
+          3551002386,
+          3588640458,
+          3589850130
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 22
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 8388608,
+        "width": 11,
+        "inputs": [
+          8388608,
+          8388616,
+          8388864,
+          8388872
+        ],
+        "values": [
+          166028746,
+          157810450,
+          270945994,
+          272155666
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 23
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 16777216,
+        "width": 11,
+        "inputs": [
+          16777216,
+          16777224,
+          16777472,
+          16777480
+        ],
+        "values": [
+          3580192202,
+          3571973906,
+          3836104394,
+          3837314066
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 24
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 33554432,
+        "width": 11,
+        "inputs": [
+          33554432,
+          33554440,
+          33554688,
+          33554696
+        ],
+        "values": [
+          3194316234,
+          3186097938,
+          3148238538,
+          3149448210
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 25
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 67108864,
+        "width": 11,
+        "inputs": [
+          67108864,
+          67108872,
+          67109120,
+          67109128
+        ],
+        "values": [
+          3362088394,
+          3353870098,
+          3316010698,
+          3317220370
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 26
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 134217728,
+        "width": 11,
+        "inputs": [
+          134217728,
+          134217736,
+          134217984,
+          134217992
+        ],
+        "values": [
+          1147495882,
+          1139277586,
+          1101418186,
+          1102627858
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 27
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 268435456,
+        "width": 11,
+        "inputs": [
+          268435456,
+          268435464,
+          268435712,
+          268435720
+        ],
+        "values": [
+          4234503626,
+          4226285330,
+          4188425930,
+          4189635602
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 28
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 536870912,
+        "width": 11,
+        "inputs": [
+          536870912,
+          536870920,
+          536871168,
+          536871176
+        ],
+        "values": [
+          3429197258,
+          3420978962,
+          3383119562,
+          3384329234
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 29
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 1073741824,
+        "width": 11,
+        "inputs": [
+          1073741824,
+          1073741832,
+          1073742080,
+          1073742088
+        ],
+        "values": [
+          2892326346,
+          2884108050,
+          2846248650,
+          2847458322
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 30
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "forbidden_mask_bit": 31
+      }
+    ],
+    "and_count_low_mask": {
+      "bits": [
+        5,
+        14
+      ],
+      "base": 0,
+      "width": 19,
+      "inputs": [
+        0,
+        32,
+        16384,
+        16416
+      ],
+      "values": [
+        1818584522,
+        1813727978,
+        254944714,
+        259820266
+      ],
+      "mixed_difference": 294912
+    },
+    "orders": [
+      [
+        "&",
+        ">>",
+        "mad"
+      ],
+      [
+        ">>",
+        "&",
+        "mad"
+      ],
+      [
+        "|",
+        ">>",
+        "mad"
+      ],
+      [
+        ">>",
+        "|",
+        "mad"
+      ],
+      [
+        "^",
+        ">>",
+        "mad"
+      ],
+      [
+        ">>",
+        "^",
+        "mad"
+      ]
+    ],
+    "excluded": true
+  },
+  "final_xor": {
+    "order": [
+      ">>",
+      "mad",
+      "^"
+    ],
+    "literals": [
+      {
+        "shift": 0,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 0,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 0,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 1,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            4,
+            13
+          ],
+          "base": 0,
+          "width": 15,
+          "inputs": [
+            0,
+            16,
+            8192,
+            8208
+          ],
+          "values": [
+            1818584522,
+            1811280986,
+            1107314122,
+            1104876634
+          ],
+          "mixed_difference": 16384,
+          "shift": 1,
+          "horizontal_mask": 24,
+          "vertical_mask": 12288,
+          "valuations": [
+            3,
+            12
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 8192,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            4,
+            13
+          ],
+          "base": 0,
+          "width": 15,
+          "inputs": [
+            0,
+            16,
+            8192,
+            8208
+          ],
+          "values": [
+            1818584522,
+            1811280970,
+            1107322314,
+            1104884810
+          ],
+          "mixed_difference": 16384,
+          "shift": 1,
+          "horizontal_mask": 24,
+          "vertical_mask": 12288,
+          "valuations": [
+            3,
+            12
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 15,
+          "inputs": [
+            0,
+            16,
+            8192,
+            8208
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 2,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            6,
+            15
+          ],
+          "base": 0,
+          "width": 17,
+          "inputs": [
+            0,
+            64,
+            32768,
+            32832
+          ],
+          "values": [
+            1818584522,
+            1808871434,
+            1667753418,
+            1677504522
+          ],
+          "mixed_difference": 65536,
+          "shift": 2,
+          "horizontal_mask": 80,
+          "vertical_mask": 40960,
+          "valuations": [
+            4,
+            13
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 65536,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            6,
+            15
+          ],
+          "base": 0,
+          "width": 17,
+          "inputs": [
+            0,
+            64,
+            32768,
+            32832
+          ],
+          "values": [
+            1818584522,
+            1808871498,
+            1667720650,
+            1677471818
+          ],
+          "mixed_difference": 65536,
+          "shift": 2,
+          "horizontal_mask": 80,
+          "vertical_mask": 40960,
+          "valuations": [
+            4,
+            13
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 17,
+          "inputs": [
+            0,
+            64,
+            32768,
+            32832
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 3,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            8,
+            17
+          ],
+          "base": 0,
+          "width": 19,
+          "inputs": [
+            0,
+            256,
+            131072,
+            131328
+          ],
+          "values": [
+            1818584522,
+            1772506826,
+            2954061258,
+            2985840330
+          ],
+          "mixed_difference": 262144,
+          "shift": 3,
+          "horizontal_mask": 288,
+          "vertical_mask": 147456,
+          "valuations": [
+            5,
+            14
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 262144,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            8,
+            17
+          ],
+          "base": 1,
+          "width": 19,
+          "inputs": [
+            1,
+            257,
+            131073,
+            131329
+          ],
+          "values": [
+            1818423538,
+            1772345586,
+            2954031346,
+            2985810162
+          ],
+          "mixed_difference": 262144,
+          "shift": 3,
+          "horizontal_mask": 288,
+          "vertical_mask": 147456,
+          "valuations": [
+            5,
+            14
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 19,
+          "inputs": [
+            0,
+            256,
+            131072,
+            131328
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 4,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            10,
+            19
+          ],
+          "base": 0,
+          "width": 21,
+          "inputs": [
+            0,
+            1024,
+            524288,
+            525312
+          ],
+          "values": [
+            1818584522,
+            1661995466,
+            331179466,
+            184027594
+          ],
+          "mixed_difference": 1048576,
+          "shift": 4,
+          "horizontal_mask": 1088,
+          "vertical_mask": 557056,
+          "valuations": [
+            6,
+            15
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1048576,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            10,
+            19
+          ],
+          "base": 0,
+          "width": 21,
+          "inputs": [
+            0,
+            1024,
+            524288,
+            525312
+          ],
+          "values": [
+            1818584522,
+            1661996490,
+            330655178,
+            183504330
+          ],
+          "mixed_difference": 1048576,
+          "shift": 4,
+          "horizontal_mask": 1088,
+          "vertical_mask": 557056,
+          "valuations": [
+            6,
+            15
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 21,
+          "inputs": [
+            0,
+            1024,
+            524288,
+            525312
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 5,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            12,
+            21
+          ],
+          "base": 0,
+          "width": 23,
+          "inputs": [
+            0,
+            4096,
+            2097152,
+            2101248
+          ],
+          "values": [
+            1818584522,
+            523498954,
+            386229706,
+            336852426
+          ],
+          "mixed_difference": 4194304,
+          "shift": 5,
+          "horizontal_mask": 4224,
+          "vertical_mask": 2162688,
+          "valuations": [
+            7,
+            16
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 4194304,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            12,
+            21
+          ],
+          "base": 0,
+          "width": 23,
+          "inputs": [
+            0,
+            4096,
+            2097152,
+            2101248
+          ],
+          "values": [
+            1818584522,
+            523494858,
+            388326858,
+            338945482
+          ],
+          "mixed_difference": 4194304,
+          "shift": 5,
+          "horizontal_mask": 4224,
+          "vertical_mask": 2162688,
+          "valuations": [
+            7,
+            16
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 23,
+          "inputs": [
+            0,
+            4096,
+            2097152,
+            2101248
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 6,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            14,
+            23
+          ],
+          "base": 0,
+          "width": 25,
+          "inputs": [
+            0,
+            16384,
+            8388608,
+            8404992
+          ],
+          "values": [
+            1818584522,
+            254944714,
+            166028746,
+            2209490378
+          ],
+          "mixed_difference": 16777216,
+          "shift": 6,
+          "horizontal_mask": 16640,
+          "vertical_mask": 8519680,
+          "valuations": [
+            8,
+            17
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 16515072,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            14,
+            23
+          ],
+          "base": 0,
+          "width": 25,
+          "inputs": [
+            0,
+            16384,
+            8388608,
+            8404992
+          ],
+          "values": [
+            1818584522,
+            254961098,
+            157640138,
+            2201118154
+          ],
+          "mixed_difference": 16777216,
+          "shift": 6,
+          "horizontal_mask": 16640,
+          "vertical_mask": 8519680,
+          "valuations": [
+            8,
+            17
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 25,
+          "inputs": [
+            0,
+            16384,
+            8388608,
+            8404992
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 7,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            5,
+            6
+          ],
+          "base": 12,
+          "width": 11,
+          "inputs": [
+            12,
+            44,
+            76,
+            108
+          ],
+          "values": [
+            1810938806,
+            1806045398,
+            1801188854,
+            1797465878
+          ],
+          "mixed_difference": 1024,
+          "shift": 7,
+          "horizontal_mask": 32,
+          "vertical_mask": 64,
+          "valuations": [
+            5,
+            6
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            5,
+            6
+          ],
+          "base": 12,
+          "width": 11,
+          "inputs": [
+            12,
+            44,
+            76,
+            108
+          ],
+          "values": [
+            1810938810,
+            1806045434,
+            1801188794,
+            1797465978
+          ],
+          "mixed_difference": 1152,
+          "shift": 7,
+          "horizontal_mask": 32,
+          "vertical_mask": 64,
+          "valuations": [
+            5,
+            6
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            12,
+            44,
+            76,
+            108
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 8,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            4,
+            7
+          ],
+          "base": 290,
+          "width": 11,
+          "inputs": [
+            290,
+            306,
+            418,
+            434
+          ],
+          "values": [
+            1768544828,
+            1770825932,
+            1749266108,
+            1751685452
+          ],
+          "mixed_difference": 1024,
+          "shift": 8,
+          "horizontal_mask": 16,
+          "vertical_mask": 128,
+          "valuations": [
+            4,
+            7
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            4,
+            7
+          ],
+          "base": 290,
+          "width": 11,
+          "inputs": [
+            290,
+            306,
+            418,
+            434
+          ],
+          "values": [
+            1768545054,
+            1770826238,
+            1749266206,
+            1751685374
+          ],
+          "mixed_difference": 768,
+          "shift": 8,
+          "horizontal_mask": 16,
+          "vertical_mask": 128,
+          "valuations": [
+            4,
+            7
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            290,
+            306,
+            418,
+            434
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 9,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 9,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 9,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 10,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 10,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 10,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 11,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 11,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 11,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 12,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 12,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 12,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 13,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 13,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 13,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 14,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 14,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 14,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 15,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 15,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 15,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 16,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 16,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 16,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 17,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 17,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 17,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 18,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 18,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 18,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 19,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 19,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 19,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 20,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 20,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 20,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 21,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 21,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 21,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 22,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 22,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 22,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 23,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 23,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 23,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 24,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 24,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 24,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 25,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 25,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 25,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 26,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 26,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 26,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 27,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 27,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 27,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 28,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 28,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 28,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 29,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 29,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 29,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 30,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 30,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 30,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 31,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 31,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 31,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      },
+      {
+        "shift": 32,
+        "polynomial_xor_q_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024,
+          "shift": 32,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": false
+        },
+        "f_xor_q_difference": 1024,
+        "polynomial_xor_x_rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366234,
+            1772507082,
+            1773716762
+          ],
+          "mixed_difference": 1024,
+          "shift": 32,
+          "horizontal_mask": 8,
+          "vertical_mask": 256,
+          "valuations": [
+            3,
+            8
+          ],
+          "high_domain": false,
+          "target_xor_input": true
+        },
+        "constant_xor_key": {
+          "result": "unsat",
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "timeout_ms": 5000
+        }
+      }
+    ],
+    "variable_count_rectangle": {
+      "bits": [
+        3,
+        8
+      ],
+      "base": 32,
+      "width": 11,
+      "inputs": [
+        32,
+        40,
+        288,
+        296
+      ],
+      "values": [
+        1813727978,
+        1805435954,
+        1767650282,
+        1768786226
+      ],
+      "mixed_difference": 1024
+    },
+    "variable_count_xor_key": {
+      "result": "unsat",
+      "width": 11,
+      "inputs": [
+        32,
+        40,
+        288,
+        296
+      ],
+      "timeout_ms": 5000
+    },
+    "excluded": true
+  },
+  "literal_pairs": {
+    "arithmetic_width": 32,
+    "monomials": 10,
+    "samples": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      32,
+      40,
+      256,
+      264,
+      288,
+      296,
+      512,
+      513,
+      1024,
+      1032,
+      16,
+      64,
+      128,
+      2048,
+      4096,
+      8192,
+      16384,
+      32768,
+      65536,
+      131072,
+      262144,
+      524288,
+      1048576,
+      2097152,
+      4194304,
+      8388608,
+      16777216,
+      33554432,
+      67108864,
+      134217728,
+      268435456,
+      536870912,
+      1073741824,
+      2147483648,
+      2497490511,
+      3667623565,
+      3674430284,
+      1185433745,
+      2316040574,
+      3835194350,
+      4124546767,
+      3102722333,
+      1849202218,
+      3407932318,
+      3374131710,
+      2782077271,
+      2428207048,
+      1225258166,
+      2773403104,
+      328471581
+    ],
+    "rows": [
+      {
+        "ops": [
+          ">>",
+          ">>"
+        ],
+        "tested": 2178,
+        "survivors": [],
+        "positive_controls": 2178
+      },
+      {
+        "ops": [
+          "<<",
+          ">>"
+        ],
+        "tested": 2178,
+        "survivors": [],
+        "positive_controls": 2178
+      },
+      {
+        "ops": [
+          ">>",
+          "<<"
+        ],
+        "tested": 2178,
+        "survivors": [],
+        "positive_controls": 2178
+      }
+    ],
+    "seconds": 6.378,
+    "excluded": true,
+    "positive_controls": 6534,
+    "scope": "Literal-count prefixes. Constant sources are absorbed by the independent polynomial coefficients; this includes bypassed first/second results."
+  },
+  "variable_pairs": {
+    "literal_shr_on_high_domain": [
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 0,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          4,
+          13
+        ],
+        "base": 2147483648,
+        "width": 15,
+        "inputs": [
+          2147483648,
+          2147483664,
+          2147491840,
+          2147491856
+        ],
+        "values": [
+          3966068170,
+          3958764634,
+          3254797770,
+          3252360282
+        ],
+        "mixed_difference": 16384,
+        "shift": 1,
+        "horizontal_mask": 24,
+        "vertical_mask": 12288,
+        "valuations": [
+          3,
+          12
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          6,
+          15
+        ],
+        "base": 2147483648,
+        "width": 17,
+        "inputs": [
+          2147483648,
+          2147483712,
+          2147516416,
+          2147516480
+        ],
+        "values": [
+          3966068170,
+          3956355082,
+          3815237066,
+          3824988170
+        ],
+        "mixed_difference": 65536,
+        "shift": 2,
+        "horizontal_mask": 80,
+        "vertical_mask": 40960,
+        "valuations": [
+          4,
+          13
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          8,
+          17
+        ],
+        "base": 2147483648,
+        "width": 19,
+        "inputs": [
+          2147483648,
+          2147483904,
+          2147614720,
+          2147614976
+        ],
+        "values": [
+          3966068170,
+          3919990474,
+          806577610,
+          838356682
+        ],
+        "mixed_difference": 262144,
+        "shift": 3,
+        "horizontal_mask": 288,
+        "vertical_mask": 147456,
+        "valuations": [
+          5,
+          14
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          10,
+          19
+        ],
+        "base": 2147483648,
+        "width": 21,
+        "inputs": [
+          2147483648,
+          2147484672,
+          2148007936,
+          2148008960
+        ],
+        "values": [
+          3966068170,
+          3809479114,
+          2478663114,
+          2331511242
+        ],
+        "mixed_difference": 1048576,
+        "shift": 4,
+        "horizontal_mask": 1088,
+        "vertical_mask": 557056,
+        "valuations": [
+          6,
+          15
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          12,
+          21
+        ],
+        "base": 2147483648,
+        "width": 23,
+        "inputs": [
+          2147483648,
+          2147487744,
+          2149580800,
+          2149584896
+        ],
+        "values": [
+          3966068170,
+          2670982602,
+          2533713354,
+          2484336074
+        ],
+        "mixed_difference": 4194304,
+        "shift": 5,
+        "horizontal_mask": 4224,
+        "vertical_mask": 2162688,
+        "valuations": [
+          7,
+          16
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          14,
+          23
+        ],
+        "base": 2147483648,
+        "width": 25,
+        "inputs": [
+          2147483648,
+          2147500032,
+          2155872256,
+          2155888640
+        ],
+        "values": [
+          3966068170,
+          2402428362,
+          2313512394,
+          62006730
+        ],
+        "mixed_difference": 16777216,
+        "shift": 6,
+        "horizontal_mask": 16640,
+        "vertical_mask": 8519680,
+        "valuations": [
+          8,
+          17
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          5,
+          6
+        ],
+        "base": 2147483660,
+        "width": 11,
+        "inputs": [
+          2147483660,
+          2147483692,
+          2147483724,
+          2147483756
+        ],
+        "values": [
+          3958422454,
+          3953529046,
+          3948672502,
+          3944949526
+        ],
+        "mixed_difference": 1024,
+        "shift": 7,
+        "horizontal_mask": 32,
+        "vertical_mask": 64,
+        "valuations": [
+          5,
+          6
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          4,
+          7
+        ],
+        "base": 2147483938,
+        "width": 11,
+        "inputs": [
+          2147483938,
+          2147483954,
+          2147484066,
+          2147484082
+        ],
+        "values": [
+          3916028476,
+          3918309580,
+          3896749756,
+          3899169100
+        ],
+        "mixed_difference": 1024,
+        "shift": 8,
+        "horizontal_mask": 16,
+        "vertical_mask": 128,
+        "valuations": [
+          4,
+          7
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 9,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 10,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 11,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 12,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 13,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 14,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 15,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 16,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 17,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 18,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 19,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 20,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 21,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 22,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 23,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 24,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 25,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 26,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 27,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 28,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 29,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 30,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 31,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      },
+      {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 2147483648,
+        "width": 11,
+        "inputs": [
+          2147483648,
+          2147483656,
+          2147483904,
+          2147483912
+        ],
+        "values": [
+          3966068170,
+          3957849874,
+          3919990474,
+          3921200146
+        ],
+        "mixed_difference": 1024,
+        "shift": 32,
+        "horizontal_mask": 8,
+        "vertical_mask": 256,
+        "valuations": [
+          3,
+          8
+        ],
+        "high_domain": true,
+        "target_xor_input": false
+      }
+    ],
+    "polynomial_high_domain": {
+      "bits": [
+        3,
+        8
+      ],
+      "base": 32,
+      "width": 11,
+      "inputs": [
+        32,
+        40,
+        288,
+        296
+      ],
+      "values": [
+        1813727978,
+        1805435954,
+        1767650282,
+        1768786226
+      ],
+      "mixed_difference": 1024
+    },
+    "second_count_first_shr": [
+      {
+        "first_count": 0,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 32,
+          "width": 11,
+          "inputs": [
+            32,
+            40,
+            288,
+            296
+          ],
+          "values": [
+            1813727978,
+            1805435954,
+            1767650282,
+            1768786226
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          32,
+          40,
+          288,
+          296
+        ]
+      },
+      {
+        "first_count": 1,
+        "rectangle": {
+          "bits": [
+            4,
+            13
+          ],
+          "base": 2147483648,
+          "width": 15,
+          "inputs": [
+            2147483648,
+            2147483664,
+            2147491840,
+            2147491856
+          ],
+          "values": [
+            3966068170,
+            3958764634,
+            3254797770,
+            3252360282
+          ],
+          "mixed_difference": 16384,
+          "shift": 1,
+          "horizontal_mask": 24,
+          "vertical_mask": 12288,
+          "valuations": [
+            3,
+            12
+          ],
+          "high_domain": true,
+          "target_xor_input": false
+        },
+        "counts": [
+          1073741824,
+          1073741832,
+          1073745920,
+          1073745928
+        ]
+      },
+      {
+        "first_count": 2,
+        "rectangle": {
+          "bits": [
+            6,
+            15
+          ],
+          "base": 2147483648,
+          "width": 17,
+          "inputs": [
+            2147483648,
+            2147483712,
+            2147516416,
+            2147516480
+          ],
+          "values": [
+            3966068170,
+            3956355082,
+            3815237066,
+            3824988170
+          ],
+          "mixed_difference": 65536,
+          "shift": 2,
+          "horizontal_mask": 80,
+          "vertical_mask": 40960,
+          "valuations": [
+            4,
+            13
+          ],
+          "high_domain": true,
+          "target_xor_input": false
+        },
+        "counts": [
+          536870912,
+          536870928,
+          536879104,
+          536879120
+        ]
+      },
+      {
+        "first_count": 3,
+        "rectangle": {
+          "bits": [
+            8,
+            17
+          ],
+          "base": 2147483648,
+          "width": 19,
+          "inputs": [
+            2147483648,
+            2147483904,
+            2147614720,
+            2147614976
+          ],
+          "values": [
+            3966068170,
+            3919990474,
+            806577610,
+            838356682
+          ],
+          "mixed_difference": 262144,
+          "shift": 3,
+          "horizontal_mask": 288,
+          "vertical_mask": 147456,
+          "valuations": [
+            5,
+            14
+          ],
+          "high_domain": true,
+          "target_xor_input": false
+        },
+        "counts": [
+          268435456,
+          268435488,
+          268451840,
+          268451872
+        ]
+      },
+      {
+        "first_count": 4,
+        "rectangle": {
+          "bits": [
+            10,
+            19
+          ],
+          "base": 2147483648,
+          "width": 21,
+          "inputs": [
+            2147483648,
+            2147484672,
+            2148007936,
+            2148008960
+          ],
+          "values": [
+            3966068170,
+            3809479114,
+            2478663114,
+            2331511242
+          ],
+          "mixed_difference": 1048576,
+          "shift": 4,
+          "horizontal_mask": 1088,
+          "vertical_mask": 557056,
+          "valuations": [
+            6,
+            15
+          ],
+          "high_domain": true,
+          "target_xor_input": false
+        },
+        "counts": [
+          134217728,
+          134217792,
+          134250496,
+          134250560
+        ]
+      },
+      {
+        "first_count": 5,
+        "rectangle": {
+          "bits": [
+            12,
+            21
+          ],
+          "base": 2147483648,
+          "width": 23,
+          "inputs": [
+            2147483648,
+            2147487744,
+            2149580800,
+            2149584896
+          ],
+          "values": [
+            3966068170,
+            2670982602,
+            2533713354,
+            2484336074
+          ],
+          "mixed_difference": 4194304,
+          "shift": 5,
+          "horizontal_mask": 4224,
+          "vertical_mask": 2162688,
+          "valuations": [
+            7,
+            16
+          ],
+          "high_domain": true,
+          "target_xor_input": false
+        },
+        "counts": [
+          67108864,
+          67108992,
+          67174400,
+          67174528
+        ]
+      },
+      {
+        "first_count": 6,
+        "rectangle": {
+          "bits": [
+            14,
+            23
+          ],
+          "base": 2147483648,
+          "width": 25,
+          "inputs": [
+            2147483648,
+            2147500032,
+            2155872256,
+            2155888640
+          ],
+          "values": [
+            3966068170,
+            2402428362,
+            2313512394,
+            62006730
+          ],
+          "mixed_difference": 16777216,
+          "shift": 6,
+          "horizontal_mask": 16640,
+          "vertical_mask": 8519680,
+          "valuations": [
+            8,
+            17
+          ],
+          "high_domain": true,
+          "target_xor_input": false
+        },
+        "counts": [
+          33554432,
+          33554688,
+          33685504,
+          33685760
+        ]
+      },
+      {
+        "first_count": 7,
+        "rectangle": {
+          "bits": [
+            5,
+            6
+          ],
+          "base": 2147483660,
+          "width": 11,
+          "inputs": [
+            2147483660,
+            2147483692,
+            2147483724,
+            2147483756
+          ],
+          "values": [
+            3958422454,
+            3953529046,
+            3948672502,
+            3944949526
+          ],
+          "mixed_difference": 1024,
+          "shift": 7,
+          "horizontal_mask": 32,
+          "vertical_mask": 64,
+          "valuations": [
+            5,
+            6
+          ],
+          "high_domain": true,
+          "target_xor_input": false
+        },
+        "counts": [
+          16777216,
+          16777216,
+          16777216,
+          16777216
+        ]
+      },
+      {
+        "first_count": 8,
+        "rectangle": {
+          "bits": [
+            4,
+            7
+          ],
+          "base": 2147483938,
+          "width": 11,
+          "inputs": [
+            2147483938,
+            2147483954,
+            2147484066,
+            2147484082
+          ],
+          "values": [
+            3916028476,
+            3918309580,
+            3896749756,
+            3899169100
+          ],
+          "mixed_difference": 1024,
+          "shift": 8,
+          "horizontal_mask": 16,
+          "vertical_mask": 128,
+          "valuations": [
+            4,
+            7
+          ],
+          "high_domain": true,
+          "target_xor_input": false
+        },
+        "counts": [
+          8388609,
+          8388609,
+          8388609,
+          8388609
+        ]
+      },
+      {
+        "first_count": 9,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 10,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 11,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 12,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 13,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 14,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 15,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 16,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 17,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 18,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 19,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 20,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 21,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 22,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 23,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 24,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 25,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 26,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 27,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 28,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 29,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 30,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 31,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "first_count": 32,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "second_count_first_shl": [
+      {
+        "first_count": 0,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 32,
+          "width": 11,
+          "inputs": [
+            32,
+            40,
+            288,
+            296
+          ],
+          "values": [
+            1813727978,
+            1805435954,
+            1767650282,
+            1768786226
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          32,
+          40,
+          288,
+          296
+        ]
+      },
+      {
+        "first_count": 1,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 16,
+          "width": 13,
+          "inputs": [
+            16,
+            20,
+            2064,
+            2068
+          ],
+          "values": [
+            1811280986,
+            1811853566,
+            2103262298,
+            2105051390
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          32,
+          40,
+          4128,
+          4136
+        ]
+      },
+      {
+        "first_count": 2,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 8,
+          "width": 13,
+          "inputs": [
+            8,
+            12,
+            2056,
+            2060
+          ],
+          "values": [
+            1810366226,
+            1810938806,
+            2102273810,
+            2104062902
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          32,
+          48,
+          8224,
+          8240
+        ]
+      },
+      {
+        "first_count": 3,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 4,
+          "width": 11,
+          "inputs": [
+            4,
+            12,
+            260,
+            268
+          ],
+          "values": [
+            1809719918,
+            1810938806,
+            1773079406,
+            1774289078
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          32,
+          96,
+          2080,
+          2144
+        ]
+      },
+      {
+        "first_count": 4,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 2,
+          "width": 13,
+          "inputs": [
+            2,
+            6,
+            2050,
+            2054
+          ],
+          "values": [
+            1818280988,
+            1809416384,
+            2110262300,
+            2102614208
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          32,
+          96,
+          32800,
+          32864
+        ]
+      },
+      {
+        "first_count": 5,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          32,
+          160,
+          65568,
+          65696
+        ]
+      },
+      {
+        "first_count": 6,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          64,
+          320,
+          131136,
+          131392
+        ]
+      },
+      {
+        "first_count": 7,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          128,
+          640,
+          262272,
+          262784
+        ]
+      },
+      {
+        "first_count": 8,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          256,
+          1280,
+          524544,
+          525568
+        ]
+      },
+      {
+        "first_count": 9,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          512,
+          2560,
+          1049088,
+          1051136
+        ]
+      },
+      {
+        "first_count": 10,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          1024,
+          5120,
+          2098176,
+          2102272
+        ]
+      },
+      {
+        "first_count": 11,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          2048,
+          10240,
+          4196352,
+          4204544
+        ]
+      },
+      {
+        "first_count": 12,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          4096,
+          20480,
+          8392704,
+          8409088
+        ]
+      },
+      {
+        "first_count": 13,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          8192,
+          40960,
+          16785408,
+          16818176
+        ]
+      },
+      {
+        "first_count": 14,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          16384,
+          81920,
+          33570816,
+          33636352
+        ]
+      },
+      {
+        "first_count": 15,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          32768,
+          163840,
+          67141632,
+          67272704
+        ]
+      },
+      {
+        "first_count": 16,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          65536,
+          327680,
+          134283264,
+          134545408
+        ]
+      },
+      {
+        "first_count": 17,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          131072,
+          655360,
+          268566528,
+          269090816
+        ]
+      },
+      {
+        "first_count": 18,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          262144,
+          1310720,
+          537133056,
+          538181632
+        ]
+      },
+      {
+        "first_count": 19,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          524288,
+          2621440,
+          1074266112,
+          1076363264
+        ]
+      },
+      {
+        "first_count": 20,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          1048576,
+          5242880,
+          2148532224,
+          2152726528
+        ]
+      },
+      {
+        "first_count": 21,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          2097152,
+          10485760,
+          2097152,
+          10485760
+        ]
+      },
+      {
+        "first_count": 22,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          4194304,
+          20971520,
+          4194304,
+          20971520
+        ]
+      },
+      {
+        "first_count": 23,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          8388608,
+          41943040,
+          8388608,
+          41943040
+        ]
+      },
+      {
+        "first_count": 24,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          16777216,
+          83886080,
+          16777216,
+          83886080
+        ]
+      },
+      {
+        "first_count": 25,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          33554432,
+          167772160,
+          33554432,
+          167772160
+        ]
+      },
+      {
+        "first_count": 26,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          67108864,
+          335544320,
+          67108864,
+          335544320
+        ]
+      },
+      {
+        "first_count": 27,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          134217728,
+          671088640,
+          134217728,
+          671088640
+        ]
+      },
+      {
+        "first_count": 28,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          268435456,
+          1342177280,
+          268435456,
+          1342177280
+        ]
+      },
+      {
+        "first_count": 29,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          536870912,
+          2684354560,
+          536870912,
+          2684354560
+        ]
+      },
+      {
+        "first_count": 30,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          1073741824,
+          1073741824,
+          1073741824,
+          1073741824
+        ]
+      },
+      {
+        "first_count": 31,
+        "rectangle": {
+          "bits": [
+            2,
+            11
+          ],
+          "base": 1,
+          "width": 13,
+          "inputs": [
+            1,
+            5,
+            2049,
+            2053
+          ],
+          "values": [
+            1818423539,
+            1809558935,
+            2110404851,
+            2102756759
+          ],
+          "mixed_difference": 4096
+        },
+        "counts": [
+          2147483648,
+          2147483648,
+          2147483648,
+          2147483648
+        ]
+      },
+      {
+        "first_count": 32,
+        "rectangle": {
+          "bits": [
+            3,
+            8
+          ],
+          "base": 0,
+          "width": 11,
+          "inputs": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "values": [
+            1818584522,
+            1810366226,
+            1772506826,
+            1773716498
+          ],
+          "mixed_difference": 1024
+        },
+        "counts": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "excluded": true
+  },
+  "final_shifts": {
+    "orders": [
+      [
+        ">>",
+        "mad",
+        ">>"
+      ],
+      [
+        ">>",
+        "mad",
+        "<<"
+      ]
+    ],
+    "high_inputs": [
+      2147483648,
+      2147483649
+    ],
+    "high_outputs": [
+      3966068170,
+      3965907187
+    ],
+    "odd_inputs": [
+      1,
+      3
+    ],
+    "odd_outputs": [
+      1818423539,
+      1809862469
+    ],
+    "positive_first_count_odd_witnesses": [
+      {
+        "first_count": 0,
+        "odd_input": 1,
+        "first_result": 1
+      },
+      {
+        "first_count": 1,
+        "odd_input": 3,
+        "first_result": 1
+      },
+      {
+        "first_count": 2,
+        "odd_input": 5,
+        "first_result": 1
+      },
+      {
+        "first_count": 3,
+        "odd_input": 9,
+        "first_result": 1
+      },
+      {
+        "first_count": 4,
+        "odd_input": 17,
+        "first_result": 1
+      },
+      {
+        "first_count": 5,
+        "odd_input": 33,
+        "first_result": 1
+      },
+      {
+        "first_count": 6,
+        "odd_input": 65,
+        "first_result": 1
+      },
+      {
+        "first_count": 7,
+        "odd_input": 129,
+        "first_result": 1
+      },
+      {
+        "first_count": 8,
+        "odd_input": 257,
+        "first_result": 1
+      },
+      {
+        "first_count": 9,
+        "odd_input": 513,
+        "first_result": 1
+      },
+      {
+        "first_count": 10,
+        "odd_input": 1025,
+        "first_result": 1
+      },
+      {
+        "first_count": 11,
+        "odd_input": 2049,
+        "first_result": 1
+      },
+      {
+        "first_count": 12,
+        "odd_input": 4097,
+        "first_result": 1
+      },
+      {
+        "first_count": 13,
+        "odd_input": 8193,
+        "first_result": 1
+      },
+      {
+        "first_count": 14,
+        "odd_input": 16385,
+        "first_result": 1
+      },
+      {
+        "first_count": 15,
+        "odd_input": 32769,
+        "first_result": 1
+      },
+      {
+        "first_count": 16,
+        "odd_input": 65537,
+        "first_result": 1
+      },
+      {
+        "first_count": 17,
+        "odd_input": 131073,
+        "first_result": 1
+      },
+      {
+        "first_count": 18,
+        "odd_input": 262145,
+        "first_result": 1
+      },
+      {
+        "first_count": 19,
+        "odd_input": 524289,
+        "first_result": 1
+      },
+      {
+        "first_count": 20,
+        "odd_input": 1048577,
+        "first_result": 1
+      },
+      {
+        "first_count": 21,
+        "odd_input": 2097153,
+        "first_result": 1
+      },
+      {
+        "first_count": 22,
+        "odd_input": 4194305,
+        "first_result": 1
+      },
+      {
+        "first_count": 23,
+        "odd_input": 8388609,
+        "first_result": 1
+      },
+      {
+        "first_count": 24,
+        "odd_input": 16777217,
+        "first_result": 1
+      },
+      {
+        "first_count": 25,
+        "odd_input": 33554433,
+        "first_result": 1
+      },
+      {
+        "first_count": 26,
+        "odd_input": 67108865,
+        "first_result": 1
+      },
+      {
+        "first_count": 27,
+        "odd_input": 134217729,
+        "first_result": 1
+      },
+      {
+        "first_count": 28,
+        "odd_input": 268435457,
+        "first_result": 1
+      },
+      {
+        "first_count": 29,
+        "odd_input": 536870913,
+        "first_result": 1
+      },
+      {
+        "first_count": 30,
+        "odd_input": 1073741825,
+        "first_result": 1
+      },
+      {
+        "first_count": 31,
+        "odd_input": 2147483649,
+        "first_result": 1
+      }
+    ],
+    "self_shift": {
+      "right_zero": "unsat",
+      "left_even": "unsat"
+    },
+    "high_domain_polynomial_rectangle": {
+      "bits": [
+        3,
+        8
+      ],
+      "base": 32,
+      "width": 11,
+      "inputs": [
+        32,
+        40,
+        288,
+        296
+      ],
+      "values": [
+        1813727978,
+        1805435954,
+        1767650282,
+        1768786226
+      ],
+      "mixed_difference": 1024
+    },
+    "excluded": true
+  },
+  "coverage": {
+    "orders": [
+      {
+        "sequence": [
+          "&",
+          ">>",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "orthogonal bit rectangles and variable-count partition"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": false
+      },
+      {
+        "sequence": [
+          "&",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT",
+          "high-output cover and nonshift prefix exclusion"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "*",
+          ">>",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "*",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion",
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "+",
+          ">>",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "+",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion",
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "-",
+          ">>",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "-",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion",
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "<<",
+          ">>",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "full32 polynomial relaxation and variable-count partition"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": false
+      },
+      {
+        "sequence": [
+          "<<",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          ">>",
+          "&",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "orthogonal bit rectangles and variable-count partition"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": false
+      },
+      {
+        "sequence": [
+          ">>",
+          "*",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          ">>",
+          "+",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          ">>",
+          "-",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          ">>",
+          "<<",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "full32 polynomial relaxation and variable-count partition"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": false
+      },
+      {
+        "sequence": [
+          ">>",
+          ">>",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "full32 polynomial relaxation and variable-count partition"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": false
+      },
+      {
+        "sequence": [
+          ">>",
+          "^",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "orthogonal bit rectangles and variable-count partition"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": false
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "&"
+        ],
+        "excluded": true,
+        "evidence": [
+          "permutation and bit-containment certificate for final AND/OR"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "*"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "+"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "-"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "<<"
+        ],
+        "excluded": true,
+        "evidence": [
+          "output highest/lowest-bit conditions and zero-domain certificate"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": false
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "output highest/lowest-bit conditions and zero-domain certificate"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": false
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "^"
+        ],
+        "excluded": true,
+        "evidence": [
+          "polynomial rectangle after undoing the final XOR"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": false
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous complete first-SHR polynomial relaxation"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "|"
+        ],
+        "excluded": true,
+        "evidence": [
+          "permutation and bit-containment certificate for final AND/OR"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          ">>",
+          "|",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "orthogonal bit rectangles and variable-count partition"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": false
+      },
+      {
+        "sequence": [
+          "^",
+          ">>",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "orthogonal bit rectangles and variable-count partition"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": false
+      },
+      {
+        "sequence": [
+          "^",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT",
+          "high-output cover and nonshift prefix exclusion"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          "&",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          "*",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion",
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          "+",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion",
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          "-",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion",
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          "<<",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "&"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "*"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "+"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "-"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "<<"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "^"
+        ],
+        "excluded": true,
+        "evidence": [
+          "refined full32 fixed-order UNSAT"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "affine proof and two full32 square-first UNSAT queries"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "|"
+        ],
+        "excluded": true,
+        "evidence": [
+          "refined full32 fixed-order UNSAT"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          "^",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "mad",
+          "|",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT",
+          "high-output cover and nonshift prefix exclusion"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable",
+        "previously_excluded": true
+      },
+      {
+        "sequence": [
+          "|",
+          ">>",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "orthogonal bit rectangles and variable-count partition"
+        ],
+        "raw_previous_result": "inconclusive",
+        "previously_excluded": false
+      },
+      {
+        "sequence": [
+          "|",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT",
+          "high-output cover and nonshift prefix exclusion"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable",
+        "previously_excluded": true
+      }
+    ],
+    "closed": 48,
+    "unresolved": 0,
+    "scope": "One uint32 input; one MAD, one SHR and one operation from +,-,XOR,AND,OR,SHL,SHR,MUL,MAD. No extra live inputs or whole-kernel bound.",
+    "new_executable": false,
+    "best_verified_cycles": 864
+  }
+}

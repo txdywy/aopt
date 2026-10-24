@@ -1,0 +1,560 @@
+{
+  "scope": "four instructions, arbitrary SSA operands, one input; 3 MAD + 1 XOR or 2 MAD + 2 XOR; arbitrary constants",
+  "width": 11,
+  "new_executable": false,
+  "rows": [
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=^,mad,^,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "22",
+        "--check-ms",
+        "20000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "^",
+            "mad",
+            "^",
+            "mad"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 20.307
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=^,mad,mad,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "22",
+        "--check-ms",
+        "20000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "^",
+            "mad",
+            "mad",
+            "^"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 20.423
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,^,^,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "22",
+        "--check-ms",
+        "20000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "^",
+            "^",
+            "mad"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 20.307
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,^,mad,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "22",
+        "--check-ms",
+        "20000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "^",
+            "mad",
+            "^"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 20.296
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,^,mad,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "22",
+        "--check-ms",
+        "20000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "^",
+            "mad",
+            "mad"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 20.31
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "^"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,mad,^,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "22",
+        "--check-ms",
+        "20000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "mad",
+            "^",
+            "^"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 20.308
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,mad,^,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "22",
+        "--check-ms",
+        "20000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "mad",
+            "^",
+            "mad"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 20.329
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,mad,mad,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "22",
+        "--check-ms",
+        "20000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "mad",
+            "mad",
+            "^"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 20.316
+    }
+  ],
+  "prior_report": "codex/middle_encoded_dag863_results.json",
+  "polynomial_prefixes": [
+    {
+      "mode": "output",
+      "sequence": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "rectangle": {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          3644825497,
+          3736929601,
+          3707548825,
+          3705814593
+        ],
+        "mixed_difference": 1024
+      },
+      "reason": "Orthogonal input-bit variations survive any bitwise-only prefix; all later integer polynomials have mixed difference zero modulo 2048."
+    },
+    {
+      "mode": "output",
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "mad"
+      ],
+      "rectangle": {
+        "bits": [
+          3,
+          8
+        ],
+        "base": 0,
+        "width": 11,
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          3644825497,
+          3736929601,
+          3707548825,
+          3705814593
+        ],
+        "mixed_difference": 1024
+      },
+      "reason": "Orthogonal input-bit variations survive any bitwise-only prefix; all later integer polynomials have mixed difference zero modulo 2048."
+    }
+  ]
+}

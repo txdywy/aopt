@@ -1,0 +1,22 @@
+{
+  "width": 11,
+  "parity": 1,
+  "control": false,
+  "seconds_limit": 30,
+  "normalizations": [
+    "A+D odd",
+    "I,K,O lowest and highest bits zero",
+    "infer E from x=0"
+  ],
+  "family": "((A*(x XOR I)+B) XOR K)+D*x+E",
+  "events": [
+    {
+      "samples": 59,
+      "synthesis": "unknown"
+    }
+  ],
+  "new_executable": false,
+  "result": "unknown",
+  "reason": "timeout",
+  "seconds": 30.062
+}

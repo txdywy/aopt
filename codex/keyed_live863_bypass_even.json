@@ -1,0 +1,21 @@
+{
+  "width": 11,
+  "parity": 0,
+  "control": false,
+  "seconds_limit": 30,
+  "normalizations": [
+    "A+D odd",
+    "I,K,O lowest and highest bits zero",
+    "infer E from x=0"
+  ],
+  "family": "((A*(x XOR I)+B) XOR K)+D*x+E",
+  "events": [
+    {
+      "samples": 59,
+      "synthesis": "unsat"
+    }
+  ],
+  "new_executable": false,
+  "result": "relaxed_family_unsat",
+  "seconds": 0.347
+}

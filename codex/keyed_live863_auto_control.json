@@ -1,0 +1,108 @@
+{
+  "sequence": [
+    "mad",
+    "mad",
+    "^"
+  ],
+  "width": 5,
+  "seconds_limit": 20,
+  "check_ms": 18000,
+  "live_pool": [
+    "a",
+    "prior=(a-C0)/4097",
+    "keyed=a XOR (a>>19) XOR K"
+  ],
+  "target": "F(a XOR (a>>19) XOR C1) XOR O",
+  "arbitrary_keys": true,
+  "fixed_key": null,
+  "first_source": null,
+  "middle_source": null,
+  "last_operands": null,
+  "initial_samples": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "control": true,
+  "pin_original": false,
+  "events": [
+    {
+      "samples": 32,
+      "synthesis": "sat"
+    }
+  ],
+  "result": "equivalent_on_restricted_low_domain",
+  "new_executable": false,
+  "scope": "Reduced widths restrict the full32 pre-shift a to the low domain; SAT does not imply a full32 identity or a cycle score.",
+  "input_key": 27,
+  "output_key": 17,
+  "program": [
+    {
+      "op": "mad",
+      "operands": [
+        2,
+        4,
+        3
+      ],
+      "constants": [
+        10,
+        27
+      ]
+    },
+    {
+      "op": "mad",
+      "operands": [
+        3,
+        5,
+        0
+      ],
+      "constants": [
+        26,
+        2
+      ]
+    },
+    {
+      "op": "^",
+      "operands": [
+        3,
+        4,
+        0
+      ],
+      "constants": [
+        0,
+        27
+      ]
+    }
+  ],
+  "verified_inputs": 32,
+  "seconds": 0.301
+}

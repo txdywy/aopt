@@ -45,13 +45,17 @@ def expression(x, rows, width):
 
 def search(order, width=11, seconds=15, check_ms=12000, *, pin_original=False,
            first_form=None, middle_source=None, tail_form=None, last_operands=None,
-           second_form=None, control_program=None):
+           second_form=None, control_program=None,fixed_input_key=None,fixed_output_key=None):
     if not 1 <= len(order) <= 4 or any(op not in OPS for op in order):
         raise ValueError('one to four MAD/XOR/AND/OR instructions required')
     if width not in (*range(1, 13), 32) or seconds <= 0 or check_ms <= 0:
         raise ValueError('width 1..12 or 32 and positive time limits required')
     if pin_original and tuple(order) != ('mad','mad','^','mad'):
         raise ValueError('original witness has order MAD,MAD,XOR,MAD')
+    if (pin_original or control_program is not None) and any(
+            k is not None and (k & ((1 << width)-1)) != 0
+            for k in (fixed_input_key,fixed_output_key)):
+        raise ValueError('original and custom positive controls use zero endpoint keys')
     if first_form not in (None,'affine','square_const','square_x') or middle_source not in (None,'input','key'):
         raise ValueError('invalid fixed first/middle structure')
     if tail_form not in (None,'scaled','x_product','first_product','square','addend'):
@@ -72,7 +76,12 @@ def search(order, width=11, seconds=15, check_ms=12000, *, pin_original=False,
     ik, ok = z3.BitVecs('equivalent_input_key equivalent_output_key', width)
     solver = z3.SolverFor('QF_BV')
     # F(x XOR H)=F(x) XOR H; absorb the highest input-key bit into O.
-    solver.add(z3.Extract(width-1, width-1, ik) == 0)
+    if fixed_input_key is None:
+        solver.add(z3.Extract(width-1, width-1, ik) == 0)
+    else:
+        solver.add(ik == (fixed_input_key&mask))
+    if fixed_output_key is not None:
+        solver.add(ok == (fixed_output_key&mask))
     if control_program is not None:
         # Positive controls validate structure selectors against an independent
         # concrete program, without assuming its XOR-key symmetries.
@@ -106,7 +115,7 @@ def search(order, width=11, seconds=15, check_ms=12000, *, pin_original=False,
             solver.add(a == left,b == right)
     if last_operands is not None:
         solver.add(*(v == n for v,n in zip(spec[2][1:4],last_operands)))
-    sole_affine_input = (control_program is None and first_form == 'affine'
+    sole_affine_input = (control_program is None and fixed_input_key is None and first_form == 'affine'
         and middle_source == 'key' and last_operands is not None and 0 not in last_operands)
     if sole_affine_input:
         # The whole program is a function of t=A*x+B. Target bijectivity
@@ -155,7 +164,8 @@ def search(order, width=11, seconds=15, check_ms=12000, *, pin_original=False,
     start = time.monotonic()
     deadline = start+seconds
     report = dict(sequence=list(order), width=width, seconds_limit=seconds,
-        check_ms=check_ms, endpoint_keys='arbitrary; input highest bit normalized to zero',
+        check_ms=check_ms, endpoint_keys='arbitrary unless fixed; free input highest bit normalized to zero',
+        fixed_input_key=fixed_input_key,fixed_output_key=fixed_output_key,
         constant_multipliers_only=False, two_arbitrary_constants_per_instruction=True,
         initial_samples=points[:], pin_original=pin_original, events=[],
         first_form=first_form, middle_source=middle_source, tail_form=tail_form,
@@ -223,12 +233,15 @@ def main():
     ap.add_argument('--tail-form',choices=('scaled','x_product','first_product','square','addend'))
     ap.add_argument('--last-operands',type=lambda x:tuple(map(int,x.split(','))))
     ap.add_argument('--second-form',choices=('x_square','x_first','first_square','scale_input','scale_first'))
+    ap.add_argument('--fixed-input-key',type=lambda x:int(x,0))
+    ap.add_argument('--fixed-output-key',type=lambda x:int(x,0))
     ap.add_argument('--output', type=Path, required=True)
     args = ap.parse_args()
     report = search(args.sequence.split(','),args.width,args.seconds,args.check_ms,
                     pin_original=args.pin_original,first_form=args.first_form,
                     middle_source=args.middle_source,tail_form=args.tail_form,
-                    last_operands=args.last_operands,second_form=args.second_form)
+                    last_operands=args.last_operands,second_form=args.second_form,
+                    fixed_input_key=args.fixed_input_key,fixed_output_key=args.fixed_output_key)
     args.output.write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({k:report.get(k) for k in ('sequence','width','result','seconds','input_key','output_key')}))
 

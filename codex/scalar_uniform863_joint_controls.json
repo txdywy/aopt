@@ -1,0 +1,115 @@
+[
+  {
+    "config": {
+      "full": [
+        "cache0",
+        3042594569,
+        -2,
+        3345072700
+      ],
+      "methods": {
+        "9": "stage",
+        "19": "stage",
+        "3": "third"
+      },
+      "init4097": "flow",
+      "prolog19": 8,
+      "fused": 0
+    },
+    "converted": [
+      {
+        "name": "cache0",
+        "partial": false,
+        "converted_vectors": 32,
+        "scalar_source": 1215
+      },
+      {
+        "name": 3042594569,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 238
+      },
+      {
+        "name": -2,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 75476
+      },
+      {
+        "name": 3345072700,
+        "partial": false,
+        "converted_vectors": 512,
+        "scalar_source": 26
+      },
+      {
+        "name": 19,
+        "partial": true,
+        "converted_vectors": 8,
+        "scalar_source": 75486
+      }
+    ],
+    "seeds": 2,
+    "serial_control": {
+      "scratch": 1063,
+      "verified": 17293
+    }
+  },
+  {
+    "config": {
+      "full": [
+        "cache0",
+        3042594569,
+        -2,
+        3345072700
+      ],
+      "methods": {
+        "9": "stage",
+        "19": "stage"
+      },
+      "prolog19": 8,
+      "init4097": "flow",
+      "header_packs": [
+        "+:1",
+        ">>:1",
+        "-:2"
+      ]
+    },
+    "converted": [
+      {
+        "name": "cache0",
+        "partial": false,
+        "converted_vectors": 32,
+        "scalar_source": 1215
+      },
+      {
+        "name": 3042594569,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 238
+      },
+      {
+        "name": -2,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 75476
+      },
+      {
+        "name": 3345072700,
+        "partial": false,
+        "converted_vectors": 512,
+        "scalar_source": 26
+      },
+      {
+        "name": 19,
+        "partial": true,
+        "converted_vectors": 8,
+        "scalar_source": 75486
+      }
+    ],
+    "seeds": 2,
+    "serial_control": {
+      "scratch": 1070,
+      "verified": 17289
+    }
+  }
+]

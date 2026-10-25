@@ -1,0 +1,69 @@
+[
+  {
+    "config": {
+      "full": [
+        "cache0",
+        3042594569,
+        -2,
+        3345072700
+      ]
+    },
+    "converted": [
+      {
+        "name": "cache0",
+        "partial": false,
+        "converted_vectors": 32,
+        "scalar_source": 1215
+      },
+      {
+        "name": 3042594569,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 238
+      },
+      {
+        "name": -2,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 75475
+      },
+      {
+        "name": 3345072700,
+        "partial": false,
+        "converted_vectors": 512,
+        "scalar_source": 26
+      }
+    ],
+    "serial_control": {
+      "scratch": 1094,
+      "verified": 17216
+    }
+  },
+  {
+    "config": {
+      "full": [
+        "root",
+        19
+      ],
+      "init4097": "flow"
+    },
+    "converted": [
+      {
+        "name": "root",
+        "partial": false,
+        "converted_vectors": 32,
+        "scalar_source": 15
+      },
+      {
+        "name": 19,
+        "partial": false,
+        "converted_vectors": 512,
+        "scalar_source": 75476
+      }
+    ],
+    "serial_control": {
+      "scratch": 1089,
+      "verified": 15890
+    }
+  }
+]

@@ -1,0 +1,151 @@
+{
+  "width": 11,
+  "orders": {
+    "and,mad,mad": {
+      "raw_result": "unknown",
+      "refinement": "excluded_by_carry_free_rectangles"
+    },
+    "mad,and,mad": {
+      "raw_result": "unknown",
+      "refinement": "excluded_by_operand_partitions",
+      "wiring_patterns": 13500,
+      "classes": {
+        "carry_free_prefix_or_polynomial": 9450,
+        "first_square_x_input": 75,
+        "first_square_x_key": 150,
+        "first_square_const_input": 150,
+        "first_square_const_key": 300,
+        "first_affine_input": 1125,
+        "pure_polynomial": 1200,
+        "fixed_key_addend00": 30,
+        "fixed_key_addend01": 30,
+        "tail_key_x_product": 150,
+        "fixed_key_addend03": 60,
+        "fixed_key_addend11": 30,
+        "tail_key_first_product": 150,
+        "fixed_key_addend13": 60,
+        "tail_key_square": 150,
+        "fixed_key_scaled0": 60,
+        "fixed_key_scaled1": 60,
+        "fixed_key_scaled4": 270
+      }
+    },
+    "mad,mad,and": {
+      "raw_result": "unknown",
+      "refinement": "excluded_by_operand_domination"
+    },
+    "or,mad,mad": {
+      "raw_result": "unknown",
+      "refinement": "excluded_by_carry_free_rectangles"
+    },
+    "mad,or,mad": {
+      "raw_result": "unknown",
+      "refinement": "excluded_by_operand_partitions",
+      "wiring_patterns": 13500,
+      "classes": {
+        "carry_free_prefix_or_polynomial": 9450,
+        "first_square_x_input": 75,
+        "first_square_x_key": 150,
+        "first_square_const_input": 150,
+        "first_square_const_key": 300,
+        "first_affine_input": 1125,
+        "pure_polynomial": 1200,
+        "fixed_key_addend00": 30,
+        "fixed_key_addend01": 30,
+        "tail_key_x_product": 150,
+        "fixed_key_addend03": 60,
+        "fixed_key_addend11": 30,
+        "tail_key_first_product": 150,
+        "fixed_key_addend13": 60,
+        "tail_key_square": 150,
+        "fixed_key_scaled0": 60,
+        "fixed_key_scaled1": 60,
+        "fixed_key_scaled4": 270
+      }
+    },
+    "mad,mad,or": {
+      "raw_result": "unknown",
+      "refinement": "excluded_by_operand_domination"
+    }
+  },
+  "evidence_sha256": {
+    "free_keys863_bypass_polynomial.json": "92d278a621e9227530486f5faae5d30e9b75317f3eed06bb7634465f0f721129",
+    "middle_free_keys863_polynomial.json": "67d14c6a881ee6057cc73f43af10a38a427436687b6fc6915168fcf92cbf07bf",
+    "free_keys863_and_mad_mad.json": "91b6d308e5006b3f775c59c820e6c268e26989b7777597c150d0f2b46dbb49e3",
+    "free_keys863_mad_and_mad.json": "cb9a272f8745e584358f0f1589be4517fba210ed1e07d2a7f8227e66a5ddb226",
+    "free_keys863_mad_mad_and.json": "a1ac8e1d16ac6465a963959e17124642ff9d8432e1fa3cf8255c00e07d61e5e9",
+    "free_keys863_and_partition_affine_input.json": "c6c370b31c97512c889de5768d4e345c799acc8d4f0027bcada98b3108d202a3",
+    "free_keys863_and_partition_square_const_input.json": "9413a31b8b7f7bb874841c33611a73b68deeaa7ba0cf650f9b9e10d1d74ca98b",
+    "free_keys863_and_partition_square_const_key.json": "a664479443a1879a7020abdc4b8788811ac567e1475abfb4143466f7c959664c",
+    "free_keys863_and_partition_square_x_input.json": "2e75a7bec2755b26bddab3ce1e3591508a771a0778c8c8fae58eb2675b4a1d73",
+    "free_keys863_and_partition_square_x_key.json": "f6800f271d5a0cca37be3884515684f46e72aa376887ea0ff841b6528c01a897",
+    "free_keys863_and_tail_key_x_product.json": "b7e716607f339fbe66f8461fb604c1e1c58bb519429455146d385b4b2e4f4727",
+    "free_keys863_and_tail_key_first_product.json": "8f36b2f6a6aa84b8a6afa09c468dd132c19af85d096fca2eeb2cb7b2bea54a6c",
+    "free_keys863_and_tail_key_square.json": "d17b016242aec27e27252fc00c17c94cc94c44f3a1b293331ae9427f751dcc05",
+    "free_keys863_and_fixed_key_230.json": "dc724f99a32f7c3d2fb6dde9dd0c7b19428e09638093b4033cf9031b19746226",
+    "free_keys863_and_fixed_key_231.json": "87d8f40d8ff692aab2a2f5f01fc4cc3415ea6d4d5b557924e9074a628c6494ea",
+    "free_keys863_and_fixed_key_234.json": "15fd17aaca34bf61cae8c3645a8c0d5d8188f622fc2b1a56a5a0e4ffea3f70c2",
+    "free_keys863_and_fixed_key_002.json": "47b56f3d816106a765e3f234fcfc30a5e9d9e010cca6872da0620127c4fa3f90",
+    "free_keys863_and_fixed_key_012.json": "fbe797d56022fb1683eb5562a912e1f340333ecbc1cb2a2edf58404fefa2fcf7",
+    "free_keys863_and_fixed_key_112.json": "57496ca6e9975bc518ee9204fd4782b8acbe7ca2a36875564534c93ee97f22ba",
+    "free_keys863_and_fixed_key_032.json": "0c1c9c5dbbc8071538a5f07bbeb6731f9a1dfd43e62dd5facadd0bce7cb4f020",
+    "free_keys863_and_fixed_key_132.json": "f104181bf53648f21108a336e6ee0952420829a4c2426f482574123e7587c3a7",
+    "free_keys863_or_mad_mad.json": "6437cc1b4f0586eec38370f783ee7fd71f53c7cc69b360aa65fc3ccc5e69298c",
+    "free_keys863_mad_or_mad.json": "69ae281f90dd5717ed72b06f0212b2efbfd4ab5c6785fc3853489bfe7a1db2d7",
+    "free_keys863_mad_mad_or.json": "ebebf40fc51ea589b60be3e04e719ccf658637830cfb75d369a46a843a9380e4",
+    "free_keys863_or_partition_affine_input.json": "d8085b903eb0906830f4c9cbbeb61ebae429f0affa908145f54b65dbfa4f998d",
+    "free_keys863_or_partition_square_const_input.json": "8b649102ba7893e43cb913f12e25de0df556c8c2ffdf5fc404ab32a2d429e675",
+    "free_keys863_or_partition_square_const_key.json": "afba1436b9973dded90e50e619975d14ac0ca3283e9f696093511c729491ad78",
+    "free_keys863_or_partition_square_x_input.json": "926b05ad123510f56ce587ea0d8fa6fd1979212c1b11cdd042025056dda68c1c",
+    "free_keys863_or_partition_square_x_key.json": "bf5afae95a8c0c9eaec42e368bda2cd109ece3aca83e76189538c4a3e9ac3870",
+    "free_keys863_or_tail_key_x_product.json": "45e63dd355e77d2133be07fa942d6d6c806123323eb2816ccf96ea61bcc8aac4",
+    "free_keys863_or_tail_key_first_product.json": "4329a472c3fef17ae5c54e59316aae3f65a9b1fe8ec3825cb3be739a254979af",
+    "free_keys863_or_tail_key_square.json": "5e0f51d5aa68c49b796f28b39eca1f8619a725fd81bf977e806d1748f3aa6520",
+    "free_keys863_or_fixed_key_230.json": "39cf35a60382fe0d0a1995983fb5a88578f446d87ffe496888df74e2df6d158e",
+    "free_keys863_or_fixed_key_231_normalized.json": "dac28eb182b14361b3e41ad9df32b8236fa2286ac18f2045c0ae87c30e3d20b9",
+    "free_keys863_or_fixed_key_234.json": "d80fabf899b7fc67e88758362c5995985e4a6ee1c812c9c76a4d41e428fb91f2",
+    "free_keys863_or_fixed_key_002.json": "d97e7b542309577113ed217ad4a82d833752d582303c0d91f25eb01c8e7a3087",
+    "free_keys863_or_fixed_key_012.json": "8e1c63f767164984d5a97e0dbb4a8d98f3aec6b413539752e0dd9496cc14096b",
+    "free_keys863_or_fixed_key_112.json": "58b66bf2c91f5ccf797f1a7399370f848cbe137c068a984efcac2649ec65052f",
+    "free_keys863_or_fixed_key_032.json": "10ecc30a12edf4f23d649ab685f76d2aa82ccb50dcc42e82ba98e4c3c37fb2fe",
+    "free_keys863_or_fixed_key_132.json": "79ed9833a0d5ae4bc7205b856250a63b356185fe2bbeff70f0d5a82f495f8201"
+  },
+  "target_permutation": true,
+  "target_high_bit_equivariance": true,
+  "square_constant_high_bit_witness": {
+    "inputs": [
+      0,
+      32
+    ],
+    "difference": 1024
+  },
+  "square_x_bit_one_counts": [
+    0,
+    1024,
+    1024,
+    1024,
+    1024,
+    1024,
+    1024,
+    1024,
+    1024,
+    1024,
+    1024
+  ],
+  "square_x_complement_witness": {
+    "inputs": [
+      0,
+      2047
+    ],
+    "target_outputs": [
+      1482,
+      673
+    ],
+    "xor_difference": 1899
+  },
+  "scope": "One input, arbitrary endpoint XOR keys/constants; two MADs and one AND or OR.",
+  "excluded_orders": 6,
+  "unresolved_orders": 0,
+  "new_executable": false,
+  "executable_best_cycles": 864
+}

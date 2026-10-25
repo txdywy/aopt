@@ -1,0 +1,48 @@
+[
+  {
+    "config": {
+      "methods": {
+        "16": "stage",
+        "2": "stage",
+        "3": "stage",
+        "9": "stage",
+        "19": "stage",
+        "-2": "stage",
+        "4097": "stage",
+        "2127912214": "stage",
+        "3345072700": "stage",
+        "2310": "stage"
+      },
+      "fused": 1,
+      "trades": 3
+    },
+    "control": {
+      "scratch": 1032,
+      "verified": 12167
+    },
+    "full32_seeds": 3
+  },
+  {
+    "config": {
+      "methods": {
+        "16": "third",
+        "2": "third",
+        "3": "third",
+        "9": "third",
+        "19": "third",
+        "-2": "third",
+        "4097": "third",
+        "2127912214": "third",
+        "3345072700": "third",
+        "2310": "third"
+      },
+      "fused": 5,
+      "trades": 0
+    },
+    "control": {
+      "scratch": 1027,
+      "verified": 12105
+    },
+    "full32_seeds": 3
+  }
+]

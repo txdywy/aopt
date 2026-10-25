@@ -1,0 +1,224 @@
+{
+  "executable_best_cycles": 864,
+  "new_executable": false,
+  "orders": {
+    "XOR,MAD,MAD": {
+      "wiring_patterns": 18000,
+      "classes": {
+        "carry_free_prefix_or_polynomial": 18000
+      },
+      "result": "closed_by_recorded_necessary_conditions"
+    },
+    "MAD,XOR,MAD": {
+      "wiring_patterns": 13500,
+      "classes": {
+        "carry_free_prefix_or_polynomial": 9450,
+        "first_square_x_input": 75,
+        "first_square_x_key": 150,
+        "first_square_const_input": 150,
+        "first_square_const_key": 300,
+        "pure_polynomial": 1800,
+        "tail_input_addend": 150,
+        "tail_input_x_product": 75,
+        "tail_input_first_product": 75,
+        "tail_input_square": 75,
+        "fixed_input_scaled0": 30,
+        "fixed_input_scaled1": 30,
+        "fixed_input_scaled4": 90,
+        "fixed_key_addend00": 30,
+        "fixed_key_addend01": 30,
+        "tail_key_x_product": 150,
+        "fixed_key_addend03": 60,
+        "fixed_key_addend11": 30,
+        "tail_key_first_product": 150,
+        "fixed_key_addend13": 60,
+        "tail_key_square": 150,
+        "fixed_key_scaled0": 60,
+        "fixed_key_scaled1": 60,
+        "fixed_key_scaled4": 270
+      },
+      "result": "closed_by_recorded_necessary_conditions"
+    },
+    "MAD,MAD,XOR": {
+      "wiring_patterns": 10800,
+      "classes": {
+        "pure_polynomial": 5148,
+        "polynomial_or_input_bypass": 4320,
+        "polynomial_xor_input": 720,
+        "parallel_square_x_x_square": 4,
+        "parallel_square_x_x_first": 4,
+        "parallel_square_x_scale_input": 11,
+        "parallel_square_x_first_square": 4,
+        "parallel_square_x_scale_first": 11,
+        "parallel_square_const_x_square": 8,
+        "parallel_square_const_x_first": 8,
+        "parallel_square_const_scale_input": 22,
+        "parallel_square_const_first_square": 8,
+        "parallel_square_const_scale_first": 22,
+        "parallel_affine_x_square": 60,
+        "parallel_affine_x_first": 60,
+        "parallel_affine_certificate": 330,
+        "parallel_affine_first_square": 60
+      },
+      "result": "closed_by_recorded_necessary_conditions"
+    }
+  },
+  "evidence": {
+    "free_keys863_partition_square_const_input.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "1720dec0fb84da735b570b4f16cbd5dc25e7d58d813a609e3eff7847233804b2"
+    },
+    "free_keys863_partition_square_const_key.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "d864b6528b9a175636e3f67f827f90456711adbe0f0b2b87c9c5afa0de50ed6c"
+    },
+    "free_keys863_partition_square_x_input.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "39dbdb031f4c6367b702746a1bd10055e7b46ff4304e6ba54e0d6ea67a52a4c3"
+    },
+    "free_keys863_partition_square_x_key.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "244b3d6e2c39db1938c514acddc202b4274ed617dc5abca6b097938c81f02278"
+    },
+    "free_keys863_tail_partition_input_x_product.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "1b8929b76007970e0f5933241c9dd6ae433ec2b51b43fd39281eab0ebff0b8da"
+    },
+    "free_keys863_tail_partition_input_first_product.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "5990dee883edb5c9f553ff60cc7a426b22911c8af61560180da1034e7a9019e1"
+    },
+    "free_keys863_tail_partition_input_square.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "25aea6b502b7f3e02d76566938812f9a0d8999cf28065071b22fc0e9f7321d36"
+    },
+    "free_keys863_tail_partition_key_x_product.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "2fc47fc5db4c4bf6afd8356de9804befa960cc9ac8d6166bad33cd6fd86bef9e"
+    },
+    "free_keys863_tail_partition_key_first_product.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "d82f40cbb728cbab7d8b0c3a7ba5542e784f13e780d10a531a40f0f01d410130"
+    },
+    "free_keys863_tail_partition_key_square.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "229fab98e622e8c6a7f739079bfff640ef0fff1175a3871e1c76a2ad075e9a63"
+    },
+    "free_keys863_tail_partition_input_addend.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "fdeec4d7d57784e4c506f255f72f0217a45910496c2fb57a58f44ab94bbf1eff"
+    },
+    "free_keys863_fixed_tail_input_scaled0.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "40d937bcf1c87ce6804ab1ee16428d1ba42fff5d53cf4b48bfed7919ea3eb22d"
+    },
+    "free_keys863_fixed_tail_input_scaled1.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "fc25326d2451f0fa8261b914b13e6198617705672bc461eda425195f41a43c76"
+    },
+    "free_keys863_fixed_tail_input_scaled4.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "689090714bd424413fdbb2b8d0b4cd7c83725560913a49136a33b2a7d1bf8e64"
+    },
+    "free_keys863_fixed_tail_key_scaled0.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "341e931a9516b11aba1e464b8cc0da616522e6c822fbff14980d05847f6b5aa1"
+    },
+    "free_keys863_fixed_tail_key_scaled1.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "eadd501262785f7bb17060ea97b04ee784c7baa943d1b84dd27c413438745b7f"
+    },
+    "free_keys863_fixed_tail_key_scaled4.json": {
+      "result": "unknown",
+      "sha256": "0292ef95d80dddbddc61792d390c5f28b5509b530946925fcc4df4d9946f8b59"
+    },
+    "middle_free_keys863_nested_normalized.json": {
+      "result": "projected_family_unsat",
+      "sha256": "d8b712bc61e6468be1051e75fc7db3c3179bb666cc1ebe5a6b0d39f3b97d5927"
+    },
+    "free_keys863_fixed_tail_key_addend00.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "9f640b2bfcfec6fb7f7540193a25bf12d24619b72ee4430c91bd336705cea60f"
+    },
+    "free_keys863_fixed_tail_key_addend01.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "83da0bc44cf9f7fb895191a26e8baa7734c69b1a679f25c850885224af3e7a81"
+    },
+    "free_keys863_fixed_tail_key_addend11.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "700e3fe2df4afdce9e008b5c28b6be2bcc43039dcd5195dc6225d0d408eab4c0"
+    },
+    "free_keys863_fixed_tail_key_addend03.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "6ed787c24a7d9ffec67a3a9233901befd6b19fe9b4442e652e1f603b56a38c73"
+    },
+    "free_keys863_fixed_tail_key_addend13.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "3d0b0faa2640c6914f7d87bb111eea8e1e0bbaaa9581bd38275de490f84b8f50"
+    },
+    "free_keys863_parallel_partition_affine_x_square.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "d41e10a7cdba17d84bc18bd580fa37c6ba90e532593924fc075822c33fc77f85"
+    },
+    "free_keys863_parallel_partition_affine_x_first.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "ab05c391776b58e8218b5ce1b305f486102186e482444535124b56ab46b38a06"
+    },
+    "free_keys863_parallel_partition_affine_first_square.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "a250ee193a266fe8f1d5b4a391d5dd18f4c275e37bf95eb90e4b46624de2887a"
+    },
+    "free_keys863_parallel_partition_square_const_x_square.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "bada4f566015a28c74067f71c3cc25ac30621eb0fd7d96d003cc20c3eca4b79f"
+    },
+    "free_keys863_parallel_partition_square_const_x_first.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "95a2ea6c5f34fef043a45845a2522808ab425a473231967141af0b49c909b2f0"
+    },
+    "free_keys863_parallel_partition_square_const_first_square.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "f1c58083769acbffb2f3a025614a9e827547305efb94bc72f1fb6042ed6e6ad8"
+    },
+    "free_keys863_parallel_partition_square_const_scale_input.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "b5bfc5ee9475dfc74a35a078964fc377b668859790098b2b9ec91c207382dedb"
+    },
+    "free_keys863_parallel_partition_square_const_scale_first.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "50837ca90a1cc09465277bc203b29e91d455424b5e312d8c74893bde263b3bd3"
+    },
+    "free_keys863_parallel_partition_square_x_x_square.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "588c4916d6faad63a45bc3cf4a0457d26a428551530af247b9abde399ab31951"
+    },
+    "free_keys863_parallel_partition_square_x_x_first.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "3f6573ab7ad6ce163d1e37427cb028a3578f74ccd92053f7fdd62b9d525173db"
+    },
+    "free_keys863_parallel_partition_square_x_first_square.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "9e97c835ab2d84f3e3f7873820f53dff1b28546b3aaa3a3d4ca4ce0dc30d9231"
+    },
+    "free_keys863_parallel_partition_square_x_scale_input.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "748785268a916e94bc67a16d525f38ef68d3caaaecaec66e016c807247d8d711"
+    },
+    "free_keys863_parallel_partition_square_x_scale_first.json": {
+      "result": "projected_grammar_unsat",
+      "sha256": "cba656a297530f8831dba49f1bdf1cf2a7e678923abdaf9bdb8bf1df651e8764"
+    },
+    "middle_free_keys863_parallel.json": {
+      "result": "projected_family_unsat",
+      "sha256": "d9a4096dff25b9d457d56eb6a02738452c6c11fd81615acc7385cf6d03f1e996"
+    },
+    "free_keys863_bypass_polynomial.json": {
+      "result": "all three screens exclude every key pair",
+      "sha256": "92d278a621e9227530486f5faae5d30e9b75317f3eed06bb7634465f0f721129"
+    }
+  },
+  "total_wiring_patterns": 42300,
+  "scope": "One input x, arbitrary uint32 constants and endpoint XOR keys; two arbitrary-operand MADs and one XOR. Wiring counts include constant-name symmetries and dead-code forms, not distinct functions.",
+  "exclusions": "Not other opcodes, extra live inputs, four-op graphs, or the whole kernel.",
+  "unknown_handling": "Raw UNKNOWN files are preserved. The remaining fixed scaled-key case is the independently normalized nested affine family."
+}

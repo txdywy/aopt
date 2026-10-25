@@ -1,0 +1,2650 @@
+[
+  {
+    "config": {
+      "methods": {},
+      "fused": 0,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6093,
+      "flow": 851,
+      "alu": 2921,
+      "store": 530
+    },
+    "arithmetic_lanes": 51665,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 431,
+      "objective_incumbent": 308.0,
+      "objective_upper_bound": 308,
+      "waste_lower_bound": 52,
+      "structural_upper_bound": null,
+      "seconds": 0.19340100000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.092098
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 864,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {},
+      "fused": 2,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6095,
+      "flow": 847,
+      "alu": 2921,
+      "store": 530
+    },
+    "arithmetic_lanes": 51681,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 431,
+      "objective_incumbent": 308.0,
+      "objective_upper_bound": 308,
+      "waste_lower_bound": 52,
+      "structural_upper_bound": null,
+      "seconds": 0.16162
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.159719
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 857,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 847,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {},
+      "fused": 0,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6093,
+      "flow": 851,
+      "alu": 2921,
+      "store": 530
+    },
+    "arithmetic_lanes": 51665,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 431,
+      "objective_incumbent": 308.0,
+      "objective_upper_bound": 308,
+      "waste_lower_bound": 52,
+      "structural_upper_bound": null,
+      "seconds": 0.172798
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.09156800000000001
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 864,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {},
+      "fused": 2,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6095,
+      "flow": 847,
+      "alu": 2921,
+      "store": 530
+    },
+    "arithmetic_lanes": 51681,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 431,
+      "objective_incumbent": 308.0,
+      "objective_upper_bound": 308,
+      "waste_lower_bound": 52,
+      "structural_upper_bound": null,
+      "seconds": 0.16209300000000001
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.159364
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 857,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 847,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "9": "stage"
+      },
+      "fused": 0,
+      "trades": 1
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6092,
+      "flow": 852,
+      "alu": 2922,
+      "store": 538
+    },
+    "arithmetic_lanes": 51658,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 432,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.170133
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.092294
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 349,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 472,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 864,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "9": "stage"
+      },
+      "fused": 2,
+      "trades": 1
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6094,
+      "flow": 848,
+      "alu": 2922,
+      "store": 538
+    },
+    "arithmetic_lanes": 51674,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 432,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.160591
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.092419
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 349,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 472,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 858,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 848,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "9": "third"
+      },
+      "fused": 0,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6092,
+      "flow": 852,
+      "alu": 2924,
+      "store": 530
+    },
+    "arithmetic_lanes": 51660,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 427,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.15992
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.38163400000000003
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 864,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "9": "third"
+      },
+      "fused": 2,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6094,
+      "flow": 848,
+      "alu": 2924,
+      "store": 530
+    },
+    "arithmetic_lanes": 51676,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 427,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.170767
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.18807600000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 858,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 848,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "-2": "stage"
+      },
+      "fused": 0,
+      "trades": 1
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6092,
+      "flow": 852,
+      "alu": 2922,
+      "store": 538
+    },
+    "arithmetic_lanes": 51658,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 424,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.15585300000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.09232
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 349,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 472,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 864,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "-2": "stage"
+      },
+      "fused": 2,
+      "trades": 1
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6094,
+      "flow": 848,
+      "alu": 2922,
+      "store": 538
+    },
+    "arithmetic_lanes": 51674,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 424,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.190305
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.09158400000000001
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 349,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 472,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 858,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 848,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "-2": "third"
+      },
+      "fused": 0,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6092,
+      "flow": 852,
+      "alu": 2924,
+      "store": 530
+    },
+    "arithmetic_lanes": 51660,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 427,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.151084
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.385195
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 864,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "-2": "third"
+      },
+      "fused": 2,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6094,
+      "flow": 848,
+      "alu": 2924,
+      "store": 530
+    },
+    "arithmetic_lanes": 51676,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 427,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.163084
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.188257
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 858,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 848,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "2310": "stage"
+      },
+      "fused": 0,
+      "trades": 1
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6092,
+      "flow": 852,
+      "alu": 2921,
+      "store": 538
+    },
+    "arithmetic_lanes": 51657,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 430,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.19520200000000001
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.1404
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 349,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 472,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 864,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "2310": "stage"
+      },
+      "fused": 2,
+      "trades": 1
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6094,
+      "flow": 848,
+      "alu": 2921,
+      "store": 538
+    },
+    "arithmetic_lanes": 51673,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 430,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.16823300000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.172044
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 349,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 472,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 858,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 848,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "2310": "third"
+      },
+      "fused": 0,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6092,
+      "flow": 852,
+      "alu": 2924,
+      "store": 530
+    },
+    "arithmetic_lanes": 51660,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 434,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.137413
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.09205200000000001
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 864,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "2310": "third"
+      },
+      "fused": 2,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6094,
+      "flow": 848,
+      "alu": 2924,
+      "store": 530
+    },
+    "arithmetic_lanes": 51676,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 434,
+      "objective_incumbent": 300.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 0.15993500000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.091668
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 858,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 848,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "4097": "stage"
+      },
+      "fused": 0,
+      "trades": 1
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6091,
+      "flow": 853,
+      "alu": 2921,
+      "store": 538
+    },
+    "arithmetic_lanes": 51649,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 319,
+      "objective_incumbent": 212.0,
+      "objective_upper_bound": 212,
+      "waste_lower_bound": 148,
+      "structural_upper_bound": null,
+      "seconds": 0.471366
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.139332
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 347,
+        "prefix_at_least": 2,
+        "suffix_at_least": 109,
+        "instructions": 471,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 853,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 866,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "4097": "stage"
+      },
+      "fused": 2,
+      "trades": 1
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6093,
+      "flow": 849,
+      "alu": 2921,
+      "store": 538
+    },
+    "arithmetic_lanes": 51665,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 319,
+      "objective_incumbent": 212.0,
+      "objective_upper_bound": 212,
+      "waste_lower_bound": 148,
+      "structural_upper_bound": null,
+      "seconds": 0.49102300000000004
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.18394500000000003
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 347,
+        "prefix_at_least": 2,
+        "suffix_at_least": 109,
+        "instructions": 471,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 859,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 849,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 866,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "4097": "third"
+      },
+      "fused": 0,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6091,
+      "flow": 853,
+      "alu": 2923,
+      "store": 530
+    },
+    "arithmetic_lanes": 51651,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 433,
+      "objective_incumbent": 284.0,
+      "objective_upper_bound": 284,
+      "waste_lower_bound": 76,
+      "structural_upper_bound": null,
+      "seconds": 0.15793800000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.095821
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 853,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "4097": "third"
+      },
+      "fused": 2,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6093,
+      "flow": 849,
+      "alu": 2923,
+      "store": 530
+    },
+    "arithmetic_lanes": 51667,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 433,
+      "objective_incumbent": 284.0,
+      "objective_upper_bound": 284,
+      "waste_lower_bound": 76,
+      "structural_upper_bound": null,
+      "seconds": 0.18252400000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.09968300000000001
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 859,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 849,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "3": "stage",
+        "9": "stage",
+        "19": "stage",
+        "-2": "stage"
+      },
+      "fused": 1,
+      "trades": 3
+    },
+    "counts": {
+      "load": 1689,
+      "valu": 6090,
+      "flow": 852,
+      "alu": 2925,
+      "store": 562
+    },
+    "arithmetic_lanes": 51645,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 396,
+      "objective_incumbent": 276.0,
+      "objective_upper_bound": 276,
+      "waste_lower_bound": 84,
+      "structural_upper_bound": null,
+      "seconds": 0.16764600000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.17841600000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 1,
+        "suffix_at_least": 21,
+        "instructions": 1683,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 360,
+        "prefix_at_least": 3,
+        "suffix_at_least": 109,
+        "instructions": 496,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "3": "stage",
+        "9": "stage",
+        "19": "stage",
+        "-2": "stage"
+      },
+      "fused": 3,
+      "trades": 3
+    },
+    "counts": {
+      "load": 1689,
+      "valu": 6092,
+      "flow": 848,
+      "alu": 2925,
+      "store": 562
+    },
+    "arithmetic_lanes": 51661,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 396,
+      "objective_incumbent": 276.0,
+      "objective_upper_bound": 276,
+      "waste_lower_bound": 84,
+      "structural_upper_bound": null,
+      "seconds": 0.15873900000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.13845000000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 1,
+        "suffix_at_least": 21,
+        "instructions": 1683,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 360,
+        "prefix_at_least": 3,
+        "suffix_at_least": 109,
+        "instructions": 496,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 858,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 848,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "3": "third",
+        "9": "third",
+        "19": "third",
+        "-2": "third"
+      },
+      "fused": 1,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6090,
+      "flow": 853,
+      "alu": 2933,
+      "store": 530
+    },
+    "arithmetic_lanes": 51653,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 400,
+      "objective_incumbent": 276.0,
+      "objective_upper_bound": 276,
+      "waste_lower_bound": 84,
+      "structural_upper_bound": null,
+      "seconds": 0.127731
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.14844100000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 853,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "3": "third",
+        "9": "third",
+        "19": "third",
+        "-2": "third"
+      },
+      "fused": 3,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6092,
+      "flow": 849,
+      "alu": 2933,
+      "store": 530
+    },
+    "arithmetic_lanes": 51669,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 400,
+      "objective_incumbent": 276.0,
+      "objective_upper_bound": 276,
+      "waste_lower_bound": 84,
+      "structural_upper_bound": null,
+      "seconds": 0.127536
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.15538100000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 859,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 849,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "9": "stage",
+        "-2": "stage",
+        "2310": "stage"
+      },
+      "fused": 1,
+      "trades": 3
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6091,
+      "flow": 852,
+      "alu": 2923,
+      "store": 554
+    },
+    "arithmetic_lanes": 51651,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 424,
+      "objective_incumbent": 284.0,
+      "objective_upper_bound": 284,
+      "waste_lower_bound": 76,
+      "structural_upper_bound": null,
+      "seconds": 0.159944
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.14838300000000001
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 1,
+        "suffix_at_least": 21,
+        "instructions": 1682,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 357,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 488,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "9": "stage",
+        "-2": "stage",
+        "2310": "stage"
+      },
+      "fused": 3,
+      "trades": 3
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6093,
+      "flow": 848,
+      "alu": 2923,
+      "store": 554
+    },
+    "arithmetic_lanes": 51667,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 424,
+      "objective_incumbent": 284.0,
+      "objective_upper_bound": 284,
+      "waste_lower_bound": 76,
+      "structural_upper_bound": null,
+      "seconds": 0.16023700000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.16170800000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 1,
+        "suffix_at_least": 21,
+        "instructions": 1682,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 357,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 488,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 858,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 848,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "9": "third",
+        "-2": "third",
+        "2310": "third"
+      },
+      "fused": 1,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6091,
+      "flow": 852,
+      "alu": 2930,
+      "store": 530
+    },
+    "arithmetic_lanes": 51658,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 426,
+      "objective_incumbent": 284.0,
+      "objective_upper_bound": 284,
+      "waste_lower_bound": 76,
+      "structural_upper_bound": null,
+      "seconds": 0.16160000000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.19021700000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "9": "third",
+        "-2": "third",
+        "2310": "third"
+      },
+      "fused": 3,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6093,
+      "flow": 848,
+      "alu": 2930,
+      "store": 530
+    },
+    "arithmetic_lanes": 51674,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 426,
+      "objective_incumbent": 284.0,
+      "objective_upper_bound": 284,
+      "waste_lower_bound": 76,
+      "structural_upper_bound": null,
+      "seconds": 0.16368000000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.154319
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 858,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 848,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "4097": "stage",
+        "9": "stage",
+        "-2": "stage",
+        "2310": "stage"
+      },
+      "fused": 1,
+      "trades": 3
+    },
+    "counts": {
+      "load": 1689,
+      "valu": 6089,
+      "flow": 853,
+      "alu": 2923,
+      "store": 562
+    },
+    "arithmetic_lanes": 51635,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 312,
+      "objective_incumbent": 188.0,
+      "objective_upper_bound": 188,
+      "waste_lower_bound": 172,
+      "structural_upper_bound": null,
+      "seconds": 0.48606400000000005
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.15474600000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 1,
+        "suffix_at_least": 21,
+        "instructions": 1683,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 359,
+        "prefix_at_least": 2,
+        "suffix_at_least": 109,
+        "instructions": 495,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 853,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 866,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "4097": "stage",
+        "9": "stage",
+        "-2": "stage",
+        "2310": "stage"
+      },
+      "fused": 3,
+      "trades": 3
+    },
+    "counts": {
+      "load": 1689,
+      "valu": 6091,
+      "flow": 849,
+      "alu": 2923,
+      "store": 562
+    },
+    "arithmetic_lanes": 51651,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 312,
+      "objective_incumbent": 188.0,
+      "objective_upper_bound": 188,
+      "waste_lower_bound": 172,
+      "structural_upper_bound": null,
+      "seconds": 0.3699
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.151264
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 864,
+        "prefix_at_least": 1,
+        "suffix_at_least": 21,
+        "instructions": 1683,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 359,
+        "prefix_at_least": 2,
+        "suffix_at_least": 109,
+        "instructions": 495,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 859,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 849,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 866,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "4097": "third",
+        "9": "third",
+        "-2": "third",
+        "2310": "third"
+      },
+      "fused": 2,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6090,
+      "flow": 852,
+      "alu": 2932,
+      "store": 530
+    },
+    "arithmetic_lanes": 51652,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 428,
+      "objective_incumbent": 260.0,
+      "objective_upper_bound": 260,
+      "waste_lower_bound": 100,
+      "structural_upper_bound": null,
+      "seconds": 0.14567000000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.139747
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "4097": "third",
+        "9": "third",
+        "-2": "third",
+        "2310": "third"
+      },
+      "fused": 4,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6092,
+      "flow": 848,
+      "alu": 2932,
+      "store": 530
+    },
+    "arithmetic_lanes": 51668,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 428,
+      "objective_incumbent": 260.0,
+      "objective_upper_bound": 260,
+      "waste_lower_bound": 100,
+      "structural_upper_bound": null,
+      "seconds": 0.145839
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.13262000000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 858,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 848,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "16": "stage",
+        "2": "stage",
+        "3": "stage",
+        "9": "stage",
+        "19": "stage",
+        "-2": "stage",
+        "4097": "stage",
+        "2127912214": "stage",
+        "3345072700": "stage",
+        "2310": "stage"
+      },
+      "fused": 1,
+      "trades": 3
+    },
+    "counts": {
+      "load": 1695,
+      "valu": 6083,
+      "flow": 853,
+      "alu": 2926,
+      "store": 610
+    },
+    "arithmetic_lanes": 51590,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 279,
+      "objective_incumbent": 140.0,
+      "objective_upper_bound": 140,
+      "waste_lower_bound": 220,
+      "structural_upper_bound": null,
+      "seconds": 0.375027
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.31633700000000003
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 867,
+        "prefix_at_least": 1,
+        "suffix_at_least": 21,
+        "instructions": 1689,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 383,
+        "prefix_at_least": 2,
+        "suffix_at_least": 109,
+        "instructions": 543,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 853,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 867,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "16": "stage",
+        "2": "stage",
+        "3": "stage",
+        "9": "stage",
+        "19": "stage",
+        "-2": "stage",
+        "4097": "stage",
+        "2127912214": "stage",
+        "3345072700": "stage",
+        "2310": "stage"
+      },
+      "fused": 3,
+      "trades": 3
+    },
+    "counts": {
+      "load": 1695,
+      "valu": 6085,
+      "flow": 849,
+      "alu": 2926,
+      "store": 610
+    },
+    "arithmetic_lanes": 51606,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 279,
+      "objective_incumbent": 140.0,
+      "objective_upper_bound": 140,
+      "waste_lower_bound": 220,
+      "structural_upper_bound": null,
+      "seconds": 0.531939
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.14008600000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 867,
+        "prefix_at_least": 1,
+        "suffix_at_least": 21,
+        "instructions": 1689,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 383,
+        "prefix_at_least": 2,
+        "suffix_at_least": 109,
+        "instructions": 543,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 859,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 849,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 867,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "16": "third",
+        "2": "third",
+        "3": "third",
+        "9": "third",
+        "19": "third",
+        "-2": "third",
+        "4097": "third",
+        "2127912214": "third",
+        "3345072700": "third",
+        "2310": "third"
+      },
+      "fused": 5,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6087,
+      "flow": 852,
+      "alu": 2948,
+      "store": 530
+    },
+    "arithmetic_lanes": 51644,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 408,
+      "objective_incumbent": 204.0,
+      "objective_upper_bound": 204,
+      "waste_lower_bound": 156,
+      "structural_upper_bound": null,
+      "seconds": 0.105476
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.14147400000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 866,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "16": "third",
+        "2": "third",
+        "3": "third",
+        "9": "third",
+        "19": "third",
+        "-2": "third",
+        "4097": "third",
+        "2127912214": "third",
+        "3345072700": "third",
+        "2310": "third"
+      },
+      "fused": 7,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6089,
+      "flow": 848,
+      "alu": 2948,
+      "store": 530
+    },
+    "arithmetic_lanes": 51660,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 408,
+      "objective_incumbent": 204.0,
+      "objective_upper_bound": 204,
+      "waste_lower_bound": 156,
+      "structural_upper_bound": null,
+      "seconds": 0.117786
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.143348
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 858,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 848,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 866,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "2": "stage",
+        "3": "stage",
+        "9": "stage",
+        "19": "stage",
+        "-2": "stage",
+        "4097": "stage",
+        "3345072700": "stage",
+        "2310": "stage"
+      },
+      "fused": 1,
+      "trades": 3
+    },
+    "counts": {
+      "load": 1693,
+      "valu": 6085,
+      "flow": 853,
+      "alu": 2926,
+      "store": 594
+    },
+    "arithmetic_lanes": 51606,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 290,
+      "objective_incumbent": 156.0,
+      "objective_upper_bound": 156,
+      "waste_lower_bound": 204,
+      "structural_upper_bound": null,
+      "seconds": 0.282038
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.147714
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 866,
+        "prefix_at_least": 1,
+        "suffix_at_least": 21,
+        "instructions": 1687,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 375,
+        "prefix_at_least": 2,
+        "suffix_at_least": 109,
+        "instructions": 527,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 853,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 866,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "2": "stage",
+        "3": "stage",
+        "9": "stage",
+        "19": "stage",
+        "-2": "stage",
+        "4097": "stage",
+        "3345072700": "stage",
+        "2310": "stage"
+      },
+      "fused": 3,
+      "trades": 3
+    },
+    "counts": {
+      "load": 1693,
+      "valu": 6087,
+      "flow": 849,
+      "alu": 2926,
+      "store": 594
+    },
+    "arithmetic_lanes": 51622,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 290,
+      "objective_incumbent": 156.0,
+      "objective_upper_bound": 156,
+      "waste_lower_bound": 204,
+      "structural_upper_bound": null,
+      "seconds": 0.223747
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.142664
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 866,
+        "prefix_at_least": 1,
+        "suffix_at_least": 21,
+        "instructions": 1687,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 375,
+        "prefix_at_least": 2,
+        "suffix_at_least": 109,
+        "instructions": 527,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 859,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 849,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 866,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "2": "third",
+        "3": "third",
+        "9": "third",
+        "19": "third",
+        "-2": "third",
+        "4097": "third",
+        "3345072700": "third",
+        "2310": "third"
+      },
+      "fused": 4,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6088,
+      "flow": 852,
+      "alu": 2943,
+      "store": 530
+    },
+    "arithmetic_lanes": 51647,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 403,
+      "objective_incumbent": 220.0,
+      "objective_upper_bound": 220,
+      "waste_lower_bound": 140,
+      "structural_upper_bound": null,
+      "seconds": 0.198779
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.14943900000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 866,
+    "new_executable": false
+  },
+  {
+    "config": {
+      "methods": {
+        "2": "third",
+        "3": "third",
+        "9": "third",
+        "19": "third",
+        "-2": "third",
+        "4097": "third",
+        "3345072700": "third",
+        "2310": "third"
+      },
+      "fused": 6,
+      "trades": 0
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 6090,
+      "flow": 848,
+      "alu": 2943,
+      "store": 530
+    },
+    "arithmetic_lanes": 51663,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 403,
+      "objective_incumbent": 220.0,
+      "objective_upper_bound": 220,
+      "waste_lower_bound": 140,
+      "structural_upper_bound": null,
+      "seconds": 0.196192
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.19679100000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 858,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 848,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 866,
+    "new_executable": false
+  }
+]

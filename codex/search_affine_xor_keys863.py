@@ -1,7 +1,8 @@
 """Fixed three-op structures, with arbitrary input and output XOR keys.
 
-These queries reduce selector overhead. They cover parallel affine/XOR
-and nested affine/XOR/affine only; neither is the whole three-op grammar.
+These queries reduce selector overhead. They cover parallel affine/XOR,
+nested affine/XOR/affine, and an XOR with the original input. None alone
+covers the whole three-op grammar.
 """
 from __future__ import annotations
 
@@ -20,6 +21,8 @@ def evaluate(x, coefficients, family, mask):
     a,b,d,e = coefficients[:4]
     if family == 'parallel':
         return (((a*x+b)&mask)^((d*x+e)&mask))&mask
+    if family == 'bypass':
+        return (d*(((a*x+b)&mask)^x)+e)&mask
     key = coefficients[4]
     return (d*(((a*x+b)&mask)^key)+e)&mask
 
@@ -55,9 +58,36 @@ def normalize_nested(coefficients, input_key, output_key, width):
     return [v & mask for v in (a,b,d,e,key)],ik & mask,ok & mask
 
 
+def normalize_bypass(coefficients, input_key, output_key, width):
+    """Normalize D*((A*x+B) XOR x)+E, preserving P(x XOR I) XOR O."""
+    mask,high = (1 << width)-1,1 << (width-1)
+    a,b,d,e = coefficients
+    if width < 2 or a & 1 or not d & 1:
+        raise ValueError('A even and D odd required')
+    ik,ok = input_key,output_key
+    if ik & 1:
+        ik ^= mask
+        a,b,d,e = -a,b-a,-d,e-d
+    if ik & high:
+        ik ^= high
+        e += high
+    if ok & 1:
+        ok ^= mask
+        d,e = -d,-e-1
+    if ok & high:
+        ok ^= high
+        e += high
+    if b & 1:
+        a,b,d,e = -a,-b-1,-d,e-d
+    if b & high:
+        b ^= high
+        e += high
+    return [v & mask for v in (a,b,d,e)],ik & mask,ok & mask
+
+
 def search(family='parallel', width=11, seconds=25, check_ms=22000, control=False):
-    if family not in ('parallel','nested') or width not in (*range(2,13),32):
-        raise ValueError('parallel/nested, width 2..12 or 32 required')
+    if family not in ('parallel','nested','bypass') or width not in (*range(2,13),32):
+        raise ValueError('parallel/nested/bypass, width 2..12 or 32 required')
     if seconds <= 0 or check_ms <= 0:
         raise ValueError('positive time limits required')
     mask = (1 << width)-1
@@ -70,6 +100,8 @@ def search(family='parallel', width=11, seconds=25, check_ms=22000, control=Fals
             return middle(x)
         if family == 'parallel':
             return (21*x+19)^(128*x+34)
+        if family == 'bypass':
+            return 5*((6*x+18)^x)+23
         return 5*((21*x+19)^42)+23
 
     if family == 'parallel':
@@ -78,7 +110,7 @@ def search(family='parallel', width=11, seconds=25, check_ms=22000, control=Fals
         outkey = (b ^ e) ^ reference(ik)
         coefficients = [a,b,d,e]
         expr = lambda x: (a*x+b)^(d*x+e)
-    else:
+    elif family == 'nested':
         solver.add(a & 1 == 1,d & 1 == 1,
             z3.Extract(width-1,width-1,key) == 0,
             z3.Extract(width-1,width-1,ok) == 0,
@@ -91,6 +123,14 @@ def search(family='parallel', width=11, seconds=25, check_ms=22000, control=Fals
         offset = (reference(ik)^ok)-d*(b ^ key)
         coefficients = [a,b,d,offset,key]
         expr = lambda x: d*((a*x+b)^key)+offset
+    else:
+        solver.add(a & 1 == 0,d & 1 == 1,ik & 1 == 0,ok & 1 == 0,b & 1 == 0,
+                   z3.Extract(width-1,width-1,ok) == 0,
+                   z3.Extract(width-1,width-1,b) == 0)
+        outkey = ok
+        offset = (reference(ik)^ok)-d*b
+        coefficients = [a,b,d,offset]
+        expr = lambda x: d*((a*x+b)^x)+offset
 
     def constrain(p):
         x = z3.BitVecVal(p,width)
@@ -109,6 +149,7 @@ def search(family='parallel', width=11, seconds=25, check_ms=22000, control=Fals
     report = dict(family=family,width=width,seconds_limit=seconds,check_ms=check_ms,
         input_and_output_keys='arbitrary modulo highest-bit normalizations',
         normalizations=(['A odd','D even','B even','I highest bit zero'] if family == 'parallel'
+            else ['A even','D odd','I/O/B highest and lowest bits zero'] if family == 'bypass'
             else ['A odd','D odd','I highest and lowest bits zero',
                   'O highest and lowest bits zero','K highest and lowest bits zero',
                   'B highest bit zero']),
@@ -141,6 +182,7 @@ def search(family='parallel', width=11, seconds=25, check_ms=22000, control=Fals
         x = z3.BitVec('afx_full32_verify',32)
         av,bv,dv,ev = cv[:4]
         fixed = ((av*x+bv)^(dv*x+ev) if family == 'parallel' else
+                 dv*((av*x+bv)^x)+ev if family == 'bypass' else
                  dv*((av*x+bv)^cv[4])+ev)
         verify = z3.SolverFor('QF_BV')
         verify.set(timeout=min(check_ms,max(1,int(1000*(deadline-time.monotonic())))))
@@ -164,7 +206,7 @@ def search(family='parallel', width=11, seconds=25, check_ms=22000, control=Fals
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--family',choices=('parallel','nested'),required=True)
+    ap.add_argument('--family',choices=('parallel','nested','bypass'),required=True)
     ap.add_argument('--width',type=int,default=11)
     ap.add_argument('--seconds',type=float,default=25)
     ap.add_argument('--check-ms',type=int,default=22000)

@@ -1,0 +1,251 @@
+{
+  "executable_best_cycles": 864,
+  "new_executable": false,
+  "width": 11,
+  "full_affine_pairs": 4194304,
+  "rectangle_remaining_pairs": 123008,
+  "input_xor_module_pairs": 30752,
+  "input_xor_branch_closed": true,
+  "keyed_module_pairs": 7712,
+  "keyed_shards_complete": 3,
+  "keyed_module_triples": 1986560,
+  "keyed_branch_closed": true,
+  "raw_polynomial_tail_counts": {
+    "projected_grammar_unsat": 93,
+    "unknown": 57
+  },
+  "raw_final_product_counts": {
+    "projected_grammar_unsat": 115,
+    "unknown": 38
+  },
+  "final_product_classifications": {
+    "direct_unsat": 115,
+    "unresolved_literal_roles": 23,
+    "scaled_polynomial_xor_proof": 15
+  },
+  "final_product_wiring_patterns": 75600,
+  "final_product_wiring_classes": {
+    "three_operations": 60390,
+    "reordered_polynomial_tail": 8940,
+    "direct_unsat": 4446,
+    "unresolved_literal_roles": 1224,
+    "scaled_polynomial_xor_proof": 600
+  },
+  "remaining_final_templates": [
+    {
+      "source": "first",
+      "last_operands": [
+        2,
+        4,
+        3
+      ]
+    },
+    {
+      "source": "first",
+      "last_operands": [
+        3,
+        4,
+        2
+      ]
+    },
+    {
+      "source": "input",
+      "last_operands": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "source": "input",
+      "last_operands": [
+        1,
+        4,
+        3
+      ]
+    },
+    {
+      "source": "input",
+      "last_operands": [
+        3,
+        4,
+        1
+      ]
+    },
+    {
+      "source": "key",
+      "last_operands": [
+        0,
+        4,
+        3
+      ]
+    },
+    {
+      "source": "key",
+      "last_operands": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "source": "key",
+      "last_operands": [
+        1,
+        4,
+        3
+      ]
+    },
+    {
+      "source": "key",
+      "last_operands": [
+        2,
+        3,
+        1
+      ]
+    },
+    {
+      "source": "key",
+      "last_operands": [
+        3,
+        4,
+        0
+      ]
+    },
+    {
+      "source": "key",
+      "last_operands": [
+        3,
+        4,
+        1
+      ]
+    },
+    {
+      "source": "key",
+      "last_operands": [
+        3,
+        4,
+        2
+      ]
+    }
+  ],
+  "order_statuses": [
+    {
+      "sequence": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "new live MAD/XOR/MAD proof after x XOR K; extra prior input is unused"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "new complete live MAD/MAD/XOR proof after x XOR K; unused prior input only enlarges the candidate set"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "complete affine XOR-pair classification and 52 fixed-DAG UNSAT queries; earlier square-first exclusions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "150 fixed-third queries; six raw UNKNOWN cases closed by polynomial/scaled-family proofs and three fixed-final queries; complete wiring enumeration and earlier square-first exclusions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "complete affine-prefix degree-four module screens for t XOR x and t XOR K; earlier square-prefix and initial-XOR proofs"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "new degree-four XOR degree-two relaxation excludes the affine-first case; prior square-first exclusions remain valid"
+    }
+  ],
+  "closed_orders": 9,
+  "open_orders": 1,
+  "evidence_sha256": {
+    "head_inner_product863_audit.json": "9da26e48bbe7a4645c070c7b4c4867fb15a9979f5b9e8ef714cb8f51645b00e9",
+    "affine_head_cubes863_joint.json": "59ba7dae44644c1ecfe2caa1d998a1227cdbdb5dc9597cd36859543b9aabeccd",
+    "head_bivariate863_results.json": "a31cce28d965f48810e5f7069685e4ded24425f6cb1a251b72b13b1cecf3a9f9",
+    "head_bivariate863_control.json": "68e94dc1dccebc99e9c48bb7b384dfc330dbd490d81666c8b030123117e2fe8d",
+    "head_keyed_module863_shard_0.json": "1ea6f838af63a0b3b415066dd8fb009b5e19831d3f887f69c05f2d787300cae0",
+    "head_keyed_module863_shard_1.json": "9084d88a0c21b7c1157bb29a3333ed372f58c367ec7d32873d866cc1b154f9e9",
+    "head_keyed_module863_shard_2.json": "cb1a364c01cadf540997a4872a4c2a623e7822f077c080dea11c3195c29e4edc",
+    "head_keyed_module863_control.json": "06d3662a011ddd272f973b9a777806c493f7d6437c8f348ceaa89b9b85963606",
+    "head_polynomial_tail863_results.json": "ff3eb868c38c66f83bbb21c1f099c2f3b5dfec8285d906ef9bca8781e712566b",
+    "head_final_product863_results.json": "5555bee0561533586d7dbc776288e9fe6118b4f12d6abfbda990a002a3e22023",
+    "head_polynomial863_scaled_quadratic_xor.json": "bbb1e78aa49cd3d9d820e9142a1e2b3c4f35027afb0b91626d10c8f6efd08acd"
+  },
+  "scope": "One input, arbitrary constants and output XOR key; four instructions with three MAD/one XOR or two MAD/two XOR. Only listed exclusions are proved.",
+  "remaining": "Remaining order/templates, other opcodes/live inputs, whole-hash and layout changes remain open. This is not a whole-kernel optimality proof."
+}

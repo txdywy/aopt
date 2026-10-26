@@ -1,0 +1,5577 @@
+{
+  "width": 11,
+  "fixed_input_key": 3345072700,
+  "free_output_key": true,
+  "total_queries": 52,
+  "results": [
+    {
+      "family": "xor_then_key",
+      "last_operands": [
+        0,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            2,
+            3,
+            0
+          ],
+          "3": [
+            0,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.04
+      }
+    },
+    {
+      "family": "xor_then_key",
+      "last_operands": [
+        0,
+        2,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            2,
+            3,
+            0
+          ],
+          "3": [
+            0,
+            2,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.07
+      }
+    },
+    {
+      "family": "xor_then_key",
+      "last_operands": [
+        1,
+        2,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            2,
+            3,
+            0
+          ],
+          "3": [
+            1,
+            2,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.133
+      }
+    },
+    {
+      "family": "xor_then_key",
+      "last_operands": [
+        1,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            2,
+            3,
+            0
+          ],
+          "3": [
+            1,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.067
+      }
+    },
+    {
+      "family": "xor_then_key",
+      "last_operands": [
+        2,
+        2,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            2,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            2,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.06
+      }
+    },
+    {
+      "family": "xor_then_key",
+      "last_operands": [
+        2,
+        3,
+        0
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            2,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            0
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.061
+      }
+    },
+    {
+      "family": "xor_then_key",
+      "last_operands": [
+        2,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            2,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.053
+      }
+    },
+    {
+      "family": "xor_then_key",
+      "last_operands": [
+        2,
+        3,
+        1
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            2,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            1
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.084
+      }
+    },
+    {
+      "family": "xor_then_key",
+      "last_operands": [
+        2,
+        3,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            2,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.054
+      }
+    },
+    {
+      "family": "xor_then_key",
+      "last_operands": [
+        2,
+        3,
+        4
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            2,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            4
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.121
+      }
+    },
+    {
+      "family": "xor_then_key",
+      "last_operands": [
+        3,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            2,
+            3,
+            0
+          ],
+          "3": [
+            3,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.062
+      }
+    },
+    {
+      "family": "xor_then_key",
+      "last_operands": [
+        2,
+        4,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            2,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            4,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.117
+      }
+    },
+    {
+      "family": "key_then_xor",
+      "last_operands": [
+        0,
+        2,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            0,
+            2,
+            0
+          ],
+          "3": [
+            0,
+            2,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.03
+      }
+    },
+    {
+      "family": "key_then_xor",
+      "last_operands": [
+        0,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            0,
+            2,
+            0
+          ],
+          "3": [
+            0,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.038
+      }
+    },
+    {
+      "family": "xor_then_key",
+      "last_operands": [
+        3,
+        4,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            2,
+            3,
+            0
+          ],
+          "3": [
+            3,
+            4,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.114
+      }
+    },
+    {
+      "family": "key_then_xor",
+      "last_operands": [
+        1,
+        2,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            0,
+            2,
+            0
+          ],
+          "3": [
+            1,
+            2,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.072
+      }
+    },
+    {
+      "family": "key_then_xor",
+      "last_operands": [
+        1,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            0,
+            2,
+            0
+          ],
+          "3": [
+            1,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.068
+      }
+    },
+    {
+      "family": "key_then_xor",
+      "last_operands": [
+        2,
+        2,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            0,
+            2,
+            0
+          ],
+          "3": [
+            2,
+            2,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.066
+      }
+    },
+    {
+      "family": "key_then_xor",
+      "last_operands": [
+        2,
+        3,
+        1
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            0,
+            2,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            1
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.062
+      }
+    },
+    {
+      "family": "key_then_xor",
+      "last_operands": [
+        2,
+        3,
+        0
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            0,
+            2,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            0
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.069
+      }
+    },
+    {
+      "family": "key_then_xor",
+      "last_operands": [
+        2,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            0,
+            2,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.069
+      }
+    },
+    {
+      "family": "key_then_xor",
+      "last_operands": [
+        2,
+        3,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            0,
+            2,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.131
+      }
+    },
+    {
+      "family": "key_then_xor",
+      "last_operands": [
+        2,
+        3,
+        4
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            0,
+            2,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            4
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.144
+      }
+    },
+    {
+      "family": "key_then_xor",
+      "last_operands": [
+        2,
+        4,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            0,
+            2,
+            0
+          ],
+          "3": [
+            2,
+            4,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.149
+      }
+    },
+    {
+      "family": "key_then_xor",
+      "last_operands": [
+        3,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            0,
+            2,
+            0
+          ],
+          "3": [
+            3,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.078
+      }
+    },
+    {
+      "family": "parallel_input_key",
+      "last_operands": [
+        0,
+        2,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            0,
+            2,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.033
+      }
+    },
+    {
+      "family": "key_then_xor",
+      "last_operands": [
+        3,
+        4,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            0,
+            2,
+            0
+          ],
+          "3": [
+            3,
+            4,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.251
+      }
+    },
+    {
+      "family": "parallel_input_key",
+      "last_operands": [
+        0,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            0,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.057
+      }
+    },
+    {
+      "family": "parallel_input_key",
+      "last_operands": [
+        1,
+        2,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            1,
+            2,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.078
+      }
+    },
+    {
+      "family": "parallel_input_key",
+      "last_operands": [
+        1,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            1,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.128
+      }
+    },
+    {
+      "family": "parallel_input_key",
+      "last_operands": [
+        2,
+        3,
+        0
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            0
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.059
+      }
+    },
+    {
+      "family": "parallel_input_key",
+      "last_operands": [
+        2,
+        2,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            2,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.135
+      }
+    },
+    {
+      "family": "parallel_input_key",
+      "last_operands": [
+        2,
+        3,
+        1
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            1
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.072
+      }
+    },
+    {
+      "family": "parallel_input_key",
+      "last_operands": [
+        2,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.078
+      }
+    },
+    {
+      "family": "parallel_input_key",
+      "last_operands": [
+        2,
+        3,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.062
+      }
+    },
+    {
+      "family": "parallel_input_key",
+      "last_operands": [
+        3,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            3,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.137
+      }
+    },
+    {
+      "family": "parallel_input_key",
+      "last_operands": [
+        2,
+        3,
+        4
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            4
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.268
+      }
+    },
+    {
+      "family": "parallel_input_key",
+      "last_operands": [
+        2,
+        4,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            4,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.283
+      }
+    },
+    {
+      "family": "parallel_keys",
+      "last_operands": [
+        0,
+        2,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            0,
+            2,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.035
+      }
+    },
+    {
+      "family": "parallel_input_key",
+      "last_operands": [
+        3,
+        4,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            0,
+            1,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            3,
+            4,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.149
+      }
+    },
+    {
+      "family": "parallel_keys",
+      "last_operands": [
+        0,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            0,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.038
+      }
+    },
+    {
+      "family": "parallel_keys",
+      "last_operands": [
+        1,
+        2,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            1,
+            2,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.065
+      }
+    },
+    {
+      "family": "parallel_keys",
+      "last_operands": [
+        1,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            1,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.128
+      }
+    },
+    {
+      "family": "parallel_keys",
+      "last_operands": [
+        2,
+        2,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            2,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.126
+      }
+    },
+    {
+      "family": "parallel_keys",
+      "last_operands": [
+        2,
+        3,
+        0
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            0
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.063
+      }
+    },
+    {
+      "family": "parallel_keys",
+      "last_operands": [
+        2,
+        3,
+        1
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            1
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.134
+      }
+    },
+    {
+      "family": "parallel_keys",
+      "last_operands": [
+        2,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.136
+      }
+    },
+    {
+      "family": "parallel_keys",
+      "last_operands": [
+        2,
+        3,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.135
+      }
+    },
+    {
+      "family": "parallel_keys",
+      "last_operands": [
+        2,
+        3,
+        4
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            3,
+            4
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.194
+      }
+    },
+    {
+      "family": "parallel_keys",
+      "last_operands": [
+        3,
+        3,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            3,
+            3,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.14
+      }
+    },
+    {
+      "family": "parallel_keys",
+      "last_operands": [
+        2,
+        4,
+        3
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            2,
+            4,
+            3
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.301
+      }
+    },
+    {
+      "family": "parallel_keys",
+      "last_operands": [
+        3,
+        4,
+        2
+      ],
+      "result": "projected_grammar_unsat",
+      "raw": {
+        "sequence": [
+          "mad",
+          "^",
+          "^",
+          "mad"
+        ],
+        "width": 11,
+        "seconds_limit": 4.0,
+        "check_ms": 3960,
+        "endpoint_keys": "arbitrary unless fixed; free input highest bit normalized to zero",
+        "fixed_input_key": 3345072700,
+        "fixed_output_key": null,
+        "constant_multipliers_only": false,
+        "two_arbitrary_constants_per_instruction": true,
+        "initial_samples": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          256,
+          264,
+          288,
+          296,
+          511,
+          512,
+          1023,
+          1024,
+          2047,
+          2041,
+          23,
+          1423,
+          1313,
+          1744,
+          2031,
+          653,
+          279,
+          1665,
+          1282,
+          1301,
+          1099,
+          1856,
+          985,
+          1043,
+          1433
+        ],
+        "pin_original": false,
+        "events": [
+          {
+            "samples": 41,
+            "synthesis": "unsat"
+          }
+        ],
+        "first_form": "affine",
+        "middle_source": null,
+        "tail_form": null,
+        "last_operands": null,
+        "fixed_operands": {
+          "0": [
+            0,
+            1,
+            2
+          ],
+          "1": [
+            1,
+            2,
+            0
+          ],
+          "2": [
+            1,
+            3,
+            0
+          ],
+          "3": [
+            3,
+            4,
+            2
+          ]
+        },
+        "sole_affine_input_normalization": false,
+        "second_form": null,
+        "control_program": null,
+        "result": "projected_grammar_unsat",
+        "new_executable": false,
+        "seconds": 0.289
+      }
+    }
+  ],
+  "new_executable": false,
+  "scope": "Affine first MAD; two XOR outputs form one of four explicit pairs; final MAD reads both outputs in one of 13 canonical roles. Other connections require separately checked structural reductions.",
+  "counts": {
+    "projected_grammar_unsat": 52
+  }
+}

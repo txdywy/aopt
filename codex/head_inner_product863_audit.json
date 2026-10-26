@@ -1,0 +1,155 @@
+{
+  "executable_best_cycles": 864,
+  "new_executable": false,
+  "width": 11,
+  "coarse_query_counts": {
+    "projected_grammar_unsat": 144,
+    "unknown": 6
+  },
+  "fixed_final_queries": 3,
+  "affine_wiring_patterns": 15750,
+  "affine_wiring_classes": {
+    "three_operations": 15025,
+    "fixed_third_query": 435,
+    "keyed_reordering": 290
+  },
+  "live_query_classes": {
+    "direct_unsat": 411,
+    "polynomial_xor": 6,
+    "fixed_final_xor": 6,
+    "scaled_family": 12
+  },
+  "order_statuses": [
+    {
+      "sequence": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "new live MAD/XOR/MAD proof after x XOR K; extra prior input is unused"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "new complete live MAD/MAD/XOR proof after x XOR K; unused prior input only enlarges the candidate set"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "complete affine XOR-pair classification and 52 fixed-DAG UNSAT queries; earlier square-first exclusions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "150 fixed-third queries; six raw UNKNOWN cases closed by polynomial/scaled-family proofs and three fixed-final queries; complete wiring enumeration and earlier square-first exclusions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "new degree-four XOR degree-two relaxation excludes the affine-first case; prior square-first exclusions remain valid"
+    }
+  ],
+  "closed_orders": 8,
+  "open_orders": 2,
+  "remaining_orders": [
+    [
+      "mad",
+      "^",
+      "mad",
+      "mad"
+    ],
+    [
+      "mad",
+      "mad",
+      "^",
+      "mad"
+    ]
+  ],
+  "evidence_sha256": {
+    "head_xor_pairs863_audit.json": "dd069e2c54fdd1286bd429b806a3d8f2881773188d6f3d98ba5fd995e793e3ce",
+    "keyed_live863_outer_audit.json": "1a7b9557f2e4717ba94ff66b464fd54161d4bc2554b823ac02c60f8009efb654",
+    "free_keys863_complete_grammar.json": "68893cae943b55d5637204482c735bd9c341a541b91a620b1612fef47671c109",
+    "head_polynomial863_polynomial_xor.json": "b058ff16fdbbfafda673a69e3c17a2c1a5adaf33ca351deea85739225f1e975e",
+    "head_merge863_family_key_input.json": "bf0d8fc3971ba9b9c39f1db83dab262c0c00607466c9b5105ddcecaac9d7d1dd",
+    "head_merge863_family_key_first.json": "dc416a380f55e58bd8297067c2446ee6dea7f9ff07bb01f1be3b1c358bec293a",
+    "head_merge863_family_key_middle.json": "cd02a768618fefb1cefd2c5ecbec690cf5bb1cb511dfbd8433fbc4c883147485",
+    "head_inner_product863_results.json": "e280393f8c1792d8cabbcc02b146593af6eebd30aef4b8344055d2981ddf6332",
+    "head_inner_product863_tail_0.json": "8225210441644d723a8951599f7bd9b47fabbd874ce8158d2e5a049495af5e06",
+    "head_inner_product863_tail_1.json": "a2011436a054735cfb6e7645e421e78a6842ce160f035e8bb66b813d7b29d7bf",
+    "head_inner_product863_tail_2.json": "c2e4b718ee26cc8663ef332d141c750b3dbbc00b6f9e8e37acd46bc07e1f4380"
+  },
+  "scope": "One input, arbitrary constants and output XOR key; four instructions with three MAD/one XOR or two MAD/two XOR. Only listed exclusions are proved.",
+  "remaining": "Other orders/opcodes/live inputs, whole-hash transformations and layouts remain open. No whole-kernel optimality claim."
+}

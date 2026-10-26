@@ -1,0 +1,3654 @@
+{
+  "width": 11,
+  "control": false,
+  "total_full_pairs": 4194304,
+  "remaining_full_pairs": 219008,
+  "residues": [
+    {
+      "width": 11,
+      "input_stride": 8,
+      "upper_width": 8,
+      "residue": 0,
+      "control": false,
+      "input_key": 3345072700,
+      "total_affine_pairs": 65536,
+      "remaining_affine_pairs": 5504,
+      "rectangles_tested": 1408,
+      "universally_bad_rectangles": 84,
+      "witnesses": [
+        {
+          "base_y": 0,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            0,
+            32,
+            64,
+            96
+          ],
+          "target_upper_values": [
+            172,
+            8,
+            116,
+            80
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 12096,
+          "before": 65536,
+          "after": 53440
+        },
+        {
+          "base_y": 2,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            16,
+            48,
+            80,
+            112
+          ],
+          "target_upper_values": [
+            218,
+            54,
+            162,
+            126
+          ],
+          "target_mixed_differences": [
+            64,
+            96,
+            128,
+            160,
+            192
+          ],
+          "removed_pairs": 6976,
+          "before": 53440,
+          "after": 46464
+        },
+        {
+          "base_y": 35,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            280,
+            312,
+            344,
+            376
+          ],
+          "target_upper_values": [
+            209,
+            45,
+            153,
+            117
+          ],
+          "target_mixed_differences": [
+            96,
+            128,
+            160
+          ],
+          "removed_pairs": 4752,
+          "before": 46464,
+          "after": 41712
+        },
+        {
+          "base_y": 64,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            512,
+            544,
+            576,
+            608
+          ],
+          "target_upper_values": [
+            236,
+            72,
+            180,
+            144
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1352,
+          "before": 41712,
+          "after": 40360
+        },
+        {
+          "base_y": 66,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            528,
+            560,
+            592,
+            624
+          ],
+          "target_upper_values": [
+            26,
+            118,
+            226,
+            190
+          ],
+          "target_mixed_differences": [
+            64,
+            96,
+            128,
+            160,
+            192
+          ],
+          "removed_pairs": 920,
+          "before": 40360,
+          "after": 39440
+        },
+        {
+          "base_y": 99,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            792,
+            824,
+            856,
+            888
+          ],
+          "target_upper_values": [
+            17,
+            109,
+            217,
+            181
+          ],
+          "target_mixed_differences": [
+            96,
+            128,
+            160
+          ],
+          "removed_pairs": 816,
+          "before": 39440,
+          "after": 38624
+        },
+        {
+          "base_y": 4,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            32,
+            40,
+            288,
+            296
+          ],
+          "target_upper_values": [
+            8,
+            223,
+            168,
+            255
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 9012,
+          "before": 38624,
+          "after": 29612
+        },
+        {
+          "base_y": 10,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            80,
+            88,
+            336,
+            344
+          ],
+          "target_upper_values": [
+            162,
+            249,
+            194,
+            153
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 4572,
+          "before": 29612,
+          "after": 25040
+        },
+        {
+          "base_y": 22,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            176,
+            184,
+            432,
+            440
+          ],
+          "target_upper_values": [
+            70,
+            157,
+            102,
+            61
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 2928,
+          "before": 25040,
+          "after": 22112
+        },
+        {
+          "base_y": 24,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            192,
+            200,
+            448,
+            456
+          ],
+          "target_upper_values": [
+            4,
+            91,
+            36,
+            251
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 2040,
+          "before": 22112,
+          "after": 20072
+        },
+        {
+          "base_y": 28,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            224,
+            232,
+            480,
+            488
+          ],
+          "target_upper_values": [
+            96,
+            183,
+            128,
+            87
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1768,
+          "before": 20072,
+          "after": 18304
+        },
+        {
+          "base_y": 68,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            544,
+            552,
+            800,
+            808
+          ],
+          "target_upper_values": [
+            72,
+            31,
+            232,
+            63
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 552,
+          "before": 18304,
+          "after": 17752
+        },
+        {
+          "base_y": 74,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            592,
+            600,
+            848,
+            856
+          ],
+          "target_upper_values": [
+            226,
+            57,
+            2,
+            217
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 380,
+          "before": 17752,
+          "after": 17372
+        },
+        {
+          "base_y": 86,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            688,
+            696,
+            944,
+            952
+          ],
+          "target_upper_values": [
+            134,
+            221,
+            166,
+            125
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 528,
+          "before": 17372,
+          "after": 16844
+        },
+        {
+          "base_y": 88,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            704,
+            712,
+            960,
+            968
+          ],
+          "target_upper_values": [
+            68,
+            155,
+            100,
+            59
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 496,
+          "before": 16844,
+          "after": 16348
+        },
+        {
+          "base_y": 92,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            736,
+            744,
+            992,
+            1000
+          ],
+          "target_upper_values": [
+            160,
+            247,
+            192,
+            151
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 204,
+          "before": 16348,
+          "after": 16144
+        },
+        {
+          "base_y": 41,
+          "h_y": 4,
+          "k_y": 16,
+          "original_x_corners": [
+            328,
+            360,
+            456,
+            488
+          ],
+          "target_upper_values": [
+            107,
+            71,
+            251,
+            87
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 2324,
+          "before": 16144,
+          "after": 13820
+        },
+        {
+          "base_y": 105,
+          "h_y": 4,
+          "k_y": 16,
+          "original_x_corners": [
+            840,
+            872,
+            968,
+            1000
+          ],
+          "target_upper_values": [
+            171,
+            135,
+            59,
+            151
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 148,
+          "before": 13820,
+          "after": 13672
+        },
+        {
+          "base_y": 2,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            16,
+            80,
+            144,
+            208
+          ],
+          "target_upper_values": [
+            218,
+            162,
+            234,
+            50
+          ],
+          "target_mixed_differences": [
+            64,
+            128,
+            192
+          ],
+          "removed_pairs": 1088,
+          "before": 13672,
+          "after": 12584
+        },
+        {
+          "base_y": 33,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            264,
+            328,
+            392,
+            456
+          ],
+          "target_upper_values": [
+            163,
+            107,
+            179,
+            251
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 920,
+          "before": 12584,
+          "after": 11664
+        },
+        {
+          "base_y": 35,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            280,
+            344,
+            408,
+            472
+          ],
+          "target_upper_values": [
+            209,
+            153,
+            225,
+            41
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 564,
+          "before": 11664,
+          "after": 11100
+        },
+        {
+          "base_y": 66,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            528,
+            592,
+            656,
+            720
+          ],
+          "target_upper_values": [
+            26,
+            226,
+            42,
+            114
+          ],
+          "target_mixed_differences": [
+            64,
+            128,
+            192
+          ],
+          "removed_pairs": 200,
+          "before": 11100,
+          "after": 10900
+        },
+        {
+          "base_y": 97,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            776,
+            840,
+            904,
+            968
+          ],
+          "target_upper_values": [
+            227,
+            171,
+            243,
+            59
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 120,
+          "before": 10900,
+          "after": 10780
+        },
+        {
+          "base_y": 99,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            792,
+            856,
+            920,
+            984
+          ],
+          "target_upper_values": [
+            17,
+            217,
+            33,
+            105
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 188,
+          "before": 10780,
+          "after": 10592
+        },
+        {
+          "base_y": 10,
+          "h_y": 4,
+          "k_y": 32,
+          "original_x_corners": [
+            80,
+            112,
+            336,
+            368
+          ],
+          "target_upper_values": [
+            162,
+            126,
+            194,
+            30
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1376,
+          "before": 10592,
+          "after": 9216
+        },
+        {
+          "base_y": 74,
+          "h_y": 4,
+          "k_y": 32,
+          "original_x_corners": [
+            592,
+            624,
+            848,
+            880
+          ],
+          "target_upper_values": [
+            226,
+            190,
+            2,
+            94
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 160,
+          "before": 9216,
+          "after": 9056
+        },
+        {
+          "base_y": 0,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            0,
+            64,
+            256,
+            320
+          ],
+          "target_upper_values": [
+            172,
+            116,
+            76,
+            148
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1336,
+          "before": 9056,
+          "after": 7720
+        },
+        {
+          "base_y": 1,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            8,
+            72,
+            264,
+            328
+          ],
+          "target_upper_values": [
+            131,
+            203,
+            163,
+            107
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 756,
+          "before": 7720,
+          "after": 6964
+        },
+        {
+          "base_y": 3,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            24,
+            88,
+            280,
+            344
+          ],
+          "target_upper_values": [
+            177,
+            249,
+            209,
+            153
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 432,
+          "before": 6964,
+          "after": 6532
+        },
+        {
+          "base_y": 64,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            512,
+            576,
+            768,
+            832
+          ],
+          "target_upper_values": [
+            236,
+            180,
+            140,
+            212
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 120,
+          "before": 6532,
+          "after": 6412
+        },
+        {
+          "base_y": 65,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            520,
+            584,
+            776,
+            840
+          ],
+          "target_upper_values": [
+            195,
+            11,
+            227,
+            171
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 100,
+          "before": 6412,
+          "after": 6312
+        },
+        {
+          "base_y": 67,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            536,
+            600,
+            792,
+            856
+          ],
+          "target_upper_values": [
+            241,
+            57,
+            17,
+            217
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 32,
+          "before": 6312,
+          "after": 6280
+        },
+        {
+          "base_y": 0,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            0,
+            128,
+            256,
+            384
+          ],
+          "target_upper_values": [
+            172,
+            188,
+            76,
+            220
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 352,
+          "before": 6280,
+          "after": 5928
+        },
+        {
+          "base_y": 1,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            8,
+            136,
+            264,
+            392
+          ],
+          "target_upper_values": [
+            131,
+            19,
+            163,
+            179
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 108,
+          "before": 5928,
+          "after": 5820
+        },
+        {
+          "base_y": 4,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            32,
+            160,
+            288,
+            416
+          ],
+          "target_upper_values": [
+            8,
+            24,
+            168,
+            56
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 56,
+          "before": 5820,
+          "after": 5764
+        },
+        {
+          "base_y": 7,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            56,
+            184,
+            312,
+            440
+          ],
+          "target_upper_values": [
+            13,
+            157,
+            45,
+            61
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 112,
+          "before": 5764,
+          "after": 5652
+        },
+        {
+          "base_y": 13,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            104,
+            232,
+            360,
+            488
+          ],
+          "target_upper_values": [
+            39,
+            183,
+            71,
+            87
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 52,
+          "before": 5652,
+          "after": 5600
+        },
+        {
+          "base_y": 64,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            512,
+            640,
+            768,
+            896
+          ],
+          "target_upper_values": [
+            236,
+            252,
+            140,
+            28
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 64,
+          "before": 5600,
+          "after": 5536
+        },
+        {
+          "base_y": 65,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            520,
+            648,
+            776,
+            904
+          ],
+          "target_upper_values": [
+            195,
+            83,
+            227,
+            243
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 12,
+          "before": 5536,
+          "after": 5524
+        },
+        {
+          "base_y": 71,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            568,
+            696,
+            824,
+            952
+          ],
+          "target_upper_values": [
+            77,
+            221,
+            109,
+            125
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 12,
+          "before": 5524,
+          "after": 5512
+        },
+        {
+          "base_y": 77,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            616,
+            744,
+            872,
+            1000
+          ],
+          "target_upper_values": [
+            103,
+            247,
+            135,
+            151
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 8,
+          "before": 5512,
+          "after": 5504
+        }
+      ],
+      "positive_pair_retained": null,
+      "result": "necessary_pairs_survive",
+      "seconds": 0.024,
+      "new_executable": false,
+      "scope": "First t=A*x+B, arbitrary XOR/AND/OR prefix over x,t and constants, then arbitrary integer-polynomial continuation. Only universally bad output-key rectangles are used; surviving pairs are necessary conditions, not candidates.",
+      "joint_remaining_full_pairs": 352256
+    },
+    {
+      "width": 11,
+      "input_stride": 8,
+      "upper_width": 8,
+      "residue": 1,
+      "control": false,
+      "input_key": 3345072700,
+      "total_affine_pairs": 65536,
+      "remaining_affine_pairs": 65536,
+      "rectangles_tested": 1408,
+      "universally_bad_rectangles": 0,
+      "witnesses": [],
+      "positive_pair_retained": null,
+      "result": "necessary_pairs_survive",
+      "seconds": 0.026,
+      "new_executable": false,
+      "scope": "First t=A*x+B, arbitrary XOR/AND/OR prefix over x,t and constants, then arbitrary integer-polynomial continuation. Only universally bad output-key rectangles are used; surviving pairs are necessary conditions, not candidates.",
+      "joint_remaining_full_pairs": 352256
+    },
+    {
+      "width": 11,
+      "input_stride": 8,
+      "upper_width": 8,
+      "residue": 2,
+      "control": false,
+      "input_key": 3345072700,
+      "total_affine_pairs": 65536,
+      "remaining_affine_pairs": 6664,
+      "rectangles_tested": 1408,
+      "universally_bad_rectangles": 68,
+      "witnesses": [
+        {
+          "base_y": 0,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            2,
+            34,
+            66,
+            98
+          ],
+          "target_upper_values": [
+            247,
+            211,
+            63,
+            155
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 12096,
+          "before": 65536,
+          "after": 53440
+        },
+        {
+          "base_y": 2,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            18,
+            50,
+            82,
+            114
+          ],
+          "target_upper_values": [
+            37,
+            1,
+            109,
+            201
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 6976,
+          "before": 53440,
+          "after": 46464
+        },
+        {
+          "base_y": 33,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            266,
+            298,
+            330,
+            362
+          ],
+          "target_upper_values": [
+            238,
+            202,
+            54,
+            146
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 3520,
+          "before": 46464,
+          "after": 42944
+        },
+        {
+          "base_y": 64,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            514,
+            546,
+            578,
+            610
+          ],
+          "target_upper_values": [
+            55,
+            19,
+            127,
+            219
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1168,
+          "before": 42944,
+          "after": 41776
+        },
+        {
+          "base_y": 66,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            530,
+            562,
+            594,
+            626
+          ],
+          "target_upper_values": [
+            101,
+            65,
+            173,
+            9
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1040,
+          "before": 41776,
+          "after": 40736
+        },
+        {
+          "base_y": 97,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            778,
+            810,
+            842,
+            874
+          ],
+          "target_upper_values": [
+            46,
+            10,
+            118,
+            210
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 480,
+          "before": 40736,
+          "after": 40256
+        },
+        {
+          "base_y": 2,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            18,
+            26,
+            274,
+            282
+          ],
+          "target_upper_values": [
+            37,
+            124,
+            69,
+            28
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 9340,
+          "before": 40256,
+          "after": 30916
+        },
+        {
+          "base_y": 6,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            50,
+            58,
+            306,
+            314
+          ],
+          "target_upper_values": [
+            1,
+            216,
+            161,
+            248
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 5012,
+          "before": 30916,
+          "after": 25904
+        },
+        {
+          "base_y": 16,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            130,
+            138,
+            386,
+            394
+          ],
+          "target_upper_values": [
+            135,
+            222,
+            167,
+            126
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 3300,
+          "before": 25904,
+          "after": 22604
+        },
+        {
+          "base_y": 20,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            162,
+            170,
+            418,
+            426
+          ],
+          "target_upper_values": [
+            227,
+            58,
+            3,
+            218
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1968,
+          "before": 22604,
+          "after": 20636
+        },
+        {
+          "base_y": 66,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            530,
+            538,
+            786,
+            794
+          ],
+          "target_upper_values": [
+            101,
+            188,
+            133,
+            92
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 712,
+          "before": 20636,
+          "after": 19924
+        },
+        {
+          "base_y": 70,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            562,
+            570,
+            818,
+            826
+          ],
+          "target_upper_values": [
+            65,
+            24,
+            225,
+            56
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 500,
+          "before": 19924,
+          "after": 19424
+        },
+        {
+          "base_y": 80,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            642,
+            650,
+            898,
+            906
+          ],
+          "target_upper_values": [
+            199,
+            30,
+            231,
+            190
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 536,
+          "before": 19424,
+          "after": 18888
+        },
+        {
+          "base_y": 84,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            674,
+            682,
+            930,
+            938
+          ],
+          "target_upper_values": [
+            35,
+            122,
+            67,
+            26
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 352,
+          "before": 18888,
+          "after": 18536
+        },
+        {
+          "base_y": 2,
+          "h_y": 4,
+          "k_y": 16,
+          "original_x_corners": [
+            18,
+            50,
+            146,
+            178
+          ],
+          "target_upper_values": [
+            37,
+            1,
+            181,
+            17
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 2920,
+          "before": 18536,
+          "after": 15616
+        },
+        {
+          "base_y": 33,
+          "h_y": 4,
+          "k_y": 16,
+          "original_x_corners": [
+            266,
+            298,
+            394,
+            426
+          ],
+          "target_upper_values": [
+            238,
+            202,
+            126,
+            218
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1544,
+          "before": 15616,
+          "after": 14072
+        },
+        {
+          "base_y": 66,
+          "h_y": 4,
+          "k_y": 16,
+          "original_x_corners": [
+            530,
+            562,
+            658,
+            690
+          ],
+          "target_upper_values": [
+            101,
+            65,
+            245,
+            81
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 240,
+          "before": 14072,
+          "after": 13832
+        },
+        {
+          "base_y": 97,
+          "h_y": 4,
+          "k_y": 16,
+          "original_x_corners": [
+            778,
+            810,
+            906,
+            938
+          ],
+          "target_upper_values": [
+            46,
+            10,
+            190,
+            26
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 320,
+          "before": 13832,
+          "after": 13512
+        },
+        {
+          "base_y": 4,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            34,
+            98,
+            162,
+            226
+          ],
+          "target_upper_values": [
+            211,
+            155,
+            227,
+            43
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1540,
+          "before": 13512,
+          "after": 11972
+        },
+        {
+          "base_y": 6,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            50,
+            114,
+            178,
+            242
+          ],
+          "target_upper_values": [
+            1,
+            201,
+            17,
+            89
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 556,
+          "before": 11972,
+          "after": 11416
+        },
+        {
+          "base_y": 37,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            298,
+            362,
+            426,
+            490
+          ],
+          "target_upper_values": [
+            202,
+            146,
+            218,
+            34
+          ],
+          "target_mixed_differences": [
+            64,
+            128,
+            192
+          ],
+          "removed_pairs": 648,
+          "before": 11416,
+          "after": 10768
+        },
+        {
+          "base_y": 68,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            546,
+            610,
+            674,
+            738
+          ],
+          "target_upper_values": [
+            19,
+            219,
+            35,
+            107
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 268,
+          "before": 10768,
+          "after": 10500
+        },
+        {
+          "base_y": 70,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            562,
+            626,
+            690,
+            754
+          ],
+          "target_upper_values": [
+            65,
+            9,
+            81,
+            153
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 76,
+          "before": 10500,
+          "after": 10424
+        },
+        {
+          "base_y": 101,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            810,
+            874,
+            938,
+            1002
+          ],
+          "target_upper_values": [
+            10,
+            210,
+            26,
+            98
+          ],
+          "target_mixed_differences": [
+            64,
+            128,
+            192
+          ],
+          "removed_pairs": 216,
+          "before": 10424,
+          "after": 10208
+        },
+        {
+          "base_y": 4,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            34,
+            98,
+            290,
+            354
+          ],
+          "target_upper_values": [
+            211,
+            155,
+            115,
+            187
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1416,
+          "before": 10208,
+          "after": 8792
+        },
+        {
+          "base_y": 5,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            42,
+            106,
+            298,
+            362
+          ],
+          "target_upper_values": [
+            170,
+            242,
+            202,
+            146
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 792,
+          "before": 8792,
+          "after": 8000
+        },
+        {
+          "base_y": 6,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            50,
+            114,
+            306,
+            370
+          ],
+          "target_upper_values": [
+            1,
+            201,
+            161,
+            233
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 312,
+          "before": 8000,
+          "after": 7688
+        },
+        {
+          "base_y": 68,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            546,
+            610,
+            802,
+            866
+          ],
+          "target_upper_values": [
+            19,
+            219,
+            179,
+            251
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 56,
+          "before": 7688,
+          "after": 7632
+        },
+        {
+          "base_y": 69,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            554,
+            618,
+            810,
+            874
+          ],
+          "target_upper_values": [
+            234,
+            50,
+            10,
+            210
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 72,
+          "before": 7632,
+          "after": 7560
+        },
+        {
+          "base_y": 70,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            562,
+            626,
+            818,
+            882
+          ],
+          "target_upper_values": [
+            65,
+            9,
+            225,
+            41
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 56,
+          "before": 7560,
+          "after": 7504
+        },
+        {
+          "base_y": 5,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            42,
+            170,
+            298,
+            426
+          ],
+          "target_upper_values": [
+            170,
+            58,
+            202,
+            218
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 304,
+          "before": 7504,
+          "after": 7200
+        },
+        {
+          "base_y": 6,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            50,
+            178,
+            306,
+            434
+          ],
+          "target_upper_values": [
+            1,
+            17,
+            161,
+            49
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 244,
+          "before": 7200,
+          "after": 6956
+        },
+        {
+          "base_y": 69,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            554,
+            682,
+            810,
+            938
+          ],
+          "target_upper_values": [
+            234,
+            122,
+            10,
+            26
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 128,
+          "before": 6956,
+          "after": 6828
+        },
+        {
+          "base_y": 70,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            562,
+            690,
+            818,
+            946
+          ],
+          "target_upper_values": [
+            65,
+            81,
+            225,
+            113
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 164,
+          "before": 6828,
+          "after": 6664
+        }
+      ],
+      "positive_pair_retained": null,
+      "result": "necessary_pairs_survive",
+      "seconds": 0.022,
+      "new_executable": false,
+      "scope": "First t=A*x+B, arbitrary XOR/AND/OR prefix over x,t and constants, then arbitrary integer-polynomial continuation. Only universally bad output-key rectangles are used; surviving pairs are necessary conditions, not candidates.",
+      "joint_remaining_full_pairs": 271168
+    },
+    {
+      "width": 11,
+      "input_stride": 8,
+      "upper_width": 8,
+      "residue": 3,
+      "control": false,
+      "input_key": 3345072700,
+      "total_affine_pairs": 65536,
+      "remaining_affine_pairs": 65536,
+      "rectangles_tested": 1408,
+      "universally_bad_rectangles": 0,
+      "witnesses": [],
+      "positive_pair_retained": null,
+      "result": "necessary_pairs_survive",
+      "seconds": 0.021,
+      "new_executable": false,
+      "scope": "First t=A*x+B, arbitrary XOR/AND/OR prefix over x,t and constants, then arbitrary integer-polynomial continuation. Only universally bad output-key rectangles are used; surviving pairs are necessary conditions, not candidates.",
+      "joint_remaining_full_pairs": 271168
+    },
+    {
+      "width": 11,
+      "input_stride": 8,
+      "upper_width": 8,
+      "residue": 4,
+      "control": false,
+      "input_key": 3345072700,
+      "total_affine_pairs": 65536,
+      "remaining_affine_pairs": 6816,
+      "rectangles_tested": 1408,
+      "universally_bad_rectangles": 64,
+      "witnesses": [
+        {
+          "base_y": 16,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            132,
+            164,
+            196,
+            228
+          ],
+          "target_upper_values": [
+            168,
+            4,
+            112,
+            76
+          ],
+          "target_mixed_differences": [
+            96,
+            128,
+            160
+          ],
+          "removed_pairs": 12096,
+          "before": 65536,
+          "after": 53440
+        },
+        {
+          "base_y": 18,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            148,
+            180,
+            212,
+            244
+          ],
+          "target_upper_values": [
+            214,
+            50,
+            158,
+            122
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 6976,
+          "before": 53440,
+          "after": 46464
+        },
+        {
+          "base_y": 80,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            644,
+            676,
+            708,
+            740
+          ],
+          "target_upper_values": [
+            232,
+            68,
+            176,
+            140
+          ],
+          "target_mixed_differences": [
+            96,
+            128,
+            160
+          ],
+          "removed_pairs": 1440,
+          "before": 46464,
+          "after": 45024
+        },
+        {
+          "base_y": 82,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            660,
+            692,
+            724,
+            756
+          ],
+          "target_upper_values": [
+            22,
+            114,
+            222,
+            186
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1248,
+          "before": 45024,
+          "after": 43776
+        },
+        {
+          "base_y": 41,
+          "h_y": 2,
+          "k_y": 16,
+          "original_x_corners": [
+            332,
+            348,
+            460,
+            476
+          ],
+          "target_upper_values": [
+            87,
+            133,
+            103,
+            21
+          ],
+          "target_mixed_differences": [
+            64,
+            128,
+            192
+          ],
+          "removed_pairs": 7464,
+          "before": 43776,
+          "after": 36312
+        },
+        {
+          "base_y": 105,
+          "h_y": 2,
+          "k_y": 16,
+          "original_x_corners": [
+            844,
+            860,
+            972,
+            988
+          ],
+          "target_upper_values": [
+            151,
+            197,
+            167,
+            85
+          ],
+          "target_mixed_differences": [
+            64,
+            128,
+            192
+          ],
+          "removed_pairs": 696,
+          "before": 36312,
+          "after": 35616
+        },
+        {
+          "base_y": 2,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            20,
+            28,
+            276,
+            284
+          ],
+          "target_upper_values": [
+            70,
+            29,
+            230,
+            61
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 7548,
+          "before": 35616,
+          "after": 28068
+        },
+        {
+          "base_y": 6,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            52,
+            60,
+            308,
+            316
+          ],
+          "target_upper_values": [
+            162,
+            121,
+            66,
+            153
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 4864,
+          "before": 28068,
+          "after": 23204
+        },
+        {
+          "base_y": 8,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            68,
+            76,
+            324,
+            332
+          ],
+          "target_upper_values": [
+            96,
+            55,
+            0,
+            87
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 3180,
+          "before": 23204,
+          "after": 20024
+        },
+        {
+          "base_y": 16,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            132,
+            140,
+            388,
+            396
+          ],
+          "target_upper_values": [
+            168,
+            127,
+            72,
+            159
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1952,
+          "before": 20024,
+          "after": 18072
+        },
+        {
+          "base_y": 20,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            164,
+            172,
+            420,
+            428
+          ],
+          "target_upper_values": [
+            4,
+            219,
+            164,
+            251
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1476,
+          "before": 18072,
+          "after": 16596
+        },
+        {
+          "base_y": 66,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            532,
+            540,
+            788,
+            796
+          ],
+          "target_upper_values": [
+            134,
+            93,
+            38,
+            125
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 460,
+          "before": 16596,
+          "after": 16136
+        },
+        {
+          "base_y": 70,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            564,
+            572,
+            820,
+            828
+          ],
+          "target_upper_values": [
+            226,
+            185,
+            130,
+            217
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 508,
+          "before": 16136,
+          "after": 15628
+        },
+        {
+          "base_y": 72,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            580,
+            588,
+            836,
+            844
+          ],
+          "target_upper_values": [
+            160,
+            119,
+            64,
+            151
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 376,
+          "before": 15628,
+          "after": 15252
+        },
+        {
+          "base_y": 80,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            644,
+            652,
+            900,
+            908
+          ],
+          "target_upper_values": [
+            232,
+            191,
+            136,
+            223
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 404,
+          "before": 15252,
+          "after": 14848
+        },
+        {
+          "base_y": 84,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            676,
+            684,
+            932,
+            940
+          ],
+          "target_upper_values": [
+            68,
+            27,
+            228,
+            59
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 304,
+          "before": 14848,
+          "after": 14544
+        },
+        {
+          "base_y": 10,
+          "h_y": 4,
+          "k_y": 16,
+          "original_x_corners": [
+            84,
+            116,
+            212,
+            244
+          ],
+          "target_upper_values": [
+            142,
+            234,
+            158,
+            122
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 2092,
+          "before": 14544,
+          "after": 12452
+        },
+        {
+          "base_y": 74,
+          "h_y": 4,
+          "k_y": 16,
+          "original_x_corners": [
+            596,
+            628,
+            724,
+            756
+          ],
+          "target_upper_values": [
+            206,
+            42,
+            222,
+            186
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 324,
+          "before": 12452,
+          "after": 12128
+        },
+        {
+          "base_y": 0,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            4,
+            68,
+            132,
+            196
+          ],
+          "target_upper_values": [
+            24,
+            96,
+            168,
+            112
+          ],
+          "target_mixed_differences": [
+            64,
+            128,
+            192
+          ],
+          "removed_pairs": 1104,
+          "before": 12128,
+          "after": 11024
+        },
+        {
+          "base_y": 2,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            20,
+            84,
+            148,
+            212
+          ],
+          "target_upper_values": [
+            70,
+            142,
+            214,
+            158
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 428,
+          "before": 11024,
+          "after": 10596
+        },
+        {
+          "base_y": 33,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            268,
+            332,
+            396,
+            460
+          ],
+          "target_upper_values": [
+            15,
+            87,
+            159,
+            103
+          ],
+          "target_mixed_differences": [
+            64,
+            128,
+            192
+          ],
+          "removed_pairs": 692,
+          "before": 10596,
+          "after": 9904
+        },
+        {
+          "base_y": 64,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            516,
+            580,
+            644,
+            708
+          ],
+          "target_upper_values": [
+            88,
+            160,
+            232,
+            176
+          ],
+          "target_mixed_differences": [
+            64,
+            128,
+            192
+          ],
+          "removed_pairs": 184,
+          "before": 9904,
+          "after": 9720
+        },
+        {
+          "base_y": 66,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            532,
+            596,
+            660,
+            724
+          ],
+          "target_upper_values": [
+            134,
+            206,
+            22,
+            222
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 36,
+          "before": 9720,
+          "after": 9684
+        },
+        {
+          "base_y": 97,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            780,
+            844,
+            908,
+            972
+          ],
+          "target_upper_values": [
+            79,
+            151,
+            223,
+            167
+          ],
+          "target_mixed_differences": [
+            64,
+            128,
+            192
+          ],
+          "removed_pairs": 204,
+          "before": 9684,
+          "after": 9480
+        },
+        {
+          "base_y": 16,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            132,
+            196,
+            388,
+            452
+          ],
+          "target_upper_values": [
+            168,
+            112,
+            72,
+            144
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1212,
+          "before": 9480,
+          "after": 8268
+        },
+        {
+          "base_y": 18,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            148,
+            212,
+            404,
+            468
+          ],
+          "target_upper_values": [
+            214,
+            158,
+            118,
+            190
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 480,
+          "before": 8268,
+          "after": 7788
+        },
+        {
+          "base_y": 80,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            644,
+            708,
+            900,
+            964
+          ],
+          "target_upper_values": [
+            232,
+            176,
+            136,
+            208
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 68,
+          "before": 7788,
+          "after": 7720
+        },
+        {
+          "base_y": 82,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            660,
+            724,
+            916,
+            980
+          ],
+          "target_upper_values": [
+            22,
+            222,
+            182,
+            254
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 72,
+          "before": 7720,
+          "after": 7648
+        },
+        {
+          "base_y": 8,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            68,
+            196,
+            324,
+            452
+          ],
+          "target_upper_values": [
+            96,
+            112,
+            0,
+            144
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 360,
+          "before": 7648,
+          "after": 7288
+        },
+        {
+          "base_y": 10,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            84,
+            212,
+            340,
+            468
+          ],
+          "target_upper_values": [
+            142,
+            158,
+            46,
+            190
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 232,
+          "before": 7288,
+          "after": 7056
+        },
+        {
+          "base_y": 72,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            580,
+            708,
+            836,
+            964
+          ],
+          "target_upper_values": [
+            160,
+            176,
+            64,
+            208
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 128,
+          "before": 7056,
+          "after": 6928
+        },
+        {
+          "base_y": 74,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            596,
+            724,
+            852,
+            980
+          ],
+          "target_upper_values": [
+            206,
+            222,
+            110,
+            254
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 112,
+          "before": 6928,
+          "after": 6816
+        }
+      ],
+      "positive_pair_retained": null,
+      "result": "necessary_pairs_survive",
+      "seconds": 0.024,
+      "new_executable": false,
+      "scope": "First t=A*x+B, arbitrary XOR/AND/OR prefix over x,t and constants, then arbitrary integer-polynomial continuation. Only universally bad output-key rectangles are used; surviving pairs are necessary conditions, not candidates.",
+      "joint_remaining_full_pairs": 249152
+    },
+    {
+      "width": 11,
+      "input_stride": 8,
+      "upper_width": 8,
+      "residue": 5,
+      "control": false,
+      "input_key": 3345072700,
+      "total_affine_pairs": 65536,
+      "remaining_affine_pairs": 65536,
+      "rectangles_tested": 1408,
+      "universally_bad_rectangles": 0,
+      "witnesses": [],
+      "positive_pair_retained": null,
+      "result": "necessary_pairs_survive",
+      "seconds": 0.02,
+      "new_executable": false,
+      "scope": "First t=A*x+B, arbitrary XOR/AND/OR prefix over x,t and constants, then arbitrary integer-polynomial continuation. Only universally bad output-key rectangles are used; surviving pairs are necessary conditions, not candidates.",
+      "joint_remaining_full_pairs": 249152
+    },
+    {
+      "width": 11,
+      "input_stride": 8,
+      "upper_width": 8,
+      "residue": 6,
+      "control": false,
+      "input_key": 3345072700,
+      "total_affine_pairs": 65536,
+      "remaining_affine_pairs": 5224,
+      "rectangles_tested": 1408,
+      "universally_bad_rectangles": 88,
+      "witnesses": [
+        {
+          "base_y": 16,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            134,
+            166,
+            198,
+            230
+          ],
+          "target_upper_values": [
+            242,
+            206,
+            58,
+            150
+          ],
+          "target_mixed_differences": [
+            96,
+            128,
+            160
+          ],
+          "removed_pairs": 12096,
+          "before": 65536,
+          "after": 53440
+        },
+        {
+          "base_y": 49,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            398,
+            430,
+            462,
+            494
+          ],
+          "target_upper_values": [
+            233,
+            197,
+            49,
+            141
+          ],
+          "target_mixed_differences": [
+            96,
+            128,
+            160
+          ],
+          "removed_pairs": 5568,
+          "before": 53440,
+          "after": 47872
+        },
+        {
+          "base_y": 80,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            646,
+            678,
+            710,
+            742
+          ],
+          "target_upper_values": [
+            50,
+            14,
+            122,
+            214
+          ],
+          "target_mixed_differences": [
+            96,
+            128,
+            160
+          ],
+          "removed_pairs": 1312,
+          "before": 47872,
+          "after": 46560
+        },
+        {
+          "base_y": 113,
+          "h_y": 4,
+          "k_y": 8,
+          "original_x_corners": [
+            910,
+            942,
+            974,
+            1006
+          ],
+          "target_upper_values": [
+            41,
+            5,
+            113,
+            205
+          ],
+          "target_mixed_differences": [
+            96,
+            128,
+            160
+          ],
+          "removed_pairs": 896,
+          "before": 46560,
+          "after": 45664
+        },
+        {
+          "base_y": 33,
+          "h_y": 2,
+          "k_y": 16,
+          "original_x_corners": [
+            270,
+            286,
+            398,
+            414
+          ],
+          "target_upper_values": [
+            217,
+            7,
+            233,
+            151
+          ],
+          "target_mixed_differences": [
+            64,
+            128,
+            192
+          ],
+          "removed_pairs": 7712,
+          "before": 45664,
+          "after": 37952
+        },
+        {
+          "base_y": 97,
+          "h_y": 2,
+          "k_y": 16,
+          "original_x_corners": [
+            782,
+            798,
+            910,
+            926
+          ],
+          "target_upper_values": [
+            25,
+            71,
+            41,
+            215
+          ],
+          "target_mixed_differences": [
+            64,
+            128,
+            192
+          ],
+          "removed_pairs": 752,
+          "before": 37952,
+          "after": 37200
+        },
+        {
+          "base_y": 0,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            6,
+            14,
+            262,
+            270
+          ],
+          "target_upper_values": [
+            226,
+            185,
+            130,
+            217
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 8852,
+          "before": 37200,
+          "after": 28348
+        },
+        {
+          "base_y": 12,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            102,
+            110,
+            358,
+            366
+          ],
+          "target_upper_values": [
+            134,
+            93,
+            38,
+            125
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 4344,
+          "before": 28348,
+          "after": 24004
+        },
+        {
+          "base_y": 26,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            214,
+            222,
+            470,
+            478
+          ],
+          "target_upper_values": [
+            104,
+            191,
+            136,
+            95
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 3020,
+          "before": 24004,
+          "after": 20984
+        },
+        {
+          "base_y": 30,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            246,
+            254,
+            502,
+            510
+          ],
+          "target_upper_values": [
+            196,
+            27,
+            228,
+            187
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 2136,
+          "before": 20984,
+          "after": 18848
+        },
+        {
+          "base_y": 64,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            518,
+            526,
+            774,
+            782
+          ],
+          "target_upper_values": [
+            34,
+            249,
+            194,
+            25
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 528,
+          "before": 18848,
+          "after": 18320
+        },
+        {
+          "base_y": 76,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            614,
+            622,
+            870,
+            878
+          ],
+          "target_upper_values": [
+            198,
+            157,
+            102,
+            189
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 324,
+          "before": 18320,
+          "after": 17996
+        },
+        {
+          "base_y": 90,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            726,
+            734,
+            982,
+            990
+          ],
+          "target_upper_values": [
+            168,
+            255,
+            200,
+            159
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 512,
+          "before": 17996,
+          "after": 17484
+        },
+        {
+          "base_y": 94,
+          "h_y": 1,
+          "k_y": 32,
+          "original_x_corners": [
+            758,
+            766,
+            1014,
+            1022
+          ],
+          "target_upper_values": [
+            4,
+            91,
+            36,
+            251
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 348,
+          "before": 17484,
+          "after": 17136
+        },
+        {
+          "base_y": 2,
+          "h_y": 4,
+          "k_y": 16,
+          "original_x_corners": [
+            22,
+            54,
+            150,
+            182
+          ],
+          "target_upper_values": [
+            16,
+            108,
+            32,
+            252
+          ],
+          "target_mixed_differences": [
+            64,
+            128,
+            192
+          ],
+          "removed_pairs": 2212,
+          "before": 17136,
+          "after": 14924
+        },
+        {
+          "base_y": 66,
+          "h_y": 4,
+          "k_y": 16,
+          "original_x_corners": [
+            534,
+            566,
+            662,
+            694
+          ],
+          "target_upper_values": [
+            80,
+            172,
+            96,
+            60
+          ],
+          "target_mixed_differences": [
+            64,
+            128,
+            192
+          ],
+          "removed_pairs": 308,
+          "before": 14924,
+          "after": 14616
+        },
+        {
+          "base_y": 35,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            286,
+            350,
+            414,
+            478
+          ],
+          "target_upper_values": [
+            7,
+            79,
+            151,
+            95
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1684,
+          "before": 14616,
+          "after": 12932
+        },
+        {
+          "base_y": 37,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            302,
+            366,
+            430,
+            494
+          ],
+          "target_upper_values": [
+            53,
+            125,
+            197,
+            141
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 956,
+          "before": 12932,
+          "after": 11976
+        },
+        {
+          "base_y": 39,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            318,
+            382,
+            446,
+            510
+          ],
+          "target_upper_values": [
+            99,
+            171,
+            243,
+            187
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 664,
+          "before": 11976,
+          "after": 11312
+        },
+        {
+          "base_y": 99,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            798,
+            862,
+            926,
+            990
+          ],
+          "target_upper_values": [
+            71,
+            143,
+            215,
+            159
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 100,
+          "before": 11312,
+          "after": 11212
+        },
+        {
+          "base_y": 101,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            814,
+            878,
+            942,
+            1006
+          ],
+          "target_upper_values": [
+            117,
+            189,
+            5,
+            205
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 132,
+          "before": 11212,
+          "after": 11080
+        },
+        {
+          "base_y": 103,
+          "h_y": 8,
+          "k_y": 16,
+          "original_x_corners": [
+            830,
+            894,
+            958,
+            1022
+          ],
+          "target_upper_values": [
+            163,
+            235,
+            51,
+            251
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 120,
+          "before": 11080,
+          "after": 10960
+        },
+        {
+          "base_y": 18,
+          "h_y": 4,
+          "k_y": 32,
+          "original_x_corners": [
+            150,
+            182,
+            406,
+            438
+          ],
+          "target_upper_values": [
+            32,
+            252,
+            64,
+            156
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 1144,
+          "before": 10960,
+          "after": 9816
+        },
+        {
+          "base_y": 82,
+          "h_y": 4,
+          "k_y": 32,
+          "original_x_corners": [
+            662,
+            694,
+            918,
+            950
+          ],
+          "target_upper_values": [
+            96,
+            60,
+            128,
+            220
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 240,
+          "before": 9816,
+          "after": 9576
+        },
+        {
+          "base_y": 19,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            158,
+            222,
+            414,
+            478
+          ],
+          "target_upper_values": [
+            119,
+            191,
+            151,
+            95
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 984,
+          "before": 9576,
+          "after": 8592
+        },
+        {
+          "base_y": 20,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            166,
+            230,
+            422,
+            486
+          ],
+          "target_upper_values": [
+            206,
+            150,
+            110,
+            182
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 820,
+          "before": 8592,
+          "after": 7772
+        },
+        {
+          "base_y": 21,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            174,
+            238,
+            430,
+            494
+          ],
+          "target_upper_values": [
+            165,
+            237,
+            197,
+            141
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 660,
+          "before": 7772,
+          "after": 7112
+        },
+        {
+          "base_y": 23,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            190,
+            254,
+            446,
+            510
+          ],
+          "target_upper_values": [
+            211,
+            27,
+            243,
+            187
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 296,
+          "before": 7112,
+          "after": 6816
+        },
+        {
+          "base_y": 83,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            670,
+            734,
+            926,
+            990
+          ],
+          "target_upper_values": [
+            183,
+            255,
+            215,
+            159
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 24,
+          "before": 6816,
+          "after": 6792
+        },
+        {
+          "base_y": 84,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            678,
+            742,
+            934,
+            998
+          ],
+          "target_upper_values": [
+            14,
+            214,
+            174,
+            246
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 76,
+          "before": 6792,
+          "after": 6716
+        },
+        {
+          "base_y": 85,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            686,
+            750,
+            942,
+            1006
+          ],
+          "target_upper_values": [
+            229,
+            45,
+            5,
+            205
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 76,
+          "before": 6716,
+          "after": 6640
+        },
+        {
+          "base_y": 87,
+          "h_y": 8,
+          "k_y": 32,
+          "original_x_corners": [
+            702,
+            766,
+            958,
+            1022
+          ],
+          "target_upper_values": [
+            19,
+            91,
+            51,
+            251
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 24,
+          "before": 6640,
+          "after": 6616
+        },
+        {
+          "base_y": 0,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            6,
+            134,
+            262,
+            390
+          ],
+          "target_upper_values": [
+            226,
+            242,
+            130,
+            18
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 340,
+          "before": 6616,
+          "after": 6276
+        },
+        {
+          "base_y": 8,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            70,
+            198,
+            326,
+            454
+          ],
+          "target_upper_values": [
+            42,
+            58,
+            202,
+            90
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 416,
+          "before": 6276,
+          "after": 5860
+        },
+        {
+          "base_y": 9,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            78,
+            206,
+            334,
+            462
+          ],
+          "target_upper_values": [
+            1,
+            145,
+            33,
+            49
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 164,
+          "before": 5860,
+          "after": 5696
+        },
+        {
+          "base_y": 11,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            94,
+            222,
+            350,
+            478
+          ],
+          "target_upper_values": [
+            47,
+            191,
+            79,
+            95
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 156,
+          "before": 5696,
+          "after": 5540
+        },
+        {
+          "base_y": 15,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            126,
+            254,
+            382,
+            510
+          ],
+          "target_upper_values": [
+            139,
+            27,
+            171,
+            187
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 48,
+          "before": 5540,
+          "after": 5492
+        },
+        {
+          "base_y": 64,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            518,
+            646,
+            774,
+            902
+          ],
+          "target_upper_values": [
+            34,
+            50,
+            194,
+            82
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 52,
+          "before": 5492,
+          "after": 5440
+        },
+        {
+          "base_y": 72,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            582,
+            710,
+            838,
+            966
+          ],
+          "target_upper_values": [
+            106,
+            122,
+            10,
+            154
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 120,
+          "before": 5440,
+          "after": 5320
+        },
+        {
+          "base_y": 73,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            590,
+            718,
+            846,
+            974
+          ],
+          "target_upper_values": [
+            65,
+            209,
+            97,
+            113
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 56,
+          "before": 5320,
+          "after": 5264
+        },
+        {
+          "base_y": 75,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            606,
+            734,
+            862,
+            990
+          ],
+          "target_upper_values": [
+            111,
+            255,
+            143,
+            159
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 24,
+          "before": 5264,
+          "after": 5240
+        },
+        {
+          "base_y": 79,
+          "h_y": 16,
+          "k_y": 32,
+          "original_x_corners": [
+            638,
+            766,
+            894,
+            1022
+          ],
+          "target_upper_values": [
+            203,
+            91,
+            235,
+            251
+          ],
+          "target_mixed_differences": [
+            128
+          ],
+          "removed_pairs": 16,
+          "before": 5240,
+          "after": 5224
+        }
+      ],
+      "positive_pair_retained": null,
+      "result": "necessary_pairs_survive",
+      "seconds": 0.023,
+      "new_executable": false,
+      "scope": "First t=A*x+B, arbitrary XOR/AND/OR prefix over x,t and constants, then arbitrary integer-polynomial continuation. Only universally bad output-key rectangles are used; surviving pairs are necessary conditions, not candidates.",
+      "joint_remaining_full_pairs": 219008
+    },
+    {
+      "width": 11,
+      "input_stride": 8,
+      "upper_width": 8,
+      "residue": 7,
+      "control": false,
+      "input_key": 3345072700,
+      "total_affine_pairs": 65536,
+      "remaining_affine_pairs": 65536,
+      "rectangles_tested": 1408,
+      "universally_bad_rectangles": 0,
+      "witnesses": [],
+      "positive_pair_retained": null,
+      "result": "necessary_pairs_survive",
+      "seconds": 0.024,
+      "new_executable": false,
+      "scope": "First t=A*x+B, arbitrary XOR/AND/OR prefix over x,t and constants, then arbitrary integer-polynomial continuation. Only universally bad output-key rectangles are used; surviving pairs are necessary conditions, not candidates.",
+      "joint_remaining_full_pairs": 219008
+    }
+  ],
+  "positive_pair_retained": null,
+  "result": "necessary_pairs_survive",
+  "new_executable": false,
+  "scope": "First t=A*x+B, arbitrary XOR/AND/OR prefix over x,t and constants, then arbitrary integer-polynomial continuation. Only universally bad output-key rectangles are used; surviving pairs are necessary conditions, not candidates.",
+  "pair_membership": {
+    "coefficient_bits": 11,
+    "bitorder": "little",
+    "pairs": 219008,
+    "sha256": "90661d8307304f847d8a42026dbeb2a89eabe162694d9c73eac7447fbc048e4d",
+    "zlib_base64": "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"
+  }
+}

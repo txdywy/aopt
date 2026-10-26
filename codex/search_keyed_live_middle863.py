@@ -72,7 +72,8 @@ def reference(a,width,control=False):
 
 def search(order,width=11,seconds=20,check_ms=18000,*,pin_original=False,
            control=False,fixed_key=None,first_source=None,middle_source=None,
-           last_operands=None):
+           last_operands=None,first_operands=None,control_program=None,
+           pin_control=False):
     if not 1 <= len(order) <= 4 or any(op not in OPS for op in order):
         raise ValueError('one to four unshifted MAD/XOR/AND/OR instructions required')
     if width not in (*range(2,17),32) or seconds<=0 or check_ms<=0:
@@ -83,12 +84,30 @@ def search(order,width=11,seconds=20,check_ms=18000,*,pin_original=False,
         raise ValueError('invalid first source')
     if first_source and order[0]!='mad':
         raise ValueError('first-source restriction requires first MAD')
+    if first_operands is not None:
+        if first_source is not None or order[0]!='mad':
+            raise ValueError('fixed first operands require first MAD and no first source')
+        if len(first_operands)!=3 or any(i not in range(5)for i in first_operands):
+            raise ValueError('first operands must be three indices in 0..4')
+        if first_operands[0]>first_operands[1]:
+            raise ValueError('first multiplicands must be in canonical sorted order')
     if middle_source not in (None,'a','prior','keyed','key'):
         raise ValueError('invalid middle source')
     if (middle_source or last_operands) and tuple(order) not in tuple(('mad',op,'mad')for op in ('^','&','|')):
         raise ValueError('middle/last restrictions require MAD,bitwise,MAD')
     if last_operands is not None and (len(last_operands)!=3 or any(i not in range(7)for i in last_operands)):
         raise ValueError('last operands must be three indices in 0..6')
+    if control_program is not None:
+        if control or pin_original or len(control_program)!=len(order):
+            raise ValueError('custom positive control must match the order and cannot mix controls')
+        for i,(op,row)in enumerate(zip(order,control_program)):
+            if (row['op']!=op or len(row['constants'])!=2 or len(row['operands'])!=3
+                    or any(v not in range(i+5)for v in row['operands'])
+                    or row['operands'][0]>row['operands'][1]
+                    or (op!='mad'and row['operands'][2]!=0)):
+                raise ValueError('invalid custom positive-control program')
+    if pin_control and control_program is None:
+        raise ValueError('pin control requires a custom positive-control program')
     mask = (1 << width)-1
     key,outkey = z3.BitVecs('keyed_live_input_key keyed_live_output_key',width)
     solver = z3.SolverFor('QF_BV')
@@ -104,6 +123,8 @@ def search(order,width=11,seconds=20,check_ms=18000,*,pin_original=False,
     if first_source:
         indices = (('a','prior','keyed').index(first_source),3,4)
         solver.add(*(v==n for v,n in zip(spec[0][1:4],indices)))
+    if first_operands is not None:
+        solver.add(*(v==n for v,n in zip(spec[0][1:4],first_operands)))
     if middle_source:
         other = ('a','prior','keyed','key').index(middle_source)
         if other==3:other=4
@@ -117,12 +138,27 @@ def search(order,width=11,seconds=20,check_ms=18000,*,pin_original=False,
         for row,witness in zip(spec,original_program()):
             solver.add(*(v==n for v,n in zip(row[1:4],witness['operands'])),
                        *(v==(n&mask)for v,n in zip(row[4:],witness['constants'])))
+    if pin_control:
+        solver.add(key==42&mask,outkey==0)
+        for row,witness in zip(spec,control_program):
+            solver.add(*(v==n for v,n in zip(row[1:4],witness['operands'])),
+                       *(v==(n&mask)for v,n in zip(row[4:],witness['constants'])))
+
+    def target(a):
+        if control_program is not None:
+            return (execute(a,42,control_program,width)if isinstance(a,int)
+                    else expression(a,42,control_program,width))
+        return reference(a,width,control)
 
     def candidate(a):
         values = live_values(a,key,width)
-        for op,x,y,z,k0,k1 in spec:
+        for i,(op,x,y,z,k0,k1)in enumerate(spec):
             pool=values+[k0,k1]
-            u,v,w = choose(x,pool),choose(y,pool),choose(z,pool)
+            fixed = (first_operands if i==0 else last_operands if i==2 else None)
+            if fixed is not None:
+                u,v,w = (pool[j]for j in fixed)
+            else:
+                u,v,w = choose(x,pool),choose(y,pool),choose(z,pool)
             values.append(u*v+w if op=='mad'else u^v if op=='^'else u&v if op=='&'else u|v)
         return z3.simplify(values[-1])
 
@@ -132,7 +168,7 @@ def search(order,width=11,seconds=20,check_ms=18000,*,pin_original=False,
 
     def constrain(v):
         a=z3.BitVecVal(v,width)
-        solver.add(candidate(a)==(reference(a,width,control)^outkey))
+        solver.add(candidate(a)==(target(a)^outkey))
 
     for v in samples:constrain(v)
     checks = list(range(1 << width))if width<32 else list(dict.fromkeys(samples+
@@ -140,9 +176,12 @@ def search(order,width=11,seconds=20,check_ms=18000,*,pin_original=False,
     started=time.monotonic()
     report=dict(sequence=list(order),width=width,seconds_limit=seconds,check_ms=check_ms,
         live_pool=['a','prior=(a-C0)/4097','keyed=a XOR (a>>19) XOR K'],
-        target='F(a XOR (a>>19) XOR C1) XOR O',arbitrary_keys=fixed_key is None,
+        target=('custom positive-control program at K=42, XOR O'if control_program is not None
+                else 'legacy positive control, XOR O'if control
+                else 'F(a XOR (a>>19) XOR C1) XOR O'),arbitrary_keys=fixed_key is None,
         fixed_key=fixed_key,first_source=first_source,middle_source=middle_source,
-        last_operands=last_operands,initial_samples=samples[:],control=control,
+        last_operands=last_operands,first_operands=first_operands,initial_samples=samples[:],
+        control=control or control_program is not None,control_program=control_program,pin_control=pin_control,
         pin_original=pin_original,events=[],result='deadline',new_executable=False,
         scope='Reduced widths restrict the full32 pre-shift a to the low domain; '
               'SAT does not imply a full32 identity or a cycle score.')
@@ -159,7 +198,7 @@ def search(order,width=11,seconds=20,check_ms=18000,*,pin_original=False,
         rows=[dict(op=row[0],operands=[model.eval(v,model_completion=True).as_long()for v in row[1:4]],
               constants=[model.eval(v,model_completion=True).as_long()for v in row[4:]])for row in spec]
         report.update(input_key=kv,output_key=ov,program=rows)
-        bad=[a for a in checks if execute(a,kv,rows,width)!=((reference(a,width,control)^ov)&mask)][:8]
+        bad=[a for a in checks if execute(a,kv,rows,width)!=((target(a)^ov)&mask)][:8]
         if bad:
             event['counterexamples']=bad
             for a in bad:
@@ -171,7 +210,7 @@ def search(order,width=11,seconds=20,check_ms=18000,*,pin_original=False,
         a=z3.BitVec('keyed_live_full32_verify',32)
         verify=z3.SolverFor('QF_BV')
         verify.set(timeout=min(check_ms,max(1,int(1000*(seconds-(time.monotonic()-started))))))
-        verify.add(expression(a,kv,rows,width)!=(reference(a,width,control)^ov))
+        verify.add(expression(a,kv,rows,width)!=(target(a)^ov))
         status=verify.check();event['full32_verification']=str(status)
         if status==z3.unsat:
             report['result']='proved_equivalent_full32';break
@@ -195,13 +234,15 @@ def main():
     ap.add_argument('--control',action='store_true')
     ap.add_argument('--fixed-key',type=lambda x:int(x,0))
     ap.add_argument('--first-source',choices=('a','prior','keyed'))
+    ap.add_argument('--first-operands',type=lambda x:tuple(map(int,x.split(','))))
     ap.add_argument('--middle-source',choices=('a','prior','keyed','key'))
     ap.add_argument('--last-operands',type=lambda x:tuple(map(int,x.split(','))))
     ap.add_argument('--output',type=Path,required=True)
     args=ap.parse_args()
     report=search(args.sequence.split(','),args.width,args.seconds,args.check_ms,
         pin_original=args.pin_original,control=args.control,fixed_key=args.fixed_key,
-        first_source=args.first_source,middle_source=args.middle_source,last_operands=args.last_operands)
+        first_source=args.first_source,middle_source=args.middle_source,last_operands=args.last_operands,
+        first_operands=args.first_operands)
     args.output.write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({k:report.get(k)for k in('sequence','width','result','seconds','input_key','output_key')}))
 

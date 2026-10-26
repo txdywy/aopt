@@ -45,7 +45,8 @@ def expression(x, rows, width):
 
 def search(order, width=11, seconds=15, check_ms=12000, *, pin_original=False,
            first_form=None, middle_source=None, tail_form=None, last_operands=None,
-           second_form=None, control_program=None,fixed_input_key=None,fixed_output_key=None):
+           second_form=None, control_program=None,fixed_input_key=None,fixed_output_key=None,
+           fixed_operands=None):
     if not 1 <= len(order) <= 4 or any(op not in OPS for op in order):
         raise ValueError('one to four MAD/XOR/AND/OR instructions required')
     if width not in (*range(1, 13), 32) or seconds <= 0 or check_ms <= 0:
@@ -64,14 +65,21 @@ def search(order, width=11, seconds=15, check_ms=12000, *, pin_original=False,
         raise ValueError('last_operands requires three indices in 0..4')
     middle_orders = tuple(('mad',op,'mad') for op in ('^','&','|'))
     final_orders = tuple(('mad','mad',op) for op in ('^','&','|'))
-    if first_form and tuple(order) not in middle_orders+final_orders:
-        raise ValueError('first MAD partitions require two MADs and one bitwise operation')
+    if first_form and not (tuple(order) in middle_orders+final_orders
+                           or len(order)==4 and order[0]=='mad'):
+        raise ValueError('first MAD partitions require a supported three-op order or four initial-MAD ops')
     if (middle_source or tail_form or last_operands) and tuple(order) not in middle_orders:
         raise ValueError('middle partitions require MAD,bitwise,MAD')
     if second_form not in (None,'x_square','x_first','first_square','scale_input','scale_first'):
         raise ValueError('invalid second MAD structure')
     if second_form and tuple(order) not in final_orders:
         raise ValueError('second MAD partitions require MAD,MAD,bitwise')
+    fixed_operands={}if fixed_operands is None else dict(fixed_operands)
+    for i,roles in fixed_operands.items():
+        if (i not in range(len(order)) or len(roles)!=3
+                or any(v not in range(i+3)for v in roles)
+                or roles[0]>roles[1]or (order[i]!='mad'and roles[2]!=0)):
+            raise ValueError('fixed operands must be valid canonical instruction roles')
     mask = (1 << width)-1
     ik, ok = z3.BitVecs('equivalent_input_key equivalent_output_key', width)
     solver = z3.SolverFor('QF_BV')
@@ -102,6 +110,8 @@ def search(order, width=11, seconds=15, check_ms=12000, *, pin_original=False,
     if first_form:
         indices = {'affine':(0,1,2),'square_const':(0,0,1),'square_x':(0,0,0)}[first_form]
         solver.add(*(v == n for v,n in zip(spec[0][1:4],indices)))
+    for i,roles in fixed_operands.items():
+        solver.add(*(v==n for v,n in zip(spec[i][1:4],roles)))
     if middle_source:
         indices = (0,1) if middle_source == 'input' else (1,2)
         solver.add(*(v == n for v,n in zip(spec[1][1:3],indices)))
@@ -141,9 +151,12 @@ def search(order, width=11, seconds=15, check_ms=12000, *, pin_original=False,
 
     def candidate(x):
         values = [x]
-        for op,a,b,c,k0,k1 in spec:
+        for i,(op,a,b,c,k0,k1)in enumerate(spec):
             pool = values+[k0,k1]
-            av,bv,cv = choose(a,pool),choose(b,pool),choose(c,pool)
+            if i in fixed_operands:
+                av,bv,cv = (pool[j]for j in fixed_operands[i])
+            else:
+                av,bv,cv = choose(a,pool),choose(b,pool),choose(c,pool)
             values.append(av*bv+cv if op == 'mad' else av ^ bv if op == '^'
                           else av & bv if op == '&' else av | bv)
         return z3.simplify(values[-1])
@@ -170,6 +183,7 @@ def search(order, width=11, seconds=15, check_ms=12000, *, pin_original=False,
         initial_samples=points[:], pin_original=pin_original, events=[],
         first_form=first_form, middle_source=middle_source, tail_form=tail_form,
         last_operands=last_operands,
+        fixed_operands=fixed_operands,
         sole_affine_input_normalization=sole_affine_input,
         second_form=second_form,
         control_program=control_program,

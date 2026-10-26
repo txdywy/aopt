@@ -1,0 +1,201 @@
+{
+  "executable_best_cycles": 864,
+  "new_executable": false,
+  "width": 11,
+  "input_key": 3345072700,
+  "free_output_key": true,
+  "order_statuses": [
+    {
+      "sequence": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "new live MAD/XOR/MAD proof after x XOR K; extra prior input is unused"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "new complete live MAD/MAD/XOR proof after x XOR K; unused prior input only enlarges the candidate set"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "status": "open",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "new degree-four XOR degree-two relaxation excludes the affine-first case; prior square-first exclusions remain valid"
+    }
+  ],
+  "closed_orders": 6,
+  "open_orders": 4,
+  "remaining_orders": [
+    [
+      "mad",
+      "^",
+      "^",
+      "mad"
+    ],
+    [
+      "mad",
+      "^",
+      "mad",
+      "^"
+    ],
+    [
+      "mad",
+      "^",
+      "mad",
+      "mad"
+    ],
+    [
+      "mad",
+      "mad",
+      "^",
+      "mad"
+    ]
+  ],
+  "new_family_exclusions": [
+    {
+      "file": "head_polynomial863_polynomial_xor.json",
+      "family": "polynomial_xor",
+      "input_key": 3345072700,
+      "output_key": null,
+      "result": "relaxed_family_unsat"
+    },
+    {
+      "file": "head_polynomial863_scaled_quadratic_xor.json",
+      "family": "scaled_quadratic_xor",
+      "input_key": 3345072700,
+      "output_key": null,
+      "result": "relaxed_family_unsat"
+    },
+    {
+      "file": "head_polynomial863_c5_polynomial_xor.json",
+      "family": "polynomial_xor",
+      "input_key": 0,
+      "output_key": 3042638419,
+      "result": "relaxed_family_unsat"
+    },
+    {
+      "file": "head_polynomial863_c5_scaled_quadratic_xor.json",
+      "family": "scaled_quadratic_xor",
+      "input_key": 0,
+      "output_key": 3042638419,
+      "result": "relaxed_family_unsat"
+    },
+    {
+      "file": "head_polynomial863_c5_bypass.json",
+      "family": "quadratic_xor_bypass",
+      "input_key": 0,
+      "output_key": 3042638419,
+      "result": "relaxed_family_unsat"
+    },
+    {
+      "file": "head_polynomial863_both_bypass.json",
+      "family": "quadratic_xor_bypass",
+      "input_key": 3345072700,
+      "output_key": 3042638419,
+      "result": "relaxed_family_unsat"
+    }
+  ],
+  "evidence_sha256": {
+    "keyed_live863_outer_audit.json": "1a7b9557f2e4717ba94ff66b464fd54161d4bc2554b823ac02c60f8009efb654",
+    "head_polynomial863_polynomial_xor.json": "b058ff16fdbbfafda673a69e3c17a2c1a5adaf33ca351deea85739225f1e975e",
+    "head_polynomial863_scaled_quadratic_xor.json": "bbb1e78aa49cd3d9d820e9142a1e2b3c4f35027afb0b91626d10c8f6efd08acd",
+    "head_polynomial863_c5_polynomial_xor.json": "d941dacbed7942101ffde8990df60072e6770e3a7563210527d15ec3ad6e62cc",
+    "head_polynomial863_c5_scaled_quadratic_xor.json": "a1c115fe70cddf51c8f4135b236fc271ed436f21b507dc1c2eb2f4f9d62a9dd8",
+    "head_polynomial863_c5_bypass.json": "c1442e69bb6c35759dbec59551776d78b6a6e25e5705bee38c6c74b7204fb44a",
+    "head_polynomial863_both_bypass.json": "a9d35e828b79708c3d64981836bb72dcf1569749a6c2c2b97778d95ad651f63f"
+  },
+  "previous_evidence_sha256": {
+    "head_nonlinear863_first_forms.json": "d7ccee6a4b052f05779e4ae1e8fcda7073a2938bcd66458816fb6a237426ebe1",
+    "head_nonlinear863_second_roles.json": "6b24cf9803c7fc6d2598467c37ed9b3bb02145f9d6010a64b3c8a1af16dc027e",
+    "head_nonlinear863_square_certificate.json": "225d96c01ff3ec286b85387ad12c7fa7746a07bafa806d13bbb4b864731d97d0",
+    "keyed_live863_nonlinear_audit.json": "758eef045456ab1b91ecffc63a97725c98cffecad6517188e3dd089c1cab36a9",
+    "keyed_live863_rectangles.json": "d9c0cd939f167d38711faf35174762325752b6feeb44002fa874fabc079014c4"
+  },
+  "scope": "One input, arbitrary constants and output XOR key; four instructions with three MAD/one XOR or two MAD/two XOR. Only listed exclusions are proved.",
+  "partial_MM_X_M": "With affine first MAD, constant scaling/offset of the XOR is excluded by scaled_quadratic_xor. Runtime multipliers and arbitrary polynomial bypass remain outside that exclusion.",
+  "open_relaxation": "(affine XOR quadratic)+degree-four polynomial with free output XOR remains UNKNOWN in the direct, interpolated, and narrower-AND formulations.",
+  "remaining": "Four four-op orders remain open, along with other opcodes/live inputs, whole-hash transformations and record layouts. No global optimum claim."
+}

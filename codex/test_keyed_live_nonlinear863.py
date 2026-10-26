@@ -52,5 +52,37 @@ class NonlinearLiveTests(unittest.TestCase):
                      dict(first_operands=(0,3,2),first_source='a'),dict(pin_control=True)):
             with self.assertRaises(ValueError):search(('mad','^','mad'),5,**opts)
 
+    def test_outer_xor_role_has_full32_and_automatic_controls(self):
+        for _,first in first_forms():
+            rows=[dict(op='mad',operands=list(first),constants=[5,7]),
+                  dict(op='mad',operands=[3,4,5],constants=[9,13]),
+                  dict(op='^',operands=[3,4,0],constants=[0,0])]
+            report=search(('mad','mad','^'),32,5,4500,first_operands=first,
+                last_operands=(3,4,0),control_program=rows,pin_control=True)
+            self.assertEqual('proved_equivalent_full32',report['result'],report)
+            for a in(0,1,0xffffffff,0x80001):
+                self.assertEqual(frozen(a,42,rows),execute(a,42,rows,32))
+        rows=[dict(op='mad',operands=[0,3,2],constants=[5,7]),
+              dict(op='mad',operands=[3,4,5],constants=[9,13]),
+              dict(op='^',operands=[3,4,0],constants=[0,0])]
+        report=search(('mad','mad','^'),5,10,9000,first_operands=(0,3,2),
+                      last_operands=(3,4,0),control_program=rows)
+        self.assertEqual('equivalent_on_restricted_low_domain',report['result'],report)
+        self.assertEqual(32,report['verified_inputs'])
+        with self.assertRaises(ValueError):
+            search(('mad','mad','^'),5,last_operands=(3,4,1))
+
+    def test_fixed_second_product_preserves_prior_high_word(self):
+        rows=[dict(op='mad',operands=[2,3,4],constants=[5,7]),
+              dict(op='mad',operands=[0,1,4],constants=[13,0]),
+              dict(op='^',operands=[3,4,0],constants=[0,0])]
+        report=search(('mad','mad','^'),32,5,4500,first_source='keyed',
+            second_operands=(0,1,4),last_operands=(3,4,0),control_program=rows,pin_control=True)
+        self.assertEqual('proved_equivalent_full32',report['result'],report)
+        for a in(0,1,0x7ffff,0x80000,0xffffffff):
+            self.assertEqual(frozen(a,42,rows),execute(a,42,rows,32))
+        with self.assertRaises(ValueError):
+            search(('mad','^','mad'),5,second_operands=(0,1,4))
+
 
 if __name__=='__main__':unittest.main()

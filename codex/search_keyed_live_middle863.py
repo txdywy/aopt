@@ -73,7 +73,7 @@ def reference(a,width,control=False):
 def search(order,width=11,seconds=20,check_ms=18000,*,pin_original=False,
            control=False,fixed_key=None,first_source=None,middle_source=None,
            last_operands=None,first_operands=None,control_program=None,
-           pin_control=False):
+           pin_control=False,second_operands=None):
     if not 1 <= len(order) <= 4 or any(op not in OPS for op in order):
         raise ValueError('one to four unshifted MAD/XOR/AND/OR instructions required')
     if width not in (*range(2,17),32) or seconds<=0 or check_ms<=0:
@@ -93,10 +93,15 @@ def search(order,width=11,seconds=20,check_ms=18000,*,pin_original=False,
             raise ValueError('first multiplicands must be in canonical sorted order')
     if middle_source not in (None,'a','prior','keyed','key'):
         raise ValueError('invalid middle source')
-    if (middle_source or last_operands) and tuple(order) not in tuple(('mad',op,'mad')for op in ('^','&','|')):
-        raise ValueError('middle/last restrictions require MAD,bitwise,MAD')
+    if middle_source and tuple(order) not in tuple(('mad',op,'mad')for op in ('^','&','|')):
+        raise ValueError('middle restrictions require MAD,bitwise,MAD')
+    if last_operands is not None and len(order)!=3:
+        raise ValueError('last restrictions require exactly three instructions')
     if last_operands is not None and (len(last_operands)!=3 or any(i not in range(7)for i in last_operands)):
         raise ValueError('last operands must be three indices in 0..6')
+    if last_operands is not None and (last_operands[0]>last_operands[1]
+            or order[-1]!='mad'and last_operands[2]!=0):
+        raise ValueError('last operands must be canonical, with unused binary operand zero')
     if control_program is not None:
         if control or pin_original or len(control_program)!=len(order):
             raise ValueError('custom positive control must match the order and cannot mix controls')
@@ -108,6 +113,12 @@ def search(order,width=11,seconds=20,check_ms=18000,*,pin_original=False,
                 raise ValueError('invalid custom positive-control program')
     if pin_control and control_program is None:
         raise ValueError('pin control requires a custom positive-control program')
+    if second_operands is not None:
+        if len(order)<2 or order[1]!='mad' or middle_source is not None:
+            raise ValueError('fixed second operands require a second MAD and no middle source')
+        if (len(second_operands)!=3 or any(v not in range(6)for v in second_operands)
+                or second_operands[0]>second_operands[1]):
+            raise ValueError('second operands must be three canonical indices in 0..5')
     mask = (1 << width)-1
     key,outkey = z3.BitVecs('keyed_live_input_key keyed_live_output_key',width)
     solver = z3.SolverFor('QF_BV')
@@ -125,6 +136,8 @@ def search(order,width=11,seconds=20,check_ms=18000,*,pin_original=False,
         solver.add(*(v==n for v,n in zip(spec[0][1:4],indices)))
     if first_operands is not None:
         solver.add(*(v==n for v,n in zip(spec[0][1:4],first_operands)))
+    if second_operands is not None:
+        solver.add(*(v==n for v,n in zip(spec[1][1:4],second_operands)))
     if middle_source:
         other = ('a','prior','keyed','key').index(middle_source)
         if other==3:other=4
@@ -154,7 +167,7 @@ def search(order,width=11,seconds=20,check_ms=18000,*,pin_original=False,
         values = live_values(a,key,width)
         for i,(op,x,y,z,k0,k1)in enumerate(spec):
             pool=values+[k0,k1]
-            fixed = (first_operands if i==0 else last_operands if i==2 else None)
+            fixed = (first_operands if i==0 else second_operands if i==1 else last_operands if i==2 else None)
             if fixed is not None:
                 u,v,w = (pool[j]for j in fixed)
             else:
@@ -181,6 +194,7 @@ def search(order,width=11,seconds=20,check_ms=18000,*,pin_original=False,
                 else 'F(a XOR (a>>19) XOR C1) XOR O'),arbitrary_keys=fixed_key is None,
         fixed_key=fixed_key,first_source=first_source,middle_source=middle_source,
         last_operands=last_operands,first_operands=first_operands,initial_samples=samples[:],
+        second_operands=second_operands,
         control=control or control_program is not None,control_program=control_program,pin_control=pin_control,
         pin_original=pin_original,events=[],result='deadline',new_executable=False,
         scope='Reduced widths restrict the full32 pre-shift a to the low domain; '
@@ -235,6 +249,7 @@ def main():
     ap.add_argument('--fixed-key',type=lambda x:int(x,0))
     ap.add_argument('--first-source',choices=('a','prior','keyed'))
     ap.add_argument('--first-operands',type=lambda x:tuple(map(int,x.split(','))))
+    ap.add_argument('--second-operands',type=lambda x:tuple(map(int,x.split(','))))
     ap.add_argument('--middle-source',choices=('a','prior','keyed','key'))
     ap.add_argument('--last-operands',type=lambda x:tuple(map(int,x.split(','))))
     ap.add_argument('--output',type=Path,required=True)
@@ -242,7 +257,7 @@ def main():
     report=search(args.sequence.split(','),args.width,args.seconds,args.check_ms,
         pin_original=args.pin_original,control=args.control,fixed_key=args.fixed_key,
         first_source=args.first_source,middle_source=args.middle_source,last_operands=args.last_operands,
-        first_operands=args.first_operands)
+        first_operands=args.first_operands,second_operands=args.second_operands)
     args.output.write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({k:report.get(k)for k in('sequence','width','result','seconds','input_key','output_key')}))
 

@@ -1,0 +1,152 @@
+[
+  {
+    "config": {},
+    "counts": {
+      "load": 1688,
+      "valu": 6125,
+      "flow": 851,
+      "alu": 2921,
+      "store": 530
+    },
+    "arithmetic_lanes": 51921,
+    "arithmetic_only_cycle_lower_bound": 866,
+    "mandatory_alu": 2905,
+    "mandatory_alu_cycle_bound": 243,
+    "cycle_lower_bound": 866,
+    "new_executable": false,
+    "scope": "Arithmetic work and mandatory-ALU necessary bounds only; no startup/drain or other engine bound needed to exclude 863 in these two graphs.",
+    "stats": {
+      "third_broadcast": 8,
+      "broadcast_copies": 16,
+      "stage": 11,
+      "reused_image_pointer": 23,
+      "small_stages": 1,
+      "early_input_literal": 1,
+      "stride16_pointer_roots": 2,
+      "literal_to_flow": 7,
+      "cheap_coefficient_roots": 2,
+      "rederived_head_roots": 12,
+      "alu_layout_roots": 2,
+      "hash_stage_final": 1,
+      "hash_stage_-60": 1,
+      "hash_stage_-40": 1,
+      "tail_child_transposes": 2,
+      "low_tail_bank": 1,
+      "arithmetic_to_flow": 8,
+      "arithmetic_to_load": 2,
+      "head_flow_literal_exchange": 1,
+      "bootstrap_loads_to_flow": 2,
+      "bootstrap_early_literals": 2,
+      "scalar_leaf_payloads": 256,
+      "additional_leaf_xor_groups": 32,
+      "raw_hash_parallel_restorations": 64,
+      "raw_d8_payload_copies": 256,
+      "raw_d8_restores": 32,
+      "fused_d7_digits": 0,
+      "additional_literal_trades": 0
+    },
+    "alias_obstruction": {
+      "source_tag": [
+        "tree",
+        [
+          63
+        ]
+      ],
+      "source_offsets": [
+        7,
+        6
+      ],
+      "source_difference": -1,
+      "required_record_difference": 1,
+      "result": "direct_raw_alias_has_inconsistent_contiguity"
+    },
+    "serial_control": {
+      "scratch": 1111,
+      "verified": 12115
+    },
+    "serial_control_seeds": 2
+  },
+  {
+    "config": {
+      "full": [
+        "cache0",
+        3042594569,
+        -2,
+        3345072700
+      ],
+      "methods": {
+        "9": "stage",
+        "19": "stage",
+        "3": "third"
+      },
+      "prolog19": 8,
+      "init4097": "flow"
+    },
+    "counts": {
+      "load": 1688,
+      "valu": 5343,
+      "flow": 853,
+      "alu": 9135,
+      "store": 530
+    },
+    "arithmetic_lanes": 51879,
+    "arithmetic_only_cycle_lower_bound": 865,
+    "mandatory_alu": 9119,
+    "mandatory_alu_cycle_bound": 760,
+    "cycle_lower_bound": 865,
+    "new_executable": false,
+    "scope": "Arithmetic work and mandatory-ALU necessary bounds only; no startup/drain or other engine bound needed to exclude 863 in these two graphs.",
+    "stats": {
+      "third_broadcast": 8,
+      "broadcast_copies": 16,
+      "stage": 11,
+      "reused_image_pointer": 23,
+      "small_stages": 1,
+      "early_input_literal": 1,
+      "stride16_pointer_roots": 2,
+      "literal_to_flow": 7,
+      "cheap_coefficient_roots": 2,
+      "rederived_head_roots": 12,
+      "alu_layout_roots": 2,
+      "hash_stage_final": 1,
+      "hash_stage_-60": 1,
+      "hash_stage_-40": 1,
+      "tail_child_transposes": 2,
+      "low_tail_bank": 1,
+      "arithmetic_to_flow": 8,
+      "arithmetic_to_load": 2,
+      "head_flow_literal_exchange": 1,
+      "bootstrap_loads_to_flow": 2,
+      "bootstrap_early_literals": 2,
+      "scalar_leaf_payloads": 256,
+      "additional_leaf_xor_groups": 32,
+      "raw_hash_parallel_restorations": 64,
+      "raw_d8_payload_copies": 256,
+      "raw_d8_restores": 32,
+      "fused_d7_digits": 0,
+      "uniform_stage": 2,
+      "uniform_third": 1,
+      "additional_literal_trades": 0
+    },
+    "alias_obstruction": {
+      "source_tag": [
+        "tree",
+        [
+          63
+        ]
+      ],
+      "source_offsets": [
+        7,
+        6
+      ],
+      "source_difference": -1,
+      "required_record_difference": 1,
+      "result": "direct_raw_alias_has_inconsistent_contiguity"
+    },
+    "serial_control": {
+      "scratch": 1060,
+      "verified": 17549
+    },
+    "serial_control_seeds": 2
+  }
+]

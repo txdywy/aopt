@@ -1,0 +1,205 @@
+{
+  "config": {
+    "full": [
+      "cache0",
+      3042594569,
+      -2
+    ],
+    "chain": [],
+    "staged": [
+      3345072700,
+      19,
+      9,
+      3,
+      2310,
+      2,
+      16,
+      "root"
+    ],
+    "thirds": [],
+    "fused": 1,
+    "trades": 2,
+    "init4097": "load",
+    "head_root": 8,
+    "prolog19": 16,
+    "prolog_c1": 16,
+    "cache_pairs": [
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "layout": {
+    "converted": [
+      {
+        "name": "cache0",
+        "partial": false,
+        "converted_vectors": 32,
+        "scalar_source": 1215
+      },
+      {
+        "name": 3042594569,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 238
+      },
+      {
+        "name": -2,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 75476
+      },
+      {
+        "name": 3345072700,
+        "partial": true,
+        "converted_vectors": 16,
+        "scalar_source": 26
+      }
+    ],
+    "cache_pairs": [
+      {
+        "indices": [
+          3,
+          4
+        ],
+        "vectors": [
+          [
+            1266,
+            75477,
+            75478,
+            75479,
+            75483,
+            75484,
+            75485,
+            75486
+          ],
+          [
+            75487,
+            75488,
+            75489,
+            75490,
+            1275,
+            75480,
+            75481,
+            75482
+          ]
+        ]
+      },
+      {
+        "indices": [
+          5,
+          6
+        ],
+        "vectors": [
+          [
+            1284,
+            75499,
+            75500,
+            75501,
+            75505,
+            75506,
+            75507,
+            75508
+          ],
+          [
+            75509,
+            75510,
+            75511,
+            75512,
+            1293,
+            75502,
+            75503,
+            75504
+          ]
+        ]
+      }
+    ],
+    "head_root_groups": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "prolog19_groups": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "chain": null
+  },
+  "counts": {
+    "load": 1688,
+    "valu": 5820,
+    "flow": 853,
+    "alu": 5051,
+    "store": 546
+  },
+  "arithmetic_lanes": 51611,
+  "mandatory_alu": 5035,
+  "prefix": {
+    "width": 6,
+    "availability_by_cycle": [
+      8,
+      44,
+      68,
+      104,
+      164,
+      246
+    ],
+    "objective_upper_bound": 224,
+    "waste_lower_bound": 136,
+    "scope": "Grant all arithmetic with ASAP<k for free and all later slots full; ignore non-arithmetic and cross-node resource contention."
+  },
+  "suffix": {
+    "width": 3,
+    "store_roots": 32,
+    "free_work": 0,
+    "objective_upper_bound": 64,
+    "waste_lower_bound": 116,
+    "scope": "Two stores per cycle; shared/non-store-root arithmetic is granted free placement and all other resources are relaxed."
+  },
+  "streams": {
+    "load": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 1,
+      "suffix_at_least": 21,
+      "instructions": 1681,
+      "capacity": 2
+    },
+    "store": {
+      "cycle_lower_bound": 353,
+      "prefix_at_least": 4,
+      "suffix_at_least": 109,
+      "instructions": 480,
+      "capacity": 2
+    },
+    "flow": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 0,
+      "suffix_at_least": 10,
+      "instructions": 853,
+      "capacity": 1
+    }
+  },
+  "cycle_lower_bound": 865,
+  "new_executable": false,
+  "scope": "This explicit scalar-plus-chain graph. Bounds and serial replay are not scores."
+}

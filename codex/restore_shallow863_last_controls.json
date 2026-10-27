@@ -1,0 +1,57 @@
+{
+  "normalization": {
+    "families": 2,
+    "programs_per_family": 80,
+    "inputs_per_program": 64,
+    "exposed_function_preserved": true
+  },
+  "queries": [
+    {
+      "family": "mixed",
+      "width": 11,
+      "control": true,
+      "status": "reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "parameters": {
+        "A": 17,
+        "B": 24,
+        "C": 40,
+        "D": 7,
+        "K": 42,
+        "I": 0
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.048
+    },
+    {
+      "family": "quad",
+      "width": 11,
+      "control": true,
+      "status": "reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "parameters": {
+        "A": 3,
+        "B": 24,
+        "C": 2,
+        "D": 5,
+        "K": 42,
+        "I": 0,
+        "E": 7
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.114
+    }
+  ]
+}

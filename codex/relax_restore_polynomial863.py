@@ -22,7 +22,8 @@ from codex.search_head_polynomial863 import poly, canonical_poly, interpolate_fa
 
 
 def solve(degrees=(4, 2), width=11, seconds=60, control=False, family='xor', bitop='^', pin_control=False,
-          interpolate=False):
+          interpolate=False, constant_scale=False, unit_scale=False, normalize_input=False):
+    assert not unit_scale or constant_scale
     mask, high = (1 << width)-1, 1 << (width-1)
     solver = z3.SolverFor('QF_BV')
     cs = {}
@@ -42,11 +43,23 @@ def solve(degrees=(4, 2), width=11, seconds=60, control=False, family='xor', bit
                 solver.add(z3.ULT(c, 1 << (width-v)))
     if bitop == '^':
         solver.add(cs['p'][0] & (high | 1) == 0)
+    if constant_scale:
+        assert family == 'product' and degrees == (1, 2)
+        solver.add(cs['g'][1] == 0, cs['g'][2] == 0)
+        if unit_scale:
+            solver.add(cs['g'][0] == 1)
+        if bitop == '^' and not control:
+            g, r = cs['g'][0], cs['r']
+            solver.add((g*(cs['p'][1]+cs['q'][1])+r[1]) & 1 == 1,
+                       (g*cs['q'][2]+r[2]) & 1 == 0)
     if pin_control:
         assert control
         witness = {}
         for name, variables in cs.items():
-            base = {'p': [23, 17], 'q': [7, 41], 'g': [3, 1], 'r': [5, 1, 1]}[name]
+            table = ({'p': [3, 2], 'q': [7, 5, 2], 'g': [1 if unit_scale else 3], 'r': [29, 6, 4]}
+                     if constant_scale else
+                     {'p': [23, 17], 'q': [7, 41], 'g': [3, 1], 'r': [5, 1, 1]})
+            base = table[name]
             witness[name] = base + [0]*(len(variables)-len(base))
         if bitop == '^':
             for name in ('p', 'q'):
@@ -57,13 +70,16 @@ def solve(degrees=(4, 2), width=11, seconds=60, control=False, family='xor', bit
             vals = canonical_poly(witness[name], width)
             solver.add(*(v == n for v, n in zip(variables, vals)))
     ik = z3.BitVec('restore_polynomial_key', width)
+    if normalize_input:
+        solver.add(ik & (high | 1) == 0)
 
     def reference(x):
         if control:
-            a, b = 17*x+23, 41*x+7
+            a, b = (2*x+3, 2*x*x+3*x+7) if constant_scale else (17*x+23, 41*x+7)
             value = a ^ b if bitop == '^' else a & b if bitop == '&' else a | b
             if family == 'product':
-                value = (x+3)*value + x*x+5
+                value = ((1 if unit_scale else 3)*value + 4*x*x+2*x+29
+                         if constant_scale else (x+3)*value + x*x+5)
             elif family == 'bypass':
                 value = value + x*x+5
             elif family == 'square':
@@ -110,6 +126,8 @@ def solve(degrees=(4, 2), width=11, seconds=60, control=False, family='xor', bit
                control=control, family=family, bitop=bitop,
                pinned_control=pin_control,
                interpolated_residual=interpolate,
+               constant_scale=constant_scale, unit_scale=unit_scale,
+               normalized_input_key=normalize_input,
                status='unknown', events=[], new_executable=False)
     while time.monotonic()-started < seconds:
         solver.set(timeout=max(1, int((seconds-time.monotonic()+started)*1000)))
@@ -152,10 +170,14 @@ def main():
     ap.add_argument('--bitop', choices=('^', '&', '|'), default='^')
     ap.add_argument('--pin-control', action='store_true')
     ap.add_argument('--interpolate', action='store_true')
+    ap.add_argument('--constant-scale', action='store_true')
+    ap.add_argument('--unit-scale', action='store_true')
+    ap.add_argument('--normalize-input', action='store_true')
     ap.add_argument('--output', type=Path, required=True)
     args = ap.parse_args()
     row = solve(tuple(map(int, args.degrees.split(','))), 11, args.seconds, args.control,
-                args.family, args.bitop, args.pin_control, args.interpolate)
+                args.family, args.bitop, args.pin_control, args.interpolate,
+                args.constant_scale, args.unit_scale, args.normalize_input)
     args.output.write_text(json.dumps(row, indent=2)+'\n')
     print(json.dumps(row), flush=True)
 

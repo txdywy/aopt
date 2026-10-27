@@ -1,0 +1,100 @@
+{
+  "controls": [
+    {
+      "degrees": [
+        1,
+        2
+      ],
+      "width": 11,
+      "input_key": 0,
+      "output_key": 3042638419,
+      "control": true,
+      "family": "product",
+      "bitop": "^",
+      "pinned_control": true,
+      "interpolated_residual": false,
+      "constant_scale": true,
+      "unit_scale": false,
+      "normalized_input_key": true,
+      "status": "relaxed_reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "constants": {
+        "p": [
+          1020,
+          2046
+        ],
+        "q": [
+          1016,
+          2043,
+          1022
+        ],
+        "g": [
+          3,
+          0,
+          0
+        ],
+        "r": [
+          29,
+          6,
+          4
+        ]
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.126
+    },
+    {
+      "degrees": [
+        1,
+        2
+      ],
+      "width": 11,
+      "input_key": 0,
+      "output_key": 3042638419,
+      "control": true,
+      "family": "product",
+      "bitop": "^",
+      "pinned_control": true,
+      "interpolated_residual": false,
+      "constant_scale": true,
+      "unit_scale": true,
+      "normalized_input_key": true,
+      "status": "relaxed_reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "constants": {
+        "p": [
+          1020,
+          2046
+        ],
+        "q": [
+          1016,
+          2043,
+          1022
+        ],
+        "g": [
+          1,
+          0,
+          0
+        ],
+        "r": [
+          29,
+          6,
+          4
+        ]
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.114
+    }
+  ]
+}

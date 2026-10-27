@@ -1,0 +1,40 @@
+{
+  "sampled_not_exhaustive": true,
+  "fixed_input_key": 3345072700,
+  "per_order": 64,
+  "max_depth": 4,
+  "seed": 8642808,
+  "first": "^",
+  "seconds_per_width": 30.0,
+  "workers": 6,
+  "orders": [
+
+  ],
+  "manifest": [
+    {"order": ["^", "mad", "^", "^", "mad"], "wiring": [[0, 1], [2, 3, 1], [0, 3], [2, 3], [3, 5, 4]], "dependency_depth": 4},
+    {"order": ["^", "mad", "|", "^", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [0, 4], [3, 5, 4]], "dependency_depth": 4},
+    {"order": ["^", "mad", "mad", "mad", "|"], "wiring": [[0, 1], [2, 3, 1], [2, 3, 4], [0, 4, 0], [3, 4]], "dependency_depth": 4},
+    {"order": ["^", "mad", "mad", "^", "mad"], "wiring": [[0, 1], [1, 2, 3], [0, 3, 4], [1, 3], [4, 5, 2]], "dependency_depth": 3},
+    {"order": ["^", "^", "mad", "mad", "mad"], "wiring": [[0, 1], [1, 2], [3, 3, 1], [0, 4, 2], [3, 5, 4]], "dependency_depth": 4},
+    {"order": ["^", "mad", "mad", "mad", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3, 4], [0, 4, 5], [3, 4, 5]], "dependency_depth": 4},
+    {"order": ["^", "mad", "mad", "mad", "mad"], "wiring": [[0, 1], [0, 2, 3], [1, 2, 1], [3, 4, 5], [0, 5, 4]], "dependency_depth": 4},
+    {"order": ["^", "mad", "mad", "mad", "mad"], "wiring": [[0, 1], [1, 2, 3], [3, 4, 0], [2, 3, 4], [4, 5, 1]], "dependency_depth": 4}
+  ],
+  "results": [
+    {"width": 11, "status": "unsat", "fixed_input_key": 3345072700, "dense_initial_samples": true, "iterations": 1, "samples": 83, "seconds": 0.252, "order": ["^", "mad", "|", "^", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [0, 4], [3, 5, 4]], "dependency_depth": 4, "ladder": [{"width": 11, "status": "unsat", "seconds": 0.252}]},
+    {"width": 11, "status": "unsat", "fixed_input_key": 3345072700, "dense_initial_samples": true, "iterations": 1, "samples": 83, "seconds": 1.0974, "order": ["^", "mad", "mad", "^", "mad"], "wiring": [[0, 1], [1, 2, 3], [0, 3, 4], [1, 3], [4, 5, 2]], "dependency_depth": 3, "ladder": [{"width": 11, "status": "unsat", "seconds": 1.0974}]},
+    {"width": 11, "status": "unsat", "fixed_input_key": 3345072700, "dense_initial_samples": true, "iterations": 1, "samples": 83, "seconds": 0.8914, "order": ["^", "mad", "mad", "mad", "mad"], "wiring": [[0, 1], [0, 2, 3], [1, 2, 1], [3, 4, 5], [0, 5, 4]], "dependency_depth": 4, "ladder": [{"width": 11, "status": "unsat", "seconds": 0.8914}]},
+    {"width": 11, "status": "unsat", "fixed_input_key": 3345072700, "dense_initial_samples": true, "iterations": 1, "samples": 83, "seconds": 1.4488, "order": ["^", "mad", "mad", "mad", "|"], "wiring": [[0, 1], [2, 3, 1], [2, 3, 4], [0, 4, 0], [3, 4]], "dependency_depth": 4, "ladder": [{"width": 11, "status": "unsat", "seconds": 1.4488}]},
+    {"width": 11, "status": "unsat", "fixed_input_key": 3345072700, "dense_initial_samples": true, "iterations": 1, "samples": 83, "seconds": 1.7444, "order": ["^", "mad", "^", "^", "mad"], "wiring": [[0, 1], [2, 3, 1], [0, 3], [2, 3], [3, 5, 4]], "dependency_depth": 4, "ladder": [{"width": 11, "status": "unsat", "seconds": 1.7444}]},
+    {"width": 11, "status": "unsat", "fixed_input_key": 3345072700, "dense_initial_samples": true, "iterations": 1, "samples": 83, "seconds": 2.0508, "order": ["^", "^", "mad", "mad", "mad"], "wiring": [[0, 1], [1, 2], [3, 3, 1], [0, 4, 2], [3, 5, 4]], "dependency_depth": 4, "ladder": [{"width": 11, "status": "unsat", "seconds": 2.0508}]},
+    {"width": 11, "status": "unsat", "fixed_input_key": 3345072700, "dense_initial_samples": true, "iterations": 1, "samples": 83, "seconds": 1.2974, "order": ["^", "mad", "mad", "mad", "mad"], "wiring": [[0, 1], [1, 2, 3], [3, 4, 0], [2, 3, 4], [4, 5, 1]], "dependency_depth": 4, "ladder": [{"width": 11, "status": "unsat", "seconds": 1.2974}]},
+    {"width": 11, "status": "unsat", "fixed_input_key": 3345072700, "dense_initial_samples": true, "iterations": 1, "samples": 83, "seconds": 5.2148, "order": ["^", "mad", "mad", "mad", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3, 4], [0, 4, 5], [3, 4, 5]], "dependency_depth": 4, "ladder": [{"width": 11, "status": "unsat", "seconds": 5.2148}]}
+  ],
+  "completed": 8,
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "source": "codex/joint_restore863_input_bypass_scout.json",
+  "source_sha256": "eb7e5ff2c3cd85aedecdeed5e3913ddb5134bc79e1d4016de07e5d1f316bd423",
+  "counts": {"unsat": 8},
+  "seconds": 5.38
+}

@@ -1,0 +1,382 @@
+{
+  "normalization_controls": {
+    "programs_per_family": {
+      "parallel": 100,
+      "serial": 100,
+      "branched": 100,
+      "masked_parallel": 100,
+      "masked_serial": 100,
+      "masked_branched": 100,
+      "input_mixed": 100,
+      "masked_input": 100,
+      "input_feedback": 100,
+      "input_product": 100
+    },
+    "inputs_per_program": 64,
+    "no_input_transform": true,
+    "exact_exposed_function_preserved": true
+  },
+  "positive_controls": [
+    {
+      "family": "parallel",
+      "width": 11,
+      "control": true,
+      "quadratic_relaxation": false,
+      "fixed_scale": null,
+      "input_key": 3345072700,
+      "output_key": 3042638419,
+      "status": "reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "parameters": {
+        "A": 3,
+        "B": 24,
+        "C": 40,
+        "D": 7,
+        "G": 9,
+        "H": 29,
+        "K": 42
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.014
+    },
+    {
+      "family": "serial",
+      "width": 11,
+      "control": true,
+      "quadratic_relaxation": false,
+      "fixed_scale": null,
+      "input_key": 3345072700,
+      "output_key": 3042638419,
+      "status": "reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "parameters": {
+        "A": 3,
+        "B": 24,
+        "C": 40,
+        "D": 7,
+        "G": 9,
+        "H": 29,
+        "K": 42
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.012
+    },
+    {
+      "family": "branched",
+      "width": 11,
+      "control": true,
+      "quadratic_relaxation": false,
+      "fixed_scale": null,
+      "input_key": 3345072700,
+      "output_key": 3042638419,
+      "status": "reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "parameters": {
+        "A": 3,
+        "B": 24,
+        "C": 2008,
+        "D": 1016,
+        "G": 2039,
+        "H": 1044,
+        "K": 42
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.002
+    },
+    {
+      "family": "masked_parallel",
+      "width": 11,
+      "control": true,
+      "quadratic_relaxation": false,
+      "fixed_scale": null,
+      "input_key": 3345072700,
+      "output_key": 3042638419,
+      "status": "reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "parameters": {
+        "A": 3,
+        "B": 24,
+        "C": 40,
+        "D": 7,
+        "G": 9,
+        "H": 29,
+        "K": 42
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.003
+    },
+    {
+      "family": "masked_serial",
+      "width": 11,
+      "control": true,
+      "quadratic_relaxation": false,
+      "fixed_scale": null,
+      "input_key": 3345072700,
+      "output_key": 3042638419,
+      "status": "reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "parameters": {
+        "A": 3,
+        "B": 24,
+        "C": 40,
+        "D": 7,
+        "G": 9,
+        "H": 29,
+        "K": 42
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.005
+    },
+    {
+      "family": "masked_branched",
+      "width": 11,
+      "control": true,
+      "quadratic_relaxation": false,
+      "fixed_scale": null,
+      "input_key": 3345072700,
+      "output_key": 3042638419,
+      "status": "reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "parameters": {
+        "A": 3,
+        "B": 24,
+        "C": 2008,
+        "D": 1016,
+        "G": 2039,
+        "H": 407,
+        "K": 42
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.009
+    },
+    {
+      "family": "input_mixed",
+      "width": 11,
+      "control": true,
+      "quadratic_relaxation": false,
+      "fixed_scale": null,
+      "input_key": 3345072700,
+      "output_key": 3042638419,
+      "status": "reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "parameters": {
+        "A": 3,
+        "B": 24,
+        "C": 40,
+        "D": 7,
+        "G": 9,
+        "H": 29,
+        "K": 42
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.004
+    },
+    {
+      "family": "masked_input",
+      "width": 11,
+      "control": true,
+      "quadratic_relaxation": false,
+      "fixed_scale": null,
+      "input_key": 3345072700,
+      "output_key": 3042638419,
+      "status": "reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "parameters": {
+        "A": 3,
+        "B": 24,
+        "C": 40,
+        "D": 7,
+        "G": 9,
+        "H": 29,
+        "K": 42
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.003
+    },
+    {
+      "family": "input_feedback",
+      "width": 11,
+      "control": true,
+      "quadratic_relaxation": false,
+      "fixed_scale": null,
+      "input_key": 3345072700,
+      "output_key": 3042638419,
+      "status": "reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "parameters": {
+        "A": 3,
+        "B": 24,
+        "C": 41,
+        "D": 7,
+        "G": 9,
+        "H": 0,
+        "K": 42
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.003
+    },
+    {
+      "family": "input_product",
+      "width": 11,
+      "control": true,
+      "quadratic_relaxation": false,
+      "fixed_scale": null,
+      "input_key": 3345072700,
+      "output_key": 3042638419,
+      "status": "reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "parameters": {
+        "A": 3,
+        "B": 24,
+        "C": 40,
+        "D": 7,
+        "G": 9,
+        "H": 29,
+        "K": 42
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.003
+    },
+    {
+      "family": "parallel",
+      "width": 11,
+      "control": true,
+      "quadratic_relaxation": true,
+      "fixed_scale": null,
+      "input_key": 3345072700,
+      "output_key": 3042638419,
+      "status": "relaxed_reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "parameters": {
+        "A": 3,
+        "B": 24,
+        "C": 40,
+        "D": 7,
+        "G": 9,
+        "H": 29,
+        "K": 42,
+        "Q": 2
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.015
+    }
+  ],
+  "macro_controls": [
+    {
+      "family": "parallel",
+      "full32_parameter_sets": 4,
+      "universal_input_checks": true
+    },
+    {
+      "family": "serial",
+      "full32_parameter_sets": 4,
+      "universal_input_checks": true
+    },
+    {
+      "family": "branched",
+      "full32_parameter_sets": 4,
+      "universal_input_checks": true
+    },
+    {
+      "family": "masked_parallel",
+      "full32_parameter_sets": 4,
+      "universal_input_checks": true
+    },
+    {
+      "family": "masked_serial",
+      "full32_parameter_sets": 4,
+      "universal_input_checks": true
+    },
+    {
+      "family": "masked_branched",
+      "full32_parameter_sets": 4,
+      "universal_input_checks": true
+    },
+    {
+      "family": "input_mixed",
+      "full32_parameter_sets": 4,
+      "universal_input_checks": true
+    },
+    {
+      "family": "masked_input",
+      "full32_parameter_sets": 4,
+      "universal_input_checks": true
+    },
+    {
+      "family": "input_feedback",
+      "full32_parameter_sets": 4,
+      "universal_input_checks": true
+    },
+    {
+      "family": "input_product",
+      "full32_parameter_sets": 4,
+      "universal_input_checks": true
+    }
+  ]
+}

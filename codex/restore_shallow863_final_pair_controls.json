@@ -1,0 +1,64 @@
+{
+  "normalization": {
+    "families": 2,
+    "programs_per_family": 80,
+    "inputs_per_program": 64,
+    "exposed_function_preserved": true,
+    "sum_offset_orbit_controls": 119
+  },
+  "queries": [
+    {
+      "family": "xor_affine",
+      "width": 11,
+      "control": true,
+      "status": "reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "target_output_key": 3042638419,
+      "normalized_input_key": true,
+      "sum_offset": null,
+      "new_executable": false,
+      "parameters": {
+        "A": 3,
+        "B": 24,
+        "C": 40,
+        "K": 42,
+        "I": 0,
+        "D": 7
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.045
+    },
+    {
+      "family": "sum",
+      "width": 11,
+      "control": true,
+      "status": "reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "target_output_key": 3042638419,
+      "normalized_input_key": true,
+      "sum_offset": "exact four-case orbit",
+      "new_executable": false,
+      "parameters": {
+        "A": 3,
+        "B": 24,
+        "C": 40,
+        "K": 42,
+        "L": 6,
+        "I": 0,
+        "H": 0
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.042
+    }
+  ]
+}

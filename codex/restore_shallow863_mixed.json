@@ -1,0 +1,22 @@
+{
+  "normalization_controls": {
+    "families": 2,
+    "programs_per_family": 80,
+    "inputs_per_program": 64,
+    "exposed_function_preserved": true
+  },
+  "query": {
+    "family": "mixed",
+    "width": 11,
+    "control": false,
+    "status": "unsat",
+    "events": [
+      {
+        "samples": 59,
+        "status": "unsat"
+      }
+    ],
+    "new_executable": false,
+    "seconds": 0.25
+  }
+}

@@ -49,12 +49,15 @@ def expression(order, wiring, constants, x):
     return values[-1]
 
 
-def solve(order, wiring, width, seconds, output_key=PRE_C5, pins=None, dense=False):
+def solve(order, wiring, width, seconds, output_key=PRE_C5, pins=None, dense=False,
+          fixed_input_key=None):
     start = time.monotonic()
     mask = (1 << width)-1
     solver = z3.Then('simplify', 'solve-eqs', 'bit-blast', 'sat').solver()
-    constants = [z3.BitVecs(f'k{i}a k{i}b', width) for i in range(4)]
+    constants = [z3.BitVecs(f'k{i}a k{i}b', width) for i in range(len(order))]
     ik = z3.BitVec('input_key', width)
+    if fixed_input_key is not None:
+        solver.add(ik == (fixed_input_key & mask))
     for i, j, value in pins or ():
         solver.add(constants[i][j] == (value & mask))
 
@@ -80,6 +83,8 @@ def solve(order, wiring, width, seconds, output_key=PRE_C5, pins=None, dense=Fal
                       [rng.getrandbits(width) for _ in range(2048)], dtype=np.uint64)
     iterations = 0
     row = dict(width=width, status='unknown')
+    if fixed_input_key is not None:
+        row['fixed_input_key'] = fixed_input_key
     if dense:
         row['dense_initial_samples'] = True
     if pins:

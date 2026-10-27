@@ -1,0 +1,26 @@
+{
+  "degrees": [
+    1,
+    2
+  ],
+  "width": 11,
+  "input_key": "arbitrary",
+  "output_key": 3042638419,
+  "control": false,
+  "family": "product",
+  "bitop": "&",
+  "pinned_control": false,
+  "interpolated_residual": false,
+  "constant_scale": true,
+  "unit_scale": false,
+  "normalized_input_key": true,
+  "status": "unsat",
+  "events": [
+    {
+      "samples": 59,
+      "status": "unsat"
+    }
+  ],
+  "new_executable": false,
+  "seconds": 16.689
+}

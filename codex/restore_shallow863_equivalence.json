@@ -1,0 +1,38 @@
+{
+  "and_counterpart": {
+    "width": 11,
+    "status": "unsat",
+    "iterations": 1,
+    "samples": 28,
+    "seconds": 0.7633,
+    "order": [
+      "mad",
+      "&",
+      "mad",
+      "^"
+    ],
+    "wiring": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3,
+        4
+      ],
+      [
+        1,
+        3
+      ]
+    ]
+  },
+  "or_to_and_full32_random_controls": 1000,
+  "consecutive_constant_xors_merge": true,
+  "three_op_free_key_grammar_excluded_orders": 64
+}

@@ -1,0 +1,9154 @@
+{
+  "source": "codex/restore_wiring863_complete_audit.json",
+  "source_sha256": "ffe609aceff91a3e33a5f41442e68c09849bbe1fa7fcc09df307e78fde441923",
+  "unresolved": [
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.079,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.1176
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.7387
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.079
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0053,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.1908
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.4177
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0053
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0141,
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.1163
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.8119
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0141
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.0145,
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.1316
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.0145
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.013,
+      "order": [
+        "|",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.1054
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.8697
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.013
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0155,
+      "order": [
+        "|",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.1111
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.3095
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0155
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0188,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.5382
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.5148
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0188
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.0171,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.4993
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.0171
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0131,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3463
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.0795
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0131
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2236,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.5757
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 2.2722
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2236
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0196,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.5206
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.3954
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0196
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0189,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 4.5375
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 4.1685
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0189
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0208,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.2025
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.4181
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0208
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2206,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.4882
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.4988
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2206
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0234,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2132
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.0931
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0234
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0227,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.0433
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.0524
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0227
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0232,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2609
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.4064
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0232
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0242,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.4822
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 3.4611
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0242
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0153,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0153
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0598,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0598
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2218,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.2814
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.9691
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2218
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.02,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 3.6977
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.02
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0154,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0154
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2466,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 4.2025
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 3.2766
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2466
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.018,
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2118
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.0702
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.018
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0205,
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.578
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.4427
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0205
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0197,
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2146
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.4632
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0197
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0243,
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.4869
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 2.3016
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0243
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0196,
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.5096
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.9923
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0196
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0124,
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.6815
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.5893
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0124
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0208,
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.1954
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.3147
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0208
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0212,
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2714
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.6562
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0212
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0221,
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.4889
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 3.2861
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0221
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.014,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.014
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0099,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0099
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0136,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0136
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0144,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0144
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.014,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.014
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.014,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.014
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0727,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0727
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0138,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0138
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0142,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0142
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0136,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0136
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0139,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0139
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0201,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3708
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.7237
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0201
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0188,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.6123
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.6452
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0188
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2167,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 2.4072
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.8476
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2167
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0194,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 4.9271
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 3.7936
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0194
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.022,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 3.5878
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.2491
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.022
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0218,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          1
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.9913
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.929
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0218
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0239,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2567
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.4631
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0239
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0223,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.4894
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.3923
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0223
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0236,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2633
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.5655
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0236
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0217,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.0053
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.0346
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0217
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0223,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.7455
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 2.9557
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0223
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.0209,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.1221
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.0209
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0155,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0155
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2244,
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.2588
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.4464
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2244
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2733,
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.267
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.6032
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2733
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0099,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0099
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0146,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0146
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0696,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0696
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0146,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2743
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.5181
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0146
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0185,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2429
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.3615
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0185
+        }
+      ],
+      "dependency_depth": 3
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0186,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.4536
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 2.6802
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0186
+        }
+      ],
+      "dependency_depth": 3
+    }
+  ],
+  "deferred": [
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0188,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2501
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.0837
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0188
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0219,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.1474
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.245
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0219
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0133,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.0973
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.2628
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0133
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0148,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3979
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.752
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0148
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0188,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 2.8428
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.8676
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0188
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.02,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3225
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.5827
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.02
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0183,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.5094
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.541
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0183
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0183,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.1759
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.2717
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0183
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0193,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3294
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 2.604
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0193
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0091,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2847
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.4296
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0091
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0086,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0086
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0223,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2354
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.4364
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0223
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.015,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.015
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0224,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.5257
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.4058
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0224
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0226,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.4295
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.8153
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0226
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0223,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3036
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.8755
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0223
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0177,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.423
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.0626
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0177
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0194,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.1848
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 4.0423
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0194
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0191,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3064
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.6159
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0191
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0226,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3662
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.4826
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0226
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2529,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2476
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.8607
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2529
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.264,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3953
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.4514
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.264
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2819,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.7134
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.6153
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2819
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2681,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.5709
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.4696
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2681
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0198,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.1784
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.6276
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0198
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.1349,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.8708
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.1349
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0206,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.5267
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.3463
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0206
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0225,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.7362
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 4.1669
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0225
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0189,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3597
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.923
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0189
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0219,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3351
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.4245
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0219
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2119,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3419
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.867
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2119
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.024,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.5518
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.7252
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.024
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0192,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.8373
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 3.0387
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0192
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0172,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.1737
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 4.1613
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0172
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0223,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.4837
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 3.8528
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0223
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.0177,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3021
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.0177
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.023,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3243
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.6708
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.023
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0237,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3134
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.5081
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0237
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0149,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0149
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0224,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2633
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.4956
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0224
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0178,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.2992
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.335
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0178
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0229,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 2.2041
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 5.007
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0229
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0182,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3595
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 4.7682
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0182
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0081,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0081
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.018,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2835
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.3504
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.018
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.019,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3256
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.6711
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.019
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0177,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3783
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.7279
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0177
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.0153,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2671
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.0153
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.018,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.2627
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 2.3768
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.018
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0113,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.1738
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.4835
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0113
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0182,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.8693
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 2.3691
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0182
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.0158,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.7336
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.0158
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0235,
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.6896
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.0879
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0235
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0239,
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.5622
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 2.2013
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0239
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0149,
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0149
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0246,
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.9008
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.9097
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0246
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0229,
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.4846
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.2016
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0229
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.1726,
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 3.5173
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.1726
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0147,
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0147
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0196,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.6166
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.7196
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0196
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2444,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.6509
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.6729
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2444
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0242,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 2.3666
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 3.0782
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0242
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2565,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.5498
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.8982
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2565
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0144,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2768
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.5656
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0144
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0196,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.6081
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.6269
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0196
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0233,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.9162
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 3.3492
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0233
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0172,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 3.5968
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 4.4727
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0172
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.1115,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.9765
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.1115
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0227,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          0
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.9505
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.3688
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0227
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0236,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.98
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.9269
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0236
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2611,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.5292
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 2.9311
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2611
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0219,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3501
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.8414
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0219
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0143,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0143
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0247,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.0495
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 3.3095
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0247
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0256,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2898
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.9655
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0256
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.022,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.4699
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.5139
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.022
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0219,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.5925
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.7101
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0219
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0163,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.4275
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.7113
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0163
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0223,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.0203
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.5019
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0223
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0187,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.262
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.4632
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0187
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.0209,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 3.4192
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.0209
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0242,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.3155
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 3.2349
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0242
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0218,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3303
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.1312
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0218
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0235,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.8726
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.8389
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0235
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.013,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.784
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.7591
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.013
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0165,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3984
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.4666
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0165
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2269,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.5402
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.3236
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2269
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0223,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.2217
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 4.2606
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0223
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0243,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.7681
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 3.7094
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0243
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2576,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.9597
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 2.5882
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2576
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0105,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0105
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0213,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 2.7541
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 4.6395
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0213
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.0189,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.8357
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.0189
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0239,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.7078
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 3.4359
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0239
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2624,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.5719
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.832
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2624
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0175,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.1512
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.6513
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0175
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.019,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.9
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.6361
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.019
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0187,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.6788
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.8772
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0187
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.0159,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.7606
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.0159
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.0159,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.9104
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.0159
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.0162,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 1.0236
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.0162
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0214,
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2759
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.4686
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0214
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0232,
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2903
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 2.7877
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0232
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0243,
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.7033
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 3.5772
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0243
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0235,
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 3.3457
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.5675
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0235
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0227,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.4372
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.6855
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0227
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2558,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 3.8309
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.1769
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2558
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0211,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2723
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 0.386
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0211
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 10,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 81,
+      "seconds": 5.0199,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.9337
+        },
+        {
+          "width": 10,
+          "status": "unknown",
+          "seconds": 5.0199
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 8,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 75,
+      "seconds": 5.0669,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          0
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "unknown",
+          "seconds": 5.0669
+        }
+      ],
+      "dependency_depth": 4
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.2131,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2812
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.7664
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.2131
+        }
+      ],
+      "dependency_depth": 4
+    }
+  ],
+  "scope": "Priority queue only: arithmetic DAG depth <=3. Deeper formulas remain open.",
+  "new_executable": false
+}

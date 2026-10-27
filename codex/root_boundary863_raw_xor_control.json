@@ -1,0 +1,43 @@
+{
+  "family": "raw_xor",
+  "node": 0,
+  "full32_semantics": true,
+  "control": true,
+  "pinned": false,
+  "status": "proved_equivalent",
+  "events": [
+    {
+      "samples": 64,
+      "status": "sat"
+    },
+    {
+      "samples": 72,
+      "status": "sat"
+    },
+    {
+      "samples": 80,
+      "status": "sat"
+    },
+    {
+      "samples": 87,
+      "status": "sat"
+    },
+    {
+      "samples": 93,
+      "status": "sat"
+    },
+    {
+      "samples": 94,
+      "status": "sat"
+    }
+  ],
+  "new_executable": false,
+  "coefficients": {
+    "A": 9,
+    "B": 4251993797,
+    "G": 4097,
+    "H": 2127912214
+  },
+  "seconds": 2.13,
+  "samples": 94
+}

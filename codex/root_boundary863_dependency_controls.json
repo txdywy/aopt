@@ -1,0 +1,392 @@
+{
+  "dependencies": {
+    "full32_facts": [
+      {
+        "name": "target_bit0_flips_on_input_bit16",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit15_flips_on_input_bit31",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit12_flips_on_input_bit0",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit0_ignores_input_bit17",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit0_ignores_input_bit18",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit0_ignores_input_bit19",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit0_ignores_input_bit20",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit0_ignores_input_bit21",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit0_ignores_input_bit22",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit0_ignores_input_bit23",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit0_ignores_input_bit24",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit0_ignores_input_bit25",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit0_ignores_input_bit26",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit0_ignores_input_bit27",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit0_ignores_input_bit28",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit0_ignores_input_bit29",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit0_ignores_input_bit30",
+        "status": "unsat"
+      },
+      {
+        "name": "target_bit0_ignores_input_bit31",
+        "status": "unsat"
+      },
+      {
+        "name": "even_affine_loses_input_bit31",
+        "status": "unsat"
+      },
+      {
+        "name": "square_loses_input_bit31",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_1",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_1",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_2",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_2",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_3",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_3",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_4",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_4",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_5",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_5",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_6",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_6",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_7",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_7",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_8",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_8",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_9",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_9",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_10",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_10",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_11",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_11",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_12",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_12",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_13",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_13",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_14",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_14",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_15",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_15",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_16",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_16",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_17",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_17",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_18",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_18",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_19",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_19",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_20",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_20",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_21",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_21",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_22",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_22",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_23",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_23",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_24",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_24",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_25",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_25",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_26",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_26",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_27",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_27",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_28",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_28",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_29",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_29",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_30",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_30",
+        "status": "unsat"
+      },
+      {
+        "name": "odd_affine_diagonal_31",
+        "status": "unsat"
+      },
+      {
+        "name": "square_plus_x_diagonal_31",
+        "status": "unsat"
+      },
+      {
+        "name": "fold_is_an_involution",
+        "status": "unsat"
+      },
+      {
+        "name": "arbitrary_final_bit_function_cannot_discard_nuisance",
+        "status": "unsat"
+      }
+    ],
+    "odd_multiplier_inverse": 16773121
+  },
+  "small_controls": {
+    "unary_first_programs": {
+      "4": 321,
+      "6": 4353
+    },
+    "complete_domains": true
+  },
+  "frozen_controls": {
+    "frozen_vector_runs": 680,
+    "full32_lanes": 5440,
+    "known_programs": 5,
+    "random_wirings": 600,
+    "integer_numpy_z3_frozen_agree": true
+  },
+  "reachable": {
+    "fixed_raw_root": 305419896,
+    "effective_node": 2809010545,
+    "quarter_witnesses": {
+      "0": {
+        "initial": 0,
+        "before_leaf": 74155005,
+        "leaf": 2000
+      },
+      "2": {
+        "initial": 1,
+        "before_leaf": 3112294280,
+        "leaf": 1797
+      },
+      "3": {
+        "initial": 8,
+        "before_leaf": 3840527551,
+        "leaf": 1752
+      },
+      "1": {
+        "initial": 10,
+        "before_leaf": 1293347200,
+        "leaf": 1629
+      }
+    },
+    "constructed_reference_cases": 260,
+    "scalar_reference_embeds_by_repeating_lanes": true,
+    "first_five_stages_bijective_factors": [
+      4097,
+      33,
+      9
+    ],
+    "remaining_factors": "g19 XOR constant and (x+C3) XOR (x<<9), both triangular bijections"
+  },
+  "new_executable": false
+}

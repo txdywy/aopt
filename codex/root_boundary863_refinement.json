@@ -1,0 +1,20 @@
+{
+  "node": 2809010545,
+  "full32_semantics": true,
+  "prepared_constants_arbitrary": true,
+  "scope": "Exactly one literal SHR16 and MAD plus MAD/XOR/AND/OR; single input; no global kernel or all-ISA optimality claim.",
+  "manifest": [
+    {"order": ["mad", "shr16", "mad"], "wiring": [[0, 1, 2], [1], [1, 2, 1]]}
+  ],
+  "controls": [{"order": ["shr16", "^", "mad"], "wiring": [[0], [0, 1], [2, 3, 4]], "node": 0, "status": "proved_equivalent", "events": [{"samples": 56, "status": "sat"}], "full32_semantics": true, "new_executable": false, "constants": [[0, 0], [0, 0], [4097, 2127912214]], "seconds": 0.0091, "samples": 56}, {"order": ["shr16", "^", "mad"], "wiring": [[0], [0, 1], [2, 3, 4]], "node": 2147483648, "status": "proved_equivalent", "events": [{"samples": 57, "status": "sat"}], "full32_semantics": true, "new_executable": false, "constants": [[0, 0], [0, 0], [4097, 4275395862]], "seconds": 0.0085, "samples": 57}],
+  "results": [
+    {"order": ["mad", "shr16", "mad"], "wiring": [[0, 1, 2], [1], [1, 2, 1]], "node": 2809010545, "status": "unsat", "events": [{"samples": 58, "status": "unsat"}], "full32_semantics": true, "new_executable": false, "seconds": 0.9747, "samples": 58}
+  ],
+  "completed": 1,
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "source": "codex/root_boundary863_scout.json",
+  "source_sha256": "2fdb658cd76558df3ee86cfc058069e95d1bd5e600b86ffdf88b6d0578b64476",
+  "counts": {"unsat": 1},
+  "seconds": 1.112
+}

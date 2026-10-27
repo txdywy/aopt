@@ -1,0 +1,202 @@
+{
+ "totals": {
+  "g19C1": {
+   "wirings": 9559,
+   "unsat": 9463,
+   "timeout": 96,
+   "sat": []
+  },
+  "g16n": {
+   "wirings": 33800,
+   "unsat": 33550,
+   "timeout": 250,
+   "sat": []
+  }
+ },
+ "per_first_op": [
+  {
+   "target": "g19C1",
+   "op0": "+",
+   "wirings": 605,
+   "unsat": 605,
+   "timeout": 0
+  },
+  {
+   "target": "g19C1",
+   "op0": "-",
+   "wirings": 605,
+   "unsat": 605,
+   "timeout": 0
+  },
+  {
+   "target": "g19C1",
+   "op0": "*",
+   "wirings": 605,
+   "unsat": 605,
+   "timeout": 0
+  },
+  {
+   "target": "g19C1",
+   "op0": "^",
+   "wirings": 605,
+   "unsat": 605,
+   "timeout": 0
+  },
+  {
+   "target": "g19C1",
+   "op0": "&",
+   "wirings": 605,
+   "unsat": 605,
+   "timeout": 0
+  },
+  {
+   "target": "g19C1",
+   "op0": "|",
+   "wirings": 605,
+   "unsat": 605,
+   "timeout": 0
+  },
+  {
+   "target": "g19C1",
+   "op0": "<<",
+   "wirings": 605,
+   "unsat": 605,
+   "timeout": 0
+  },
+  {
+   "target": "g19C1",
+   "op0": ">>",
+   "wirings": 605,
+   "unsat": 605,
+   "timeout": 0
+  },
+  {
+   "target": "g19C1",
+   "op0": "//",
+   "wirings": 605,
+   "unsat": 557,
+   "timeout": 48
+  },
+  {
+   "target": "g19C1",
+   "op0": "%",
+   "wirings": 605,
+   "unsat": 557,
+   "timeout": 48
+  },
+  {
+   "target": "g19C1",
+   "op0": "<",
+   "wirings": 605,
+   "unsat": 605,
+   "timeout": 0
+  },
+  {
+   "target": "g19C1",
+   "op0": "==",
+   "wirings": 605,
+   "unsat": 605,
+   "timeout": 0
+  },
+  {
+   "target": "g19C1",
+   "op0": "mad",
+   "wirings": 2299,
+   "unsat": 2299,
+   "timeout": 0
+  },
+  {
+   "target": "g16n",
+   "op0": "+",
+   "wirings": 2028,
+   "unsat": 2028,
+   "timeout": 0
+  },
+  {
+   "target": "g16n",
+   "op0": "-",
+   "wirings": 2028,
+   "unsat": 2028,
+   "timeout": 0
+  },
+  {
+   "target": "g16n",
+   "op0": "*",
+   "wirings": 2028,
+   "unsat": 2028,
+   "timeout": 0
+  },
+  {
+   "target": "g16n",
+   "op0": "^",
+   "wirings": 2028,
+   "unsat": 2028,
+   "timeout": 0
+  },
+  {
+   "target": "g16n",
+   "op0": "&",
+   "wirings": 2028,
+   "unsat": 2028,
+   "timeout": 0
+  },
+  {
+   "target": "g16n",
+   "op0": "|",
+   "wirings": 2028,
+   "unsat": 2028,
+   "timeout": 0
+  },
+  {
+   "target": "g16n",
+   "op0": "<<",
+   "wirings": 2028,
+   "unsat": 2028,
+   "timeout": 0
+  },
+  {
+   "target": "g16n",
+   "op0": ">>",
+   "wirings": 2028,
+   "unsat": 2028,
+   "timeout": 0
+  },
+  {
+   "target": "g16n",
+   "op0": "//",
+   "wirings": 2028,
+   "unsat": 1901,
+   "timeout": 127
+  },
+  {
+   "target": "g16n",
+   "op0": "%",
+   "wirings": 2028,
+   "unsat": 1905,
+   "timeout": 123
+  },
+  {
+   "target": "g16n",
+   "op0": "<",
+   "wirings": 2028,
+   "unsat": 2028,
+   "timeout": 0
+  },
+  {
+   "target": "g16n",
+   "op0": "==",
+   "wirings": 2028,
+   "unsat": 2028,
+   "timeout": 0
+  },
+  {
+   "target": "g16n",
+   "op0": "mad",
+   "wirings": 9464,
+   "unsat": 9464,
+   "timeout": 0
+  }
+ ],
+ "timeout_closure": "All timeouts have a // or % first instruction. Both targets are bijective (in a, or in n for fixed e); a division or modulo first step is non-injective or monotone and cannot be repaired by one further binary/MAD instruction, so no two-instruction program exists.",
+ "new_executable": false
+}

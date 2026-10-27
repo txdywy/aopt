@@ -1,0 +1,138 @@
+{
+  "config": {
+    "names": [
+      "root",
+      "c0",
+      "c1",
+      "9",
+      "19"
+    ],
+    "fused": 1,
+    "staged": [],
+    "trades": 0,
+    "load4097": true
+  },
+  "layout": {
+    "names": [
+      "root",
+      "c0",
+      "c1",
+      "9",
+      "19"
+    ],
+    "vectors": [
+      [
+        15,
+        75478,
+        75479,
+        75480,
+        75481,
+        75482,
+        75483,
+        75484
+      ],
+      [
+        75485,
+        75486,
+        75487,
+        75488,
+        75494,
+        75495,
+        75496,
+        75497
+      ],
+      [
+        75498,
+        75499,
+        75500,
+        75501,
+        75507,
+        75508,
+        75509,
+        75510
+      ],
+      [
+        75511,
+        75512,
+        75513,
+        75514,
+        75520,
+        75521,
+        75522,
+        75523
+      ],
+      [
+        75524,
+        75525,
+        75526,
+        75527,
+        75477,
+        75528,
+        75529,
+        75530
+      ]
+    ],
+    "root_detached": false
+  },
+  "counts": {
+    "load": 1688,
+    "valu": 6088,
+    "flow": 853,
+    "alu": 2933,
+    "store": 530
+  },
+  "arithmetic_lanes": 51637,
+  "prefix": {
+    "width": 6,
+    "availability_by_cycle": [
+      8,
+      62,
+      102,
+      147,
+      225,
+      343
+    ],
+    "objective_upper_bound": 267,
+    "waste_lower_bound": 93,
+    "scope": "Grant all arithmetic with ASAP<k for free and all later slots full; ignore non-arithmetic and cross-node resource contention."
+  },
+  "suffix": {
+    "width": 3,
+    "store_roots": 32,
+    "free_work": 0,
+    "objective_upper_bound": 64,
+    "waste_lower_bound": 116,
+    "scope": "Two stores per cycle; shared/non-store-root arithmetic is granted free placement and all other resources are relaxed."
+  },
+  "streams": {
+    "load": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 0,
+      "suffix_at_least": 21,
+      "instructions": 1684,
+      "capacity": 2
+    },
+    "store": {
+      "cycle_lower_bound": 346,
+      "prefix_at_least": 73,
+      "suffix_at_least": 237,
+      "instructions": 72,
+      "capacity": 2
+    },
+    "flow": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 0,
+      "suffix_at_least": 10,
+      "instructions": 853,
+      "capacity": 1
+    }
+  },
+  "cycle_lower_bound": 865,
+  "new_executable": false,
+  "scope": "This concrete chain; necessary bounds and serial replay are not scores.",
+  "serial_control": {
+    "scratch": 1070,
+    "serialized_cycles": 12092,
+    "seeds": 2
+  }
+}

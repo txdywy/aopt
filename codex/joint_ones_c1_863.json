@@ -1,0 +1,91 @@
+{
+  "layout": {
+    "names": [
+      "ones",
+      "c1"
+    ],
+    "vectors": [
+      [
+        75475,
+        75476,
+        75477,
+        75478,
+        75482,
+        75483,
+        75484,
+        75485
+      ],
+      [
+        75486,
+        75487,
+        75488,
+        75489,
+        26,
+        75479,
+        75480,
+        75481
+      ]
+    ]
+  },
+  "counts": {
+    "load": 1688,
+    "flow": 852,
+    "valu": 6091,
+    "alu": 2928,
+    "store": 530
+  },
+  "arithmetic_lanes": 51656,
+  "prefix": {
+    "width": 6,
+    "availability_by_cycle": [
+      1,
+      63,
+      109,
+      153,
+      207,
+      321
+    ],
+    "objective_upper_bound": 267,
+    "waste_lower_bound": 93,
+    "scope": "Grant all arithmetic with ASAP<k for free and all later slots full; ignore non-arithmetic and cross-node resource contention."
+  },
+  "suffix": {
+    "width": 3,
+    "store_roots": 32,
+    "free_work": 0,
+    "objective_upper_bound": 64,
+    "waste_lower_bound": 116,
+    "scope": "Two stores per cycle; shared/non-store-root arithmetic is granted free placement and all other resources are relaxed."
+  },
+  "streams": {
+    "load": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 0,
+      "suffix_at_least": 21,
+      "instructions": 1684,
+      "capacity": 2
+    },
+    "store": {
+      "cycle_lower_bound": 348,
+      "prefix_at_least": 75,
+      "suffix_at_least": 237,
+      "instructions": 72,
+      "capacity": 2
+    },
+    "flow": {
+      "cycle_lower_bound": 862,
+      "prefix_at_least": 0,
+      "suffix_at_least": 10,
+      "instructions": 852,
+      "capacity": 1
+    }
+  },
+  "cycle_lower_bound": 865,
+  "new_executable": false,
+  "scope": "This concrete self-masked chain; bounds and serial replay are not scores.",
+  "serial_control": {
+    "scratch": 1046,
+    "serialized_cycles": 12089,
+    "seeds": 2
+  }
+}

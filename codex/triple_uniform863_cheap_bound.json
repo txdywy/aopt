@@ -1,0 +1,27 @@
+{
+  "prefix": {
+    "width": 6,
+    "availability_by_cycle": [
+      8,
+      64,
+      115,
+      155,
+      215,
+      321
+    ],
+    "objective_upper_bound": 275,
+    "waste_lower_bound": 85,
+    "scope": "Grant all arithmetic with ASAP<k for free and all later slots full; ignore non-arithmetic and cross-node resource contention."
+  },
+  "suffix": {
+    "width": 3,
+    "store_roots": 32,
+    "free_work": 0,
+    "objective_upper_bound": 64,
+    "waste_lower_bound": 116,
+    "scope": "Two stores per cycle; shared/non-store-root arithmetic is granted free placement and all other resources are relaxed."
+  },
+  "arithmetic_lanes": 51648,
+  "cycle_lower_bound": 865,
+  "new_executable": false
+}

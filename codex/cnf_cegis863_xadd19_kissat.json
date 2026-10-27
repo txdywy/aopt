@@ -1,0 +1,1 @@
+{"fam": "xadd", "s": 19, "target": "g19c1", "result": "unsat", "engine": "kissat404", "rounds": 1, "samples": 16, "clauses": 168767, "seconds": 84.8}

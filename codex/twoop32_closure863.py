@@ -1,7 +1,12 @@
-"""Exhaustive 2-instruction closure at full 32 bits for the xor-shift pieces.
+"""Historical 2-instruction enumeration at full 32 bits.
 
-Targets: a^C1^(a>>19) and e^(e>>16)^n with n live. Opcodes: the frozen ALU
-set plus multiply_add; two private constants per instruction. Each wiring
+Audit correction: this version omits cdiv and its 346 UNKNOWN results cannot
+be closed merely by injectivity; a final operation can bypass the first one
+through an original input. See audit_division_frontier863.py and its saved
+refinement for the complete division follow-up. Historical counts are retained.
+
+Targets: a^C1^(a>>19) and e^(e>>16)^n with n live. Opcodes: the historical
+subset below (cdiv omitted) plus multiply_add; two private constants per instruction. Each wiring
 is checked with Z3 on 18 random/edge points (UNSAT on samples excludes it)
 and any model is verified on all sample points. Ten worker processes.
 """

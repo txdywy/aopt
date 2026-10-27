@@ -1,0 +1,207 @@
+{
+ "summary": {
+  "queries": 75152,
+  "unsat": 75120,
+  "timeouts": 32,
+  "by_argument": {
+   "few-values": 11,
+   "linear-out": 2,
+   "same-as-key0": 14,
+   "drops-bit0": 5
+  }
+ },
+ "timeouts": [
+  {
+   "idx": 192,
+   "key": "0x0",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=kshr(i2)",
+   "resolved": "few-values"
+  },
+  {
+   "idx": 192,
+   "key": "0x3fffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=kshr(i2)",
+   "resolved": "few-values"
+  },
+  {
+   "idx": 192,
+   "key": "0x40000000",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=kshr(i2)",
+   "resolved": "few-values"
+  },
+  {
+   "idx": 192,
+   "key": "0x7fffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=kshr(i2)",
+   "resolved": "few-values"
+  },
+  {
+   "idx": 192,
+   "key": "0x80000000",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=kshr(i2)",
+   "resolved": "few-values"
+  },
+  {
+   "idx": 192,
+   "key": "0xbfffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=kshr(i2)",
+   "resolved": "few-values"
+  },
+  {
+   "idx": 192,
+   "key": "0xc0000000",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=kshr(i2)",
+   "resolved": "few-values"
+  },
+  {
+   "idx": 192,
+   "key": "0xffffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=kshr(i2)",
+   "resolved": "few-values"
+  },
+  {
+   "idx": 196,
+   "key": "0x3fffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=lin2(u,i2)",
+   "resolved": "linear-out"
+  },
+  {
+   "idx": 196,
+   "key": "0xffffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=lin2(u,i2)",
+   "resolved": "linear-out"
+  },
+  {
+   "idx": 210,
+   "key": "0x7fffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=lin2(i1,i2)",
+   "resolved": "same-as-key0"
+  },
+  {
+   "idx": 210,
+   "key": "0xbfffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=lin2(i1,i2)",
+   "resolved": "same-as-key0"
+  },
+  {
+   "idx": 211,
+   "key": "0xbfffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=prod(i1,i2)",
+   "resolved": "same-as-key0"
+  },
+  {
+   "idx": 211,
+   "key": "0xffffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=prod(i1,i2)",
+   "resolved": "same-as-key0"
+  },
+  {
+   "idx": 217,
+   "key": "0x3fffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=shr_ab(i1,i2)",
+   "resolved": "same-as-key0"
+  },
+  {
+   "idx": 217,
+   "key": "0x7fffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=shr_ab(i1,i2)",
+   "resolved": "same-as-key0"
+  },
+  {
+   "idx": 217,
+   "key": "0xbfffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=shr_ab(i1,i2)",
+   "resolved": "same-as-key0"
+  },
+  {
+   "idx": 217,
+   "key": "0xffffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=shr_ab(i1,i2)",
+   "resolved": "same-as-key0"
+  },
+  {
+   "idx": 221,
+   "key": "0x3fffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=aba(i1,i2)",
+   "resolved": "same-as-key0"
+  },
+  {
+   "idx": 221,
+   "key": "0x7fffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=aba(i1,i2)",
+   "resolved": "same-as-key0"
+  },
+  {
+   "idx": 221,
+   "key": "0xbfffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=aba(i1,i2)",
+   "resolved": "same-as-key0"
+  },
+  {
+   "idx": 221,
+   "key": "0xffffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=aba(i1,i2)",
+   "resolved": "same-as-key0"
+  },
+  {
+   "idx": 222,
+   "key": "0x3fffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=abb(i1,i2)",
+   "resolved": "same-as-key0"
+  },
+  {
+   "idx": 222,
+   "key": "0x7fffffff",
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=abb(i1,i2)",
+   "resolved": "same-as-key0"
+  },
+  {
+   "idx": 4128,
+   "key": "0xbfffffff",
+   "template": "i1=shrk(u) ; i2=aff(i1) ; i3=shrk(i2)",
+   "resolved": "drops-bit0"
+  },
+  {
+   "idx": 4128,
+   "key": "0xc0000000",
+   "template": "i1=shrk(u) ; i2=aff(i1) ; i3=shrk(i2)",
+   "resolved": "drops-bit0"
+  },
+  {
+   "idx": 4128,
+   "key": "0xffffffff",
+   "template": "i1=shrk(u) ; i2=aff(i1) ; i3=shrk(i2)",
+   "resolved": "drops-bit0"
+  },
+  {
+   "idx": 4156,
+   "key": "0x40000000",
+   "template": "i1=shrk(u) ; i2=aff(i1) ; i3=shr_ba(i1,i2)",
+   "resolved": "drops-bit0"
+  },
+  {
+   "idx": 4156,
+   "key": "0xc0000000",
+   "template": "i1=shrk(u) ; i2=aff(i1) ; i3=shr_ba(i1,i2)",
+   "resolved": "drops-bit0"
+  },
+  {
+   "idx": 4458,
+   "key": "0x40000000",
+   "template": "i1=shrk(u) ; i2=kshr(i1) ; i3=kshr(i2)",
+   "resolved": "few-values"
+  },
+  {
+   "idx": 4458,
+   "key": "0x80000000",
+   "template": "i1=shrk(u) ; i2=kshr(i1) ; i3=kshr(i2)",
+   "resolved": "few-values"
+  },
+  {
+   "idx": 4458,
+   "key": "0xbfffffff",
+   "template": "i1=shrk(u) ; i2=kshr(i1) ; i3=kshr(i2)",
+   "resolved": "few-values"
+  }
+ ]
+}

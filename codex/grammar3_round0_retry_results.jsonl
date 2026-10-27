@@ -1,0 +1,7 @@
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 60.2, "idx": 217, "template": "i1=aff(u) ; i2=shrk(i1) ; i3=shr_ab(i1,i2)", "wall": 60.23, "key": 3221225472}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 9.31, "idx": 223, "template": "i1=aff(u) ; i2=shrk(i1) ; i3=mad_c(u,i1,i2)", "wall": 9.35, "key": 2147483647}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 302.5, "idx": 225, "template": "i1=aff(u) ; i2=shrk(i1) ; i3=mad_a(u,i1,i2)", "wall": 302.53, "key": 2147483647}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 62.16, "idx": 223, "template": "i1=aff(u) ; i2=shrk(i1) ; i3=mad_c(u,i1,i2)", "wall": 62.2, "key": 4294967295}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 68.05, "idx": 4620, "template": "i1=shrk(u) ; i2=lin2(u,i1) ; i3=shrk(i2)", "wall": 68.08, "key": 3221225471}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 115.89, "idx": 223, "template": "i1=aff(u) ; i2=shrk(i1) ; i3=mad_c(u,i1,i2)", "wall": 115.92, "key": 3221225471}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 167.38, "idx": 225, "template": "i1=aff(u) ; i2=shrk(i1) ; i3=mad_a(u,i1,i2)", "wall": 167.41, "key": 4294967295}

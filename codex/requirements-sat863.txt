@@ -1,0 +1,3 @@
+# Optional offline CDCL research; not used by the standalone submission.
+-r requirements-synthesis.txt
+python-sat==1.9.dev17

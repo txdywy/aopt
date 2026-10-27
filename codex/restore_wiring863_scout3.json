@@ -1,0 +1,175 @@
+{
+  "target": "F(x XOR I) XOR PRE_C5",
+  "output_key": 3042638419,
+  "input_key": "arbitrary",
+  "z3": "5.1.0",
+  "numpy": "2.3.5",
+  "seconds_per_width": 1.0,
+  "top": 32,
+  "new_executable": false,
+  "counts": {
+    "unsat": 383,
+    "unknown": 1
+  },
+  "by_order": {
+    "mad,mad,mad,^": {
+      "unsat": 32
+    },
+    "mad,mad,mad,&": {
+      "unsat": 32
+    },
+    "mad,mad,mad,|": {
+      "unsat": 32
+    },
+    "mad,mad,^,mad": {
+      "unsat": 32
+    },
+    "mad,mad,&,mad": {
+      "unsat": 32
+    },
+    "mad,mad,|,mad": {
+      "unsat": 32
+    },
+    "mad,^,mad,mad": {
+      "unsat": 31,
+      "unknown": 1
+    },
+    "mad,&,mad,mad": {
+      "unsat": 32
+    },
+    "mad,|,mad,mad": {
+      "unsat": 32
+    },
+    "^,mad,mad,mad": {
+      "unsat": 32
+    },
+    "&,mad,mad,mad": {
+      "unsat": 32
+    },
+    "|,mad,mad,mad": {
+      "unsat": 32
+    }
+  },
+  "unresolved": [
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.014,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          0
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.014
+        }
+      ]
+    }
+  ],
+  "jobs": 384,
+  "per_order_limit": 32,
+  "orders": [
+    [
+      "mad",
+      "mad",
+      "mad",
+      "^"
+    ],
+    [
+      "mad",
+      "mad",
+      "mad",
+      "&"
+    ],
+    [
+      "mad",
+      "mad",
+      "mad",
+      "|"
+    ],
+    [
+      "mad",
+      "mad",
+      "^",
+      "mad"
+    ],
+    [
+      "mad",
+      "mad",
+      "&",
+      "mad"
+    ],
+    [
+      "mad",
+      "mad",
+      "|",
+      "mad"
+    ],
+    [
+      "mad",
+      "^",
+      "mad",
+      "mad"
+    ],
+    [
+      "mad",
+      "&",
+      "mad",
+      "mad"
+    ],
+    [
+      "mad",
+      "|",
+      "mad",
+      "mad"
+    ],
+    [
+      "^",
+      "mad",
+      "mad",
+      "mad"
+    ],
+    [
+      "&",
+      "mad",
+      "mad",
+      "mad"
+    ],
+    [
+      "|",
+      "mad",
+      "mad",
+      "mad"
+    ]
+  ],
+  "completed": 384,
+  "seconds": 5.1
+}

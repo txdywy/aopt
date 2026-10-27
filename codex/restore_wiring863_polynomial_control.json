@@ -1,0 +1,34 @@
+{
+  "degrees": [
+    4,
+    2
+  ],
+  "width": 11,
+  "input_key": 1536,
+  "output_key": 3042638419,
+  "control": true,
+  "status": "relaxed_reduced_sat",
+  "events": [
+    {
+      "samples": 59,
+      "status": "sat"
+    }
+  ],
+  "new_executable": false,
+  "constants": {
+    "p": [
+      504,
+      983,
+      512,
+      0,
+      0
+    ],
+    "q": [
+      488,
+      1007,
+      512
+    ]
+  },
+  "verified_inputs": 2048,
+  "seconds": 9.691
+}

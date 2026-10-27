@@ -1,0 +1,19 @@
+{
+  "degrees": [
+    4,
+    2
+  ],
+  "width": 11,
+  "input_key": "arbitrary",
+  "output_key": 3042638419,
+  "control": false,
+  "status": "unsat",
+  "events": [
+    {
+      "samples": 59,
+      "status": "unsat"
+    }
+  ],
+  "new_executable": false,
+  "seconds": 1.591
+}

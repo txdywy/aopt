@@ -1,0 +1,5984 @@
+{
+  "target": "F(x XOR I) XOR PRE_C5",
+  "output_key": 3042638419,
+  "input_key": "arbitrary",
+  "z3": "5.1.0",
+  "numpy": "2.3.5",
+  "seconds_per_width": 1.0,
+  "top": 32,
+  "new_executable": false,
+  "counts": {
+    "unsat": 90659,
+    "unknown": 133
+  },
+  "by_order": {
+    "mad,mad,^,^": {
+      "unsat": 651
+    },
+    "mad,mad,^,&": {
+      "unsat": 651
+    },
+    "mad,mad,^,|": {
+      "unsat": 651
+    },
+    "mad,mad,&,^": {
+      "unsat": 651
+    },
+    "mad,mad,&,&": {
+      "unsat": 651
+    },
+    "mad,mad,&,|": {
+      "unsat": 651
+    },
+    "mad,mad,|,^": {
+      "unsat": 651
+    },
+    "mad,mad,|,&": {
+      "unsat": 651
+    },
+    "mad,mad,|,|": {
+      "unsat": 651
+    },
+    "mad,^,mad,^": {
+      "unsat": 730,
+      "unknown": 2
+    },
+    "mad,^,mad,&": {
+      "unsat": 732
+    },
+    "mad,^,mad,|": {
+      "unsat": 732
+    },
+    "mad,&,mad,^": {
+      "unsat": 732
+    },
+    "mad,&,mad,&": {
+      "unsat": 732
+    },
+    "mad,&,mad,|": {
+      "unsat": 732
+    },
+    "mad,|,mad,^": {
+      "unsat": 730,
+      "unknown": 2
+    },
+    "mad,|,mad,&": {
+      "unsat": 732
+    },
+    "mad,|,mad,|": {
+      "unsat": 732
+    },
+    "mad,^,^,mad": {
+      "unsat": 1163,
+      "unknown": 13
+    },
+    "mad,^,&,mad": {
+      "unsat": 1172,
+      "unknown": 4
+    },
+    "mad,^,|,mad": {
+      "unsat": 1171,
+      "unknown": 5
+    },
+    "mad,&,^,mad": {
+      "unsat": 1172,
+      "unknown": 4
+    },
+    "mad,&,&,mad": {
+      "unsat": 1176
+    },
+    "mad,&,|,mad": {
+      "unsat": 1176
+    },
+    "mad,|,^,mad": {
+      "unsat": 1171,
+      "unknown": 5
+    },
+    "mad,|,&,mad": {
+      "unsat": 1176
+    },
+    "mad,|,|,mad": {
+      "unsat": 1176
+    },
+    "^,mad,mad,^": {
+      "unsat": 1700,
+      "unknown": 8
+    },
+    "^,mad,mad,&": {
+      "unsat": 1708
+    },
+    "^,mad,mad,|": {
+      "unsat": 1708
+    },
+    "&,mad,mad,^": {
+      "unsat": 1708
+    },
+    "&,mad,mad,&": {
+      "unsat": 1708
+    },
+    "&,mad,mad,|": {
+      "unsat": 1708
+    },
+    "|,mad,mad,^": {
+      "unsat": 1706,
+      "unknown": 2
+    },
+    "|,mad,mad,&": {
+      "unsat": 1708
+    },
+    "|,mad,mad,|": {
+      "unsat": 1708
+    },
+    "^,mad,^,mad": {
+      "unsat": 2714,
+      "unknown": 30
+    },
+    "^,mad,&,mad": {
+      "unsat": 2742,
+      "unknown": 2
+    },
+    "^,mad,|,mad": {
+      "unsat": 2736,
+      "unknown": 8
+    },
+    "&,mad,^,mad": {
+      "unsat": 2742,
+      "unknown": 2
+    },
+    "&,mad,&,mad": {
+      "unsat": 2744
+    },
+    "&,mad,|,mad": {
+      "unsat": 2744
+    },
+    "|,mad,^,mad": {
+      "unsat": 2737,
+      "unknown": 7
+    },
+    "|,mad,&,mad": {
+      "unsat": 2744
+    },
+    "|,mad,|,mad": {
+      "unsat": 2744
+    },
+    "^,^,mad,mad": {
+      "unsat": 3063,
+      "unknown": 14
+    },
+    "^,&,mad,mad": {
+      "unsat": 3073,
+      "unknown": 4
+    },
+    "^,|,mad,mad": {
+      "unsat": 3071,
+      "unknown": 6
+    },
+    "&,^,mad,mad": {
+      "unsat": 3074,
+      "unknown": 3
+    },
+    "&,&,mad,mad": {
+      "unsat": 3077
+    },
+    "&,|,mad,mad": {
+      "unsat": 3076,
+      "unknown": 1
+    },
+    "|,^,mad,mad": {
+      "unsat": 3069,
+      "unknown": 8
+    },
+    "|,&,mad,mad": {
+      "unsat": 3074,
+      "unknown": 3
+    },
+    "|,|,mad,mad": {
+      "unsat": 3077
+    }
+  },
+  "unresolved": [
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0119,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0119
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.044,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.044
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0116,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0116
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0035,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0035
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0108,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0108
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0097,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0097
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0108,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0108
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0073,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0073
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0085,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0085
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.012,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.012
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0021,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0021
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0087,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0087
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0492,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0492
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0396,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0396
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0125,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0125
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0112,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0112
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0121,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0121
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0122,
+      "order": [
+        "mad",
+        "^",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0122
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0085,
+      "order": [
+        "mad",
+        "^",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0085
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0129,
+      "order": [
+        "mad",
+        "^",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0129
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0063,
+      "order": [
+        "mad",
+        "^",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0063
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0072,
+      "order": [
+        "mad",
+        "^",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0072
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0126,
+      "order": [
+        "mad",
+        "^",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0126
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0128,
+      "order": [
+        "mad",
+        "^",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0128
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0196,
+      "order": [
+        "mad",
+        "^",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0196
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0108,
+      "order": [
+        "mad",
+        "^",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0108
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0388,
+      "order": [
+        "mad",
+        "&",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0388
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0404,
+      "order": [
+        "mad",
+        "&",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0404
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0039,
+      "order": [
+        "mad",
+        "&",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0039
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0108,
+      "order": [
+        "mad",
+        "&",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0108
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0361,
+      "order": [
+        "mad",
+        "|",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0361
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0482,
+      "order": [
+        "mad",
+        "|",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0482
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0126,
+      "order": [
+        "mad",
+        "|",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0126
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0035,
+      "order": [
+        "mad",
+        "|",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0035
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0071,
+      "order": [
+        "mad",
+        "|",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0071
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0331,
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0331
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0109,
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          3,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0109
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0108,
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0108
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0346,
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0346
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0124,
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0124
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0577,
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0577
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0306,
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0306
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0187,
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0187
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0119,
+      "order": [
+        "|",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0119
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0119,
+      "order": [
+        "|",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0119
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0061,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0061
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0315,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0315
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0018,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0018
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0061,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0061
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0115,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0115
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0066,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0066
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0117,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0117
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0331,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0331
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0087,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0087
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0485,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0485
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0105,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0105
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0084,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0084
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0122,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0122
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0125,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0125
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.013,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.013
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0439,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0439
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0573,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0573
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0126,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0126
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0541,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0541
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0116,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0116
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.012,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.012
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0116,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          4,
+          0
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0116
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0059,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0059
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0198,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0198
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0138,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0138
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0257,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0257
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.012,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.012
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.012,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.012
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0027,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0027
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0107,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0107
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0047,
+      "order": [
+        "^",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0047
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0046,
+      "order": [
+        "^",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0046
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0046,
+      "order": [
+        "^",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0046
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0031,
+      "order": [
+        "^",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0031
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0119,
+      "order": [
+        "^",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0119
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0108,
+      "order": [
+        "^",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0108
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0208,
+      "order": [
+        "^",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0208
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.036,
+      "order": [
+        "^",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          0
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.036
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0412,
+      "order": [
+        "^",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0412
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0109,
+      "order": [
+        "^",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0109
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0129,
+      "order": [
+        "&",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0129
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0119,
+      "order": [
+        "&",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0119
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0068,
+      "order": [
+        "|",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0068
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0516,
+      "order": [
+        "|",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0516
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0081,
+      "order": [
+        "|",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0081
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0077,
+      "order": [
+        "|",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0077
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0597,
+      "order": [
+        "|",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0597
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0066,
+      "order": [
+        "|",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0066
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0053,
+      "order": [
+        "|",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0053
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0073,
+      "order": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0073
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0083,
+      "order": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0083
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0614,
+      "order": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0614
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0082,
+      "order": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0082
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0146,
+      "order": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0146
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0616,
+      "order": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0616
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0058,
+      "order": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0058
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.008,
+      "order": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.008
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0578,
+      "order": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0578
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0551,
+      "order": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0551
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.05,
+      "order": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.05
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0429,
+      "order": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0429
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0287,
+      "order": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          0
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0287
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0068,
+      "order": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0068
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.005,
+      "order": [
+        "^",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          4,
+          1
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.005
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0508,
+      "order": [
+        "^",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0508
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0075,
+      "order": [
+        "^",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0075
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0484,
+      "order": [
+        "^",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0484
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0076,
+      "order": [
+        "^",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0076
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0039,
+      "order": [
+        "^",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0039
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0033,
+      "order": [
+        "^",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0033
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0071,
+      "order": [
+        "^",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0071
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0077,
+      "order": [
+        "^",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0077
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.006,
+      "order": [
+        "^",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.006
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0062,
+      "order": [
+        "&",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          0
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0062
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0396,
+      "order": [
+        "&",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0396
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0033,
+      "order": [
+        "&",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0033
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.007,
+      "order": [
+        "&",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.007
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0088,
+      "order": [
+        "|",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0088
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.006,
+      "order": [
+        "|",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.006
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0076,
+      "order": [
+        "|",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0076
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0071,
+      "order": [
+        "|",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0071
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0039,
+      "order": [
+        "|",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          0
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0039
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0023,
+      "order": [
+        "|",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0023
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0076,
+      "order": [
+        "|",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          1,
+          3,
+          1
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0076
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.006,
+      "order": [
+        "|",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.006
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0085,
+      "order": [
+        "|",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          4,
+          1
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0085
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.006,
+      "order": [
+        "|",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          0
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.006
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 1.0555,
+      "order": [
+        "|",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 1.0555
+        }
+      ]
+    }
+  ],
+  "jobs": 90792,
+  "per_order_limit": 0,
+  "orders": [
+    [
+      "mad",
+      "mad",
+      "^",
+      "^"
+    ],
+    [
+      "mad",
+      "mad",
+      "^",
+      "&"
+    ],
+    [
+      "mad",
+      "mad",
+      "^",
+      "|"
+    ],
+    [
+      "mad",
+      "mad",
+      "&",
+      "^"
+    ],
+    [
+      "mad",
+      "mad",
+      "&",
+      "&"
+    ],
+    [
+      "mad",
+      "mad",
+      "&",
+      "|"
+    ],
+    [
+      "mad",
+      "mad",
+      "|",
+      "^"
+    ],
+    [
+      "mad",
+      "mad",
+      "|",
+      "&"
+    ],
+    [
+      "mad",
+      "mad",
+      "|",
+      "|"
+    ],
+    [
+      "mad",
+      "^",
+      "mad",
+      "^"
+    ],
+    [
+      "mad",
+      "^",
+      "mad",
+      "&"
+    ],
+    [
+      "mad",
+      "^",
+      "mad",
+      "|"
+    ],
+    [
+      "mad",
+      "&",
+      "mad",
+      "^"
+    ],
+    [
+      "mad",
+      "&",
+      "mad",
+      "&"
+    ],
+    [
+      "mad",
+      "&",
+      "mad",
+      "|"
+    ],
+    [
+      "mad",
+      "|",
+      "mad",
+      "^"
+    ],
+    [
+      "mad",
+      "|",
+      "mad",
+      "&"
+    ],
+    [
+      "mad",
+      "|",
+      "mad",
+      "|"
+    ],
+    [
+      "mad",
+      "^",
+      "^",
+      "mad"
+    ],
+    [
+      "mad",
+      "^",
+      "&",
+      "mad"
+    ],
+    [
+      "mad",
+      "^",
+      "|",
+      "mad"
+    ],
+    [
+      "mad",
+      "&",
+      "^",
+      "mad"
+    ],
+    [
+      "mad",
+      "&",
+      "&",
+      "mad"
+    ],
+    [
+      "mad",
+      "&",
+      "|",
+      "mad"
+    ],
+    [
+      "mad",
+      "|",
+      "^",
+      "mad"
+    ],
+    [
+      "mad",
+      "|",
+      "&",
+      "mad"
+    ],
+    [
+      "mad",
+      "|",
+      "|",
+      "mad"
+    ],
+    [
+      "^",
+      "mad",
+      "mad",
+      "^"
+    ],
+    [
+      "^",
+      "mad",
+      "mad",
+      "&"
+    ],
+    [
+      "^",
+      "mad",
+      "mad",
+      "|"
+    ],
+    [
+      "&",
+      "mad",
+      "mad",
+      "^"
+    ],
+    [
+      "&",
+      "mad",
+      "mad",
+      "&"
+    ],
+    [
+      "&",
+      "mad",
+      "mad",
+      "|"
+    ],
+    [
+      "|",
+      "mad",
+      "mad",
+      "^"
+    ],
+    [
+      "|",
+      "mad",
+      "mad",
+      "&"
+    ],
+    [
+      "|",
+      "mad",
+      "mad",
+      "|"
+    ],
+    [
+      "^",
+      "mad",
+      "^",
+      "mad"
+    ],
+    [
+      "^",
+      "mad",
+      "&",
+      "mad"
+    ],
+    [
+      "^",
+      "mad",
+      "|",
+      "mad"
+    ],
+    [
+      "&",
+      "mad",
+      "^",
+      "mad"
+    ],
+    [
+      "&",
+      "mad",
+      "&",
+      "mad"
+    ],
+    [
+      "&",
+      "mad",
+      "|",
+      "mad"
+    ],
+    [
+      "|",
+      "mad",
+      "^",
+      "mad"
+    ],
+    [
+      "|",
+      "mad",
+      "&",
+      "mad"
+    ],
+    [
+      "|",
+      "mad",
+      "|",
+      "mad"
+    ],
+    [
+      "^",
+      "^",
+      "mad",
+      "mad"
+    ],
+    [
+      "^",
+      "&",
+      "mad",
+      "mad"
+    ],
+    [
+      "^",
+      "|",
+      "mad",
+      "mad"
+    ],
+    [
+      "&",
+      "^",
+      "mad",
+      "mad"
+    ],
+    [
+      "&",
+      "&",
+      "mad",
+      "mad"
+    ],
+    [
+      "&",
+      "|",
+      "mad",
+      "mad"
+    ],
+    [
+      "|",
+      "^",
+      "mad",
+      "mad"
+    ],
+    [
+      "|",
+      "&",
+      "mad",
+      "mad"
+    ],
+    [
+      "|",
+      "|",
+      "mad",
+      "mad"
+    ]
+  ],
+  "completed": 90792,
+  "seconds": 857.01
+}

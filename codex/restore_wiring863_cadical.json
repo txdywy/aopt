@@ -1,0 +1,6844 @@
+{
+  "engine": "cadical195",
+  "pysat": "1.9.dev17",
+  "z3": "5.1.0",
+  "source": "codex/restore_wiring863_final_audit.json",
+  "jobs": 200,
+  "seconds_per_case": 12.0,
+  "rows": [
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 68251,
+      "stats": {
+        "restarts": 976,
+        "conflicts": 24473,
+        "decisions": 38674,
+        "propagations": 13246832
+      },
+      "seconds": 9.391318792011589,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 9.606
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "wall_seconds": 12.014
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "wall_seconds": 12.011
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "wall_seconds": 12.01
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 12.011
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 86426,
+      "stats": {
+        "restarts": 2067,
+        "conflicts": 27173,
+        "decisions": 52401,
+        "propagations": 18454555
+      },
+      "seconds": 11.518909917213023,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 11.743
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 12.01
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "|",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "|",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 90111,
+      "stats": {
+        "restarts": 568,
+        "conflicts": 9769,
+        "decisions": 19075,
+        "propagations": 6780628
+      },
+      "seconds": 10.920447000302374,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 11.132
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "wall_seconds": 12.01
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 58921,
+      "stats": {
+        "restarts": 220,
+        "conflicts": 8509,
+        "decisions": 12913,
+        "propagations": 4664409
+      },
+      "seconds": 7.272314666304737,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "wall_seconds": 7.5
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.011
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 12.005
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.011
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "wall_seconds": 12.01
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.012
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "wall_seconds": 12.012
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.01
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.01
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 79548,
+      "stats": {
+        "restarts": 1353,
+        "conflicts": 28179,
+        "decisions": 49618,
+        "propagations": 19160351
+      },
+      "seconds": 9.972613499965519,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "wall_seconds": 10.158
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.006
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3,
+          2
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 55571,
+      "stats": {
+        "restarts": 292,
+        "conflicts": 13633,
+        "decisions": 20290,
+        "propagations": 4349951
+      },
+      "seconds": 6.338679583277553,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 6.519
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 55841,
+      "stats": {
+        "restarts": 350,
+        "conflicts": 13331,
+        "decisions": 21568,
+        "propagations": 4012685
+      },
+      "seconds": 6.345374499913305,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "wall_seconds": 6.527
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 58635,
+      "stats": {
+        "restarts": 812,
+        "conflicts": 21819,
+        "decisions": 35854,
+        "propagations": 7752790
+      },
+      "seconds": 7.116772125009447,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 7.315
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 78101,
+      "stats": {
+        "restarts": 798,
+        "conflicts": 19361,
+        "decisions": 31659,
+        "propagations": 13564741
+      },
+      "seconds": 9.20579362474382,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 9.388
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 90795,
+      "stats": {
+        "restarts": 1406,
+        "conflicts": 24955,
+        "decisions": 50908,
+        "propagations": 13542728
+      },
+      "seconds": 10.707838958129287,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 10.904
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 87000,
+      "stats": {
+        "restarts": 1868,
+        "conflicts": 41413,
+        "decisions": 71257,
+        "propagations": 26097780
+      },
+      "seconds": 11.414902499876916,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 11.604
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 55822,
+      "stats": {
+        "restarts": 809,
+        "conflicts": 21165,
+        "decisions": 36096,
+        "propagations": 9328594
+      },
+      "seconds": 6.805214999709278,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 6.984
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 55750,
+      "stats": {
+        "restarts": 590,
+        "conflicts": 19909,
+        "decisions": 30042,
+        "propagations": 11206550
+      },
+      "seconds": 6.927923290990293,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "wall_seconds": 7.107
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 78711,
+      "stats": {
+        "restarts": 2316,
+        "conflicts": 42931,
+        "decisions": 80186,
+        "propagations": 25816043
+      },
+      "seconds": 10.497092291712761,
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 10.683
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 78976,
+      "stats": {
+        "restarts": 2570,
+        "conflicts": 52309,
+        "decisions": 96927,
+        "propagations": 36990205
+      },
+      "seconds": 11.691227665636688,
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 11.877
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.006
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.006
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 78642,
+      "stats": {
+        "restarts": 2421,
+        "conflicts": 41516,
+        "decisions": 76775,
+        "propagations": 22894332
+      },
+      "seconds": 10.093161374796182,
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 10.28
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 101216,
+      "stats": {
+        "restarts": 1064,
+        "conflicts": 21128,
+        "decisions": 36583,
+        "propagations": 12234093
+      },
+      "seconds": 11.348365125246346,
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          0
+        ]
+      ],
+      "wall_seconds": 11.567
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3,
+          4
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          1
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 86575,
+      "stats": {
+        "restarts": 1639,
+        "conflicts": 41348,
+        "decisions": 65610,
+        "propagations": 23529127
+      },
+      "seconds": 11.180278332903981,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 11.37
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          0
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 46265,
+      "stats": {
+        "restarts": 248,
+        "conflicts": 6067,
+        "decisions": 9895,
+        "propagations": 3292569
+      },
+      "seconds": 5.188873374834657,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          2
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 5.363
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 81791,
+      "stats": {
+        "restarts": 680,
+        "conflicts": 20086,
+        "decisions": 36142,
+        "propagations": 17773278
+      },
+      "seconds": 10.203269500285387,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "wall_seconds": 10.392
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 81572,
+      "stats": {
+        "restarts": 942,
+        "conflicts": 26182,
+        "decisions": 46163,
+        "propagations": 11069733
+      },
+      "seconds": 9.580597166903317,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 9.765
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 46514,
+      "stats": {
+        "restarts": 705,
+        "conflicts": 7995,
+        "decisions": 15748,
+        "propagations": 3301786
+      },
+      "seconds": 5.2391063333489,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          2
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "wall_seconds": 5.417
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 78707,
+      "stats": {
+        "restarts": 1617,
+        "conflicts": 52992,
+        "decisions": 83034,
+        "propagations": 36140129
+      },
+      "seconds": 11.571481000166386,
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 11.775
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 78955,
+      "stats": {
+        "restarts": 2504,
+        "conflicts": 56143,
+        "decisions": 98216,
+        "propagations": 36671420
+      },
+      "seconds": 11.524570500012487,
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 11.725
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          0
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "cadical195",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 12.007
+    }
+  ],
+  "counts": {
+    "unsat": 24,
+    "unknown": 176
+  },
+  "new_executable": false,
+  "completed": 200
+}

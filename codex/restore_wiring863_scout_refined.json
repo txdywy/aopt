@@ -1,0 +1,105 @@
+{
+  "target": "F(x XOR I) XOR PRE_C5",
+  "output_key": 3042638419,
+  "input_key": "arbitrary",
+  "z3": "5.1.0",
+  "numpy": "2.3.5",
+  "seconds_per_width": 30.0,
+  "top": 32,
+  "new_executable": false,
+  "counts": {
+    "unsat": 3,
+    "unknown": 1
+  },
+  "by_order": {
+    "mad,^,|,mad": {
+      "unsat": 1
+    },
+    "mad,^,^,mad": {
+      "unsat": 1
+    },
+    "mad,^,mad,mad": {
+      "unsat": 1
+    },
+    "^,mad,^,mad": {
+      "unknown": 1
+    }
+  },
+  "unresolved": [
+    {
+      "width": 11,
+      "status": "unknown",
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 28,
+      "seconds": 30.0146,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 30.0146
+        }
+      ]
+    }
+  ],
+  "source_reports": [
+    "codex/restore_wiring863_scout2.json",
+    "codex/restore_wiring863_scout3.json"
+  ],
+  "jobs": 4,
+  "per_order_limit": 0,
+  "orders": [
+    [
+      "^",
+      "mad",
+      "^",
+      "mad"
+    ],
+    [
+      "mad",
+      "^",
+      "^",
+      "mad"
+    ],
+    [
+      "mad",
+      "^",
+      "mad",
+      "mad"
+    ],
+    [
+      "mad",
+      "^",
+      "|",
+      "mad"
+    ]
+  ],
+  "completed": 4,
+  "seconds": 32.1
+}

@@ -1,0 +1,195 @@
+{
+  "rows": [
+    {
+      "status": "reduced_sat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 2,
+      "constants": [
+        [
+          33,
+          29
+        ],
+        [
+          512,
+          1536
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          9,
+          709
+        ]
+      ],
+      "input_key": 1024,
+      "samples": 95,
+      "verified_inputs": 2048,
+      "clauses": 81332,
+      "seconds": 16.8343328749761,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 17.021
+    },
+    {
+      "status": "unsat",
+      "engine": "cadical195",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 16634,
+      "stats": {
+        "restarts": 0,
+        "conflicts": 0,
+        "decisions": 0,
+        "propagations": 2
+      },
+      "seconds": 1.5303010419011116,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 1.686
+    },
+    {
+      "status": "reduced_sat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 3,
+      "constants": [
+        [
+          33,
+          1052
+        ],
+        [
+          512,
+          1536
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          9,
+          718
+        ]
+      ],
+      "input_key": 0,
+      "samples": 103,
+      "verified_inputs": 2048,
+      "clauses": 85239,
+      "seconds": 27.207975124940276,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 27.376
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 16634,
+      "stats": null,
+      "seconds": 1.5228539169766009,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 1.68
+    }
+  ]
+}

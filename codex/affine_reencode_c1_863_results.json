@@ -1,0 +1,1 @@
+{"control": {"result": "sat", "model": [1, 2147483648, 1, 0], "rounds": 1}, "target": {"result": "unsat", "rounds": 1, "samples": 16, "seconds": 49.64}}

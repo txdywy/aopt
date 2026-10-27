@@ -1,0 +1,1359 @@
+{
+  "executable_best_cycles": 864,
+  "new_executable": false,
+  "records": 64,
+  "baseline_arithmetic_lanes": 51665,
+  "removed_child_encoding_xors": 256,
+  "added_state_restore_lanes": 256,
+  "optimistic_minimum_copy_lanes": 128,
+  "arithmetic_lanes_lower_bound": 51793,
+  "arithmetic_only_cycle_lower_bound": 864,
+  "cases": [
+    {
+      "tag": [
+        0
+      ],
+      "source_tag": [
+        63
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        1
+      ],
+      "source_tag": [
+        63
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        2
+      ],
+      "source_tag": [
+        62
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        3
+      ],
+      "source_tag": [
+        62
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        4
+      ],
+      "source_tag": [
+        61
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        5
+      ],
+      "source_tag": [
+        61
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        6
+      ],
+      "source_tag": [
+        60
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        7
+      ],
+      "source_tag": [
+        60
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        8
+      ],
+      "source_tag": [
+        59
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        9
+      ],
+      "source_tag": [
+        59
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        10
+      ],
+      "source_tag": [
+        58
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        11
+      ],
+      "source_tag": [
+        58
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        12
+      ],
+      "source_tag": [
+        57
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        13
+      ],
+      "source_tag": [
+        57
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        14
+      ],
+      "source_tag": [
+        56
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        15
+      ],
+      "source_tag": [
+        56
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        16
+      ],
+      "source_tag": [
+        55
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        17
+      ],
+      "source_tag": [
+        55
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        18
+      ],
+      "source_tag": [
+        54
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        19
+      ],
+      "source_tag": [
+        54
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        20
+      ],
+      "source_tag": [
+        53
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        21
+      ],
+      "source_tag": [
+        53
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        22
+      ],
+      "source_tag": [
+        52
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        23
+      ],
+      "source_tag": [
+        52
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        24
+      ],
+      "source_tag": [
+        51
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        25
+      ],
+      "source_tag": [
+        51
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        26
+      ],
+      "source_tag": [
+        50
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        27
+      ],
+      "source_tag": [
+        50
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        28
+      ],
+      "source_tag": [
+        49
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        29
+      ],
+      "source_tag": [
+        49
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        30
+      ],
+      "source_tag": [
+        48
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        31
+      ],
+      "source_tag": [
+        48
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        32
+      ],
+      "source_tag": [
+        47
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        33
+      ],
+      "source_tag": [
+        47
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        34
+      ],
+      "source_tag": [
+        46
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        35
+      ],
+      "source_tag": [
+        46
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        36
+      ],
+      "source_tag": [
+        45
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        37
+      ],
+      "source_tag": [
+        45
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        38
+      ],
+      "source_tag": [
+        44
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        39
+      ],
+      "source_tag": [
+        44
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        40
+      ],
+      "source_tag": [
+        43
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        41
+      ],
+      "source_tag": [
+        43
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        42
+      ],
+      "source_tag": [
+        42
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        43
+      ],
+      "source_tag": [
+        42
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        44
+      ],
+      "source_tag": [
+        41
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        45
+      ],
+      "source_tag": [
+        41
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        46
+      ],
+      "source_tag": [
+        40
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        47
+      ],
+      "source_tag": [
+        40
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        48
+      ],
+      "source_tag": [
+        39
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        49
+      ],
+      "source_tag": [
+        39
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        50
+      ],
+      "source_tag": [
+        38
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        51
+      ],
+      "source_tag": [
+        38
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        52
+      ],
+      "source_tag": [
+        37
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        53
+      ],
+      "source_tag": [
+        37
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        54
+      ],
+      "source_tag": [
+        36
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        55
+      ],
+      "source_tag": [
+        36
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        56
+      ],
+      "source_tag": [
+        35
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        57
+      ],
+      "source_tag": [
+        35
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        58
+      ],
+      "source_tag": [
+        34
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        59
+      ],
+      "source_tag": [
+        34
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        60
+      ],
+      "source_tag": [
+        33
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        61
+      ],
+      "source_tag": [
+        33
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        62
+      ],
+      "source_tag": [
+        32
+      ],
+      "source_offsets": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    },
+    {
+      "tag": [
+        63
+      ],
+      "source_tag": [
+        32
+      ],
+      "source_offsets": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "destination_slots": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "optimistic_direct_aliases": 2
+    }
+  ],
+  "result": "863_excluded_for_arithmetic_copy_family",
+  "scope": "Retain the 864 graph, its 64 eight-lane raw vloads, two stride-four records per eight-word vstore and fixed node-XOR semantics; children may be permuted arbitrarily within a store. Copies use ALU/VALU, and all other graph costs are held fixed. FLOW copies, scalar loads, changed stride, other address/hash/layout changes and kernel-wide optimum are not covered."
+}

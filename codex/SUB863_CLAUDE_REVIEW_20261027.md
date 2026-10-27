@@ -3,9 +3,10 @@
 **可执行最好成绩仍为 864 cycles，本轮没有产生 863 程序。**
 
 本轮按用户要求读取 GitHub 最新提交并继续研究。`git fetch origin` 确认
-研究分支与本地均为 `866e2ceb17931c5c53a1ede280a4f416395d7c58`；远程当前
-只有 `main` 和 `agent/extreme-kernel-1023` 两个分支。
-`opus/README.md` 仍是旧的 1285-cycle 方案。
+研究分支与本地基线均为 `866e2ceb17931c5c53a1ede280a4f416395d7c58`。
+开始复核时，远程只有 `main` 和 `agent/extreme-kernel-1023` 两个分支；
+随后新增的 `claude/sub863-explore` 也指向同一研究基线，内容已包含在本次
+复核范围内。`opus/README.md` 仍是旧的 1285-cycle 方案。
 
 ## 1. 采用的新研究结论及其边界
 

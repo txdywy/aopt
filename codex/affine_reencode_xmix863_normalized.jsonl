@@ -1,0 +1,16 @@
+{"fam": "xxor", "s": 19, "target": "ctl_xxor", "normalized": true, "result": "sat", "model": [1, 0, 1, 0, 0]}
+{"fam": "xadd", "s": 19, "target": "ctl_xadd", "normalized": true, "result": "unknown", "samples": 16, "seconds": 1800.04}
+{"fam": "kx", "s": 19, "target": "ctl_kx", "normalized": true, "result": "sat", "model": [1, 0, 1, 0, 5]}
+{"fam": "wk", "s": 19, "target": "ctl_wk", "normalized": true, "result": "unknown", "samples": 17, "seconds": 1800.03}
+{"fam": "xxor", "s": 19, "target": "g19c1", "normalized": true, "result": "unsat", "samples": 16, "seconds": 0.06}
+{"fam": "xadd", "s": 19, "target": "g19c1", "normalized": true, "result": "unknown", "samples": 16, "seconds": 1800.3}
+{"fam": "xadd", "s": 20, "target": "g19c1", "normalized": true, "result": "unsat", "samples": 16, "seconds": 4.28}
+{"fam": "xadd", "s": 21, "target": "g19c1", "normalized": true, "result": "unsat", "samples": 16, "seconds": 5.5}
+{"fam": "xadd", "s": 22, "target": "g19c1", "normalized": true, "result": "unsat", "samples": 16, "seconds": 2.36}
+{"fam": "xadd", "s": 23, "target": "g19c1", "normalized": true, "result": "unsat", "samples": 16, "seconds": 5.87}
+{"fam": "xadd", "s": 24, "target": "g19c1", "normalized": true, "result": "unsat", "samples": 16, "seconds": 21.94}
+{"fam": "kx", "s": 19, "target": "g19c1", "normalized": true, "result": "unsat", "samples": 16, "seconds": 32.81}
+{"fam": "wk", "s": 19, "target": "g19c1", "normalized": true, "result": "unsat", "samples": 16, "seconds": 193.84}
+{"fam": "wk", "s": 24, "target": "g19c1", "normalized": true, "result": "unsat", "samples": 16, "seconds": 0.42}
+{"fam": "wk", "s": 25, "target": "g19c1", "normalized": true, "result": "unsat", "samples": 16, "seconds": 0.34}
+{"summary": {"unsat": 10, "sat": 0, "timeout": 0, "unknown": 1}, "controls": [{"fam": "xxor", "s": 19, "target": "ctl_xxor", "normalized": true, "result": "sat", "model": [1, 0, 1, 0, 0]}, {"fam": "xadd", "s": 19, "target": "ctl_xadd", "normalized": true, "result": "unknown", "samples": 16, "seconds": 1800.04}, {"fam": "kx", "s": 19, "target": "ctl_kx", "normalized": true, "result": "sat", "model": [1, 0, 1, 0, 5]}, {"fam": "wk", "s": 19, "target": "ctl_wk", "normalized": true, "result": "unknown", "samples": 17, "seconds": 1800.03}]}

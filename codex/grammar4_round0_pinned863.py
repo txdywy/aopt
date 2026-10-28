@@ -67,11 +67,13 @@ def xk_aff_input(p, k):
     return None
 
 
-def solve_pinned(p, root, amounts, seconds=60, low=None, seed=863):
+def solve_pinned(p, root, amounts, seconds=60, low=None, seed=863, hints=()):
     """g.solve_domain with constant shift amounts {instruction: s}.
 
     low: optional list of (positions, allowed): positions are (instr, const, lo)
     triples, allowed a list of value tuples for bits lo..lo+19 of those constants.
+    hints: (instr, const, t) triples meaning v2(constant) <= t, each proved by an exact rule
+    of grammar4_round0_pinned_audit863 (which lists them with the case).
     """
     import z3
     sem = g.ops(z3)
@@ -89,6 +91,8 @@ def solve_pinned(p, root, amounts, seconds=60, low=None, seed=863):
         if j is not None and s <= 29:
             d = s - 19
             solver.add(z3.Extract(d, 0, consts[j][0]) == 1 << d)
+    for n, i, t in hints:
+        solver.add(z3.Extract(t, 0, consts[n][i]) != 0)
     for positions, allowed in low or []:
         solver.add(z3.Or([z3.And([z3.Extract(lo + 19, lo, consts[n][i]) == val
                                   for (n, i, lo), val in zip(positions, row)]) for row in allowed]))
@@ -143,15 +147,18 @@ def xk_aff_low(p, k, s, root):
 
 
 def job(args):
-    idx, amounts, seconds, root, low = args
+    idx, amounts, seconds, root, low, *rest = args
+    hints = rest[0] if rest else ()
     p = h.templates4()[idx] if idx not in _CACHE else _CACHE[idx]
     t0 = time.monotonic()
     try:
-        r = solve_pinned(p, root, amounts, seconds, low)
+        r = solve_pinned(p, root, amounts, seconds, low, hints=hints)
     except Exception as exc:  # report, never hide
         r = dict(result='error', error=f'{type(exc).__name__}: {exc}'[:200])
     r.update(idx=idx, amounts={str(k): s for k, s in amounts.items()}, template=g.describe(p),
              pinned_low=bool(low), wall=round(time.monotonic() - t0, 2))
+    if hints:
+        r['hints'] = [list(x) for x in hints]
     return r
 
 
@@ -176,10 +183,15 @@ def main():
     args = ap.parse_args()
     ts = h.templates4()
     todo = []
+    hint_of = {}
     if args.combos:
         for idx, combos in json.loads(args.combos.read_text()).items():
             sh = shifts(ts[int(idx)])
-            todo += [(int(idx), dict(zip(sh, c))) for c in combos]
+            for c in combos:
+                if isinstance(c, dict):        # {"amounts": [...], "hints": [[n, i, t], ...]}
+                    hint_of[(int(idx), tuple(c['amounts']))] = tuple(map(tuple, c['hints']))
+                    c = c['amounts']
+                todo.append((int(idx), dict(zip(sh, c))))
     elif args.only:
         for item in args.only.split(','):
             idx, _, s = item.partition(':')
@@ -201,7 +213,8 @@ def main():
             r = json.loads(line)
             done.add((r['idx'], tuple(sorted(r['amounts'].items()))))
     low = lambda i, a: xk_aff_low(ts[i], *next(iter(a.items())), args.root) if len(a) == 1 else None
-    jobs = [(i, a, args.seconds, args.root, low(i, a)) for i, a in todo
+    hints = lambda i, a: hint_of.get((i, tuple(s for _, s in sorted(a.items()))), ())
+    jobs = [(i, a, args.seconds, args.root, low(i, a), hints(i, a)) for i, a in todo
             if (i, tuple(sorted((str(k), s) for k, s in a.items()))) not in done]
     print(json.dumps(dict(cases=len(todo), todo=len(jobs))), flush=True)
     with args.output.open('a' if args.skip_done else 'w') as out, \

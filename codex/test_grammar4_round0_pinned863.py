@@ -202,6 +202,34 @@ class PinnedTests(unittest.TestCase):
             d = (g.run_program(p, v ^ (1 << j), kv, sem) - g.run_program(p, v, kv, sem)) & g.MASK
             self.assertIn(v2(d), V, (p, am, j))
 
+    def test_window_checks(self):
+        self.assertEqual(b0.window_checks(R), ((), (), ()))
+        e1, e2, e3 = b0.window_checks(R & ~0xFFFFF)      # control root: the natural mu survives
+        self.assertIn(4097, e1)
+        self.assertTrue(e3)
+        ts = h.templates4()
+        self.assertTrue(audit.final_window_shape(ts[1191]) and audit.final_window_facts(R))
+
+    def test_coupled_valuation_rule(self):
+        ts = h.templates4()
+        sem = g.ops(None)
+        rng = random.Random(33)
+        v2 = lambda x: (x & -x).bit_length() - 1 if x else 64
+        seen = 0
+        for _ in range(20000):
+            p = rng.choice(ts)
+            sh = q.shifts(p)
+            am = {k: rng.randrange(32) for k in sh}
+            if not audit.coupled_valuation_refuted(p, am):
+                continue
+            seen += 1
+            kv = random_consts(p, am, rng)
+            v = rng.randrange(g.D30)
+            run = lambda w: g.run_program(p, w, kv, sem)
+            d = [v2((run(v ^ (1 << j)) - run(v)) & g.MASK) for j in (20, 29)]
+            self.assertNotEqual(d, [1, 10], (p, am))
+        self.assertGreater(seen, 200)
+
     def test_bit20_exhaustive_control(self):
         with tempfile.TemporaryDirectory() as d:
             # bit 20 of 2(a(u ^ b) + C0) is bit 19 of a(u ^ b) + C0: a = 4097, b = R mod 2^20 is y19

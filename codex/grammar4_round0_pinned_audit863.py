@@ -79,6 +79,19 @@ Multi-shift templates: every assignment of shift amounts is a case, closed by
               u_q (only L'_q moves), which leaves one read; q = 19 needs
               bit19(L') = y19 ^ G(u0, bit_p(L')), which grammar4_round0_bit0_863.SUB_C
               refutes for every p = 0..18 (G2). One read is the affine bit-0 lemma.
+  final-window  i1 = aff(u), i2 = i1 >> s1, i3 = A + B*i2 or X ^ i2 (A, B, X T-functions),
+              i4 = i3 >> s2 with s2 in {1, 2} and s1 + s2 <= 29. Bit 0 of the output is bit s2
+              of i3, a function of c = u mod 8 and the window W = bits s1..s1+s2 of L, i.e.
+              bits p..p+s2 of L' with p = s1 - d. All window bits below 19: flip u19. p >= 20:
+              the inputs u + k*2^p (k < 2^(s2+1)) keep c and y19 and run W through every
+              value, so y19 would depend on c alone. p = 19, 18, 17 (window across bit 19):
+              the same trick drops bits >= 20, flipping u19 isolates bit 19, and what is left
+              is E1, E2 or E3 of grammar4_round0_bit0_863.WIN_C, all without solutions.
+  coupled-valuation  the single-shift valuation rule for any template: the last
+              instruction is A + B*Z with Z a bounded shift-derived value of width w <= 9,
+              B a constant or T-function and A's move valuations > j - 19 at j = 20, 29
+              (from the sets below): v2(B) <= 1 and v2(B) >= 11 - w clash. With X op Z
+              (op = ^, |, &) the move below bit w must have valuation 10 at j = 29: w >= 11.
   valuation-set  the possible 2-adic valuations of the output's move under a flip of
               input bit j (j = 20..29), tracked as sets through every instruction for all v
               and all constants, miss j - 19, the target's exact valuation
@@ -87,6 +100,7 @@ Multi-shift templates: every assignment of shift amounts is a case, closed by
 from __future__ import annotations
 
 import argparse
+import functools
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import json
 from pathlib import Path
@@ -309,7 +323,7 @@ def _vscale(A):            # multiply the move by an unknown value (constant or 
         out |= _vge(a) if a != _INF else {_INF}
     return frozenset(out)
 
-def move_valuations(p, amounts, j):
+def move_valuations(p, amounts, j, full=False):
     """state per value: (kind, V) with kind 'T' (T-function of v: move valuations >= j, value
     low-determined) or 'S' (shift-derived, bounded by width w)."""
     st = [('T', frozenset({j}), 30)]          # u moves by exactly +-2^j; 30-bit value
@@ -364,13 +378,111 @@ def move_valuations(p, amounts, j):
                 V = _vsum(V, add[1])
             st.append(('S', V, 32)); continue
         st.append(('S', _FULL, 32))
-    return st[-1][1]
+    return st if full else st[-1][1]
+
+# last instruction affine in one operand Z: (form, position of Z) -> (A, B) as operand positions,
+# 'K' for the form's constant, ('mul', x, y) for a product of operands
+_AFFINE_SPLIT = {
+    ('lin1', 1): (('K*', 0), 'one'), ('lin1', 0): ((1,), 'K'),
+    ('lin2', 1): ((0,), 'K'), ('lin2', 0): (('K*', 1), 'one'),
+    ('prod', 0): (None, 1), ('prod', 1): (None, 0),
+    ('mad_c', 2): (('mul', 0, 1), 'one'), ('mad_c', 0): ((2,), 1), ('mad_c', 1): ((2,), 0),
+    ('mad_b', 1): (('mul', 0, 2), 'one'), ('mad_b', 0): ((1,), 2), ('mad_b', 2): ((1,), 0),
+    ('mad_a', 0): (('mul', 1, 2), 'one'), ('mad_a', 1): ((0,), 2), ('mad_a', 2): ((0,), 1),
+}
+
+
+def coupled_valuation_refuted(p, amounts):
+    """Rule coupled-valuation: the last instruction is A + B*Z with Z bounded (< 2^w), B a
+    constant or T-function, and A moving with valuation > j - 19 at j = 20 and 29; then
+    v2(B) <= 1 (j = 20) and v2(B) >= 11 - w (j = 29) clash for w <= 9. With X ^ Z, X | Z or
+    X & Z (X moving with valuation > 10 at j = 29) the move below bit w needs w >= 11."""
+    f, args = p[-1]
+    states = {j: move_valuations(p, amounts, j, full=True) for j in (20, 29)}
+    # Z: the one operand of width <= 10 (shift-derived); other operands only matter through
+    # their move valuations (A) or must be T-functions (B)
+    bounded = [i for i, a in enumerate(args) if states[20][a][0] == 'S' and states[20][a][2] <= 10]
+    if len(bounded) != 1 or args.count(args[bounded[0]]) != 1:
+        return False
+    z = bounded[0]
+    width = states[20][args[z]][2]
+    if f in ('xor', 'or', 'and'):
+        other = args[1 - z]
+        return width <= 10 and min(states[29][other][1]) > 10
+    split = _AFFINE_SPLIT.get((f, z))
+    if split is None or width > 9:
+        return False
+    a_part, b_part = split
+    if b_part not in ('one', 'K') and states[20][args[b_part]][0] != 'T':
+        return False
+    for j in (20, 29):
+        st = states[j]
+        if a_part is None:
+            continue                                 # A is the form's constant: no move
+        if a_part[0] == 'K*':
+            va = _vscale(st[args[a_part[1]]][1])
+        elif a_part[0] == 'mul':
+            x, y = st[args[a_part[1]]][1], st[args[a_part[2]]][1]
+            va = _vsum(_vscale(y), _vscale(x))
+        else:
+            va = st[args[a_part[0]]][1]
+        if min(va) <= j - 19:
+            return False
+    return True
+
 
 def valuation_set_refuted(p, amounts):
     for j in range(20, 30):
         if (j - 19) not in move_valuations(p, amounts, j):
             return j
     return None
+
+
+FINAL_WINDOW_MID = {'lin1', 'lin2', 'prod', 'mad_c', 'mad_b', 'mad_a', 'xor'}
+
+
+def final_window_shape(p):
+    """True for aff(u); i1 >> s1; A + B*i2 or X ^ i2 from {u, i1, i2}; i3 >> s2."""
+    if len(p) != 4 or p[0] != ('aff', (0,)) or p[1] != ('shrk', (1,)) or p[3] != ('shrk', (3,)):
+        return False
+    f, args = p[2]
+    return f in FINAL_WINDOW_MID and args.count(2) == 1 and all(a in (0, 1, 2) for a in args)
+
+
+@functools.lru_cache(maxsize=None)
+def final_window_facts(root):
+    y19 = h.y19_of(root)
+    pair = next(((u, u + 8) for u in range(1 << 12) if y19(u) != y19(u + 8)), None)
+    return b0.window_checks(root) == ((), (), ()) and pair is not None
+
+
+def case_hints(p, amounts):
+    """Proved bounds v2(constant) <= t that a solver run of this case may assume.
+
+    - two reads of i1 = aff(u) with the higher at q = 30 or 31: for v2(mu) > q - 30 every
+      normalised read position is <= 29, which rule two-read excludes;
+    - final shift by s2 after i1 >> s1 with s1 + s2 >= 30: for v2(mu) > s1 + s2 - 30 the window
+      sits at or below 29 - s2, which rule final-window excludes;
+    - last instruction A + K*Z (K the form's constant, Z shift-derived) where A moves with
+      valuation > 1 under the bit-20 flip: the target's move has valuation 1, so v2(K) <= 1.
+    """
+    out = []
+    pos = two_read_l_positions(p, amounts)
+    if pos and max(pos) in (30, 31):
+        out.append((0, 0, max(pos) - 30))
+    if final_window_shape(p) and amounts[1] + amounts[3] >= 30:
+        out.append((0, 0, min(amounts[1] + amounts[3] - 30, 31)))
+    f, args = p[-1]
+    st = move_valuations(p, amounts, 20, full=True)
+    for z, a in enumerate(args):
+        split = _AFFINE_SPLIT.get((f, z))
+        if st[a][0] != 'S' or split is None or split[1] != 'K' or args.count(a) != 1:
+            continue
+        a_part = split[0]
+        va = st[args[a_part[0]]][1] if a_part[0] not in ('K*', 'mul') else None
+        if va is not None and min(va) > 1:
+            out.append((len(p) - 1, 0, 1))
+    return sorted(set(out))
 
 
 def multi_rule(p, amounts, root, two_read_ok=False):
@@ -391,6 +503,11 @@ def multi_rule(p, amounts, root, two_read_ok=False):
         return 'two-read'
     if valuation_set_refuted(p, amounts):
         return 'valuation-set'
+    if coupled_valuation_refuted(p, amounts):
+        return 'coupled-valuation'
+    if final_window_shape(p) and amounts[3] in (1, 2) and amounts[1] + amounts[3] <= 29 \
+            and final_window_facts(root):
+        return 'final-window'
     r, am = drop_zero_shifts(p, amounts)
     merged = merge_nested_shifts(r, am)
     if merged:
@@ -431,6 +548,7 @@ def main():
     ap.add_argument('--output', type=Path, required=True)
     ap.add_argument('--todo', type=Path, help='write the idx:s cases still needing the solver, then stop')
     ap.add_argument('--multi-todo', type=Path, help='write the multi-shift combos needing the solver, then stop')
+    ap.add_argument('--open-todo', type=Path, help='after merging, write the open combos with hints')
     args = ap.parse_args()
     root = h.ROOTS[0]
     ts = h.templates4()
@@ -521,6 +639,14 @@ def main():
                    templates_open=len(open_templates), cases_open=len(open_cases),
                    mask_rule_facts=mask_ok, two_read_facts=two_read_ok)
     print(json.dumps(summary), flush=True)
+    if args.open_todo:
+        todo = {}
+        for i, am in open_cases:
+            if len(am) > 1:
+                sh = q.shifts(ts[i])
+                todo.setdefault(str(i), []).append(
+                    dict(amounts=am, hints=[list(x) for x in case_hints(ts[i], dict(zip(sh, am)))]))
+        args.open_todo.write_text(json.dumps(todo) + '\n')
     out = dict(summary=summary, open_templates={i: g.describe(ts[i]) for i in open_templates},
                open_cases=open_cases)
     args.output.write_text(json.dumps(out, separators=(',', ':')) + '\n')

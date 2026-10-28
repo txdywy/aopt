@@ -406,6 +406,87 @@ int main(int argc, char **argv) {
 """
 
 
+# Window checks for templates that end in a final right shift by 1 or 2 (rule final-window of
+# grammar4_round0_pinned_audit863), with c = u mod 8: E1 bit19(L) = y19 ^ g(c); E2 the same
+# with dep_c * bit18(L) added; E3 bit19(L) ^ G_c(bit17(L), bit18(L)) = y19.
+WIN_C = r"""/* Window checks for templates ending in a final right shift by 1 or 2 (class e).
+   c = u mod 8.  E1: bit19(mu u + nu) == y19(u) ^ g(c).
+   E2: bit19(V) ^ dep_c * bit18(V) == y19 ^ g(c), V = mu u + nu (bit19 ^ bit18 = bit19(V + 2^18)).
+   E3: bit19(V) ^ G_c(bit17(V), bit18(V)) == y19: with step d = 2^17 / mu (mod 2^20) V moves by
+       exactly 2^17, so along u0 + k d (k < 8) the left side is a rotation of a fixed 8-bit pattern. */
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#define N (1u << 20)
+#define MSK (N - 1)
+#define H (1u << 19)
+#define C0 %(C0)uu
+static uint32_t R;
+static inline uint32_t y19(uint32_t u) { return ((4097u * (u ^ R) + C0) >> 19) & 1; }
+/* arc intersection over the class c: nu with bit19(mu u + nu + shift) == y19(u) for u = c mod 8 */
+static int arc_class(uint32_t mu, uint32_t c, uint32_t shift, uint32_t *lo_out, uint32_t *len_out) {
+  uint32_t lo = 0, len = N;
+  for (uint32_t u = c; u < N && len; u += 8) {
+    uint32_t a = (y19(u) * H - mu * u - shift) & MSK;
+    if (len == N) { lo = a; len = H; continue; }
+    uint32_t d = (a - lo) & MSK, e = (lo - a) & MSK;
+    if (d < len) { len -= d; lo = a; if (len > H) len = H; }
+    else if (e < H) { uint32_t r = H - e; if (r < len) len = r; }
+    else len = 0;
+  }
+  *lo_out = lo; *len_out = len;
+  return len != 0;
+}
+int main(int argc, char **argv) {
+  R = (uint32_t)strtoul(argv[1], 0, 0);
+  long e1 = 0, e2 = 0;
+  /* E1 and E2 together: for each mu, each class c, the feasible nu mod 2^19 is the union over
+     dep in {0,1} of (arc for shift dep * 2^18) mod 2^19 (g_c = 1 adds 2^19, invisible mod 2^19).
+     A class with no arc for either dep kills mu. Survivors are reported for a full check. */
+  for (uint32_t mu = 1; mu < N; mu += 2) {
+    int alive1 = 1, alive2 = 1;
+    for (uint32_t c = 0; c < 8 && (alive1 || alive2); c++) {
+      uint32_t lo, len, lo2, len2;
+      int a0 = arc_class(mu, c, 0, &lo, &len);
+      int a1 = arc_class(mu, c, H >> 1, &lo2, &len2);
+      if (!a0) alive1 = 0;
+      if (!a0 && !a1) alive2 = 0;
+    }
+    if (alive1) { printf("e1 %%u\n", mu); e1++; }
+    if (alive2) { printf("e2 %%u\n", mu); e2++; }
+  }
+  /* E3 */
+  long e3 = 0;
+  for (uint32_t m8 = 1; m8 < 8; m8 += 2) {
+    uint32_t dd = ((m8 & 7) << 17) & MSK;          /* m8^-1 = m8 mod 8 */
+    int ok_all = 1;
+    for (uint32_t c = 0; c < 8 && ok_all; c++) {
+      uint32_t aliveG = 0xFFFF;
+      for (uint32_t G = 0; G < 16; G++) {
+        uint32_t pat = 0;
+        for (uint32_t W = 0; W < 8; W++) {
+          uint32_t b17 = W & 1, b18 = (W >> 1) & 1, b19 = W >> 2;
+          pat |= (b19 ^ ((G >> (b17 | (b18 << 1))) & 1)) << W;
+        }
+        for (uint32_t u0 = c; u0 < (1u << 17) && ((aliveG >> G) & 1); u0 += 8) {
+          uint32_t seq = 0;
+          for (uint32_t k = 0; k < 8; k++) seq |= y19((u0 + k * dd) & MSK) << k;
+          int match = 0;
+          for (uint32_t r = 0; r < 8 && !match; r++)
+            match = seq == (((pat >> r) | (pat << (8 - r))) & 0xFF);
+          if (!match) aliveG &= ~(1u << G);
+        }
+      }
+      if (!aliveG) ok_all = 0;
+    }
+    if (ok_all) { printf("e3 %%u\n", m8); e3++; }
+  }
+  printf("done %%ld %%ld %%ld\n", e1, e2, e3);
+  return 0;
+}
+"""
+
+
 # shift inputs whose bit-0 condition at s = 19 is decided here by exhaustion
 TWO_CONST = {
     'xk_lin2': ([('xk', (0,)), ('lin2', (0, 1))], 'u + a*(u ^ b)'),
@@ -642,6 +723,17 @@ def bit_b_solutions(expr, bit, root, workers=8):
         assert out[-2].startswith('done'), out[-3:]
         sols += [tuple(map(int, l.split()[1:])) for l in out if l.startswith('sol ')]
     return sorted(sols)
+
+
+@functools.lru_cache(maxsize=None)
+def window_checks(root):
+    """(e1 survivors, e2 survivors, e3 surviving mu mod 8); all empty means refuted."""
+    with tempfile.TemporaryDirectory() as d:
+        out = subprocess.run([str(_build(WIN_C % dict(C0=g.C0), 'win', d)), str(root)], check=True,
+                             capture_output=True, text=True).stdout.split('\n')
+    assert out[-2].startswith('done'), out[-3:]
+    pick = lambda tag: tuple(int(l.split()[1]) for l in out if l.startswith(tag + ' '))
+    return pick('e1'), pick('e2'), pick('e3')
 
 
 def main():

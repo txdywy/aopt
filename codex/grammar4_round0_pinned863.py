@@ -67,13 +67,15 @@ def xk_aff_input(p, k):
     return None
 
 
-def solve_pinned(p, root, amounts, seconds=60, low=None, seed=863, hints=()):
+def solve_pinned(p, root, amounts, seconds=60, low=None, seed=863, hints=(), pins=()):
     """g.solve_domain with constant shift amounts {instruction: s}.
 
     low: optional list of (positions, allowed): positions are (instr, const, lo)
     triples, allowed a list of value tuples for bits lo..lo+19 of those constants.
     hints: (instr, const, t) triples meaning v2(constant) <= t, each proved by an exact rule
     of grammar4_round0_pinned_audit863 (which lists them with the case).
+    pins: (instr, const, lo, width, value): bits lo..lo+width-1 of the constant equal value
+    (one class of grammar4_round0_fiber863).
     """
     import z3
     sem = g.ops(z3)
@@ -93,6 +95,8 @@ def solve_pinned(p, root, amounts, seconds=60, low=None, seed=863, hints=()):
             solver.add(z3.Extract(d, 0, consts[j][0]) == 1 << d)
     for n, i, t in hints:
         solver.add(z3.Extract(t, 0, consts[n][i]) != 0)
+    for n, i, lo, width, value in pins:
+        solver.add(z3.Extract(lo + width - 1, lo, consts[n][i]) == value)
     for positions, allowed in low or []:
         solver.add(z3.Or([z3.And([z3.Extract(lo + 19, lo, consts[n][i]) == val
                                   for (n, i, lo), val in zip(positions, row)]) for row in allowed]))

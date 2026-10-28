@@ -96,6 +96,8 @@ Multi-shift templates: every assignment of shift amounts is a case, closed by
               input bit j (j = 20..29), tracked as sets through every instruction for all v
               and all constants, miss j - 19, the target's exact valuation
   solver      the pinned z3 run is UNSAT
+  projection, fiber  rows written by grammar4_round0_fiber863 (the case solved mod 2^k, or
+              every residue class kept by the fiber filter UNSAT)
 """
 from __future__ import annotations
 
@@ -628,7 +630,7 @@ def main():
     multi_tally = {}
     for (idx, combo), rule in sorted(multi_cases(root, two_read_ok).items()):
         if rule is None and solved(idx, combo):
-            rule = 'solver'
+            rule = runs[(idx, combo)].get('method', 'solver')
         multi_tally[rule or 'open'] = multi_tally.get(rule or 'open', 0) + 1
         if rule is None:
             open_cases.append([idx, list(combo)])

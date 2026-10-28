@@ -4,7 +4,8 @@
 
 承接 `SUB863_ROUND0_MERGE_20261028.md` 第 2 节。第 0 轮“把节点异或并进首段”的四指令窗口
 （14,150 个模板）还剩 228 个模板：z3 在符号移位量下 20–120 秒判不出来。本轮不再加时间，
-而是把每个模板按移位量拆开，再用几条新的精确论证把大部分情形直接排除。
+而是把每个模板按移位量拆开，再用几条新的精确论证把大部分情形直接排除。最后 228 个模板
+全部排除（第 3、5 节）。
 
 记号同前：v < 2^30 为输入值，R = 0x23542448 为根节点，x = v XOR R，
 y = 4097x + C0，T(x) = y ^ (y >> 19) ^ C1，目标是 `P(v) = m·T(x) + c`（m 为奇数）。
@@ -167,20 +168,22 @@ j − 19 时排除该组合。在全部模板、随机移位量与常量上抽�
 | 化归 | 82 |
 | 末尾右移 1–2 位的窗口检查 | 82 |
 | z3 完整求解（具体移位量，15 秒；超时的再给 90 秒，仍超时的给 300 秒并加证明过的提示） | 4,056 |
-| **未定（300 秒仍超时）** | **40** |
+| 纤维筛、窗口引理与逐类 z3（第 5 节） | 35 |
+| 低位投影：只解输出第 0 位（第 5 节） | 5 |
+| **未定** | **0** |
 
 规则单独就关闭了 15 个模板：933、1059、1064–1067、1076、1078（化归、刚性等），
 10320、10321、10323、11009–11012（像集）。z3 再关闭另外 54 个模板的全部组合。最后一轮 300 秒重跑
 给每个常数加上 2-adic 规则证明过的上界提示（v2(常数) ≤ t），97 个超时组合判掉 57 个，929、1084、
 1408、10325、10337、11025 因此完全排除。
 
-未定的 40 个组合分布在 6 个模板上：
+300 秒后还剩 40 个组合，分布在 6 个模板上，第 5 节把它们全部排除：
 - 读位落在第 30、31 位的两次移位：928（18 个）、1082（11 个）、1083（5 个）；
 - 最后再右移 2 位、但 s1 + s2 ≥ 30 的：1377（1 个，s = 28, 2）；
 - `u >> s1` 再线性组合、第二次移位 20–21 的：10331（1 个）、10336（4 个）。
 
-合计：228 个模板中 222 个完全排除，6 个各剩少量移位组合未定，所有判定过的情形都是 UNSAT。
-本轮仍没有 863 的可行改写，可执行最好成绩仍是 864。
+合计：228 个模板全部排除，所有情形都是 UNSAT。本轮仍没有 863 的可行改写，可执行最好成绩
+仍是 864。
 
 ## 4. 收尾：首段除法扩展的 98 项
 
@@ -221,6 +224,42 @@ k − 19，k < 19 时随输入变化（每个 k 都找到两个阶不同的见�
 
 合计 98 项全部排除。
 
+## 5. 最后 40 个组合：纤维筛与低位投影
+
+`grammar4_round0_fiber863.py`。两种办法都只看输出的第 0 位。目标的第 0 位是 x0 ⊕ y19 ⊕ 常数，
+只依赖输入第 0–19 位，而且翻转输入第 19 位时一定翻转（y 移动 4097·2^19）。
+
+- **低位投影**：除右移外每条指令都是 T 函数，输出 mod 2^k 只需操作数的低 k 位，w >> s 只需 w 的
+  第 s..s+k−1 位。在采样点上 mod 2^k 求解（m、c 截成 k 位），这由完整等式推出，UNSAT 即排除。
+  采样点成对取 x 与 x ^ 2^j（j = 20..29），目标第 0 位在这两点相同。k = 1 时 z3 在 11–23 秒内
+  判掉 10331、10336 的全部 5 个组合。
+- **纤维筛**：其余 35 个组合读 a = μu + ν。928 计算 a·(a >> p) + (a >> q)；1082、1083 里的
+  a >> s1 >> s2 就是 a >> (s1 + s2)，化成同一形式（共 18 组 (p, q)），第 0 位是 (a0 ∧ a_p) ⊕ a_q。
+  1377 计算 (a + K·(a >> 28)) >> 2，第 0 位是 a + K·(a >> 28) 的第 2 位。固定 u mod 2^19，令
+  g = u >> 19（g < 2048），目标第 0 位沿这条线是常数 ⊕ g0；a = L + 2^e·step·g，e = 19 + v2(μ)，
+  step 为奇数，二者只取决于 r = μ mod 2^13。a 在第 e 位以下的位沿线不变：低于 e − 19 的是 ν 的位，
+  [e − 19, e) 内的位随 u mod 2^19 取遍所有组合；第 e 位起是 W(g) = W(0) + step·g 的位。C 程序对每个
+  r、ν 的固定低位和 K mod 8 检查：中间位的每种组合都要有某个 W(0) 使第 0 位 ⊕ g0 在 2048 个 g 上
+  不变，否则这一类排除。
+- **窗口引理**：若所有可行的 W(0) 不论组合都 ≡ v（mod 2^t），则对所有 u < 2^19，μu + ν 的第
+  e..e+t−1 位都等于 v。这个等差数列停在 mod 2^(e+t) 的一个长 2^e 的块里，步长（取有符号余数）
+  满足 |步长|·(2^19 − 1) < 2^e：e = 19 时只能是 ±1，e = 20 时 |步长| ≤ 2。与 r 不符的类直接排除，
+  其余再钉住 μ mod 2^(e+t) 和 ν 的这几位。例如 1377 的奇数乘数只剩 μ ≡ 2047、2049、6143、6145
+  （mod 2^13），可行的 W(0) 低 9 位都相同，步长须为 ±1，全部排除；(p, q) = (20, 31) 的 μ ≡ ±2 被
+  钉到 μ ≡ ±2（mod 2^31）。
+- 留下的类各用 z3 解，钉住相应的位。928 型中 v2(μ) = q − 19 且 ν0 = 0 的残类（第 0 位只剩 a_q）
+  合成一类。
+
+| 组合 | 数量 | 窗口引理直接排除的类 | z3 解的类（全部 UNSAT） |
+|---|---:|---:|---:|
+| 928、1082、1083（18 组 (p, q)） | 34 | 18 | 52 |
+| 1377 | 1 | 8 | 24 |
+| 10331、10336（低位投影，k = 1） | 5 | — | 5 |
+
+81 次 z3 全部 UNSAT，最长 70 秒，合计 385 秒。测试检查目标第 0 位的这两条性质、投影与完整程序
+低位一致、1082/1083 与 928 形式相同、窗口引理（8 位模型穷举），以及筛掉的 (μ, ν, K) 确实在某条线上
+违反条件（随机抽样）。
+
 ## 复现
 
 ```bash
@@ -240,13 +279,19 @@ python3.12 -m codex.grammar4_round0_pinned863 --combos multi.json --output multi
 python3.12 -m codex.grammar4_round0_pinned_audit863 xkaff.jsonl single.jsonl multi.jsonl \
   --bit0 codex/grammar4_round0_bit0.json --lemma-cache lemma.json --output audit.json --open-todo open.json
 python3.12 -m codex.grammar4_round0_pinned863 --combos open.json --output multi3.jsonl --seconds 300
+# 最后 40 个组合：纤维筛与低位投影
+python3.12 -m codex.grammar4_round0_pinned_audit863 xkaff.jsonl single.jsonl multi.jsonl multi3.jsonl \
+  --bit0 codex/grammar4_round0_bit0.json --lemma-cache lemma.json --output audit.json --open-todo open40.json
+python3.12 -m codex.grammar4_round0_fiber863 --combos open40.json --output fiber.jsonl --seconds 300
 # 汇总（比特 0 引理按需计算并缓存）
 python3.12 -m codex.grammar4_round0_pinned_audit863 xkaff.jsonl single.jsonl multi.jsonl multi3.jsonl \
-  --bit0 codex/grammar4_round0_bit0.json --lemma-cache lemma.json --output audit.json
+  fiber.jsonl --bit0 codex/grammar4_round0_bit0.json --lemma-cache lemma.json --output audit.json
 python3.12 -m codex.grammar3_division_valuation863 --output codex/grammar3_division_valuation863.json
-python3.12 -m unittest codex.test_grammar4_round0_pinned863 codex.test_grammar3_division_valuation863
+python3.12 -m unittest codex.test_grammar4_round0_pinned863 codex.test_grammar3_division_valuation863 \
+  codex.test_grammar4_round0_fiber863
 ```
 
 数据：`grammar4_round0_bit0.json`（精确检查结果）、`grammar4_round0_pinned_single_results.jsonl.gz`、
 `grammar4_round0_pinned_multi_results.jsonl.gz`（z3 逐情形结果）、`grammar4_round0_pinned_lemma.json`
-（比特 0 引理缓存）、`grammar4_round0_pinned_audit863.json`（汇总与未定组合清单）。
+（比特 0 引理缓存）、`grammar4_round0_fiber_results.jsonl`（纤维筛与低位投影的逐类结果）、
+`grammar4_round0_pinned_audit863.json`（汇总与未定组合清单，现为空）。

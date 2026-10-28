@@ -79,6 +79,10 @@ Multi-shift templates: every assignment of shift amounts is a case, closed by
               u_q (only L'_q moves), which leaves one read; q = 19 needs
               bit19(L') = y19 ^ G(u0, bit_p(L')), which grammar4_round0_bit0_863.SUB_C
               refutes for every p = 0..18 (G2). One read is the affine bit-0 lemma.
+  valuation-set  the possible 2-adic valuations of the output's move under a flip of
+              input bit j (j = 20..29), tracked as sets through every instruction for all v
+              and all constants, miss j - 19, the target's exact valuation
+  solver      the pinned z3 run is UNSAT
 """
 from __future__ import annotations
 
@@ -282,6 +286,93 @@ def two_read_facts(root, lemma_cache):
             lemma_cache.get(f"{g.canonical([('aff', (0,)), ('xor', (0, 1))])}@20", {}).get('verdict') == 'unsat')
 
 
+# Rule valuation-set (sets of possible valuations 0..32 of each value's move; _INF = no move).
+_INF = 64
+_FULL = frozenset(range(0, 33)) | {_INF}
+
+def _vge(a):
+    return frozenset(range(a, 33)) | {_INF} if a <= 32 else frozenset({_INF})
+
+def _vsum(A, B):
+    out = set()
+    for a in A:
+        for b in B:
+            if a == _INF: out.add(b)
+            elif b == _INF: out.add(a)
+            elif a != b: out.add(min(a, b))
+            else: out |= _vge(a)
+    return frozenset(out)
+
+def _vscale(A):            # multiply the move by an unknown value (constant or T-function)
+    out = set()
+    for a in A:
+        out |= _vge(a) if a != _INF else {_INF}
+    return frozenset(out)
+
+def move_valuations(p, amounts, j):
+    """state per value: (kind, V) with kind 'T' (T-function of v: move valuations >= j, value
+    low-determined) or 'S' (shift-derived, bounded by width w)."""
+    st = [('T', frozenset({j}), 30)]          # u moves by exactly +-2^j; 30-bit value
+    for k, (f, args) in enumerate(p):
+        ops = [st[a] for a in args]
+        if f == 'shrk':
+            s = amounts[k]
+            kind, V, w = ops[0]
+            if s >= w:
+                st.append(('T', frozenset({_INF}), 0)); continue
+            if s == 0:
+                st.append(ops[0]); continue
+            nw = w - s
+            # move of A >> s: if every valuation of A's move is >= s, the shifted move is exact:
+            # valuations shift down by s, but the value has only nw bits (|move| < 2^nw)
+            out = set()
+            for a in V:
+                if a == _INF: out.add(_INF)
+                elif a >= s:
+                    if a - s < nw: out.add(a - s)
+                    else: out.add(_INF)        # move is a multiple of 2^nw within nw bits: zero
+                else:
+                    out |= frozenset(range(0, nw)) | {_INF}
+            st.append(('S', frozenset(out), nw)); continue
+        if all(o[0] == 'T' for o in ops):
+            V = _vge(j)
+            if f in ('xk', 'andk', 'ork') and ops[0][1] == frozenset({j}):
+                V = frozenset({j, _INF})
+            if f == 'aff':
+                V = _vscale(ops[0][1])
+            st.append(('T', V, 32)); continue
+        # mixed: only forms affine in the shift-derived operands with T coefficients
+        if f in ('xor', 'or', 'and', 'xk', 'andk', 'ork'):
+            # lowest changed bit is at least the lowest operand change
+            m = min(min(o[1]) for o in ops)
+            st.append(('S', frozenset(range(m, 33)) | {_INF}, 32)); continue
+        if f == 'aff':
+            st.append(('S', _vscale(ops[0][1]), 32)); continue
+        if f == 'lin1':     # K*a + b
+            st.append(('S', _vsum(_vscale(ops[0][1]), ops[1][1]), 32)); continue
+        if f == 'lin2':     # a + K*b
+            st.append(('S', _vsum(ops[0][1], _vscale(ops[1][1])), 32)); continue
+        if f in ('prod', 'mad_c', 'mad_b', 'mad_a'):
+            if f == 'prod':
+                (x, y), add = ops, None
+            else:
+                a, b, c = ops
+                (x, y), add = {'mad_c': ((a, b), c), 'mad_b': ((a, c), b), 'mad_a': ((b, c), a)}[f]
+            # d(xy) = x' dy + y dx (coefficients unknown) ; products of two shift-derived values allowed
+            V = _vsum(_vscale(y[1]), _vscale(x[1]))
+            if add is not None:
+                V = _vsum(V, add[1])
+            st.append(('S', V, 32)); continue
+        st.append(('S', _FULL, 32))
+    return st[-1][1]
+
+def valuation_set_refuted(p, amounts):
+    for j in range(20, 30):
+        if (j - 19) not in move_valuations(p, amounts, j):
+            return j
+    return None
+
+
 def multi_rule(p, amounts, root, two_read_ok=False):
     """Exact rule closing one shift assignment of a multi-shift template, or None."""
     from codex.grammar4_round0_audit863 import bit0_support
@@ -298,6 +389,8 @@ def multi_rule(p, amounts, root, two_read_ok=False):
     pos = two_read_l_positions(p, amounts)
     if two_read_ok and pos and max(pos) <= 29:
         return 'two-read'
+    if valuation_set_refuted(p, amounts):
+        return 'valuation-set'
     r, am = drop_zero_shifts(p, amounts)
     merged = merge_nested_shifts(r, am)
     if merged:

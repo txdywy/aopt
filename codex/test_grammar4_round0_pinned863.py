@@ -186,6 +186,22 @@ class PinnedTests(unittest.TestCase):
             d = [(run(v ^ (1 << j)) - run(v)) & g.MASK for j in (20, 29)]
             self.assertFalse(d[0] and d[1] and (v2(d[0]), v2(d[1])) == (1, 10))
 
+    def test_valuation_sets_contain_observed_moves(self):
+        ts = h.templates4()
+        sem = g.ops(None)
+        rng = random.Random(22)
+        v2 = lambda x: (x & -x).bit_length() - 1 if x else audit._INF
+        for _ in range(1500):
+            p = rng.choice(ts)
+            sh = q.shifts(p)
+            am = {k: rng.randrange(32) for k in sh}
+            j = rng.randrange(20, 30)
+            V = audit.move_valuations(p, am, j)
+            kv = random_consts(p, am, rng)
+            v = rng.randrange(g.D30)
+            d = (g.run_program(p, v ^ (1 << j), kv, sem) - g.run_program(p, v, kv, sem)) & g.MASK
+            self.assertIn(v2(d), V, (p, am, j))
+
     def test_bit20_exhaustive_control(self):
         with tempfile.TemporaryDirectory() as d:
             # bit 20 of 2(a(u ^ b) + C0) is bit 19 of a(u ^ b) + C0: a = 4097, b = R mod 2^20 is y19

@@ -1,0 +1,733 @@
+{
+"key": 3042594569,
+"templates": {
+"lemma-a": 10160,
+"lemma-b": 774,
+"solver": 1249,
+"split": 71
+},
+"cases": {
+"two-read": 12288,
+"solver": 510,
+"valuation": 398,
+"dependency": 1263,
+"rigid": 698,
+"two-const": 2,
+"mask": 2,
+"coupled-valuation": 7
+},
+"rows": [
+{
+"idx": 768,
+"template": "i1=aff(u) ; i2=shrk(i1) ; i3=shrk(i1) ; i4=lin1(i2,i3)",
+"method": "split",
+"cases": {
+"two-read": 1024
+},
+"open": []
+},
+{
+"idx": 769,
+"template": "i1=aff(u) ; i2=shrk(i1) ; i3=shrk(i1) ; i4=prod(i2,i3)",
+"method": "split",
+"cases": {
+"two-read": 1024
+},
+"open": []
+},
+{
+"idx": 774,
+"template": "i1=aff(u) ; i2=shrk(i1) ; i3=shrk(i1) ; i4=mad_a(u,i2,i3)",
+"method": "split",
+"cases": {
+"two-read": 1024
+},
+"open": []
+},
+{
+"idx": 775,
+"template": "i1=aff(u) ; i2=shrk(i1) ; i3=shrk(i1) ; i4=mad_c(i1,i2,i3)",
+"method": "split",
+"cases": {
+"two-read": 1024
+},
+"open": []
+},
+{
+"idx": 776,
+"template": "i1=aff(u) ; i2=shrk(i1) ; i3=shrk(i1) ; i4=mad_a(i1,i2,i3)",
+"method": "split",
+"cases": {
+"two-read": 1024
+},
+"open": []
+},
+{
+"idx": 899,
+"template": "i1=aff(u) ; i2=shrk(i1) ; i3=shrk(i2) ; i4=lin1(i2,i3)",
+"method": "split",
+"cases": {
+"two-read": 1024
+},
+"open": []
+},
+{
+"idx": 900,
+"template": "i1=aff(u) ; i2=shrk(i1) ; i3=shrk(i2) ; i4=lin2(i2,i3)",
+"method": "split",
+"cases": {
+"two-read": 1024
+},
+"open": []
+},
+{
+"idx": 901,
+"template": "i1=aff(u) ; i2=shrk(i1) ; i3=shrk(i2) ; i4=prod(i2,i3)",
+"method": "split",
+"cases": {
+"two-read": 1024
+},
+"open": []
+},
+{
+"idx": 910,
+"template": "i1=aff(u) ; i2=shrk(i1) ; i3=shrk(i2) ; i4=mad_a(u,i2,i3)",
+"method": "split",
+"cases": {
+"two-read": 1024
+},
+"open": []
+},
+{
+"idx": 911,
+"template": "i1=aff(u) ; i2=shrk(i1) ; i3=shrk(i2) ; i4=mad_c(i1,i2,i3)",
+"method": "split",
+"cases": {
+"two-read": 1024
+},
+"open": []
+},
+{
+"idx": 912,
+"template": "i1=aff(u) ; i2=shrk(i1) ; i3=shrk(i2) ; i4=mad_b(i1,i2,i3)",
+"method": "split",
+"cases": {
+"two-read": 1024
+},
+"open": []
+},
+{
+"idx": 913,
+"template": "i1=aff(u) ; i2=shrk(i1) ; i3=shrk(i2) ; i4=mad_a(i1,i2,i3)",
+"method": "split",
+"cases": {
+"two-read": 1024
+},
+"open": []
+},
+{
+"idx": 1475,
+"template": "i1=aff(u) ; i2=prod(u,i1) ; i3=shrk(i2) ; i4=xor(i2,i3)",
+"method": "split",
+"cases": {
+"solver": 32
+},
+"open": []
+},
+{
+"idx": 1486,
+"template": "i1=aff(u) ; i2=prod(u,i1) ; i3=shrk(i2) ; i4=mad_a(i1,i2,i3)",
+"method": "split",
+"cases": {
+"solver": 29,
+"valuation": 3
+},
+"open": []
+},
+{
+"idx": 2166,
+"template": "i1=xk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=lin2(u,i3)",
+"method": "split",
+"cases": {
+"dependency": 19,
+"solver": 12,
+"valuation": 1
+},
+"open": []
+},
+{
+"idx": 2171,
+"template": "i1=xk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=lin1(i1,i3)",
+"method": "split",
+"cases": {
+"dependency": 19,
+"solver": 13
+},
+"open": []
+},
+{
+"idx": 2172,
+"template": "i1=xk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=lin2(i1,i3)",
+"method": "split",
+"cases": {
+"dependency": 19,
+"solver": 12,
+"valuation": 1
+},
+"open": []
+},
+{
+"idx": 2174,
+"template": "i1=xk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=xor(i1,i3)",
+"method": "split",
+"cases": {
+"dependency": 19,
+"solver": 13
+},
+"open": []
+},
+{
+"idx": 2177,
+"template": "i1=xk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=lin1(i2,i3)",
+"method": "split",
+"cases": {
+"dependency": 19,
+"solver": 13
+},
+"open": []
+},
+{
+"idx": 2178,
+"template": "i1=xk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=lin2(i2,i3)",
+"method": "split",
+"cases": {
+"dependency": 19,
+"solver": 13
+},
+"open": []
+},
+{
+"idx": 2179,
+"template": "i1=xk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=prod(i2,i3)",
+"method": "split",
+"cases": {
+"dependency": 19,
+"solver": 13
+},
+"open": []
+},
+{
+"idx": 2180,
+"template": "i1=xk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=xor(i2,i3)",
+"method": "split",
+"cases": {
+"dependency": 19,
+"solver": 13
+},
+"open": []
+},
+{
+"idx": 2182,
+"template": "i1=xk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=or(i2,i3)",
+"method": "split",
+"cases": {
+"dependency": 19,
+"solver": 13
+},
+"open": []
+},
+{
+"idx": 2183,
+"template": "i1=xk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=mad_c(u,i1,i3)",
+"method": "split",
+"cases": {
+"dependency": 19,
+"solver": 13
+},
+"open": []
+},
+{
+"idx": 2186,
+"template": "i1=xk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=mad_c(u,i2,i3)",
+"method": "split",
+"cases": {
+"dependency": 19,
+"solver": 13
+},
+"open": []
+},
+{
+"idx": 2188,
+"template": "i1=xk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=mad_a(u,i2,i3)",
+"method": "split",
+"cases": {
+"dependency": 19,
+"solver": 13
+},
+"open": []
+},
+{
+"idx": 2189,
+"template": "i1=xk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=mad_c(i1,i2,i3)",
+"method": "split",
+"cases": {
+"dependency": 19,
+"solver": 13
+},
+"open": []
+},
+{
+"idx": 2191,
+"template": "i1=xk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=mad_a(i1,i2,i3)",
+"method": "split",
+"cases": {
+"dependency": 19,
+"solver": 12,
+"rigid": 1
+},
+"open": []
+},
+{
+"idx": 2960,
+"template": "i1=xk(u) ; i2=lin1(u,i1) ; i3=shrk(i2) ; i4=lin2(i2,i3)",
+"method": "split",
+"cases": {
+"solver": 32
+},
+"open": []
+},
+{
+"idx": 2975,
+"template": "i1=xk(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=lin2(u,i3)",
+"method": "split",
+"cases": {
+"solver": 27,
+"rigid": 2,
+"valuation": 3
+},
+"open": []
+},
+{
+"idx": 2980,
+"template": "i1=xk(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=lin1(i1,i3)",
+"method": "split",
+"cases": {
+"solver": 29,
+"rigid": 2,
+"valuation": 1
+},
+"open": []
+},
+{
+"idx": 2981,
+"template": "i1=xk(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=lin2(i1,i3)",
+"method": "split",
+"cases": {
+"solver": 28,
+"rigid": 2,
+"valuation": 2
+},
+"open": []
+},
+{
+"idx": 2986,
+"template": "i1=xk(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=lin1(i2,i3)",
+"method": "split",
+"cases": {
+"solver": 24,
+"rigid": 2,
+"valuation": 6
+},
+"open": []
+},
+{
+"idx": 2987,
+"template": "i1=xk(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=lin2(i2,i3)",
+"method": "split",
+"cases": {
+"solver": 27,
+"rigid": 1,
+"valuation": 4
+},
+"open": []
+},
+{
+"idx": 2989,
+"template": "i1=xk(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=xor(i2,i3)",
+"method": "split",
+"cases": {
+"solver": 31,
+"two-const": 1
+},
+"open": []
+},
+{
+"idx": 2995,
+"template": "i1=xk(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=mad_c(u,i2,i3)",
+"method": "split",
+"cases": {
+"solver": 32
+},
+"open": []
+},
+{
+"idx": 2997,
+"template": "i1=xk(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=mad_a(u,i2,i3)",
+"method": "split",
+"cases": {
+"solver": 20,
+"rigid": 1,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 2998,
+"template": "i1=xk(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=mad_c(i1,i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 3000,
+"template": "i1=xk(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=mad_a(i1,i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 3680,
+"template": "i1=andk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=lin2(u,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5167,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=lin2(u,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5172,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=lin1(i1,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5173,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=lin2(i1,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5174,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=prod(i1,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5178,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=lin1(i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5179,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=lin2(i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5180,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=prod(i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5181,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=xor(i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 17,
+"solver": 2,
+"mask": 1,
+"valuation": 12
+},
+"open": []
+},
+{
+"idx": 5183,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=or(i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 17,
+"solver": 2,
+"mask": 1,
+"valuation": 12
+},
+"open": []
+},
+{
+"idx": 5184,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=mad_c(u,i1,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5186,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=mad_a(u,i1,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5187,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=mad_c(u,i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5189,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=mad_a(u,i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5190,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=mad_c(i1,i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5191,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=mad_b(i1,i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5192,
+"template": "i1=ork(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=mad_a(i1,i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5954,
+"template": "i1=ork(u) ; i2=lin1(u,i1) ; i3=shrk(i2) ; i4=lin1(i1,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5955,
+"template": "i1=ork(u) ; i2=lin1(u,i1) ; i3=shrk(i2) ; i4=lin2(i1,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5960,
+"template": "i1=ork(u) ; i2=lin1(u,i1) ; i3=shrk(i2) ; i4=lin1(i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5961,
+"template": "i1=ork(u) ; i2=lin1(u,i1) ; i3=shrk(i2) ; i4=lin2(i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5976,
+"template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=lin2(u,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5981,
+"template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=lin1(i1,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5982,
+"template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=lin2(i1,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5983,
+"template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=prod(i1,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5987,
+"template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=lin1(i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5988,
+"template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=lin2(i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5990,
+"template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=xor(i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 17,
+"solver": 2,
+"two-const": 1,
+"valuation": 12
+},
+"open": []
+},
+{
+"idx": 5995,
+"template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=mad_a(u,i1,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 5996,
+"template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=mad_c(u,i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 6000,
+"template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=shrk(i2) ; i4=mad_b(i1,i2,i3)",
+"method": "split",
+"cases": {
+"rigid": 21,
+"valuation": 11
+},
+"open": []
+},
+{
+"idx": 6431,
+"template": "i1=shrk(u) ; i2=aff(i1) ; i3=shrk(i2) ; i4=mad_a(u,i2,i3)",
+"method": "split",
+"cases": {
+"dependency": 997,
+"rigid": 6,
+"coupled-valuation": 7,
+"solver": 14
+},
+"open": []
+}
+]
+}

@@ -1,0 +1,29 @@
+{
+ "key": 3042594569,
+ "mask": true,
+ "two_const": {
+  "xk_lin2": 0,
+  "ork_lin2": 0
+ },
+ "two_read": {
+  "0": "unsat",
+  "1": "unsat",
+  "2": "unsat",
+  "3": "unsat",
+  "4": "unsat",
+  "5": "unsat",
+  "6": "unsat",
+  "7": "unsat",
+  "8": "unsat",
+  "9": "unsat",
+  "10": "unsat",
+  "11": "unsat",
+  "12": "unsat",
+  "13": "unsat",
+  "14": "unsat",
+  "15": "unsat",
+  "16": "unsat",
+  "17": "unsat",
+  "18": "unsat"
+ }
+}

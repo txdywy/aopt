@@ -1,0 +1,185 @@
+{
+  "node": 2809010545,
+  "input_names": [
+    "z",
+    "u",
+    "v",
+    "b",
+    "prior",
+    "a",
+    "a_shr19",
+    "a_xor_c1"
+  ],
+  "controls": [
+    {
+      "source": 8,
+      "source_name": "e_positive_control_only",
+      "node": 0,
+      "status": "necessary_survivor_proved",
+      "control": true,
+      "events": [
+        {
+          "status": "sat",
+          "samples": 64
+        }
+      ],
+      "new_executable": false,
+      "inverse_a": 16773121,
+      "inverse_b": 3237741290,
+      "seconds": 0.007,
+      "samples": 64
+    },
+    {
+      "source": 8,
+      "source_name": "e_positive_control_only",
+      "node": 2147483648,
+      "status": "necessary_survivor_proved",
+      "control": true,
+      "events": [
+        {
+          "status": "sat",
+          "samples": 64
+        }
+      ],
+      "new_executable": false,
+      "inverse_a": 16773121,
+      "inverse_b": 1090257642,
+      "seconds": 0.0052,
+      "samples": 64
+    }
+  ],
+  "results": [
+    {
+      "source": 1,
+      "source_name": "u",
+      "node": 2809010545,
+      "status": "unsat",
+      "control": false,
+      "events": [
+        {
+          "status": "unsat",
+          "samples": 64
+        }
+      ],
+      "new_executable": false,
+      "seconds": 6.0013,
+      "samples": 64
+    },
+    {
+      "source": 0,
+      "source_name": "z",
+      "node": 2809010545,
+      "status": "unsat",
+      "control": false,
+      "events": [
+        {
+          "status": "unsat",
+          "samples": 64
+        }
+      ],
+      "new_executable": false,
+      "seconds": 6.8612,
+      "samples": 64
+    },
+    {
+      "source": 4,
+      "source_name": "prior",
+      "node": 2809010545,
+      "status": "unsat",
+      "control": false,
+      "events": [
+        {
+          "status": "unsat",
+          "samples": 64
+        }
+      ],
+      "new_executable": false,
+      "seconds": 5.7205,
+      "samples": 64
+    },
+    {
+      "source": 5,
+      "source_name": "a",
+      "node": 2809010545,
+      "status": "unsat",
+      "control": false,
+      "events": [
+        {
+          "status": "unsat",
+          "samples": 64
+        }
+      ],
+      "new_executable": false,
+      "seconds": 7.1946,
+      "samples": 64
+    },
+    {
+      "source": 2,
+      "source_name": "v",
+      "node": 2809010545,
+      "status": "unsat",
+      "control": false,
+      "events": [
+        {
+          "status": "unsat",
+          "samples": 64
+        }
+      ],
+      "new_executable": false,
+      "seconds": 14.8334,
+      "samples": 64
+    },
+    {
+      "source": 7,
+      "source_name": "a_xor_c1",
+      "node": 2809010545,
+      "status": "unsat",
+      "control": false,
+      "events": [
+        {
+          "status": "unsat",
+          "samples": 64
+        }
+      ],
+      "new_executable": false,
+      "seconds": 5.6247,
+      "samples": 64
+    },
+    {
+      "source": 6,
+      "source_name": "a_shr19",
+      "node": 2809010545,
+      "status": "unsat",
+      "control": false,
+      "events": [
+        {
+          "status": "unsat",
+          "samples": 64
+        }
+      ],
+      "new_executable": false,
+      "seconds": 8.6875,
+      "samples": 64
+    },
+    {
+      "source": 3,
+      "source_name": "b",
+      "node": 2809010545,
+      "status": "unsat",
+      "control": false,
+      "events": [
+        {
+          "status": "unsat",
+          "samples": 64
+        }
+      ],
+      "new_executable": false,
+      "seconds": 27.3323,
+      "samples": 64
+    }
+  ],
+  "full32_semantics": true,
+  "ignores_entire_shift_prefix": true,
+  "best_executable_cycles": 864,
+  "new_executable": false
+}

@@ -1,0 +1,21 @@
+{
+  "archives": [
+    {
+      "archive": "codex/joint_live_boundary863_scout.json.gz",
+      "encoded_bytes": 218921,
+      "decoded_bytes": 4874997,
+      "encoded_sha256": "309b568920b19ec42223b0d4550156d318e988da131b6c23c3c63f0afb1bea07",
+      "decoded_sha256": "bc77761af6c674160c8882942dc6f27fbb39384cba7052b7f2ae5b169270a701",
+      "lossless_roundtrip": true
+    },
+    {
+      "archive": "codex/joint_live_boundary863_affine_tail.json.gz",
+      "encoded_bytes": 40892,
+      "decoded_bytes": 1812800,
+      "encoded_sha256": "a5e35e9d8a6aa98541ae157ab9685c8acf404058a3b35dd4e80fb6c79eb6560f",
+      "decoded_sha256": "9a83e8ff7c15eac8e7d48a234d45f27d564a25643399b5455a7109753d416760",
+      "lossless_roundtrip": true
+    }
+  ],
+  "embedded_source_hashes_refer_to_decoded_originals": true
+}

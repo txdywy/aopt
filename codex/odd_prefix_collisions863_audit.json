@@ -1,0 +1,11673 @@
+{
+  "node": 2809010545,
+  "input_names": [
+    "e",
+    "z",
+    "u",
+    "v",
+    "b",
+    "prior",
+    "a",
+    "a_shr19",
+    "a_xor_c1"
+  ],
+  "canonical_prefixes": 702,
+  "manifest": [
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        1
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        2
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        1
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        2
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        1
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        2
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        10
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        0
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        4
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        0
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        4
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        0
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        4
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        10
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        0
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        4
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        0
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        4
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        10
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        10
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        1
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        2
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        1
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        2
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        10
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        10
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        10
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        10
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        10
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        3
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        0
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        3
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        1
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        2
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        4
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        4
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "^",
+      "wiring": [
+        4,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        4,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        4,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        4,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        4,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        5,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        5,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        5,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        5,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        6,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        6,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        6,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        7,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        7,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "^",
+      "wiring": [
+        8,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        1
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        2,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        2,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        2,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        2,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        2,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        2,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        2,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        3,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        3,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        3,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        3,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        3,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        3,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        4,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        4,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        4,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        4,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        4,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        5,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        5,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        5,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        5,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        6,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        6,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        6,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        7,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        7,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "&",
+      "wiring": [
+        8,
+        9
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        1
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        2
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        2
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        4
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        3
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        4
+      ],
+      "odd_key_parities": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        4
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "|",
+      "wiring": [
+        4,
+        5
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        4,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        4,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        4,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        4,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "|",
+      "wiring": [
+        5,
+        6
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        5,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        5,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        5,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "|",
+      "wiring": [
+        6,
+        7
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        6,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        6,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "|",
+      "wiring": [
+        7,
+        8
+      ],
+      "odd_key_parities": []
+    },
+    {
+      "op": "|",
+      "wiring": [
+        7,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "|",
+      "wiring": [
+        8,
+        9
+      ],
+      "odd_key_parities": [
+        [
+          1,
+          0
+        ]
+      ]
+    }
+  ],
+  "parity_cases": 64,
+  "excluded": 63,
+  "cases": [
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        1
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "witnesses": [],
+      "remaining_addends": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "status": "open",
+      "prefix_index": 1
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        2
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            573929068,
+            2340094351
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            3009625581,
+            3009625581,
+            3009625581,
+            3009625581,
+            3009625581,
+            3009625581
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 2
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            2976967555
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            3,
+            1,
+            5,
+            3,
+            1
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 19
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            271500163,
+            1820303686
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            3,
+            1,
+            5,
+            3,
+            1
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 29
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            3,
+            1,
+            5,
+            3,
+            1
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 39
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        1
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            2838949998,
+            4254485151
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            234624763,
+            234624763,
+            234624763,
+            234624763,
+            234624763,
+            234624763
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 41
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        2
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            3234666008,
+            4006914805
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            523749477,
+            523749477,
+            523749477,
+            523749477,
+            523749477,
+            523749477
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 42
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        1
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1913649187,
+            1913649187,
+            1913649187,
+            1913649187,
+            1913649187,
+            1913649187
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 91
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        2
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            3865876003,
+            3865876003,
+            3865876003,
+            3865876003,
+            3865876003,
+            3865876003
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 92
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "parameter_grid": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            1,
+            3,
+            1,
+            3,
+            5
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 100
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        0
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1876620373,
+            2080540104
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            511017899,
+            511017899,
+            511017899,
+            511017899,
+            511017899,
+            511017899
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 101
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1978384332,
+            2949148537
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            3038714077,
+            3038714077,
+            3038714077,
+            3038714077,
+            3038714077,
+            3038714077
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 105
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        0
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            2017757425,
+            3778982700
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            336071591,
+            336071591,
+            336071591,
+            336071591,
+            336071591,
+            336071591
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 111
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1931645083,
+            3168168106
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1113117403,
+            1113117403,
+            1113117403,
+            1113117403,
+            1113117403,
+            1113117403
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 115
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            237505025,
+            237505027,
+            237505025,
+            237505029,
+            237505027,
+            237505025
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 130
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            2976967555
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            3,
+            1,
+            5,
+            3,
+            1
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 140
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        0
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1913649187,
+            1445980265,
+            1913649187,
+            978311343,
+            1445980265,
+            1913649187
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 181
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        4
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            3733952873,
+            3266283951,
+            3733952873,
+            2798615029,
+            3266283951,
+            3733952873
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 185
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "parameter_grid": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            3827298375,
+            3,
+            3359629453,
+            3827298377,
+            5
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 191
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        0
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1284072026,
+            4184379331
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            163525893,
+            163525893,
+            163525893,
+            163525893,
+            163525893,
+            163525893
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 192
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            831632700,
+            981321225
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1497906477,
+            1497906477,
+            1497906477,
+            1497906477,
+            1497906477,
+            1497906477
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 196
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            4094429697,
+            4094429699,
+            4094429697,
+            4094429701,
+            4094429699,
+            4094429697
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 211
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            271500163
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            3,
+            1,
+            5,
+            3,
+            1
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 221
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        0
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            3865876003,
+            3007693417,
+            3865876003,
+            2149510831,
+            3007693417,
+            3865876003
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 262
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        4
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1391212393,
+            533029807,
+            1391212393,
+            3969814517,
+            533029807,
+            1391212393
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 266
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "parameter_grid": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            3436784711,
+            3,
+            2578602125,
+            3436784713,
+            5
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 272
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1128529921,
+            1128529923,
+            1128529921,
+            1128529925,
+            1128529923,
+            1128529921
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 282
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            2908623873,
+            2908623875,
+            2908623873,
+            2908623877,
+            2908623875,
+            2908623873
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 292
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            3115618544,
+            968130800
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            3,
+            1,
+            5,
+            3,
+            1
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 302
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            3345072700,
+            1197593148
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            3,
+            1,
+            5,
+            3,
+            1
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 312
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            3345072700,
+            3345072701
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            3,
+            1,
+            5,
+            3,
+            1
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 322
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            6380,
+            2147485932
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            3,
+            1,
+            5,
+            3,
+            1
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 332
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            2489544193,
+            3173665283,
+            2489544193,
+            3857786373,
+            3173665283,
+            2489544193
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 342
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "parameter_grid": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            684121089,
+            3,
+            1368242177,
+            684121091,
+            5
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 343
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        10
+      ],
+      "key_parity": [
+        1,
+        1
+      ],
+      "parameter_grid": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            2489544193,
+            3173665281,
+            2489544195,
+            3857786369,
+            3173665283,
+            2489544197
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 343
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        1
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1577288134,
+            2993532953
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1352011207,
+            1352011207,
+            1352011207,
+            1352011207,
+            1352011207,
+            1352011207
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 345
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        2
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            84507001,
+            4210460262
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            240586727,
+            240586727,
+            240586727,
+            240586727,
+            240586727,
+            240586727
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 346
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        1
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            3733952873,
+            3079592949,
+            3733952873,
+            2425233025,
+            3079592949,
+            3733952873
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 395
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        2
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1391212393,
+            736852469,
+            1391212393,
+            82492545,
+            736852469,
+            1391212393
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 396
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "parameter_grid": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            3640607373,
+            3,
+            2986247449,
+            3640607375,
+            5
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 404
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "parameter_grid": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            3115618544,
+            968130800
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            1,
+            3,
+            1,
+            3,
+            5
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 455
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "parameter_grid": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            3115618544,
+            968130800
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            4255824429,
+            3,
+            4216681561,
+            4255824431,
+            5
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 496
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "parameter_grid": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            1
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            12761,
+            3,
+            25521,
+            12763,
+            5
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 527
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "parameter_grid": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            3115618544,
+            968130800
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            1936277077,
+            3,
+            3872554153,
+            1936277079,
+            5
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 548
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        3
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            2489544193,
+            2489544201,
+            2489544193,
+            2489544217,
+            2489544201,
+            2489544193
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 552
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        3
+      ],
+      "key_parity": [
+        1,
+        1
+      ],
+      "parameter_grid": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            2489544193,
+            2489544195,
+            2489544195,
+            2489544197,
+            2489544201,
+            2489544197
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 561
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        1
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4294967294
+        ],
+        [
+          4294967294,
+          0
+        ],
+        [
+          4294967294,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1913649187,
+            1913649187,
+            1913649187,
+            1913649187
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 567
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        2
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4294967294
+        ],
+        [
+          4294967294,
+          0
+        ],
+        [
+          4294967294,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            3865876003,
+            3865876003,
+            3865876003,
+            3865876003
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 568
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4294967294
+        ],
+        [
+          4294967294,
+          0
+        ],
+        [
+          4294967294,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            510679397,
+            510679397,
+            510679397,
+            510679397
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 578
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4294967294
+        ],
+        [
+          4294967294,
+          0
+        ],
+        [
+          4294967294,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            2316515173,
+            2316515173,
+            2316515173,
+            2316515173
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 585
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          4294967294
+        ],
+        [
+          4294967295,
+          0
+        ],
+        [
+          4294967295,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            2489544193,
+            2489544193,
+            1805423103,
+            1805423103
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 596
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        1
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4294967294
+        ],
+        [
+          4294967294,
+          0
+        ],
+        [
+          4294967294,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            2976967555,
+            829483907
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            4251993797,
+            4251993797,
+            4251993797,
+            4251993797
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 657
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        2
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4294967294
+        ],
+        [
+          4294967294,
+          0
+        ],
+        [
+          4294967294,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            3865876003,
+            3865876003,
+            3865876003,
+            3865876003
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 658
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          4294967294
+        ],
+        [
+          4294967295,
+          0
+        ],
+        [
+          4294967295,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            2772291167
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            1,
+            4294967295,
+            4294967295
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 665
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4294967294
+        ],
+        [
+          4294967294,
+          0
+        ],
+        [
+          4294967294,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            2976967555,
+            829483907
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            2976967555,
+            2976967555,
+            2976967555,
+            2976967555
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 668
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          4294967294
+        ],
+        [
+          4294967295,
+          0
+        ],
+        [
+          4294967295,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            2976967555,
+            638333284
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            1,
+            4294967295,
+            4294967295
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 673
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "parameter_grid": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4294967294
+        ],
+        [
+          4294967294,
+          0
+        ],
+        [
+          4294967294,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            4001347431,
+            4001347431,
+            4001347431,
+            4001347431
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 675
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          4294967294
+        ],
+        [
+          4294967295,
+          0
+        ],
+        [
+          4294967295,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            271500163,
+            1312704356
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            1,
+            4294967295,
+            4294967295
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 680
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          4294967294
+        ],
+        [
+          4294967295,
+          0
+        ],
+        [
+          4294967295,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            2489544193,
+            2489544193,
+            4294967295,
+            4294967295
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 686
+    },
+    {
+      "op": "|",
+      "wiring": [
+        4,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          4294967294
+        ],
+        [
+          4294967295,
+          0
+        ],
+        [
+          4294967295,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            1
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            1,
+            4294967295,
+            4294967295
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 691
+    },
+    {
+      "op": "|",
+      "wiring": [
+        5,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          4294967294
+        ],
+        [
+          4294967295,
+          0
+        ],
+        [
+          4294967295,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            3115618544,
+            3115622641
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            1,
+            1,
+            4294967295,
+            4294967295
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 695
+    },
+    {
+      "op": "|",
+      "wiring": [
+        6,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          4294967294
+        ],
+        [
+          4294967295,
+          0
+        ],
+        [
+          4294967295,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            1
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            3345078993,
+            3345078993,
+            4294967295,
+            4294967295
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 698
+    },
+    {
+      "op": "|",
+      "wiring": [
+        7,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          4294967294
+        ],
+        [
+          4294967295,
+          0
+        ],
+        [
+          4294967295,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            1
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            6381,
+            6381,
+            4294967295,
+            4294967295
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 700
+    },
+    {
+      "op": "|",
+      "wiring": [
+        8,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "parameter_grid": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          4294967294
+        ],
+        [
+          4294967295,
+          0
+        ],
+        [
+          4294967295,
+          4294967294
+        ]
+      ],
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            1
+          ],
+          "addends": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "common_grid_values": [
+            6381,
+            6381,
+            4294967295,
+            4294967295
+          ]
+        }
+      ],
+      "remaining_addends": [],
+      "status": "excluded",
+      "prefix_index": 701
+    }
+  ],
+  "samples": 131100,
+  "pool_sha256": "048b57c59ad61c84dad71285e5b4b5099f8d1fe6c663f5724553312e634f8b05",
+  "legal_points": [
+    {
+      "primary_b": 0,
+      "prior": 984669626,
+      "values": [
+        1818584522,
+        1161276957,
+        3925396509,
+        2899272192,
+        0,
+        984669626,
+        3345078992,
+        6380,
+        6380
+      ],
+      "target": 4209921524,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 1054563911,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 1,
+      "prior": 1001442747,
+      "values": [
+        1818423539,
+        1161259070,
+        3925396542,
+        2899289088,
+        1,
+        1001442747,
+        3345078993,
+        6380,
+        6381
+      ],
+      "target": 306176758,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 1071337030,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 6380,
+      "prior": 2822374694,
+      "values": [
+        775046038,
+        1522546825,
+        3925607049,
+        3007068672,
+        6380,
+        2822374694,
+        3345072700,
+        6380,
+        0
+      ],
+      "target": 3481215467,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 297521838,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 84507001,
+      "prior": 20194802,
+      "values": [
+        4228984107,
+        2383536310,
+        2419160246,
+        505451520,
+        84507001,
+        20194802,
+        3261637384,
+        6221,
+        84500788
+      ],
+      "target": 3604600161,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 90154511,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 271500163,
+      "prior": 4237672000,
+      "values": [
+        2455809733,
+        3140954112,
+        0,
+        3140954112,
+        271500163,
+        4237672000,
+        3612285782,
+        6889,
+        271505770
+      ],
+      "target": 2520826602,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 410809087,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 573929068,
+      "prior": 1438714852,
+      "values": [
+        1632354582,
+        663366153,
+        1390219273,
+        1968650752,
+        573929068,
+        1438714852,
+        3847530746,
+        7338,
+        573926086
+      ],
+      "target": 2693649986,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 10,
+        "leaf_index": 1629,
+        "leaf_value": 416801380,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 638333284,
+      "prior": 947036767,
+      "values": [
+        4251993806,
+        1,
+        3515558401,
+        3515558400,
+        638333284,
+        947036767,
+        3782078325,
+        7213,
+        638332233
+      ],
+      "target": 3273715685,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 1008279970,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 829483907,
+      "prior": 546663015,
+      "values": [
+        2104510149,
+        2147483648,
+        1233594368,
+        3381078016,
+        829483907,
+        546663015,
+        4128323453,
+        7874,
+        829486401
+      ],
+      "target": 991936474,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 620685722,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 831632700,
+      "prior": 2404289736,
+      "values": [
+        4027175014,
+        1883894489,
+        1304504537,
+        1032378880,
+        831632700,
+        2404289736,
+        4142950878,
+        7902,
+        831630306
+      ],
+      "target": 1238267444,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 919558976,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 968130800,
+      "prior": 2147483648,
+      "values": [
+        3407984698,
+        1815095565,
+        1513974541,
+        906838528,
+        968130800,
+        2147483648,
+        4275395862,
+        8154,
+        968138538
+      ],
+      "target": 3788203904,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 964810632,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 981321225,
+      "prior": 2455682688,
+      "values": [
+        3673843771,
+        1844635462,
+        1949258566,
+        433959936,
+        981321225,
+        2455682688,
+        4246477718,
+        8099,
+        981326250
+      ],
+      "target": 1193609414,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 736061704,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 1197593148,
+      "prior": 1090257642,
+      "values": [
+        3132654950,
+        4170596313,
+        496297433,
+        3842169344,
+        1197593148,
+        1090257642,
+        2147483648,
+        4096,
+        1197589052
+      ],
+      "target": 4279661509,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 10,
+        "leaf_index": 1629,
+        "leaf_value": 233499498,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 1284072026,
+      "prior": 3704816645,
+      "values": [
+        3642537012,
+        3750031287,
+        3350100407,
+        405444096,
+        1284072026,
+        3704816645,
+        2347282715,
+        4477,
+        1284076327
+      ],
+      "target": 613245295,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 943376570,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 1312704356,
+      "prior": 3289671517,
+      "values": [
+        2455814350,
+        3140954625,
+        1,
+        3140954624,
+        1312704356,
+        3289671517,
+        2304742515,
+        4395,
+        1312708175
+      ],
+      "target": 2560727285,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 553495522,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 1577288134,
+      "prior": 189854656,
+      "values": [
+        2061530240,
+        2619926691,
+        141330083,
+        2487512576,
+        1577288134,
+        189854656,
+        2573357270,
+        4908,
+        1577292522
+      ],
+      "target": 1037337639,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 255553597,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 1820303686,
+      "prior": 2646141187,
+      "values": [
+        0,
+        1913649187,
+        3865876003,
+        2489544192,
+        1820303686,
+        2646141187,
+        2870900249,
+        5475,
+        1820308517
+      ],
+      "target": 131761799,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 607731339,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 1876620373,
+      "prior": 897533544,
+      "values": [
+        2691139175,
+        1258227474,
+        1429359378,
+        533548032,
+        1876620373,
+        897533544,
+        2830836606,
+        5399,
+        1876615490
+      ],
+      "target": 433433735,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 823444885,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 1931645083,
+      "prior": 1878808345,
+      "values": [
+        280735645,
+        1467623448,
+        3245174808,
+        2518112256,
+        1931645083,
+        1878808345,
+        3024307247,
+        5768,
+        1931642387
+      ],
+      "target": 2433774445,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 10,
+        "leaf_index": 1629,
+        "leaf_value": 585809561,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 1978384332,
+      "prior": 1842110091,
+      "values": [
+        2943992182,
+        1763540841,
+        492602729,
+        1950480896,
+        1978384332,
+        1842110091,
+        2995415969,
+        5713,
+        1978378653
+      ],
+      "target": 4268012692,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 10,
+        "leaf_index": 1629,
+        "leaf_value": 551204619,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 2017757425,
+      "prior": 1397674003,
+      "values": [
+        3336828771,
+        852752174,
+        1791914798,
+        1478329344,
+        2017757425,
+        1397674003,
+        3206896937,
+        6116,
+        2017763093
+      ],
+      "target": 3002177031,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 10,
+        "leaf_index": 1629,
+        "leaf_value": 509098387,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 2080540104,
+      "prior": 3746943874,
+      "values": [
+        1517881042,
+        3036739813,
+        3863743205,
+        1397551616,
+        2080540104,
+        3746943874,
+        3143848088,
+        5996,
+        2080543396
+      ],
+      "target": 4031398640,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 1002184509,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 2147485932,
+      "prior": 674891046,
+      "values": [
+        4219753366,
+        3336947849,
+        1777988233,
+        2937862656,
+        2147485932,
+        674891046,
+        1197589052,
+        2284,
+        2147483648
+      ],
+      "target": 2262187641,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 743540443,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 2340094351,
+      "prior": 2423508250,
+      "values": [
+        3296985777,
+        2279980940,
+        3839098764,
+        1664499712,
+        2340094351,
+        2423508250,
+        1276824112,
+        2435,
+        2340096012
+      ],
+      "target": 2427747418,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 703732370,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 2772291167,
+      "prior": 2337637138,
+      "values": [
+        1,
+        2868086364,
+        921724508,
+        2617499648,
+        2772291167,
+        2337637138,
+        1650196520,
+        3147,
+        2772288020
+      ],
+      "target": 131757702,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 852776090,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 2838949998,
+      "prior": 1398391426,
+      "values": [
+        3496631656,
+        1824945227,
+        3121465931,
+        3603676672,
+        2838949998,
+        1398391426,
+        1851211672,
+        3530,
+        2838953380
+      ],
+      "target": 1059135881,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 10,
+        "leaf_index": 1629,
+        "leaf_value": 508504834,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 2949148537,
+      "prior": 3751846714,
+      "values": [
+        584186667,
+        3410214582,
+        2463050422,
+        1502385152,
+        2949148537,
+        3751846714,
+        1755947088,
+        3349,
+        2949145196
+      ],
+      "target": 10341793,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 994668421,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 2976967555,
+      "prior": 2710919783,
+      "values": [
+        4251993797,
+        0,
+        3381078016,
+        3381078016,
+        2976967555,
+        2710919783,
+        1980835709,
+        3778,
+        2976965953
+      ],
+      "target": 3273670618,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 404000239,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 2993532953,
+      "prior": 4064296814,
+      "values": [
+        216485067,
+        506047318,
+        3927736150,
+        4097168384,
+        2993532953,
+        4064296814,
+        1963752580,
+        3745,
+        2993536696
+      ],
+      "target": 3220473459,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 380236753,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3115618544,
+      "prior": 0,
+      "values": [
+        3725871162,
+        3759290637,
+        3661593357,
+        976044544,
+        3115618544,
+        0,
+        2127912214,
+        4058,
+        3115622186
+      ],
+      "target": 2705710197,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 74155005,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3115622641,
+      "prior": 1,
+      "values": [
+        31248227,
+        3825995566,
+        3661728558,
+        1045267456,
+        3115622641,
+        1,
+        2127916311,
+        4058,
+        3115626283
+      ],
+      "target": 1392841956,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 74155004,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3168168106,
+      "prior": 2723522762,
+      "values": [
+        1115923204,
+        2992077831,
+        1100761607,
+        4090181120,
+        3168168106,
+        2723522762,
+        2075633120,
+        3958,
+        3168167900
+      ],
+      "target": 1146271244,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 466911042,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3234666008,
+      "prior": 3428566971,
+      "values": [
+        2376284066,
+        1223243573,
+        3295192373,
+        2357301760,
+        3234666008,
+        3428566971,
+        128767185,
+        245,
+        3234666221
+      ],
+      "target": 2212102278,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 682756868,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3345072700,
+      "prior": 3237741290,
+      "values": [
+        1717622118,
+        2104496089,
+        2643645913,
+        3772963328,
+        3345072700,
+        3237741290,
+        0,
+        0,
+        3345072700
+      ],
+      "target": 713783181,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 605408853,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3345072701,
+      "prior": 3254514411,
+      "values": [
+        1718640783,
+        2104609274,
+        2643645946,
+        3772980224,
+        3345072701,
+        3254514411,
+        1,
+        0,
+        3345072701
+      ],
+      "target": 569138340,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 621952596,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3778982700,
+      "prior": 3405629637,
+      "values": [
+        1105763286,
+        604856009,
+        4077774025,
+        3607149056,
+        3778982700,
+        3405629637,
+        643790299,
+        1227,
+        3778983911
+      ],
+      "target": 3515945061,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 773063802,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3967787334,
+      "prior": 515430659,
+      "values": [
+        2147483648,
+        4061132835,
+        1718392355,
+        2489544192,
+        3967787334,
+        515430659,
+        723412505,
+        1379,
+        3967788069
+      ],
+      "target": 2413495943,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 450059006,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 4006914805,
+      "prior": 2463203561,
+      "values": [
+        3438505479,
+        864049586,
+        3009598898,
+        2162330624,
+        4006914805,
+        2463203561,
+        699756031,
+        1334,
+        4006916035
+      ],
+      "target": 3324733595,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 726685537,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 4184379331,
+      "prior": 2824957224,
+      "values": [
+        1015358725,
+        2980904000,
+        275993664,
+        2715789312,
+        4184379331,
+        2824957224,
+        1040796222,
+        1985,
+        4184377346
+      ],
+      "target": 3402591751,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 299940512,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 4210460262,
+      "prior": 1918158546,
+      "values": [
+        1003717152,
+        2025173315,
+        1136664387,
+        997568000,
+        4210460262,
+        1918158546,
+        1033323496,
+        1970,
+        4210459092
+      ],
+      "target": 4120583576,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 10,
+        "leaf_index": 1629,
+        "leaf_value": 1061302098,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 4254485151,
+      "prior": 2146681575,
+      "values": [
+        2791614017,
+        4132702876,
+        2589485724,
+        1812750336,
+        4254485151,
+        2146681575,
+        989302781,
+        1886,
+        4254485953
+      ],
+      "target": 561297002,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 10,
+        "leaf_index": 1629,
+        "leaf_value": 853879655,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    }
+  ],
+  "seconds": 3.039573,
+  "necessary_odd_proof": "P and every initial addend have equal LSB at b and b^65536. Target LSB flips. If P were even on either parity class, P*q+W would not flip. Initial LSBs depend only on b0,b19, so the four-class key-parity screen is exact.",
+  "mad_grid_proof": "Substitute K_i=parity_i+2*t_i. A first MAD is an integer polynomial of degree<=2 in t0,t1. Its six Newton forward-difference coefficients are determined by (0,0),(1,0),(0,1),(2,0),(1,1),(0,2). Equal values there imply equal polynomials as functions modulo2^32 for every integer t, without dividing by a nonunit.",
+  "bit_grid_proof": "Each output bit reads only the corresponding key bits. The fixed parity bits and all four high-bit key corners exhaust every bitwise truth assignment.",
+  "constant_prefix": "A root-only constant P and root-only quotient parameters produce a constant residual target-W, contradicted by the b16 parity pair.",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "scope": "out=P*q+W, W any nine initial words; P one MAD/XOR/AND/OR and q any function only of P/root constants. This includes DIV/REM/CDIV(P,D) and DIV/REM/CDIV(C,P), whenever defined. Does not include a dividend from another initial word and a computed denominator P, or a different final tail."
+}

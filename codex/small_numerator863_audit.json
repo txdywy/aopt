@@ -1,0 +1,3586 @@
+{
+  "node": 2809010545,
+  "input_names": [
+    "e",
+    "z",
+    "u",
+    "v",
+    "b",
+    "prior",
+    "a",
+    "a_shr19",
+    "a_xor_c1"
+  ],
+  "results": [
+    {
+      "source": 0,
+      "source_name": "e",
+      "pinned_offset": 131761799,
+      "zero_point": {
+        "primary_b": 1820303686,
+        "prior": 2646141187,
+        "values": [
+          0,
+          1913649187,
+          3865876003,
+          2489544192,
+          1820303686,
+          2646141187,
+          2870900249,
+          5475,
+          1820308517
+        ],
+        "target": 131761799,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 1,
+          "leaf_index": 1797,
+          "leaf_value": 607731339,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      "results": [
+        {
+          "op": "//",
+          "status": "excluded",
+          "numerator1_point": {
+            "primary_b": 2772291167,
+            "prior": 2337637138,
+            "values": [
+              1,
+              2868086364,
+              921724508,
+              2617499648,
+              2772291167,
+              2337637138,
+              1650196520,
+              3147,
+              2772288020
+            ],
+            "target": 131757702,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 1,
+              "leaf_index": 1797,
+              "leaf_value": 852776090,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          },
+          "residual": 4294963199,
+          "proof": "P*floor(1/P) is either0 or1; the target minus pinned H exceeds1."
+        },
+        {
+          "op": "cdiv",
+          "status": "excluded",
+          "certificate": "all_one_MAD_or_bitop_prefixes_incompatible",
+          "forced": [
+            {
+              "numerator": 1,
+              "target": 131757702,
+              "residual": 4294963199,
+              "forced_prefix": 4294963199,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 3,
+              "target": 131765896,
+              "residual": 4097,
+              "forced_prefix": 4097,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 5,
+              "target": 131774090,
+              "residual": 12291,
+              "forced_prefix": 12291,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 7,
+              "target": 131782284,
+              "residual": 20485,
+              "forced_prefix": 20485,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 9,
+              "target": 131790478,
+              "residual": 28679,
+              "forced_prefix": 28679,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 11,
+              "target": 131798672,
+              "residual": 36873,
+              "forced_prefix": 36873,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 13,
+              "target": 131806866,
+              "residual": 45067,
+              "forced_prefix": 45067,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 15,
+              "target": 131815060,
+              "residual": 53261,
+              "forced_prefix": 53261,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 17,
+              "target": 131692150,
+              "residual": 4294897647,
+              "forced_prefix": 4294897647,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 19,
+              "target": 131700344,
+              "residual": 4294905841,
+              "forced_prefix": 4294905841,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 21,
+              "target": 131708538,
+              "residual": 4294914035,
+              "forced_prefix": 4294914035,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 23,
+              "target": 131716732,
+              "residual": 4294922229,
+              "forced_prefix": 4294922229,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 25,
+              "target": 131724926,
+              "residual": 4294930423,
+              "forced_prefix": 4294930423,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 27,
+              "target": 131733120,
+              "residual": 4294938617,
+              "forced_prefix": 4294938617,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 29,
+              "target": 131741314,
+              "residual": 4294946811,
+              "forced_prefix": 4294946811,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 31,
+              "target": 131749508,
+              "residual": 4294955005,
+              "forced_prefix": 4294955005,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 33,
+              "target": 131626598,
+              "residual": 4294832095,
+              "forced_prefix": 4294832095,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 35,
+              "target": 131634792,
+              "residual": 4294840289,
+              "forced_prefix": 4294840289,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 37,
+              "target": 131642986,
+              "residual": 4294848483,
+              "forced_prefix": 4294848483,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 39,
+              "target": 131651180,
+              "residual": 4294856677,
+              "forced_prefix": 4294856677,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 41,
+              "target": 131659374,
+              "residual": 4294864871,
+              "forced_prefix": 4294864871,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 43,
+              "target": 131667568,
+              "residual": 4294873065,
+              "forced_prefix": 4294873065,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 45,
+              "target": 131675762,
+              "residual": 4294881259,
+              "forced_prefix": 4294881259,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 47,
+              "target": 131683956,
+              "residual": 4294889453,
+              "forced_prefix": 4294889453,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 49,
+              "target": 131561046,
+              "residual": 4294766543,
+              "forced_prefix": 4294766543,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 51,
+              "target": 131569240,
+              "residual": 4294774737,
+              "forced_prefix": 4294774737,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 53,
+              "target": 131577434,
+              "residual": 4294782931,
+              "forced_prefix": 4294782931,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 55,
+              "target": 131585628,
+              "residual": 4294791125,
+              "forced_prefix": 4294791125,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 57,
+              "target": 131593822,
+              "residual": 4294799319,
+              "forced_prefix": 4294799319,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 59,
+              "target": 131602016,
+              "residual": 4294807513,
+              "forced_prefix": 4294807513,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 61,
+              "target": 131610210,
+              "residual": 4294815707,
+              "forced_prefix": 4294815707,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 63,
+              "target": 131618404,
+              "residual": 4294823901,
+              "forced_prefix": 4294823901,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 65,
+              "target": 131495494,
+              "residual": 4294700991,
+              "forced_prefix": 4294700991,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 67,
+              "target": 131503688,
+              "residual": 4294709185,
+              "forced_prefix": 4294709185,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 69,
+              "target": 131511882,
+              "residual": 4294717379,
+              "forced_prefix": 4294717379,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 71,
+              "target": 131520076,
+              "residual": 4294725573,
+              "forced_prefix": 4294725573,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 73,
+              "target": 131528270,
+              "residual": 4294733767,
+              "forced_prefix": 4294733767,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 75,
+              "target": 131536464,
+              "residual": 4294741961,
+              "forced_prefix": 4294741961,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 77,
+              "target": 131544658,
+              "residual": 4294750155,
+              "forced_prefix": 4294750155,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 79,
+              "target": 131552852,
+              "residual": 4294758349,
+              "forced_prefix": 4294758349,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 81,
+              "target": 131429942,
+              "residual": 4294635439,
+              "forced_prefix": 4294635439,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 83,
+              "target": 131438136,
+              "residual": 4294643633,
+              "forced_prefix": 4294643633,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 85,
+              "target": 131446330,
+              "residual": 4294651827,
+              "forced_prefix": 4294651827,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 87,
+              "target": 131454524,
+              "residual": 4294660021,
+              "forced_prefix": 4294660021,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 89,
+              "target": 131462718,
+              "residual": 4294668215,
+              "forced_prefix": 4294668215,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 91,
+              "target": 131470912,
+              "residual": 4294676409,
+              "forced_prefix": 4294676409,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 93,
+              "target": 131479106,
+              "residual": 4294684603,
+              "forced_prefix": 4294684603,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 95,
+              "target": 131487300,
+              "residual": 4294692797,
+              "forced_prefix": 4294692797,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 97,
+              "target": 131364390,
+              "residual": 4294569887,
+              "forced_prefix": 4294569887,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 99,
+              "target": 131372584,
+              "residual": 4294578081,
+              "forced_prefix": 4294578081,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 101,
+              "target": 131380778,
+              "residual": 4294586275,
+              "forced_prefix": 4294586275,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 103,
+              "target": 131388972,
+              "residual": 4294594469,
+              "forced_prefix": 4294594469,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 105,
+              "target": 131397166,
+              "residual": 4294602663,
+              "forced_prefix": 4294602663,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 107,
+              "target": 131405360,
+              "residual": 4294610857,
+              "forced_prefix": 4294610857,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 109,
+              "target": 131413554,
+              "residual": 4294619051,
+              "forced_prefix": 4294619051,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 111,
+              "target": 131421748,
+              "residual": 4294627245,
+              "forced_prefix": 4294627245,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 113,
+              "target": 131298838,
+              "residual": 4294504335,
+              "forced_prefix": 4294504335,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 115,
+              "target": 131307032,
+              "residual": 4294512529,
+              "forced_prefix": 4294512529,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 117,
+              "target": 131315226,
+              "residual": 4294520723,
+              "forced_prefix": 4294520723,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 119,
+              "target": 131323420,
+              "residual": 4294528917,
+              "forced_prefix": 4294528917,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 121,
+              "target": 131331614,
+              "residual": 4294537111,
+              "forced_prefix": 4294537111,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 123,
+              "target": 131339808,
+              "residual": 4294545305,
+              "forced_prefix": 4294545305,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 125,
+              "target": 131348002,
+              "residual": 4294553499,
+              "forced_prefix": 4294553499,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 127,
+              "target": 131356196,
+              "residual": 4294561693,
+              "forced_prefix": 4294561693,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            }
+          ],
+          "primary_b": [
+            2772291167,
+            3023341713,
+            3662475971,
+            1454894325,
+            2645874471,
+            3066906969,
+            172280715,
+            791465405,
+            2379915247,
+            711283233,
+            1599804499,
+            3914626693,
+            763390135,
+            1222337257,
+            162716955,
+            1969968973,
+            3580916095,
+            1965108145,
+            2072700387,
+            3397492757,
+            4166777415,
+            1959195769,
+            4223917739,
+            2497339613,
+            482755343,
+            3833066817,
+            833202035,
+            1186097573,
+            1973955543,
+            123960841,
+            1007644731,
+            2800380525,
+            1350309023,
+            2150420177,
+            4085217539,
+            3543151413,
+            3520593255,
+            3771643801,
+            376111563,
+            2463497213,
+            1506993711,
+            1667471457,
+            726882963,
+            3687251141,
+            3128217335,
+            2633990441,
+            2348106587,
+            628262285,
+            731297727,
+            83456497,
+            2798201891,
+            2524571221,
+            2181734535,
+            2713410233,
+            2821002475,
+            4145794845,
+            1399490895,
+            1927103361,
+            3085036979,
+            837857253,
+            904155671,
+            2433885257,
+            281269883,
+            1934399661
+          ],
+          "degree2_base_fields": 5,
+          "degree2_coefficients": 21,
+          "polynomial_consistent": false,
+          "bitop_fits": [],
+          "positive_polynomial_control": true
+        },
+        {
+          "op": "%",
+          "status": "excluded",
+          "certificate": "all_one_MAD_or_bitop_prefixes_incompatible",
+          "forced": [
+            {
+              "numerator": 1,
+              "target": 131757702,
+              "residual": 4294963199,
+              "forced_prefix": 4294963199,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 3,
+              "target": 131765896,
+              "residual": 4097,
+              "forced_prefix": 1431657131,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 5,
+              "target": 131774090,
+              "residual": 12291,
+              "forced_prefix": 3435976295,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 7,
+              "target": 131782284,
+              "residual": 20485,
+              "forced_prefix": 613569683,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 9,
+              "target": 131790478,
+              "residual": 28679,
+              "forced_prefix": 477221775,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 11,
+              "target": 131798672,
+              "residual": 36873,
+              "forced_prefix": 3123615931,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 13,
+              "target": 131806866,
+              "residual": 45067,
+              "forced_prefix": 3964588663,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 15,
+              "target": 131815060,
+              "residual": 53261,
+              "forced_prefix": 1145328163,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 17,
+              "target": 131692150,
+              "residual": 4294897647,
+              "forced_prefix": 4294963199,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 19,
+              "target": 131700344,
+              "residual": 4294905841,
+              "forced_prefix": 2486556779,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 21,
+              "target": 131708538,
+              "residual": 4294914035,
+              "forced_prefix": 3476875751,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 23,
+              "target": 131716732,
+              "residual": 4294922229,
+              "forced_prefix": 3734752211,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 25,
+              "target": 131724926,
+              "residual": 4294930423,
+              "forced_prefix": 2233381519,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 27,
+              "target": 131733120,
+              "residual": 4294938617,
+              "forced_prefix": 4135893371,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 29,
+              "target": 131741314,
+              "residual": 4294946811,
+              "forced_prefix": 2517738743,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 31,
+              "target": 131749508,
+              "residual": 4294955005,
+              "forced_prefix": 3740777571,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 33,
+              "target": 131626598,
+              "residual": 4294832095,
+              "forced_prefix": 4294963199,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 35,
+              "target": 131634792,
+              "residual": 4294840289,
+              "forced_prefix": 1472556587,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 37,
+              "target": 131642986,
+              "residual": 4294848483,
+              "forced_prefix": 2553761127,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 39,
+              "target": 131651180,
+              "residual": 4294856677,
+              "forced_prefix": 660761363,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 41,
+              "target": 131659374,
+              "residual": 4294864871,
+              "forced_prefix": 3037901199,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 43,
+              "target": 131667568,
+              "residual": 4294873065,
+              "forced_prefix": 2796720699,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 45,
+              "target": 131675762,
+              "residual": 4294881259,
+              "forced_prefix": 4008634231,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 47,
+              "target": 131683956,
+              "residual": 4294889453,
+              "forced_prefix": 2375937699,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 49,
+              "target": 131561046,
+              "residual": 4294766543,
+              "forced_prefix": 4294963199,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 51,
+              "target": 131569240,
+              "residual": 4294774737,
+              "forced_prefix": 2863307755,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 53,
+              "target": 131577434,
+              "residual": 4294782931,
+              "forced_prefix": 162070759,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 55,
+              "target": 131585628,
+              "residual": 4294791125,
+              "forced_prefix": 3982602835,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 57,
+              "target": 131593822,
+              "residual": 4294799319,
+              "forced_prefix": 1883754639,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 59,
+              "target": 131602016,
+              "residual": 4294807513,
+              "forced_prefix": 436773627,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 61,
+              "target": 131610210,
+              "residual": 4294815707,
+              "forced_prefix": 4224555511,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 63,
+              "target": 131618404,
+              "residual": 4294823901,
+              "forced_prefix": 3340527843,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 65,
+              "target": 131495494,
+              "residual": 4294700991,
+              "forced_prefix": 4294963199,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 67,
+              "target": 131503688,
+              "residual": 4294709185,
+              "forced_prefix": 833348011,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 69,
+              "target": 131511882,
+              "residual": 4294717379,
+              "forced_prefix": 2738816103,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 71,
+              "target": 131520076,
+              "residual": 4294725573,
+              "forced_prefix": 1693786515,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 73,
+              "target": 131528270,
+              "residual": 4294733767,
+              "forced_prefix": 1882722191,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 75,
+              "target": 131536464,
+              "residual": 4294741961,
+              "forced_prefix": 2004315067,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 77,
+              "target": 131544658,
+              "residual": 4294750155,
+              "forced_prefix": 3235167351,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 79,
+              "target": 131552852,
+              "residual": 4294758349,
+              "forced_prefix": 163097379,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 81,
+              "target": 131429942,
+              "residual": 4294635439,
+              "forced_prefix": 4294963199,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 83,
+              "target": 131438136,
+              "residual": 4294643633,
+              "forced_prefix": 1034927979,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 85,
+              "target": 131446330,
+              "residual": 4294651827,
+              "forced_prefix": 1717983207,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 87,
+              "target": 131454524,
+              "residual": 4294660021,
+              "forced_prefix": 3998759123,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 89,
+              "target": 131462718,
+              "residual": 4294668215,
+              "forced_prefix": 3957157519,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 91,
+              "target": 131470912,
+              "residual": 4294676409,
+              "forced_prefix": 4153371771,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 93,
+              "target": 131479106,
+              "residual": 4294684603,
+              "forced_prefix": 2909490935,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 95,
+              "target": 131487300,
+              "residual": 4294692797,
+              "forced_prefix": 1763194211,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 97,
+              "target": 131364390,
+              "residual": 4294569887,
+              "forced_prefix": 4294963199,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 99,
+              "target": 131372584,
+              "residual": 4294578081,
+              "forced_prefix": 2646390059,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 101,
+              "target": 131380778,
+              "residual": 4294586275,
+              "forced_prefix": 978058087,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 103,
+              "target": 131388972,
+              "residual": 4294594469,
+              "forced_prefix": 1000765459,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 105,
+              "target": 131397166,
+              "residual": 4294602663,
+              "forced_prefix": 531754383,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 107,
+              "target": 131405360,
+              "residual": 4294610857,
+              "forced_prefix": 3733005627,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 109,
+              "target": 131413554,
+              "residual": 4294619051,
+              "forced_prefix": 2285392247,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 111,
+              "target": 131421748,
+              "residual": 4294627245,
+              "forced_prefix": 1547732899,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 113,
+              "target": 131298838,
+              "residual": 4294504335,
+              "forced_prefix": 4294963199,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 115,
+              "target": 131307032,
+              "residual": 4294512529,
+              "forced_prefix": 821641963,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 117,
+              "target": 131315226,
+              "residual": 4294520723,
+              "forced_prefix": 3487362791,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 119,
+              "target": 131323420,
+              "residual": 4294528917,
+              "forced_prefix": 3067830099,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 121,
+              "target": 131331614,
+              "residual": 4294537111,
+              "forced_prefix": 3585051791,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 123,
+              "target": 131339808,
+              "residual": 4294545305,
+              "forced_prefix": 907875835,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 125,
+              "target": 131348002,
+              "residual": 4294553499,
+              "forced_prefix": 3676488695,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 127,
+              "target": 131356196,
+              "residual": 4294561693,
+              "forced_prefix": 3415679459,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            }
+          ],
+          "primary_b": [
+            2772291167,
+            3023341713,
+            3662475971,
+            1454894325,
+            2645874471,
+            3066906969,
+            172280715,
+            791465405,
+            2379915247,
+            711283233,
+            1599804499,
+            3914626693,
+            763390135,
+            1222337257,
+            162716955,
+            1969968973,
+            3580916095,
+            1965108145,
+            2072700387,
+            3397492757,
+            4166777415,
+            1959195769,
+            4223917739,
+            2497339613,
+            482755343,
+            3833066817,
+            833202035,
+            1186097573,
+            1973955543,
+            123960841,
+            1007644731,
+            2800380525,
+            1350309023,
+            2150420177,
+            4085217539,
+            3543151413,
+            3520593255,
+            3771643801,
+            376111563,
+            2463497213,
+            1506993711,
+            1667471457,
+            726882963,
+            3687251141,
+            3128217335,
+            2633990441,
+            2348106587,
+            628262285,
+            731297727,
+            83456497,
+            2798201891,
+            2524571221,
+            2181734535,
+            2713410233,
+            2821002475,
+            4145794845,
+            1399490895,
+            1927103361,
+            3085036979,
+            837857253,
+            904155671,
+            2433885257,
+            281269883,
+            1934399661
+          ],
+          "degree2_base_fields": 5,
+          "degree2_coefficients": 21,
+          "polynomial_consistent": false,
+          "bitop_fits": [],
+          "positive_polynomial_control": true
+        }
+      ]
+    },
+    {
+      "source": 1,
+      "source_name": "z",
+      "pinned_offset": 3273670618,
+      "zero_point": {
+        "primary_b": 2976967555,
+        "prior": 2710919783,
+        "values": [
+          4251993797,
+          0,
+          3381078016,
+          3381078016,
+          2976967555,
+          2710919783,
+          1980835709,
+          3778,
+          2976965953
+        ],
+        "target": 3273670618,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 1,
+          "leaf_index": 1797,
+          "leaf_value": 404000239,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      "results": [
+        {
+          "op": "//",
+          "status": "excluded",
+          "numerator1_point": {
+            "primary_b": 638333284,
+            "prior": 947036767,
+            "values": [
+              4251993806,
+              1,
+              3515558401,
+              3515558400,
+              638333284,
+              947036767,
+              3782078325,
+              7213,
+              638332233
+            ],
+            "target": 3273715685,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 0,
+              "leaf_index": 2000,
+              "leaf_value": 1008279970,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          },
+          "residual": 45067,
+          "proof": "P*floor(1/P) is either0 or1; the target minus pinned H exceeds1."
+        },
+        {
+          "op": "cdiv",
+          "status": "excluded",
+          "certificate": "all_one_MAD_or_bitop_prefixes_incompatible",
+          "forced": [
+            {
+              "numerator": 1,
+              "target": 3273715685,
+              "residual": 45067,
+              "forced_prefix": 45067,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 3,
+              "target": 3273789431,
+              "residual": 118813,
+              "forced_prefix": 118813,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 5,
+              "target": 3273863177,
+              "residual": 192559,
+              "forced_prefix": 192559,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 7,
+              "target": 3273936923,
+              "residual": 266305,
+              "forced_prefix": 266305,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 9,
+              "target": 3274010669,
+              "residual": 340051,
+              "forced_prefix": 340051,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 11,
+              "target": 3274084415,
+              "residual": 413797,
+              "forced_prefix": 413797,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 13,
+              "target": 3274158161,
+              "residual": 487543,
+              "forced_prefix": 487543,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 15,
+              "target": 3274231907,
+              "residual": 561289,
+              "forced_prefix": 561289,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 17,
+              "target": 3274305653,
+              "residual": 635035,
+              "forced_prefix": 635035,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 19,
+              "target": 3274379399,
+              "residual": 708781,
+              "forced_prefix": 708781,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 21,
+              "target": 3274453145,
+              "residual": 782527,
+              "forced_prefix": 782527,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 23,
+              "target": 3274526891,
+              "residual": 856273,
+              "forced_prefix": 856273,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 25,
+              "target": 3274600637,
+              "residual": 930019,
+              "forced_prefix": 930019,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 27,
+              "target": 3274674383,
+              "residual": 1003765,
+              "forced_prefix": 1003765,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 29,
+              "target": 3274748129,
+              "residual": 1077511,
+              "forced_prefix": 1077511,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 31,
+              "target": 3274821875,
+              "residual": 1151257,
+              "forced_prefix": 1151257,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 33,
+              "target": 3274895621,
+              "residual": 1225003,
+              "forced_prefix": 1225003,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 35,
+              "target": 3283360023,
+              "residual": 9689405,
+              "forced_prefix": 9689405,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 37,
+              "target": 3283433769,
+              "residual": 9763151,
+              "forced_prefix": 9763151,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 39,
+              "target": 3283507515,
+              "residual": 9836897,
+              "forced_prefix": 9836897,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 41,
+              "target": 3283581261,
+              "residual": 9910643,
+              "forced_prefix": 9910643,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 43,
+              "target": 3283655007,
+              "residual": 9984389,
+              "forced_prefix": 9984389,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 45,
+              "target": 3283728753,
+              "residual": 10058135,
+              "forced_prefix": 10058135,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 47,
+              "target": 3283802499,
+              "residual": 10131881,
+              "forced_prefix": 10131881,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 49,
+              "target": 3283876245,
+              "residual": 10205627,
+              "forced_prefix": 10205627,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 51,
+              "target": 3283949991,
+              "residual": 10279373,
+              "forced_prefix": 10279373,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 53,
+              "target": 3284023737,
+              "residual": 10353119,
+              "forced_prefix": 10353119,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 55,
+              "target": 3284097483,
+              "residual": 10426865,
+              "forced_prefix": 10426865,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 57,
+              "target": 3284171229,
+              "residual": 10500611,
+              "forced_prefix": 10500611,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 59,
+              "target": 3284244975,
+              "residual": 10574357,
+              "forced_prefix": 10574357,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 61,
+              "target": 3284318721,
+              "residual": 10648103,
+              "forced_prefix": 10648103,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 63,
+              "target": 3284392467,
+              "residual": 10721849,
+              "forced_prefix": 10721849,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 65,
+              "target": 3284466213,
+              "residual": 10795595,
+              "forced_prefix": 10795595,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 67,
+              "target": 3284539959,
+              "residual": 10869341,
+              "forced_prefix": 10869341,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 69,
+              "target": 3284613705,
+              "residual": 10943087,
+              "forced_prefix": 10943087,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 71,
+              "target": 3284687451,
+              "residual": 11016833,
+              "forced_prefix": 11016833,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 73,
+              "target": 3284761197,
+              "residual": 11090579,
+              "forced_prefix": 11090579,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 75,
+              "target": 3284834943,
+              "residual": 11164325,
+              "forced_prefix": 11164325,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 77,
+              "target": 3284908689,
+              "residual": 11238071,
+              "forced_prefix": 11238071,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 79,
+              "target": 3284982435,
+              "residual": 11311817,
+              "forced_prefix": 11311817,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 81,
+              "target": 3285056181,
+              "residual": 11385563,
+              "forced_prefix": 11385563,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 83,
+              "target": 3285129927,
+              "residual": 11459309,
+              "forced_prefix": 11459309,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 85,
+              "target": 3285203673,
+              "residual": 11533055,
+              "forced_prefix": 11533055,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 87,
+              "target": 3285277419,
+              "residual": 11606801,
+              "forced_prefix": 11606801,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 89,
+              "target": 3285351165,
+              "residual": 11680547,
+              "forced_prefix": 11680547,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 91,
+              "target": 3285424911,
+              "residual": 11754293,
+              "forced_prefix": 11754293,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 93,
+              "target": 3285498657,
+              "residual": 11828039,
+              "forced_prefix": 11828039,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 95,
+              "target": 3285572403,
+              "residual": 11901785,
+              "forced_prefix": 11901785,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 97,
+              "target": 3285646149,
+              "residual": 11975531,
+              "forced_prefix": 11975531,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 99,
+              "target": 3285719895,
+              "residual": 12049277,
+              "forced_prefix": 12049277,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 101,
+              "target": 3285793641,
+              "residual": 12123023,
+              "forced_prefix": 12123023,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 103,
+              "target": 3285867387,
+              "residual": 12196769,
+              "forced_prefix": 12196769,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 105,
+              "target": 3285941133,
+              "residual": 12270515,
+              "forced_prefix": 12270515,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 107,
+              "target": 3286014879,
+              "residual": 12344261,
+              "forced_prefix": 12344261,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 109,
+              "target": 3286088625,
+              "residual": 12418007,
+              "forced_prefix": 12418007,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 111,
+              "target": 3286162371,
+              "residual": 12491753,
+              "forced_prefix": 12491753,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 113,
+              "target": 3286236117,
+              "residual": 12565499,
+              "forced_prefix": 12565499,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 115,
+              "target": 3286309863,
+              "residual": 12639245,
+              "forced_prefix": 12639245,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 117,
+              "target": 3286383609,
+              "residual": 12712991,
+              "forced_prefix": 12712991,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 119,
+              "target": 3286457355,
+              "residual": 12786737,
+              "forced_prefix": 12786737,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 121,
+              "target": 3286531101,
+              "residual": 12860483,
+              "forced_prefix": 12860483,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 123,
+              "target": 3286604847,
+              "residual": 12934229,
+              "forced_prefix": 12934229,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 125,
+              "target": 3286678593,
+              "residual": 13007975,
+              "forced_prefix": 13007975,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 127,
+              "target": 3286752339,
+              "residual": 13081721,
+              "forced_prefix": 13081721,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            }
+          ],
+          "primary_b": [
+            638333284,
+            256032038,
+            4168698088,
+            3786396842,
+            3404095596,
+            3021794350,
+            2639493104,
+            2257191858,
+            1874890612,
+            1492589366,
+            1110288120,
+            727986874,
+            345685628,
+            4258351678,
+            3876050432,
+            3493749186,
+            3111447940,
+            2729146694,
+            2346845448,
+            1964544202,
+            1582242956,
+            1199941710,
+            817640464,
+            435339218,
+            53037972,
+            3965704022,
+            3583402776,
+            3201101530,
+            2818800284,
+            2436499038,
+            2054197792,
+            1671896546,
+            1289595300,
+            907294054,
+            524992808,
+            142691562,
+            4055357612,
+            3673056366,
+            3290755120,
+            2908453874,
+            2526152628,
+            2143851382,
+            1761550136,
+            1379248890,
+            996947644,
+            614646398,
+            232345152,
+            4145011202,
+            3762709956,
+            3380408710,
+            2998107464,
+            2615806218,
+            2233504972,
+            1851203726,
+            1468902480,
+            1086601234,
+            704299988,
+            321998742,
+            4234664792,
+            3852363546,
+            3470062300,
+            3087761054,
+            2705459808,
+            2323158562
+          ],
+          "degree2_base_fields": 5,
+          "degree2_coefficients": 21,
+          "polynomial_consistent": false,
+          "bitop_fits": [],
+          "positive_polynomial_control": true
+        },
+        {
+          "op": "%",
+          "status": "excluded",
+          "certificate": "all_one_MAD_or_bitop_prefixes_incompatible",
+          "forced": [
+            {
+              "numerator": 1,
+              "target": 3273715685,
+              "residual": 45067,
+              "forced_prefix": 45067,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 3,
+              "target": 3273789431,
+              "residual": 118813,
+              "forced_prefix": 2863351135,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 5,
+              "target": 3273863177,
+              "residual": 192559,
+              "forced_prefix": 859031971,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 7,
+              "target": 3273936923,
+              "residual": 266305,
+              "forced_prefix": 3681438583,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 9,
+              "target": 3274010669,
+              "residual": 340051,
+              "forced_prefix": 3817786491,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 11,
+              "target": 3274084415,
+              "residual": 413797,
+              "forced_prefix": 1171392335,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 13,
+              "target": 3274158161,
+              "residual": 487543,
+              "forced_prefix": 330419603,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 15,
+              "target": 3274231907,
+              "residual": 561289,
+              "forced_prefix": 3149680103,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 17,
+              "target": 3274305653,
+              "residual": 635035,
+              "forced_prefix": 37355,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 19,
+              "target": 3274379399,
+              "residual": 708781,
+              "forced_prefix": 3390800959,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 21,
+              "target": 3274453145,
+              "residual": 782527,
+              "forced_prefix": 4090482307,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 23,
+              "target": 3274526891,
+              "residual": 856273,
+              "forced_prefix": 2054152023,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 25,
+              "target": 3274600637,
+              "residual": 930019,
+              "forced_prefix": 1889822811,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 27,
+              "target": 3274674383,
+              "residual": 1003765,
+              "forced_prefix": 1272620079,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 29,
+              "target": 3274748129,
+              "residual": 1077511,
+              "forced_prefix": 4146902131,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 31,
+              "target": 3274821875,
+              "residual": 1151257,
+              "forced_prefix": 1801152455,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 33,
+              "target": 3274895621,
+              "residual": 1225003,
+              "forced_prefix": 1822144459,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 35,
+              "target": 3283360023,
+              "residual": 9689405,
+              "forced_prefix": 3068110623,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 37,
+              "target": 3283433769,
+              "residual": 9763151,
+              "forced_prefix": 3714830179,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 39,
+              "target": 3283507515,
+              "residual": 9836897,
+              "forced_prefix": 4074964791,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 41,
+              "target": 3283581261,
+              "residual": 9910643,
+              "forced_prefix": 241723,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 43,
+              "target": 3283655007,
+              "residual": 9984389,
+              "forced_prefix": 3196486927,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 45,
+              "target": 3283728753,
+              "residual": 10058135,
+              "forced_prefix": 954660691,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 47,
+              "target": 3283802499,
+              "residual": 10131881,
+              "forced_prefix": 3381360039,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 49,
+              "target": 3283876245,
+              "residual": 10205627,
+              "forced_prefix": 2191518123,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 51,
+              "target": 3283949991,
+              "residual": 10279373,
+              "forced_prefix": 2863513087,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 53,
+              "target": 3284023737,
+              "residual": 10353119,
+              "forced_prefix": 729529411,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 55,
+              "target": 3284097483,
+              "residual": 10426865,
+              "forced_prefix": 3904705303,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 57,
+              "target": 3284171229,
+              "residual": 10500611,
+              "forced_prefix": 301585435,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 59,
+              "target": 3284244975,
+              "residual": 10574357,
+              "forced_prefix": 1820080623,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 61,
+              "target": 3284318721,
+              "residual": 10648103,
+              "forced_prefix": 70583859,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 63,
+              "target": 3284392467,
+              "residual": 10721849,
+              "forced_prefix": 3136178055,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 65,
+              "target": 3284466213,
+              "residual": 10795595,
+              "forced_prefix": 3303987083,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 67,
+              "target": 3284539959,
+              "residual": 10869341,
+              "forced_prefix": 4038713567,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 69,
+              "target": 3284613705,
+              "residual": 10943087,
+              "forced_prefix": 1743043875,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 71,
+              "target": 3284687451,
+              "residual": 11016833,
+              "forced_prefix": 3024780023,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 73,
+              "target": 3284761197,
+              "residual": 11090579,
+              "forced_prefix": 706173947,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 75,
+              "target": 3284834943,
+              "residual": 11164325,
+              "forced_prefix": 1431804623,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 77,
+              "target": 3284908689,
+              "residual": 11238071,
+              "forced_prefix": 2175518995,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 79,
+              "target": 3284982435,
+              "residual": 11311817,
+              "forced_prefix": 3044676967,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 81,
+              "target": 3285056181,
+              "residual": 11385563,
+              "forced_prefix": 1007602027,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 83,
+              "target": 3285129927,
+              "residual": 11459309,
+              "forced_prefix": 2121748415,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 85,
+              "target": 3285203673,
+              "residual": 11533055,
+              "forced_prefix": 135683,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 87,
+              "target": 3285277419,
+              "residual": 11606801,
+              "forced_prefix": 938114775,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 89,
+              "target": 3285351165,
+              "residual": 11680547,
+              "forced_prefix": 3426453467,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 91,
+              "target": 3285424911,
+              "residual": 11754293,
+              "forced_prefix": 519301039,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 93,
+              "target": 3285498657,
+              "residual": 11828039,
+              "forced_prefix": 4064182259,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 95,
+              "target": 3285572403,
+              "residual": 11901785,
+              "forced_prefix": 3616939847,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 97,
+              "target": 3285646149,
+              "residual": 11975531,
+              "forced_prefix": 4162256715,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 99,
+              "target": 3285719895,
+              "residual": 12049277,
+              "forced_prefix": 1214859935,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 101,
+              "target": 3285793641,
+              "residual": 12123023,
+              "forced_prefix": 2594110179,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 103,
+              "target": 3285867387,
+              "residual": 12196769,
+              "forced_prefix": 3461111479,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 105,
+              "target": 3285941133,
+              "residual": 12270515,
+              "forced_prefix": 1022728123,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 107,
+              "target": 3286014879,
+              "residual": 12344261,
+              "forced_prefix": 2528927887,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 109,
+              "target": 3286088625,
+              "residual": 12418007,
+              "forced_prefix": 1221618387,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 111,
+              "target": 3286162371,
+              "residual": 12491753,
+              "forced_prefix": 4101612839,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 113,
+              "target": 3286236117,
+              "residual": 12565499,
+              "forced_prefix": 3192830251,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 115,
+              "target": 3286309863,
+              "residual": 12639245,
+              "forced_prefix": 186847615,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 117,
+              "target": 3286383609,
+              "residual": 12712991,
+              "forced_prefix": 1358346179,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 119,
+              "target": 3286457355,
+              "residual": 12786737,
+              "forced_prefix": 3681507991,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 121,
+              "target": 3286531101,
+              "residual": 12860483,
+              "forced_prefix": 1384434587,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 123,
+              "target": 3286604847,
+              "residual": 12934229,
+              "forced_prefix": 2863416687,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 125,
+              "target": 3286678593,
+              "residual": 13007975,
+              "forced_prefix": 859097523,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            },
+            {
+              "numerator": 127,
+              "target": 3286752339,
+              "residual": 13081721,
+              "forced_prefix": 2502682375,
+              "prefix_must_exceed_numerator": true,
+              "parity_compatible": true,
+              "exceeds_numerator": true
+            }
+          ],
+          "primary_b": [
+            638333284,
+            256032038,
+            4168698088,
+            3786396842,
+            3404095596,
+            3021794350,
+            2639493104,
+            2257191858,
+            1874890612,
+            1492589366,
+            1110288120,
+            727986874,
+            345685628,
+            4258351678,
+            3876050432,
+            3493749186,
+            3111447940,
+            2729146694,
+            2346845448,
+            1964544202,
+            1582242956,
+            1199941710,
+            817640464,
+            435339218,
+            53037972,
+            3965704022,
+            3583402776,
+            3201101530,
+            2818800284,
+            2436499038,
+            2054197792,
+            1671896546,
+            1289595300,
+            907294054,
+            524992808,
+            142691562,
+            4055357612,
+            3673056366,
+            3290755120,
+            2908453874,
+            2526152628,
+            2143851382,
+            1761550136,
+            1379248890,
+            996947644,
+            614646398,
+            232345152,
+            4145011202,
+            3762709956,
+            3380408710,
+            2998107464,
+            2615806218,
+            2233504972,
+            1851203726,
+            1468902480,
+            1086601234,
+            704299988,
+            321998742,
+            4234664792,
+            3852363546,
+            3470062300,
+            3087761054,
+            2705459808,
+            2323158562
+          ],
+          "degree2_base_fields": 5,
+          "degree2_coefficients": 21,
+          "polynomial_consistent": false,
+          "bitop_fits": [],
+          "positive_polynomial_control": true
+        }
+      ]
+    },
+    {
+      "source": 2,
+      "source_name": "u",
+      "pinned_offset": 2520826602,
+      "zero_point": {
+        "primary_b": 271500163,
+        "prior": 4237672000,
+        "values": [
+          2455809733,
+          3140954112,
+          0,
+          3140954112,
+          271500163,
+          4237672000,
+          3612285782,
+          6889,
+          271505770
+        ],
+        "target": 2520826602,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 410809087,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      "results": [
+        {
+          "op": "//",
+          "status": "excluded",
+          "numerator1_point": {
+            "primary_b": 1312704356,
+            "prior": 3289671517,
+            "values": [
+              2455814350,
+              3140954625,
+              1,
+              3140954624,
+              1312704356,
+              3289671517,
+              2304742515,
+              4395,
+              1312708175
+            ],
+            "target": 2560727285,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 8,
+              "leaf_index": 1752,
+              "leaf_value": 553495522,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          },
+          "residual": 39900683,
+          "proof": "P*floor(1/P) is either0 or1; the target minus pinned H exceeds1."
+        },
+        {
+          "op": "cdiv",
+          "status": "excluded",
+          "certificate": "forced_prefix_invalid_or_even",
+          "witness": {
+            "numerator": 5,
+            "target": 2887975160,
+            "residual": 367148558,
+            "forced_prefix": 367148558,
+            "prefix_must_exceed_numerator": true,
+            "parity_compatible": false,
+            "exceeds_numerator": true
+          },
+          "legal_point": {
+            "primary_b": 1182553832,
+            "prior": 1623857121,
+            "values": [
+              2455832818,
+              3140956677,
+              5,
+              3140956672,
+              1182553832,
+              1623857121,
+              2166195447,
+              4131,
+              1182549707
+            ],
+            "target": 2887975160,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 10,
+              "leaf_index": 1629,
+              "leaf_value": 769457761,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          }
+        },
+        {
+          "op": "%",
+          "status": "excluded",
+          "certificate": "forced_prefix_invalid_or_even",
+          "witness": {
+            "numerator": 5,
+            "target": 2887975160,
+            "residual": 367148558,
+            "forced_prefix": 1791416630,
+            "prefix_must_exceed_numerator": true,
+            "parity_compatible": false,
+            "exceeds_numerator": true
+          },
+          "legal_point": {
+            "primary_b": 1182553832,
+            "prior": 1623857121,
+            "values": [
+              2455832818,
+              3140956677,
+              5,
+              3140956672,
+              1182553832,
+              1623857121,
+              2166195447,
+              4131,
+              1182549707
+            ],
+            "target": 2887975160,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 10,
+              "leaf_index": 1629,
+              "leaf_value": 769457761,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          }
+        }
+      ]
+    },
+    {
+      "source": 3,
+      "source_name": "v",
+      "all_ops": "excluded",
+      "zero_pair": [
+        {
+          "primary_b": 2116207,
+          "prior": 707912613,
+          "values": [
+            1554370193,
+            3995231340,
+            3995231340,
+            0,
+            2116207,
+            707912613,
+            3342962875,
+            6376,
+            2118279
+          ],
+          "target": 861223003,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 777674840,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        },
+        {
+          "primary_b": 10504815,
+          "prior": 447931285,
+          "values": [
+            4045786769,
+            4272055404,
+            4272055404,
+            0,
+            10504815,
+            447931285,
+            3351351467,
+            6392,
+            10506903
+          ],
+          "target": 2274153435,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 517562472,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      ],
+      "proof": "Both numerators0 force the same output offset H, but targets differ."
+    },
+    {
+      "source": 4,
+      "source_name": "b",
+      "pinned_offset": 4209921524,
+      "zero_point": {
+        "primary_b": 0,
+        "prior": 984669626,
+        "values": [
+          1818584522,
+          1161276957,
+          3925396509,
+          2899272192,
+          0,
+          984669626,
+          3345078992,
+          6380,
+          6380
+        ],
+        "target": 4209921524,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 1054563911,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      "results": [
+        {
+          "op": "//",
+          "status": "excluded",
+          "numerator1_point": {
+            "primary_b": 1,
+            "prior": 1001442747,
+            "values": [
+              1818423539,
+              1161259070,
+              3925396542,
+              2899289088,
+              1,
+              1001442747,
+              3345078993,
+              6380,
+              6381
+            ],
+            "target": 306176758,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 0,
+              "leaf_index": 2000,
+              "leaf_value": 1071337030,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          },
+          "residual": 391222530,
+          "proof": "P*floor(1/P) is either0 or1; the target minus pinned H exceeds1."
+        },
+        {
+          "op": "cdiv",
+          "status": "excluded",
+          "certificate": "forced_prefix_invalid_or_even",
+          "witness": {
+            "numerator": 1,
+            "target": 306176758,
+            "residual": 391222530,
+            "forced_prefix": 391222530,
+            "prefix_must_exceed_numerator": true,
+            "parity_compatible": false,
+            "exceeds_numerator": true
+          },
+          "legal_point": {
+            "primary_b": 1,
+            "prior": 1001442747,
+            "values": [
+              1818423539,
+              1161259070,
+              3925396542,
+              2899289088,
+              1,
+              1001442747,
+              3345078993,
+              6380,
+              6381
+            ],
+            "target": 306176758,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 0,
+              "leaf_index": 2000,
+              "leaf_value": 1071337030,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          }
+        },
+        {
+          "op": "%",
+          "status": "excluded",
+          "certificate": "forced_prefix_invalid_or_even",
+          "witness": {
+            "numerator": 1,
+            "target": 306176758,
+            "residual": 391222530,
+            "forced_prefix": 391222530,
+            "prefix_must_exceed_numerator": true,
+            "parity_compatible": false,
+            "exceeds_numerator": true
+          },
+          "legal_point": {
+            "primary_b": 1,
+            "prior": 1001442747,
+            "values": [
+              1818423539,
+              1161259070,
+              3925396542,
+              2899289088,
+              1,
+              1001442747,
+              3345078993,
+              6380,
+              6381
+            ],
+            "target": 306176758,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 0,
+              "leaf_index": 2000,
+              "leaf_value": 1071337030,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          }
+        }
+      ]
+    },
+    {
+      "source": 5,
+      "source_name": "prior",
+      "pinned_offset": 2705710197,
+      "zero_point": {
+        "primary_b": 3115618544,
+        "prior": 0,
+        "values": [
+          3725871162,
+          3759290637,
+          3661593357,
+          976044544,
+          3115618544,
+          0,
+          2127912214,
+          4058,
+          3115622186
+        ],
+        "target": 2705710197,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 74155005,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      "results": [
+        {
+          "op": "//",
+          "status": "excluded",
+          "numerator1_point": {
+            "primary_b": 3115622641,
+            "prior": 1,
+            "values": [
+              31248227,
+              3825995566,
+              3661728558,
+              1045267456,
+              3115622641,
+              1,
+              2127916311,
+              4058,
+              3115626283
+            ],
+            "target": 1392841956,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 0,
+              "leaf_index": 2000,
+              "leaf_value": 74155004,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          },
+          "residual": 2982099055,
+          "proof": "P*floor(1/P) is either0 or1; the target minus pinned H exceeds1."
+        },
+        {
+          "op": "cdiv",
+          "status": "excluded",
+          "certificate": "forced_prefix_invalid_or_even",
+          "witness": {
+            "numerator": 9,
+            "target": 32941647,
+            "residual": 1622198746,
+            "forced_prefix": 1622198746,
+            "prefix_must_exceed_numerator": true,
+            "parity_compatible": false,
+            "exceeds_numerator": true
+          },
+          "legal_point": {
+            "primary_b": 3115589881,
+            "prior": 9,
+            "values": [
+              14917803,
+              3346962486,
+              3660647478,
+              491754496,
+              3115589881,
+              9,
+              2127949087,
+              4058,
+              3115593507
+            ],
+            "target": 32941647,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 0,
+              "leaf_index": 2000,
+              "leaf_value": 74154996,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          }
+        },
+        {
+          "op": "%",
+          "status": "excluded",
+          "certificate": "forced_prefix_invalid_or_even",
+          "witness": {
+            "numerator": 9,
+            "target": 32941647,
+            "residual": 1622198746,
+            "forced_prefix": 1134681482,
+            "prefix_must_exceed_numerator": true,
+            "parity_compatible": false,
+            "exceeds_numerator": true
+          },
+          "legal_point": {
+            "primary_b": 3115589881,
+            "prior": 9,
+            "values": [
+              14917803,
+              3346962486,
+              3660647478,
+              491754496,
+              3115589881,
+              9,
+              2127949087,
+              4058,
+              3115593507
+            ],
+            "target": 32941647,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 0,
+              "leaf_index": 2000,
+              "leaf_value": 74154996,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          }
+        }
+      ]
+    },
+    {
+      "source": 6,
+      "source_name": "a",
+      "pinned_offset": 713783181,
+      "zero_point": {
+        "primary_b": 3345072700,
+        "prior": 3237741290,
+        "values": [
+          1717622118,
+          2104496089,
+          2643645913,
+          3772963328,
+          3345072700,
+          3237741290,
+          0,
+          0,
+          3345072700
+        ],
+        "target": 713783181,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 605408853,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      "results": [
+        {
+          "op": "//",
+          "status": "excluded",
+          "numerator1_point": {
+            "primary_b": 3345072701,
+            "prior": 3254514411,
+            "values": [
+              1718640783,
+              2104609274,
+              2643645946,
+              3772980224,
+              3345072701,
+              3254514411,
+              1,
+              0,
+              3345072701
+            ],
+            "target": 569138340,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 8,
+              "leaf_index": 1752,
+              "leaf_value": 621952596,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          },
+          "residual": 4150322455,
+          "proof": "P*floor(1/P) is either0 or1; the target minus pinned H exceeds1."
+        },
+        {
+          "op": "cdiv",
+          "status": "excluded",
+          "certificate": "forced_prefix_invalid_or_even",
+          "witness": {
+            "numerator": 3,
+            "target": 1895317267,
+            "residual": 1181534086,
+            "forced_prefix": 1181534086,
+            "prefix_must_exceed_numerator": true,
+            "parity_compatible": false,
+            "exceeds_numerator": true
+          },
+          "legal_point": {
+            "primary_b": 3345072703,
+            "prior": 3288060653,
+            "values": [
+              1718447841,
+              2104587836,
+              2643646012,
+              3773014016,
+              3345072703,
+              3288060653,
+              3,
+              0,
+              3345072703
+            ],
+            "target": 1895317267,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 8,
+              "leaf_index": 1752,
+              "leaf_value": 655498834,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          }
+        },
+        {
+          "op": "%",
+          "status": "excluded",
+          "certificate": "forced_prefix_invalid_or_even",
+          "witness": {
+            "numerator": 3,
+            "target": 1895317267,
+            "residual": 1181534086,
+            "forced_prefix": 3257156226,
+            "prefix_must_exceed_numerator": true,
+            "parity_compatible": false,
+            "exceeds_numerator": true
+          },
+          "legal_point": {
+            "primary_b": 3345072703,
+            "prior": 3288060653,
+            "values": [
+              1718447841,
+              2104587836,
+              2643646012,
+              3773014016,
+              3345072703,
+              3288060653,
+              3,
+              0,
+              3345072703
+            ],
+            "target": 1895317267,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 8,
+              "leaf_index": 1752,
+              "leaf_value": 655498834,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          }
+        }
+      ]
+    },
+    {
+      "source": 7,
+      "source_name": "a_shr19",
+      "all_ops": "excluded",
+      "zero_pair": [
+        {
+          "primary_b": 3345072700,
+          "prior": 3237741290,
+          "values": [
+            1717622118,
+            2104496089,
+            2643645913,
+            3772963328,
+            3345072700,
+            3237741290,
+            0,
+            0,
+            3345072700
+          ],
+          "target": 713783181,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 8,
+            "leaf_index": 1752,
+            "leaf_value": 605408853,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        },
+        {
+          "primary_b": 3345007164,
+          "prior": 2969371370,
+          "values": [
+            496751974,
+            59969497,
+            2641483225,
+            2665667072,
+            3345007164,
+            2969371370,
+            65536,
+            0,
+            3345007164
+          ],
+          "target": 2531520162,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 1,
+            "leaf_index": 1797,
+            "leaf_value": 159176034,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      ],
+      "proof": "Both numerators0 force the same output offset H, but targets differ."
+    },
+    {
+      "source": 8,
+      "source_name": "a_xor_c1",
+      "pinned_offset": 3481215467,
+      "zero_point": {
+        "primary_b": 6380,
+        "prior": 2822374694,
+        "values": [
+          775046038,
+          1522546825,
+          3925607049,
+          3007068672,
+          6380,
+          2822374694,
+          3345072700,
+          6380,
+          0
+        ],
+        "target": 3481215467,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 1,
+          "leaf_index": 1797,
+          "leaf_value": 297521838,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      "results": [
+        {
+          "op": "//",
+          "status": "excluded",
+          "numerator1_point": {
+            "primary_b": 6381,
+            "prior": 2839147815,
+            "values": [
+              775207615,
+              1522564778,
+              3925607082,
+              3007085568,
+              6381,
+              2839147815,
+              3345072701,
+              6380,
+              1
+            ],
+            "target": 2970585872,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 1,
+              "leaf_index": 1797,
+              "leaf_value": 280502959,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          },
+          "residual": 3784337701,
+          "proof": "P*floor(1/P) is either0 or1; the target minus pinned H exceeds1."
+        },
+        {
+          "op": "cdiv",
+          "status": "excluded",
+          "certificate": "forced_prefix_invalid_or_even",
+          "witness": {
+            "numerator": 3,
+            "target": 2106737519,
+            "residual": 2920489348,
+            "forced_prefix": 2920489348,
+            "prefix_must_exceed_numerator": true,
+            "parity_compatible": false,
+            "exceeds_numerator": true
+          },
+          "legal_point": {
+            "primary_b": 6383,
+            "prior": 2872694057,
+            "values": [
+              775512337,
+              1522598636,
+              3925607148,
+              3007119360,
+              6383,
+              2872694057,
+              3345072703,
+              6380,
+              3
+            ],
+            "target": 2106737519,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 1,
+              "leaf_index": 1797,
+              "leaf_value": 314049185,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          }
+        },
+        {
+          "op": "%",
+          "status": "excluded",
+          "certificate": "forced_prefix_invalid_or_even",
+          "witness": {
+            "numerator": 3,
+            "target": 2106737519,
+            "residual": 2920489348,
+            "forced_prefix": 3836807980,
+            "prefix_must_exceed_numerator": true,
+            "parity_compatible": false,
+            "exceeds_numerator": true
+          },
+          "legal_point": {
+            "primary_b": 6383,
+            "prior": 2872694057,
+            "values": [
+              775512337,
+              1522598636,
+              3925607148,
+              3007119360,
+              6383,
+              2872694057,
+              3345072703,
+              6380,
+              3
+            ],
+            "target": 2106737519,
+            "legal_tree": {
+              "height": 10,
+              "root": 305419896,
+              "initial": 1,
+              "leaf_index": 1797,
+              "leaf_value": 314049185,
+              "other_nodes": 0
+            },
+            "frozen_reference_checked": true
+          }
+        }
+      ]
+    }
+  ],
+  "even_prefix_exclusion": "Target parity flips on b16 while all initial and one-T prefix parities stay fixed. The coefficient P in P*q+H must therefore be odd everywhere.",
+  "ceil_forcing": "If n>0 and P<=n then n<=P*ceil(n/P)<=2*n-1, without wrap for small n. A residual above that bound forces P>n and quotient1, so P equals the residual.",
+  "rem_forcing": "If P<=n then P*(n%P)<n^2, without wrap for small n. A larger residual forces P>n and remainder n. Odd n is invertible modulo2^32 and pins P exactly.",
+  "all_stated_cases_excluded": true,
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "scope": "One MAD/XOR/AND/OR computed denominator P, initial-word numerator, DIV/REM/CDIV, and final P*q+prepared H. Arbitrary root-only prefix constants. No other final tail or additional prefix operations."
+}

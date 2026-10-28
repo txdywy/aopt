@@ -1,0 +1,781 @@
+{
+  "node": 2809010545,
+  "source": "codex/odd_prefix_collisions863_refinement.json",
+  "source_sha256": "197b0285259d0ad32d2e1455c75d7a8b3c2d687165450c70ee0abd66ba805c08",
+  "canonical_prefixes": 702,
+  "parity_cases": 64,
+  "calls": [
+    {
+      "prefix_index": 1,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        2976967555,
+        3708869240
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 2,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        573929068,
+        2340094351
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 19,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        2976967555
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 29,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        271500163,
+        1820303686
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 39,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 41,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        2838949998,
+        4254485151
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 42,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        3234666008,
+        4006914805
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 91,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 92,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 100,
+      "key_parity": [
+        0,
+        1
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 101,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        1876620373,
+        2080540104
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 105,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        1978384332,
+        2949148537
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 111,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        2017757425,
+        3778982700
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 115,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        1931645083,
+        3168168106
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 130,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 140,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        0,
+        2976967555
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 181,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 185,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 191,
+      "key_parity": [
+        0,
+        1
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 192,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        1284072026,
+        4184379331
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 196,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        831632700,
+        981321225
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 211,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 221,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        0,
+        271500163
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 262,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 266,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 272,
+      "key_parity": [
+        0,
+        1
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 282,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 292,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 302,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        3115618544,
+        968130800
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 312,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        3345072700,
+        1197593148
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 322,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 332,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        6380,
+        2147485932
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 342,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 343,
+      "key_parity": [
+        0,
+        1
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 343,
+      "key_parity": [
+        1,
+        1
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 345,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        1577288134,
+        2993532953
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 346,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        84507001,
+        4210460262
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 395,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 396,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 404,
+      "key_parity": [
+        0,
+        1
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 455,
+      "key_parity": [
+        0,
+        1
+      ],
+      "primary_pair": [
+        3115618544,
+        968130800
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 496,
+      "key_parity": [
+        0,
+        1
+      ],
+      "primary_pair": [
+        3115618544,
+        968130800
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 527,
+      "key_parity": [
+        0,
+        1
+      ],
+      "primary_pair": [
+        0,
+        1
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 548,
+      "key_parity": [
+        0,
+        1
+      ],
+      "primary_pair": [
+        3115618544,
+        968130800
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 552,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 561,
+      "key_parity": [
+        1,
+        1
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 567,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 568,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 578,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 585,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 596,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 657,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        2976967555,
+        829483907
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 658,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 665,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 668,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        2976967555,
+        829483907
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 673,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 675,
+      "key_parity": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 680,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 686,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        3967787334
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 691,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        0,
+        1
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 695,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 698,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        0,
+        1
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 700,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        0,
+        1
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    },
+    {
+      "prefix_index": 701,
+      "key_parity": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        0,
+        1
+      ],
+      "all_same_parity_full32_keys": "unsat"
+    }
+  ],
+  "remaining": 0,
+  "full32_parameter_queries": 64,
+  "best_executable_cycles": 864,
+  "new_executable": false
+}

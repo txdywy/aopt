@@ -1,0 +1,85 @@
+{
+  "node": 2809010545,
+  "input_names": [
+    "e",
+    "z",
+    "u",
+    "v",
+    "b",
+    "prior",
+    "a",
+    "a_shr19",
+    "a_xor_c1"
+  ],
+  "evidence_sha256": {
+    "codex/middle_division_residual863_screen.json": "e18fdd1e8e78ee4d3502dea2c3510b2f86a2794902ffd041e2c89bb9bb0f6517",
+    "codex/middle_residual_enum863.json": "ca0a3217b1b1c76245cb382f8c2b83e8c983a856da1ae4a48e9a20995a6a4283",
+    "codex/middle_mad_quotient863_audit.json": "9723414827d7dbfdc2216f61ebe874dcd41b4389f76d4a7c633113225541839c",
+    "codex/odd_prefix_collisions863_audit.json": "362a532b9fbbc96e500d9b2190a5c4214a9708774eb385893db796c4ad998666",
+    "codex/odd_prefix_collisions863_refinement.json": "197b0285259d0ad32d2e1455c75d7a8b3c2d687165450c70ee0abd66ba805c08",
+    "codex/odd_prefix_collisions863_verified.json": "3ac3c2bbf1b6773203464e82785f1f0b32d7fdd82d11340e83325192473f473e",
+    "codex/small_numerator863_audit.json": "ccfd15d40aaf6aa82904a3222f2f674b308201cc403db615df87f069314e69ea",
+    "codex/middle_runtime_factor863_audit.json": "36fdc2606c90262641bd16fcc26f0b1590e9e9b5c6e3efb71bf3d198c7da7bc8",
+    "codex/final_division863_audit.json": "27561b5ae7ec755d8dc2d890beb7f6891019ee3618de8bc3b1fbaccbf1baa50d",
+    "codex/bitmask_affine_tail863_audit.json": "1698d35f688f5f6a214414f7b634c56ea29410526714617c85a8f24de03887d1"
+  },
+  "constant_inverse_enumeration": {
+    "smt_unknown_preserved": 18,
+    "exact_odd_parameters_per_source": 2147483648,
+    "sources": 9,
+    "total_odd_parameters": 19327352832,
+    "survivors": 0,
+    "not_divisor_enumeration": true
+  },
+  "odd_prefixes": {
+    "canonical": 702,
+    "admissible_parity_cases": 64,
+    "discovery_closed": 63,
+    "algebraic_reflection_closed": 1,
+    "full32_key_queries": 64
+  },
+  "closed_families": [
+    "T prefix;middle DIV/REM/CDIV;last G*q+W_initial. Prepared constant G is odd. Computed numerator / prepared D uses bounded enumeration (D>=2 for DIV/CDIV), REM D<=2^31+1 uses the same bound; larger REM D gives at most two low16 classes on the eight-state fibre. D=1 reduces to T-only operations. Prepared numerator / computed denominator uses the one-high enumeration; initial numerator / computed denominator uses zero anchors.",
+    "P is one MAD/bitop;out=P*q+W_initial, q any function only of P/root constants. All702 prefixes and key parities covered by the odd-prefix collision certificates. This includes either prepared divisor or prepared numerator. An initial numerator with computed denominator is separately excluded by zero anchors.",
+    "P is one MAD; q=DIV/REM/CDIV(P,D_prepared); out=R(initials,P,K)+q for any integer polynomial R, or out=P+G*q. Exact2^31 rectangle covers every nonzero uint32 divisor.",
+    "P is one MAD/bitop denominator;initial numerator;out=P*q+H_prepared. Small-numerator forcing excludes all nine sources. If q depends only on P/root constants, a required always-odd P is a nonbijective wordcut, also impossible for a permutation target.",
+    "A last q*q+T-only-addend has at most two residues modulo4 on the eight-state fibre; q*q+q is always even.",
+    "A last q*initial+T-only-addend fails a legal even-factor parity pair. The q*initial+q exception v+1 is closed by219 high-output forcing points; other plus-one factors fail parity.",
+    "A last P*q+P forces P odd. For an initial numerator, target0 would require q=MASK, but none of the initial numerators equals MASK there. For a root-only/data-P numerator, the odd-prefix wordcut is nonbijective. A last P*q+q instead forces P even; initial-numerator zero anchors or the wordcut argument exclude it."
+  ],
+  "target0_initial_numerators_not_mask": {
+    "primary_b": 1494987559,
+    "prior": 2370381246,
+    "values": [
+      1737653257,
+      3061158948,
+      1720378404,
+      3506401280,
+      1494987559,
+      2370381246,
+      2658820820,
+      5071,
+      1494982888
+    ],
+    "target": 0,
+    "legal_tree": {
+      "height": 10,
+      "root": 305419896,
+      "initial": 1,
+      "leaf_index": 1797,
+      "leaf_value": 885584438,
+      "other_nodes": 0
+    },
+    "frozen_reference_checked": true
+  },
+  "no_claim_of_complete_three_op_ISA": true,
+  "still_open": [
+    "Computed-denominator cases with a prepared numerator and a final q-plus-product tail containing an initial-word bypass.",
+    "Computed-denominator cases with an initial numerator and final q-plus-product or P+G*q; more small-numerator branching is available.",
+    "A first bitop followed by a prepared-divisor quotient and a final q-plus-product or P+G*q, when not reduced by other certificates.",
+    "Multiple divisions, division/shift or division/comparison combinations (including REM), additional live words, larger joint windows, state encodings and other kernel algorithms."
+  ],
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "no_global_optimality_claim": true
+}

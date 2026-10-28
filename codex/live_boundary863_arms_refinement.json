@@ -1,0 +1,45 @@
+{
+  "live": "arms",
+  "runtime_node": false,
+  "node": 2809010545,
+  "per_order": 128,
+  "sampled_not_exhaustive": true,
+  "prepared_constants_arbitrary": true,
+  "orders": [
+    {"order": ["^", "shr16", "mad"], "cases": 128},
+    {"order": ["mad", "shr16", "^"], "cases": 128},
+    {"order": ["shr16", "^", "mad"], "cases": 128},
+    {"order": ["shr16", "mad", "^"], "cases": 128},
+    {"order": ["&", "shr16", "mad"], "cases": 128},
+    {"order": ["mad", "shr16", "&"], "cases": 128},
+    {"order": ["shr16", "&", "mad"], "cases": 128},
+    {"order": ["shr16", "mad", "&"], "cases": 128},
+    {"order": ["mad", "shr16", "|"], "cases": 128},
+    {"order": ["shr16", "mad", "|"], "cases": 128},
+    {"order": ["shr16", "|", "mad"], "cases": 128},
+    {"order": ["|", "shr16", "mad"], "cases": 128},
+    {"order": ["mad", "shr16", "mad"], "cases": 128},
+    {"order": ["shr16", "mad", "mad"], "cases": 128}
+  ],
+  "manifest": [
+    {"order": ["mad", "shr16", "mad"], "wiring": [[1, 5, 4], [5], [6, 7, 5]]},
+    {"order": ["mad", "shr16", "mad"], "wiring": [[2, 5, 3], [5], [6, 7, 4]]},
+    {"order": ["mad", "shr16", "mad"], "wiring": [[4, 5, 6], [5], [6, 7, 0]]}
+  ],
+  "controls": [{"order": ["shr16", "^", "mad"], "wiring": [[0], [0, 5], [6, 7, 8]], "live": "arms", "runtime_node": false, "fixed_node": 0, "status": "proved_equivalent", "events": [{"samples": 54, "status": "sat"}], "full32_semantics": true, "new_executable": false, "pinned_constants": [], "necessary_first_prefix_mod4_bijection": false, "constants": [[0, 0], [0, 0], [4097, 2127912214]], "macro": {"order": ["shr16", "^", "mad"], "wiring": [[0], [0, 5], [6, 7, 8]], "live": "arms", "runtime_node": false, "constants": [[0, 0], [0, 0], [4097, 2127912214]]}, "seconds": 0.0185, "samples": 54}, {"order": ["shr16", "^", "mad"], "wiring": [[0], [0, 5], [6, 7, 8]], "live": "arms", "runtime_node": false, "fixed_node": 2147483648, "status": "proved_equivalent", "events": [{"samples": 54, "status": "sat"}], "full32_semantics": true, "new_executable": false, "pinned_constants": [], "necessary_first_prefix_mod4_bijection": false, "constants": [[0, 0], [0, 0], [4097, 4275395862]], "macro": {"order": ["shr16", "^", "mad"], "wiring": [[0], [0, 5], [6, 7, 8]], "live": "arms", "runtime_node": false, "constants": [[0, 0], [0, 0], [4097, 4275395862]]}, "seconds": 0.0164, "samples": 54}],
+  "results": [
+    {"order": ["mad", "shr16", "mad"], "wiring": [[2, 5, 3], [5], [6, 7, 4]], "live": "arms", "runtime_node": false, "fixed_node": 2809010545, "status": "unsat", "events": [{"samples": 54, "status": "unsat"}], "full32_semantics": true, "new_executable": false, "pinned_constants": [], "necessary_first_prefix_mod4_bijection": false, "seconds": 1.9439, "samples": 54},
+    {"order": ["mad", "shr16", "mad"], "wiring": [[4, 5, 6], [5], [6, 7, 0]], "live": "arms", "runtime_node": false, "fixed_node": 2809010545, "status": "unsat", "events": [{"samples": 54, "status": "unsat"}], "full32_semantics": true, "new_executable": false, "pinned_constants": [], "necessary_first_prefix_mod4_bijection": false, "seconds": 1.7281, "samples": 54},
+    {"order": ["mad", "shr16", "mad"], "wiring": [[1, 5, 4], [5], [6, 7, 5]], "live": "arms", "runtime_node": false, "fixed_node": 2809010545, "status": "unsat", "events": [{"samples": 54, "status": "unsat"}], "full32_semantics": true, "new_executable": false, "pinned_constants": [], "necessary_first_prefix_mod4_bijection": true, "seconds": 7.4248, "samples": 54}
+  ],
+  "completed": 3,
+  "seconds_per_case": 30.0,
+  "workers": 2,
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "scope": "Three ops, one literal SHR16 and MAD plus MAD/XOR/AND/OR; all specified correlated live inputs, full32 semantics. No global kernel bound.",
+  "source": "codex/live_boundary863_arms_scout.json",
+  "source_sha256": "e4499705ebb136bfd2ad53373a3541e513e71e3d4f3d131dafead711d84f0f8c",
+  "counts": {"unsat": 3},
+  "seconds": 7.604
+}

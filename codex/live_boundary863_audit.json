@@ -1,0 +1,107 @@
+{
+  "ez_complete_manifest": 6192,
+  "ez_prior_certificates": [
+    {
+      "order": [
+        "mad",
+        "shr16",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "compact": {
+        "order": [
+          "mad",
+          "shr16",
+          "mad"
+        ],
+        "wiring": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ]
+      },
+      "certificate": "Unused z: prior one-input e graph is UNSAT"
+    }
+  ],
+  "ez_remaining": 0,
+  "arms_sampled_manifest": 1792,
+  "arms_sampled_not_exhaustive": true,
+  "arms_remaining": 0,
+  "runtime_node_sampled_manifest": 3518,
+  "runtime_node_sampled_not_exhaustive": true,
+  "runtime_node_legal_sample": {
+    "order": [
+      "mad",
+      "shr16",
+      "mad"
+    ],
+    "wiring": [
+      [
+        2,
+        3,
+        0
+      ],
+      [
+        3
+      ],
+      [
+        4,
+        5,
+        1
+      ]
+    ],
+    "status": "unsat",
+    "width": 32,
+    "primary_z": 0,
+    "raw_root": 895110921,
+    "effective_node": 2147483648,
+    "all_private_constants_free": true,
+    "legal_tree": {
+      "height": 10,
+      "root": 895110921,
+      "initial": 0,
+      "leaf_index": 1732,
+      "leaf_value": 1068885718,
+      "other_nodes": 0
+    },
+    "leaf_hash_input": 2710919783,
+    "frozen_next_mad": 134310091,
+    "certificate": "One valid tree/input point is inconsistent for every private coefficient"
+  },
+  "runtime_node_remaining": 0,
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "evidence_sha256": {
+    "codex/live_boundary863_ez.json": "dd338bc0dad7bf4922dc5bfac16a7e3c0be4a8b4e47724fb9bf977e17b95045c",
+    "codex/live_boundary863_ez_refinement.json": "7d4f463aafc783bafae902769ecc2c142622a919105bd49fab72168a04f88390",
+    "codex/root_boundary863_scout.json": "2fdb658cd76558df3ee86cfc058069e95d1bd5e600b86ffdf88b6d0578b64476",
+    "codex/live_boundary863_arms_scout.json": "e4499705ebb136bfd2ad53373a3541e513e71e3d4f3d131dafead711d84f0f8c",
+    "codex/live_boundary863_arms_refinement.json": "83fef7820fc7f0f0547c5336d9a47a033844236a3f9cf7e39083e6ecde2c1f45",
+    "codex/live_boundary863_runtime_node_scout.json": "34e2c822c389330eef4a7c5fe9127caf8c208ee08cef92583735d8a8bc2b7e26"
+  },
+  "scope": "Only the stated SHR16 three-op live-word grammars/manifests. No other shift amounts or global kernel bound."
+}

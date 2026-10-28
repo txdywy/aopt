@@ -4,7 +4,7 @@ grammar3_division_audit863.
 Full domain: P(u) = m*T(u ^ e) + c for every u < 2^32, m odd, e one of the four
 keys. Flipping input bit j (20..31) flips bit j of x = u ^ e, and the target
 moves by m*(T' - T), whose 2-adic valuation is exactly j - 19 (sampled in the
-tests). The templates read i1 in {aff(u), xk(u)}, i2 = OP(i1), i3 = combine of u,
+tests). Most templates read i1 in {aff(u), xk(u)}, i2 = OP(i1), i3 = combine of u,
 i1, i2; every combine below moves by a multiple of 2^j when only u and i1 move by
 multiples of 2^j.
 
@@ -39,6 +39,25 @@ cdiv-valuation   cdiv(i1, K) moves by q + [rho = 0 or rho > K - r], two values u
                  K = 2^k, where it moves by exactly 2^(31-k): k = 19 + v2(B) (X ^ i2:
                  k = 19). K > 2^31: moves of at most 1. The K = 2^19, 2^20 cases are
                  solved with K pinned (cdiv-pinned).
+The rest read i1 = ork(u) or end in a division by a computed value. P is a bijection of
+the 2^32 inputs (T is, m is odd), and flipping input bit k moves the target by valuation
+k - 19 when k >= 19, by valuations that differ between inputs when k < 19
+(low_flip_witnesses).
+ork-bits         i1 = u | K, the middle instruction reads i1 only and the last is
+                 c*u + F(i1, i2) (lin1, lin2, mad_a). Flipping a bit k of u that K has
+                 set leaves i1 and i2 alone, so the output moves by c*2^k: valuation
+                 v2(c) + k >= k at every u (or no move), which the target never shows.
+                 So K = 0, i1 = u is the aff(u) twin with multiplier 1 and the twin's
+                 rule applies; its pinned runs are repeated with K = 0 fixed.
+quotient-image   the last instruction is A // B or cdiv(A, B) with B computed. B >= 2
+                 gives outputs of at most 2^31, so B = 1 on the 2^31 - 1 inputs whose
+                 outputs lie above 2^31, and the output is A there. An affine
+                 B = beta*u + gamma is 1 on 0 or 2^v2(beta) inputs: beta = 0 makes the
+                 output A, affine in u, which the target is not (target_not_affine);
+                 beta = 2^31 leaves 2^31 inputs with B = 2^31 + 1 and outputs of at
+                 most 2. For B = u + K2*(u | K) and A = u | K, A takes 2^31 + 1 and
+                 2^31 + 2, so K is 0 or 2^31; then B(0) = 0, or (K = 2^31, K2 odd) B is
+                 always even.
 """
 from __future__ import annotations
 
@@ -61,6 +80,47 @@ COMBINE = {   # combine of (u, i1, i2) -> (A, B) description; B in {'1', 'K', 'i
     ('xor', (1, 2)): 'xor', ('xor', (0, 2)): 'xor',
 }
 FIRST = {('aff', (0,)), ('xk', (0,))}
+ORK_LAST = {('lin1', (0, 2)), ('lin2', (0, 2)), ('mad_a', (0, 1, 2))}   # c*u + F(i1, i2)
+
+
+def flip_valuation(x, k):
+    """2-adic valuation of T(x ^ 2^k) - T(x); T is a bijection, so the move is never 0."""
+    d = (g.target(x ^ (1 << k)) - g.target(x)) & g.MASK
+    return (d & -d).bit_length() - 1
+
+
+def low_flip_witnesses():
+    """For every input bit k < 19, two inputs whose target moves differ in valuation."""
+    out = []
+    for k in range(19):
+        x = next(x for x in range(1, 1 << 20) if flip_valuation(x, k) != flip_valuation(0, k))
+        out.append((0, x))
+    return out
+
+
+def target_not_affine():
+    """P(0) + P(3) != P(1) + P(2) under every key, so no affine map of u is the target."""
+    t = g.target
+    return all((t(e) + t(3 ^ e) - t(1 ^ e) - t(2 ^ e)) & g.MASK for e in g.KEYS)
+
+
+def affine_in_u(p):
+    """Value indices (0 = u) that are affine maps of u mod 2^32."""
+    aff = {0}
+    for n, (f, args) in enumerate(p, 1):
+        if f in ('aff', 'lin1', 'lin2') and set(args) <= aff:
+            aff.add(n)
+    return aff
+
+
+def quotient_image(p):
+    f, args = p[-1]
+    if f not in g.OUTDIV:
+        return False
+    num, den = (args[i] for i in g.OUTDIV[f])
+    if {num, den} <= affine_in_u(p):
+        return True
+    return len(p) == 3 and p[0] == ('ork', (0,)) and p[1] == ('lin2', (0, 1)) and (num, den) == (1, 2)
 
 
 def open_items():
@@ -80,8 +140,17 @@ def base_shift_unsat():
 
 
 def classify(p, base_unsat):
-    """(rule, pinned divisors to solve) for a full-grammar template, or (None, ())."""
-    if len(p) != 3 or p[0] not in FIRST or p[1][1] != (1,):
+    """(rule, constants to pin for the solver runs) for a full-grammar template, or (None, ())."""
+    if len(p) != 3:
+        return None, ()
+    if quotient_image(p):
+        return 'quotient-image', ()
+    if p[0] == ('ork', (0,)) and p[1][1] == (1,) and p[2] in ORK_LAST:
+        rule, fixes = classify([('aff', (0,)), *p[1:]], base_unsat)
+        if rule is None:
+            return None, ()
+        return f'ork-bits+{rule}', tuple({'k0_0': 0, **fx} for fx in fixes)
+    if p[0] not in FIRST or p[1][1] != (1,):
         return None, ()
     op = p[1][0]
     kind = COMBINE.get(p[2])
@@ -107,7 +176,8 @@ def classify(p, base_unsat):
             return 'div-valuation', ()
         return None, ()
     if op == 'cdivk':
-        return 'cdiv-valuation', ((1 << 19,) if kind in ('1', 'xor') else (1 << 19, 1 << 20))
+        ks = (1 << 19,) if kind in ('1', 'xor') else (1 << 19, 1 << 20)
+        return 'cdiv-valuation', tuple({'k1_0': k} for k in ks)
     return None, ()
 
 
@@ -121,16 +191,16 @@ def main():
     rows, tally = [], {}
     for idx in open_items():
         p = ts[idx]
-        rule, pins = classify(p, base_unsat)
+        rule, fixes = classify(p, base_unsat)
         runs = []
-        for k in pins:
+        for fx in fixes:
             t0 = time.monotonic()
-            r = g.solve(p, args.seconds, fix={'k1_0': k})
-            runs.append(dict(divisor=k, result=r['result'], seconds=round(time.monotonic() - t0, 2)))
-            print(json.dumps(dict(idx=idx, divisor=k, result=r['result'])), flush=True)
+            r = g.solve(p, args.seconds, fix=fx)
+            runs.append(dict(fix=fx, result=r['result'], seconds=round(time.monotonic() - t0, 2)))
+            print(json.dumps(dict(idx=idx, fix=fx, result=r['result'])), flush=True)
             if r['result'] == 'sat':
                 raise SystemExit(f'SAT: {idx} {r}')
-        if pins and not all(x['result'] == 'unsat' for x in runs):
+        if fixes and not all(x['result'] == 'unsat' for x in runs):
             rule = None
         tally[rule or 'open'] = tally.get(rule or 'open', 0) + 1
         rows.append(dict(idx=idx, template=g.describe(p), rule=rule, pinned_runs=runs))

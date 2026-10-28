@@ -46,12 +46,53 @@ class DivisionValuationTests(unittest.TestCase):
             self.assertEqual(all(perm[x] >= x for x in range(n)), perm == list(range(n)))
             self.assertEqual(all(perm[x] <= x for x in range(n)), perm == list(range(n)))
 
+    def test_low_flip_valuations(self):
+        for k, (x0, x1) in enumerate(dv.low_flip_witnesses()):
+            self.assertNotEqual(dv.flip_valuation(x0, k), dv.flip_valuation(x1, k))
+        rng = random.Random(55)
+        for _ in range(3000):
+            x, k = rng.getrandbits(32), rng.randrange(19, 32)
+            self.assertEqual(dv.flip_valuation(x, k), k - 19)
+
+    def test_ork_bits_move(self):
+        """Flipping a bit of u that the ork constant has set moves the output by c * 2^k."""
+        sem = g.ops(None)
+        rng = random.Random(56)
+        for idx in (6374, 6412, 6432, 6433, 6450):
+            p = g.templates(True)[idx]
+            for _ in range(300):
+                k = rng.randrange(32)
+                kv = [[rng.getrandbits(32) | (1 << k)], [rng.randrange(1, 1 << 32)], [rng.getrandbits(32)]]
+                c = kv[2][0] if p[2][0] == 'lin1' else 1
+                u = rng.getrandbits(32)
+                d = (g.run_program(p, u ^ (1 << k), kv, sem) - g.run_program(p, u, kv, sem)) & g.MASK
+                self.assertIn(d, {c * (1 << k) & g.MASK, -c * (1 << k) & g.MASK})
+
+    def test_quotient_image_facts(self):
+        self.assertTrue(dv.target_not_affine())
+        cdv = lambda a, b: (a + b - 1) // b
+        self.assertEqual(cdv(g.MASK, 2), 1 << 31)
+        self.assertEqual(cdv(g.MASK, (1 << 31) + 1), 2)
+        rng = random.Random(57)
+        for _ in range(200):   # beta*u + gamma = 1 has 0 or 2^v2(beta) solutions (12-bit model)
+            beta, gamma = rng.randrange(1, 1 << 12), rng.randrange(1 << 12)
+            n = sum((beta * u + gamma) % (1 << 12) == 1 for u in range(1 << 12))
+            self.assertIn(n, (0, 1 << v2(beta)))
+        for _ in range(2000):
+            u, k2 = rng.getrandbits(32), rng.getrandbits(32)
+            b = (u + (k2 | 1) * (u | 1 << 31)) & g.MASK
+            self.assertEqual(b % 2, 0)
+        for k, k2 in ((0, rng.getrandbits(32)), (1 << 31, rng.getrandbits(32) & ~1)):
+            self.assertEqual((0 + k2 * (0 | k)) & g.MASK, 0)
+
     def test_classification(self):
         ts = g.templates(True)
         base = dv.base_shift_unsat()
         rules = [dv.classify(ts[i], base)[0] for i in dv.open_items()]
         self.assertEqual(len(rules), 98)
-        self.assertEqual(sum(r is not None for r in rules), 89)
+        self.assertEqual(sum(r is not None for r in rules), 98)
+        self.assertEqual(sum(r == 'quotient-image' for r in rules), 4)
+        self.assertEqual(sum(r.startswith('ork-bits+') for r in rules), 5)
         # the right-shift twin of every div-valuation template is UNSAT in the base grammar
         for i in dv.open_items():
             p = ts[i]

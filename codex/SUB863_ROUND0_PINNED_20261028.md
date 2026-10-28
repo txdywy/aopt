@@ -166,18 +166,20 @@ j − 19 时排除该组合。在全部模板、随机移位量与常量上抽�
 | 2-adic 阶集合 | 3,131 |
 | 化归 | 82 |
 | 末尾右移 1–2 位的窗口检查 | 82 |
-| z3 完整求解（具体移位量，15 秒；超时的再给 90 秒） | 3,999 |
-| **未定（300 秒加证明过的提示重跑中）** | **97** |
+| z3 完整求解（具体移位量，15 秒；超时的再给 90 秒，仍超时的给 300 秒并加证明过的提示） | 4,056 |
+| **未定（300 秒仍超时）** | **40** |
 
 规则单独就关闭了 15 个模板：933、1059、1064–1067、1076、1078（化归、刚性等），
-10320、10321、10323、11009–11012（像集）。z3 再关闭另外 48 个模板的全部组合。
+10320、10321、10323、11009–11012（像集）。z3 再关闭另外 54 个模板的全部组合。最后一轮 300 秒重跑
+给每个常数加上 2-adic 规则证明过的上界提示（v2(常数) ≤ t），97 个超时组合判掉 57 个，929、1084、
+1408、10325、10337、11025 因此完全排除。
 
-未定的 97 个组合分布在 12 个模板上：
-- 读位落在第 30、31 位的两次移位：928、929、1082–1084；
-- 最后再右移 2 位、但 s1 + s2 ≥ 30 的：1377、1408；
-- `u >> s1` 再线性组合、第二次移位 19–25 的：10325、10331、10336、10337、11025。
+未定的 40 个组合分布在 6 个模板上：
+- 读位落在第 30、31 位的两次移位：928（18 个）、1082（11 个）、1083（5 个）；
+- 最后再右移 2 位、但 s1 + s2 ≥ 30 的：1377（1 个，s = 28, 2）；
+- `u >> s1` 再线性组合、第二次移位 20–21 的：10331（1 个）、10336（4 个）。
 
-合计：228 个模板中 216 个完全排除，12 个各剩少量移位组合未定，所有判定过的情形都是 UNSAT。
+合计：228 个模板中 222 个完全排除，6 个各剩少量移位组合未定，所有判定过的情形都是 UNSAT。
 本轮仍没有 863 的可行改写，可执行最好成绩仍是 864。
 
 ## 4. 收尾：首段除法扩展的 98 项
@@ -203,8 +205,21 @@ j − 19 时排除该组合。在全部模板、随机移位量与常量上抽�
   i1 | i2 ≥ i1 逐点成立，有限集上这样的双射只能是恒等，而恒等对 u 是仿射的（各 3 项）；
   i1 & (i1 % K) < K，取值不够（1 项）。
 
-合计 98 项中 89 项排除。剩 9 项：首条为 `u | K` 的 5 项（可达的 i1 只是一个子立方体，上面的
-覆盖论证不再直接成立）；两个运行时值相除的 4 项。
+剩下 9 项用到目标是 2^32 个输入上的双射，以及翻转输入第 k 位时目标移动量的阶：k ≥ 19 时恰为
+k − 19，k < 19 时随输入变化（每个 k 都找到两个阶不同的见证点）。
+
+- **首条为 `u | K`**（5 项）：只有最后一条直接读 u，形如 c·u + F(i1, i2)（lin1、lin2、mad_a）。翻转
+  K 中为 1 的某一位 k，i1、i2 都不变，输出恰好移动 c·2^k，在每个输入上阶都是 v2(c) + k ≥ k，目标
+  做不到。所以 K = 0，i1 = u，就是乘数为 1 的 MAD 孪生模板，原有规则照用：3 项双射系数，2 项 cdiv
+  在 K = 0 且钉住除数后 z3 判无解（3 次）。
+- **运行时值相除**（4 项）：除数 B ≥ 2 时商不超过 2^31，所以输出大于 2^31 的 2^31 − 1 个输入上
+  B = 1，输出等于被除数 A。仿射的 B = βu + γ 取 1 的输入数是 0 或 2^v2(β)：β = 0 时输出就是仿射的
+  A，而目标不是仿射的（P(0) + P(3) ≠ P(1) + P(2)）；β = 2^31 时另一半输入上 B = 2^31 + 1，输出至多
+  为 2，取值不够（902、904）。B = u + K2·(u | K)、A = u | K 时，A 要取到 2^31 + 1 和 2^31 + 2，K 只能
+  是 0 或 2^31；这时要么 B(0) = 0 触发除零，要么（K = 2^31、K2 为奇数）B 恒为偶数，取不到 1
+  （6551、6553）。
+
+合计 98 项全部排除。
 
 ## 复现
 
@@ -221,8 +236,12 @@ python3.12 -m codex.grammar4_round0_pinned863 --only "$(cat todo.txt)" --output 
 python3.12 -m codex.grammar4_round0_pinned_audit863 x --bit0 codex/grammar4_round0_bit0.json \
   --lemma-cache lemma.json --output audit.json --multi-todo multi.json
 python3.12 -m codex.grammar4_round0_pinned863 --combos multi.json --output multi.jsonl --seconds 15
-# 汇总（比特 0 引理按需计算并缓存）
+# 仍超时的组合：300 秒，加上证明过的 2-adic 提示
 python3.12 -m codex.grammar4_round0_pinned_audit863 xkaff.jsonl single.jsonl multi.jsonl \
+  --bit0 codex/grammar4_round0_bit0.json --lemma-cache lemma.json --output audit.json --open-todo open.json
+python3.12 -m codex.grammar4_round0_pinned863 --combos open.json --output multi3.jsonl --seconds 300
+# 汇总（比特 0 引理按需计算并缓存）
+python3.12 -m codex.grammar4_round0_pinned_audit863 xkaff.jsonl single.jsonl multi.jsonl multi3.jsonl \
   --bit0 codex/grammar4_round0_bit0.json --lemma-cache lemma.json --output audit.json
 python3.12 -m codex.grammar3_division_valuation863 --output codex/grammar3_division_valuation863.json
 python3.12 -m unittest codex.test_grammar4_round0_pinned863 codex.test_grammar3_division_valuation863

@@ -224,6 +224,10 @@ def run_program(p, u, consts, sem, divisors=None):
     return vals[-1]
 
 
+# last instruction a // b or cdiv(a, b): (numerator, denominator) operand positions
+OUTDIV = {'div_ab': (0, 1), 'div_ba': (1, 0), 'cdiv_ab': (0, 1), 'cdiv_ba': (1, 0)}
+
+
 def solve(p, seconds=60, free_key=False, seed=863, fix=None):
     import z3
     sem = ops(z3)
@@ -306,7 +310,7 @@ def solve(p, seconds=60, free_key=False, seed=863, fix=None):
 D30 = 1 << 30  # round-0 hash inputs are value XOR root, both below 2^30
 
 
-def solve_domain(p, seconds=60, key=0, seed=863, free_low=False):
+def solve_domain(p, seconds=60, key=0, seed=863, free_low=False, nsamples=20, sparse=False):
     """Round-0 variant: P(x XOR key) == m*T(x) + c only for x < 2^30.
 
     The root vector of round 0 can carry any key, so each key is its own query.
@@ -328,6 +332,11 @@ def solve_domain(p, seconds=60, key=0, seed=863, free_low=False):
     rng = random.Random(seed)
     pts = [0, 1, 2, 3, 1 << 12, 1 << 19, 1 << 20, 1 << 29, D30 - 1, 0x2AAAAAAA, 0x7FFFF] + \
           [rng.randrange(D30) for _ in range(9)]
+    if sparse:  # few set bits keep products of unknowns with samples cheap
+        pts = sorted({sum(1 << b for b in rng.sample(range(30), rng.randint(1, 3)))
+                      for _ in range(4 * nsamples)})[:nsamples]
+    else:
+        pts = pts[:nsamples]
     if free_low:  # samples are u = top | low30
         pts = [top | x for x in pts]
     solver = z3.SolverFor('QF_BV')
@@ -621,13 +630,13 @@ static inline uint32_t CDIV(uint32_t a, uint32_t b) {{
 int main(void) {{
   uint32_t u = 0, it = 0;
   do {{
-    uint32_t v[4]; {pick} zdiv = 0;
+    uint32_t v[{len(p) + 1}]; {pick} zdiv = 0;
 {body}
     if (zdiv) {{ printf("%u\\n", {wit}); return 0; }}
     uint32_t x = {xsrc};
     uint32_t a = 4097u * x + {C0}u;
     uint32_t t = a ^ (a >> 19) ^ {C1}u;
-    if (v[3] != (uint32_t)({mv}u * t + {cv}u)) {{ printf("%u\\n", {wit}); return 0; }}
+    if (v[{len(p)}] != (uint32_t)({mv}u * t + {cv}u)) {{ printf("%u\\n", {wit}); return 0; }}
   }} while ({step});
   printf("ok\\n");
   return 0;
@@ -677,6 +686,7 @@ def main():
     ap.add_argument('--new-only', action='store_true', help='with --full: only templates using them')
     ap.add_argument('--free-key', action='store_true', help='any 32-bit XOR key on the input')
     ap.add_argument('--engine', default='z3', help='z3, or a pysat solver such as cadical195')
+    ap.add_argument('--one', type=int, default=None, help='run one template in-process, print JSON')
     ap.add_argument('--domain30', type=str, default='',
                     help='round 0: comma-separated input keys, correctness only for x < 2^30')
     args = ap.parse_args()
@@ -686,6 +696,9 @@ def main():
         from collections import Counter
         print(len(ts))
         print(Counter(f for p in ts for f, _ in p).most_common())
+        return
+    if args.one is not None:
+        print(json.dumps(job((args.one, ts[args.one], args.seconds, args.free_key, args.engine, keys[0]))))
         return
     idxs = [int(i) for i in args.only.split(',')] if args.only else list(range(len(ts)))
     if args.new_only:

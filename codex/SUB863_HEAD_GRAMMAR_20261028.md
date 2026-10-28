@@ -125,15 +125,11 @@ x --MAD0--> a --(a>>19, ^, ^C1)--> y = g19(4097x + C0) XOR C1 = T(x)
   条件也未在合理时间内返回。直观上非仿射的键只会让 MAD0 之前多一层异或，更难而非
   更易，但这没有证明。
 - **四条及以上指令的窗口**，以及把节点异或并入（两个运行时输入）的窗口。第 0 轮若把
-  节点异或与首段一起做成 4 条（现为 5 条），也能省 256 lane；这需要四指令语法，
-  规模远超本轮。
-- **除法与比较。** 加入 `// % cdiv < ==` 后新增 14,777 个模板（全域、4 个键）。以 10 秒
-  为限只跑了 317 个就停止：249 个 UNSAT，68 个超时，其中 39 个的末条是两个运行时值相除。
-  z3 对未知除数的除法电路很慢；按这个速度全部跑完需约 2.5 小时、8 个核，且仍会留下约
-  2,000 个超时，故停止。部分结果在 `grammar3_head863_full_partial_results.jsonl`。
-  末条为 `a // b` 时，P 取到 2^31 以上的值必须 b = 1，所以 P 至少在一半输入上等于前两条
-  指令的结果 a；要排除这类模板，需要证明“两条指令在一半输入上与 T 相符”也不可能，
-  本轮没有做。
+  节点异或与首段一起做成 4 条（现为 5 条），也能省 256 lane。
+- **除法与比较。** 加入 `// % cdiv < ==` 后新增 14,777 个模板（全域、4 个键）。本轮只跑了
+  317 个就停止。
+- 后续：除法扩展全部跑完，第 0 轮“并入节点异或”的四指令窗口也已搜索，见
+  `SUB863_ROUND0_MERGE_20261028.md`；那里的完整结果取代本轮的 317 个部分结果。
 
 ## 6. 结论
 
@@ -164,11 +160,10 @@ python3.12 -m codex.grammar3_head863 --domain30 0x3FFFFFFF,0x7FFFFFFF,0xBFFFFFFF
 python3.12 -m codex.grammar3_head863 --domain30 0xC0000000 --only 217 --output retry.jsonl \
   --seconds 1800 --workers 1          # 其余重跑同理，见 retry 文件中的 idx 与 key
 python3.12 -m codex.grammar3_round0_audit863 r0.jsonl r0b.jsonl retry.jsonl --output audit.json
-python3.12 -m codex.grammar3_head863 --full --new-only --output full.jsonl --seconds 10 --workers 7
 python3.12 -m unittest codex.test_grammar3_head863
 ```
 
 需要系统自带的 `clang` 做全域穷举核验。原始结果（大文件已 gzip，审计脚本可直接读取）：
 `grammar3_head863_results.jsonl.gz`、`grammar3_round0_results.jsonl.gz`、
 `grammar3_round0_lowkey_results.jsonl.gz`、`grammar3_round0_retry_results.jsonl`、
-`grammar3_round0_audit863.json`、`grammar3_head863_full_partial_results.jsonl`。
+`grammar3_round0_audit863.json`。除法扩展的完整结果见 `SUB863_ROUND0_MERGE_20261028.md`。

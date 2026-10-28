@@ -33,10 +33,8 @@ Combines of i1 and i2 alone (i1 a bijection as above):
 shift-le         i1 >> i2 <= i1 pointwise; a bijection below the identity is the identity,
                  which is affine in u while T is not.
 and-image        i1 & (i1 % K) < K <= 2^32 - 1: too few values for a bijection.
-or-collision     i1 | (i1 // K): K even gives P(K) = P(K + 1); K odd >= 3 an even x in
-                 [K + 1, 2K - 2] gives P(x) = P(x + 1) (x // K = 1 is odd); K >= 2^31 an even
-                 x >= K does the same; K = 1 or 2^32 - 1 leaves P = i1. i1 | cdiv(i1, K):
-                 P(2) = P(3) = 3 for every K >= 2, and K = 1 leaves P = i1.
+or-ge            i1 | i2 >= i1 pointwise; a bijection above the identity is the identity
+                 (from 2^32 - 1 downwards), again affine in u.
 cdiv-valuation   cdiv(i1, K) moves by q + [rho = 0 or rho > K - r], two values unless
                  K = 2^k, where it moves by exactly 2^(31-k): k = 19 + v2(B) (X ^ i2:
                  k = 19). K > 2^31: moves of at most 1. The K = 2^19, 2^20 cases are
@@ -97,8 +95,8 @@ def classify(p, base_unsat):
         return 'shift-le', ()
     if p[2] == ('and', (1, 2)) and op == 'modk':
         return 'and-image', ()
-    if p[2] == ('or', (1, 2)) and op in ('divk', 'cdivk'):
-        return 'or-collision', ()
+    if p[2] == ('or', (1, 2)):
+        return 'or-ge', ()
     if kind is None:
         return None, ()
     if op == 'modk':

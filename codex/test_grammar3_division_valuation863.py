@@ -36,28 +36,22 @@ class DivisionValuationTests(unittest.TestCase):
             cd = lambda a: -(-a // (1 << kk))
             self.assertEqual(cd(i1 + (1 << 31)) - cd(i1), 1 << (31 - kk))
 
-    def test_or_collisions(self):
-        rng = random.Random(53)
-        cd = lambda a, k: -(-a // k)
-        for k in [2, 3, 4, 5, 6, 7, 1 << 31, (1 << 32) - 2] + [rng.randrange(2, 1 << 32) for _ in range(2000)]:
-            self.assertEqual(2 | cd(2, k), 3 | cd(3, k))
-            if k % 2 == 0:
-                x = k
-            elif k < (1 << 31):
-                x = k + 1
-            else:
-                x = k + 1 if k % 2 else k
-            if x + 1 < (1 << 32) and x // k == (x + 1) // k and (x // k) % 2 == 1 and x % 2 == 0:
-                self.assertEqual(x | (x // k), (x + 1) | ((x + 1) // k))
-            else:
-                self.fail(k)
+    def test_bijection_bounds(self):
+        """A bijection of a finite range that never decreases (or never increases) is the identity."""
+        rng = random.Random(54)
+        for _ in range(200):
+            n = rng.randrange(2, 40)
+            perm = list(range(n))
+            rng.shuffle(perm)
+            self.assertEqual(all(perm[x] >= x for x in range(n)), perm == list(range(n)))
+            self.assertEqual(all(perm[x] <= x for x in range(n)), perm == list(range(n)))
 
     def test_classification(self):
         ts = g.templates(True)
         base = dv.base_shift_unsat()
         rules = [dv.classify(ts[i], base)[0] for i in dv.open_items()]
         self.assertEqual(len(rules), 98)
-        self.assertEqual(sum(r is not None for r in rules), 88)
+        self.assertEqual(sum(r is not None for r in rules), 89)
         # the right-shift twin of every div-valuation template is UNSAT in the base grammar
         for i in dv.open_items():
             p = ts[i]

@@ -4,13 +4,13 @@
   "by_rule": {
    "div-valuation": 9,
    "bijective-coef": 12,
-   "or-collision": 2,
+   "or-ge": 3,
    "shift-le": 3,
    "zero-divisor": 37,
    "mod-valuation": 11,
    "and-image": 1,
-   "open": 10,
-   "cdiv-valuation": 13
+   "cdiv-valuation": 13,
+   "open": 9
   }
  },
  "items": [
@@ -53,7 +53,7 @@
   {
    "idx": 565,
    "template": "i1=aff(u) ; i2=divk(i1) ; i3=or(i1,i2)",
-   "rule": "or-collision",
+   "rule": "or-ge",
    "pinned_runs": []
   },
   {
@@ -215,7 +215,7 @@
   {
    "idx": 639,
    "template": "i1=aff(u) ; i2=modk(i1) ; i3=or(i1,i2)",
-   "rule": null,
+   "rule": "or-ge",
    "pinned_runs": []
   },
   {
@@ -346,7 +346,7 @@
     {
      "divisor": 524288,
      "result": "unsat",
-     "seconds": 14.25
+     "seconds": 19.0
     }
    ]
   },
@@ -358,12 +358,12 @@
     {
      "divisor": 524288,
      "result": "unsat",
-     "seconds": 8.68
+     "seconds": 12.63
     },
     {
      "divisor": 1048576,
      "result": "unsat",
-     "seconds": 2.93
+     "seconds": 2.95
     }
    ]
   },
@@ -375,7 +375,7 @@
     {
      "divisor": 524288,
      "result": "unsat",
-     "seconds": 0.64
+     "seconds": 0.7
     }
    ]
   },
@@ -387,12 +387,12 @@
     {
      "divisor": 524288,
      "result": "unsat",
-     "seconds": 0.68
+     "seconds": 0.73
     },
     {
      "divisor": 1048576,
      "result": "unsat",
-     "seconds": 2.25
+     "seconds": 2.14
     }
    ]
   },
@@ -410,14 +410,14 @@
     {
      "divisor": 524288,
      "result": "unsat",
-     "seconds": 0.99
+     "seconds": 1.01
     }
    ]
   },
   {
    "idx": 713,
    "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=or(i1,i2)",
-   "rule": "or-collision",
+   "rule": "or-ge",
    "pinned_runs": []
   },
   {
@@ -584,7 +584,7 @@
     {
      "divisor": 524288,
      "result": "unsat",
-     "seconds": 0.7
+     "seconds": 0.67
     }
    ]
   },
@@ -596,12 +596,12 @@
     {
      "divisor": 524288,
      "result": "unsat",
-     "seconds": 0.6
+     "seconds": 0.66
     },
     {
      "divisor": 1048576,
      "result": "unsat",
-     "seconds": 0.56
+     "seconds": 0.64
     }
    ]
   },
@@ -613,7 +613,7 @@
     {
      "divisor": 524288,
      "result": "unsat",
-     "seconds": 0.56
+     "seconds": 0.69
     }
    ]
   },
@@ -625,7 +625,7 @@
     {
      "divisor": 524288,
      "result": "unsat",
-     "seconds": 0.6
+     "seconds": 0.65
     },
     {
      "divisor": 1048576,

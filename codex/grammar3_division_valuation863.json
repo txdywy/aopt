@@ -1,0 +1,704 @@
+{
+ "summary": {
+  "items": 98,
+  "by_rule": {
+   "div-valuation": 9,
+   "bijective-coef": 12,
+   "or-collision": 2,
+   "shift-le": 3,
+   "zero-divisor": 37,
+   "mod-valuation": 11,
+   "and-image": 1,
+   "open": 10,
+   "cdiv-valuation": 13
+  }
+ },
+ "items": [
+  {
+   "idx": 544,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=lin1(u,i2)",
+   "rule": "div-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 545,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=lin2(u,i2)",
+   "rule": "div-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 560,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=lin1(i1,i2)",
+   "rule": "div-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 561,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=lin2(i1,i2)",
+   "rule": "div-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 562,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=prod(i1,i2)",
+   "rule": "bijective-coef",
+   "pinned_runs": []
+  },
+  {
+   "idx": 563,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=xor(i1,i2)",
+   "rule": "div-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 565,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=or(i1,i2)",
+   "rule": "or-collision",
+   "pinned_runs": []
+  },
+  {
+   "idx": 568,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=shr_ab(i1,i2)",
+   "rule": "shift-le",
+   "pinned_runs": []
+  },
+  {
+   "idx": 570,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=aab(i1,i2)",
+   "rule": "div-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 572,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=aba(i1,i2)",
+   "rule": "bijective-coef",
+   "pinned_runs": []
+  },
+  {
+   "idx": 573,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=abb(i1,i2)",
+   "rule": "bijective-coef",
+   "pinned_runs": []
+  },
+  {
+   "idx": 578,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=mad_c(u,i1,i2)",
+   "rule": "div-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 580,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=mad_a(u,i1,i2)",
+   "rule": "bijective-coef",
+   "pinned_runs": []
+  },
+  {
+   "idx": 581,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=lin1(u,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 582,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=lin2(u,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 597,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=lin1(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 598,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=lin2(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 599,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=prod(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 605,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=shr_ab(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 607,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=aab(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 609,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=aba(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 610,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=abb(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 615,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=mad_c(u,i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 617,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=mad_a(u,i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 618,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=lin1(u,i2)",
+   "rule": "mod-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 619,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=lin2(u,i2)",
+   "rule": "mod-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 621,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=xor(u,i2)",
+   "rule": "mod-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 628,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=aab(u,i2)",
+   "rule": "mod-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 634,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=lin1(i1,i2)",
+   "rule": "mod-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 635,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=lin2(i1,i2)",
+   "rule": "mod-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 636,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=prod(i1,i2)",
+   "rule": "bijective-coef",
+   "pinned_runs": []
+  },
+  {
+   "idx": 637,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=xor(i1,i2)",
+   "rule": "mod-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 638,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=and(i1,i2)",
+   "rule": "and-image",
+   "pinned_runs": []
+  },
+  {
+   "idx": 639,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=or(i1,i2)",
+   "rule": null,
+   "pinned_runs": []
+  },
+  {
+   "idx": 642,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=shr_ab(i1,i2)",
+   "rule": "shift-le",
+   "pinned_runs": []
+  },
+  {
+   "idx": 644,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=aab(i1,i2)",
+   "rule": "mod-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 646,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=aba(i1,i2)",
+   "rule": "bijective-coef",
+   "pinned_runs": []
+  },
+  {
+   "idx": 647,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=abb(i1,i2)",
+   "rule": "bijective-coef",
+   "pinned_runs": []
+  },
+  {
+   "idx": 652,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=mad_c(u,i1,i2)",
+   "rule": "mod-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 654,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=mad_a(u,i1,i2)",
+   "rule": "bijective-coef",
+   "pinned_runs": []
+  },
+  {
+   "idx": 655,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=lin1(u,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 656,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=lin2(u,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 658,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=xor(u,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 665,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=aab(u,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 671,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=lin1(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 672,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=lin2(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 673,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=prod(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 674,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=xor(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 675,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=and(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 679,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=shr_ab(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 681,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=aab(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 683,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=aba(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 689,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=mad_c(u,i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 691,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=mad_a(u,i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 692,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=lin1(u,i2)",
+   "rule": "cdiv-valuation",
+   "pinned_runs": [
+    {
+     "divisor": 524288,
+     "result": "unsat",
+     "seconds": 14.25
+    }
+   ]
+  },
+  {
+   "idx": 693,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=lin2(u,i2)",
+   "rule": "cdiv-valuation",
+   "pinned_runs": [
+    {
+     "divisor": 524288,
+     "result": "unsat",
+     "seconds": 8.68
+    },
+    {
+     "divisor": 1048576,
+     "result": "unsat",
+     "seconds": 2.93
+    }
+   ]
+  },
+  {
+   "idx": 708,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=lin1(i1,i2)",
+   "rule": "cdiv-valuation",
+   "pinned_runs": [
+    {
+     "divisor": 524288,
+     "result": "unsat",
+     "seconds": 0.64
+    }
+   ]
+  },
+  {
+   "idx": 709,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=lin2(i1,i2)",
+   "rule": "cdiv-valuation",
+   "pinned_runs": [
+    {
+     "divisor": 524288,
+     "result": "unsat",
+     "seconds": 0.68
+    },
+    {
+     "divisor": 1048576,
+     "result": "unsat",
+     "seconds": 2.25
+    }
+   ]
+  },
+  {
+   "idx": 710,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=prod(i1,i2)",
+   "rule": "bijective-coef",
+   "pinned_runs": []
+  },
+  {
+   "idx": 711,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=xor(i1,i2)",
+   "rule": "cdiv-valuation",
+   "pinned_runs": [
+    {
+     "divisor": 524288,
+     "result": "unsat",
+     "seconds": 0.99
+    }
+   ]
+  },
+  {
+   "idx": 713,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=or(i1,i2)",
+   "rule": "or-collision",
+   "pinned_runs": []
+  },
+  {
+   "idx": 716,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=shr_ab(i1,i2)",
+   "rule": "shift-le",
+   "pinned_runs": []
+  },
+  {
+   "idx": 718,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=aab(i1,i2)",
+   "rule": "cdiv-valuation",
+   "pinned_runs": [
+    {
+     "divisor": 524288,
+     "result": "unsat",
+     "seconds": 2.76
+    }
+   ]
+  },
+  {
+   "idx": 720,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=aba(i1,i2)",
+   "rule": "bijective-coef",
+   "pinned_runs": []
+  },
+  {
+   "idx": 721,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=abb(i1,i2)",
+   "rule": "bijective-coef",
+   "pinned_runs": []
+  },
+  {
+   "idx": 726,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=mad_c(u,i1,i2)",
+   "rule": "cdiv-valuation",
+   "pinned_runs": [
+    {
+     "divisor": 524288,
+     "result": "unsat",
+     "seconds": 0.49
+    }
+   ]
+  },
+  {
+   "idx": 728,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=mad_a(u,i1,i2)",
+   "rule": "bijective-coef",
+   "pinned_runs": []
+  },
+  {
+   "idx": 729,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=lin1(u,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 730,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=lin2(u,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 745,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=lin1(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 746,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=lin2(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 747,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=prod(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 748,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=xor(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 753,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=shr_ab(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 755,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=aab(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 757,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=aba(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 758,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=abb(i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 763,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=mad_c(u,i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 765,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=mad_a(u,i1,i2)",
+   "rule": "zero-divisor",
+   "pinned_runs": []
+  },
+  {
+   "idx": 902,
+   "template": "i1=aff(u) ; i2=lin2(u,i1) ; i3=div_ba(i1,i2)",
+   "rule": null,
+   "pinned_runs": []
+  },
+  {
+   "idx": 904,
+   "template": "i1=aff(u) ; i2=lin2(u,i1) ; i3=cdiv_ba(i1,i2)",
+   "rule": null,
+   "pinned_runs": []
+  },
+  {
+   "idx": 4094,
+   "template": "i1=xk(u) ; i2=divk(i1) ; i3=lin1(i1,i2)",
+   "rule": "div-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 4095,
+   "template": "i1=xk(u) ; i2=divk(i1) ; i3=lin2(i1,i2)",
+   "rule": "div-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 4152,
+   "template": "i1=xk(u) ; i2=modk(i1) ; i3=lin1(u,i2)",
+   "rule": "mod-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 4168,
+   "template": "i1=xk(u) ; i2=modk(i1) ; i3=lin1(i1,i2)",
+   "rule": "mod-valuation",
+   "pinned_runs": []
+  },
+  {
+   "idx": 4226,
+   "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=lin1(u,i2)",
+   "rule": "cdiv-valuation",
+   "pinned_runs": [
+    {
+     "divisor": 524288,
+     "result": "unsat",
+     "seconds": 0.7
+    }
+   ]
+  },
+  {
+   "idx": 4227,
+   "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=lin2(u,i2)",
+   "rule": "cdiv-valuation",
+   "pinned_runs": [
+    {
+     "divisor": 524288,
+     "result": "unsat",
+     "seconds": 0.6
+    },
+    {
+     "divisor": 1048576,
+     "result": "unsat",
+     "seconds": 0.56
+    }
+   ]
+  },
+  {
+   "idx": 4242,
+   "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=lin1(i1,i2)",
+   "rule": "cdiv-valuation",
+   "pinned_runs": [
+    {
+     "divisor": 524288,
+     "result": "unsat",
+     "seconds": 0.56
+    }
+   ]
+  },
+  {
+   "idx": 4243,
+   "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=lin2(i1,i2)",
+   "rule": "cdiv-valuation",
+   "pinned_runs": [
+    {
+     "divisor": 524288,
+     "result": "unsat",
+     "seconds": 0.6
+    },
+    {
+     "divisor": 1048576,
+     "result": "unsat",
+     "seconds": 0.6
+    }
+   ]
+  },
+  {
+   "idx": 4252,
+   "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=aab(i1,i2)",
+   "rule": "cdiv-valuation",
+   "pinned_runs": [
+    {
+     "divisor": 524288,
+     "result": "unsat",
+     "seconds": 0.82
+    }
+   ]
+  },
+  {
+   "idx": 4260,
+   "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=mad_c(u,i1,i2)",
+   "rule": "cdiv-valuation",
+   "pinned_runs": [
+    {
+     "divisor": 524288,
+     "result": "unsat",
+     "seconds": 0.36
+    }
+   ]
+  },
+  {
+   "idx": 6374,
+   "template": "i1=ork(u) ; i2=divk(i1) ; i3=mad_a(u,i1,i2)",
+   "rule": null,
+   "pinned_runs": []
+  },
+  {
+   "idx": 6412,
+   "template": "i1=ork(u) ; i2=modk(i1) ; i3=mad_a(u,i1,i2)",
+   "rule": null,
+   "pinned_runs": []
+  },
+  {
+   "idx": 6432,
+   "template": "i1=ork(u) ; i2=cdivk(i1) ; i3=lin1(u,i2)",
+   "rule": null,
+   "pinned_runs": []
+  },
+  {
+   "idx": 6433,
+   "template": "i1=ork(u) ; i2=cdivk(i1) ; i3=lin2(u,i2)",
+   "rule": null,
+   "pinned_runs": []
+  },
+  {
+   "idx": 6450,
+   "template": "i1=ork(u) ; i2=cdivk(i1) ; i3=mad_a(u,i1,i2)",
+   "rule": null,
+   "pinned_runs": []
+  },
+  {
+   "idx": 6551,
+   "template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=div_ab(i1,i2)",
+   "rule": null,
+   "pinned_runs": []
+  },
+  {
+   "idx": 6553,
+   "template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=cdiv_ab(i1,i2)",
+   "rule": null,
+   "pinned_runs": []
+  }
+ ]
+}

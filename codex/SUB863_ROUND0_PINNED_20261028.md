@@ -180,6 +180,31 @@ j − 19 时排除该组合。在全部模板、随机移位量与常量上抽�
 合计：228 个模板中 216 个完全排除，12 个各剩少量移位组合未定，所有判定过的情形都是 UNSAT。
 本轮仍没有 863 的可行改写，可执行最好成绩仍是 864。
 
+## 4. 收尾：首段除法扩展的 98 项
+
+`SUB863_ROUND0_MERGE_20261028.md` 第 1 节留下的 98 个全域三指令模板（首段，含 `// % cdiv`），
+用同样的 2-adic 思路处理（`grammar3_division_valuation863.py`）。全域上翻转输入第 j 位
+（j = 20..31），目标移动量的阶恰为 j − 19。
+
+- **偶数乘数**：i1 = MAD(u) 的乘数为偶数时，翻转 u31 不改变 i1 和 i2，输出只按 2^31 的倍数移动，
+  不是阶 12。所以 i1 是 u 的双射（奇数乘数，或与常数异或），翻转 u31 把 i1 变成 i1 ^ 2^31。
+- **除零**：K // i1、K % i1、cdiv(K, i1) 以 i1 为除数，双射的 i1 必在某个输入上为 0，模拟器报错。
+  37 项。
+- **双射系数**：最后一条为 A + B·i2 且 B 是 i1 或 i1 + 1 时，取 v2(B) ≥ 2 的输入，翻转第 20 位后
+  每项的阶都 ≥ 2，不是 1。12 项。
+- **常数系数**：第 20 位给出 v2(B) ≤ 1，第 31 位要求 i2 的移动阶恰为 12 − v2(B)（X ^ i2 时为 12）。
+  - i1 // K 的移动是 q 或 q + 1（q = 2^31 // K），两者都出现，相邻整数阶不同。K 为 2 的幂时就是
+    右移，对应的基础语法模板已判无解。9 项。
+  - i1 % K 的移动是 r 或 r − K（r = 2^31 mod K），两者阶相同需要 v2(K) > v2(r)，但 2^v2(K) 整除 r。
+    11 项。
+  - cdiv(i1, K)：K 非 2 的幂时同 //；K = 2^k 时移动恰为 2^(31−k)，只剩 K = 2^19、2^20，钉住除数后
+    z3 几秒内判无解（17 次）。13 项。
+- **只用 i1、i2 的组合**：i1 >> i2 ≤ i1 逐点成立，双射只能是恒等（3 项）；i1 & (i1 % K) < K，
+  取值不够（1 项）；i1 | (i1 // K) 与 i1 | cdiv(i1, K) 有具体的碰撞输入对（2 项）。
+
+合计 98 项中 88 项排除。剩 10 项：首条为 `u | K` 的 5 项（可达的 i1 只是一个子立方体，上面的
+覆盖论证不再直接成立）；两个运行时值相除的 4 项；`i1 | (i1 % K)` 1 项。
+
 ## 复现
 
 ```bash
@@ -198,7 +223,8 @@ python3.12 -m codex.grammar4_round0_pinned863 --combos multi.json --output multi
 # 汇总（比特 0 引理按需计算并缓存）
 python3.12 -m codex.grammar4_round0_pinned_audit863 xkaff.jsonl single.jsonl multi.jsonl \
   --bit0 codex/grammar4_round0_bit0.json --lemma-cache lemma.json --output audit.json
-python3.12 -m unittest codex.test_grammar4_round0_pinned863
+python3.12 -m codex.grammar3_division_valuation863 --output codex/grammar3_division_valuation863.json
+python3.12 -m unittest codex.test_grammar4_round0_pinned863 codex.test_grammar3_division_valuation863
 ```
 
 数据：`grammar4_round0_bit0.json`（精确检查结果）、`grammar4_round0_pinned_single_results.jsonl.gz`、

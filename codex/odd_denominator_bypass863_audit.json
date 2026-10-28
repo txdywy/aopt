@@ -1,0 +1,3578 @@
+{
+  "node": 2809010545,
+  "input_names": [
+    "e",
+    "z",
+    "u",
+    "v",
+    "b",
+    "prior",
+    "a",
+    "a_shr19",
+    "a_xor_c1"
+  ],
+  "previous_sha256": "197b0285259d0ad32d2e1455c75d7a8b3c2d687165450c70ee0abd66ba805c08",
+  "canonical_prefixes": 702,
+  "always_odd_parameter_cases": 64,
+  "factor_sources": [
+    0,
+    6
+  ],
+  "results": [
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        1
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            2976967555,
+            3708869240
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2781476581,
+          "factor_difference": 868490179
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        1
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            2976967555,
+            3708869240
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2781476581,
+          "factor_difference": 1537215603
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        2
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            573929068,
+            2340094351
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 265902568,
+          "factor_difference": 2630336101
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        2
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            573929068,
+            2340094351
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 265902568,
+          "factor_difference": 2570706634
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 12,
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            889166025
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 4281108574,
+          "factor_difference": 3680142543
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 12,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            2976967555
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 1153058477,
+          "factor_difference": 890064540
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 12,
+      "witnesses": [
+        {
+          "primary_pair": [
+            2,
+            3306930375
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2275045590,
+          "factor_difference": 3094460787
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 12,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1,
+            2182973640
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 234391695,
+          "factor_difference": 2179307638
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        1
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            2838949998,
+            4254485151
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 497838879,
+          "factor_difference": 705017639
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        1
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            2838949998,
+            4254485151
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 497838879,
+          "factor_difference": 861908891
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        2
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3234666008,
+            4006914805
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3182335979,
+          "factor_difference": 3232745883
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        2
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3234666008,
+            4006914805
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3182335979,
+          "factor_difference": 3723978450
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        1
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        1
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        2
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        2
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        0
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1876620373,
+            2080540104
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 697002391,
+          "factor_difference": 1173258133
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        0
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1876620373,
+            2080540104
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 697002391,
+          "factor_difference": 3981955814
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1978384332,
+            2949148537
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 4257670899,
+          "factor_difference": 2359805515
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1978384332,
+            2949148537
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 4257670899,
+          "factor_difference": 1239468881
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        0
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            2017757425,
+            3778982700
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3781199266,
+          "factor_difference": 2231065485
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        0
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            2017757425,
+            3778982700
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3781199266,
+          "factor_difference": 2563106638
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1931645083,
+            3168168106
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 1287503201,
+          "factor_difference": 3459779737
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1931645083,
+            3168168106
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 1287503201,
+          "factor_difference": 948674127
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 11,
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            2976967555
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 936250906,
+          "factor_difference": 1861558021
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 11,
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            2976967555
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 936250906,
+          "factor_difference": 1364243283
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        0
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        0
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        4
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        4
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        0
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1284072026,
+            4184379331
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 1505620840,
+          "factor_difference": 2627178287
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        0
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1284072026,
+            4184379331
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 1505620840,
+          "factor_difference": 1306486493
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            831632700,
+            981321225
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 44658030,
+          "factor_difference": 353331243
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            831632700,
+            981321225
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 44658030,
+          "factor_difference": 4191440456
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 11,
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            271500163
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 1689094922,
+          "factor_difference": 3657742085
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 11,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1,
+            271500162
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 4254545777,
+          "factor_difference": 4027760506
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        0
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        0
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        4
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        4
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 4,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 4,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3115618544,
+            968130800
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3212473589,
+          "factor_difference": 317886464
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3115618544,
+            968130800
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3212473589,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3345072700,
+            1197593148
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 729088968,
+          "factor_difference": 2879934464
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3345072700,
+            1197593148
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 729088968,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 52,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3345072702,
+            3345072703
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3588751018,
+          "factor_difference": 41175
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 52,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3345072702,
+            3345072703
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3588751018,
+          "factor_difference": 4294967295
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            6380,
+            2147485932
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 1219027826,
+          "factor_difference": 850259968
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            6380,
+            2147485932
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 1219027826,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        10
+      ],
+      "key_parity": [
+        1,
+        1
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        10
+      ],
+      "key_parity": [
+        1,
+        1
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        1
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1577288134,
+            2993532953
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2111831476,
+          "factor_difference": 1845045173
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        1
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1577288134,
+            2993532953
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2111831476,
+          "factor_difference": 609604690
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        2
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            84507001,
+            4210460262
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3778983881,
+          "factor_difference": 3225266955
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        2
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            84507001,
+            4210460262
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3778983881,
+          "factor_difference": 2228313888
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        1
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        1
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        2
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        2
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3115618544,
+            968130800
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3212473589,
+          "factor_difference": 317886464
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3115618544,
+            968130800
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3212473589,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3115618544,
+            968130800
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3212473589,
+          "factor_difference": 317886464
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3115618544,
+            968130800
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3212473589,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 175,
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            1
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3903744766,
+          "factor_difference": 160983
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 175,
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            1
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3903744766,
+          "factor_difference": 4294967295
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3115618544,
+            968130800
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3212473589,
+          "factor_difference": 317886464
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        10
+      ],
+      "key_parity": [
+        0,
+        1
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3115618544,
+            968130800
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3212473589,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        3
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        3
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        3
+      ],
+      "key_parity": [
+        1,
+        1
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        3
+      ],
+      "key_parity": [
+        1,
+        1
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        1
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        1
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        2
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        2
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        1
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 2,
+      "witnesses": [
+        {
+          "primary_pair": [
+            2976967555,
+            829483907
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2281734144,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        1
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 2,
+      "witnesses": [
+        {
+          "primary_pair": [
+            2976967555,
+            829483907
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2281734144,
+          "factor_difference": 2147479552
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        2
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 2,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        2
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 2,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 34,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1991897414,
+            2129682015
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 4097,
+          "factor_difference": 4294967295
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 34,
+      "witnesses": [
+        {
+          "primary_pair": [
+            4177070968,
+            3023341713
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 4097,
+          "factor_difference": 3426978288
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            2976967555,
+            829483907
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2281734144,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            2976967555,
+            829483907
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2281734144,
+          "factor_difference": 2147479552
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 34,
+      "witnesses": [
+        {
+          "primary_pair": [
+            2212365063,
+            4168698088
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 4294922229,
+          "factor_difference": 4294967287
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 34,
+      "witnesses": [
+        {
+          "primary_pair": [
+            2976967555,
+            638333284
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 4294922229,
+          "factor_difference": 2493724680
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 6,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        4
+      ],
+      "key_parity": [
+        0,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 6,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 34,
+      "witnesses": [
+        {
+          "primary_pair": [
+            141349639,
+            1182553832
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 4020263446,
+          "factor_difference": 4294962679
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 34,
+      "witnesses": [
+        {
+          "primary_pair": [
+            141349639,
+            1182553832
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 4020263446,
+          "factor_difference": 1307542499
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147483648
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 1,
+      "witnesses": [
+        {
+          "primary_pair": [
+            1820303686,
+            3967787334
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 2013233152,
+          "factor_difference": 2147487744
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        4,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 102,
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            1
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3903744766,
+          "factor_difference": 160983
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        4,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 102,
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            1
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3903744766,
+          "factor_difference": 4294967295
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        5,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 34,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3115626750,
+            3115598079
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 743347536,
+          "factor_difference": 1560863959
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        5,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 34,
+      "witnesses": [
+        {
+          "primary_pair": [
+            3115626750,
+            3115598079
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 743347536,
+          "factor_difference": 4294963199
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        6,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 102,
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            1
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3903744766,
+          "factor_difference": 160983
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        6,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 102,
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            1
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3903744766,
+          "factor_difference": 4294967295
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        7,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 169,
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            1
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3903744766,
+          "factor_difference": 160983
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        7,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 169,
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            1
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3903744766,
+          "factor_difference": 4294967295
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        8,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 0,
+      "factor_name": "e",
+      "status": "unsat",
+      "universal_collision_candidates": 102,
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            1
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3903744766,
+          "factor_difference": 160983
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    },
+    {
+      "op": "|",
+      "wiring": [
+        8,
+        9
+      ],
+      "key_parity": [
+        1,
+        0
+      ],
+      "factor": 6,
+      "factor_name": "a",
+      "status": "unsat",
+      "universal_collision_candidates": 102,
+      "witnesses": [
+        {
+          "primary_pair": [
+            0,
+            1
+          ],
+          "full32_collision_refutation": "unsat",
+          "target_difference": 3903744766,
+          "factor_difference": 4294967295
+        }
+      ],
+      "full32_bypass_equations_refuted": true
+    }
+  ],
+  "excluded": 128,
+  "unknown": 0,
+  "scope": "P one MAD/XOR/AND/OR, arbitrary root-only keys, P always odd; Y=I*P+f(P) for I=e or a and arbitrary f(P). This closes the remaining prepared-numerator REM(C,P) tails because even P is excluded by b16 parity.",
+  "constant_prefix_excluded": "A prepared-only P and f(P) leave an affine initial-word output whose parity cannot flip on b16.",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "no_global_optimality_claim": true
+}

@@ -1,0 +1,47 @@
+{
+  "node": 2809010545,
+  "evidence_sha256": {
+    "codex/comparison_core863_audit.json": "d3fd182f4c3544f8dda9f79d2bec972aad83fe3b19008d33f2ab45406b642913",
+    "codex/division_first_t863_audit.json": "0908243bc4249507c8d5a35e6d371f4618cbc8a3833144751af36bb1da32a276",
+    "codex/final_division863_audit.json": "27561b5ae7ec755d8dc2d890beb7f6891019ee3618de8bc3b1fbaccbf1baa50d",
+    "codex/division_xor_affine863_screen.json.gz": "20ec214fb53a9b3b0133eaf686435e926342bef1990574beba879a2b2e519f3c",
+    "codex/division_boolean863_screen.json": "c9d6408202123d74133ccc0c7d06154d398c52082ab21f2ca2b8708796ece15f",
+    "codex/bitmask_affine_tail863_audit.json": "1698d35f688f5f6a214414f7b634c56ea29410526714617c85a8f24de03887d1",
+    "codex/joint_live_boundary863_affine_high.json": "2451857ea897d7944b7eff5e99851e2c158f96c372669821bb6f1a458fb3da11",
+    "codex/early_e_affine_high863.json": "d5a8a7ab64908770a664e3c7914465b381e8afc67f91d866625e1cc7a397de0d"
+  },
+  "decoded_source_sha256": {
+    "codex/comparison_core863_audit.json": "d3fd182f4c3544f8dda9f79d2bec972aad83fe3b19008d33f2ab45406b642913",
+    "codex/division_first_t863_audit.json": "0908243bc4249507c8d5a35e6d371f4618cbc8a3833144751af36bb1da32a276",
+    "codex/final_division863_audit.json": "27561b5ae7ec755d8dc2d890beb7f6891019ee3618de8bc3b1fbaccbf1baa50d",
+    "codex/division_xor_affine863_screen.json": "0c84bc926406e78643827760093343e7355c4adb7986da9e1d677af126a6da4d",
+    "codex/division_boolean863_screen.json": "c9d6408202123d74133ccc0c7d06154d398c52082ab21f2ca2b8708796ece15f",
+    "codex/bitmask_affine_tail863_audit.json": "1698d35f688f5f6a214414f7b634c56ea29410526714617c85a8f24de03887d1",
+    "codex/joint_live_boundary863_affine_high.json": "2451857ea897d7944b7eff5e99851e2c158f96c372669821bb6f1a458fb3da11",
+    "codex/early_e_affine_high863.json": "d5a8a7ab64908770a664e3c7914465b381e8afc67f91d866625e1cc7a397de0d"
+  },
+  "closed_scopes": [
+    "At most3 MAD/XOR/AND/OR/SHL/SHR/< /== operations, arbitrary operands on nine words/root-only constants; no division.",
+    "A first DIV/REM/CDIV of an initial word/constant followed by at most two MAD/XOR/AND/OR; initial denominators are invalid at a legal zero witness, nonzero constant denominators all covered.",
+    "A final single DIV/CDIV after at most two non-division core/comparison ops, arbitrary computed denominator; any-prefix final REM also impossible.",
+    "An initial-word DIV/CDIV with a comparison and a final MAD/bitop, either D,C,T or C,D,T. Comparison relaxed to arbitrary per-input Boolean; all constant divisors covered.",
+    "243 constant-divisor initial DIV/REM/CDIV, live XOR, affine-tail cases; AND/OR live-mask counterparts impossible for arbitrary q.",
+    "Complete12600 joint MAD,SHR16,BIT,affine-MAD canonical graphs, BIT=XOR/AND/OR, eight inputs excluding e; only this four-op topology.",
+    "out=G*(h XOR q)+H for any of nine initial h and arbitrary q<65536, using inverse affine high-half necessary constraints."
+  ],
+  "still_open": [
+    "Computed DIV/REM/CDIV in the middle, with an initial-word or computed bypass.",
+    "Division first mixed with another division or variable shifts; REM combined with a comparison and mixing final op.",
+    "Other four-op joint topologies, extra live inputs, state encodings and larger windows.",
+    "Other kernel algorithms, memory/FLOW/cross-lane mechanisms, and actual scheduling of any future candidate."
+  ],
+  "bounded_q_corollaries": {
+    "floor_constant_divisor_at_least": 65536,
+    "ceil_constant_divisor_at_least": 65537,
+    "rem_constant_divisor_at_most": 65536,
+    "proof": "Each bound guarantees q<65536 for any uint32 numerator. The arbitrary-prefix high-half necessary constraints apply when the remaining structure is G*(h XOR q)+H."
+  },
+  "no_global_optimality_claim": true,
+  "best_executable_cycles": 864,
+  "new_executable": false
+}

@@ -6,6 +6,10 @@ An identical, separately preserved 864-cycle copy is
 It executes **864 cycles**, a **170.99x** speedup over the 147734-cycle baseline.
 This improves the previous 865 result by one cycle and reaches the 864 target.
 The previous [`perf_takehome_865.py`](perf_takehome_865.py) is unchanged.
+The latest [division and comparison audit](SUB863_DIVISION_COMPARISON_20261028.md)
+adds exact full-divisor screens and closes further stated three-op families,
+with 45 research tests passing. The executable remains 864; computed-prefix
+division, other joint graphs and broader algorithms remain open.
 The [sub-863 structural audit](SUB863_STRUCTURAL_AUDIT_20261023.md) proves a
 864 lower bound for the current graph and records 32 unsuccessful structural
 variants. It does not claim a universal lower bound or a new executable score.

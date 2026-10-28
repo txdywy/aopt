@@ -1,0 +1,648 @@
+{
+  "node": 2809010545,
+  "input_names": [
+    "e",
+    "z",
+    "u",
+    "v",
+    "b",
+    "prior",
+    "a",
+    "a_shr19",
+    "a_xor_c1"
+  ],
+  "eight_state_fibre": {
+    "primary_b": [
+      3752425706,
+      3752360170,
+      3752556778,
+      3752491242,
+      3752687850,
+      3752622314,
+      3752818922,
+      3752753386
+    ],
+    "initial_values": [
+      [
+        4193369412,
+        3811234887,
+        3201393223,
+        1576777216,
+        3752425706,
+        489147577,
+        415807951,
+        793,
+        3752426483
+      ],
+      [
+        3441081668,
+        2773210183,
+        3199230535,
+        469480960,
+        3752360170,
+        220777657,
+        415873487,
+        793,
+        3752360947
+      ],
+      [
+        1402977604,
+        1592316999,
+        3205718599,
+        3791369728,
+        3752556778,
+        4247375033,
+        415939023,
+        793,
+        3752557555
+      ],
+      [
+        650689860,
+        554292295,
+        3203555911,
+        2684073472,
+        3752491242,
+        3979005113,
+        416004559,
+        793,
+        3752492019
+      ],
+      [
+        2912271684,
+        3668890695,
+        3210043975,
+        1710994944,
+        3752687850,
+        3710635193,
+        416070095,
+        793,
+        3752688627
+      ],
+      [
+        2159983940,
+        2630865991,
+        3207881287,
+        603698688,
+        3752622314,
+        3442265273,
+        416135631,
+        793,
+        3752623091
+      ],
+      [
+        121879876,
+        1449972807,
+        3214369351,
+        3925587456,
+        3752818922,
+        3173895353,
+        416201167,
+        793,
+        3752819699
+      ],
+      [
+        3664559428,
+        411948103,
+        3212206663,
+        2818291200,
+        3752753386,
+        2905525433,
+        416266703,
+        793,
+        3752754163
+      ]
+    ],
+    "common_low16": [
+      48452,
+      54343,
+      25159,
+      46592,
+      30954,
+      52409,
+      47567,
+      793,
+      31731
+    ],
+    "target": [
+      3545299674,
+      802993733,
+      2470573248,
+      1756082195,
+      980051638,
+      2834182561,
+      4181352588,
+      599616367
+    ],
+    "low17_class_counts": [
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      1,
+      2
+    ],
+    "legal_points": [
+      {
+        "primary_b": 3752425706,
+        "prior": 489147577,
+        "values": [
+          4193369412,
+          3811234887,
+          3201393223,
+          1576777216,
+          3752425706,
+          489147577,
+          415807951,
+          793,
+          3752426483
+        ],
+        "target": 3545299674,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 424431428,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752360170,
+        "prior": 220777657,
+        "values": [
+          3441081668,
+          2773210183,
+          3199230535,
+          469480960,
+          3752360170,
+          220777657,
+          415873487,
+          793,
+          3752360947
+        ],
+        "target": 802993733,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 155406148,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752556778,
+        "prior": 4247375033,
+        "values": [
+          1402977604,
+          1592316999,
+          3205718599,
+          3791369728,
+          3752556778,
+          4247375033,
+          415939023,
+          793,
+          3752557555
+        ],
+        "target": 2470573248,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 432013318,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752491242,
+        "prior": 3979005113,
+        "values": [
+          650689860,
+          554292295,
+          3203555911,
+          2684073472,
+          3752491242,
+          3979005113,
+          416004559,
+          793,
+          3752492019
+        ],
+        "target": 1756082195,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 163774470,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752687850,
+        "prior": 3710635193,
+        "values": [
+          2912271684,
+          3668890695,
+          3210043975,
+          1710994944,
+          3752687850,
+          3710635193,
+          416070095,
+          793,
+          3752688627
+        ],
+        "target": 980051638,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 969015302,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752622314,
+        "prior": 3442265273,
+        "values": [
+          2159983940,
+          2630865991,
+          3207881287,
+          603698688,
+          3752622314,
+          3442265273,
+          416135631,
+          793,
+          3752623091
+        ],
+        "target": 2834182561,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 700776454,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752818922,
+        "prior": 3173895353,
+        "values": [
+          121879876,
+          1449972807,
+          3214369351,
+          3925587456,
+          3752818922,
+          3173895353,
+          416201167,
+          793,
+          3752819699
+        ],
+        "target": 4181352588,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 1,
+          "leaf_index": 1797,
+          "leaf_value": 78388017,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752753386,
+        "prior": 2905525433,
+        "values": [
+          3664559428,
+          411948103,
+          3212206663,
+          2818291200,
+          3752753386,
+          2905525433,
+          416266703,
+          793,
+          3752754163
+        ],
+        "target": 599616367,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 1,
+          "leaf_index": 1797,
+          "leaf_value": 347020081,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      }
+    ]
+  },
+  "results": [
+    {
+      "source": 0,
+      "source_name": "e",
+      "op": "//",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 246361,
+      "boundary_sha256": "0a5cc7971bd6a1e5518fc4ff8f7911e946f9c980e4fa5a396e312c45c994680b",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 512,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.121246
+    },
+    {
+      "source": 0,
+      "source_name": "e",
+      "op": "cdiv",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 246363,
+      "boundary_sha256": "03fad574d0cd9d0f9dc21f581f223ce0b5a768c78fbe9903d7624920189e29b8",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 550,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.119327
+    },
+    {
+      "source": 1,
+      "source_name": "z",
+      "op": "//",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 234425,
+      "boundary_sha256": "beb9d1549a9793dcd2bfb2464dd1387f378110c94369ac8f7072937232d8c2da",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 2346,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.192862
+    },
+    {
+      "source": 1,
+      "source_name": "z",
+      "op": "cdiv",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 234425,
+      "boundary_sha256": "0b0b01fab13ff00d985236bebd848724741571f1aac77d5e2b6d5b8caa8c4186",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 2357,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.108727
+    },
+    {
+      "source": 2,
+      "source_name": "u",
+      "op": "//",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 292361,
+      "boundary_sha256": "04238e98b4c47af35bb08ee43a214a516aaf8424b196ca6e8e4b2655fe9d4567",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 4324,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.1907
+    },
+    {
+      "source": 2,
+      "source_name": "u",
+      "op": "cdiv",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 292362,
+      "boundary_sha256": "20042f562178fc76c1f4d87ee02863dbfc5e25791ca2d7d9cbac3bb3e2bb36bd",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 4294,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.238293
+    },
+    {
+      "source": 3,
+      "source_name": "v",
+      "op": "//",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 240096,
+      "boundary_sha256": "90b0b19735e790075d729ec25646461524432e0c83a5335e2671cb4868495630",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 1589,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.125252
+    },
+    {
+      "source": 3,
+      "source_name": "v",
+      "op": "cdiv",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 240095,
+      "boundary_sha256": "0bd9f8ef7c325f10fa159a4d71d99208ee236931ce88101f06c1a9454233f407",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 1623,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.148927
+    },
+    {
+      "source": 4,
+      "source_name": "b",
+      "op": "//",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 321134,
+      "boundary_sha256": "68965f17122ca771f5c6153488a66789a3eeea94f72aad4af046700e4db26ee5",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 5054,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.244844
+    },
+    {
+      "source": 4,
+      "source_name": "b",
+      "op": "cdiv",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 321137,
+      "boundary_sha256": "940301447ddaacf1f08c2b42063638314527fb31a05b90ef38fd548c82629a69",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 4931,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.191563
+    },
+    {
+      "source": 5,
+      "source_name": "prior",
+      "op": "//",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 272236,
+      "boundary_sha256": "897445e8626c6f5fb3efacc5d29aae52d9a1951db758e7656de9df8017a1c263",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 3886,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.180173
+    },
+    {
+      "source": 5,
+      "source_name": "prior",
+      "op": "cdiv",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 272236,
+      "boundary_sha256": "8b38199438ddf543f75ed8bf7ca0b6d0319fc761044ad4d8944a418277f88fde",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 3894,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.178121
+    },
+    {
+      "source": 6,
+      "source_name": "a",
+      "op": "//",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 105243,
+      "boundary_sha256": "cef7d8e99499423d84fdaf5baae6a488f0daffa0592f3bd6ca4863cf23c525cb",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 3093,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.069416
+    },
+    {
+      "source": 6,
+      "source_name": "a",
+      "op": "cdiv",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 105243,
+      "boundary_sha256": "3d7762ba0557835f87d559bfec445d620c0221bd9a88083423378fd01d8803db",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 3069,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.067201
+    },
+    {
+      "source": 7,
+      "source_name": "a_shr19",
+      "op": "//",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 56,
+      "boundary_sha256": "3d38bfb67c8ce5512583049e94554db48ff4d0533c5468cd6467a4dbe22777bc",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 0,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.000365
+    },
+    {
+      "source": 7,
+      "source_name": "a_shr19",
+      "op": "cdiv",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 56,
+      "boundary_sha256": "118c1e20c726447853e9cb89b8257c96e8b980bb17cdc67e0a3d1cf0f89feed6",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 0,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.000231
+    },
+    {
+      "source": 8,
+      "source_name": "a_xor_c1",
+      "op": "//",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 321151,
+      "boundary_sha256": "717ff63efb99969b73af90aaadc746d12c1b33f90361dbee05117eb4746d276a",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 5020,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.198601
+    },
+    {
+      "source": 8,
+      "source_name": "a_xor_c1",
+      "op": "cdiv",
+      "whole_divisor_domain": [
+        1,
+        4294967295
+      ],
+      "quotient_intervals": 321152,
+      "boundary_sha256": "a34b0a07b05b705af8338b76baa929aa82da17c1debb5f5bf1fbf0a6a923b5a9",
+      "endpoint_constancy_checked": true,
+      "low3_intervals_retained": 4948,
+      "full16_survivor_intervals": [],
+      "status": "excluded",
+      "seconds": 0.19343
+    }
+  ],
+  "excluded": true,
+  "all_divisor_intervals": 4066132,
+  "bool_relaxed_independently_per_input": true,
+  "dead_operations": "If the final op does not read both q and the Boolean, either its image has at most two low16 states, or the comparison is dead and the prior division-first two-T closure applies.",
+  "comparison_before_division": "The same relaxed Boolean covers C,D,T when the quotient uses an initial numerator and prepared divisor. A Boolean numerator has at most two outputs; a Boolean denominator must be1 everywhere for valid execution, reducing to an initial word or0.",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "scope": "A first initial-word floor/ceil quotient by an arbitrary nonzero prepared divisor, one comparison, one MAD/XOR/AND/OR, in either C,D,T or D,C,T order. Comparison is arbitrary Boolean per input. No REM, computed numerator prefix or second shift/division."
+}

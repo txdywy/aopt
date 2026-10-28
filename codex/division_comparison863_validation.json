@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-28",
+  "base_commit": "20c579cec1ace9cfb1efdbdc63a1f70e58a48f41",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "no_global_optimality_claim": true,
+  "runtime": {
+    "python": "3.12.16",
+    "numpy": "2.3.5",
+    "z3": "5.1.0"
+  },
+  "regression": {
+    "tests": 45,
+    "result": "OK",
+    "summary": ".............................................\n----------------------------------------------------------------------\nRan 45 tests in 7.254s\n\nOK",
+    "log_sha256": "bc8b16a8687c7b4ec6b08169ca5a2938d31cb8aa06f88eaa08d831103ee631c7"
+  },
+  "protected_files_sha256": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  },
+  "frozen_tests_and_problem_unchanged": true,
+  "official_score_preserved_by_unchanged_source": true,
+  "prior_official_evidence": {
+    "path": "codex/root_boundary863_validation.json",
+    "sha256": "2b8a33054353015dfad1bbe7794f3f27803c2c933d7012e737b141d74740e5e4",
+    "tests": 9,
+    "cycles": 864,
+    "not_rerun_this_turn": true
+  },
+  "source_and_evidence_sha256": {
+    "codex/audit_bitmask_affine_tail863.py": "0f1f75d00787c5734b73147fb07d25993e34a4a24a3e683f28f3b0b826f362d5",
+    "codex/audit_comparison_core863.py": "314761f2b3c4b0a39692cfad91bac24223120eac71fd4be44fbb7f11c3d3aa99",
+    "codex/audit_division_first_t863.py": "37f25bb50fd8b950cf7a06bb116ded90b6d825531e7832bc7c5dfe0d6ab8abcd",
+    "codex/audit_final_division863.py": "9f54bc68ff7a534f75830d34564c169169f4d8b4857e720f3a95055a4859e428",
+    "codex/close_division_comparison863.py": "0d4634aa5fd2598dfdbf860f180c8c3db6ef771f3397dbd989680edeed5f8d5e",
+    "codex/screen_division_boolean863.py": "5afad22354d0060b1cbb4da47772fbfe203f7eb938115e3b5ded9201d8772ace",
+    "codex/screen_division_xor_affine863.py": "aedbc5c1dfb77afcc25dd5d0db65fb0814ddbec70392d904a4d0269b85d981ca",
+    "codex/test_division_comparison863.py": "d506f5b6d6d54da926a7f6f7c40c31912e6f9b796764aacef3ee8e37df0a5de3",
+    "codex/screen_joint_affine_high863.py": "856e18e43def26cc4293f3e9e9422307dcc092d1de2f388a8cdd76cbf64fa650",
+    "codex/comparison_core863_audit.json": "d3fd182f4c3544f8dda9f79d2bec972aad83fe3b19008d33f2ab45406b642913",
+    "codex/division_first_t863_audit.json": "0908243bc4249507c8d5a35e6d371f4618cbc8a3833144751af36bb1da32a276",
+    "codex/final_division863_audit.json": "27561b5ae7ec755d8dc2d890beb7f6891019ee3618de8bc3b1fbaccbf1baa50d",
+    "codex/division_boolean863_screen.json": "c9d6408202123d74133ccc0c7d06154d398c52082ab21f2ca2b8708796ece15f",
+    "codex/bitmask_affine_tail863_audit.json": "1698d35f688f5f6a214414f7b634c56ea29410526714617c85a8f24de03887d1",
+    "codex/joint_live_boundary863_affine_high.json": "2451857ea897d7944b7eff5e99851e2c158f96c372669821bb6f1a458fb3da11",
+    "codex/early_e_affine_high863.json": "d5a8a7ab64908770a664e3c7914465b381e8afc67f91d866625e1cc7a397de0d",
+    "codex/division_comparison863_closed_audit.json": "2fd60b154897fa84c3eaf86b494120c611733d0342afb39751d878a5cc70130b",
+    "codex/division_xor_affine863_screen.json.gz": "20ec214fb53a9b3b0133eaf686435e926342bef1990574beba879a2b2e519f3c"
+  },
+  "closed_scopes": [
+    "At most3 MAD/XOR/AND/OR/SHL/SHR/< /== operations, arbitrary operands on nine words/root-only constants; no division.",
+    "A first DIV/REM/CDIV of an initial word/constant followed by at most two MAD/XOR/AND/OR; initial denominators are invalid at a legal zero witness, nonzero constant denominators all covered.",
+    "A final single DIV/CDIV after at most two non-division core/comparison ops, arbitrary computed denominator; any-prefix final REM also impossible.",
+    "An initial-word DIV/CDIV with a comparison and a final MAD/bitop, either D,C,T or C,D,T. Comparison relaxed to arbitrary per-input Boolean; all constant divisors covered.",
+    "243 constant-divisor initial DIV/REM/CDIV, live XOR, affine-tail cases; AND/OR live-mask counterparts impossible for arbitrary q.",
+    "Complete12600 joint MAD,SHR16,BIT,affine-MAD canonical graphs, BIT=XOR/AND/OR, eight inputs excluding e; only this four-op topology.",
+    "out=G*(h XOR q)+H for any of nine initial h and arbitrary q<65536, using inverse affine high-half necessary constraints."
+  ],
+  "still_open": [
+    "Computed DIV/REM/CDIV in the middle, with an initial-word or computed bypass.",
+    "Division first mixed with another division or variable shifts; REM combined with a comparison and mixing final op.",
+    "Other four-op joint topologies, extra live inputs, state encodings and larger windows.",
+    "Other kernel algorithms, memory/FLOW/cross-lane mechanisms, and actual scheduling of any future candidate."
+  ],
+  "external": {
+    "claude": {
+      "commit": "dfff6802f769253b25cbd730804d5d282567896c",
+      "report_path": "codex/SUB863_ROUND0_PINNED_20261028.md",
+      "blob": "dca6c9e0b72f2d8c208d114b3ac69f901e2dce62",
+      "reported_score": 864,
+      "reported_head_division_open": 0,
+      "reported_round0_shift_open": 40,
+      "independently_rerun": false
+    },
+    "independent_timeline": {
+      "url": "https://jeffchen006.github.io/notes/864-cycles.html",
+      "repository": "jeffchen006/jeffchen006.github.io",
+      "path": "notes/864-cycles.html",
+      "blob": "7e7eeddc87c57d6effa280132c4703429b742093",
+      "reported_score": 864,
+      "independently_rerun": false
+    },
+    "josu_log": {
+      "repository": "josusanmartin/josusanmartin.github.io",
+      "path": "vliw/chat.log",
+      "latest_file_commit": "9afc8537a97a936bab0af2bf3746779924527df3",
+      "date": "2026-10-04T15:16:53Z",
+      "content_not_reread_this_turn": true
+    },
+    "search": {
+      "queries": [
+        "performance takehome 863 cycles",
+        "perf_takehome.py 862",
+        "Anthropic 864 cycles",
+        "original_performance_takehome 863",
+        "VLIW 864 cycles"
+      ],
+      "no_reproducible_sub864_found": true,
+      "global_absence_claim": false
+    }
+  },
+  "archives": {
+    "codex/division_xor_affine863_screen.json.gz": {
+      "encoded_bytes": 42038,
+      "decoded_bytes": 902703,
+      "encoded_sha256": "20ec214fb53a9b3b0133eaf686435e926342bef1990574beba879a2b2e519f3c",
+      "decoded_sha256": "0c84bc926406e78643827760093343e7355c4adb7986da9e1d677af126a6da4d"
+    }
+  }
+}

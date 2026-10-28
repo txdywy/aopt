@@ -35,7 +35,7 @@ def solve(source, seconds, node=NODE, control=False):
         add(v)
     with np.errstate(over='ignore'):
         target = wanted(values, np.uint64(node)); expected = h(values) >> 16
-    result = dict(source=source, source_name=NAMES[source] if source < len(NAMES) else 'e_positive_control_only',
+    result = dict(source=source, source_name=NAMES[source] if source < len(NAMES) else ('e_positive_control_only' if control else 'e'),
                   node=node, status='unknown', control=control, events=[], new_executable=False)
     while time.monotonic()-start < seconds:
         s.set(timeout=max(1, int((seconds-time.monotonic()+start)*1000)))

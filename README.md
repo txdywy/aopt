@@ -4,8 +4,8 @@ This repo contains a version of Anthropic's original performance take-home, befo
 
 Local verified best: **864 cycles**, with standalone [864](codex/perf_takehome_864.py)
 and [865](codex/perf_takehome_865.py) versions. The latest
-[sub-864 uniform-chain and resource-bound experiments](codex/SUB863_UNIFORM_CHAINS_20261027.md)
-record the unsuccessful candidates and exact remaining scope; they make no global optimality claim.
+[sub-864 division and comparison research](codex/SUB863_DIVISION_COMPARISON_20261028.md)
+records exact divisor screens and the remaining search scope; it makes no global optimality claim.
 
 The original take-home was a 4-hour one that starts close to the contents of this repo, after Claude Opus 4 beat most humans at that, it was updated to a 2-hour one which started with code which achieved 18532 cycles (7.97x faster than this repo starts you). This repo is based on the newer take-home which has a few more instructions and comes with better debugging tools, but has the starter code reverted to the slowest baseline. After Claude Opus 4.5 we started using a different base for our time-limited take-homes.
 

@@ -6,11 +6,13 @@ An identical, separately preserved 864-cycle copy is
 It executes **864 cycles**, a **170.99x** speedup over the 147734-cycle baseline.
 This improves the previous 865 result by one cycle and reaches the 864 target.
 The previous [`perf_takehome_865.py`](perf_takehome_865.py) is unchanged.
-The latest [computed-denominator grammar audit](SUB863_DENOMINATOR_GRAMMAR_20261028.md)
-closes the stated nine-word, three-instruction computed-denominator family,
-including initial or prepared numerators and arbitrary root-only constants.
-All 70 research tests pass. The executable remains 864; prepared-divisor bitop
-tails and broader algorithms remain open. The preceding
+The latest [single-division core audit](SUB863_SINGLE_DIVISION_CORE_20261028.md)
+closes the stated nine-word, three-instruction MAD/bitop grammar with at most
+one DIV/REM/CDIV, plus the prepared-count SHR-then-division extension.
+All 84 research tests pass. The executable remains 864; multiple divisions,
+shifts reading a prior quotient, variable shifts and broader algorithms remain open.
+The preceding [computed-denominator audit](SUB863_DENOMINATOR_GRAMMAR_20261028.md)
+records the complete computed-denominator family. The earlier
 [computed-prefix division audit](SUB863_COMPUTED_DIVISION_20261028.md) records
 the complete inverse-parameter enumeration and earlier collision certificates.
 The preceding [division/comparison audit](SUB863_DIVISION_COMPARISON_20261028.md)

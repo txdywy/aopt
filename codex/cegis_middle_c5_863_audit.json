@@ -1,0 +1,16 @@
+{
+ "wirings": 396249,
+ "closed": {
+  "cegis": 396013,
+  "lift": 90,
+  "carry-free-certificate": 146
+ },
+ "cegis_first_unsat_width": {
+  "10": 393959,
+  "11": 2054
+ },
+ "lift_levels": {
+  "11": 90
+ },
+ "open": []
+}

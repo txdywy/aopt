@@ -125,7 +125,7 @@ def sample_data(dense=False):
     return ps, tests, [inputs(p) for p in ps], values
 
 
-def solve(row, node, seconds, pins=(), dense=False):
+def solve(row, node, seconds, pins=(), dense=False, extra_points=()):
     start = time.monotonic(); n = len(NAMES)
     ks = [z3.BitVecs(f'joint_{i}a joint_{i}b', 32) for i in range(len(row['order']))]
     for i, op in enumerate(row['order']):
@@ -164,13 +164,21 @@ def solve(row, node, seconds, pins=(), dense=False):
         # Only z/u/v/b are T functions of b. This condition is deliberately
         # withheld whenever prior/a/s19/mix or any genuine input bypass is read.
         first = dict(order=row['order'][:1], wiring=row['wiring'][:1])
-        s.add(z3.Distinct(*(expression(first, ks[:1], inputs(p)) & 3 for p in range(4))))
+        low_images = [expression(first, ks[:1], inputs(p)) & 3 for p in range(4)]
+        # A MAD reading only existing words has no symbolic operand on a
+        # concrete synthesis sample. Distinct still needs typed BV values.
+        s.add(z3.Distinct(*(v if z3.is_expr(v) else z3.BitVecVal(v, 32) for v in low_images)))
     def add(v):
         if inverse_tail:
             s.add(expression(prefix, ks[:-1], v) == inverse_a*wanted(v, node)+inverse_b)
         else:
             s.add(expression(row, ks, v) == wanted(v, node))
-    initial, tests, vv, values = sample_data(dense); points = list(initial)
+    initial, tests, vv, values = sample_data(dense)
+    if extra_points:
+        assert all(isinstance(p, int) and 0 <= p <= MASK for p in extra_points)
+        initial = list(dict.fromkeys([*initial, *extra_points]))
+        vv = [inputs(p) for p in initial]
+    points = list(initial)
     for v in vv:
         add(v)
     with np.errstate(over='ignore'):
@@ -179,6 +187,7 @@ def solve(row, node, seconds, pins=(), dense=False):
                   full32_semantics=True, free_e=False, first_prefix_mod4_guard_used=first_t_wordcut,
                   inverse_affine_tail_normalization=inverse_tail,
                   dense_fibres=dense,
+                  extra_primary_points=list(extra_points),
                   new_executable=False)
     while time.monotonic()-start < seconds:
         s.set(timeout=max(1, int((seconds-time.monotonic()+start)*1000)))

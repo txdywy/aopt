@@ -6,11 +6,20 @@ An identical, separately preserved 864-cycle copy is
 It executes **864 cycles**, a **170.99x** speedup over the 147734-cycle baseline.
 This improves the previous 865 result by one cycle and reaches the 864 target.
 The previous [`perf_takehome_865.py`](perf_takehome_865.py) is unchanged.
-The latest [single-division core audit](SUB863_SINGLE_DIVISION_CORE_20261028.md)
-closes the stated nine-word, three-instruction MAD/bitop grammar with at most
-one DIV/REM/CDIV, plus the prepared-count SHR-then-division extension.
-All 84 research tests pass. The executable remains 864; multiple divisions,
-shifts reading a prior quotient, variable shifts and broader algorithms remain open.
+The latest [multiple-division audit](SUB863_TWO_DIVISION_20261029.md)
+closes all 343 three-instruction orders over MAD/XOR/AND/OR/DIV/REM/CDIV
+on the stated nine live words, including arbitrary root-only constants and
+prepared-count shifts. It also covers two initial-data downward operations
+with variable right-shift counts, and DIV/bitop-or-MAD/final-SHR.
+All 97 research tests pass. The executable remains 864; prepared-data variable
+shifts, further variable-shift combinations and broader algorithms remain open.
+The [expanded four-instruction search](SUB863_JOINT_FOCUSED_20261029.md)
+adds 16,020 distinct connections beyond the earlier two four-op manifests.
+Every sampled connection is excluded after refinement; the full four-op grammar
+remains open. That search also exposed and fixed a concrete-value typing error
+in the research solver, with targeted regression and positive controls.
+The preceding [single-division core audit](SUB863_SINGLE_DIVISION_CORE_20261028.md)
+records the earlier single-division and prepared-count SHR-then-division proofs.
 The preceding [computed-denominator audit](SUB863_DENOMINATOR_GRAMMAR_20261028.md)
 records the complete computed-denominator family. The earlier
 [computed-prefix division audit](SUB863_COMPUTED_DIVISION_20261028.md) records

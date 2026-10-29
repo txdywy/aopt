@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-29",
+  "base_commit": "5f95f1605c082bcfd952e48832483ad5826b7e66",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "no_global_optimality_claim": true,
+  "runtime": {
+    "python": "3.12.16",
+    "numpy": "2.3.5",
+    "z3": "5.1.0"
+  },
+  "fixed_root": {
+    "raw": 305419896,
+    "effective": 2809010545
+  },
+  "regression": {
+    "tests": 97,
+    "new_tests": 13,
+    "result": "OK",
+    "summary": ".................................................................................................\n----------------------------------------------------------------------\nRan 97 tests in 13.451s\n\nOK",
+    "log_sha256": "088303725d9273ca5469694d3da10088ab5c34603feb948e7f42114bd06975be",
+    "full32_SMT_checks": 171,
+    "new_frozen_control_programs": 967,
+    "three_instruction_programs": 921,
+    "tail_programs": 37,
+    "prepared_shift_programs": 9,
+    "lanes_per_control": 8
+  },
+  "closure_replay": {
+    "summary": "Two-downward oriented cases: 243\nFullword concrete divisor candidates: 43\nD,D,T and initial-data downward pairs: closed",
+    "log_sha256": "d284c0afee643994e3b1fe7e40ffbc97b3fb9dc11f1bcb690c1a3cbf3edd189f",
+    "high_component_log_sha256": "0edb2227229db773a5c4ff6f756eeac4c6509487fcce841c17da88dac85eb1f1",
+    "independent_high_interval_replays": 18
+  },
+  "ordinary_division_opcode_orders": 343,
+  "bounded_ancestors": 9,
+  "exact_oriented_contexts": 243,
+  "exact_divisor_candidates": 43,
+  "high_component_legal_points": 680,
+  "high_interval_constraints": 1233,
+  "remaining_floor_suffix": {
+    "high_fibre_indices": [
+      0,
+      2,
+      5,
+      6
+    ],
+    "primary_b": [
+      3752425706,
+      3752556778,
+      3752622314,
+      3752818922
+    ],
+    "quotients": [
+      63985,
+      21407,
+      32958,
+      1859
+    ],
+    "targets_low16": [
+      64218,
+      62656,
+      12705,
+      24716
+    ],
+    "quadratic_consistent": false,
+    "bitop_fits": [],
+    "quadratic_null_certificate": {
+      "weights": [
+        32332,
+        48558,
+        34928,
+        15254
+      ],
+      "polynomial_column_residues": [
+        0,
+        0,
+        0
+      ],
+      "target_residue": 62384
+    },
+    "unary_bit_collision": {
+      "bit": 2,
+      "pair": [
+        3,
+        0
+      ],
+      "quotient_bits": [
+        0,
+        0
+      ],
+      "target_bits": [
+        1,
+        0
+      ]
+    },
+    "status": "excluded",
+    "proof": "The only surviving first quotient is e//65536. On the four high-target fibre points, every initial low16 is constant. Any single middle MAD is therefore contained in the3-coefficient polynomial span[1,q,q^2] modulo2^16; any single bitop is a constant or q OP a prepared mask. Both necessary systems fail."
+  },
+  "source_and_evidence_sha256": {
+    "codex/audit_conservative_tail863.py": "c92ce7f78c26c9fd6c931b3623c178996aee16228a409c2e0e5ae4cf66384b97",
+    "codex/audit_high_division_middle863.py": "0a49d2c87610526b5c452ee8db5612362d73553b19f49016a340aeed1041c1f7",
+    "codex/audit_two_downward_ops863.py": "0a9e67167eda8118683d9b8131280b59d7cbfb5c40913fcfa771c95d35aaebde",
+    "codex/test_high_division_middle863.py": "ecbdfd65236f222aca0d6203557583d8461c615b40fd14444bacce280dfc410f",
+    "codex/test_two_downward_ops863.py": "7d184df68b7f10095ac6566a4f4078d61acf5d620352a925ed0a5bae8e0e6939",
+    "codex/conservative_tail863_audit.json": "d90e7e1c15d1e034974e6c020861f9b6c3cbebb0b274da013aa2ba4ee24e82df",
+    "codex/high_division_middle863_audit.json": "3b3fc416dec1d45e01f155c437571e44ed86d05196e9182d5fb4b5c707da4e83",
+    "codex/two_downward_ops863_audit.json": "2791aeb8767360eb3175f11d7d1222a78d1efda86c784fc7412f2809ef3b548f",
+    "codex/SUB863_TWO_DIVISION_20261029.md": "0f5f726f83821f4325aa3bee64c7ca871a692b68e63940c22fd54c4ff5b42f2b",
+    "codex/README.md": "1309271f257e39ac2998dbc4c89be93b621862f0ee2f5fa7a6613279a08c24c7",
+    "codex/search_focused_joint_boundary863.py": "724531034fe36ef2ee9c639d981f7f1119ef6a9e85a470f80fda10dafd4e9735",
+    "codex/search_joint_live_boundary863.py": "154ed4ccafc39a8e3522ed7f15fec451cc4c79d169ea2d164175461fb05f1f07",
+    "codex/test_focused_joint_boundary863.py": "08eaaea9680284a0f7f756972fab4ef18384ddfe906f1832d0825dcb7c4389e9",
+    "codex/SUB863_JOINT_FOCUSED_20261029.md": "9bdb29ae5f87bd0d8b08e531653e55efee4cc4e2bfbb3fda099a5cd999e03876"
+  },
+  "upstream_evidence_sha256": {
+    "codex/conservative_tail863_audit.json": "d90e7e1c15d1e034974e6c020861f9b6c3cbebb0b274da013aa2ba4ee24e82df",
+    "codex/shift_division863_audit.json": "774e5e60a2c165c635ce3b677a183d2d53f81b5be555b28e0866bcedb34b8fb7",
+    "codex/single_division_core863_closed_audit.json": "5634a380cc3a36990237d6d90bc5e50346e45d750158ccc3c7cc522bb073a4aa",
+    "codex/final_division863_audit.json": "27561b5ae7ec755d8dc2d890beb7f6891019ee3618de8bc3b1fbaccbf1baa50d",
+    "codex/high_division_middle863_audit.json": "3b3fc416dec1d45e01f155c437571e44ed86d05196e9182d5fb4b5c707da4e83"
+  },
+  "protected_files_sha256": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  },
+  "frozen_tests_and_problem_unchanged": true,
+  "official_score_preserved_by_unchanged_source": true,
+  "prior_official_evidence": {
+    "path": "codex/root_boundary863_validation.json",
+    "sha256": "2b8a33054353015dfad1bbe7794f3f27803c2c933d7012e737b141d74740e5e4",
+    "tests": 9,
+    "cycles": 864,
+    "not_rerun_this_turn": true
+  },
+  "external_refresh": {
+    "checked": "2026-10-29",
+    "repository": "txdywy/aopt",
+    "ref": "claude/sub863-explore",
+    "compared_base": "2646430c2d1534e4c1df46aa6538d5c012201bd9",
+    "ahead_by": 1,
+    "report": "codex/SUB863_C5_ABSORPTION_20261028.md",
+    "report_github_blob_sha": "d4050410662921ace528c12c115d919fd6dfdd63",
+    "reported_cycles": 864,
+    "independently_reran_searches": false,
+    "public_search_found_no_verified_lower_program": true,
+    "no_current_public_leaderboard_claim": true
+  },
+  "completed_scope": "At most three operations on the specified nine live words and arbitrary root-only prepared constants, all 343 MAD/XOR/AND/OR/DIV/REM/CDIV orders. Prepared-count SHR/SHL normalize without increasing the instruction count. Fixed allowed raw root0x12345678, all reachable b. Not a whole-kernel or full-ISA bound.",
+  "additional_completed_scope": "Two DIV/REM/CDIV/SHR with data/numerator operands from initials or the previous result, followed by one MAD/XOR/AND/OR; right-shift counts may be data-dependent. DIV/REM/CDIV then one ordinary T then final SHR with arbitrary legal counts.",
+  "remaining": [
+    "Prepared-data/data-count SHR mixed with DIV; variable SHL and remaining data-dependent shift/comparison combinations, including REM with comparisons.",
+    "Additional free words, larger joint windows, root-conditional preparation/algorithms, nonlinear encodings, cross-lane and memory mechanisms."
+  ],
+  "additional_four_op_search": {
+    "path": "codex/joint_focused863_validation.json",
+    "sha256": "c5c8732a8c6aeb7a7cf42b7af8bfcee272df3b83ffb95b9af497f776e0f37f7d",
+    "new_unique_connections": 16020,
+    "remaining_sampled_unknowns": 0,
+    "not_complete_four_op_grammar": true
+  }
+}

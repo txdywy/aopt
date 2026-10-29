@@ -1,0 +1,8912 @@
+{
+  "node": 2809010545,
+  "input_names": [
+    "e",
+    "z",
+    "u",
+    "v",
+    "b",
+    "prior",
+    "a",
+    "a_shr19",
+    "a_xor_c1"
+  ],
+  "results": [
+    {
+      "source": 0,
+      "name": "e",
+      "primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "initial_values": [
+        [
+          0,
+          1913649187,
+          3865876003,
+          2489544192,
+          1820303686,
+          2646141187,
+          2870900249,
+          5475,
+          1820308517
+        ],
+        [
+          1,
+          2868086364,
+          921724508,
+          2617499648,
+          2772291167,
+          2337637138,
+          1650196520,
+          3147,
+          2772288020
+        ]
+      ],
+      "targets": [
+        131761799,
+        131757702
+      ],
+      "q_second_bound": 1,
+      "scalar_initial_fits": [],
+      "initial_factor_prepared_offset_fits": [],
+      "fixed_initial_product_fits": [],
+      "target_zero_not_initial_or_zero": true,
+      "target_at_zero_is_not_word_square": true,
+      "target_difference": 4294963199,
+      "product_offset_increment_maximum": 1,
+      "chain_product_offset_excluded": true
+    },
+    {
+      "source": 1,
+      "name": "z",
+      "primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "initial_values": [
+        [
+          4251993797,
+          0,
+          3381078016,
+          3381078016,
+          2976967555,
+          2710919783,
+          1980835709,
+          3778,
+          2976965953
+        ],
+        [
+          4251993806,
+          1,
+          3515558401,
+          3515558400,
+          638333284,
+          947036767,
+          3782078325,
+          7213,
+          638332233
+        ]
+      ],
+      "targets": [
+        3273670618,
+        3273715685
+      ],
+      "q_second_bound": 1,
+      "scalar_initial_fits": [],
+      "initial_factor_prepared_offset_fits": [],
+      "fixed_initial_product_fits": [],
+      "target_zero_not_initial_or_zero": true,
+      "target_at_zero_is_not_word_square": true,
+      "target_difference": 45067,
+      "product_offset_increment_maximum": 1,
+      "chain_product_offset_excluded": true
+    },
+    {
+      "source": 2,
+      "name": "u",
+      "primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "initial_values": [
+        [
+          2455809733,
+          3140954112,
+          0,
+          3140954112,
+          271500163,
+          4237672000,
+          3612285782,
+          6889,
+          271505770
+        ],
+        [
+          2455814350,
+          3140954625,
+          1,
+          3140954624,
+          1312704356,
+          3289671517,
+          2304742515,
+          4395,
+          1312708175
+        ]
+      ],
+      "targets": [
+        2520826602,
+        2560727285
+      ],
+      "q_second_bound": 1,
+      "scalar_initial_fits": [],
+      "initial_factor_prepared_offset_fits": [],
+      "fixed_initial_product_fits": [],
+      "target_zero_not_initial_or_zero": true,
+      "target_at_zero_is_not_word_square": true,
+      "target_difference": 39900683,
+      "product_offset_increment_maximum": 1,
+      "chain_product_offset_excluded": true
+    },
+    {
+      "source": 3,
+      "name": "v",
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "initial_values": [
+        [
+          1554370193,
+          3995231340,
+          3995231340,
+          0,
+          2116207,
+          707912613,
+          3342962875,
+          6376,
+          2118279
+        ],
+        [
+          4045786769,
+          4272055404,
+          4272055404,
+          0,
+          10504815,
+          447931285,
+          3351351467,
+          6392,
+          10506903
+        ]
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "q_second_bound": 0,
+      "scalar_initial_fits": [],
+      "initial_factor_prepared_offset_fits": [],
+      "fixed_initial_product_fits": [],
+      "target_zero_not_initial_or_zero": true,
+      "target_at_zero_is_not_word_square": true,
+      "target_difference": 1412930432,
+      "product_offset_increment_maximum": 0,
+      "chain_product_offset_excluded": true
+    },
+    {
+      "source": 4,
+      "name": "b",
+      "primary_pair": [
+        0,
+        1
+      ],
+      "initial_values": [
+        [
+          1818584522,
+          1161276957,
+          3925396509,
+          2899272192,
+          0,
+          984669626,
+          3345078992,
+          6380,
+          6380
+        ],
+        [
+          1818423539,
+          1161259070,
+          3925396542,
+          2899289088,
+          1,
+          1001442747,
+          3345078993,
+          6380,
+          6381
+        ]
+      ],
+      "targets": [
+        4209921524,
+        306176758
+      ],
+      "q_second_bound": 1,
+      "scalar_initial_fits": [],
+      "initial_factor_prepared_offset_fits": [],
+      "fixed_initial_product_fits": [],
+      "target_zero_not_initial_or_zero": true,
+      "target_at_zero_is_not_word_square": true,
+      "target_difference": 391222530,
+      "product_offset_increment_maximum": 1,
+      "chain_product_offset_excluded": true
+    },
+    {
+      "source": 5,
+      "name": "prior",
+      "primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "initial_values": [
+        [
+          3725871162,
+          3759290637,
+          3661593357,
+          976044544,
+          3115618544,
+          0,
+          2127912214,
+          4058,
+          3115622186
+        ],
+        [
+          31248227,
+          3825995566,
+          3661728558,
+          1045267456,
+          3115622641,
+          1,
+          2127916311,
+          4058,
+          3115626283
+        ]
+      ],
+      "targets": [
+        2705710197,
+        1392841956
+      ],
+      "q_second_bound": 1,
+      "scalar_initial_fits": [],
+      "initial_factor_prepared_offset_fits": [],
+      "fixed_initial_product_fits": [],
+      "target_zero_not_initial_or_zero": true,
+      "target_at_zero_is_not_word_square": true,
+      "target_difference": 2982099055,
+      "product_offset_increment_maximum": 1,
+      "chain_product_offset_excluded": true
+    },
+    {
+      "source": 6,
+      "name": "a",
+      "primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "initial_values": [
+        [
+          1717622118,
+          2104496089,
+          2643645913,
+          3772963328,
+          3345072700,
+          3237741290,
+          0,
+          0,
+          3345072700
+        ],
+        [
+          1718640783,
+          2104609274,
+          2643645946,
+          3772980224,
+          3345072701,
+          3254514411,
+          1,
+          0,
+          3345072701
+        ]
+      ],
+      "targets": [
+        713783181,
+        569138340
+      ],
+      "q_second_bound": 1,
+      "scalar_initial_fits": [],
+      "initial_factor_prepared_offset_fits": [],
+      "fixed_initial_product_fits": [],
+      "target_zero_not_initial_or_zero": true,
+      "target_at_zero_is_not_word_square": true,
+      "target_difference": 4150322455,
+      "product_offset_increment_maximum": 1,
+      "chain_product_offset_excluded": true
+    },
+    {
+      "source": 7,
+      "name": "a_shr19",
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "initial_values": [
+        [
+          1717622118,
+          2104496089,
+          2643645913,
+          3772963328,
+          3345072700,
+          3237741290,
+          0,
+          0,
+          3345072700
+        ],
+        [
+          496751974,
+          59969497,
+          2641483225,
+          2665667072,
+          3345007164,
+          2969371370,
+          65536,
+          0,
+          3345007164
+        ]
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "q_second_bound": 0,
+      "scalar_initial_fits": [],
+      "initial_factor_prepared_offset_fits": [],
+      "fixed_initial_product_fits": [],
+      "target_zero_not_initial_or_zero": true,
+      "target_at_zero_is_not_word_square": true,
+      "target_difference": 1817736981,
+      "product_offset_increment_maximum": 0,
+      "chain_product_offset_excluded": true
+    },
+    {
+      "source": 8,
+      "name": "a_xor_c1",
+      "primary_pair": [
+        6380,
+        6381
+      ],
+      "initial_values": [
+        [
+          775046038,
+          1522546825,
+          3925607049,
+          3007068672,
+          6380,
+          2822374694,
+          3345072700,
+          6380,
+          0
+        ],
+        [
+          775207615,
+          1522564778,
+          3925607082,
+          3007085568,
+          6381,
+          2839147815,
+          3345072701,
+          6380,
+          1
+        ]
+      ],
+      "targets": [
+        3481215467,
+        2970585872
+      ],
+      "q_second_bound": 1,
+      "scalar_initial_fits": [],
+      "initial_factor_prepared_offset_fits": [],
+      "fixed_initial_product_fits": [],
+      "target_zero_not_initial_or_zero": true,
+      "target_at_zero_is_not_word_square": true,
+      "target_difference": 3784337701,
+      "product_offset_increment_maximum": 1,
+      "chain_product_offset_excluded": true
+    }
+  ],
+  "tail_manifest": [
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        0
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        1
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        2
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        3
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        4
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        5
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        6
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        7
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        8
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        9
+      ],
+      "certificate": "zero_output"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        10
+      ],
+      "certificate": "initial_factor_prepared_offset"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        10,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        10,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        10,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        10,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        10,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        10,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        10,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        10,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        10,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        10,
+        9
+      ],
+      "certificate": "scalar_initial_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        10,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        10,
+        11
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        0
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        1
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        2
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        3
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        4
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        5
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        6
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        7
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        8
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        9
+      ],
+      "certificate": "zero_output"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        10
+      ],
+      "certificate": "initial_factor_prepared_offset"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        10,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        10,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        10,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        10,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        10,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        10,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        10,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        10,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        10,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        10,
+        9
+      ],
+      "certificate": "scalar_initial_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        10,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        10,
+        11
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        0
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        1
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        2
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        3
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        4
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        5
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        6
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        7
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        8
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        9
+      ],
+      "certificate": "zero_output"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        10
+      ],
+      "certificate": "initial_factor_prepared_offset"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        10,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        10,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        10,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        10,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        10,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        10,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        10,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        10,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        10,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        10,
+        9
+      ],
+      "certificate": "scalar_initial_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        10,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        10,
+        11
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        0
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        1
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        2
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        3
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        4
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        5
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        6
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        7
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        8
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        9
+      ],
+      "certificate": "zero_output"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        10
+      ],
+      "certificate": "initial_factor_prepared_offset"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        10,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        10,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        10,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        10,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        10,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        10,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        10,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        10,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        10,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        10,
+        9
+      ],
+      "certificate": "scalar_initial_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        10,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        10,
+        11
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        0
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        1
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        2
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        3
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        4
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        5
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        6
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        7
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        8
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        9
+      ],
+      "certificate": "zero_output"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        10
+      ],
+      "certificate": "initial_factor_prepared_offset"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        10,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        10,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        10,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        10,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        10,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        10,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        10,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        10,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        10,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        10,
+        9
+      ],
+      "certificate": "scalar_initial_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        10,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        10,
+        11
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        0
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        1
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        2
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        3
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        4
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        5
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        6
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        7
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        8
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        9
+      ],
+      "certificate": "zero_output"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        10
+      ],
+      "certificate": "initial_factor_prepared_offset"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        10,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        10,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        10,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        10,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        10,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        10,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        10,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        10,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        10,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        10,
+        9
+      ],
+      "certificate": "scalar_initial_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        10,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        10,
+        11
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        0
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        1
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        2
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        3
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        4
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        5
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        6
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        7
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        8
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        9
+      ],
+      "certificate": "zero_output"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        10
+      ],
+      "certificate": "initial_factor_prepared_offset"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        10,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        10,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        10,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        10,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        10,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        10,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        10,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        10,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        10,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        10,
+        9
+      ],
+      "certificate": "scalar_initial_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        10,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        10,
+        11
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        0
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        1
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        2
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        3
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        4
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        5
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        6
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        7
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        8
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        9
+      ],
+      "certificate": "zero_output"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        10
+      ],
+      "certificate": "initial_factor_prepared_offset"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        10,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        10,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        10,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        10,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        10,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        10,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        10,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        10,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        10,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        10,
+        9
+      ],
+      "certificate": "scalar_initial_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        10,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        10,
+        11
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        9
+      ],
+      "certificate": "zero_fixed_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        0
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        1
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        2
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        3
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        4
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        5
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        6
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        7
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        8
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        9
+      ],
+      "certificate": "zero_output"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        10
+      ],
+      "certificate": "initial_factor_prepared_offset"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        10,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        10,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        10,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        10,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        10,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        10,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        10,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        10,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        10,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        10,
+        9
+      ],
+      "certificate": "scalar_initial_product"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        10,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        10,
+        11
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        0
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        1
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        2
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        3
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        4
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        5
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        6
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        7
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        8
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        9
+      ],
+      "certificate": "q_only_permutation_and_order"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        10
+      ],
+      "certificate": "q_only_permutation_and_order"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        0
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        1
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        2
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        3
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        4
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        5
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        6
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        7
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        8
+      ],
+      "certificate": "zero_returns_initial"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        9
+      ],
+      "certificate": "q_only_permutation_and_order"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        10
+      ],
+      "certificate": "q_only_permutation_and_order"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        11
+      ],
+      "certificate": "q_only_permutation_and_order"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        10,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        10,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        10,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        10,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        10,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        10,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        10,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        10,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        10,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        10,
+        9
+      ],
+      "certificate": "q_only_permutation_and_order"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        11,
+        0
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        11,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        11,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        11,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        11,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        11,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        11,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        11,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        11,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        11,
+        9
+      ],
+      "certificate": "q_only_permutation_and_order"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        0,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        1,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        2,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        3,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        4,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        4,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        4,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        4,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        4,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        4,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        5,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        5,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        5,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        5,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        5,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        6,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        6,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        6,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        6,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        7,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        7,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        7,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        8,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        8,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        9,
+        10
+      ],
+      "certificate": "q_only_permutation_and_order"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        0,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        1,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        2,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        2,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        2,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        2,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        2,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        2,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        2,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        2,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        3,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        3,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        3,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        3,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        3,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        3,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        3,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        4,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        4,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        4,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        4,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        4,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        4,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        5,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        5,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        5,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        5,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        5,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        6,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        6,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        6,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        6,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        7,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        7,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        7,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        8,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        8,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        9,
+        10
+      ],
+      "certificate": "q_only_permutation_and_order"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        1
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        0,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        2
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        1,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        3
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        2,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        4
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        3,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        4,
+        5
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        4,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        4,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        4,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        4,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        4,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        5,
+        6
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        5,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        5,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        5,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        5,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        6,
+        7
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        6,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        6,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        6,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        7,
+        8
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        7,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        7,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        8,
+        9
+      ],
+      "certificate": "zero_bitop_initial"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        8,
+        10
+      ],
+      "certificate": "T_only_parity"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        9,
+        10
+      ],
+      "certificate": "q_only_permutation_and_order"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        9,
+        9
+      ],
+      "certificate": "q_only_permutation_and_order"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        9,
+        9
+      ],
+      "certificate": "q_only_permutation_and_order"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        9,
+        9
+      ],
+      "certificate": "q_only_permutation_and_order"
+    }
+  ],
+  "initial_parity_evidence": {
+    "path": "codex/division_first_t863_audit.json",
+    "sha256": "0908243bc4249507c8d5a35e6d371f4618cbc8a3833144751af36bb1da32a276"
+  },
+  "q_only_root_proof": "If output is a function only of q/root constants and is a full32 permutation, q must be a full32 permutation. For the seven permutation initials N,0<=q<=N and equality of finite sums force q=N pointwise; the remaining one T then cannot change b16 parity. The other initials v/s19 have maximum below MASK, so q cannot be a full32 permutation.",
+  "initial_factor_offset_proof": "At N=0,q=0 pins H=Y0 in initial*q+H. At the second witness q is between0 and the recorded bound, and none of these outputs equals the target.",
+  "scalar_initial_product_proof": "At N=0,q=0 requires G*initial=Y0. At the second witness enumerate every0<=q<=N and intersect exact fullword congruence classes for G, including nonunits. No class survives.",
+  "two_value_chain_proof": "For0<=q2<=q1<=N, any final T using both q1/q2 is0 at N=0, returns an initial addend unequal to Y0, or is q1*q2+H. In the last case H=Y0 and the next witness permits an increment at most N1^2; the target difference exceeds this bound. A last T reading only one of q1/q2 is covered by the arbitrary bounded-q tail certificate.",
+  "legal_points": [
+    {
+      "primary_b": 0,
+      "prior": 984669626,
+      "values": [
+        1818584522,
+        1161276957,
+        3925396509,
+        2899272192,
+        0,
+        984669626,
+        3345078992,
+        6380,
+        6380
+      ],
+      "target": 4209921524,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 1054563911,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 1,
+      "prior": 1001442747,
+      "values": [
+        1818423539,
+        1161259070,
+        3925396542,
+        2899289088,
+        1,
+        1001442747,
+        3345078993,
+        6380,
+        6381
+      ],
+      "target": 306176758,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 1071337030,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 6380,
+      "prior": 2822374694,
+      "values": [
+        775046038,
+        1522546825,
+        3925607049,
+        3007068672,
+        6380,
+        2822374694,
+        3345072700,
+        6380,
+        0
+      ],
+      "target": 3481215467,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 297521838,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 6381,
+      "prior": 2839147815,
+      "values": [
+        775207615,
+        1522564778,
+        3925607082,
+        3007085568,
+        6381,
+        2839147815,
+        3345072701,
+        6380,
+        1
+      ],
+      "target": 2970585872,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 280502959,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 2116207,
+      "prior": 707912613,
+      "values": [
+        1554370193,
+        3995231340,
+        3995231340,
+        0,
+        2116207,
+        707912613,
+        3342962875,
+        6376,
+        2118279
+      ],
+      "target": 861223003,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 777674840,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 10504815,
+      "prior": 447931285,
+      "values": [
+        4045786769,
+        4272055404,
+        4272055404,
+        0,
+        10504815,
+        447931285,
+        3351351467,
+        6392,
+        10506903
+      ],
+      "target": 2274153435,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 517562472,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 271500163,
+      "prior": 4237672000,
+      "values": [
+        2455809733,
+        3140954112,
+        0,
+        3140954112,
+        271500163,
+        4237672000,
+        3612285782,
+        6889,
+        271505770
+      ],
+      "target": 2520826602,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 410809087,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 638333284,
+      "prior": 947036767,
+      "values": [
+        4251993806,
+        1,
+        3515558401,
+        3515558400,
+        638333284,
+        947036767,
+        3782078325,
+        7213,
+        638332233
+      ],
+      "target": 3273715685,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 1008279970,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 1312704356,
+      "prior": 3289671517,
+      "values": [
+        2455814350,
+        3140954625,
+        1,
+        3140954624,
+        1312704356,
+        3289671517,
+        2304742515,
+        4395,
+        1312708175
+      ],
+      "target": 2560727285,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 553495522,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 1820303686,
+      "prior": 2646141187,
+      "values": [
+        0,
+        1913649187,
+        3865876003,
+        2489544192,
+        1820303686,
+        2646141187,
+        2870900249,
+        5475,
+        1820308517
+      ],
+      "target": 131761799,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 607731339,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 2772291167,
+      "prior": 2337637138,
+      "values": [
+        1,
+        2868086364,
+        921724508,
+        2617499648,
+        2772291167,
+        2337637138,
+        1650196520,
+        3147,
+        2772288020
+      ],
+      "target": 131757702,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 852776090,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 2976967555,
+      "prior": 2710919783,
+      "values": [
+        4251993797,
+        0,
+        3381078016,
+        3381078016,
+        2976967555,
+        2710919783,
+        1980835709,
+        3778,
+        2976965953
+      ],
+      "target": 3273670618,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 404000239,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3115618544,
+      "prior": 0,
+      "values": [
+        3725871162,
+        3759290637,
+        3661593357,
+        976044544,
+        3115618544,
+        0,
+        2127912214,
+        4058,
+        3115622186
+      ],
+      "target": 2705710197,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 74155005,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3115622641,
+      "prior": 1,
+      "values": [
+        31248227,
+        3825995566,
+        3661728558,
+        1045267456,
+        3115622641,
+        1,
+        2127916311,
+        4058,
+        3115626283
+      ],
+      "target": 1392841956,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 74155004,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3345007164,
+      "prior": 2969371370,
+      "values": [
+        496751974,
+        59969497,
+        2641483225,
+        2665667072,
+        3345007164,
+        2969371370,
+        65536,
+        0,
+        3345007164
+      ],
+      "target": 2531520162,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 159176034,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3345072700,
+      "prior": 3237741290,
+      "values": [
+        1717622118,
+        2104496089,
+        2643645913,
+        3772963328,
+        3345072700,
+        3237741290,
+        0,
+        0,
+        3345072700
+      ],
+      "target": 713783181,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 605408853,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3345072701,
+      "prior": 3254514411,
+      "values": [
+        1718640783,
+        2104609274,
+        2643645946,
+        3772980224,
+        3345072701,
+        3254514411,
+        1,
+        0,
+        3345072701
+      ],
+      "target": 569138340,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 621952596,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    }
+  ],
+  "complete_in_stated_scope": true,
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "scope": "Any arbitrary computed word q(b) satisfying0<=q(b)<=one of the nine initial N(b), followed by a single MAD/XOR/AND/OR on initials/q/root constants. Also two computed value-chain words0<=q2<=q1<=N followed by one such T. The construction of q/q1/q2 is otherwise unrestricted; this is a local target-specific certificate.",
+  "no_global_optimality_claim": true
+}

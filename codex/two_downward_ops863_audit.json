@@ -1,0 +1,8582 @@
+{
+  "node": 2809010545,
+  "raw_root": 305419896,
+  "input_names": [
+    "e",
+    "z",
+    "u",
+    "v",
+    "b",
+    "prior",
+    "a",
+    "a_shr19",
+    "a_xor_c1"
+  ],
+  "evidence_sha256": {
+    "codex/conservative_tail863_audit.json": "d90e7e1c15d1e034974e6c020861f9b6c3cbebb0b274da013aa2ba4ee24e82df",
+    "codex/shift_division863_audit.json": "774e5e60a2c165c635ce3b677a183d2d53f81b5be555b28e0866bcedb34b8fb7",
+    "codex/single_division_core863_closed_audit.json": "5634a380cc3a36990237d6d90bc5e50346e45d750158ccc3c7cc522bb073a4aa",
+    "codex/final_division863_audit.json": "27561b5ae7ec755d8dc2d890beb7f6891019ee3618de8bc3b1fbaccbf1baa50d",
+    "codex/high_division_middle863_audit.json": "3b3fc416dec1d45e01f155c437571e44ed86d05196e9182d5fb4b5c707da4e83"
+  },
+  "oriented_concrete_division": [
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 0,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 0,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 0,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 1,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 1,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [
+        445471847,
+        890943694,
+        1781887388
+      ],
+      "cases": [
+        {
+          "divisor": 445471847,
+          "status": "excluded",
+          "forced_scalar": 4231469716,
+          "scalar_outputs_at_second": [
+            258748765,
+            195251185,
+            131753605
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 258748765
+        },
+        {
+          "divisor": 890943694,
+          "status": "excluded",
+          "forced_scalar": 4231469716,
+          "scalar_outputs_at_second": [
+            258748765,
+            195251185,
+            131753605
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 258748765
+        },
+        {
+          "divisor": 1781887388,
+          "status": "excluded",
+          "forced_scalar": 3340526022,
+          "scalar_outputs_at_second": [
+            258748765,
+            3599274787,
+            2644833513
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 258748765
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 1,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 2,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 2,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [
+        933528551,
+        1867057102,
+        3734114204
+      ],
+      "cases": [
+        {
+          "divisor": 933528551,
+          "status": "excluded",
+          "forced_scalar": 3505000490,
+          "scalar_outputs_at_second": [
+            34817685,
+            3539818175,
+            2749851369
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 34817685
+        },
+        {
+          "divisor": 1867057102,
+          "status": "excluded",
+          "forced_scalar": 3505000490,
+          "scalar_outputs_at_second": [
+            34817685,
+            3539818175,
+            2749851369
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 34817685
+        },
+        {
+          "divisor": 3734114204,
+          "status": "excluded",
+          "forced_scalar": 3505000490,
+          "scalar_outputs_at_second": [
+            34817685,
+            3539818175,
+            2749851369
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 34817685
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 2,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 3,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 3,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [
+        2357782393
+      ],
+      "cases": [
+        {
+          "divisor": 2357782393,
+          "status": "excluded",
+          "forced_scalar": 4167007743,
+          "scalar_outputs_at_second": [
+            1429957255,
+            1301997702,
+            1174038149
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 1429957255
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 3,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 4,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 4,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [
+        1688541887
+      ],
+      "cases": [
+        {
+          "divisor": 1688541887,
+          "status": "excluded",
+          "forced_scalar": 3342975718,
+          "scalar_outputs_at_second": [
+            799987194,
+            4142962912,
+            3190971334
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 799987194
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 4,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 5,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 5,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [
+        628594847,
+        1257189694,
+        2514379388
+      ],
+      "cases": [
+        {
+          "divisor": 628594847,
+          "status": "excluded",
+          "forced_scalar": 3974872401,
+          "scalar_outputs_at_second": [
+            87148802,
+            4062021203,
+            3741926308
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 87148802
+        },
+        {
+          "divisor": 1257189694,
+          "status": "excluded",
+          "forced_scalar": 3346277554,
+          "scalar_outputs_at_second": [
+            715743649,
+            4062021203,
+            3113331461
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 715743649
+        },
+        {
+          "divisor": 2514379388,
+          "status": "excluded",
+          "forced_scalar": 2089087860,
+          "scalar_outputs_at_second": [
+            715743649,
+            2804831509,
+            598952073
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 715743649
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 5,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 6,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 6,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [
+        182609230,
+        273913845,
+        456523075,
+        547827690,
+        913046150,
+        1369569225,
+        2739138450
+      ],
+      "cases": [
+        {
+          "divisor": 182609230,
+          "status": "excluded",
+          "forced_scalar": 125044252,
+          "scalar_outputs_at_second": [
+            153932849,
+            278977101,
+            404021353
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 153932849
+        },
+        {
+          "divisor": 273913845,
+          "status": "excluded",
+          "forced_scalar": 125044252,
+          "scalar_outputs_at_second": [
+            245237464,
+            370281716,
+            495325968
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 245237464
+        },
+        {
+          "divisor": 456523075,
+          "status": "excluded",
+          "forced_scalar": 4146097703,
+          "scalar_outputs_at_second": [
+            153932849,
+            5063256,
+            4151160959
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 153932849
+        },
+        {
+          "divisor": 547827690,
+          "status": "excluded",
+          "forced_scalar": 125044252,
+          "scalar_outputs_at_second": [
+            519151309,
+            644195561,
+            769239813
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 519151309
+        },
+        {
+          "divisor": 913046150,
+          "status": "excluded",
+          "forced_scalar": 3689574628,
+          "scalar_outputs_at_second": [
+            153932849,
+            3843507477,
+            3238114809
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 153932849
+        },
+        {
+          "divisor": 1369569225,
+          "status": "excluded",
+          "forced_scalar": 4146097703,
+          "scalar_outputs_at_second": [
+            1066978999,
+            918109406,
+            769239813
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 1066978999
+        },
+        {
+          "divisor": 2739138450,
+          "status": "excluded",
+          "forced_scalar": 2776528478,
+          "scalar_outputs_at_second": [
+            1066978999,
+            3843507477,
+            2325068659
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 1066978999
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 6,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 7,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 7,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 7,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 8,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 8,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [
+        187616302,
+        281424453,
+        562848906,
+        844273359,
+        1688546718
+      ],
+      "cases": [
+        {
+          "divisor": 187616302,
+          "status": "excluded",
+          "forced_scalar": 4281065206,
+          "scalar_outputs_at_second": [
+            49512599,
+            35610509,
+            21708419
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 49512599
+        },
+        {
+          "divisor": 281424453,
+          "status": "excluded",
+          "forced_scalar": 4187257055,
+          "scalar_outputs_at_second": [
+            237128901,
+            129418660,
+            21708419
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 237128901
+        },
+        {
+          "divisor": 562848906,
+          "status": "excluded",
+          "forced_scalar": 3905832602,
+          "scalar_outputs_at_second": [
+            237128901,
+            4142961503,
+            3753826809
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 237128901
+        },
+        {
+          "divisor": 844273359,
+          "status": "excluded",
+          "forced_scalar": 4187257055,
+          "scalar_outputs_at_second": [
+            799977807,
+            692267566,
+            584557325
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 799977807
+        },
+        {
+          "divisor": 1688546718,
+          "status": "excluded",
+          "forced_scalar": 3342983696,
+          "scalar_outputs_at_second": [
+            799977807,
+            4142961503,
+            3190977903
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 4177070968,
+          "target_at_ancestor2": 131769993,
+          "concrete_q_at_ancestor2": 799977807
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 0,
+      "concrete_numerator": 8,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 0,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 0,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 0,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 1,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 1,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 1,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 2,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 2,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 2,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 3,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 3,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 3,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 4,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 4,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 4,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 5,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 5,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 5,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 6,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 6,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 6,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 7,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 7,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 7,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 8,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 8,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 1,
+      "concrete_numerator": 8,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 0,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 0,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 0,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 1,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 1,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 1,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 2,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 2,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 2,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 3,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 3,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 3,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 4,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 4,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 4,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 5,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 5,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 5,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 6,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 6,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 6,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 7,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 7,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 7,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 8,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 8,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 2,
+      "concrete_numerator": 8,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 0,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 0,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 0,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 1,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 1,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [
+        3134008337
+      ],
+      "cases": [
+        {
+          "divisor": 3134008337,
+          "status": "excluded",
+          "reason": "Both ancestor values0 force F=0; the second quotient misses the second target."
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 1,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 2,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 2,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [
+        3134008337
+      ],
+      "cases": [
+        {
+          "divisor": 3134008337,
+          "status": "excluded",
+          "reason": "Both ancestor values0 force F=0; the second quotient misses the second target."
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 2,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 3,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 3,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 3,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 4,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 4,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 4,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 5,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 5,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 5,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 6,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 6,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [
+        1240869936,
+        2481739872
+      ],
+      "cases": [
+        {
+          "divisor": 1240869936,
+          "status": "excluded",
+          "reason": "Both ancestor values0 force F=0; the second quotient misses the second target."
+        },
+        {
+          "divisor": 2481739872,
+          "status": "excluded",
+          "reason": "Both ancestor values0 force F=0; the second quotient misses the second target."
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 6,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 7,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 7,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 7,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 8,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 8,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 3,
+      "concrete_numerator": 8,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        2116207,
+        10504815
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 0,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 0,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 0,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 1,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 1,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 1,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 2,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 2,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 2,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 3,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 3,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 3,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 4,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 4,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 4,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 5,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 5,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 5,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 6,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 6,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 6,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 7,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 7,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 7,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 8,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 8,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 4,
+      "concrete_numerator": 8,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        0,
+        1
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 0,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 0,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 0,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 1,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 1,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 1,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 2,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 2,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 2,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 3,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 3,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 3,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 4,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 4,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 4,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 5,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 5,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 5,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 6,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 6,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 6,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 7,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 7,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 7,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 8,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 8,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 5,
+      "concrete_numerator": 8,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 0,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 0,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [
+        1003838937
+      ],
+      "cases": [
+        {
+          "divisor": 1003838937,
+          "status": "excluded",
+          "forced_scalar": 4149303790,
+          "scalar_outputs_at_second": [
+            714650079,
+            568986573,
+            423323067
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 3345072702,
+          "target_at_ancestor2": 1189100989,
+          "concrete_q_at_ancestor2": 714650079
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 0,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 1,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 1,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [
+        1390712908
+      ],
+      "cases": [
+        {
+          "divisor": 1390712908,
+          "status": "excluded",
+          "forced_scalar": 4150209270,
+          "scalar_outputs_at_second": [
+            713879503,
+            569121477,
+            424363451
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 3345072702,
+          "target_at_ancestor2": 1189100989,
+          "concrete_q_at_ancestor2": 713879503
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 1,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 2,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 2,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [
+        964931366,
+        1929862732
+      ],
+      "cases": [
+        {
+          "divisor": 964931366,
+          "status": "excluded",
+          "forced_scalar": 4150322422,
+          "scalar_outputs_at_second": [
+            713783247,
+            569138373,
+            424493499
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 3345072702,
+          "target_at_ancestor2": 1189100989,
+          "concrete_q_at_ancestor2": 713783247
+        },
+        {
+          "divisor": 1929862732,
+          "status": "excluded",
+          "forced_scalar": 4150322422,
+          "scalar_outputs_at_second": [
+            713783247,
+            569138373,
+            424493499
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 3345072702,
+          "target_at_ancestor2": 1189100989,
+          "concrete_q_at_ancestor2": 713783247
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 2,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 3,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 3,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [
+        3059180147
+      ],
+      "cases": [
+        {
+          "divisor": 3059180147,
+          "status": "excluded",
+          "forced_scalar": 4150305559,
+          "scalar_outputs_at_second": [
+            713816973,
+            569155236,
+            424493499
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 3345072702,
+          "target_at_ancestor2": 1189100989,
+          "concrete_q_at_ancestor2": 713816973
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 3,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 4,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 4,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [
+        2631289519
+      ],
+      "cases": [
+        {
+          "divisor": 2631289519,
+          "status": "excluded",
+          "forced_scalar": 4150322454,
+          "scalar_outputs_at_second": [
+            713783183,
+            569138341,
+            424493499
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 3345072702,
+          "target_at_ancestor2": 1189100989,
+          "concrete_q_at_ancestor2": 713783183
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 4,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 5,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 5,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [
+        2523958109
+      ],
+      "cases": [
+        {
+          "divisor": 2523958109,
+          "status": "excluded",
+          "forced_scalar": 4133549334,
+          "scalar_outputs_at_second": [
+            747329423,
+            585911461,
+            424493499
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 3345072702,
+          "target_at_ancestor2": 1189100989,
+          "concrete_q_at_ancestor2": 747329423
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 5,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 6,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 6,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 6,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 7,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 7,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 7,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 8,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 8,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [
+        2631289519
+      ],
+      "cases": [
+        {
+          "divisor": 2631289519,
+          "status": "excluded",
+          "forced_scalar": 4150322454,
+          "scalar_outputs_at_second": [
+            713783183,
+            569138341,
+            424493499
+          ],
+          "scalar_survives": false,
+          "initial_coefficient_survivors": [],
+          "bitop_survivors": [],
+          "prefix_square_survives": false,
+          "F_at_one_must_equal1": true,
+          "primary_at_ancestor2": 3345072702,
+          "target_at_ancestor2": 1189100989,
+          "concrete_q_at_ancestor2": 713783183
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 6,
+      "concrete_numerator": 8,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 0,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 0,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [
+        1003838937
+      ],
+      "cases": [
+        {
+          "divisor": 1003838937,
+          "status": "excluded",
+          "reason": "Both ancestor values0 force F=0; the second quotient misses the second target."
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 0,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 1,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 1,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [
+        1390712908
+      ],
+      "cases": [
+        {
+          "divisor": 1390712908,
+          "status": "excluded",
+          "reason": "Both ancestor values0 force F=0; the second quotient misses the second target."
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 1,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 2,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 2,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [
+        964931366,
+        1929862732
+      ],
+      "cases": [
+        {
+          "divisor": 964931366,
+          "status": "excluded",
+          "reason": "Both ancestor values0 force F=0; the second quotient misses the second target."
+        },
+        {
+          "divisor": 1929862732,
+          "status": "excluded",
+          "reason": "Both ancestor values0 force F=0; the second quotient misses the second target."
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 2,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 3,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 3,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [
+        3059180147
+      ],
+      "cases": [
+        {
+          "divisor": 3059180147,
+          "status": "excluded",
+          "reason": "Both ancestor values0 force F=0; the second quotient misses the second target."
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 3,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 4,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 4,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [
+        2631289519
+      ],
+      "cases": [
+        {
+          "divisor": 2631289519,
+          "status": "excluded",
+          "reason": "Both ancestor values0 force F=0; the second quotient misses the second target."
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 4,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 5,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 5,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [
+        2523958109
+      ],
+      "cases": [
+        {
+          "divisor": 2523958109,
+          "status": "excluded",
+          "reason": "Both ancestor values0 force F=0; the second quotient misses the second target."
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 5,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 6,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 6,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 6,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 7,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 7,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 7,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 8,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 8,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [
+        2631289519
+      ],
+      "cases": [
+        {
+          "divisor": 2631289519,
+          "status": "excluded",
+          "reason": "Both ancestor values0 force F=0; the second quotient misses the second target."
+        }
+      ],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 7,
+      "concrete_numerator": 8,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 0,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 0,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 0,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 1,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 1,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 1,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 2,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 2,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 2,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 3,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 3,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 3,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 4,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 4,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 4,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 5,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 5,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 5,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 6,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 6,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 6,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 7,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 7,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 7,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 8,
+      "concrete_op": "//",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 8,
+      "concrete_op": "%",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    },
+    {
+      "bounded_ancestor": 8,
+      "concrete_numerator": 8,
+      "concrete_op": "cdiv",
+      "zero_primary_pair": [
+        6380,
+        6381
+      ],
+      "candidate_divisors": [],
+      "cases": [],
+      "status": "excluded"
+    }
+  ],
+  "exact_concrete_divisor_candidates": 43,
+  "product_offset_ancestor_pairs": [
+    {
+      "ancestors": [
+        0,
+        0
+      ],
+      "primary_pair": [
+        1820303686,
+        2772291167
+      ],
+      "targets": [
+        131761799,
+        131757702
+      ],
+      "method": "At ancestor0 the product is0; at ancestor1 both factors are0/1. The target increment is neither0 nor1.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        0,
+        1
+      ],
+      "primary_pair": [
+        1820303686,
+        2976967555
+      ],
+      "targets": [
+        131761799,
+        3273670618
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        0,
+        2
+      ],
+      "primary_pair": [
+        1820303686,
+        271500163
+      ],
+      "targets": [
+        131761799,
+        2520826602
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        0,
+        3
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        0,
+        4
+      ],
+      "primary_pair": [
+        1820303686,
+        0
+      ],
+      "targets": [
+        131761799,
+        4209921524
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        0,
+        5
+      ],
+      "primary_pair": [
+        1820303686,
+        3115618544
+      ],
+      "targets": [
+        131761799,
+        2705710197
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        0,
+        6
+      ],
+      "primary_pair": [
+        1820303686,
+        3345072700
+      ],
+      "targets": [
+        131761799,
+        713783181
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        0,
+        7
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        0,
+        8
+      ],
+      "primary_pair": [
+        1820303686,
+        6380
+      ],
+      "targets": [
+        131761799,
+        3481215467
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        1,
+        0
+      ],
+      "primary_pair": [
+        2976967555,
+        1820303686
+      ],
+      "targets": [
+        3273670618,
+        131761799
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        1,
+        1
+      ],
+      "primary_pair": [
+        2976967555,
+        638333284
+      ],
+      "targets": [
+        3273670618,
+        3273715685
+      ],
+      "method": "At ancestor0 the product is0; at ancestor1 both factors are0/1. The target increment is neither0 nor1.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        1,
+        2
+      ],
+      "primary_pair": [
+        2976967555,
+        271500163
+      ],
+      "targets": [
+        3273670618,
+        2520826602
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        1,
+        3
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        1,
+        4
+      ],
+      "primary_pair": [
+        2976967555,
+        0
+      ],
+      "targets": [
+        3273670618,
+        4209921524
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        1,
+        5
+      ],
+      "primary_pair": [
+        2976967555,
+        3115618544
+      ],
+      "targets": [
+        3273670618,
+        2705710197
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        1,
+        6
+      ],
+      "primary_pair": [
+        2976967555,
+        3345072700
+      ],
+      "targets": [
+        3273670618,
+        713783181
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        1,
+        7
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        1,
+        8
+      ],
+      "primary_pair": [
+        2976967555,
+        6380
+      ],
+      "targets": [
+        3273670618,
+        3481215467
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        2,
+        0
+      ],
+      "primary_pair": [
+        271500163,
+        1820303686
+      ],
+      "targets": [
+        2520826602,
+        131761799
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        2,
+        1
+      ],
+      "primary_pair": [
+        271500163,
+        2976967555
+      ],
+      "targets": [
+        2520826602,
+        3273670618
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        2,
+        2
+      ],
+      "primary_pair": [
+        271500163,
+        1312704356
+      ],
+      "targets": [
+        2520826602,
+        2560727285
+      ],
+      "method": "At ancestor0 the product is0; at ancestor1 both factors are0/1. The target increment is neither0 nor1.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        2,
+        3
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        2,
+        4
+      ],
+      "primary_pair": [
+        271500163,
+        0
+      ],
+      "targets": [
+        2520826602,
+        4209921524
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        2,
+        5
+      ],
+      "primary_pair": [
+        271500163,
+        3115618544
+      ],
+      "targets": [
+        2520826602,
+        2705710197
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        2,
+        6
+      ],
+      "primary_pair": [
+        271500163,
+        3345072700
+      ],
+      "targets": [
+        2520826602,
+        713783181
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        2,
+        7
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        2,
+        8
+      ],
+      "primary_pair": [
+        271500163,
+        6380
+      ],
+      "targets": [
+        2520826602,
+        3481215467
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        3,
+        0
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        3,
+        1
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        3,
+        2
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        3,
+        3
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        3,
+        4
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        3,
+        5
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        3,
+        6
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        3,
+        7
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        3,
+        8
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        4,
+        0
+      ],
+      "primary_pair": [
+        0,
+        1820303686
+      ],
+      "targets": [
+        4209921524,
+        131761799
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        4,
+        1
+      ],
+      "primary_pair": [
+        0,
+        2976967555
+      ],
+      "targets": [
+        4209921524,
+        3273670618
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        4,
+        2
+      ],
+      "primary_pair": [
+        0,
+        271500163
+      ],
+      "targets": [
+        4209921524,
+        2520826602
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        4,
+        3
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        4,
+        4
+      ],
+      "primary_pair": [
+        0,
+        1
+      ],
+      "targets": [
+        4209921524,
+        306176758
+      ],
+      "method": "At ancestor0 the product is0; at ancestor1 both factors are0/1. The target increment is neither0 nor1.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        4,
+        5
+      ],
+      "primary_pair": [
+        0,
+        3115618544
+      ],
+      "targets": [
+        4209921524,
+        2705710197
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        4,
+        6
+      ],
+      "primary_pair": [
+        0,
+        3345072700
+      ],
+      "targets": [
+        4209921524,
+        713783181
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        4,
+        7
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        4,
+        8
+      ],
+      "primary_pair": [
+        0,
+        6380
+      ],
+      "targets": [
+        4209921524,
+        3481215467
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        5,
+        0
+      ],
+      "primary_pair": [
+        3115618544,
+        1820303686
+      ],
+      "targets": [
+        2705710197,
+        131761799
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        5,
+        1
+      ],
+      "primary_pair": [
+        3115618544,
+        2976967555
+      ],
+      "targets": [
+        2705710197,
+        3273670618
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        5,
+        2
+      ],
+      "primary_pair": [
+        3115618544,
+        271500163
+      ],
+      "targets": [
+        2705710197,
+        2520826602
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        5,
+        3
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        5,
+        4
+      ],
+      "primary_pair": [
+        3115618544,
+        0
+      ],
+      "targets": [
+        2705710197,
+        4209921524
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        5,
+        5
+      ],
+      "primary_pair": [
+        3115618544,
+        3115622641
+      ],
+      "targets": [
+        2705710197,
+        1392841956
+      ],
+      "method": "At ancestor0 the product is0; at ancestor1 both factors are0/1. The target increment is neither0 nor1.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        5,
+        6
+      ],
+      "primary_pair": [
+        3115618544,
+        3345072700
+      ],
+      "targets": [
+        2705710197,
+        713783181
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        5,
+        7
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        5,
+        8
+      ],
+      "primary_pair": [
+        3115618544,
+        6380
+      ],
+      "targets": [
+        2705710197,
+        3481215467
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        6,
+        0
+      ],
+      "primary_pair": [
+        3345072700,
+        1820303686
+      ],
+      "targets": [
+        713783181,
+        131761799
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        6,
+        1
+      ],
+      "primary_pair": [
+        3345072700,
+        2976967555
+      ],
+      "targets": [
+        713783181,
+        3273670618
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        6,
+        2
+      ],
+      "primary_pair": [
+        3345072700,
+        271500163
+      ],
+      "targets": [
+        713783181,
+        2520826602
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        6,
+        3
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        6,
+        4
+      ],
+      "primary_pair": [
+        3345072700,
+        0
+      ],
+      "targets": [
+        713783181,
+        4209921524
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        6,
+        5
+      ],
+      "primary_pair": [
+        3345072700,
+        3115618544
+      ],
+      "targets": [
+        713783181,
+        2705710197
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        6,
+        6
+      ],
+      "primary_pair": [
+        3345072700,
+        3345072701
+      ],
+      "targets": [
+        713783181,
+        569138340
+      ],
+      "method": "At ancestor0 the product is0; at ancestor1 both factors are0/1. The target increment is neither0 nor1.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        6,
+        7
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        6,
+        8
+      ],
+      "primary_pair": [
+        3345072700,
+        6380
+      ],
+      "targets": [
+        713783181,
+        3481215467
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        7,
+        0
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        7,
+        1
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        7,
+        2
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        7,
+        3
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        7,
+        4
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        7,
+        5
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        7,
+        6
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        7,
+        7
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        7,
+        8
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        8,
+        0
+      ],
+      "primary_pair": [
+        6380,
+        1820303686
+      ],
+      "targets": [
+        3481215467,
+        131761799
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        8,
+        1
+      ],
+      "primary_pair": [
+        6380,
+        2976967555
+      ],
+      "targets": [
+        3481215467,
+        3273670618
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        8,
+        2
+      ],
+      "primary_pair": [
+        6380,
+        271500163
+      ],
+      "targets": [
+        3481215467,
+        2520826602
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        8,
+        3
+      ],
+      "primary_pair": [
+        2116207,
+        10504815
+      ],
+      "targets": [
+        861223003,
+        2274153435
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        8,
+        4
+      ],
+      "primary_pair": [
+        6380,
+        0
+      ],
+      "targets": [
+        3481215467,
+        4209921524
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        8,
+        5
+      ],
+      "primary_pair": [
+        6380,
+        3115618544
+      ],
+      "targets": [
+        3481215467,
+        2705710197
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        8,
+        6
+      ],
+      "primary_pair": [
+        6380,
+        3345072700
+      ],
+      "targets": [
+        3481215467,
+        713783181
+      ],
+      "method": "One factor vanishes at each distinct ancestor zero, pinning H to two different targets.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        8,
+        7
+      ],
+      "primary_pair": [
+        3345072700,
+        3345007164
+      ],
+      "targets": [
+        713783181,
+        2531520162
+      ],
+      "method": "A nonpermutation ancestor has two zero witnesses; one factor is0 at both.",
+      "status": "excluded"
+    },
+    {
+      "ancestors": [
+        8,
+        8
+      ],
+      "primary_pair": [
+        6380,
+        6381
+      ],
+      "targets": [
+        3481215467,
+        2970585872
+      ],
+      "method": "At ancestor0 the product is0; at ancestor1 both factors are0/1. The target increment is neither0 nor1.",
+      "status": "excluded"
+    }
+  ],
+  "concrete_initial_SHR_spectrum": [
+    {
+      "bounded_ancestor": 0,
+      "primary_b": 1820303686,
+      "target": 131761799,
+      "all_initial_SHR_spectra_miss": true
+    },
+    {
+      "bounded_ancestor": 1,
+      "primary_b": 2976967555,
+      "target": 3273670618,
+      "all_initial_SHR_spectra_miss": true
+    },
+    {
+      "bounded_ancestor": 2,
+      "primary_b": 271500163,
+      "target": 2520826602,
+      "all_initial_SHR_spectra_miss": true
+    },
+    {
+      "bounded_ancestor": 3,
+      "primary_b": 2116207,
+      "target": 861223003,
+      "all_initial_SHR_spectra_miss": true
+    },
+    {
+      "bounded_ancestor": 4,
+      "primary_b": 0,
+      "target": 4209921524,
+      "all_initial_SHR_spectra_miss": true
+    },
+    {
+      "bounded_ancestor": 5,
+      "primary_b": 3115618544,
+      "target": 2705710197,
+      "all_initial_SHR_spectra_miss": true
+    },
+    {
+      "bounded_ancestor": 6,
+      "primary_b": 3345072700,
+      "target": 713783181,
+      "all_initial_SHR_spectra_miss": true
+    },
+    {
+      "bounded_ancestor": 7,
+      "primary_b": 3345072700,
+      "target": 713783181,
+      "all_initial_SHR_spectra_miss": true
+    },
+    {
+      "bounded_ancestor": 8,
+      "primary_b": 6380,
+      "target": 3481215467,
+      "all_initial_SHR_spectra_miss": true
+    }
+  ],
+  "two_result_final_manifest": [
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        9,
+        10
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        10,
+        9
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        9,
+        10
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        10,
+        9
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        9,
+        10
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        10,
+        9
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        9,
+        10
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        10,
+        9
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        9,
+        10
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        10,
+        9
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        9,
+        10
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        10,
+        9
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        9,
+        10
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        10,
+        9
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        9,
+        10
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        10,
+        9
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        10
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        10,
+        9
+      ],
+      "certificate": "oriented_initial_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        9,
+        10
+      ],
+      "certificate": "square_plus_word_nonsquare"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        0
+      ],
+      "certificate": "product_initial_addend"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        1
+      ],
+      "certificate": "product_initial_addend"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        2
+      ],
+      "certificate": "product_initial_addend"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        3
+      ],
+      "certificate": "product_initial_addend"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        4
+      ],
+      "certificate": "product_initial_addend"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        5
+      ],
+      "certificate": "product_initial_addend"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        6
+      ],
+      "certificate": "product_initial_addend"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        7
+      ],
+      "certificate": "product_initial_addend"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        8
+      ],
+      "certificate": "product_initial_addend"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        9
+      ],
+      "certificate": "product_plus_factor_zero"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        10
+      ],
+      "certificate": "product_plus_factor_zero"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        10,
+        11
+      ],
+      "certificate": "product_prepared_offset"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        9,
+        11,
+        10
+      ],
+      "certificate": "oriented_prepared_coefficient"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        10,
+        9
+      ],
+      "certificate": "square_plus_word_nonsquare"
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        10,
+        11,
+        9
+      ],
+      "certificate": "oriented_prepared_coefficient"
+    },
+    {
+      "op": "^",
+      "wiring": [
+        9,
+        10
+      ],
+      "certificate": "oriented_bitwise"
+    },
+    {
+      "op": "&",
+      "wiring": [
+        9,
+        10
+      ],
+      "certificate": "AND_zero"
+    },
+    {
+      "op": "|",
+      "wiring": [
+        9,
+        10
+      ],
+      "certificate": "oriented_bitwise"
+    }
+  ],
+  "one_result_tail_evidence": "codex/conservative_tail863_audit.json",
+  "chain_case": "If the second data/numerator operand is the prior result,0<=q2<=q1<=initial N. The arbitrary bounded-tail and chain certificates cover final operations reading either/both computed results, without assuming a dead dependency or a static shift count.",
+  "separate_initial_data_case": "If both data/numerator operands are initials, each output is bounded by its own initial. A last scalar/initial coefficient times one result plus the other is oriented with the other result as its concrete addend. An initial-data DIV addend has a prepared divisor (initial/prior-result divisors hit0); its entire domain is exhausted by the43 candidate checks. An initial-data SHR addend, even with a data-dependent count, has the recorded complete33-value spectrum at the zero witness. Product/offset, square/addend and AND families use zero/nonsquare witnesses independently of orientation.",
+  "valid_divisor_partition": "A nonconstant first DIV has an initial numerator and nonzero prepared divisor; every initial divisor reaches0. A later divisor equal to an initial or a prior value bounded by an initial also reaches0. Prepared-only divisions fold to root constants and reduce to the earlier single-division core. A second DIV numerator may be initial, prior result or prepared; these are the separate-data, chain or constant cases respectively.",
+  "excluded_orderings": {
+    "D_D_T": "complete for DIV/REM/CDIV,DIV/REM/CDIV,MAD/XOR/AND/OR, all legal operands/root constants.",
+    "initial_data_downward_pair_T": "complete for two DIV/REM/CDIV/SHR with data/numerator operands from initials or the previous result; SHR counts may be arbitrary initials/root/prior values. A prepared-only operation can be folded. Variable SHR of a prepared DATA constant is outside this added scope.",
+    "T_D_D": "Prior high-conservative-chain certificate: a first ordinary T followed by two divisions, no later mixing T.",
+    "D_T_D": "New high-only first-divisor interval certificate, with its unique e//65536 survivor excluded by the middle-T low16 polynomial/bitop systems.",
+    "D_T_SHR": "The same high-only certificate: a final right shift above2^31 must have count0 and equal its data, even with a data-dependent count.",
+    "D_D_D": "Prior high-conservative-chain certificate: division-only value paths cannot produce the target."
+  },
+  "ordinary_division_opcode_orders": [
+    {
+      "order": [
+        "mad",
+        "mad",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "^",
+        "mad",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "mad",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "mad",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "mad",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "mad",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "mad",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "mad",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "^",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "^",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "^",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "^",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "^",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "^",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "^",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "&",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "&",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "&",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "&",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "&",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "&",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "&",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "|",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "|",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "|",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "|",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "|",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "|",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "|",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "//",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "//",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "//",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "//",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "//",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "^",
+        "//",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "^",
+        "//",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "^",
+        "%",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "%",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "%",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "%",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "%",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "^",
+        "%",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "^",
+        "%",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "^",
+        "cdiv",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "cdiv",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "cdiv",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "cdiv",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "^",
+        "cdiv",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "^",
+        "cdiv",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "^",
+        "cdiv",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "&",
+        "mad",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "mad",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "mad",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "mad",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "mad",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "mad",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "mad",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "^",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "^",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "^",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "^",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "^",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "^",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "^",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "&",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "&",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "&",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "&",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "&",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "&",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "&",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "|",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "|",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "|",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "|",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "|",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "|",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "|",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "//",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "//",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "//",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "//",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "//",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "&",
+        "//",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "&",
+        "//",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "&",
+        "%",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "%",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "%",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "%",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "%",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "&",
+        "%",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "&",
+        "%",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "&",
+        "cdiv",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "cdiv",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "cdiv",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "cdiv",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "&",
+        "cdiv",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "&",
+        "cdiv",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "&",
+        "cdiv",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "|",
+        "mad",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "mad",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "mad",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "mad",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "mad",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "mad",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "mad",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "^",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "^",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "^",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "^",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "^",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "^",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "^",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "&",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "&",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "&",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "&",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "&",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "&",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "&",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "|",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "|",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "|",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "|",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "|",
+        "//"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "|",
+        "%"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "|",
+        "cdiv"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "//",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "//",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "//",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "//",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "//",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "|",
+        "//",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "|",
+        "//",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "|",
+        "%",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "%",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "%",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "%",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "%",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "|",
+        "%",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "|",
+        "%",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "|",
+        "cdiv",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "cdiv",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "cdiv",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "cdiv",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "|",
+        "cdiv",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "|",
+        "cdiv",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "|",
+        "cdiv",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "//",
+        "mad",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "mad",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "mad",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "mad",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "mad",
+        "//"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "//",
+        "mad",
+        "%"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "//",
+        "mad",
+        "cdiv"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "//",
+        "^",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "^",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "^",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "^",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "^",
+        "//"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "//",
+        "^",
+        "%"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "//",
+        "^",
+        "cdiv"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "//",
+        "&",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "&",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "&",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "&",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "&",
+        "//"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "//",
+        "&",
+        "%"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "//",
+        "&",
+        "cdiv"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "//",
+        "|",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "|",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "|",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "|",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "//",
+        "|",
+        "//"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "//",
+        "|",
+        "%"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "//",
+        "|",
+        "cdiv"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "//",
+        "//",
+        "mad"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "//",
+        "//",
+        "^"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "//",
+        "//",
+        "&"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "//",
+        "//",
+        "|"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "//",
+        "//",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "//",
+        "//",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "//",
+        "//",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "//",
+        "%",
+        "mad"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "//",
+        "%",
+        "^"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "//",
+        "%",
+        "&"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "//",
+        "%",
+        "|"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "//",
+        "%",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "//",
+        "%",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "//",
+        "%",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "//",
+        "cdiv",
+        "mad"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "//",
+        "cdiv",
+        "^"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "//",
+        "cdiv",
+        "&"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "//",
+        "cdiv",
+        "|"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "//",
+        "cdiv",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "//",
+        "cdiv",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "//",
+        "cdiv",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "%",
+        "mad",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "mad",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "mad",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "mad",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "mad",
+        "//"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "%",
+        "mad",
+        "%"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "%",
+        "mad",
+        "cdiv"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "%",
+        "^",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "^",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "^",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "^",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "^",
+        "//"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "%",
+        "^",
+        "%"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "%",
+        "^",
+        "cdiv"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "%",
+        "&",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "&",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "&",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "&",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "&",
+        "//"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "%",
+        "&",
+        "%"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "%",
+        "&",
+        "cdiv"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "%",
+        "|",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "|",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "|",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "|",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "%",
+        "|",
+        "//"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "%",
+        "|",
+        "%"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "%",
+        "|",
+        "cdiv"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "%",
+        "//",
+        "mad"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "%",
+        "//",
+        "^"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "%",
+        "//",
+        "&"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "%",
+        "//",
+        "|"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "%",
+        "//",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "%",
+        "//",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "%",
+        "//",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "%",
+        "%",
+        "mad"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "%",
+        "%",
+        "^"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "%",
+        "%",
+        "&"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "%",
+        "%",
+        "|"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "%",
+        "%",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "%",
+        "%",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "%",
+        "%",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "%",
+        "cdiv",
+        "mad"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "%",
+        "cdiv",
+        "^"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "%",
+        "cdiv",
+        "&"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "%",
+        "cdiv",
+        "|"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "%",
+        "cdiv",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "%",
+        "cdiv",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "%",
+        "cdiv",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "cdiv",
+        "mad",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "mad",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "mad",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "mad",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "mad",
+        "//"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "mad",
+        "%"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "mad",
+        "cdiv"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "^",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "^",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "^",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "^",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "^",
+        "//"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "^",
+        "%"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "^",
+        "cdiv"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "&",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "&",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "&",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "&",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "&",
+        "//"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "&",
+        "%"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "&",
+        "cdiv"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "|",
+        "mad"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "|",
+        "^"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "|",
+        "&"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "|",
+        "|"
+      ],
+      "certificate": "prior_single_division_core"
+    },
+    {
+      "order": [
+        "cdiv",
+        "|",
+        "//"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "|",
+        "%"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "|",
+        "cdiv"
+      ],
+      "certificate": "new_high_middle_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "//",
+        "mad"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "//",
+        "^"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "//",
+        "&"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "//",
+        "|"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "//",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "cdiv",
+        "//",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "cdiv",
+        "//",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "cdiv",
+        "%",
+        "mad"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "%",
+        "^"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "%",
+        "&"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "%",
+        "|"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "%",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "cdiv",
+        "%",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "cdiv",
+        "%",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "cdiv",
+        "cdiv",
+        "mad"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "cdiv",
+        "^"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "cdiv",
+        "&"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "cdiv",
+        "|"
+      ],
+      "certificate": "new_two_downward_T"
+    },
+    {
+      "order": [
+        "cdiv",
+        "cdiv",
+        "//"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "cdiv",
+        "cdiv",
+        "%"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    },
+    {
+      "order": [
+        "cdiv",
+        "cdiv",
+        "cdiv"
+      ],
+      "certificate": "prior_high_conservative_chain"
+    }
+  ],
+  "ordinary_division_three_op_core_complete": true,
+  "high_prefix_replays": 18,
+  "prepared_shift_normalization": "For a prepared count s<32, SHR(x,s) is floor(x/2^s), with a valid prepared uint32 divisor, and SHL(x,s) is MAD(x,2^s,0). Counts>=32 give0 in word semantics. These preserve or reduce the operation count, so the343-order core also covers prepared-count shifts in any placement. This does not normalize data-dependent shift counts.",
+  "legal_points": [
+    {
+      "primary_b": 0,
+      "prior": 984669626,
+      "values": [
+        1818584522,
+        1161276957,
+        3925396509,
+        2899272192,
+        0,
+        984669626,
+        3345078992,
+        6380,
+        6380
+      ],
+      "target": 4209921524,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 1054563911,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 1,
+      "prior": 1001442747,
+      "values": [
+        1818423539,
+        1161259070,
+        3925396542,
+        2899289088,
+        1,
+        1001442747,
+        3345078993,
+        6380,
+        6381
+      ],
+      "target": 306176758,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 1071337030,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 6380,
+      "prior": 2822374694,
+      "values": [
+        775046038,
+        1522546825,
+        3925607049,
+        3007068672,
+        6380,
+        2822374694,
+        3345072700,
+        6380,
+        0
+      ],
+      "target": 3481215467,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 297521838,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 6381,
+      "prior": 2839147815,
+      "values": [
+        775207615,
+        1522564778,
+        3925607082,
+        3007085568,
+        6381,
+        2839147815,
+        3345072701,
+        6380,
+        1
+      ],
+      "target": 2970585872,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 280502959,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 2116207,
+      "prior": 707912613,
+      "values": [
+        1554370193,
+        3995231340,
+        3995231340,
+        0,
+        2116207,
+        707912613,
+        3342962875,
+        6376,
+        2118279
+      ],
+      "target": 861223003,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 777674840,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 10504815,
+      "prior": 447931285,
+      "values": [
+        4045786769,
+        4272055404,
+        4272055404,
+        0,
+        10504815,
+        447931285,
+        3351351467,
+        6392,
+        10506903
+      ],
+      "target": 2274153435,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 517562472,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 271500163,
+      "prior": 4237672000,
+      "values": [
+        2455809733,
+        3140954112,
+        0,
+        3140954112,
+        271500163,
+        4237672000,
+        3612285782,
+        6889,
+        271505770
+      ],
+      "target": 2520826602,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 410809087,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 638333284,
+      "prior": 947036767,
+      "values": [
+        4251993806,
+        1,
+        3515558401,
+        3515558400,
+        638333284,
+        947036767,
+        3782078325,
+        7213,
+        638332233
+      ],
+      "target": 3273715685,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 1008279970,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 1312704356,
+      "prior": 3289671517,
+      "values": [
+        2455814350,
+        3140954625,
+        1,
+        3140954624,
+        1312704356,
+        3289671517,
+        2304742515,
+        4395,
+        1312708175
+      ],
+      "target": 2560727285,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 553495522,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 1820303686,
+      "prior": 2646141187,
+      "values": [
+        0,
+        1913649187,
+        3865876003,
+        2489544192,
+        1820303686,
+        2646141187,
+        2870900249,
+        5475,
+        1820308517
+      ],
+      "target": 131761799,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 607731339,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 2772291167,
+      "prior": 2337637138,
+      "values": [
+        1,
+        2868086364,
+        921724508,
+        2617499648,
+        2772291167,
+        2337637138,
+        1650196520,
+        3147,
+        2772288020
+      ],
+      "target": 131757702,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 852776090,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 2976967555,
+      "prior": 2710919783,
+      "values": [
+        4251993797,
+        0,
+        3381078016,
+        3381078016,
+        2976967555,
+        2710919783,
+        1980835709,
+        3778,
+        2976965953
+      ],
+      "target": 3273670618,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 404000239,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3115618544,
+      "prior": 0,
+      "values": [
+        3725871162,
+        3759290637,
+        3661593357,
+        976044544,
+        3115618544,
+        0,
+        2127912214,
+        4058,
+        3115622186
+      ],
+      "target": 2705710197,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 74155005,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3115622641,
+      "prior": 1,
+      "values": [
+        31248227,
+        3825995566,
+        3661728558,
+        1045267456,
+        3115622641,
+        1,
+        2127916311,
+        4058,
+        3115626283
+      ],
+      "target": 1392841956,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 74155004,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3345007164,
+      "prior": 2969371370,
+      "values": [
+        496751974,
+        59969497,
+        2641483225,
+        2665667072,
+        3345007164,
+        2969371370,
+        65536,
+        0,
+        3345007164
+      ],
+      "target": 2531520162,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 159176034,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3345072700,
+      "prior": 3237741290,
+      "values": [
+        1717622118,
+        2104496089,
+        2643645913,
+        3772963328,
+        3345072700,
+        3237741290,
+        0,
+        0,
+        3345072700
+      ],
+      "target": 713783181,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 605408853,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3345072701,
+      "prior": 3254514411,
+      "values": [
+        1718640783,
+        2104609274,
+        2643645946,
+        3772980224,
+        3345072701,
+        3254514411,
+        1,
+        0,
+        3345072701
+      ],
+      "target": 569138340,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 621952596,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 3345072702,
+      "prior": 3271287532,
+      "values": [
+        1718489016,
+        2104592411,
+        2643645979,
+        3772997120,
+        3345072702,
+        3271287532,
+        2,
+        0,
+        3345072702
+      ],
+      "target": 1189100989,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 638725715,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 4177070968,
+      "prior": 715743649,
+      "values": [
+        2,
+        3822523541,
+        34817685,
+        3787739648,
+        4177070968,
+        715743649,
+        1066978999,
+        2035,
+        4177071243
+      ],
+      "target": 131769993,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 0,
+        "leaf_index": 2000,
+        "leaf_value": 784523868,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    }
+  ],
+  "complete_in_stated_scope": true,
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "still_open": [
+    "Prepared-data/data-count SHR mixed with DIV; variable SHL and remaining data-dependent shift/comparison combinations, including REM with comparisons.",
+    "Additional free words, larger joint windows, root-conditional preparation/algorithms, nonlinear encodings, cross-lane and memory mechanisms."
+  ],
+  "no_global_optimality_claim": true
+}

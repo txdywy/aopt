@@ -1,0 +1,6012 @@
+{
+  "node": 2809010545,
+  "source": "codex/first_runtime_count863_scout_20261029.json.gz",
+  "source_sha256": "8afce61b458cbcd2c08793ba35700dbe11603c5e8935345515596c02c5ddc401",
+  "scope": "A first count computed by one T=MAD/XOR/AND/OR from the eight initial words and arbitrary root constants, used as the sole SHR count. Numerator and all remaining computation may be arbitrary-length T expressions, with all bypasses retained.",
+  "primary_fibres": [
+    [
+      0,
+      65536,
+      131072,
+      196608,
+      262144,
+      327680,
+      393216,
+      458752
+    ],
+    [
+      1,
+      65537,
+      131073,
+      196609,
+      262145,
+      327681,
+      393217,
+      458753
+    ],
+    [
+      2,
+      65538,
+      131074,
+      196610,
+      262146,
+      327682,
+      393218,
+      458754
+    ],
+    [
+      3,
+      65539,
+      131075,
+      196611,
+      262147,
+      327683,
+      393219,
+      458755
+    ],
+    [
+      4,
+      65540,
+      131076,
+      196612,
+      262148,
+      327684,
+      393220,
+      458756
+    ],
+    [
+      5,
+      65541,
+      131077,
+      196613,
+      262149,
+      327685,
+      393221,
+      458757
+    ],
+    [
+      6,
+      65542,
+      131078,
+      196614,
+      262150,
+      327686,
+      393222,
+      458758
+    ],
+    [
+      7,
+      65543,
+      131079,
+      196615,
+      262151,
+      327687,
+      393223,
+      458759
+    ],
+    [
+      8,
+      65544,
+      131080,
+      196616,
+      262152,
+      327688,
+      393224,
+      458760
+    ],
+    [
+      9,
+      65545,
+      131081,
+      196617,
+      262153,
+      327689,
+      393225,
+      458761
+    ],
+    [
+      10,
+      65546,
+      131082,
+      196618,
+      262154,
+      327690,
+      393226,
+      458762
+    ],
+    [
+      11,
+      65547,
+      131083,
+      196619,
+      262155,
+      327691,
+      393227,
+      458763
+    ],
+    [
+      12,
+      65548,
+      131084,
+      196620,
+      262156,
+      327692,
+      393228,
+      458764
+    ],
+    [
+      13,
+      65549,
+      131085,
+      196621,
+      262157,
+      327693,
+      393229,
+      458765
+    ],
+    [
+      14,
+      65550,
+      131086,
+      196622,
+      262158,
+      327694,
+      393230,
+      458766
+    ],
+    [
+      15,
+      65551,
+      131087,
+      196623,
+      262159,
+      327695,
+      393231,
+      458767
+    ],
+    [
+      524288,
+      589824,
+      655360,
+      720896,
+      786432,
+      851968,
+      917504,
+      983040
+    ],
+    [
+      524289,
+      589825,
+      655361,
+      720897,
+      786433,
+      851969,
+      917505,
+      983041
+    ],
+    [
+      2146445757,
+      2146511293,
+      2146576829,
+      2146642365,
+      2146707901,
+      2146773437,
+      2146838973,
+      2146904509
+    ],
+    [
+      2165886373,
+      2165951909,
+      2166017445,
+      2166082981,
+      2166148517,
+      2166214053,
+      2166279589,
+      2166345125
+    ],
+    [
+      3846184156,
+      3846249692,
+      3846315228,
+      3846380764,
+      3846446300,
+      3846511836,
+      3846577372,
+      3846642908
+    ],
+    [
+      1200646437,
+      1200711973,
+      1200777509,
+      1200843045,
+      1200908581,
+      1200974117,
+      1201039653,
+      1201105189
+    ],
+    [
+      3023067771,
+      3023133307,
+      3023198843,
+      3023264379,
+      3023329915,
+      3023395451,
+      3023460987,
+      3023526523
+    ],
+    [
+      2994790757,
+      2994856293,
+      2994921829,
+      2994987365,
+      2995052901,
+      2995118437,
+      2995183973,
+      2995249509
+    ],
+    [
+      2919293222,
+      2919358758,
+      2919424294,
+      2919489830,
+      2919555366,
+      2919620902,
+      2919686438,
+      2919751974
+    ],
+    [
+      2520838342,
+      2520903878,
+      2520969414,
+      2521034950,
+      2521100486,
+      2521166022,
+      2521231558,
+      2521297094
+    ],
+    [
+      887681435,
+      887746971,
+      887812507,
+      887878043,
+      887943579,
+      888009115,
+      888074651,
+      888140187
+    ],
+    [
+      3480238351,
+      3480303887,
+      3480369423,
+      3480434959,
+      3480500495,
+      3480566031,
+      3480631567,
+      3480697103
+    ],
+    [
+      2096127718,
+      2096193254,
+      2096258790,
+      2096324326,
+      2096389862,
+      2096455398,
+      2096520934,
+      2096586470
+    ],
+    [
+      3840950433,
+      3841015969,
+      3841081505,
+      3841147041,
+      3841212577,
+      3841278113,
+      3841343649,
+      3841409185
+    ],
+    [
+      2771948208,
+      2772013744,
+      2772079280,
+      2772144816,
+      2772210352,
+      2772275888,
+      2772341424,
+      2772406960
+    ],
+    [
+      794866277,
+      794931813,
+      794997349,
+      795062885,
+      795128421,
+      795193957,
+      795259493,
+      795325029
+    ],
+    [
+      104376562,
+      104442098,
+      104507634,
+      104573170,
+      104638706,
+      104704242,
+      104769778,
+      104835314
+    ],
+    [
+      1863328305,
+      1863393841,
+      1863459377,
+      1863524913,
+      1863590449,
+      1863655985,
+      1863721521,
+      1863787057
+    ]
+  ],
+  "checks": [
+    {
+      "op": "^",
+      "source": 0,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0194,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 1,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0158,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 2,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0152,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 3,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.013,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0165,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0062,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0133,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0191,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 0,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0219,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 1,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0167,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 2,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0157,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 3,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.019,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0179,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0108,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0011,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0059,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 0,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0151,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 1,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0146,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 2,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0139,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 3,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0146,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0157,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.016,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0116,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0148,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 0,
+      "other": 0,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0107,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 0,
+      "other": 1,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0125,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 0,
+      "other": 2,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0115,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 0,
+      "other": 3,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0161,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 0,
+      "other": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0121,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 0,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0224,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 0,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0123,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 0,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 1,
+      "other": 1,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0149,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 1,
+      "other": 2,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0038,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 1,
+      "other": 3,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0007,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 1,
+      "other": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0048,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 1,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0112,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 1,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0143,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 1,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0089,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 2,
+      "other": 2,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0065,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 2,
+      "other": 3,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 2,
+      "other": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 2,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0006,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 2,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0017,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 2,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0028,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 3,
+      "other": 3,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0116,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 3,
+      "other": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 3,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0106,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 3,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0019,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 3,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0031,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 4,
+      "other": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0003,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 4,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0053,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 4,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0046,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 4,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0049,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 5,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0077,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 5,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0033,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 5,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 6,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0012,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 6,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0004,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "^",
+      "source": 7,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0056,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 0,
+      "other": 0,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0122,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 0,
+      "other": 1,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 0,
+      "other": 2,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 0,
+      "other": 3,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0026,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 0,
+      "other": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 0,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0056,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 0,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 0,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 1,
+      "other": 1,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 1,
+      "other": 2,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0046,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 1,
+      "other": 3,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0065,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 1,
+      "other": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0056,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 1,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0018,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 1,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0009,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 1,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0056,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 2,
+      "other": 2,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0012,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 2,
+      "other": 3,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0015,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 2,
+      "other": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0025,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 2,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 2,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0056,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 2,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0004,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 3,
+      "other": 3,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0025,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 3,
+      "other": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 3,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0056,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 3,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0025,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 3,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 4,
+      "other": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0057,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 4,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.001,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 4,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0017,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 4,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0056,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 5,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 5,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0026,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 5,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 6,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0056,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 6,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "&",
+      "source": 7,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0008,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 0,
+      "other": 0,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0056,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 0,
+      "other": 1,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0014,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 0,
+      "other": 2,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0014,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 0,
+      "other": 3,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0056,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 0,
+      "other": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 0,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 0,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0056,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 0,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 1,
+      "other": 1,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0049,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 1,
+      "other": 2,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0064,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 1,
+      "other": 3,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0001,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 1,
+      "other": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 1,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0107,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 1,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 1,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 2,
+      "other": 2,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 2,
+      "other": 3,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 2,
+      "other": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 2,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 2,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 2,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 3,
+      "other": 3,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0001,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 3,
+      "other": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0007,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 3,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0001,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 3,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0031,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 3,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 4,
+      "other": 4,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 4,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0064,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 4,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 4,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0027,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 5,
+      "other": 5,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 5,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 5,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0036,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 6,
+      "other": 6,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0075,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 6,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "|",
+      "source": 7,
+      "other": 7,
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.004,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0017,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0025,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0052,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0046,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0077,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0039,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        0,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0104,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0043,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0012,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        1,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0104,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0104,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        2,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0058,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0052,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0019,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0032,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0066,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        3,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0104,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0032,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        4,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0033,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0011,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0012,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.005,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0038,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0074,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        5,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        6,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0048,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0051,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0062,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0016,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0041,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0021,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0053,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        7,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0014,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0039,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0121,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0121,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0135,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0122,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0043,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0056,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0029,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        0,
+        8,
+        9
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0095,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.005,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0042,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0033,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0035,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        1,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0025,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0036,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.004,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0068,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0005,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0021,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        2,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0019,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0104,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        3,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0023,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0017,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.005,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0023,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0016,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0009,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        4,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0034,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0051,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0009,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0016,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0008,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0018,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0025,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        5,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0104,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        6,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0039,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0053,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0011,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0014,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.005,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        7,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0031,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0041,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0138,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0019,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0141,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.012,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.012,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0125,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        1,
+        8,
+        9
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.012,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0001,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        2,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0078,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0053,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0107,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0006,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        3,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0003,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        4,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0021,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0052,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0043,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0065,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0052,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0016,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0032,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        5,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0051,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0005,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0105,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        6,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.003,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0001,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0022,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0004,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0021,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        7,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0082,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0027,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 1.19,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0135,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0152,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0028,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0712,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0135,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.1433,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        2,
+        8,
+        9
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.1226,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0023,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0116,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0113,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0104,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        3,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0104,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0104,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        4,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0035,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.005,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0053,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.005,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0041,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        5,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0106,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.006,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0012,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0011,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0016,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        6,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0144,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0109,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0076,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0001,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0059,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0073,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0049,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        7,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0125,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0126,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.013,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0032,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0063,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0091,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0027,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0049,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        3,
+        8,
+        9
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0049,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0036,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0011,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0028,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0016,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0008,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0047,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        4,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        5,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0073,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0051,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0051,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0044,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0063,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0027,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0004,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0011,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0016,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        6,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0044,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0104,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        7,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0124,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0125,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0127,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0154,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0127,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0127,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0122,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0122,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0131,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        4,
+        8,
+        9
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0122,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0104,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.011,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0003,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.005,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0027,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0037,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0012,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        5,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0063,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0051,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0005,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0003,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0022,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0053,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        6,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0068,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0053,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0137,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0031,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0077,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        7,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.004,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0034,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0037,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0119,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0121,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0025,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0036,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0035,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0046,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        5,
+        8,
+        9
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0048,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.005,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.003,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0077,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0053,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0036,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0053,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0053,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        6,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0001,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.002,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0053,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0055,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        7,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0027,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0039,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0007,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0083,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0053,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        6,
+        8,
+        9
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0106,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.008,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0054,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        7,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0118,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.012,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0122,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0119,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.012,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0119,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0118,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.012,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        8
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0133,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        7,
+        8,
+        9
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0167,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0007,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0056,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0006,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0081,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        8,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        0
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        1
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        2
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0041,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        3
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0102,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        4
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        5
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        6
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.001,
+      "root_constants_unrestricted": true
+    },
+    {
+      "op": "mad",
+      "wiring": [
+        8,
+        9,
+        7
+      ],
+      "status": "finite_constancy_implies_full32_constant",
+      "seconds": 0.0103,
+      "root_constants_unrestricted": true
+    }
+  ],
+  "counts": {
+    "finite_constancy_implies_full32_constant": 552
+  },
+  "every_one_T_count_must_be_root_constant": true,
+  "constant_count_minimum": 16,
+  "constant_count_maximum": 23,
+  "proof": "Each eight-point fibre has fixed T-prefix/suffix low3 and eight distinct target low3 values. Therefore all q low3 values must be distinct, so at most one count may clamp to0. The finite screen proves every first-T count satisfying this condition and the universal band is constant on the probe set. Separate QF_BV queries quantify over all full32 b/root parameters and prove finite constancy implies full32 constancy for every count wiring. A constant count cannot clamp, so it lies in16..23.",
+  "new_executable": false,
+  "best_executable_cycles": 864,
+  "no_global_optimality_claim": true
+}

@@ -6,7 +6,14 @@ An identical, separately preserved 864-cycle copy is
 It executes **864 cycles**, a **170.99x** speedup over the 147734-cycle baseline.
 This improves the previous 865 result by one cycle and reaches the 864 target.
 The previous [`perf_takehome_865.py`](perf_takehome_865.py) is unchanged.
-The latest [quotient-range and keyed-live study](SUB863_QUOTIENT_RANGE_20261029.md)
+The latest [runtime-count study](SUB863_RUNTIME_COUNT_20261029.md) establishes
+a global 16..23 low-half count band and a 65535 quotient bound for a sole SHR.
+It excludes 5,520 first-count prefixes, proves all 552 one-T count shapes
+must become prepared constants, and closes 1,656 count-aware final-MAD
+connections. The third tail uses 4,718,592 parameter cases checked by two
+independent implementations. These are scoped local exclusions; the
+executable remains 864 and broader grammars remain open.
+The preceding [quotient-range and keyed-live study](SUB863_QUOTIENT_RANGE_20261029.md)
 closes the remaining 127 prepared-division connections, completing the
 528-connection sample. It also excludes 1,899 distinct four-op C5-absorption
 connections with earlier live values. A four-point masked-prior certificate

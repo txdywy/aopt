@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-29",
+  "validated_at_utc": "2026-10-29T12:39:36.904456+00:00",
+  "base_commit": "e17df70a885dd57272477a8989cab74239291441",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "no_global_optimality_claim": true,
+  "runtime": {
+    "numpy": "2.3.5",
+    "z3": "5.1.0"
+  },
+  "regression": {
+    "tests": 50,
+    "new_tests": 22,
+    "result": "OK",
+    "seconds": 9.608,
+    "log_sha256": "b3430be47bc2e72c1f59e75d7d99a968c0f7e308390202517c22cb67296c184c"
+  },
+  "complete_count_band": {
+    "low16": [
+      16,
+      23
+    ],
+    "quotient_maximum": 65535,
+    "signatures": 32768,
+    "primary_inputs": 33554432,
+    "minimum_low9_image": 387
+  },
+  "first_count": {
+    "shapes": 552,
+    "finite_queries_freshly_replayed": true,
+    "full32_constancy_queries_freshly_replayed": true,
+    "all_counts_are_constant": true
+  },
+  "first_prefixes": {
+    "connections": 5520,
+    "remaining": 0,
+    "original_unknowns_preserved": 50,
+    "independently_reduced_by_full32_count_constancy_and64_raw_shift_pairs": true,
+    "original_bit0_screens_preserved_not_reexecuted": true
+  },
+  "final_MAD": {
+    "connections": 1656,
+    "remaining": 0,
+    "original_unknowns_preserved": 194,
+    "all552_free_parameter_rectangle_checks_replayed": true,
+    "inverse_parameters": 4718592,
+    "vector_scan_replayed": true,
+    "independent_scalar_full_word_scan_preserved": true
+  },
+  "current_validated_source_sha256": {
+    "README.md": "bd10777744498e452051a77856d5fcbab8d8905a9e0f460847dc98785778d57b",
+    "codex/README.md": "6ecccc411010bd4c95092f1cdc14134142dbf2d1c148d8a37bdef375c8d5686f",
+    "codex/SUB863_RUNTIME_COUNT_20261029.md": "12e7086b3a5a30160871cbdde0cf68fd2a15c60358cb00c23db514e8d07e28b0",
+    "codex/audit_runtime_shift_band863.py": "cfa727d96f6df9a5fc6d544ed9fde9eff88973bd51a8a67ef6c4b797aed33dc6",
+    "codex/audit_runtime_count_tail863.py": "dbbc4c598b0ce0012b43a616a5fa737762f1dfbf940a25e9dde5cb17a92ed48d",
+    "codex/close_runtime_count_prefix863.py": "d298fc2d3f5f6c3e13c670cb3a08ce6e6f7d352ec798ec669962f2b486af3218",
+    "codex/enumerate_runtime_count_tail863.py": "193784abe50418b998fdd0f09223402efb050eb88708df2c97c45b902048cce3",
+    "codex/search_first_runtime_count863.py": "1c0731a03ba6e26d35dd96ea3ceebeb0451511d871a808287e3435cbaa64e68e",
+    "codex/search_runtime_count_prefix863.py": "0047ab506fbe2d0e7acb984c26c9af50dbe5321ad619cbbe3cd54dff43285a02",
+    "codex/search_runtime_count_tail863.py": "5239b99d2e7a7e76ea548718e115bba807d6abf30ddf9d9ab2d1040ab843f0fd",
+    "codex/test_runtime_count_prefix863.py": "aaf00303853b339310d2f70ac0fd0021dfc7d1ac874d1ac325915f531717c4d3",
+    "codex/validate_runtime_count863.py": "84facc1cfb660efa8f6d80e58fb92b7d9a63276901b011b1a742dc1aee9f5b9b",
+    "codex/audit_division_first_t863.py": "37f25bb50fd8b950cf7a06bb116ded90b6d825531e7832bc7c5dfe0d6ab8abcd",
+    "codex/cegis_c1_absorb863.py": "df605483a257541a851a5aa85b3c4216628951a199d74a2cf90942097a70949a",
+    "codex/search_early_boundary863.py": "06febc0ec84f3869ee7f60da4467f562ca048791c2880c8b4ce6633876ff344d",
+    "codex/search_joint_live_boundary863.py": "b12329885308f5725bc61d8e7aab076d8770e97e5b57e9190d0aa6babb249fd5",
+    "codex/search_live_boundary863.py": "c57ae922fbf0b4b488bae4e6abff9a5535772d9f719f475ea56a67664bda1e4f",
+    "codex/search_root_boundary863.py": "a7ef7f3003165af769463a839900f6213df42ff152b55599b3947b364198d855",
+    "codex/scout_joint_wirings863.py": "45390de997e3bf5afd9a701497871b016c486e6ead37407aea8b1788966ddcc8",
+    "codex/test_live_boundary863.py": "aec931ae1aa647b3064377fcbeb28c45470b7368266c461984d447d558fca0d8"
+  },
+  "artifact_sha256": {
+    "codex/runtime_shift_band863_audit_20261029.json": "bb32467b755a89b607e1c71011e57d59566be571448d2833320158221a4d7c41",
+    "codex/runtime_count_prefix863_closed_20261029.json": "d20d43a11b7fcfeb17ade291ba91f5f553e69e7eb59ce089ed205b8212185b76",
+    "codex/runtime_count_prefix863_constant_20261029.json.gz": "6aa80d3a1300483c3d3429d4d3a315d265516a8e66d31e9ea4f236e93669e553",
+    "codex/runtime_count_prefix863_binary_20261029.json.gz": "058f0bedc41ccdfd7675fd3af36ece5eaebf3c53a7297a781bc9e87059dec1f7",
+    "codex/runtime_count_prefix863_mad_20261029.json.gz": "2afd428d01684e591179083357dc76619a528a355be5aaf1fcc8b8154d7259a0",
+    "codex/first_runtime_count863_scout_20261029.json.gz": "8afce61b458cbcd2c08793ba35700dbe11603c5e8935345515596c02c5ddc401",
+    "codex/first_runtime_count863_closed_20261029.json": "3340889403aaa09114243766fbac00694748c407ac1fcf210001116771f5b92a",
+    "codex/runtime_count_tail863_scout_20261029.json.gz": "2797afa0e7e49549b5b0f108c7e0a831dcd5a65ac51aceb3a3d5381535879f32",
+    "codex/runtime_count_tail863_rectangles_20261029.json": "8966639b88dc223b35dcd8cf6b0ff6b5119fbd32728e9d72f74acb7f3c64cd30",
+    "codex/runtime_count_tail863_inverse_20261029.json": "c4dec17227eac79246083cf495172f989855ed835a35582c8a7b073794cd97b4",
+    "codex/runtime_count_tail863_audit_20261029.json": "6c683f856e3cb0225a0776601eb28fcf449ffd16605e29c31de11e1454b7e737"
+  },
+  "protected_source_sha256": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  },
+  "compressed_archives": [
+    {
+      "path": "codex/runtime_count_prefix863_constant_20261029.json.gz",
+      "encoded_bytes": 2900,
+      "decoded_bytes": 89649,
+      "decoded_sha256": "89fe5d630730915f192bec56f3b294b56a7b42c11fde46a4d31dc4eaa2516582"
+    },
+    {
+      "path": "codex/runtime_count_prefix863_binary_20261029.json.gz",
+      "encoded_bytes": 10850,
+      "decoded_bytes": 426282,
+      "decoded_sha256": "76252a43937423eb718f56b35b744602f9dedb870f1de3c22973dfd1764086bd"
+    },
+    {
+      "path": "codex/runtime_count_prefix863_mad_20261029.json.gz",
+      "encoded_bytes": 46045,
+      "decoded_bytes": 1786505,
+      "decoded_sha256": "062a151c181b3291012b410e4276b7889ff98318850bf82972cebe2af101a20c"
+    },
+    {
+      "path": "codex/first_runtime_count863_scout_20261029.json.gz",
+      "encoded_bytes": 8790,
+      "decoded_bytes": 122988,
+      "decoded_sha256": "52ee81ff856e62fe32e3a172aa3a74f9e8c649b415825000f194466215968f5a"
+    },
+    {
+      "path": "codex/runtime_count_tail863_scout_20261029.json.gz",
+      "encoded_bytes": 12861,
+      "decoded_bytes": 209252,
+      "decoded_sha256": "16881c24ae447dafd0875d4b861999f65797ff01b199c3b78f7beb48ff15296d"
+    }
+  ],
+  "frozen_tests_and_problem_unchanged": true,
+  "prior_official_evidence": {
+    "path": "codex/root_boundary863_validation.json",
+    "sha256": "2b8a33054353015dfad1bbe7794f3f27803c2c933d7012e737b141d74740e5e4",
+    "tests": 9,
+    "cycles": 864,
+    "not_rerun": true
+  },
+  "provenance": "Earlier UNKNOWN observations are retained. Current source/proof fingerprints are validated after all edits. The strongest552 count screens and their full32 interpolation queries are reexecuted; this independently reduces all5520 prefixes. The complete inverse scan was run with two independent implementations; this validator reexecutes its vector form and verifies its final scanner fingerprint.",
+  "still_open": [
+    "two-or-more-T count prefixes outside these final MAD families",
+    "final tails not reading the count",
+    "multiple non-T operations",
+    "other live words/encodings",
+    "new layouts or whole-kernel algorithms"
+  ]
+}

@@ -19,7 +19,9 @@ def frozen(row,constants,initial):
     for op,w,cc in zip(row['order'],row['wiring'],constants):
         pool=values+[vec([k]*8) for k in cc]
         args=[pool[j] for j in w];out=vec([0]*8)
-        slot=('>>',out,args[0],shift) if op=='shr16' else ('multiply_add' if op=='mad' else op,out,*args)
+        slot=((('>>' if op in ('shr16','shr') else op),out,args[0],shift if op=='shr16' else pool[len(values)])
+              if op in ('shr16','shr') or op in ('//','%','cdiv') and len(w)==1
+              else ('multiply_add' if op=='mad' else op,out,*args))
         program.append({'valu':[slot]});values.append(out)
     m=Machine([0]*32,program,DebugInfo({}));m.enable_pause=False;m.enable_debug=False
     for base,data in setup.items():m.cores[0].scratch[base:base+8]=data

@@ -62,7 +62,7 @@ def parity_models(row):
         values = list(initial_truth_tables())
         for op, w, cc in zip(row['order'], row['wiring'], constants):
             pool = values+cc
-            if op == 'shr16':
+            if op in ('shr16', 'shr', '//', '%', 'cdiv'):
                 v = 0xAA
             else:
                 a, b = pool[w[0]], pool[w[1]]
@@ -125,18 +125,83 @@ def sample_data(dense=False):
     return ps, tests, [inputs(p) for p in ps], values
 
 
-def solve(row, node, seconds, pins=(), dense=False, extra_points=()):
+def prefix_cut_guards(row, constants):
+    """Permutation cuts with a proved T-only data ancestry, at any prefix.
+
+    Only z/u/v/b are T functions of b among the eight initials. Do not
+    assume this for prior/a/s19/mix, even if they happen to be bijective.
+    """
+    n=len(NAMES); memo={}
+    def t_ancestry(index):
+        if index<n:return index<4
+        if index in memo:return memo[index]
+        i=index-n
+        answer=(row['order'][i] in ('mad','^','&','|') and
+                all(t_ancestry(j) for j in row['wiring'][i] if j<n+i))
+        memo[index]=answer;return answer
+    guards=[]
+    for i in range(len(row['order'])):
+        if not t_ancestry(n+i) or primary_path_avoiding(row,n,False,n+i):continue
+        prefix=dict(order=row['order'][:i+1],wiring=row['wiring'][:i+1])
+        low=[expression(prefix,constants[:i+1],inputs(b))&3 for b in range(4)]
+        guards.append((n+i,z3.Distinct(*(v if z3.is_expr(v) else z3.BitVecVal(v,32) for v in low))))
+    return guards
+
+
+def solve(row, node, seconds, pins=(), dense=False, extra_points=(), division_encoding='native'):
+    nonlinear = ('shr16', 'shr', '//', '%', 'cdiv')
+    assert all(op in ('mad','^','&','|',*nonlinear) for op in row['order']), 'Unsupported operation in ordinary/prepared-operand search'
+    assert division_encoding in ('native','product')
+    if any(op in ('shr', '//', '%', 'cdiv') for op in row['order']):
+        assert sum(op in nonlinear for op in row['order']) == 1, 'Prepared-operand search requires exactly one right shift or division'
+        assert all(len(w)==1 and 0<=w[0]<len(NAMES)+i for i,(op,w) in enumerate(zip(row['order'],row['wiring'])) if op in nonlinear), 'Prepared operand is a private constant, not a runtime wire'
+    for i,(op,w) in enumerate(zip(row['order'],row['wiring'])):
+        assert len(w)==(3 if op=='mad' else 1 if op in nonlinear else 2)
+        assert all(0<=j<len(NAMES)+i+2 for j in w)
     start = time.monotonic(); n = len(NAMES)
     ks = [z3.BitVecs(f'joint_{i}a joint_{i}b', 32) for i in range(len(row['order']))]
     for i, op in enumerate(row['order']):
-        if op == 'shr16' and not primary_path_avoiding(row, n, False, n+i):
+        if op in ('shr16', 'shr') and not primary_path_avoiding(row, n, False, n+i):
             return dict(row, status='shift_wordcut_excluded', seconds=0,
                         certificate='SHR16 is a primary-data word cut; target is a permutation')
+        if op in ('//', '%', 'cdiv') and not primary_path_avoiding(row,n,False,n+i):
+            return dict(row,status='division_wordcut_excluded',seconds=0,
+                        certificate='A prepared DIV/CDIV divisor>=2 or REM divisor<=MASK has fewer than2^32 outputs; a true value cut cannot produce the target permutation.')
     low = parity_models(row)
     if not low:
         return dict(row, status='lsb_dependency_excluded', seconds=0,
                     certificate='Shifted bit0 cannot affect output in every b0/b19 class')
+    info=None
+    if node==NODE and sum(op in nonlinear for op in row['order'])==1:
+        from codex.audit_one_high_tail863 import information_fibre,ordinary_tail_certificate
+        info=information_fibre();tail=ordinary_tail_certificate(row,node)
+        if tail is not None:
+            return dict(row,node=node,status='one_high_tail_excluded',full32_semantics=True,free_e=False,
+                        certificate=tail,seconds=round(time.monotonic()-start,4),new_executable=False)
+        from codex.joint_polynomial_quotient863 import applicable
+        polynomial=applicable(row,node)
+        if polynomial is not None:
+            return dict(row,node=node,status='polynomial_quotient_excluded',full32_semantics=True,free_e=False,
+                        certificate=polynomial,seconds=round(time.monotonic()-start,4),new_executable=False)
     s = z3.SolverFor('QF_BV')
+    # The optional `shr` opcode chooses a root-only prepared count. For
+    # this target a unique right shift must use16..31: all initial low16
+    # are unchanged by b^65536, while the target bit0 flips. Counts below
+    #16 or above31 therefore cannot transmit the required information.
+    for i, op in enumerate(row['order']):
+        if op == 'shr':
+            s.add(z3.UGE(ks[i][0], 16), z3.ULE(ks[i][0], 31))
+        if op in ('//', 'cdiv'):
+            # Divisor1 leaves a T-only prefix and cannot change target bit0.
+            s.add(z3.UGE(ks[i][0],2))
+        if op == '%':
+            # An even divisor preserves numerator bit0 within every class.
+            s.add(z3.UGE(ks[i][0],3),ks[i][0]&1==1)
+        if info is not None:
+            if op=='shr':s.add(z3.ULE(ks[i][0],info['prepared_right_shift_max']))
+            if op=='//':s.add(z3.ULE(ks[i][0],info['prepared_floor_divisor_max']))
+            if op=='%':s.add(z3.ULE(ks[i][0],info['prepared_remainder_divisor_max']))
+            if op=='cdiv':s.add(z3.ULE(ks[i][0],info['prepared_ceil_divisor_max']))
     last = len(row['order'])-1
     inverse_tail = row['order'][-1] == 'mad' and row['wiring'][-1] == [n+last-1, n+last, n+last+1]
     inverse_a, inverse_b = z3.BitVecs('joint_inverse_tail_A joint_inverse_tail_B', 32)
@@ -157,22 +222,35 @@ def solve(row, node, seconds, pins=(), dense=False, extra_points=()):
         else:
             s.add(ks[i][j] == (value & MASK))
     prefix = dict(order=row['order'][:-1], wiring=row['wiring'][:-1])
-    first_t_wordcut = (row['order'][0] == 'mad' and
-                      all(j >= n or j < 4 for j in row['wiring'][0]) and
-                      not primary_path_avoiding(row, n, False, n))
-    if first_t_wordcut:
-        # Only z/u/v/b are T functions of b. This condition is deliberately
-        # withheld whenever prior/a/s19/mix or any genuine input bypass is read.
-        first = dict(order=row['order'][:1], wiring=row['wiring'][:1])
-        low_images = [expression(first, ks[:1], inputs(p)) & 3 for p in range(4)]
-        # A MAD reading only existing words has no symbolic operand on a
-        # concrete synthesis sample. Distinct still needs typed BV values.
-        s.add(z3.Distinct(*(v if z3.is_expr(v) else z3.BitVecVal(v, 32) for v in low_images)))
+    guards=prefix_cut_guards(row,ks)
+    first_t_wordcut=row['order'][0]=='mad' and any(cut==n for cut,_ in guards)
+    if guards:
+        cut_check=z3.SolverFor('QF_BV');cut_check.set(timeout=200)
+        cut_check.add(*(formula for _,formula in guards))
+        if cut_check.check()==z3.unsat:
+            return dict(row,node=node,status='unsat',events=[],full32_semantics=True,free_e=False,
+                        first_prefix_mod4_guard_used=first_t_wordcut,
+                        prefix_mod4_guard_cuts=[cut for cut,_ in guards],
+                        certificate='A T-only value cut cannot preserve permutation modulo4, for any prepared constants.',
+                        pinned_constants=[list(p) for p in pins],seconds=round(time.monotonic()-start,4),new_executable=False)
+        s.add(*(formula for _,formula in guards))
+    if info is not None:
+        from codex.audit_quotient_pair863 import applicable as paired_cut
+        paired=paired_cut(row,node)
+        if paired is not None:
+            return dict(row,node=node,status='quotient_pair_excluded',full32_semantics=True,free_e=False,
+                        certificate=paired,seconds=round(time.monotonic()-start,4),new_executable=False)
+    sample_count=0
     def add(v):
-        if inverse_tail:
-            s.add(expression(prefix, ks[:-1], v) == inverse_a*wanted(v, node)+inverse_b)
+        nonlocal sample_count
+        if division_encoding=='product' and any(op in ('//','%','cdiv') for op in row['order']):
+            from codex.joint_division_relation863 import sample
+            values,conditions=sample(row,ks,v,f'joint_div_sample_{sample_count}');sample_count+=1
+            s.add(*conditions)
+            out=values[-2] if inverse_tail else values[-1]
         else:
-            s.add(expression(row, ks, v) == wanted(v, node))
+            out=expression(prefix,ks[:-1],v) if inverse_tail else expression(row,ks,v)
+        s.add(out==inverse_a*wanted(v,node)+inverse_b if inverse_tail else out==wanted(v,node))
     initial, tests, vv, values = sample_data(dense)
     if extra_points:
         assert all(isinstance(p, int) and 0 <= p <= MASK for p in extra_points)
@@ -185,9 +263,12 @@ def solve(row, node, seconds, pins=(), dense=False, extra_points=()):
         expected = wanted(values, np.uint64(node))
     report = dict(row, node=node, status='unknown', events=[], pinned_constants=[list(p) for p in pins],
                   full32_semantics=True, free_e=False, first_prefix_mod4_guard_used=first_t_wordcut,
+                  prefix_mod4_guard_cuts=[cut for cut,_ in guards],
+                  information_fibre_used=info is not None,
                   inverse_affine_tail_normalization=inverse_tail,
                   dense_fibres=dense,
                   extra_primary_points=list(extra_points),
+                  division_encoding=division_encoding,
                   new_executable=False)
     while time.monotonic()-start < seconds:
         s.set(timeout=max(1, int((seconds-time.monotonic()+start)*1000)))
@@ -258,7 +339,7 @@ def main():
         args.family = old.get('family', 'sample')
         args.dense_fibres = args.dense_fibres or old.get('dense_fibres', False)
         rows = [{k:r[k] for k in ('order', 'wiring')} for r in old['results']
-                if r['status'] not in ('unsat', 'shift_wordcut_excluded', 'lsb_dependency_excluded', 'proved_equivalent')]
+                if r['status'] not in ('unsat', 'shift_wordcut_excluded', 'lsb_dependency_excluded', 'one_high_tail_excluded', 'polynomial_quotient_excluded', 'quotient_pair_excluded', 'proved_equivalent')]
         stats = old['orders']
         source = dict(source=str(args.refine_from), source_sha256=hashlib.sha256(encoded).hexdigest())
     else:

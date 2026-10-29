@@ -48,7 +48,23 @@ def expression(row,constants,values):
     vals=list(values)
     for op,w,cc in zip(row['order'],row['wiring'],constants):
         pool=vals+list(cc);a=pool[w[0]]
-        if op=='shr16':v=z3.LShR(a,16) if z3.is_bv(a) else a>>16
+        if op in ('shr16', 'shr'):
+            count = 16 if op == 'shr16' else cc[0]
+            v = z3.LShR(a, count) if z3.is_bv(a) or z3.is_bv(count) else a >> count
+        elif op in ('//', '%', 'cdiv'):
+            divisor = cc[0]
+            if not z3.is_bv(divisor) and divisor == 0:
+                raise ZeroDivisionError('prepared divisor must be nonzero')
+            if z3.is_bv(a) or z3.is_bv(divisor):
+                if op == '//': v = z3.UDiv(a, divisor)
+                elif op == '%': v = z3.URem(a, divisor)
+                else:
+                    aa = a if z3.is_bv(a) else z3.BitVecVal(int(a),32)
+                    dd = divisor if z3.is_bv(divisor) else z3.BitVecVal(int(divisor),32)
+                    wide_d = z3.ZeroExt(1,dd)
+                    v = z3.Extract(31,0,z3.UDiv(z3.ZeroExt(1,aa)+wide_d-1,wide_d))
+            else:
+                v = a//divisor if op == '//' else a%divisor if op == '%' else (a+divisor-1)//divisor
         else:
             b=pool[w[1]]
             if op=='mad':v=a*b+pool[w[2]]

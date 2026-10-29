@@ -6,12 +6,19 @@ An identical, separately preserved 864-cycle copy is
 It executes **864 cycles**, a **170.99x** speedup over the 147734-cycle baseline.
 This improves the previous 865 result by one cycle and reaches the 864 target.
 The previous [`perf_takehome_865.py`](perf_takehome_865.py) is unchanged.
-The latest [multiple-division audit](SUB863_TWO_DIVISION_20261029.md)
+The latest [prepared-shift and division study](SUB863_PREPARED_OPERANDS_20261029.md)
+checks 1,384 four-op connections with a synthesized prepared shift count;
+all sampled connections are excluded. A separate 528-connection general
+division search still has 127 unresolved connections. The study adds a
+478-state information bound, arbitrary one-high-word tail certificates,
+complete permutation-sum divisor scans and a wide-product division encoding.
+All 118 research tests pass. The executable remains 864, with no new score.
+The preceding [multiple-division audit](SUB863_TWO_DIVISION_20261029.md)
 closes all 343 three-instruction orders over MAD/XOR/AND/OR/DIV/REM/CDIV
 on the stated nine live words, including arbitrary root-only constants and
 prepared-count shifts. It also covers two initial-data downward operations
 with variable right-shift counts, and DIV/bitop-or-MAD/final-SHR.
-All 97 research tests pass. The executable remains 864; prepared-data variable
+Prepared-data variable
 shifts, further variable-shift combinations and broader algorithms remain open.
 The [expanded four-instruction search](SUB863_JOINT_FOCUSED_20261029.md)
 adds 16,020 distinct connections beyond the earlier two four-op manifests.

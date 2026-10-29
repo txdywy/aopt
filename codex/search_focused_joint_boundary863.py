@@ -117,7 +117,7 @@ def main():
         previous = json.loads(decoded)
         assert previous['completed'] == len(previous['manifest']) == len(previous['results'])
         rows = [{k: row[k] for k in ('order', 'wiring')} for row in previous['results']
-                if row['status'] not in ('unsat', 'shift_wordcut_excluded', 'lsb_dependency_excluded', 'proved_equivalent')]
+                if row['status'] not in ('unsat', 'shift_wordcut_excluded', 'lsb_dependency_excluded', 'one_high_tail_excluded', 'polynomial_quotient_excluded', 'quotient_pair_excluded', 'proved_equivalent')]
         orders = previous['orders']; args.per_order = previous['per_order']; args.seed = previous['seed']
         provenance = dict(source=str(args.refine_from), source_sha256=hashlib.sha256(raw).hexdigest())
     else:

@@ -1,0 +1,15 @@
+{
+  "checked_date": "2026-10-29",
+  "repository": "txdywy/aopt",
+  "ref": "claude/sub863-explore",
+  "compared_base": "2646430c2d1534e4c1df46aa6538d5c012201bd9",
+  "ahead_by": 2,
+  "report": "codex/SUB863_MIDDLE_C5_20261029.md",
+  "report_github_blob_sha": "f1f26abecaff8ef9b60c800a39fa5ed3fcaebdc7",
+  "report_url": "https://github.com/txdywy/aopt/blob/claude/sub863-explore/codex/SUB863_MIDDLE_C5_20261029.md",
+  "reported_best_cycles": 864,
+  "reported_mixed_wirings": 396249,
+  "independently_reran_external_searches": false,
+  "not_used_as_local_closure_evidence": true,
+  "no_current_public_leaderboard_claim": true
+}

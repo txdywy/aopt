@@ -1,0 +1,3870 @@
+{
+  "node": 2809010545,
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "no_global_optimality_claim": true,
+  "previous_prepared_division_connections": 528,
+  "previously_closed": 401,
+  "previous_remaining": 127,
+  "range_continuation": [
+    {
+      "path": "codex/joint_quotient_range863_scout_20261029.json.gz",
+      "counts": {
+        "range_unsat": 103,
+        "unknown": 24
+      }
+    },
+    {
+      "path": "codex/joint_quotient_range863_refinement_20261029.json.gz",
+      "counts": {
+        "range_unsat": 10,
+        "unknown": 14
+      }
+    },
+    {
+      "path": "codex/joint_quotient_range863_min3_20261029.json.gz",
+      "counts": {
+        "unknown": 14
+      }
+    }
+  ],
+  "newly_closed_counts": {
+    "range_unsat": 113,
+    "u_xor_mix_excluded": 3,
+    "u_b_plus_s19_excluded": 3,
+    "numerator_collision_excluded": 3,
+    "scaled_z_or_z_square_plus_b_excluded": 1,
+    "square_tail_zero_v_excluded": 1,
+    "masked_prior_excluded": 3
+  },
+  "all528_sampled_full_divisor_connections_excluded": true,
+  "remaining_of_the528": 0,
+  "generic_proofs_also_close_previous110_pinned_branches": true,
+  "final_previously_open_rows": [
+    {
+      "order": [
+        "&",
+        "mad",
+        "%",
+        "^"
+      ],
+      "wiring": [
+        [
+          6,
+          7
+        ],
+        [
+          5,
+          8,
+          0
+        ],
+        [
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "&",
+        "mad",
+        "//",
+        "^"
+      ],
+      "wiring": [
+        [
+          6,
+          7
+        ],
+        [
+          5,
+          8,
+          0
+        ],
+        [
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "&",
+        "mad",
+        "//",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          8
+        ],
+        [
+          5,
+          7,
+          5
+        ],
+        [
+          9
+        ],
+        [
+          1,
+          8,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "&",
+        "mad",
+        "cdiv",
+        "^"
+      ],
+      "wiring": [
+        [
+          6,
+          7
+        ],
+        [
+          5,
+          8,
+          0
+        ],
+        [
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "&",
+        "mad",
+        "cdiv",
+        "mad"
+      ],
+      "wiring": [
+        [
+          3,
+          4
+        ],
+        [
+          8,
+          8,
+          9
+        ],
+        [
+          9
+        ],
+        [
+          2,
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_refinement_20261029.json.gz"
+    },
+    {
+      "order": [
+        "^",
+        "mad",
+        "%",
+        "^"
+      ],
+      "wiring": [
+        [
+          4,
+          7
+        ],
+        [
+          6,
+          8,
+          0
+        ],
+        [
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "^",
+        "mad",
+        "%",
+        "mad"
+      ],
+      "wiring": [
+        [
+          7,
+          8
+        ],
+        [
+          4,
+          5,
+          1
+        ],
+        [
+          9
+        ],
+        [
+          0,
+          8,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "^",
+        "mad",
+        "//",
+        "^"
+      ],
+      "wiring": [
+        [
+          4,
+          7
+        ],
+        [
+          6,
+          8,
+          0
+        ],
+        [
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "^",
+        "mad",
+        "//",
+        "mad"
+      ],
+      "wiring": [
+        [
+          7,
+          8
+        ],
+        [
+          4,
+          5,
+          1
+        ],
+        [
+          9
+        ],
+        [
+          0,
+          8,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "^",
+        "mad",
+        "cdiv",
+        "^"
+      ],
+      "wiring": [
+        [
+          4,
+          7
+        ],
+        [
+          6,
+          8,
+          0
+        ],
+        [
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "^",
+        "mad",
+        "cdiv",
+        "mad"
+      ],
+      "wiring": [
+        [
+          7,
+          8
+        ],
+        [
+          4,
+          5,
+          1
+        ],
+        [
+          9
+        ],
+        [
+          0,
+          8,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "&",
+        "^"
+      ],
+      "wiring": [
+        [
+          3,
+          6,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          3,
+          8,
+          6
+        ],
+        [
+          8
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          9,
+          11,
+          10
+        ]
+      ],
+      "status": "masked_prior_excluded",
+      "evidence": "codex/joint_computed_bypass863_audit_20261029.json"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          4,
+          8,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          2,
+          10,
+          9
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "&",
+        "|"
+      ],
+      "wiring": [
+        [
+          2,
+          6,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "&",
+        "|"
+      ],
+      "wiring": [
+        [
+          2,
+          6,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "&",
+        "|"
+      ],
+      "wiring": [
+        [
+          3,
+          7,
+          1
+        ],
+        [
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "^",
+        "&"
+      ],
+      "wiring": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "^",
+        "&"
+      ],
+      "wiring": [
+        [
+          2,
+          3,
+          6
+        ],
+        [
+          8
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "^",
+        "&"
+      ],
+      "wiring": [
+        [
+          2,
+          3,
+          6
+        ],
+        [
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "^",
+        "^"
+      ],
+      "wiring": [
+        [
+          5,
+          7,
+          1
+        ],
+        [
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          2,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "^",
+        "^"
+      ],
+      "wiring": [
+        [
+          6,
+          8,
+          7
+        ],
+        [
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          5,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "^",
+        "^"
+      ],
+      "wiring": [
+        [
+          8,
+          9,
+          5
+        ],
+        [
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          6,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          7,
+          8,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          7,
+          10,
+          9
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "^",
+        "|"
+      ],
+      "wiring": [
+        [
+          2,
+          7,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "mad",
+        "&"
+      ],
+      "wiring": [
+        [
+          1,
+          8,
+          4
+        ],
+        [
+          8
+        ],
+        [
+          4,
+          10,
+          11
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          2,
+          8,
+          3
+        ],
+        [
+          8
+        ],
+        [
+          8,
+          8,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_refinement_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          3,
+          6,
+          3
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10,
+          11
+        ],
+        [
+          0,
+          10
+        ]
+      ],
+      "status": "numerator_collision_excluded",
+      "evidence": "codex/joint_computed_bypass863_audit_20261029.json"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          0,
+          3
+        ],
+        [
+          8
+        ],
+        [
+          4,
+          4,
+          6
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "|",
+        "&"
+      ],
+      "wiring": [
+        [
+          0,
+          8,
+          5
+        ],
+        [
+          8
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "|",
+        "&"
+      ],
+      "wiring": [
+        [
+          1,
+          8,
+          2
+        ],
+        [
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "|",
+        "&"
+      ],
+      "wiring": [
+        [
+          4,
+          8,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "%",
+        "|",
+        "^"
+      ],
+      "wiring": [
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "%",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          3,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "%",
+        "mad"
+      ],
+      "wiring": [
+        [
+          1,
+          1,
+          5
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          11,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "%",
+        "mad"
+      ],
+      "wiring": [
+        [
+          6,
+          8,
+          4
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8
+        ],
+        [
+          4,
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "//",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          3,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "//",
+        "^"
+      ],
+      "wiring": [
+        [
+          1,
+          8,
+          0
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "//",
+        "mad"
+      ],
+      "wiring": [
+        [
+          1,
+          1,
+          5
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          11,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "//",
+        "mad"
+      ],
+      "wiring": [
+        [
+          6,
+          8,
+          4
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8
+        ],
+        [
+          4,
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "cdiv",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          3,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "cdiv",
+        "mad"
+      ],
+      "wiring": [
+        [
+          1,
+          1,
+          5
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          11,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "cdiv",
+        "mad"
+      ],
+      "wiring": [
+        [
+          6,
+          8,
+          4
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8
+        ],
+        [
+          4,
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "&",
+        "^"
+      ],
+      "wiring": [
+        [
+          3,
+          6,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          3,
+          8,
+          6
+        ],
+        [
+          8
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          9,
+          11,
+          10
+        ]
+      ],
+      "status": "masked_prior_excluded",
+      "evidence": "codex/joint_computed_bypass863_audit_20261029.json"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          4,
+          8,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          2,
+          10,
+          9
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "&",
+        "|"
+      ],
+      "wiring": [
+        [
+          2,
+          6,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "&",
+        "|"
+      ],
+      "wiring": [
+        [
+          2,
+          6,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "&",
+        "|"
+      ],
+      "wiring": [
+        [
+          3,
+          7,
+          1
+        ],
+        [
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "^",
+        "&"
+      ],
+      "wiring": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "^",
+        "&"
+      ],
+      "wiring": [
+        [
+          2,
+          3,
+          6
+        ],
+        [
+          8
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "^",
+        "&"
+      ],
+      "wiring": [
+        [
+          2,
+          3,
+          6
+        ],
+        [
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "^",
+        "&"
+      ],
+      "wiring": [
+        [
+          5,
+          8,
+          5
+        ],
+        [
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "^",
+        "^"
+      ],
+      "wiring": [
+        [
+          5,
+          7,
+          1
+        ],
+        [
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          2,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "^",
+        "^"
+      ],
+      "wiring": [
+        [
+          6,
+          8,
+          7
+        ],
+        [
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          5,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "^",
+        "^"
+      ],
+      "wiring": [
+        [
+          8,
+          9,
+          5
+        ],
+        [
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          6,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          7,
+          8,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          7,
+          10,
+          9
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "^",
+        "|"
+      ],
+      "wiring": [
+        [
+          2,
+          7,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "mad",
+        "&"
+      ],
+      "wiring": [
+        [
+          1,
+          8,
+          4
+        ],
+        [
+          8
+        ],
+        [
+          4,
+          10,
+          11
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          2,
+          8,
+          3
+        ],
+        [
+          8
+        ],
+        [
+          8,
+          8,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_refinement_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          3,
+          6,
+          3
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10,
+          11
+        ],
+        [
+          0,
+          10
+        ]
+      ],
+      "status": "numerator_collision_excluded",
+      "evidence": "codex/joint_computed_bypass863_audit_20261029.json"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          0,
+          3
+        ],
+        [
+          8
+        ],
+        [
+          4,
+          4,
+          6
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "|",
+        "&"
+      ],
+      "wiring": [
+        [
+          0,
+          8,
+          5
+        ],
+        [
+          8
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "|",
+        "&"
+      ],
+      "wiring": [
+        [
+          1,
+          8,
+          2
+        ],
+        [
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "|",
+        "&"
+      ],
+      "wiring": [
+        [
+          4,
+          8,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "//",
+        "|",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          8,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "%",
+        "&"
+      ],
+      "wiring": [
+        [
+          4,
+          8,
+          9
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "%",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          0,
+          5
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "%",
+        "^"
+      ],
+      "wiring": [
+        [
+          1,
+          7,
+          3
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "%",
+        "mad"
+      ],
+      "wiring": [
+        [
+          4,
+          6,
+          2
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          9
+        ],
+        [
+          1,
+          8,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "%",
+        "mad"
+      ],
+      "wiring": [
+        [
+          8,
+          8,
+          0
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          8
+        ],
+        [
+          10,
+          11,
+          9
+        ]
+      ],
+      "status": "u_xor_mix_excluded",
+      "evidence": "codex/joint_computed_bypass863_audit_20261029.json"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "//",
+        "&"
+      ],
+      "wiring": [
+        [
+          4,
+          8,
+          9
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "//",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          0,
+          5
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "//",
+        "mad"
+      ],
+      "wiring": [
+        [
+          4,
+          6,
+          2
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          9
+        ],
+        [
+          1,
+          8,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "//",
+        "mad"
+      ],
+      "wiring": [
+        [
+          8,
+          8,
+          0
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          8
+        ],
+        [
+          10,
+          11,
+          9
+        ]
+      ],
+      "status": "u_xor_mix_excluded",
+      "evidence": "codex/joint_computed_bypass863_audit_20261029.json"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "cdiv",
+        "&"
+      ],
+      "wiring": [
+        [
+          4,
+          8,
+          9
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_refinement_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "cdiv",
+        "&"
+      ],
+      "wiring": [
+        [
+          5,
+          5,
+          4
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "cdiv",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          0,
+          5
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "cdiv",
+        "^"
+      ],
+      "wiring": [
+        [
+          1,
+          7,
+          3
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "cdiv",
+        "mad"
+      ],
+      "wiring": [
+        [
+          4,
+          6,
+          2
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          9
+        ],
+        [
+          1,
+          8,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "cdiv",
+        "mad"
+      ],
+      "wiring": [
+        [
+          8,
+          8,
+          0
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          8
+        ],
+        [
+          10,
+          11,
+          9
+        ]
+      ],
+      "status": "u_xor_mix_excluded",
+      "evidence": "codex/joint_computed_bypass863_audit_20261029.json"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "&",
+        "^"
+      ],
+      "wiring": [
+        [
+          3,
+          6,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          3,
+          8,
+          6
+        ],
+        [
+          8
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          9,
+          11,
+          10
+        ]
+      ],
+      "status": "masked_prior_excluded",
+      "evidence": "codex/joint_computed_bypass863_audit_20261029.json"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          4,
+          8,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          2,
+          10,
+          9
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "&",
+        "|"
+      ],
+      "wiring": [
+        [
+          2,
+          6,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "&",
+        "|"
+      ],
+      "wiring": [
+        [
+          2,
+          6,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "&",
+        "|"
+      ],
+      "wiring": [
+        [
+          3,
+          7,
+          1
+        ],
+        [
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "^",
+        "&"
+      ],
+      "wiring": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "^",
+        "&"
+      ],
+      "wiring": [
+        [
+          2,
+          3,
+          6
+        ],
+        [
+          8
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "^",
+        "&"
+      ],
+      "wiring": [
+        [
+          2,
+          3,
+          6
+        ],
+        [
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "^",
+        "^"
+      ],
+      "wiring": [
+        [
+          5,
+          7,
+          1
+        ],
+        [
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          2,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "^",
+        "^"
+      ],
+      "wiring": [
+        [
+          6,
+          8,
+          7
+        ],
+        [
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          5,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "^",
+        "^"
+      ],
+      "wiring": [
+        [
+          8,
+          9,
+          5
+        ],
+        [
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          6,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          7,
+          8,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          7,
+          10,
+          9
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "^",
+        "|"
+      ],
+      "wiring": [
+        [
+          2,
+          7,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "mad",
+        "&"
+      ],
+      "wiring": [
+        [
+          1,
+          8,
+          4
+        ],
+        [
+          8
+        ],
+        [
+          4,
+          10,
+          11
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          2,
+          8,
+          3
+        ],
+        [
+          8
+        ],
+        [
+          8,
+          8,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "status": "square_tail_zero_v_excluded",
+      "evidence": "codex/joint_computed_bypass863_audit_20261029.json"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          3,
+          6,
+          3
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10,
+          11
+        ],
+        [
+          0,
+          10
+        ]
+      ],
+      "status": "numerator_collision_excluded",
+      "evidence": "codex/joint_computed_bypass863_audit_20261029.json"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          0,
+          3
+        ],
+        [
+          8
+        ],
+        [
+          4,
+          4,
+          6
+        ],
+        [
+          8,
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "|",
+        "&"
+      ],
+      "wiring": [
+        [
+          0,
+          8,
+          5
+        ],
+        [
+          8
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "|",
+        "&"
+      ],
+      "wiring": [
+        [
+          1,
+          8,
+          2
+        ],
+        [
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "|",
+        "&"
+      ],
+      "wiring": [
+        [
+          4,
+          8,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "cdiv",
+        "|",
+        "^"
+      ],
+      "wiring": [
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          8
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "%",
+        "^"
+      ],
+      "wiring": [
+        [
+          5,
+          8,
+          2
+        ],
+        [
+          5,
+          6,
+          2
+        ],
+        [
+          9
+        ],
+        [
+          8,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "%",
+        "mad"
+      ],
+      "wiring": [
+        [
+          4,
+          4,
+          5
+        ],
+        [
+          1,
+          3,
+          6
+        ],
+        [
+          8
+        ],
+        [
+          10,
+          11,
+          9
+        ]
+      ],
+      "status": "u_b_plus_s19_excluded",
+      "evidence": "codex/joint_computed_bypass863_audit_20261029.json"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "%",
+        "|"
+      ],
+      "wiring": [
+        [
+          1,
+          1,
+          7
+        ],
+        [
+          6,
+          9,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "//",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          3,
+          1
+        ],
+        [
+          0,
+          9,
+          9
+        ],
+        [
+          9
+        ],
+        [
+          8,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "//",
+        "^"
+      ],
+      "wiring": [
+        [
+          5,
+          8,
+          2
+        ],
+        [
+          5,
+          6,
+          2
+        ],
+        [
+          9
+        ],
+        [
+          8,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "//",
+        "mad"
+      ],
+      "wiring": [
+        [
+          4,
+          4,
+          5
+        ],
+        [
+          1,
+          3,
+          6
+        ],
+        [
+          8
+        ],
+        [
+          10,
+          11,
+          9
+        ]
+      ],
+      "status": "u_b_plus_s19_excluded",
+      "evidence": "codex/joint_computed_bypass863_audit_20261029.json"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "//",
+        "|"
+      ],
+      "wiring": [
+        [
+          1,
+          1,
+          7
+        ],
+        [
+          6,
+          9,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "cdiv",
+        "^"
+      ],
+      "wiring": [
+        [
+          5,
+          8,
+          2
+        ],
+        [
+          5,
+          6,
+          2
+        ],
+        [
+          9
+        ],
+        [
+          8,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_refinement_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "cdiv",
+        "mad"
+      ],
+      "wiring": [
+        [
+          4,
+          4,
+          5
+        ],
+        [
+          1,
+          3,
+          6
+        ],
+        [
+          8
+        ],
+        [
+          10,
+          11,
+          9
+        ]
+      ],
+      "status": "u_b_plus_s19_excluded",
+      "evidence": "codex/joint_computed_bypass863_audit_20261029.json"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "cdiv",
+        "|"
+      ],
+      "wiring": [
+        [
+          1,
+          1,
+          7
+        ],
+        [
+          6,
+          9,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "%",
+        "&"
+      ],
+      "wiring": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "%",
+        "&"
+      ],
+      "wiring": [
+        [
+          0,
+          6,
+          3
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "%",
+        "^"
+      ],
+      "wiring": [
+        [
+          6,
+          7,
+          0
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "%",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          11,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_refinement_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "%",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          5,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_refinement_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "//",
+        "&"
+      ],
+      "wiring": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "//",
+        "&"
+      ],
+      "wiring": [
+        [
+          0,
+          6,
+          3
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "//",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          11,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_refinement_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "//",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          5,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_refinement_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "cdiv",
+        "&"
+      ],
+      "wiring": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "cdiv",
+        "&"
+      ],
+      "wiring": [
+        [
+          0,
+          6,
+          3
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "cdiv",
+        "^"
+      ],
+      "wiring": [
+        [
+          6,
+          7,
+          0
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_scout_20261029.json.gz"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "cdiv",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          11,
+          10
+        ]
+      ],
+      "status": "scaled_z_or_z_square_plus_b_excluded",
+      "evidence": "codex/joint_computed_bypass863_audit_20261029.json"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "cdiv",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          5,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10,
+          11
+        ]
+      ],
+      "status": "range_unsat",
+      "evidence": "codex/joint_quotient_range863_refinement_20261029.json.gz"
+    }
+  ],
+  "new_odd_inverse_parameters": 6442450944,
+  "masked_prior_rectangle": {
+    "primary_b": [
+      2558187825,
+      3095059761,
+      410700081,
+      947572017
+    ],
+    "prior_values": [
+      1560818648,
+      2097689560,
+      3708302296,
+      4245173208
+    ],
+    "targets": [
+      3227071419,
+      3711647639,
+      3232793169,
+      1569885741
+    ],
+    "target_mixed": 2147483648,
+    "prior_axis_masks": [
+      536870912,
+      2147483648
+    ],
+    "numerator_coordinate_mixed": [
+      0,
+      0
+    ],
+    "mask_mixed_symbolically_zero": true,
+    "prepared_G_must_be_odd": true,
+    "divisor_at_least5_quotient_maximum": 858993459,
+    "remainder_maximum": 9004123,
+    "scope": "Y=G*op(P,D)+(prior & L), P=A*b+a_shr19 modulo2^32; A/G/L/D root-only arbitrary uint32, D nonzero, op floor/ceil/REM.",
+    "proof": "Even G fails the b^65536 bit0 witness. For odd G put B=G^-1. The rectangle has Delta(prior & L)=0 for EVERY L and Delta(P)=0 for EVERY A. Thus Delta(q)=B*Delta(Y)=2^31. For floor/ceil D>=5 the quotient range bounds the circular distance by2*ceil(MASK/5)<2^31. For D1/3, D*Delta(q)=2^31 cannot be a mixed remainder difference bounded by2*(D-1). D2/4 cannot transmit b16 to bit0: numerator low16 and all initial low16 are fixed, and quotient bit0 depends only on numerator low2/low3. REM is bounded by the478-state divisor limit and has the same range contradiction.",
+    "legal_points": [
+      {
+        "primary_b": 2558187825,
+        "prior": 1560818648,
+        "values": [
+          242717091,
+          3372273518,
+          2446248814,
+          1489896448,
+          2558187825,
+          1560818648,
+          1595609326,
+          3043,
+          2558186194
+        ],
+        "target": 3227071419,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 10,
+          "leaf_index": 1629,
+          "leaf_value": 270457432,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3095059761,
+        "prior": 2097689560,
+        "values": [
+          643034531,
+          3893971822,
+          2983153518,
+          1507197952,
+          3095059761,
+          2097689560,
+          2132480238,
+          4067,
+          3095057106
+        ],
+        "target": 3711647639,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 10,
+          "leaf_index": 1629,
+          "leaf_value": 807328344,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 410700081,
+        "prior": 3708302296,
+        "values": [
+          1843986851,
+          1164099438,
+          298629998,
+          1420690432,
+          410700081,
+          3708302296,
+          3743092974,
+          7139,
+          410702546
+        ],
+        "target": 3232793169,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 971112295,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 947572017,
+        "prior": 4245173208,
+        "values": [
+          2244304291,
+          1685797742,
+          835534702,
+          1437991936,
+          947572017,
+          4245173208,
+          4279963886,
+          8163,
+          947573458
+        ],
+        "target": 1569885741,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 434241383,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      }
+    ]
+  },
+  "keyed_restore": {
+    "sampled_connections": 504,
+    "parallel_family_connections": 1395,
+    "unique_connections": 1899,
+    "intersection": 0,
+    "all_selected_connections_excluded": true,
+    "normalized_final_family": true,
+    "raw_parallel_unknowns": 3,
+    "refinement_remaining_unknowns": 1,
+    "final_unknown_closed_by_separate_proof": true,
+    "not_complete_four_op_grammar": true
+  },
+  "evidence": {
+    "codex/prepared_joint863_audit.json": {
+      "sha256": "a060b69ba1529829283e5f4e48f40f082bd0dc4e0eff5aa269355c555fca1dcd",
+      "decoded_sha256": "a060b69ba1529829283e5f4e48f40f082bd0dc4e0eff5aa269355c555fca1dcd"
+    },
+    "codex/joint_prepared_division863_open_20261029.json": {
+      "sha256": "de43dad5592664aa8b86ae9d1271a5b8f1af5d9491b18525cb3519f2928769e0",
+      "decoded_sha256": "de43dad5592664aa8b86ae9d1271a5b8f1af5d9491b18525cb3519f2928769e0"
+    },
+    "codex/joint_prepared_division863_magic_open_20261029.json": {
+      "sha256": "0461c38c6cd94bde99b7667ce212f2890402b97b4d93ed699e8add957af56470",
+      "decoded_sha256": "0461c38c6cd94bde99b7667ce212f2890402b97b4d93ed699e8add957af56470"
+    },
+    "codex/joint_computed_bypass863_audit_20261029.json": {
+      "sha256": "5f4db346f41e50b737b76cffd7c8e80735c3dcf48b3f77dc1ba8f6f8d8182650",
+      "decoded_sha256": "5f4db346f41e50b737b76cffd7c8e80735c3dcf48b3f77dc1ba8f6f8d8182650"
+    },
+    "codex/joint_computed_bypass863_enum_20261029.json": {
+      "sha256": "dc7e1926e48b2c9805c9b4d8cd9a512a7d712804ef5826b68ef43dbca785a884",
+      "decoded_sha256": "dc7e1926e48b2c9805c9b4d8cd9a512a7d712804ef5826b68ef43dbca785a884"
+    },
+    "codex/joint_quotient_range863_scout_20261029.json.gz": {
+      "sha256": "ccfa729b954b98cd1536368932e8a284c10efd1c23cdc6a1d69aa8a6326a3b3f",
+      "decoded_sha256": "a2e0eeb38638024d1e60a71ad5cacb06951e8db1aec012658a86949f01a478ee"
+    },
+    "codex/joint_quotient_range863_refinement_20261029.json.gz": {
+      "sha256": "4693950d4d1c7d1f33627ae242fa0bfeb3b962dd8a6358b19c0c1886093b1e4b",
+      "decoded_sha256": "93103ae5980fa7cf4c92d7d9e9f3d49e61475d8df6ed38f93977a8f577a8abb5"
+    },
+    "codex/joint_quotient_range863_min3_20261029.json.gz": {
+      "sha256": "edd3b85f8b02fa57f0a4db4b79e6ca3719245847bb203bc3ea973e32b4dd6796",
+      "decoded_sha256": "7c8dfb69086d5c406eaf5c12eb1fac52f3bc55f59be4272045ada7d5f044c4e5"
+    },
+    "codex/keyed_live_restore863_scout_20261029.json.gz": {
+      "sha256": "1c2ff366479061995236bfbb2c9c62d6cefaf6a84e794397f83c796ddc6f0d56",
+      "decoded_sha256": "4dd4ce30c3a95c84e9962c119d864212875aa463d80070822ee44a2fb29d293d"
+    },
+    "codex/keyed_live_restore863_refinement_20261029.json.gz": {
+      "sha256": "a6de04b6e46b6b2f0033fe18c56cd98418136daa4c91f48172a529e5b23bfcc4",
+      "decoded_sha256": "1e396904e560f82b81319e78a95bdd85af6efbbd54b5c3f239b0a80cdbc24e05"
+    },
+    "codex/keyed_live_restore863_parallel_20261029.json.gz": {
+      "sha256": "685337fb1f8c9e6fbc7f8c1757a988ce307c7ac4d13a4d47c6d80513dfe58923",
+      "decoded_sha256": "10c2260d0269ed800032ad33a60d8cc8deef1dc57fe1b307ea9a43d88ee085bf"
+    },
+    "codex/keyed_live_restore863_parallel_refinement_20261029.json.gz": {
+      "sha256": "9b26fddaaeab83389f2c7e51ec4af098cc6b03b956053c5a75d9d6a1ec37bcbf",
+      "decoded_sha256": "a8341c6367b53b45af44e54911ab6b0962741f96f6f6129d2a0d9888d9341334"
+    },
+    "codex/mixed_affine_restore863_normalized_20261029.json": {
+      "sha256": "9b3b664a4757f494ce904b5d4fd247fc479c1d9a719f336e85f9c867137c5d34",
+      "decoded_sha256": "9b3b664a4757f494ce904b5d4fd247fc479c1d9a719f336e85f9c867137c5d34"
+    },
+    "codex/keyed_live_restore863_single_input_replay_20261029.json": {
+      "sha256": "92eef1d50c9c2dc5fe3ac55912e79e5288f14289b2044bdc388dfd5a33161f28",
+      "decoded_sha256": "92eef1d50c9c2dc5fe3ac55912e79e5288f14289b2044bdc388dfd5a33161f28"
+    }
+  },
+  "still_open": "Complete four-op grammars, different earlier live words/encodings/opcodes, runtime divisors/counts, larger joint windows and new kernel layouts. No sub864 executable found."
+}

@@ -1,0 +1,148 @@
+{
+  "date": "2026-10-29",
+  "validated_at_utc": "2026-10-29T07:40:07.636503+00:00",
+  "base_commit": "5502abd8bd2c2768b3fb4f9edc2e109220fe1246",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "no_global_optimality_claim": true,
+  "runtime": {
+    "numpy": "2.3.5",
+    "z3": "5.1.0"
+  },
+  "regression": {
+    "tests": 138,
+    "new_tests": 20,
+    "result": "OK",
+    "seconds": 18.59,
+    "log_sha256": "36fb3247ec49396e59fee60d5bc946812ac30b5e86a1e55fa518a7520e6bc233",
+    "summary": "..........................................................................................................................................\n----------------------------------------------------------------------\nRan 138 tests in 18.590s\n\nOK"
+  },
+  "all528_sampled_prepared_divisions_excluded": true,
+  "previous127_remaining": 0,
+  "newly_closed_counts": {
+    "range_unsat": 113,
+    "u_xor_mix_excluded": 3,
+    "u_b_plus_s19_excluded": 3,
+    "numerator_collision_excluded": 3,
+    "scaled_z_or_z_square_plus_b_excluded": 1,
+    "square_tail_zero_v_excluded": 1,
+    "masked_prior_excluded": 3
+  },
+  "keyed_restore": {
+    "sampled_connections": 504,
+    "parallel_family_connections": 1395,
+    "unique_connections": 1899,
+    "intersection": 0,
+    "all_selected_connections_excluded": true,
+    "normalized_final_family": true,
+    "raw_parallel_unknowns": 3,
+    "refinement_remaining_unknowns": 1,
+    "final_unknown_closed_by_separate_proof": true,
+    "not_complete_four_op_grammar": true
+  },
+  "finite_certificates_independently_replayed": true,
+  "full_inverse_scan": {
+    "complete": true,
+    "parameters": 6442450944,
+    "all_one_high_excluded": true,
+    "seconds": 36.204904,
+    "scanner_source_sha256": "40d7f8c36343253460927d25f86368e6f810541d4f9e125a7bd0fd32b08f85fd",
+    "binary_sha256": "060ce4eceb23754c11f4645212829386b9e9a64e82a9ef2bbcbab0a6cca8b4d1"
+  },
+  "current_validated_source_sha256": {
+    "codex/README.md": "64288227176ce222363ff815f7903c70872cdc855c175e48e74f1fc800535412",
+    "codex/SUB863_QUOTIENT_RANGE_20261029.md": "2617c7a07f15c3dbfa3af29af1957e286e223296eb06526e9bf49c440b8a1c1d",
+    "codex/audit_joint_quotient_bypass863.py": "fb5894059c8e85b3baee0ffd6ea5fd6536a2dedb852acb7c37473bcd7b919f05",
+    "codex/close_joint_quotient_range863.py": "b2226d0b04e4772b8323673336f5fd64acd813779cfe174d6826c2530c2280aa",
+    "codex/refine_joint_quotient_range863.py": "6ffa3be06eef4ce064998f42ea41f7dea07a1a3641f200ee5cf275273c4fd824",
+    "codex/search_keyed_live_restore863.py": "8a8468ca3ae28ac9961cb4b292c4d16ba48ea203045314753c0f6d5f38f79474",
+    "codex/search_mixed_affine_restore863.py": "73bc014da21e5703b38030fbae9c214f2f6f55203c94c129189b5e418c5fe141",
+    "codex/test_joint_quotient_bypass863.py": "57c7ee7b7c6fbdb0bd6fbdc44da1f2d352e3c6cd58d8c1d39a537f483c8ff46d",
+    "codex/test_keyed_live_restore863.py": "85499f17e0db420b181556d3392268faa241732a85ed829c016fb9ab484e65bb",
+    "codex/test_mixed_affine_restore863.py": "2c68012c6a6928b426e082a6b666945dc629f0ea05917cd7b987ad897b2b8818",
+    "codex/test_quotient_range863.py": "e95aa212539c5121cfd3464c0ef838aea85ad41f47b1159a1cefa708f9da8b82",
+    "codex/validate_joint_quotient_range863.py": "725e477ac10f33dc534361a7798dc0a7f6f9ebf6922ae5b6b15d12836f2b1a32",
+    "codex/search_restore_scaled863.py": "4c55321b4d431b759b0d87f17e7898467203d1896ebcba5f6a8d8a29e350c799",
+    "codex/search_cross_encoding863.py": "2a793df99c82f36a3d6cdde17b7c229be4d892d631df6c55fafaa59d96a0c56a",
+    "codex/search_keyed_live_middle863.py": "2d45ca402956a4fb0e70fd576f26adde8e15a676374cd32a0d7ed70fd5373a1b",
+    "codex/run_middle_residual_enum863.py": "beb244d2bd3d752dfbe20326a04dff3c8329844efa818a26a40d54a5e4440bb4",
+    "codex/search_joint_live_boundary863.py": "b12329885308f5725bc61d8e7aab076d8770e97e5b57e9190d0aa6babb249fd5",
+    "codex/search_live_boundary863.py": "c57ae922fbf0b4b488bae4e6abff9a5535772d9f719f475ea56a67664bda1e4f",
+    "codex/search_early_boundary863.py": "06febc0ec84f3869ee7f60da4467f562ca048791c2880c8b4ce6633876ff344d",
+    "codex/close_prepared_joint863.py": "0a47e05e9b420be96c7dc714aeed1e91e2c3bba77254c8b0ebc44c15c8fdbfed",
+    "codex/enumerate_middle_residual863.cpp": "40d7f8c36343253460927d25f86368e6f810541d4f9e125a7bd0fd32b08f85fd"
+  },
+  "artifact_sha256": {
+    "codex/joint_computed_bypass863_audit_20261029.json": "5f4db346f41e50b737b76cffd7c8e80735c3dcf48b3f77dc1ba8f6f8d8182650",
+    "codex/joint_computed_bypass863_enum_20261029.json": "dc7e1926e48b2c9805c9b4d8cd9a512a7d712804ef5826b68ef43dbca785a884",
+    "codex/joint_quotient_range863_closed_20261029.json": "0831be40e26ee068fdaae6245c6005b059108427a1ae9193a00024ce55a0d3ed",
+    "codex/joint_quotient_range863_min3_20261029.json.gz": "edd3b85f8b02fa57f0a4db4b79e6ca3719245847bb203bc3ea973e32b4dd6796",
+    "codex/joint_quotient_range863_refinement_20261029.json.gz": "4693950d4d1c7d1f33627ae242fa0bfeb3b962dd8a6358b19c0c1886093b1e4b",
+    "codex/joint_quotient_range863_scout_20261029.json.gz": "ccfa729b954b98cd1536368932e8a284c10efd1c23cdc6a1d69aa8a6326a3b3f",
+    "codex/keyed_live_restore863_parallel_20261029.json.gz": "685337fb1f8c9e6fbc7f8c1757a988ce307c7ac4d13a4d47c6d80513dfe58923",
+    "codex/keyed_live_restore863_parallel_refinement_20261029.json.gz": "9b26fddaaeab83389f2c7e51ec4af098cc6b03b956053c5a75d9d6a1ec37bcbf",
+    "codex/keyed_live_restore863_refinement_20261029.json.gz": "a6de04b6e46b6b2f0033fe18c56cd98418136daa4c91f48172a529e5b23bfcc4",
+    "codex/keyed_live_restore863_scout_20261029.json.gz": "1c2ff366479061995236bfbb2c9c62d6cefaf6a84e794397f83c796ddc6f0d56",
+    "codex/keyed_live_restore863_single_input_replay_20261029.json": "92eef1d50c9c2dc5fe3ac55912e79e5288f14289b2044bdc388dfd5a33161f28",
+    "codex/mixed_affine_restore863_normalized_20261029.json": "9b3b664a4757f494ce904b5d4fd247fc479c1d9a719f336e85f9c867137c5d34"
+  },
+  "protected_source_sha256": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  },
+  "compressed_archives": [
+    {
+      "path": "codex/joint_quotient_range863_min3_20261029.json.gz",
+      "encoded_bytes": 4221,
+      "decoded_bytes": 13340,
+      "decoded_sha256": "7c8dfb69086d5c406eaf5c12eb1fac52f3bc55f59be4272045ada7d5f044c4e5"
+    },
+    {
+      "path": "codex/joint_quotient_range863_refinement_20261029.json.gz",
+      "encoded_bytes": 4455,
+      "decoded_bytes": 16208,
+      "decoded_sha256": "93103ae5980fa7cf4c92d7d9e9f3d49e61475d8df6ed38f93977a8f577a8abb5"
+    },
+    {
+      "path": "codex/joint_quotient_range863_scout_20261029.json.gz",
+      "encoded_bytes": 6278,
+      "decoded_bytes": 50307,
+      "decoded_sha256": "a2e0eeb38638024d1e60a71ad5cacb06951e8db1aec012658a86949f01a478ee"
+    },
+    {
+      "path": "codex/keyed_live_restore863_parallel_20261029.json.gz",
+      "encoded_bytes": 16003,
+      "decoded_bytes": 665305,
+      "decoded_sha256": "10c2260d0269ed800032ad33a60d8cc8deef1dc57fe1b307ea9a43d88ee085bf"
+    },
+    {
+      "path": "codex/keyed_live_restore863_parallel_refinement_20261029.json.gz",
+      "encoded_bytes": 830,
+      "decoded_bytes": 2956,
+      "decoded_sha256": "a8341c6367b53b45af44e54911ab6b0962741f96f6f6129d2a0d9888d9341334"
+    },
+    {
+      "path": "codex/keyed_live_restore863_refinement_20261029.json.gz",
+      "encoded_bytes": 1115,
+      "decoded_bytes": 6275,
+      "decoded_sha256": "1e396904e560f82b81319e78a95bdd85af6efbbd54b5c3f239b0a80cdbc24e05"
+    },
+    {
+      "path": "codex/keyed_live_restore863_scout_20261029.json.gz",
+      "encoded_bytes": 11505,
+      "decoded_bytes": 239072,
+      "decoded_sha256": "4dd4ce30c3a95c84e9962c119d864212875aa463d80070822ee44a2fb29d293d"
+    }
+  ],
+  "frozen_tests_and_problem_unchanged": true,
+  "prior_official_evidence": {
+    "path": "codex/root_boundary863_validation.json",
+    "sha256": "2b8a33054353015dfad1bbe7794f3f27803c2c933d7012e737b141d74740e5e4",
+    "tests": 9,
+    "cycles": 864,
+    "not_rerun": true
+  },
+  "provenance": "Current source fingerprints describe the final validated implementation. Earlier range runs retain their looser sound bounds and original UNKNOWN observations. Finite certificates, predecessor evidence and source equality are replayed; the6.44-billion scan is the preserved complete native run, not reexecuted by this validator.",
+  "remaining": "Complete four-op grammars, different earlier live words/encodings/opcodes, runtime divisors/counts, larger joint windows and new kernel layouts. No sub864 executable found."
+}

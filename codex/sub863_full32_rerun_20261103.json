@@ -1,0 +1,79 @@
+{
+ "z3": "5.3.3",
+ "date": "2026-11-03",
+ "width": 32,
+ "purpose": "Re-run previously-timeout hash-op-reduction windows at 180-240s budgets to decide full-32 SAT/UNSAT; any full-32 SAT would save one hash op per round (4096 lanes) and break 864.",
+ "middle_3op": {
+  "desc": "F(b)=9*((33b+K0)^(16896b+K1))+K2 in 3 ops (one MAD, one SHR, one free op); free constants; live pool prior,a,a>>19,a^C1,b",
+  "budget_s": 180,
+  "total": 38,
+  "counts": {
+   "grammar_excluded": 23,
+   "unknown": 15
+  },
+  "new_unsat": 23,
+  "unknown": 15,
+  "unknown_sequences": [
+   "+,>>,mad",
+   "*,>>,mad",
+   "+,mad,>>",
+   "-,>>,mad",
+   ">>,*,mad",
+   ">>,+,mad",
+   ">>,-,mad",
+   ">>,>>,mad",
+   ">>,mad,*",
+   ">>,mad,+",
+   ">>,mad,-",
+   ">>,mad,mad",
+   "mad,>>,*",
+   "mad,>>,mad",
+   "mad,mad,>>"
+  ],
+  "sat": 0
+ },
+ "tail_2op": {
+  "desc": "z->G in 2 ops; free constants; live pool prior,a,a>>19,a^C1,b,u,v,z",
+  "budget_s": 240,
+  "total": 10,
+  "counts": {
+   "grammar_excluded": 7,
+   "unknown": 3
+  },
+  "new_unsat": 7,
+  "unknown": 3,
+  "unknown_sequences": [
+   "%,mad",
+   "//,mad",
+   "cdiv,mad"
+  ],
+  "sat": 0
+ },
+ "joint_6to5": {
+  "desc": "b->G in 5 ops (was MAD,MAD,^,MAD,SHR,^); bounded natural-multiplier grammar {1,9,33,512,4097,16896,-1}",
+  "budget_s": 200,
+  "total": 24,
+  "counts": {
+   "finite_grammar_unsat": 16,
+   "unknown": 8
+  },
+  "new_unsat": 16,
+  "unknown": 8,
+  "unknown_sequences": [
+   "^,mad,>>,mad,mad",
+   "^,mad,>>,mad,^",
+   "^,mad,mad,>>,mad",
+   "mad,^,mad,>>,mad",
+   "mad,mad,>>,^,mad",
+   "mad,mad,>>,mad,^",
+   "mad,mad,^,>>,mad",
+   "mad,mad,mad,>>,^"
+  ],
+  "sat": 0
+ },
+ "totals": {
+  "new_unsat": 46,
+  "unknown": 26,
+  "sat_full32": 0
+ }
+}

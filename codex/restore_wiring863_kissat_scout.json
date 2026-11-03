@@ -1,0 +1,542 @@
+{
+  "engine": "kissat404",
+  "pysat": "1.9.dev17",
+  "z3": "5.1.0",
+  "source": "codex/restore_wiring863_final_audit.json",
+  "jobs": 16,
+  "seconds_per_case": 12.0,
+  "rows": [
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "wall_seconds": 12.016
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 12.012
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "wall_seconds": 12.01
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 68251,
+      "stats": null,
+      "seconds": 10.590075666084886,
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 10.798
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "wall_seconds": 12.007
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 12.01
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 12.014
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "|",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 12.01
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "|",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.013
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 12.008
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.009
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 90111,
+      "stats": null,
+      "seconds": 10.896129374857992,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 11.093
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.008
+    }
+  ],
+  "counts": {
+    "unknown": 14,
+    "unsat": 2
+  },
+  "new_executable": false,
+  "completed": 16
+}

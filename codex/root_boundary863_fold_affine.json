@@ -1,0 +1,17 @@
+{
+  "family": "fold_affine",
+  "node": 2809010545,
+  "full32_semantics": true,
+  "control": false,
+  "pinned": false,
+  "status": "unsat",
+  "events": [
+    {
+      "samples": 64,
+      "status": "unsat"
+    }
+  ],
+  "new_executable": false,
+  "seconds": 1.439,
+  "samples": 64
+}

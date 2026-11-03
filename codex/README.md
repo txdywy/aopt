@@ -6,6 +6,43 @@ An identical, separately preserved 864-cycle copy is
 It executes **864 cycles**, a **170.99x** speedup over the 147734-cycle baseline.
 This improves the previous 865 result by one cycle and reaches the 864 target.
 The previous [`perf_takehome_865.py`](perf_takehome_865.py) is unchanged.
+The latest [runtime-count study](SUB863_RUNTIME_COUNT_20261029.md) establishes
+a global 16..23 low-half count band and a 65535 quotient bound for a sole SHR.
+It excludes 5,520 first-count prefixes, proves all 552 one-T count shapes
+must become prepared constants, and closes 1,656 count-aware final-MAD
+connections. The third tail uses 4,718,592 parameter cases checked by two
+independent implementations. These are scoped local exclusions; the
+executable remains 864 and broader grammars remain open.
+The preceding [quotient-range and keyed-live study](SUB863_QUOTIENT_RANGE_20261029.md)
+closes the remaining 127 prepared-division connections, completing the
+528-connection sample. It also excludes 1,899 distinct four-op C5-absorption
+connections with earlier live values. A four-point masked-prior certificate
+closes an arbitrary-parameter family. All 138 research tests pass; the
+executable remains 864, and complete four-op grammars remain open.
+The preceding [prepared-shift and division study](SUB863_PREPARED_OPERANDS_20261029.md)
+excluded 1,384 sampled prepared-shift connections and established a
+478-state information bound, arbitrary one-high-word tail certificates,
+complete permutation-sum divisor scans and a wide-product division encoding.
+The preceding [multiple-division audit](SUB863_TWO_DIVISION_20261029.md)
+closes all 343 three-instruction orders over MAD/XOR/AND/OR/DIV/REM/CDIV
+on the stated nine live words, including arbitrary root-only constants and
+prepared-count shifts. It also covers two initial-data downward operations
+with variable right-shift counts, and DIV/bitop-or-MAD/final-SHR.
+Prepared-data variable
+shifts, further variable-shift combinations and broader algorithms remain open.
+The [expanded four-instruction search](SUB863_JOINT_FOCUSED_20261029.md)
+adds 16,020 distinct connections beyond the earlier two four-op manifests.
+Every sampled connection is excluded after refinement; the full four-op grammar
+remains open. That search also exposed and fixed a concrete-value typing error
+in the research solver, with targeted regression and positive controls.
+The preceding [single-division core audit](SUB863_SINGLE_DIVISION_CORE_20261028.md)
+records the earlier single-division and prepared-count SHR-then-division proofs.
+The preceding [computed-denominator audit](SUB863_DENOMINATOR_GRAMMAR_20261028.md)
+records the complete computed-denominator family. The earlier
+[computed-prefix division audit](SUB863_COMPUTED_DIVISION_20261028.md) records
+the complete inverse-parameter enumeration and earlier collision certificates.
+The preceding [division/comparison audit](SUB863_DIVISION_COMPARISON_20261028.md)
+records exact full-divisor screens and its explicitly scoped closures.
 The [sub-863 structural audit](SUB863_STRUCTURAL_AUDIT_20261023.md) proves a
 864 lower bound for the current graph and records 32 unsuccessful structural
 variants. It does not claim a universal lower bound or a new executable score.

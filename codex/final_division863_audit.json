@@ -1,0 +1,462 @@
+{
+  "node": 2809010545,
+  "prefix_inputs": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "high_division_bounds": [
+    {
+      "op": "//",
+      "high_quotient_requires_denominator1": "unsat"
+    },
+    {
+      "op": "cdiv",
+      "high_quotient_requires_denominator1": "unsat"
+    }
+  ],
+  "reused_high_middle_cases": 297,
+  "prefix_order_partition": {
+    "two_T": "Every T-only prefix datum has one low16 class on the eight-state fibre; four high targets have four different low16 values.",
+    "one_comparison_one_T": "A Boolean comparison splits the prefix low16 values at most twice. Four distinct high target low16 values remain impossible. A final Boolean numerator cannot be high.",
+    "right_shift_then_T": "Literal initial-word right shifts are the297 existing high-middle MAD/bitwise certificates. An initial-word shift count is>=32 on every high sample, giving0 and reducing to the base polynomial/bitwise certificates. Constant data/root counts reduce to a constant or an already covered case.",
+    "left_shift_then_T": "A prepared-count SHL normalizes to MAD. An initial-word count is>=32 on every high sample, giving0 and the same base necessary systems.",
+    "T_then_shift": "On the odd/high pair the numerator shift must have count0, for either direction. Its T/initial/root value ancestor has equal low2 on the pair, whereas targets differ at bit1.",
+    "two_shifts_or_comparison_shift": "Every value-operand shift on the odd/high pair has count0. An initial/root ancestor has equal low2; a Boolean ancestor cannot be high."
+  },
+  "four_high_targets_fibre": {
+    "primary_b": [
+      3752425706,
+      3752360170,
+      3752556778,
+      3752491242,
+      3752687850,
+      3752622314,
+      3752818922,
+      3752753386
+    ],
+    "initial_values": [
+      [
+        4193369412,
+        3811234887,
+        3201393223,
+        1576777216,
+        3752425706,
+        489147577,
+        415807951,
+        793,
+        3752426483
+      ],
+      [
+        3441081668,
+        2773210183,
+        3199230535,
+        469480960,
+        3752360170,
+        220777657,
+        415873487,
+        793,
+        3752360947
+      ],
+      [
+        1402977604,
+        1592316999,
+        3205718599,
+        3791369728,
+        3752556778,
+        4247375033,
+        415939023,
+        793,
+        3752557555
+      ],
+      [
+        650689860,
+        554292295,
+        3203555911,
+        2684073472,
+        3752491242,
+        3979005113,
+        416004559,
+        793,
+        3752492019
+      ],
+      [
+        2912271684,
+        3668890695,
+        3210043975,
+        1710994944,
+        3752687850,
+        3710635193,
+        416070095,
+        793,
+        3752688627
+      ],
+      [
+        2159983940,
+        2630865991,
+        3207881287,
+        603698688,
+        3752622314,
+        3442265273,
+        416135631,
+        793,
+        3752623091
+      ],
+      [
+        121879876,
+        1449972807,
+        3214369351,
+        3925587456,
+        3752818922,
+        3173895353,
+        416201167,
+        793,
+        3752819699
+      ],
+      [
+        3664559428,
+        411948103,
+        3212206663,
+        2818291200,
+        3752753386,
+        2905525433,
+        416266703,
+        793,
+        3752754163
+      ]
+    ],
+    "common_low16": [
+      48452,
+      54343,
+      25159,
+      46592,
+      30954,
+      52409,
+      47567,
+      793,
+      31731
+    ],
+    "target": [
+      3545299674,
+      802993733,
+      2470573248,
+      1756082195,
+      980051638,
+      2834182561,
+      4181352588,
+      599616367
+    ],
+    "low17_class_counts": [
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      1,
+      2
+    ],
+    "legal_points": [
+      {
+        "primary_b": 3752425706,
+        "prior": 489147577,
+        "values": [
+          4193369412,
+          3811234887,
+          3201393223,
+          1576777216,
+          3752425706,
+          489147577,
+          415807951,
+          793,
+          3752426483
+        ],
+        "target": 3545299674,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 424431428,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752360170,
+        "prior": 220777657,
+        "values": [
+          3441081668,
+          2773210183,
+          3199230535,
+          469480960,
+          3752360170,
+          220777657,
+          415873487,
+          793,
+          3752360947
+        ],
+        "target": 802993733,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 155406148,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752556778,
+        "prior": 4247375033,
+        "values": [
+          1402977604,
+          1592316999,
+          3205718599,
+          3791369728,
+          3752556778,
+          4247375033,
+          415939023,
+          793,
+          3752557555
+        ],
+        "target": 2470573248,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 432013318,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752491242,
+        "prior": 3979005113,
+        "values": [
+          650689860,
+          554292295,
+          3203555911,
+          2684073472,
+          3752491242,
+          3979005113,
+          416004559,
+          793,
+          3752492019
+        ],
+        "target": 1756082195,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 163774470,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752687850,
+        "prior": 3710635193,
+        "values": [
+          2912271684,
+          3668890695,
+          3210043975,
+          1710994944,
+          3752687850,
+          3710635193,
+          416070095,
+          793,
+          3752688627
+        ],
+        "target": 980051638,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 969015302,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752622314,
+        "prior": 3442265273,
+        "values": [
+          2159983940,
+          2630865991,
+          3207881287,
+          603698688,
+          3752622314,
+          3442265273,
+          416135631,
+          793,
+          3752623091
+        ],
+        "target": 2834182561,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 700776454,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752818922,
+        "prior": 3173895353,
+        "values": [
+          121879876,
+          1449972807,
+          3214369351,
+          3925587456,
+          3752818922,
+          3173895353,
+          416201167,
+          793,
+          3752819699
+        ],
+        "target": 4181352588,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 1,
+          "leaf_index": 1797,
+          "leaf_value": 78388017,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752753386,
+        "prior": 2905525433,
+        "values": [
+          3664559428,
+          411948103,
+          3212206663,
+          2818291200,
+          3752753386,
+          2905525433,
+          416266703,
+          793,
+          3752754163
+        ],
+        "target": 599616367,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 1,
+          "leaf_index": 1797,
+          "leaf_value": 347020081,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      }
+    ]
+  },
+  "odd_high_ancestor_pair": [
+    {
+      "primary_b": 85141804,
+      "prior": 2990085704,
+      "values": [
+        1786441174,
+        203268297,
+        2440108745,
+        2641148416,
+        85141804,
+        2990085704,
+        3262313310,
+        6222,
+        85143906
+      ],
+      "target": 2513947635,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 1,
+        "leaf_index": 1797,
+        "leaf_value": 196657600,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    {
+      "primary_b": 85010732,
+      "prior": 3526825544,
+      "values": [
+        3352358358,
+        2286133449,
+        2435783369,
+        426555904,
+        85010732,
+        3526825544,
+        3262182238,
+        6222,
+        85012834
+      ],
+      "target": 3268083853,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 920574711,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    }
+  ],
+  "final_rem_exclusion": {
+    "target_mask_witness": {
+      "primary_b": 3617025856,
+      "prior": 3371995724,
+      "values": [
+        412226314,
+        50577757,
+        3028165469,
+        3078480384,
+        3617025856,
+        3371995724,
+        284602210,
+        542,
+        3617025374
+      ],
+      "target": 4294967295,
+      "legal_tree": {
+        "height": 10,
+        "root": 305419896,
+        "initial": 8,
+        "leaf_index": 1752,
+        "leaf_value": 739598067,
+        "other_nodes": 0
+      },
+      "frozen_reference_checked": true
+    },
+    "proof": "A valid remainder satisfies0<=r<D<=MASK and therefore cannot equal MASK, regardless of its numerator or preceding operations."
+  },
+  "high_conservative_chains": {
+    "high_rem_must_equal_numerator": "unsat",
+    "proof": "For output>2^31, DIV/CDIV require divisor1; REM requires quotient0. Their result equals the numerator. An odd/high SHL/SHR result also equals its data operand. Along a value-operand chain of these instructions every value remains the same odd/high word. A comparison ancestor cannot be high. The recorded pair has equal initial low2 and different target bit1, so any such chain, even with arbitrary computed amounts/denominators, is impossible. The same holds with one first MAD/bitop before the chain, since its low2 is equal on the pair.",
+    "includes": "T,D,S; D,S,S; S,D,S; division/shift/comparison-only graphs of any length; T is first and no later mixing T is allowed."
+  },
+  "evidence_sha256": {
+    "codex/runtime_shift_core863_audit.json": "48884cb4e556915f6ed50649ebd645844167e94bdc96af9e884605b5fde005ba",
+    "codex/bidirectional_shift_core863_audit.json": "0ee8567b8182a9f12e71b12722bf892b1ebe71bafead0d23cbc20ad966b8e694"
+  },
+  "remaining_in_stated_family": 0,
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "scope": "Final DIV/CDIV after at most two MAD/XOR/AND/OR/SHL/SHR/comparison operations on nine live words and root-only constants; denominator may be computed. No other divisions in the prefix. Final REM is excluded for any prefix. Does not close division-first plus shifts, computed division in the middle, or multiple DIV/CDIV."
+}

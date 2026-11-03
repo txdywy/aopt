@@ -1,0 +1,84 @@
+{
+  "replaced_boundaries": 32,
+  "removed_ops_per_boundary": 5,
+  "macro_instructions": 5,
+  "before": {
+    "load": 1688,
+    "valu": 6093,
+    "flow": 851,
+    "alu": 2921,
+    "store": 530
+  },
+  "after": {
+    "load": 1688,
+    "valu": 6093,
+    "flow": 851,
+    "alu": 2921,
+    "store": 530
+  },
+  "lane_work_before": 51665,
+  "lane_work_after": 51665,
+  "new_setup_operations": 0,
+  "both_arm_orientations_checked": true,
+  "free_e": false,
+  "macro": {
+    "live": "joint_early",
+    "runtime_node": true,
+    "order": [
+      "mad",
+      "shr16",
+      "^",
+      "^",
+      "mad"
+    ],
+    "wiring": [
+      [
+        0,
+        9,
+        10
+      ],
+      [
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        11,
+        8
+      ],
+      [
+        12,
+        13,
+        14
+      ]
+    ],
+    "constants": [
+      [
+        9,
+        4251993797
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        4097,
+        2127912214
+      ]
+    ]
+  },
+  "scratch": 1111,
+  "frozen_seeds": 3,
+  "serial_cycles_not_a_score": 12083,
+  "new_executable": false
+}

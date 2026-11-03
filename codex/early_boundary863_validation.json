@@ -1,0 +1,157 @@
+{
+  "date": "2026-10-28",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "scope": "At most three straight-line MAD/XOR/AND/OR/literal-SHR operations, nine stated live inputs and arbitrary prepared root-dependent constants. ADD/SUB/MUL/literal-SHL normalize to MAD. Does not cover data-dependent shifts, division, comparison, FLOW or larger windows; no global kernel lower bound.",
+  "core_grammar_remaining": 0,
+  "runtime": {
+    "python": "3.12.16",
+    "numpy": "2.3.5",
+    "z3": "Z3 5.1.0.0"
+  },
+  "node": 2809010545,
+  "input_names": [
+    "e",
+    "z",
+    "u",
+    "v",
+    "b",
+    "prior",
+    "a",
+    "a_shr19",
+    "a_xor_c1"
+  ],
+  "one_mad16": {
+    "new_early_graphs": 233640,
+    "first_early_shift_graphs": 74100,
+    "counts": {
+      "unsat": 75914,
+      "lsb_dependency_excluded": 157726
+    },
+    "remaining": 0
+  },
+  "literal_shift_initial_sources": {
+    "cases": 297,
+    "excluded_by_counterexample": 296,
+    "surviving_source_and_count": [
+      0,
+      16
+    ]
+  },
+  "one_mad_shift_new_result": {
+    "nonzero_shifts": 31,
+    "quadratic_relaxation_coefficients": 21,
+    "remaining": 0
+  },
+  "two_mad_new_result": {
+    "abstract_shapes_per_shift": 120204,
+    "shift_counts": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "counts": {
+      "polynomial_plus_bounded_q_rectangle": 37989,
+      "lsb_dependency": 67441,
+      "q_times_v_plus_one_requires_large_q": 567,
+      "noninjective_g_of_t_wordcut": 149,
+      "residual_image": 10206,
+      "sum_q_square": 567,
+      "q_only_image": 2268,
+      "sum_Kq_requires_even_but_lsb_requires_odd": 567,
+      "odd_tq_cannot_have_nonzero_16_divisible_residual": 405,
+      "sum_tq": 45
+    },
+    "remaining": 0
+  },
+  "two_shr": {
+    "necessary_boolean_cases": 1725867,
+    "necessary_survivors": 20,
+    "remaining": 0
+  },
+  "runtime_initial_amounts": {
+    "sources": 9,
+    "large_amount_counts": {
+      "e": 8,
+      "z": 8,
+      "u": 8,
+      "v": 8,
+      "b": 7,
+      "prior": 8,
+      "a": 8,
+      "a_shr19": 8,
+      "a_xor_c1": 8
+    },
+    "new_computed_amounts_not_covered": true
+  },
+  "checks": {
+    "research_tests": 24,
+    "new_tests": 5,
+    "new_random_nine_word_programs": 200,
+    "new_random_full32_lanes": 1600,
+    "truth_table_z3_cases": 180,
+    "quadratic_inverse_facts": 31,
+    "quartic_positive_controls": 9,
+    "quadratic_positive_controls": 1,
+    "gzip_roundtrip": true,
+    "gzip_refinement_positive_control": true,
+    "frozen_problem_and_tests_unchanged": true
+  },
+  "official_baseline_evidence": {
+    "path": "codex/root_boundary863_validation.json",
+    "sha256": "2b8a33054353015dfad1bbe7794f3f27803c2c933d7012e737b141d74740e5e4",
+    "cycles": 864,
+    "official_not_rerun_this_turn": true
+  },
+  "claude_progress": {
+    "commit": "172f07efd1d5cb4d0788d68ad79cc6eafde57b63",
+    "document": "codex/SUB863_ROUND0_MERGE_20261028.md",
+    "document_blob_sha": "58be669f9233c53d28c11c3cafd423b7064275d3",
+    "reported_best_cycles": 864,
+    "results_independently_rerun": false,
+    "division_open": 98,
+    "round0_four_op_open": 228
+  },
+  "protected_sha256": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  },
+  "files_sha256": {
+    "codex/SUB863_EARLY_BOUNDARY_20261028.md": "ac647567fb60ab81a5dcda49269a5b3de8a30464e2b63cbcf1369c895f1ceac2",
+    "codex/close_early_boundary863.py": "ab1f3e20cbd0e434ff8451cbd89a2473cae091e566dc1d952be7706eb957e502",
+    "codex/search_early_boundary863.py": "06febc0ec84f3869ee7f60da4467f562ca048791c2880c8b4ce6633876ff344d",
+    "codex/test_early_boundary863.py": "39c2c283bd27f8af36e4fb5869eee92f4d4e2fd086b6b8ebf84b8679801c2184",
+    "codex/early_boundary863_archives.json": "85b4529be1c8d0e389be839e390cf1b9f79228b0d1309a7aec921c2c0171f61a",
+    "codex/early_boundary863_closed_audit.json": "35133aec4aebab7d68d5be4a08542f7512078b60dcf2d4a4ea7f7b704541c657",
+    "codex/early_boundary863_first_shift.json.gz": "24f57b2c4cfa2d21d981eb264c833424109c39f776151f193939a8ce4946d182",
+    "codex/early_boundary863_one_mad_complete.json.gz": "408264dee2059763e5a488d40b5245767842a1fd5dfbc9e42d7f5551ed91d951",
+    "codex/early_boundary863_proofs.json": "182daf553a65a3ad71295e75f052a172ff1ba73743f9638ba4cf3cffd7544736"
+  },
+  "logs_sha256": {
+    "/tmp/aopt-early-boundary-regression.log": "9e8563e545b63afba66588cf1234697b5c0c198832cf74d85b9eeb6b3cf33fdd",
+    "/tmp/aopt-early-boundary-first-shift.log": "6ba7d6b09ab43e80b58a07f9b935c68c5098f80894a6471aa9ad862df1e90885",
+    "/tmp/aopt-early-boundary-one-mad.log": "b8f6841d5ddd1b56edfd4d866eb414b88f4466df2585d5df89d681fa46cb3fd1",
+    "/tmp/aopt-early-boundary-closed-audit.log": "019b5e0e03b1e6c0c1d555db8837ed46d992b9e840e20c9812ecd4d9d7db8c41"
+  },
+  "next_open_scopes": [
+    "Data-dependent shift amounts computed by a new instruction",
+    "Multiple data-dependent shifts",
+    "Division/comparison",
+    "Four-op joint window removing the previous final MAD",
+    "Other live words, encodings and whole-kernel schedule changes"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "family": "fold_affine",
+  "node": 0,
+  "full32_semantics": true,
+  "control": true,
+  "pinned": false,
+  "status": "proved_equivalent",
+  "events": [
+    {
+      "samples": 64,
+      "status": "sat"
+    }
+  ],
+  "new_executable": false,
+  "coefficients": {
+    "A": 9,
+    "B": 4251993797,
+    "G": 4097,
+    "H": 2127912214
+  },
+  "seconds": 2.672,
+  "samples": 64
+}

@@ -1,0 +1,6288 @@
+{
+  "initial_remaining": 176,
+  "newly_excluded": 174,
+  "remaining": 2,
+  "counts": {
+    "normalized_constant_offset_scaled_xor": 53,
+    "normalized_quadratic_offset_scaled_^": 69,
+    "normalized_quadratic_offset_scaled_&": 13,
+    "normalized_quadratic_offset_scaled_|": 21,
+    "kissat_60s_shallow_wiring_unsat": 12,
+    "normalized_two_affine_xor_key_family": 3,
+    "or_to_and_complement_equivalence": 1,
+    "merge_consecutive_constant_xors_to_three_ops": 1,
+    "normalized_quadratic_of_affine_xor": 1
+  },
+  "closed": [
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 2
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": true,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": true,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 5
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 5
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 2
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 5
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": true,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": true,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 2
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": true,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": true,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 2
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": true,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": true,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 2
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "&",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_&"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "shape": {
+        "bitop": "&",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_&"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "&",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_&"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "&",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_&"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "&",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_&"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "shape": {
+        "bitop": "&",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_&"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "&",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_&"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 5
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 5
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          1
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 5
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 5
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 5
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 5
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 6
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          0
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 5
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 5
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_^"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          4
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "^",
+        "residual_degree": 0,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_constant_offset_scaled_xor"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "&",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_&"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "&",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_&"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "&",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_&"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "&",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_&"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "&",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_&"
+    },
+    {
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "shape": {
+        "bitop": "&",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_&"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": true,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          0
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 3
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "shape": {
+        "bitop": "|",
+        "residual_degree": 1,
+        "unit_scale": false,
+        "terms": 4
+      },
+      "certificate": "normalized_quadratic_offset_scaled_|"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "certificate": "kissat_60s_shallow_wiring_unsat"
+    },
+    {
+      "order": [
+        "|",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "certificate": "kissat_60s_shallow_wiring_unsat"
+    },
+    {
+      "order": [
+        "|",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "certificate": "kissat_60s_shallow_wiring_unsat"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "certificate": "kissat_60s_shallow_wiring_unsat"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ]
+      ],
+      "certificate": "kissat_60s_shallow_wiring_unsat"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3,
+          2
+        ]
+      ],
+      "certificate": "kissat_60s_shallow_wiring_unsat"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "certificate": "kissat_60s_shallow_wiring_unsat"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "certificate": "kissat_60s_shallow_wiring_unsat"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3,
+          4
+        ]
+      ],
+      "certificate": "kissat_60s_shallow_wiring_unsat"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "certificate": "kissat_60s_shallow_wiring_unsat"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          3
+        ]
+      ],
+      "certificate": "kissat_60s_shallow_wiring_unsat"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "certificate": "kissat_60s_shallow_wiring_unsat"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "certificate": "normalized_two_affine_xor_key_family"
+    },
+    {
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "certificate": "or_to_and_complement_equivalence"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ],
+      "certificate": "merge_consecutive_constant_xors_to_three_ops"
+    },
+    {
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "certificate": "normalized_two_affine_xor_key_family"
+    },
+    {
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "certificate": "normalized_two_affine_xor_key_family"
+    },
+    {
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "certificate": "normalized_quadratic_of_affine_xor"
+    }
+  ],
+  "unresolved": [
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0188,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.2501
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.0837
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0188
+        }
+      ]
+    },
+    {
+      "width": 11,
+      "status": "unknown",
+      "dense_initial_samples": true,
+      "reason": "timeout",
+      "iterations": 1,
+      "samples": 83,
+      "seconds": 5.0148,
+      "order": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4,
+          3
+        ]
+      ],
+      "ladder": [
+        {
+          "width": 8,
+          "status": "reduced_sat",
+          "seconds": 0.3979
+        },
+        {
+          "width": 10,
+          "status": "reduced_sat",
+          "seconds": 1.752
+        },
+        {
+          "width": 11,
+          "status": "unknown",
+          "seconds": 5.0148
+        }
+      ]
+    }
+  ],
+  "evidence_sha256": {
+    "codex/restore_wiring863_complete_audit.json": "ffe609aceff91a3e33a5f41442e68c09849bbe1fa7fcc09df307e78fde441923",
+    "codex/restore_shallow863_normalization_controls.json": "f74f8553d9cbba0131d2a0f58b76775498fdfd4b21d76f77fc4de0ea5f798d85",
+    "codex/restore_shallow863_scaled.json": "bc9db56d65d1bdaf402e8f2be4096ee33f1b15feee6f6805dbd6e9c1fcef1ad3",
+    "codex/restore_shallow863_constscale.json": "b83c2fb3a0173e8ae9e6280ed25ee08386ac4e5c6d96609fc01f9bcaad77d839",
+    "codex/restore_shallow863_constscale_and.json": "f68c64d238c1aaae034b8b69057c09dafb66d0d4000d9bfc962709f28170c0d9",
+    "codex/restore_shallow863_constscale_or.json": "57b634ff8cdf961c81495e2c6990189be20b2d4ec64c49c0a9a7a31e5d0da28e",
+    "codex/restore_shallow863_kissat.json": "09513ebda5d5915c9054f8521d6faf122272a164468027dec12169ce99c446ac",
+    "codex/restore_shallow863_input.json": "8c48652fbd0c74fb8fe752eb944636ea4f0537090450550ea8a733db97bd629a",
+    "codex/restore_shallow863_last_controls.json": "786a7cb752b3c87a4c7e974d6b78c8605ef2b7eefa4c2eab6f96bff5823dae0f",
+    "codex/restore_shallow863_mixed.json": "4b197f3410728f0abac575dae245dc6a02b42d2cc1652ee7f72b497e471d90a5",
+    "codex/restore_shallow863_quad.json": "cb6da393ac045464d66bbe66b94fe1d9b5a4f6a25562067c36967dd9912392a6",
+    "codex/restore_shallow863_equivalence.json": "8068c6bbf367a96efdf967fec1c62c9342b02a5df151353318e68324aac3b3a0"
+  },
+  "best_executable_cycles": 864,
+  "new_executable": false
+}

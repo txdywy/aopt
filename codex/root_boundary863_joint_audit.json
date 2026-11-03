@@ -1,0 +1,115 @@
+{
+  "node": 2809010545,
+  "sampled_not_exhaustive": true,
+  "manifest_wirings": 3552,
+  "counts": {
+    "initial_sample_unsat": 3529,
+    "refinement_unsat": 20,
+    "shift_wordcut_range_certificate": 3
+  },
+  "closed_by_structure": [
+    {
+      "order": [
+        "^",
+        "mad",
+        "shr16",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "cut": 3,
+      "cut_image_at_most": 65536,
+      "target_image": 4294967296,
+      "certificate": "Every input-to-output path passes through SHR16"
+    },
+    {
+      "order": [
+        "|",
+        "mad",
+        "shr16",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "cut": 3,
+      "cut_image_at_most": 65536,
+      "target_image": 4294967296,
+      "certificate": "Every input-to-output path passes through SHR16"
+    },
+    {
+      "order": [
+        "mad",
+        "mad",
+        "shr16",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "cut": 3,
+      "cut_image_at_most": 65536,
+      "target_image": 4294967296,
+      "certificate": "Every input-to-output path passes through SHR16"
+    }
+  ],
+  "unresolved": [],
+  "remaining": 0,
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "evidence_sha256": {
+    "codex/root_boundary863_joint_scout.json": "6eacdd028b3580d24d2009e2c2358a48986cf9c2328c43df87cd235a07b15425",
+    "codex/root_boundary863_joint_refinement.json": "79ef88f05250c125f075a36eff549ebb4f33e770efd988eade6b5ad7ac8fa197"
+  },
+  "scope": "Only the 3552 sampled four-op graphs; not all four-op programs or a kernel bound."
+}

@@ -1,0 +1,23 @@
+{
+  "family": "separate_affine",
+  "node": 0,
+  "full32_semantics": true,
+  "control": true,
+  "pinned": false,
+  "status": "proved_equivalent",
+  "events": [
+    {
+      "samples": 64,
+      "status": "sat"
+    }
+  ],
+  "new_executable": false,
+  "coefficients": {
+    "A": 9,
+    "B": 1241990853,
+    "G": 4097,
+    "H": 3258866966
+  },
+  "seconds": 1.633,
+  "samples": 64
+}

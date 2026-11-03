@@ -1,0 +1,259 @@
+{
+  "node": 2809010545,
+  "input_names": [
+    "z",
+    "u",
+    "v",
+    "b",
+    "prior",
+    "a",
+    "a_shr19",
+    "a_xor_c1"
+  ],
+  "free_e": false,
+  "sampled_four_op": {
+    "cases": 14208,
+    "stages": [
+      {
+        "path": "codex/joint_live_boundary863_scout.json",
+        "counts": {
+          "lsb_dependency_excluded": 9819,
+          "unsat": 4244,
+          "shift_wordcut_excluded": 140,
+          "unknown": 5
+        }
+      },
+      {
+        "path": "codex/joint_live_boundary863_refinement.json",
+        "counts": {
+          "lsb_dependency_excluded": 9819,
+          "unsat": 4249,
+          "shift_wordcut_excluded": 140
+        }
+      }
+    ],
+    "counts": {
+      "lsb_dependency_excluded": 9819,
+      "unsat": 4249,
+      "shift_wordcut_excluded": 140
+    },
+    "remaining_sampled": 0,
+    "not_complete_four_op_grammar": true
+  },
+  "complete_affine_tail": {
+    "cases": 4200,
+    "stages": [
+      {
+        "path": "codex/joint_live_boundary863_affine_tail.json",
+        "counts": {
+          "unsat": 3507,
+          "shift_wordcut_excluded": 420,
+          "unknown": 273
+        }
+      },
+      {
+        "path": "codex/joint_live_boundary863_affine_refinement.json",
+        "counts": {
+          "unsat": 3764,
+          "shift_wordcut_excluded": 420,
+          "unknown": 16
+        }
+      },
+      {
+        "path": "codex/joint_live_boundary863_affine_dense.json",
+        "counts": {
+          "unsat": 3774,
+          "shift_wordcut_excluded": 420,
+          "unknown": 6
+        }
+      },
+      {
+        "path": "codex/joint_live_boundary863_affine_final.json",
+        "counts": {
+          "unsat": 3775,
+          "shift_wordcut_excluded": 420,
+          "unknown": 5
+        }
+      }
+    ],
+    "counts": {
+      "unsat": 3775,
+      "shift_wordcut_excluded": 420,
+      "full32_sliced_z_times_K_plus_u": 1,
+      "prior_full32_fold_affine_z_family": 2,
+      "full32_sliced_affine_u": 2
+    },
+    "certificates": [
+      {
+        "order": [
+          "mad",
+          "shr16",
+          "^",
+          "mad"
+        ],
+        "wiring": [
+          [
+            0,
+            8,
+            1
+          ],
+          [
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11,
+            12
+          ]
+        ],
+        "certificate": "full32_sliced_z_times_K_plus_u"
+      },
+      {
+        "order": [
+          "mad",
+          "shr16",
+          "^",
+          "mad"
+        ],
+        "wiring": [
+          [
+            0,
+            8,
+            8
+          ],
+          [
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11,
+            12
+          ]
+        ],
+        "certificate": "prior_full32_fold_affine_z_family"
+      },
+      {
+        "order": [
+          "mad",
+          "shr16",
+          "^",
+          "mad"
+        ],
+        "wiring": [
+          [
+            0,
+            8,
+            9
+          ],
+          [
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11,
+            12
+          ]
+        ],
+        "certificate": "prior_full32_fold_affine_z_family"
+      },
+      {
+        "order": [
+          "mad",
+          "shr16",
+          "^",
+          "mad"
+        ],
+        "wiring": [
+          [
+            1,
+            8,
+            8
+          ],
+          [
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11,
+            12
+          ]
+        ],
+        "certificate": "full32_sliced_affine_u"
+      },
+      {
+        "order": [
+          "mad",
+          "shr16",
+          "^",
+          "mad"
+        ],
+        "wiring": [
+          [
+            1,
+            8,
+            9
+          ],
+          [
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            11,
+            12
+          ]
+        ],
+        "certificate": "full32_sliced_affine_u"
+      }
+    ],
+    "remaining": 0,
+    "scope": "MAD(any8live), SHR16(t), XOR(q,initial/t/privateK), affine MAD"
+  },
+  "independent_high_half_sources": 8,
+  "evidence_sha256": {
+    "codex/joint_live_boundary863_scout.json.gz": "309b568920b19ec42223b0d4550156d318e988da131b6c23c3c63f0afb1bea07",
+    "codex/joint_live_boundary863_refinement.json": "efa9a4fe3fbc066f2fb49bdd821ad4524fdbfe8b25e8042485da960e4380c1f2",
+    "codex/joint_live_boundary863_affine_tail.json.gz": "a5e35e9d8a6aa98541ae157ab9685c8acf404058a3b35dd4e80fb6c79eb6560f",
+    "codex/joint_live_boundary863_affine_refinement.json": "dcfcdce313a0d53b2278deefe1d43bb39a40d97e72c87ad80bcaa85781b61643",
+    "codex/joint_live_boundary863_affine_dense.json": "3447aa638bdeb716e72ff80827aebef25033a7ac5447485f278421a9aa65f592",
+    "codex/joint_live_boundary863_affine_final.json": "76855d150c5936cc566e02a9d5146350d9255582ecf83ba59c1be7fd576af11a",
+    "codex/root_boundary863_fold_affine.json": "caa96bb196ba3b4d813170c0a0e2ff55c51e3fb00f5543a2f6fbfb9a7326b897",
+    "codex/joint_live_boundary863_affine_slice.json": "301421f7f8c89f55ded6ddf94e25598e649a6528cc16bbc0659b71fa6659bcd2",
+    "codex/joint_live_boundary863_affine_high.json": "2451857ea897d7944b7eff5e99851e2c158f96c372669821bb6f1a458fb3da11",
+    "codex/joint_live_boundary863_ir_control.json": "4e9362e3138b06c4945aea66a9fa78ca04d3d0bf0eb44acd4f82919589418ea9"
+  },
+  "decoded_sources_sha256": {
+    "codex/joint_live_boundary863_scout.json": "bc77761af6c674160c8882942dc6f27fbb39384cba7052b7f2ae5b169270a701",
+    "codex/joint_live_boundary863_refinement.json": "efa9a4fe3fbc066f2fb49bdd821ad4524fdbfe8b25e8042485da960e4380c1f2",
+    "codex/joint_live_boundary863_affine_tail.json": "9a83e8ff7c15eac8e7d48a234d45f27d564a25643399b5455a7109753d416760",
+    "codex/joint_live_boundary863_affine_refinement.json": "dcfcdce313a0d53b2278deefe1d43bb39a40d97e72c87ad80bcaa85781b61643",
+    "codex/joint_live_boundary863_affine_dense.json": "3447aa638bdeb716e72ff80827aebef25033a7ac5447485f278421a9aa65f592",
+    "codex/joint_live_boundary863_affine_final.json": "76855d150c5936cc566e02a9d5146350d9255582ecf83ba59c1be7fd576af11a",
+    "codex/root_boundary863_fold_affine.json": "caa96bb196ba3b4d813170c0a0e2ff55c51e3fb00f5543a2f6fbfb9a7326b897",
+    "codex/joint_live_boundary863_affine_slice.json": "301421f7f8c89f55ded6ddf94e25598e649a6528cc16bbc0659b71fa6659bcd2",
+    "codex/joint_live_boundary863_affine_high.json": "2451857ea897d7944b7eff5e99851e2c158f96c372669821bb6f1a458fb3da11",
+    "codex/joint_live_boundary863_ir_control.json": "4e9362e3138b06c4945aea66a9fa78ca04d3d0bf0eb44acd4f82919589418ea9"
+  },
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "scope": "The sampled manifest and stated complete affine-tail subfamily only. No all-four-op or global kernel bound."
+}

@@ -1,0 +1,92 @@
+{
+  "node": 2809010545,
+  "raw_root": 305419896,
+  "input_names": [
+    "e",
+    "z",
+    "u",
+    "v",
+    "b",
+    "prior",
+    "a",
+    "a_shr19",
+    "a_xor_c1"
+  ],
+  "evidence_sha256": {
+    "codex/quotient_circular863_audit.json": "2dc7a3f6e69b743325a0e2196b800cff25ecf929239f4a4447d3e09bd0e54a62",
+    "codex/floor_xor_prefix863_audit.json": "1e0e69606872f45564eb6708012174898df480dc02aeb76feff46497b9bcbde9",
+    "codex/computed_denominator863_closed_audit.json": "b4570d577099badd050b19116e4daa63e32475b26a033656e4be5d17da33b451",
+    "codex/computed_division863_closed_audit.json": "d6f899d1472169884d8671a04899ec04c4bdf40ee11a053958f594335430787a",
+    "codex/middle_mad_quotient863_audit.json": "9723414827d7dbfdc2216f61ebe874dcd41b4389f76d4a7c633113225541839c",
+    "codex/middle_residual_enum863.json": "ca0a3217b1b1c76245cb382f8c2b83e8c983a856da1ae4a48e9a20995a6a4283",
+    "codex/odd_prefix_collisions863_verified.json": "3ac3c2bbf1b6773203464e82785f1f0b32d7fdd82d11340e83325192473f473e",
+    "codex/middle_runtime_factor863_audit.json": "36fdc2606c90262641bd16fcc26f0b1590e9e9b5c6e3efb71bf3d198c7da7bc8",
+    "codex/division_first_t863_audit.json": "0908243bc4249507c8d5a35e6d371f4618cbc8a3833144751af36bb1da32a276",
+    "codex/final_division863_audit.json": "27561b5ae7ec755d8dc2d890beb7f6891019ee3618de8bc3b1fbaccbf1baa50d",
+    "codex/comparison_core863_audit.json": "d3fd182f4c3544f8dda9f79d2bec972aad83fe3b19008d33f2ab45406b642913",
+    "codex/shift_division863_audit.json": "774e5e60a2c165c635ce3b677a183d2d53f81b5be555b28e0866bcedb34b8fb7"
+  },
+  "prepared_divisor_middle": {
+    "complete": true,
+    "final_operation_forms": 1158,
+    "quotient_using_forms": 248,
+    "family_certificates": {
+      "no_quotient_parity": "All initial and T-only LSBs ignore b16, target parity flips.",
+      "quotient_only_or_zero": "A permutation output depending only on conservative q forces permutation P/q and q=P; two T ops still ignore b16.",
+      "quotient_square_plus_self_even": "q*q+q is even.",
+      "quotient_square_mod4": "T-only addend low2 is constant on the fibre; q*q has only0/1 modulo4, fewer than the four target residues.",
+      "even_initial_factor": "An initial coefficient has an even-parity class with a b16 partner; the remaining T-only addend cannot flip output parity.",
+      "initial_plus_one_factor": "Prior initial-plus-one audit: all but v+1 fail parity; v+1 requires219 distinct high numerators inconsistent with one MAD/bitop.",
+      "prefix_factor_initial_addend": "Prior complete always-odd prefix collisions:702 canonical prefixes,64 admissible parameter parities, all initial addends refuted.",
+      "prefix_factor_plus_self": "Permutation output is a function only of P, forcing permutation P; parity forces P always odd, contradiction.",
+      "prefix_plus_one_factor": "Permutation output is a function only of P, forcing permutation P; parity forces P always even, contradiction.",
+      "prefix_factor_prepared_addend": "Permutation output is a function only of P, forcing permutation P; parity forces P always odd, contradiction.",
+      "prepared_factor_initial_addend": "Prior complete odd-inverse enumeration excludes even the relaxed q<=2^31 family. Floor/ceil D>=2 obey this; REM has the new302675 bound. D=1 is T-only.",
+      "prepared_factor_prefix_addend": "One-MAD prefix: prior exact2^31 rectangle. First-bitop prefix: permutation/zero reduction and conservative P=1 parity certificate.",
+      "quotient_affine_prepared": "Permutation output forces permutation q/P. Since0<=q<=P, sums force q=P, leaving only T operations.",
+      "quotient_plus_fixed_initial_product": "New zero-factor anchor and circular floor/ceil/REM certificates, valid for every one-T prefix.",
+      "quotient_plus_prefix_initial_product": "New zero-factor anchor and circular floor/ceil/REM certificates, valid for every one-T prefix.",
+      "quotient_plus_scalar_initial_product": "New zero-factor anchor and circular floor/ceil/REM certificates, arbitrary prepared scalar including nonunits.",
+      "quotient_plus_prefix_square": "One-MAD prefix: prior exact2^31 rectangle. First-bitop prefix: zero/permutation reduction; at P=1 the output is at most2.",
+      "quotient_plus_scalar_prefix": "One-MAD prefix: prior exact2^31 rectangle. First-bitop prefix: P=1 gives two complete scalar candidates; both violate q<=P.",
+      "bitop_initial": "AND/OR fail at target MASK/0 witnesses for arbitrary q. XOR requires high q: floor/ceil reduce to D=1; REM then has at most two low16 states.",
+      "bitop_prefix": "AND/OR are pointwise<=P/>=P; permutation forces identity. XOR: ceil/REM noninjective at P=0,1; floor has64 complete small-target profiles inconsistent with every first MAD/bitop.",
+      "bitop_prepared": "A permutation bitwise-mask output forces permutation q/P; conservative q=P, giving a T-only expression."
+    },
+    "final_manifest_evidence": "codex/computed_denominator863_closed_audit.json"
+  },
+  "computed_denominator_middle": {
+    "complete": true,
+    "evidence": "codex/computed_denominator863_closed_audit.json"
+  },
+  "division_first": {
+    "complete": true,
+    "evidence": "codex/division_first_t863_audit.json"
+  },
+  "division_last": {
+    "complete": true,
+    "evidence": "codex/final_division863_audit.json"
+  },
+  "division_free": {
+    "complete": true,
+    "evidence": "codex/comparison_core863_audit.json"
+  },
+  "prepared_shr_then_division": {
+    "complete": true,
+    "evidence": "codex/shift_division863_audit.json",
+    "independent_quotient_cases": 243,
+    "exact_divisor_candidates": 43,
+    "scope": "First S=SHR(initial_h,prepared_count), then one DIV/REM/CDIV with operands from initials/S/root constants, then MAD/XOR/AND/OR with arbitrary initial/S/q/root operands. Includes independent D,S,T when it commutes to S,D,T. Excludes variable shift counts and a second shift reading an earlier quotient."
+  },
+  "independent_middle_numerator": "If middle division reads an initial numerator and prepared divisor without P, commute it before the independent first T and apply the division-first/two-T certificate. A prepared numerator and prepared divisor is constant, leaving T-only parity.",
+  "initial_denominator": "Every initial-word denominator has a legal zero witness, irrespective of its numerator. Prepared divisor0 is also invalid. If both operands are the same valid P, floor/ceil give1 and REM gives0, leaving T-only parity.",
+  "completed_scope": "At most three instructions, at most one DIV/REM/CDIV, remaining instructions MAD/XOR/AND/OR, arbitrary operands on the nine live words and root-only prepared constants, fixed allowed raw root0x12345678, legal execution on every reachable b. All placements of that single division are covered. Division-free core is covered by the earlier three-op core. This is a local macro grammar, not a full-kernel or full-ISA bound.",
+  "complete_in_stated_scope": true,
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "still_open": [
+    "Two or more DIV/REM/CDIV operations; variable shift counts; a shift reading a prior quotient; REM mixed with comparisons; other division/shift orders where not covered by existing conservative-chain/Boolean certificates.",
+    "Additional free intermediates, root/leaf-dependent preparation, root-conditional macros, larger joint windows, nonlinear state encodings, cross-lane/FLOW/memory mechanisms and different kernel algorithms."
+  ],
+  "no_global_optimality_claim": true
+}

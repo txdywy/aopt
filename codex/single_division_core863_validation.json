@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-28",
+  "base_commit": "0120a64e9ae3781e446ee571cdfb6c770e944bc0",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "no_global_optimality_claim": true,
+  "runtime": {
+    "python": "3.12.16",
+    "numpy": "2.3.5",
+    "z3": "5.1.0"
+  },
+  "fixed_root": {
+    "raw": 305419896,
+    "effective": 2809010545
+  },
+  "regression": {
+    "tests": 84,
+    "new_tests": 14,
+    "result": "OK",
+    "summary": "....................................................................................\n----------------------------------------------------------------------\nRan 84 tests in 9.682s\n\nOK",
+    "log_sha256": "53749c41c9b96e6ba4550e26906b5a568872f0b920f3b868095dcdfbe29e8d81",
+    "new_three_op_frozen_vector_controls": 252,
+    "new_frozen_control_word_lanes": 2016
+  },
+  "closure_replay": {
+    "summary": "Single-division three-op core closed: True\nPrepared-divisor final forms: 248",
+    "log_sha256": "d27b79195a9e7a71e167e6cf23e1a26fdf3728b9eec8473159ae046493991d8f"
+  },
+  "circular_remainder_bound": {
+    "width": 16,
+    "enumerated_odd_units": 32768,
+    "complete_unit_domain": true,
+    "minimum_span": 14190,
+    "minimizing_inverse_units": [
+      8015,
+      57521
+    ],
+    "span_array_sha256": "2f55c02822649249fea7efa13eb0e412014e8df2836044cf36c09a7fbfec2ab2",
+    "necessary_max_divisor": 302675,
+    "word_bits": 32
+  },
+  "floor_xor_profiles": 64,
+  "final_operation_forms": 1158,
+  "quotient_using_final_forms": 248,
+  "shift_division": {
+    "independent_cases": 243,
+    "exact_divisor_candidates": 43,
+    "maximum_candidate_divisor": 3734114204,
+    "both_result_final_forms": 37,
+    "dependent_live_quotient_final_forms": 248,
+    "dependent_fixed_initial_product_cases": 405,
+    "dependent_scalar_initial_cases": 81
+  },
+  "source_and_evidence_sha256": {
+    "codex/audit_quotient_circular863.py": "9ad6c2efc4c0a0a77d0eb28e6cb0231bd23abaaef53fe45bdf34a0a3951f0441",
+    "codex/audit_floor_xor_prefix863.py": "121a8bcda6c0eefa1187e5f2641f944fe536e8920eac7068f1f12f322ce1258d",
+    "codex/audit_shift_division863.py": "51fc788a73866c32331e4027c07bfef95b4e633b325d2cb02145de3f28e99e35",
+    "codex/close_single_division_core863.py": "1d2e1fe79fde2673b429f78173485e47d3bf09e7124640747a305fd8799d0008",
+    "codex/test_single_division_core863.py": "9dcba43c02f4136f6102506fa4e136f1922862492539d442e66a2d8e567cfc6b",
+    "codex/test_shift_division863.py": "06c1edd7cd3fc30f6bf431e22cee754fe377cdb551d3a0b0329fbaa85ecc190c",
+    "codex/quotient_circular863_audit.json": "2dc7a3f6e69b743325a0e2196b800cff25ecf929239f4a4447d3e09bd0e54a62",
+    "codex/floor_xor_prefix863_audit.json": "1e0e69606872f45564eb6708012174898df480dc02aeb76feff46497b9bcbde9",
+    "codex/shift_division863_audit.json": "774e5e60a2c165c635ce3b677a183d2d53f81b5be555b28e0866bcedb34b8fb7",
+    "codex/single_division_core863_closed_audit.json": "5634a380cc3a36990237d6d90bc5e50346e45d750158ccc3c7cc522bb073a4aa",
+    "codex/SUB863_SINGLE_DIVISION_CORE_20261028.md": "4ec3a3a62b58fba3c44486d6c83f7d7c3f00de29ca7427c9da0aefb92c6428d8",
+    "codex/README.md": "3241d8e1bea698d74d3febd670be2f3e8902238b63f5d38005e6d194b8a31aa3"
+  },
+  "upstream_evidence_sha256": {
+    "codex/quotient_circular863_audit.json": "2dc7a3f6e69b743325a0e2196b800cff25ecf929239f4a4447d3e09bd0e54a62",
+    "codex/floor_xor_prefix863_audit.json": "1e0e69606872f45564eb6708012174898df480dc02aeb76feff46497b9bcbde9",
+    "codex/computed_denominator863_closed_audit.json": "b4570d577099badd050b19116e4daa63e32475b26a033656e4be5d17da33b451",
+    "codex/computed_division863_closed_audit.json": "d6f899d1472169884d8671a04899ec04c4bdf40ee11a053958f594335430787a",
+    "codex/middle_mad_quotient863_audit.json": "9723414827d7dbfdc2216f61ebe874dcd41b4389f76d4a7c633113225541839c",
+    "codex/middle_residual_enum863.json": "ca0a3217b1b1c76245cb382f8c2b83e8c983a856da1ae4a48e9a20995a6a4283",
+    "codex/odd_prefix_collisions863_verified.json": "3ac3c2bbf1b6773203464e82785f1f0b32d7fdd82d11340e83325192473f473e",
+    "codex/middle_runtime_factor863_audit.json": "36fdc2606c90262641bd16fcc26f0b1590e9e9b5c6e3efb71bf3d198c7da7bc8",
+    "codex/division_first_t863_audit.json": "0908243bc4249507c8d5a35e6d371f4618cbc8a3833144751af36bb1da32a276",
+    "codex/final_division863_audit.json": "27561b5ae7ec755d8dc2d890beb7f6891019ee3618de8bc3b1fbaccbf1baa50d",
+    "codex/comparison_core863_audit.json": "d3fd182f4c3544f8dda9f79d2bec972aad83fe3b19008d33f2ab45406b642913",
+    "codex/shift_division863_audit.json": "774e5e60a2c165c635ce3b677a183d2d53f81b5be555b28e0866bcedb34b8fb7"
+  },
+  "protected_files_sha256": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  },
+  "frozen_tests_and_problem_unchanged": true,
+  "official_score_preserved_by_unchanged_source": true,
+  "prior_official_evidence": {
+    "path": "codex/root_boundary863_validation.json",
+    "sha256": "2b8a33054353015dfad1bbe7794f3f27803c2c933d7012e737b141d74740e5e4",
+    "tests": 9,
+    "cycles": 864,
+    "not_rerun_this_turn": true
+  },
+  "completed_scope": "At most three instructions, at most one DIV/REM/CDIV, remaining instructions MAD/XOR/AND/OR, arbitrary operands on the nine live words and root-only prepared constants, fixed allowed raw root0x12345678, legal execution on every reachable b. All placements of that single division are covered. Division-free core is covered by the earlier three-op core. This is a local macro grammar, not a full-kernel or full-ISA bound.",
+  "additional_completed_scope": "First S=SHR(initial_h,prepared_count), then one DIV/REM/CDIV with operands from initials/S/root constants, then MAD/XOR/AND/OR with arbitrary initial/S/q/root operands. Includes independent D,S,T when it commutes to S,D,T. Excludes variable shift counts and a second shift reading an earlier quotient.",
+  "remaining": [
+    "Two or more DIV/REM/CDIV operations; variable shift counts; a shift reading a prior quotient; REM mixed with comparisons; other division/shift orders where not covered by existing conservative-chain/Boolean certificates.",
+    "Additional free intermediates, root/leaf-dependent preparation, root-conditional macros, larger joint windows, nonlinear state encodings, cross-lane/FLOW/memory mechanisms and different kernel algorithms."
+  ]
+}

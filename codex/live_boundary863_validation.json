@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-28",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "scope": "Only one literal SHR16, at least one MAD and another MAD/XOR/AND/OR; stated live inputs. No global kernel or other shift-count bound.",
+  "runtime": {
+    "python": "3.12.16",
+    "z3": "5.1.0",
+    "numpy": "2.3.5"
+  },
+  "grammar": {
+    "input_words": [
+      "e",
+      "z",
+      "u",
+      "v",
+      "b"
+    ],
+    "orders": 14,
+    "mad_required": true,
+    "shift_count": 16,
+    "full32_primary": true,
+    "private_constants": "arbitrary prepared constants for a fixed legal root"
+  },
+  "fixed_root": {
+    "raw": 305419896,
+    "effective_node": 2809010545
+  },
+  "complete_arms": {
+    "manifest": 113265,
+    "remaining": 0,
+    "counts": {
+      "complete_ez_reuse": 6192,
+      "smt_unsat": 105127,
+      "shr16_wordcut": 1938,
+      "lsb_dependency": 1,
+      "integer_polynomial_plus_bounded_shift_rectangle": 3,
+      "residual_T_minus_e_image_exceeds_65536": 1,
+      "lsb_requires_even_A_but_top_input_dependency_requires_odd_A": 2,
+      "lsb_requires_odd_K_but_permutation_sum_requires_even_K": 1
+    },
+    "archive_bytes": 1088919,
+    "decoded_bytes": 50050956
+  },
+  "complete_ez": {
+    "manifest": 6192,
+    "remaining": 0
+  },
+  "runtime_node_scout": {
+    "manifest": 3518,
+    "remaining_sampled": 0,
+    "not_complete_grammar": true,
+    "raw_root_domain_bits": 30
+  },
+  "checks": {
+    "regression_tests": 19,
+    "new_tests": 8,
+    "random_multi_input_wirings": 400,
+    "random_full32_lanes": 3200,
+    "original_middle_control_lanes": 256,
+    "full32_top_facts": 7,
+    "permutation_sum_small_cases": 2160,
+    "polynomial_positive_controls": 5,
+    "complete_kernel_frozen_seeds": 3
+  },
+  "ir_control": {
+    "replaced_boundaries": 32,
+    "macro_instructions": 4,
+    "arithmetic_before": 51665,
+    "arithmetic_after": 51665,
+    "new_setup_operations": 0,
+    "scratch": 1111,
+    "serial_cycles_not_a_score": 12083
+  },
+  "protected_sha256": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  },
+  "frozen_problem_and_tests_unchanged_from_origin_main": true,
+  "official_baseline_evidence": {
+    "path": "codex/root_boundary863_validation.json",
+    "sha256": "2b8a33054353015dfad1bbe7794f3f27803c2c933d7012e737b141d74740e5e4",
+    "cycles": 864,
+    "official_not_rerun_this_turn": true
+  },
+  "claude_progress": {
+    "commit": "d314f3c39c8330ed39dfbd6f07d0fa607baeb4fd",
+    "document": "codex/SUB863_HEAD_GRAMMAR_20261028.md",
+    "document_blob_sha": "7b098ea72c8ccf43b34220dbdc1703bdca3493c3",
+    "reported_best_cycles": 864,
+    "results_independently_rerun": false,
+    "noted_gaps": [
+      "arbitrary 32-bit input XOR key",
+      "partial division/comparison grammar"
+    ]
+  },
+  "files_sha256": {
+    "codex/search_live_boundary863.py": "d50bf699691918bb2b825fabcb608d450e30dbb4c1d46fb81efd323e880dd881",
+    "codex/build_live_boundary863.py": "bf0a491ace51a09b6c3c60add7b8e0df63210d397d8ad6d78fa37d4bdaa921d2",
+    "codex/audit_live_boundary863.py": "bab06976d8297a81c4070a39495ed8190d14ca0f11bcae8bfe1a6033b272aedf",
+    "codex/close_live_boundary863.py": "d19b4289fa116dc0d435f0b052d12cedf430692f6e0e4341aef7624b6660e18d",
+    "codex/screen_live_boundary_polynomial863.py": "867648974ed797eb1401a6ee95766805576bd07bab8767192ef79c90cb5a2343",
+    "codex/test_live_boundary863.py": "971ff1dfda74e162cfab93435c68fb7f50384deef773a5be519ff180cb8d5a28",
+    "codex/SUB863_LIVE_BOUNDARY_20261028.md": "8860c8cca2e6ee94599d65e42919370c4faa8bbf4079563e2457656f23f310bd",
+    "codex/live_boundary863_arms_archive.json": "209a36eeaa3ef53085edefeaffe1b6b3b15ed48295a72a8c38e07aa0173061a0",
+    "codex/live_boundary863_arms_closed_audit.json": "2fae1cc34299533bb6d633a1815e2975c8d2f26ffbcaf9d808413c2be226cab6",
+    "codex/live_boundary863_arms_complete.json.gz": "85214517a6f6920e99f5dff1164b8ab1ed62bc1053946c8ad186fa594b6d1d0b",
+    "codex/live_boundary863_arms_complete_refinement.json": "4da07ad18d3931b86ff1b24f8b96f7475de3abfb961e025eb14168d1d57629d2",
+    "codex/live_boundary863_arms_refinement.json": "83fef7820fc7f0f0547c5336d9a47a033844236a3f9cf7e39083e6ecde2c1f45",
+    "codex/live_boundary863_arms_scout.json": "e4499705ebb136bfd2ad53373a3541e513e71e3d4f3d131dafead711d84f0f8c",
+    "codex/live_boundary863_audit.json": "5034bf8005c3ecf676fce6bac9fc675ac96264b0042b1590c3c7515eda011333",
+    "codex/live_boundary863_ez.json": "dd338bc0dad7bf4922dc5bfac16a7e3c0be4a8b4e47724fb9bf977e17b95045c",
+    "codex/live_boundary863_ez_refinement.json": "7d4f463aafc783bafae902769ecc2c142622a919105bd49fab72168a04f88390",
+    "codex/live_boundary863_ir_control.json": "bbbc1bd8cd43735936a0d42fc0750ce768bad66e5fc4aeb9062384ecb85d7ea8",
+    "codex/live_boundary863_polynomial.json": "ad48c7d8b2360abb90af8f23542c991d5a6dd53617d01e5c786fa9cfd1300328",
+    "codex/live_boundary863_runtime_node_scout.json": "34e2c822c389330eef4a7c5fe9127caf8c208ee08cef92583735d8a8bc2b7e26"
+  },
+  "logs_sha256": {
+    "/tmp/aopt-live-boundary-regression.log": "da9b8722a84cfd1503525ea0d9475a8bc3a232318cb37ea74bfb764453aa0df1",
+    "/tmp/aopt-live-boundary-ir-control.log": "616fc4e6b0fe3a21c7f4cee60b02b05055bac2fffc9bce5b43d581521b172c79",
+    "/tmp/aopt-live-boundary-arms-complete.log": "651573697c1974de30fe9c34b1e8ba34f01f6f1b4d9655fbb7fa641857035c80",
+    "/tmp/aopt-live-boundary-arms-complete-refinement.log": "05d513c9fe28902b1bea4b3d426e4025a2739b6119eaaaf14f926d0753ba953a",
+    "/tmp/aopt-live-boundary-closed-audit.log": "ecb3b0422b6e912c7a5b984792ed786a60538509f6912b45727595bd6d4a3381"
+  }
+}

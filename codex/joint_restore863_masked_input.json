@@ -1,0 +1,39 @@
+{
+  "normalization_controls": {
+    "programs_per_family": {
+      "parallel": 100,
+      "serial": 100,
+      "branched": 100,
+      "masked_parallel": 100,
+      "masked_serial": 100,
+      "masked_branched": 100,
+      "input_mixed": 100,
+      "masked_input": 100,
+      "input_feedback": 100,
+      "input_product": 100
+    },
+    "inputs_per_program": 64,
+    "no_input_transform": true,
+    "exact_exposed_function_preserved": true
+  },
+  "queries": [
+    {
+      "family": "masked_input",
+      "width": 11,
+      "control": false,
+      "quadratic_relaxation": false,
+      "fixed_scale": null,
+      "input_key": 3345072700,
+      "output_key": 3042638419,
+      "status": "unsat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "unsat"
+        }
+      ],
+      "new_executable": false,
+      "seconds": 0.929
+    }
+  ]
+}

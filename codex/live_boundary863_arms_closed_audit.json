@@ -1,0 +1,237 @@
+{
+  "node": 2809010545,
+  "complete_manifest": 113265,
+  "remaining": 0,
+  "counts": {
+    "complete_ez_reuse": 6192,
+    "smt_unsat": 105127,
+    "shr16_wordcut": 1938,
+    "lsb_dependency": 1,
+    "integer_polynomial_plus_bounded_shift_rectangle": 3,
+    "residual_T_minus_e_image_exceeds_65536": 1,
+    "lsb_requires_even_A_but_top_input_dependency_requires_odd_A": 2,
+    "lsb_requires_odd_K_but_permutation_sum_requires_even_K": 1
+  },
+  "certificates": [
+    {
+      "order": [
+        "mad",
+        "shr16",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          5,
+          6
+        ],
+        [
+          5
+        ],
+        [
+          2,
+          5,
+          6
+        ]
+      ],
+      "certificate": "integer_polynomial_plus_bounded_shift_rectangle"
+    },
+    {
+      "order": [
+        "mad",
+        "shr16",
+        "mad"
+      ],
+      "wiring": [
+        [
+          1,
+          5,
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6,
+          7,
+          0
+        ]
+      ],
+      "certificate": "residual_T_minus_e_image_exceeds_65536"
+    },
+    {
+      "order": [
+        "mad",
+        "shr16",
+        "mad"
+      ],
+      "wiring": [
+        [
+          2,
+          5,
+          6
+        ],
+        [
+          5
+        ],
+        [
+          0,
+          5,
+          6
+        ]
+      ],
+      "certificate": "integer_polynomial_plus_bounded_shift_rectangle"
+    },
+    {
+      "order": [
+        "mad",
+        "shr16",
+        "mad"
+      ],
+      "wiring": [
+        [
+          2,
+          5,
+          6
+        ],
+        [
+          5
+        ],
+        [
+          2,
+          5,
+          6
+        ]
+      ],
+      "certificate": "integer_polynomial_plus_bounded_shift_rectangle"
+    },
+    {
+      "order": [
+        "mad",
+        "shr16",
+        "mad"
+      ],
+      "wiring": [
+        [
+          2,
+          5,
+          6
+        ],
+        [
+          5
+        ],
+        [
+          5,
+          6,
+          3
+        ]
+      ],
+      "certificate": "lsb_requires_even_A_but_top_input_dependency_requires_odd_A"
+    },
+    {
+      "order": [
+        "mad",
+        "shr16",
+        "mad"
+      ],
+      "wiring": [
+        [
+          2,
+          5,
+          6
+        ],
+        [
+          5
+        ],
+        [
+          5,
+          6,
+          4
+        ]
+      ],
+      "certificate": "lsb_requires_even_A_but_top_input_dependency_requires_odd_A"
+    },
+    {
+      "order": [
+        "mad",
+        "shr16",
+        "mad"
+      ],
+      "wiring": [
+        [
+          2,
+          5,
+          6
+        ],
+        [
+          5
+        ],
+        [
+          6,
+          7,
+          5
+        ]
+      ],
+      "certificate": "lsb_requires_odd_K_but_permutation_sum_requires_even_K"
+    }
+  ],
+  "rectangle": {
+    "primary_b": [
+      0,
+      1073741824,
+      2147483648,
+      3221225472
+    ],
+    "z": [
+      1161276957,
+      2235018781,
+      3308760605,
+      87535133
+    ],
+    "target": [
+      4209921524,
+      1190071796,
+      2196688372,
+      3203304948
+    ],
+    "mixed_target": 4026466304,
+    "modular_distance": 268500992,
+    "maximum_mixed_shift_residual": 131070,
+    "polynomial_mixed_difference": 0,
+    "proof": "All coordinate increments are multiples of 2^16, so every mixed polynomial term vanishes mod 2^32"
+  },
+  "residual_image": {
+    "e_range": [
+      0,
+      131072
+    ],
+    "distinct_residuals": 131072,
+    "maximum_constant_times_shr16_image": 65536,
+    "values_sha256": "7aa9ef2266d323d3fe18204ede48ae48253ce89a77e3a49c83421f9f21816170"
+  },
+  "top_dependency_facts": [
+    "initial_0_low16_ignores_primary31",
+    "initial_1_low16_ignores_primary31",
+    "initial_2_low16_ignores_primary31",
+    "initial_3_low16_ignores_primary31",
+    "initial_4_low16_ignores_primary31",
+    "target_bit15_flips_on_primary31",
+    "even_multiplier_loses_highest_bit"
+  ],
+  "permutation_sum": {
+    "exhaustive_small_coefficient_cases": 2160,
+    "sum_shr16_mod32": 2147483648,
+    "proof": "A permutation preserves the sum of all uint32 values; g(t)=t+K*(t>>16) therefore requires K even"
+  },
+  "evidence_sha256": {
+    "codex/live_boundary863_arms_complete.json.gz": "85214517a6f6920e99f5dff1164b8ab1ed62bc1053946c8ad186fa594b6d1d0b",
+    "codex/live_boundary863_arms_complete_refinement.json": "4da07ad18d3931b86ff1b24f8b96f7475de3abfb961e025eb14168d1d57629d2",
+    "codex/live_boundary863_ez.json": "dd338bc0dad7bf4922dc5bfac16a7e3c0be4a8b4e47724fb9bf977e17b95045c",
+    "codex/live_boundary863_audit.json": "5034bf8005c3ecf676fce6bac9fc675ac96264b0042b1590c3c7515eda011333"
+  },
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "mandatory_mad": true,
+  "shift_count": 16,
+  "scope": "One SHR16, one MAD, and a third MAD/XOR/AND/OR operation, with the five stated live hash words and arbitrary prepared constants for one legal root. No other shift counts or global kernel bound."
+}

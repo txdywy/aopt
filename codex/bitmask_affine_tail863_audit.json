@@ -1,0 +1,740 @@
+{
+  "node": 2809010545,
+  "input_names": [
+    "e",
+    "z",
+    "u",
+    "v",
+    "b",
+    "prior",
+    "a",
+    "a_shr19",
+    "a_xor_c1"
+  ],
+  "live_operand_masks": [
+    {
+      "source": 0,
+      "source_name": "e",
+      "op": "&",
+      "status": "excluded",
+      "proof": "The live mask bit15 is0 on both pair members, fixing AND bit15 to0; the inverse affine target must flip bit15.",
+      "primary_pair": [
+        0,
+        2147483648
+      ],
+      "legal_points": [
+        {
+          "primary_b": 0,
+          "prior": 984669626,
+          "values": [
+            1818584522,
+            1161276957,
+            3925396509,
+            2899272192,
+            0,
+            984669626,
+            3345078992,
+            6380,
+            6380
+          ],
+          "target": 4209921524,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 1054563911,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        },
+        {
+          "primary_b": 2147483648,
+          "prior": 3148926394,
+          "values": [
+            3966068170,
+            3308760605,
+            1777912861,
+            2899272192,
+            2147483648,
+            3148926394,
+            1197591248,
+            2284,
+            2147485932
+          ],
+          "target": 2196688372,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 1,
+            "leaf_index": 1797,
+            "leaf_value": 36772402,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      ]
+    },
+    {
+      "source": 0,
+      "source_name": "e",
+      "op": "|",
+      "status": "excluded",
+      "proof": "The live mask bit15 is1 on both pair members, fixing OR bit15 to1; the inverse affine target must flip bit15.",
+      "primary_pair": [
+        1,
+        2147483649
+      ],
+      "legal_points": [
+        {
+          "primary_b": 1,
+          "prior": 1001442747,
+          "values": [
+            1818423539,
+            1161259070,
+            3925396542,
+            2899289088,
+            1,
+            1001442747,
+            3345078993,
+            6380,
+            6381
+          ],
+          "target": 306176758,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 1071337030,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        },
+        {
+          "primary_b": 2147483649,
+          "prior": 3165699515,
+          "values": [
+            3965907187,
+            3308742718,
+            1777912894,
+            2899289088,
+            2147483649,
+            3165699515,
+            1197591249,
+            2284,
+            2147485933
+          ],
+          "target": 2319409910,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 1,
+            "leaf_index": 1797,
+            "leaf_value": 87124531,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      ]
+    },
+    {
+      "source": 1,
+      "source_name": "z",
+      "op": "&",
+      "status": "excluded",
+      "proof": "The live mask bit15 is0 on both pair members, fixing AND bit15 to0; the inverse affine target must flip bit15.",
+      "primary_pair": [
+        1,
+        2147483649
+      ],
+      "legal_points": [
+        {
+          "primary_b": 1,
+          "prior": 1001442747,
+          "values": [
+            1818423539,
+            1161259070,
+            3925396542,
+            2899289088,
+            1,
+            1001442747,
+            3345078993,
+            6380,
+            6381
+          ],
+          "target": 306176758,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 1071337030,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        },
+        {
+          "primary_b": 2147483649,
+          "prior": 3165699515,
+          "values": [
+            3965907187,
+            3308742718,
+            1777912894,
+            2899289088,
+            2147483649,
+            3165699515,
+            1197591249,
+            2284,
+            2147485933
+          ],
+          "target": 2319409910,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 1,
+            "leaf_index": 1797,
+            "leaf_value": 87124531,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      ]
+    },
+    {
+      "source": 1,
+      "source_name": "z",
+      "op": "|",
+      "status": "excluded",
+      "proof": "The live mask bit15 is1 on both pair members, fixing OR bit15 to1; the inverse affine target must flip bit15.",
+      "primary_pair": [
+        0,
+        2147483648
+      ],
+      "legal_points": [
+        {
+          "primary_b": 0,
+          "prior": 984669626,
+          "values": [
+            1818584522,
+            1161276957,
+            3925396509,
+            2899272192,
+            0,
+            984669626,
+            3345078992,
+            6380,
+            6380
+          ],
+          "target": 4209921524,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 1054563911,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        },
+        {
+          "primary_b": 2147483648,
+          "prior": 3148926394,
+          "values": [
+            3966068170,
+            3308760605,
+            1777912861,
+            2899272192,
+            2147483648,
+            3148926394,
+            1197591248,
+            2284,
+            2147485932
+          ],
+          "target": 2196688372,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 1,
+            "leaf_index": 1797,
+            "leaf_value": 36772402,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      ]
+    },
+    {
+      "source": 2,
+      "source_name": "u",
+      "op": "&",
+      "status": "excluded",
+      "proof": "The live mask bit15 is0 on both pair members, fixing AND bit15 to0; the inverse affine target must flip bit15.",
+      "primary_pair": [
+        1482478497,
+        3629962145
+      ],
+      "legal_points": [
+        {
+          "primary_b": 1482478497,
+          "prior": 168912228,
+          "values": [
+            2308373907,
+            3601790942,
+            1307579358,
+            2606687232,
+            1482478497,
+            168912228,
+            2671575674,
+            5095,
+            1482473542
+          ],
+          "target": 883231370,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 242935449,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        },
+        {
+          "primary_b": 3629962145,
+          "prior": 2299622756,
+          "values": [
+            160890259,
+            1454307294,
+            3455063006,
+            2606687232,
+            3629962145,
+            2299622756,
+            524096122,
+            999,
+            3629961286
+          ],
+          "target": 3164965514,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 1,
+            "leaf_index": 1797,
+            "leaf_value": 814785260,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      ]
+    },
+    {
+      "source": 2,
+      "source_name": "u",
+      "op": "|",
+      "status": "excluded",
+      "proof": "The live mask bit15 is1 on both pair members, fixing OR bit15 to1; the inverse affine target must flip bit15.",
+      "primary_pair": [
+        0,
+        2147483648
+      ],
+      "legal_points": [
+        {
+          "primary_b": 0,
+          "prior": 984669626,
+          "values": [
+            1818584522,
+            1161276957,
+            3925396509,
+            2899272192,
+            0,
+            984669626,
+            3345078992,
+            6380,
+            6380
+          ],
+          "target": 4209921524,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 1054563911,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        },
+        {
+          "primary_b": 2147483648,
+          "prior": 3148926394,
+          "values": [
+            3966068170,
+            3308760605,
+            1777912861,
+            2899272192,
+            2147483648,
+            3148926394,
+            1197591248,
+            2284,
+            2147485932
+          ],
+          "target": 2196688372,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 1,
+            "leaf_index": 1797,
+            "leaf_value": 36772402,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      ]
+    },
+    {
+      "source": 3,
+      "source_name": "v",
+      "op": "&",
+      "status": "excluded",
+      "proof": "The live mask bit15 is0 on both pair members, fixing AND bit15 to0; the inverse affine target must flip bit15.",
+      "primary_pair": [
+        0,
+        2147483648
+      ],
+      "legal_points": [
+        {
+          "primary_b": 0,
+          "prior": 984669626,
+          "values": [
+            1818584522,
+            1161276957,
+            3925396509,
+            2899272192,
+            0,
+            984669626,
+            3345078992,
+            6380,
+            6380
+          ],
+          "target": 4209921524,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 1054563911,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        },
+        {
+          "primary_b": 2147483648,
+          "prior": 3148926394,
+          "values": [
+            3966068170,
+            3308760605,
+            1777912861,
+            2899272192,
+            2147483648,
+            3148926394,
+            1197591248,
+            2284,
+            2147485932
+          ],
+          "target": 2196688372,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 1,
+            "leaf_index": 1797,
+            "leaf_value": 36772402,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      ]
+    },
+    {
+      "source": 3,
+      "source_name": "v",
+      "op": "|",
+      "status": "excluded",
+      "proof": "The live mask bit15 is1 on both pair members, fixing OR bit15 to1; the inverse affine target must flip bit15.",
+      "primary_pair": [
+        1,
+        2147483649
+      ],
+      "legal_points": [
+        {
+          "primary_b": 1,
+          "prior": 1001442747,
+          "values": [
+            1818423539,
+            1161259070,
+            3925396542,
+            2899289088,
+            1,
+            1001442747,
+            3345078993,
+            6380,
+            6381
+          ],
+          "target": 306176758,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 1071337030,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        },
+        {
+          "primary_b": 2147483649,
+          "prior": 3165699515,
+          "values": [
+            3965907187,
+            3308742718,
+            1777912894,
+            2899289088,
+            2147483649,
+            3165699515,
+            1197591249,
+            2284,
+            2147485933
+          ],
+          "target": 2319409910,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 1,
+            "leaf_index": 1797,
+            "leaf_value": 87124531,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      ]
+    },
+    {
+      "source": 4,
+      "source_name": "b",
+      "op": "&",
+      "status": "excluded",
+      "proof": "The live mask bit15 is0 on both pair members, fixing AND bit15 to0; the inverse affine target must flip bit15.",
+      "primary_pair": [
+        0,
+        2147483648
+      ],
+      "legal_points": [
+        {
+          "primary_b": 0,
+          "prior": 984669626,
+          "values": [
+            1818584522,
+            1161276957,
+            3925396509,
+            2899272192,
+            0,
+            984669626,
+            3345078992,
+            6380,
+            6380
+          ],
+          "target": 4209921524,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 1054563911,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        },
+        {
+          "primary_b": 2147483648,
+          "prior": 3148926394,
+          "values": [
+            3966068170,
+            3308760605,
+            1777912861,
+            2899272192,
+            2147483648,
+            3148926394,
+            1197591248,
+            2284,
+            2147485932
+          ],
+          "target": 2196688372,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 1,
+            "leaf_index": 1797,
+            "leaf_value": 36772402,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      ]
+    },
+    {
+      "source": 4,
+      "source_name": "b",
+      "op": "|",
+      "status": "excluded",
+      "proof": "The live mask bit15 is1 on both pair members, fixing OR bit15 to1; the inverse affine target must flip bit15.",
+      "primary_pair": [
+        1482478497,
+        3629962145
+      ],
+      "legal_points": [
+        {
+          "primary_b": 1482478497,
+          "prior": 168912228,
+          "values": [
+            2308373907,
+            3601790942,
+            1307579358,
+            2606687232,
+            1482478497,
+            168912228,
+            2671575674,
+            5095,
+            1482473542
+          ],
+          "target": 883231370,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 242935449,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        },
+        {
+          "primary_b": 3629962145,
+          "prior": 2299622756,
+          "values": [
+            160890259,
+            1454307294,
+            3455063006,
+            2606687232,
+            3629962145,
+            2299622756,
+            524096122,
+            999,
+            3629961286
+          ],
+          "target": 3164965514,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 1,
+            "leaf_index": 1797,
+            "leaf_value": 814785260,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      ]
+    },
+    {
+      "source": 5,
+      "source_name": "prior",
+      "op": "&",
+      "status": "excluded",
+      "proof": "The live mask bit12 flips on b31 pairs but the inverse affine target bit12 does not. Bit12 of the entire output is therefore fixed to0, contradicting target permutation and odd affine bijectivity.",
+      "bit12_flip_full32": "unsat",
+      "fixed_output_bit12": 0
+    },
+    {
+      "source": 5,
+      "source_name": "prior",
+      "op": "|",
+      "status": "excluded",
+      "proof": "The live mask bit12 flips on b31 pairs but the inverse affine target bit12 does not. Bit12 of the entire output is therefore fixed to1, contradicting target permutation and odd affine bijectivity.",
+      "bit12_flip_full32": "unsat",
+      "fixed_output_bit12": 1
+    },
+    {
+      "source": 6,
+      "source_name": "a",
+      "op": "&",
+      "status": "excluded",
+      "proof": "The live mask bit12 flips on b31 pairs but the inverse affine target bit12 does not. Bit12 of the entire output is therefore fixed to0, contradicting target permutation and odd affine bijectivity.",
+      "bit12_flip_full32": "unsat",
+      "fixed_output_bit12": 0
+    },
+    {
+      "source": 6,
+      "source_name": "a",
+      "op": "|",
+      "status": "excluded",
+      "proof": "The live mask bit12 flips on b31 pairs but the inverse affine target bit12 does not. Bit12 of the entire output is therefore fixed to1, contradicting target permutation and odd affine bijectivity.",
+      "bit12_flip_full32": "unsat",
+      "fixed_output_bit12": 1
+    },
+    {
+      "source": 7,
+      "source_name": "a_shr19",
+      "op": "&",
+      "status": "excluded",
+      "proof": "The live mask bit12 flips on b31 pairs but the inverse affine target bit12 does not. Bit12 of the entire output is therefore fixed to0, contradicting target permutation and odd affine bijectivity.",
+      "bit12_flip_full32": "unsat",
+      "fixed_output_bit12": 0
+    },
+    {
+      "source": 7,
+      "source_name": "a_shr19",
+      "op": "|",
+      "status": "excluded",
+      "proof": "The live mask bit12 flips on b31 pairs but the inverse affine target bit12 does not. Bit12 of the entire output is therefore fixed to1, contradicting target permutation and odd affine bijectivity.",
+      "bit12_flip_full32": "unsat",
+      "fixed_output_bit12": 1
+    },
+    {
+      "source": 8,
+      "source_name": "a_xor_c1",
+      "op": "&",
+      "status": "excluded",
+      "proof": "The live mask bit12 flips on b31 pairs but the inverse affine target bit12 does not. Bit12 of the entire output is therefore fixed to0, contradicting target permutation and odd affine bijectivity.",
+      "bit12_flip_full32": "unsat",
+      "fixed_output_bit12": 0
+    },
+    {
+      "source": 8,
+      "source_name": "a_xor_c1",
+      "op": "|",
+      "status": "excluded",
+      "proof": "The live mask bit12 flips on b31 pairs but the inverse affine target bit12 does not. Bit12 of the entire output is therefore fixed to1, contradicting target permutation and odd affine bijectivity.",
+      "bit12_flip_full32": "unsat",
+      "fixed_output_bit12": 1
+    }
+  ],
+  "target_permutation_proof": "u=33*b+K1 has odd multiplier; v has factor512 so each z_j=u_j XOR v_j depends on b_j with coefficient1 and only lower b bits otherwise. Thus z, e=9*z+C4, e XOR(e>>16) XOR N, and the final odd affine are all32-bit permutations.",
+  "inverse_affine_b31_xor16": "unsat",
+  "prepared_constant_masks": "AND requires constant MASK and OR requires0 for bijectivity; then q alone remains. q=t>>16 has at most65536 values.",
+  "self_prefix_masks": {
+    "and_image_below_65536_full32": "unsat",
+    "or_missing_output_0x80000000_full32": "unsat"
+  },
+  "joint_xor_evidence": {
+    "path": "codex/joint_live_boundary863_closed_audit.json",
+    "sha256": "fde3950ef96218e28c5920513ea93fd5393a000e4f6b46eed2f3917d76cb396d"
+  },
+  "joint_affine_tail_cases": {
+    "xor": 4200,
+    "and_": 4200,
+    "or_": 4200,
+    "total": 12600,
+    "all_status": "excluded",
+    "free_e": false
+  },
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "scope": "For the fixed legal root, out=G*(q AND/OR h)+H with G/H arbitrary root-only constants, q arbitrary and h any nine live words. Also complete joint t=MAD(eight inputs/K);q=t>>16;f=q BIT h;out=G*f+H, BIT in XOR/AND/OR, h initial/t/K. Does not cover arbitrary four-op graphs or all division topologies."
+}

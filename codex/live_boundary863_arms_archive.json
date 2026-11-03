@@ -1,0 +1,13 @@
+{
+  "path": "codex/live_boundary863_arms_complete.json.gz",
+  "decoded_sha256": "26f0b83b24d6aa9b660af4c89aa99a03eb5d2c47c05f0a119e13a96f028e3870",
+  "archive_sha256": "85214517a6f6920e99f5dff1164b8ab1ed62bc1053946c8ad186fa594b6d1d0b",
+  "counts": {
+    "prior_excluded": 6192,
+    "unsat": 104928,
+    "structural_excluded": 1938,
+    "unknown": 207
+  },
+  "completed": 113265,
+  "new_executable": false
+}

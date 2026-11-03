@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-28",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "scope": "Prepared-root cross-round macros; one input; stated three-instruction grammar closed for one legal root, four-op joint scout nonexhaustive; not a global kernel bound.",
+  "runtime": {
+    "python": "3.12.16",
+    "z3": "5.1.0",
+    "numpy": "2.3.5"
+  },
+  "fixed_root": {
+    "raw": 305419896,
+    "effective_node": 2809010545
+  },
+  "three_instruction_one_shr": {
+    "canonical_literal16_wirings": 967,
+    "direct_unsat": 966,
+    "refined_unsat": 1,
+    "remaining": 0,
+    "other_literal_shift_counts": "Excluded by bit0/bit15 dependency argument and checked first-operation properties"
+  },
+  "two_shifts_and_mad": {
+    "shift_combinations": 8712,
+    "deduplicated_pairs": 4002,
+    "excluded": 4002,
+    "positive_controls": 4002,
+    "remaining": 0
+  },
+  "four_instruction_joint": {
+    "sampled_wirings": 3552,
+    "orders": 111,
+    "per_order": 32,
+    "direct_unsat": 3529,
+    "refined_unsat": 20,
+    "wordcut_certificates": 3,
+    "remaining_sampled": 0,
+    "not_complete_grammar": true
+  },
+  "affine_joint_families": {
+    "excluded": 3,
+    "unpinned_full32_positive_controls": 3
+  },
+  "checks": {
+    "universal_full32_facts": 84,
+    "small_width_programs": 4674,
+    "reachable_reference_cases": 260,
+    "frozen_vector_runs": 680,
+    "full32_lanes": 5440,
+    "random_wirings": 600,
+    "regression_tests": 11,
+    "wordcut_bypass_controls": 6
+  },
+  "unchanged_submission": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  },
+  "official_score_preserved_by_unchanged_source": true,
+  "prior_official_evidence": {
+    "path": "codex/restore_closure863_validation.json",
+    "sha256": "15ab07273ae7f2a60de9555d957555b7cc9cbd3ef935e678b7fe62065e250b32",
+    "tests": 9,
+    "cycles": 864,
+    "not_rerun_this_turn": true
+  },
+  "frozen_files_unchanged_from_origin_main": true,
+  "files_sha256": {
+    "codex/search_root_boundary863.py": "a7ef7f3003165af769463a839900f6213df42ff152b55599b3947b364198d855",
+    "codex/screen_root_boundary_shifts863.py": "d2265aee647e53d431845383f7e2c5f0fd6c592120c67ebcf39152fbc94d4b4c",
+    "codex/search_root_affine863.py": "632cf85796176e68b8445b637fbb23023927c388b2cbaa352d85d660a5723cdf",
+    "codex/prove_root_boundary863.py": "e3fc9a2bbe8c0c56f4afa1fdb1042f34ae79ffd55b1fb1342e8a1e445a4eaafc",
+    "codex/audit_root_boundary863.py": "f91d29b00ab0f20701e7f012a298baae51a12196faeda9085254f6b72ec00a17",
+    "codex/SUB863_ROOT_BOUNDARY_20261028.md": "5ec113dd152963b501339fc9819b68bef25d6045c0987938390bbaf6b7857edc",
+    "codex/root_boundary863_dependency_controls.json": "20842fc44bc347fc44fb37b9370d1d5351dd50f8bb3cc5adfe9ec67bef7fd232",
+    "codex/root_boundary863_fold_affine.json": "caa96bb196ba3b4d813170c0a0e2ff55c51e3fb00f5543a2f6fbfb9a7326b897",
+    "codex/root_boundary863_fold_affine_control.json": "a4b6190011f8418938301129ee296033e0b3d0ab6c500bcb3729b6d3b22e0b84",
+    "codex/root_boundary863_joint_audit.json": "bc3a3af831e73da2b28a4477988d532773b1bcf740493c44117fe576c1b506bc",
+    "codex/root_boundary863_joint_refinement.json": "79ef88f05250c125f075a36eff549ebb4f33e770efd988eade6b5ad7ac8fa197",
+    "codex/root_boundary863_joint_scout.json": "6eacdd028b3580d24d2009e2c2358a48986cf9c2328c43df87cd235a07b15425",
+    "codex/root_boundary863_raw_xor.json": "63b4a4fcdc329c05f518aef384b86985a86399c4f73645aadd28fffac3c6f7ec",
+    "codex/root_boundary863_raw_xor_control.json": "f1d796d94be274e52ceedb035adbc161eecdb3506f004c3908fb6611be26bc17",
+    "codex/root_boundary863_refinement.json": "f6ac1bbcc55b4fff9656146a0fa6a2ac9bab6fc58a800c5a42b3df06cba28473",
+    "codex/root_boundary863_scout.json": "2fdb658cd76558df3ee86cfc058069e95d1bd5e600b86ffdf88b6d0578b64476",
+    "codex/root_boundary863_separate_affine.json": "168d3e269b0744766e1b2fb59fd0a3dac10439f0617dfc9f78e137f1963dcf7b",
+    "codex/root_boundary863_separate_affine_control.json": "fdefa3abbc888f9de5077bcc03919ea5a06a2d2fc898dd91fb32a4a878788bba",
+    "codex/root_boundary863_two_shifts.json": "d22c200aee20ed1fb1149701c4acafab768bbf7736e8f94aa310aaac1c40c85b"
+  },
+  "logs_sha256": {
+    "/tmp/aopt-root-boundary-regression.log": "68dd10b59c64303c167d2ebf75c36c1cef1d2b1de528e7c9f7349ff2cdb179f8",
+    "/tmp/aopt-root-boundary-dependency-controls.log": "4e03250838f9589b9458c8a87c0d0c8466e856a6a16b9f9c1e436e4902c87c9f"
+  }
+}

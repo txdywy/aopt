@@ -1,0 +1,96 @@
+{
+  "rounds": [
+    8,
+    9,
+    15
+  ],
+  "replaced_hashes": 96,
+  "macro_instructions": 5,
+  "before": {
+    "load": 1688,
+    "valu": 6093,
+    "flow": 851,
+    "alu": 2921,
+    "store": 530
+  },
+  "after": {
+    "load": 1688,
+    "valu": 6098,
+    "flow": 851,
+    "alu": 2921,
+    "store": 522
+  },
+  "removed_constant_packs": 1,
+  "new_uniforms": [
+    33,
+    3925396509,
+    16896,
+    2899272192,
+    3042638419
+  ],
+  "lane_work_before": 51665,
+  "lane_work_after": 51705,
+  "macro": {
+    "input_key": 0,
+    "order": [
+      "mad",
+      "mad",
+      "^",
+      "mad",
+      "^"
+    ],
+    "wiring": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4,
+        5
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "constants": [
+      [
+        33,
+        3925396509
+      ],
+      [
+        16896,
+        2899272192
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        9,
+        4251993797
+      ],
+      [
+        3042638419,
+        0
+      ]
+    ]
+  },
+  "full32_macro_verified": true,
+  "full32_random_seeds": 3,
+  "scratch": 1151,
+  "serial_cycles": 12080,
+  "serial_cycles_are_not_a_score": true,
+  "new_executable": false
+}

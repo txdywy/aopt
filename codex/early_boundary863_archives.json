@@ -1,0 +1,21 @@
+{
+  "archives": [
+    {
+      "archive": "codex/early_boundary863_first_shift.json.gz",
+      "encoded_bytes": 503465,
+      "decoded_bytes": 22915437,
+      "encoded_sha256": "24f57b2c4cfa2d21d981eb264c833424109c39f776151f193939a8ce4946d182",
+      "decoded_sha256": "f83e785f26a1f4d717f106904fd3cb7eeaeaa9a9039b448b721e369d159af7a2",
+      "lossless_roundtrip": true
+    },
+    {
+      "archive": "codex/early_boundary863_one_mad_complete.json.gz",
+      "encoded_bytes": 1575674,
+      "decoded_bytes": 75923827,
+      "encoded_sha256": "408264dee2059763e5a488d40b5245767842a1fd5dfbc9e42d7f5551ed91d951",
+      "decoded_sha256": "5b72607f22223f8d965ac8f38ce6e42770e87aecddad70d788a038032ba34b55",
+      "lossless_roundtrip": true
+    }
+  ],
+  "original_embedded_source_hashes_refer_to_decoded_bytes": true
+}

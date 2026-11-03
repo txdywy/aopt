@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-28",
+  "base_commit": "dd28b7894cdb1de9d59e16d5f597e26e625287eb",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "no_global_optimality_claim": true,
+  "fixed_root": {
+    "raw": 305419896,
+    "effective": 2809010545
+  },
+  "runtime": {
+    "python": "3.12.16",
+    "numpy": "2.3.5",
+    "z3": "5.1.0"
+  },
+  "regression": {
+    "tests": 70,
+    "new_tests": 16,
+    "result": "OK",
+    "summary": "......................................................................\n----------------------------------------------------------------------\nRan 70 tests in 14.439s\n\nOK",
+    "log_sha256": "5bce3a92249976916b0be03b5fbc9f5a685b980b5426e2a5fbc5fd21e49d2f97"
+  },
+  "closure_replay": {
+    "log": "Computed-denominator grammar closed: True\nFinal-operation forms: 1158\nFull32 collision/bypass replays: 128 128",
+    "log_sha256": "ea7f07f0aa40bbd4db91a270a8fe60dad2d764a2a5c661c2dec80c6a4d96475d",
+    "full32_collision_queries": 128,
+    "full32_bypass_queries": 128,
+    "legal_frozen_reference_points": 54
+  },
+  "exact_finite_scalar_branches": 253551,
+  "exact_prepared_numerator_candidates": 1108,
+  "last_operation_forms": 1158,
+  "quotient_using_last_forms": 248,
+  "source_and_evidence_sha256": {
+    "codex/branch_computed_denominator863.py": "5a40d31de360153e6bcae14fa697cd76b7b8cfdef355e3ab0c1a8f1048d86eca",
+    "codex/audit_denominator_products863.py": "496df33cc9638e5dab525f1eef7f38a7cf331b9c289ab342fdef1dd65af3c336",
+    "codex/audit_denominator_bitops863.py": "079a6450dcf6fd96ccbd8d1ddd437f32fb4fd0c57aa9cda80258c35e9ec71a68",
+    "codex/audit_prepared_numerator863.py": "d75d0cc464efd972dfe3ef22a8c1164d7fddcc45e0be48f8373277ce7ec0e08c",
+    "codex/refine_prepared_scalar863.py": "c179f79dad8c2087ab515d10631a5a6ca3f10af347c7012e6a97e56b0d30fa27",
+    "codex/audit_odd_denominator_bypass863.py": "4312a9df1a5a54a0099b2cf709d64bc059638192f4d902008eefeb946a57a3ae",
+    "codex/close_computed_denominator863.py": "2751959b949ea37a603fbce2b996c768d70f7a2a43c4b28463ddaf90a4ca2b20",
+    "codex/test_computed_denominator863.py": "8f1ae01c7093fa453cdfbf14adecfa0d761d3071c2e9c64997684878f6d6cdf1",
+    "codex/computed_denominator_branches863.json": "f000cd97d22658bd218503c2d436a37050b70bf3a9ed9f62dd2d9d55d54294fe",
+    "codex/denominator_products863_audit.json": "26db57aebe662b0086a135c442c0f5a3d9fbed8e57d40b4053de26b52a62652b",
+    "codex/denominator_bitops863_audit.json": "0472981b6ec7440d65d07b933215dea915e2505ed3b586b872c10f0c624f8721",
+    "codex/prepared_numerator863_audit.json": "5586b33882c402dcf3c856c8b73fbe6494a48390e82029126a8672fb015da37b",
+    "codex/prepared_scalar863_refinement.json": "a5e03e97b8a52b8b5218b82732e01f02dd1bb007a13a19eb8eedc97a3d09a3fd",
+    "codex/odd_denominator_bypass863_audit.json": "6ff3922d00f96b12a3fe59980874d331ba8dd43398fee902b66b77b3149b7f19",
+    "codex/computed_denominator863_closed_audit.json": "b4570d577099badd050b19116e4daa63e32475b26a033656e4be5d17da33b451",
+    "codex/SUB863_DENOMINATOR_GRAMMAR_20261028.md": "b4129b1ed566e382a648320fef06e3747a813233b0d0bb946318e43b1cec3f33",
+    "codex/README.md": "9e7766c1f965dfb7318e27746d2d8b62d5f812b9e5a841d053ebd66cd012bbf5"
+  },
+  "protected_files_sha256": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  },
+  "frozen_tests_and_problem_unchanged": true,
+  "official_score_preserved_by_unchanged_source": true,
+  "prior_official_evidence": {
+    "path": "codex/root_boundary863_validation.json",
+    "sha256": "2b8a33054353015dfad1bbe7794f3f27803c2c933d7012e737b141d74740e5e4",
+    "tests": 9,
+    "cycles": 864,
+    "not_rerun_this_turn": true
+  },
+  "completed_scope": "Nine stated initial live words, arbitrary root-only constants; P is one MAD/XOR/AND/OR; q=DIV/REM/CDIV(initial,P) or DIV/REM/CDIV(C_prepared,P), valid nonzero P on every legal input; final one MAD/XOR/AND/OR. Every canonical last operation is classified, including q reuse. P/P gives only1/0 and is separately T-only. Pure prepared and identity first-prefix cases are included by the input-range/parity/wordcut arguments or invalid zero-divisor witness.",
+  "remaining": [
+    "P first bitop, prepared divisor D, q=DIV/REM/CDIV(P,D), final q-plus-product or P+G*q when not reduced by earlier certificates.",
+    "Multiple divisions; division with shifts/comparisons; additional live words and root/leaf-dependent preparation; larger joint windows; nonlinear state encodings and other kernel algorithms."
+  ],
+  "external_claude_update": {
+    "commit": "2646430c2d1534e4c1df46aa6538d5c012201bd9",
+    "report": "https://github.com/txdywy/aopt/blob/2646430c2d1534e4c1df46aa6538d5c012201bd9/codex/SUB863_ROUND0_PINNED_20261028.md",
+    "reported_last_40_combinations_closed": true,
+    "reported_best_cycles": 864,
+    "not_independently_rerun": true
+  }
+}

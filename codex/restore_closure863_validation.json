@@ -1,0 +1,189 @@
+{
+  "date": "2026-10-28",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "scope": "Four-op restore grammar closed; five-op joint research remains nonexhaustive; no whole-kernel optimality claim.",
+  "runtime": {
+    "python": "3.12.16",
+    "z3": "5.1.0",
+    "numpy": "2.3.5",
+    "pysat": "1.9.dev17"
+  },
+  "four_op_restore": {
+    "enumerated_wirings": 248712,
+    "previously_remaining": 176,
+    "newly_excluded": 176,
+    "remaining": 0,
+    "audit_evidence_hashes_verified": 15
+  },
+  "joint_five_op_families": [
+    {
+      "family": "parallel",
+      "status": "unsat",
+      "width": 11,
+      "seconds": 1.285
+    },
+    {
+      "family": "serial",
+      "status": "unsat",
+      "width": 11,
+      "seconds": 0.826
+    },
+    {
+      "family": "branched",
+      "status": "unsat",
+      "width": 11,
+      "seconds": 1.792
+    },
+    {
+      "family": "masked_parallel",
+      "status": "unsat",
+      "width": 11,
+      "seconds": 0.401
+    },
+    {
+      "family": "masked_serial",
+      "status": "unsat",
+      "width": 11,
+      "seconds": 0.799
+    },
+    {
+      "family": "masked_branched",
+      "status": "unsat",
+      "width": 11,
+      "seconds": 0.276
+    },
+    {
+      "family": "input_mixed",
+      "status": "unsat",
+      "width": 11,
+      "seconds": 2.302
+    },
+    {
+      "family": "masked_input",
+      "status": "unsat",
+      "width": 11,
+      "seconds": 0.929
+    },
+    {
+      "family": "input_feedback",
+      "status": "unsat",
+      "width": 11,
+      "seconds": 1.204
+    },
+    {
+      "family": "input_product",
+      "status": "unsat",
+      "width": 11,
+      "seconds": 0.061
+    }
+  ],
+  "joint_wiring_scouts": [
+    {
+      "source": "codex/joint_restore863_wiring_scout.json",
+      "sampled_wirings": 2088,
+      "initial_counts": {
+        "unsat": 2081,
+        "unknown": 7
+      },
+      "refined_unsat": 7,
+      "remaining": 0,
+      "not_complete_five_op_grammar": true
+    },
+    {
+      "source": "codex/joint_restore863_input_bypass_scout.json",
+      "sampled_wirings": 4288,
+      "initial_counts": {
+        "unsat": 4280,
+        "unknown": 8
+      },
+      "refined_unsat": 8,
+      "remaining": 0,
+      "not_complete_five_op_grammar": true
+    }
+  ],
+  "controls": {
+    "joint_normalization_programs": 1000,
+    "normalization_inputs_per_program": 64,
+    "reduced_positive_controls": 11,
+    "inputs_per_positive_control": 2048,
+    "full32_macro_parameter_sets": 40,
+    "frozen_whole_kernel_random_seeds": 3,
+    "research_regression_tests": 22,
+    "official_tests": 9,
+    "official_cycles": 864
+  },
+  "joint_ir": {
+    "removed_head_xors": 96,
+    "lane_work_before": 51665,
+    "lane_work_after": 51705,
+    "scratch": 1151,
+    "serial_length_not_a_score": 12080
+  },
+  "protected_sha256": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  },
+  "frozen_problem_and_tests_unchanged_from_origin_main": true,
+  "claude_remote": {
+    "head": "f81660838f0a3d6a10dfd2ff812a87cd10f5c64d",
+    "latest_comparison_status": "identical",
+    "source": "GitHub connector compare_commits"
+  },
+  "logs": {
+    "/tmp/aopt-restore-closure-research-tests.log": "f7531381b484fa92209ea7c743d0360fae3dd4cf4618a167ad85271f4e14b6b7",
+    "/tmp/aopt-restore-closure-official.log": "615d8ba5e8873aa5dc529c3d5c00477de26db2bfdaf04ff5a6ca63f60261f9a5",
+    "/tmp/aopt-restore-joint-control.log": "9d7c146806854768a65c4edbe156b1e0aeafaca0dd583d3422b5a28b6505490f"
+  },
+  "files_sha256": {
+    "codex/audit_restore_shallow863.py": "48dfdae75667a79c62e28a3622d262227c9bf66a1e77afc33db6cad8763bf9af",
+    "codex/search_restore_scaled863.py": "4c55321b4d431b759b0d87f17e7898467203d1896ebcba5f6a8d8a29e350c799",
+    "codex/search_restore_last863.py": "8852812270b7ccec6dbeb73e1b1758500d58357fd0de4ea670faa247e436ab83",
+    "codex/search_restore_final_pair863.py": "b860588dfdb23fdc747b0edb0bb5a38bc7b0190a1c107e27afe606d3eb636d88",
+    "codex/search_joint_restore863.py": "111610345b6ce6fb46acc03595a99c1e66ad17edb81b433b67a85de97c97693d",
+    "codex/scout_joint_wirings863.py": "45390de997e3bf5afd9a701497871b016c486e6ead37407aea8b1788966ddcc8",
+    "codex/relax_restore_polynomial863.py": "d134ab5565e71dbfa18c17ed110c9d61584d795719bb5b9e2b4caae179daea38",
+    "codex/build_restore_middle863.py": "c57d2811266193cee4e7f099d9dd84869fed584bf825adc8763471546a234539",
+    "codex/search_restore_wirings863.py": "7c67f30df2039cbc6ec3d8f7fd52a1ea710483bb90500c2a4a23107d5e89215d",
+    "codex/SUB863_RESTORE_CLOSURE_20261028.md": "89621df92bda617a516fcf72ca6e98cccc83484cfd134f6cc58eaea4a38936df",
+    "codex/restore_shallow863_audit.json": "4ae84776ea3a3926514ad59bb80b495d0c0510a237523b8d573d808ba9fe93aa",
+    "codex/restore_shallow863_closed_audit.json": "d842385d9ea0b3cf447ecacd9d770b4bc8b2a7697e320c2c01bf356bdf3b13d9",
+    "codex/restore_shallow863_complete_audit.json": "bcae7c0b62133a5324e0187e52788de45cb2f3c86ef42a052fbaba7c7673e379",
+    "codex/restore_shallow863_constscale.json": "b83c2fb3a0173e8ae9e6280ed25ee08386ac4e5c6d96609fc01f9bcaad77d839",
+    "codex/restore_shallow863_constscale_and.json": "f68c64d238c1aaae034b8b69057c09dafb66d0d4000d9bfc962709f28170c0d9",
+    "codex/restore_shallow863_constscale_controls.json": "4fed80e92d0133631189626d24cc7452ad2a8bb0dd61bdaffe4d67cc0be5fa94",
+    "codex/restore_shallow863_constscale_or.json": "57b634ff8cdf961c81495e2c6990189be20b2d4ec64c49c0a9a7a31e5d0da28e",
+    "codex/restore_shallow863_equivalence.json": "8068c6bbf367a96efdf967fec1c62c9342b02a5df151353318e68324aac3b3a0",
+    "codex/restore_shallow863_final_pair_controls.json": "bdec58631bf63c30485660573906210825ed4c2dbd321c34a6eea70a5e6e6d05",
+    "codex/restore_shallow863_input.json": "8c48652fbd0c74fb8fe752eb944636ea4f0537090450550ea8a733db97bd629a",
+    "codex/restore_shallow863_joint_ir_control.json": "e13107ab7ce81fa312390f8c4e61c50f394f4b7796194a9d4b30317cb0a5177f",
+    "codex/restore_shallow863_kissat.json": "09513ebda5d5915c9054f8521d6faf122272a164468027dec12169ce99c446ac",
+    "codex/restore_shallow863_last_controls.json": "786a7cb752b3c87a4c7e974d6b78c8605ef2b7eefa4c2eab6f96bff5823dae0f",
+    "codex/restore_shallow863_mixed.json": "4b197f3410728f0abac575dae245dc6a02b42d2cc1652ee7f72b497e471d90a5",
+    "codex/restore_shallow863_normalization_controls.json": "f74f8553d9cbba0131d2a0f58b76775498fdfd4b21d76f77fc4de0ea5f798d85",
+    "codex/restore_shallow863_quad.json": "cb6da393ac045464d66bbe66b94fe1d9b5a4f6a25562067c36967dd9912392a6",
+    "codex/restore_shallow863_scaled.json": "bc9db56d65d1bdaf402e8f2be4096ee33f1b15feee6f6805dbd6e9c1fcef1ad3",
+    "codex/restore_shallow863_scaled_control.json": "689d83a96dea14daa0ed29772eec5e09500203b99d4133b5f2c7dbf2f65748bf",
+    "codex/restore_shallow863_sum.json": "d659b6b55b01109f4e274f1face79fbebb2c99154cfebfd609b3d57f1793c47b",
+    "codex/restore_shallow863_unitscale.json": "89b66bab7dd7e44399c45c85faf103b5afc0317a57730001d9b8901c58d92c35",
+    "codex/restore_shallow863_xor_affine.json": "0db6ee45a3d1befa71f3f040e3ba0da5215568494c8661a09e10f7b7ef089434",
+    "codex/joint_restore863_branched.json": "33ab0fdc1040c3325d36bd1755f6bcf9195a0b594cfeba1548ac3af6a743b157",
+    "codex/joint_restore863_controls.json": "c5bfa6947d6284c50a292f85aa89c6c2fb26a3bbba7fb37b1a2d371de20968d2",
+    "codex/joint_restore863_input_bypass_refinement.json": "ed8b76111ddb809eaa4711590b27c857bbab91b884f4d0e66e7812d70110492c",
+    "codex/joint_restore863_input_bypass_scout.json": "eb7e5ff2c3cd85aedecdeed5e3913ddb5134bc79e1d4016de07e5d1f316bd423",
+    "codex/joint_restore863_input_feedback.json": "c9a3c837c17850df55d835cff214bdd939fc1c207af940f104ef8a65a7231442",
+    "codex/joint_restore863_input_mixed.json": "6a22c57c575dd7e0aa5ae625286ab9131afba13b8c08aab128937f21bda4c8be",
+    "codex/joint_restore863_input_product.json": "c852e7bf0c15f1ae33c421f84644fe2416731a495952173da27a73638b5a94e8",
+    "codex/joint_restore863_masked_branched.json": "409c3f05e5bc8bb3f7931c4d88dcfd758e1a516a58851ed4e9c9bafd7c9e451f",
+    "codex/joint_restore863_masked_input.json": "dc1bc986991e8e5ba50dbd00eefe4b92fe15fd0460f0e95ca6c6b77463924711",
+    "codex/joint_restore863_masked_parallel.json": "1506768837aec968a026322cc8ee44e3a01a0d816d9ad41a9d2002d8e5e2fc64",
+    "codex/joint_restore863_masked_serial.json": "26e182b1e02ca1cbd03e313cb12be5989146282353d022fe50ef4c76db1f1dfb",
+    "codex/joint_restore863_parallel.json": "7b7bb5e024f620a4622b80ed24ca7f0e926f49cb187e19c4d24ccf69090704bc",
+    "codex/joint_restore863_polynomial.json": "97e056ad56a769c052c6a0e14d03365d63fbab1700220d6a519e231509f44d75",
+    "codex/joint_restore863_serial.json": "b409ca4ccee4379c2d32af5f097573f0b13f90121a91f0bdfa4e07c5cd140af7",
+    "codex/joint_restore863_wiring_controls.json": "4b5789bcb36ff4ed71db046af29c35dcb5cccb43407d182e09f9620a0248d300",
+    "codex/joint_restore863_wiring_refinement.json": "058344e98f55aaf96fd583edbac523e2fdf979754cb3bef20ae9e157eacc0893",
+    "codex/joint_restore863_wiring_scout.json": "198f1e61e4ddb053e67365e30d8ee51a91ebfd188f1190061493e39ad36d17f1"
+  }
+}

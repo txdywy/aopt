@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-28",
+  "base_commit": "e5abe028b00b3321f24d6952e6e8a2f67c8aeaa5",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "no_global_optimality_claim": true,
+  "runtime": {
+    "python": "3.12.16",
+    "numpy": "2.3.5",
+    "z3": "5.1.0",
+    "compiler": "Apple clang21.0.0, arm64, -O3 -std=c++20 -pthread"
+  },
+  "regression": {
+    "tests": 54,
+    "new_tests": 9,
+    "result": "OK",
+    "summary": "......................................................\n----------------------------------------------------------------------\nRan 54 tests in 6.546s\n\nOK",
+    "log_sha256": "616992144815c72936383e175db174e2effdf32803017325951197672fdc1c52"
+  },
+  "checked_inverse_parameters": 19327352832,
+  "source_and_evidence_sha256": {
+    "codex/screen_middle_division_residual863.py": "881ef2f919be0a33acc78cb7e2eb4091f69f7f66624c6672dda820e3ea789a5b",
+    "codex/run_middle_residual_enum863.py": "beb244d2bd3d752dfbe20326a04dff3c8329844efa818a26a40d54a5e4440bb4",
+    "codex/enumerate_middle_residual863.cpp": "40d7f8c36343253460927d25f86368e6f810541d4f9e125a7bd0fd32b08f85fd",
+    "codex/audit_middle_mad_quotient863.py": "4cd88370f9736ee39d487b9c1f3a62280da91d366bb751ce55c0786ec0469426",
+    "codex/audit_odd_prefix_collisions863.py": "40eeedae537dd55397284596f44500cff7b5dfa2af561da3cdcba9b8e9be7738",
+    "codex/verify_odd_prefix_collisions863.py": "d0ef8038a0abc10229004356a57c4343e017b48bc01b091a320066bbdee8d752",
+    "codex/audit_small_numerator863.py": "bb2c19b84d15d9ba17b46a9a9a944b473de4988813feb7121a626f08bdb5f2f2",
+    "codex/audit_middle_runtime_factor863.py": "cc8b32b9225be4dbf1194c6ed001fdb5155e7731cbb9b7d7e5cf0c5e33f0deae",
+    "codex/close_computed_division863.py": "2f6fb2547a410fa23dae3af2090cac3665c7adbcf410a9db583f7f606da3c685",
+    "codex/test_middle_residual863.py": "c8ff21e9631826ac4550e69dd75f4324e6fdaf5bf54f5e86760beb3755e94f94",
+    "codex/computed_division863_closed_audit.json": "d6f899d1472169884d8671a04899ec04c4bdf40ee11a053958f594335430787a",
+    "codex/middle_division_residual863_screen.json": "e18fdd1e8e78ee4d3502dea2c3510b2f86a2794902ffd041e2c89bb9bb0f6517",
+    "codex/middle_residual_enum863.json": "ca0a3217b1b1c76245cb382f8c2b83e8c983a856da1ae4a48e9a20995a6a4283",
+    "codex/middle_mad_quotient863_audit.json": "9723414827d7dbfdc2216f61ebe874dcd41b4389f76d4a7c633113225541839c",
+    "codex/odd_prefix_collisions863_audit.json": "362a532b9fbbc96e500d9b2190a5c4214a9708774eb385893db796c4ad998666",
+    "codex/odd_prefix_collisions863_refinement.json": "197b0285259d0ad32d2e1455c75d7a8b3c2d687165450c70ee0abd66ba805c08",
+    "codex/odd_prefix_collisions863_verified.json": "3ac3c2bbf1b6773203464e82785f1f0b32d7fdd82d11340e83325192473f473e",
+    "codex/small_numerator863_audit.json": "ccfd15d40aaf6aa82904a3222f2f674b308201cc403db615df87f069314e69ea",
+    "codex/middle_runtime_factor863_audit.json": "36fdc2606c90262641bd16fcc26f0b1590e9e9b5c6e3efb71bf3d198c7da7bc8",
+    "codex/final_division863_audit.json": "27561b5ae7ec755d8dc2d890beb7f6891019ee3618de8bc3b1fbaccbf1baa50d",
+    "codex/bitmask_affine_tail863_audit.json": "1698d35f688f5f6a214414f7b634c56ea29410526714617c85a8f24de03887d1"
+  },
+  "protected_files_sha256": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  },
+  "frozen_tests_and_problem_unchanged": true,
+  "official_score_preserved_by_unchanged_source": true,
+  "prior_official_evidence": {
+    "path": "codex/root_boundary863_validation.json",
+    "sha256": "2b8a33054353015dfad1bbe7794f3f27803c2c933d7012e737b141d74740e5e4",
+    "tests": 9,
+    "cycles": 864,
+    "not_rerun_this_turn": true
+  },
+  "current_closed_scopes": [
+    "T prefix;middle DIV/REM/CDIV;last G*q+W_initial. Prepared constant G is odd. Computed numerator / prepared D uses bounded enumeration (D>=2 for DIV/CDIV), REM D<=2^31+1 uses the same bound; larger REM D gives at most two low16 classes on the eight-state fibre. D=1 reduces to T-only operations. Prepared numerator / computed denominator uses the one-high enumeration; initial numerator / computed denominator uses zero anchors.",
+    "P is one MAD/bitop;out=P*q+W_initial, q any function only of P/root constants. All702 prefixes and key parities covered by the odd-prefix collision certificates. This includes either prepared divisor or prepared numerator. An initial numerator with computed denominator is separately excluded by zero anchors.",
+    "P is one MAD; q=DIV/REM/CDIV(P,D_prepared); out=R(initials,P,K)+q for any integer polynomial R, or out=P+G*q. Exact2^31 rectangle covers every nonzero uint32 divisor.",
+    "P is one MAD/bitop denominator;initial numerator;out=P*q+H_prepared. Small-numerator forcing excludes all nine sources. If q depends only on P/root constants, a required always-odd P is a nonbijective wordcut, also impossible for a permutation target.",
+    "A last q*q+T-only-addend has at most two residues modulo4 on the eight-state fibre; q*q+q is always even.",
+    "A last q*initial+T-only-addend fails a legal even-factor parity pair. The q*initial+q exception v+1 is closed by219 high-output forcing points; other plus-one factors fail parity.",
+    "A last P*q+P forces P odd. For an initial numerator, target0 would require q=MASK, but none of the initial numerators equals MASK there. For a root-only/data-P numerator, the odd-prefix wordcut is nonbijective. A last P*q+q instead forces P even; initial-numerator zero anchors or the wordcut argument exclude it."
+  ],
+  "remaining": [
+    "Computed-denominator cases with a prepared numerator and a final q-plus-product tail containing an initial-word bypass.",
+    "Computed-denominator cases with an initial numerator and final q-plus-product or P+G*q; more small-numerator branching is available.",
+    "A first bitop followed by a prepared-divisor quotient and a final q-plus-product or P+G*q, when not reduced by other certificates.",
+    "Multiple divisions, division/shift or division/comparison combinations (including REM), additional live words, larger joint windows, state encodings and other kernel algorithms."
+  ],
+  "no_claim_of_complete_three_op_ISA": true
+}

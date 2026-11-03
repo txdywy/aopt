@@ -1,0 +1,2455 @@
+{
+  "engine": "kissat404",
+  "pysat": "1.9.dev17",
+  "z3": "5.1.0",
+  "source": "codex/restore_shallow863_input.json",
+  "jobs": 65,
+  "seconds_per_case": 60.0,
+  "rows": [
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 62540,
+      "stats": null,
+      "seconds": 13.905915000010282,
+      "order": [
+        "|",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 14.102
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 62544,
+      "stats": null,
+      "seconds": 15.410714166238904,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "wall_seconds": 15.606
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 62540,
+      "stats": null,
+      "seconds": 15.845176042057574,
+      "order": [
+        "|",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 16.039
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 79896,
+      "stats": null,
+      "seconds": 18.17810650030151,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 18.383
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 84421,
+      "stats": null,
+      "seconds": 16.98437679093331,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 17.184
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 110851,
+      "stats": null,
+      "seconds": 26.889156457968056,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "wall_seconds": 27.081
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 110801,
+      "stats": null,
+      "seconds": 26.753076790831983,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ]
+      ],
+      "wall_seconds": 26.961
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "wall_seconds": 60.015
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 60.013
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "wiring": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "wall_seconds": 60.012
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 106947,
+      "stats": null,
+      "seconds": 28.82263366598636,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 29.028
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 84444,
+      "stats": null,
+      "seconds": 28.16382279107347,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 28.353
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 108620,
+      "stats": null,
+      "seconds": 16.73225695779547,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 16.931
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 111696,
+      "stats": null,
+      "seconds": 16.395734374877065,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 16.594
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 121013,
+      "stats": null,
+      "seconds": 17.97499345941469,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 18.177
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 142437,
+      "stats": null,
+      "seconds": 27.404607916250825,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 27.61
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 106904,
+      "stats": null,
+      "seconds": 30.54236429091543,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 30.752
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 102606,
+      "stats": null,
+      "seconds": 13.432279999833554,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 13.626
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 134176,
+      "stats": null,
+      "seconds": 22.77877250034362,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 22.979
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 148955,
+      "stats": null,
+      "seconds": 19.583665540907532,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3,
+          2
+        ]
+      ],
+      "wall_seconds": 19.789
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 97549,
+      "stats": null,
+      "seconds": 29.949298500083387,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 30.177
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 78958,
+      "stats": null,
+      "seconds": 13.2277329582721,
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 13.408
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 78682,
+      "stats": null,
+      "seconds": 24.29991408297792,
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 24.491
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 101279,
+      "stats": null,
+      "seconds": 13.238246750086546,
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 13.439
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 111688,
+      "stats": null,
+      "seconds": 33.044622832909226,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 33.243
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 138142,
+      "stats": null,
+      "seconds": 37.52211320865899,
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "wall_seconds": 37.728
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 79425,
+      "stats": null,
+      "seconds": 10.170628208201379,
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 10.36
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 104735,
+      "stats": null,
+      "seconds": 23.99573695799336,
+      "order": [
+        "mad",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 24.194
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 79425,
+      "stats": null,
+      "seconds": 10.157339916098863,
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 10.347
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 78758,
+      "stats": null,
+      "seconds": 26.651947916019708,
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 26.85
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 103169,
+      "stats": null,
+      "seconds": 13.15542612504214,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 13.386
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 78758,
+      "stats": null,
+      "seconds": 26.552537166979164,
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 26.741
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 60.008
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 97639,
+      "stats": null,
+      "seconds": 13.735419625416398,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 13.933
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 116863,
+      "stats": null,
+      "seconds": 25.847019500099123,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 26.053
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 111750,
+      "stats": null,
+      "seconds": 16.79729279084131,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 17.003
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 105133,
+      "stats": null,
+      "seconds": 39.01178229181096,
+      "order": [
+        "mad",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 39.207
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 102588,
+      "stats": null,
+      "seconds": 21.867755000013858,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 22.069
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 102612,
+      "stats": null,
+      "seconds": 12.622101875022054,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 12.817
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 97596,
+      "stats": null,
+      "seconds": 28.087365624960512,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 28.282
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 98331,
+      "stats": null,
+      "seconds": 26.197425917256624,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 26.394
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 100406,
+      "stats": null,
+      "seconds": 15.306349208112806,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 15.502
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 124247,
+      "stats": null,
+      "seconds": 30.393415458966047,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          3,
+          4
+        ]
+      ],
+      "wall_seconds": 30.596
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 97596,
+      "stats": null,
+      "seconds": 28.474405374843627,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 28.672
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 97302,
+      "stats": null,
+      "seconds": 30.03416383313015,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 30.23
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 110811,
+      "stats": null,
+      "seconds": 25.0178190828301,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "wall_seconds": 25.206
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 108593,
+      "stats": null,
+      "seconds": 14.865550917107612,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 15.065
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 106912,
+      "stats": null,
+      "seconds": 23.84098962508142,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 24.04
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 84464,
+      "stats": null,
+      "seconds": 30.42723395815119,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 30.622
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 121014,
+      "stats": null,
+      "seconds": 17.850993416737765,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 18.054
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 134149,
+      "stats": null,
+      "seconds": 20.944001083727926,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          3
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 21.141
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 142426,
+      "stats": null,
+      "seconds": 25.925995292142034,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          1
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 26.129
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 111730,
+      "stats": null,
+      "seconds": 17.873042875435203,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 18.066
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 148943,
+      "stats": null,
+      "seconds": 19.931918208952993,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          3
+        ]
+      ],
+      "wall_seconds": 20.127
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 78955,
+      "stats": null,
+      "seconds": 12.49076108308509,
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 12.674
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 98097,
+      "stats": null,
+      "seconds": 16.765757624991238,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "wall_seconds": 16.952
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 104723,
+      "stats": null,
+      "seconds": 24.957193959038705,
+      "order": [
+        "mad",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 25.149
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 138102,
+      "stats": null,
+      "seconds": 36.43808158300817,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "wall_seconds": 36.642
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 97272,
+      "stats": null,
+      "seconds": 17.95961199980229,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 18.154
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 97064,
+      "stats": null,
+      "seconds": 13.878065125085413,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "wall_seconds": 14.075
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 111692,
+      "stats": null,
+      "seconds": 38.54129770817235,
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 38.736
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 79431,
+      "stats": null,
+      "seconds": 13.850396499969065,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 14.043
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 78763,
+      "stats": null,
+      "seconds": 25.329011125024408,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ]
+      ],
+      "wall_seconds": 25.518
+    },
+    {
+      "status": "unknown",
+      "reason": "subprocess deadline",
+      "engine": "kissat404",
+      "order": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 60.009
+    },
+    {
+      "status": "unsat",
+      "engine": "kissat404",
+      "width": 11,
+      "rounds": 1,
+      "samples": 91,
+      "clauses": 105155,
+      "stats": null,
+      "seconds": 42.34330766601488,
+      "order": [
+        "mad",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "wiring": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ]
+      ],
+      "wall_seconds": 42.533
+    }
+  ],
+  "counts": {
+    "unsat": 60,
+    "unknown": 5
+  },
+  "new_executable": false,
+  "completed": 65
+}

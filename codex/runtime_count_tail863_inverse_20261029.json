@@ -1,0 +1,1722 @@
+{
+  "node": 2809010545,
+  "half_width": 16,
+  "odd_low_half_parameters": 32768,
+  "count_parameters": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "distinct_frames": 18,
+  "evaluated_parameters": 4718592,
+  "results": [
+    {
+      "base": 0,
+      "rectangles": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      "targets": [
+        4209921524,
+        866918749,
+        1931323838,
+        3204092711,
+        1750870672,
+        1109003769,
+        1423162602,
+        2942934995
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            15,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            229,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            258,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            29,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            63,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            268,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            248,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            240,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 0,
+      "rectangles": [
+        [
+          0,
+          2,
+          3,
+          1
+        ],
+        [
+          4,
+          6,
+          7,
+          5
+        ]
+      ],
+      "targets": [
+        4209921524,
+        866918749,
+        1931323838,
+        3204092711,
+        1750870672,
+        1109003769,
+        1423162602,
+        2942934995
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            15,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            229,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            258,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            29,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            63,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            268,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            248,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            240,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 0,
+      "rectangles": [
+        [
+          0,
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          6,
+          7
+        ]
+      ],
+      "targets": [
+        4209921524,
+        866918749,
+        1931323838,
+        3204092711,
+        1750870672,
+        1109003769,
+        1423162602,
+        2942934995
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            15,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            229,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            258,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            29,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            63,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            268,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            248,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            240,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 0,
+      "rectangles": [
+        [
+          0,
+          5,
+          6,
+          3
+        ],
+        [
+          1,
+          4,
+          7,
+          2
+        ]
+      ],
+      "targets": [
+        4209921524,
+        866918749,
+        1931323838,
+        3204092711,
+        1750870672,
+        1109003769,
+        1423162602,
+        2942934995
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            15,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            229,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            258,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            29,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            63,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            268,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            248,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            240,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 0,
+      "rectangles": [
+        [
+          0,
+          1,
+          3,
+          2
+        ],
+        [
+          4,
+          5,
+          7,
+          6
+        ]
+      ],
+      "targets": [
+        4209921524,
+        866918749,
+        1931323838,
+        3204092711,
+        1750870672,
+        1109003769,
+        1423162602,
+        2942934995
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            15,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            229,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            258,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            29,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            63,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            268,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            248,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            240,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 0,
+      "rectangles": [
+        [
+          0,
+          1,
+          5,
+          4
+        ],
+        [
+          2,
+          3,
+          7,
+          6
+        ]
+      ],
+      "targets": [
+        4209921524,
+        866918749,
+        1931323838,
+        3204092711,
+        1750870672,
+        1109003769,
+        1423162602,
+        2942934995
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            15,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            229,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            258,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            29,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            63,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            268,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            248,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            240,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 3,
+      "rectangles": [
+        [
+          0,
+          1,
+          7,
+          2
+        ],
+        [
+          3,
+          4,
+          6,
+          5
+        ]
+      ],
+      "targets": [
+        792779498,
+        2259200979,
+        1464514204,
+        3436272005,
+        372925638,
+        347772719,
+        3328422520,
+        1059285217
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            251,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            138,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            261,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            34,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            261,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            123,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            133,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            257,
+            1,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 3,
+      "rectangles": [
+        [
+          0,
+          1,
+          5,
+          4
+        ],
+        [
+          2,
+          3,
+          7,
+          6
+        ]
+      ],
+      "targets": [
+        792779498,
+        2259200979,
+        1464514204,
+        3436272005,
+        372925638,
+        347772719,
+        3328422520,
+        1059285217
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            251,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            138,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            261,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            34,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            261,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            123,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            133,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            257,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 6,
+      "rectangles": [
+        [
+          0,
+          1,
+          5,
+          3
+        ],
+        [
+          2,
+          4,
+          7,
+          6
+        ]
+      ],
+      "targets": [
+        3400781694,
+        3654630985,
+        3673961264,
+        676229371,
+        2977293794,
+        1618424493,
+        1655126036,
+        2461040991
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            55,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            142,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            261,
+            1,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            3,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            261,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            257,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 14,
+      "rectangles": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      "targets": [
+        1910576555,
+        3247393026,
+        3533191673,
+        1368806992,
+        1526874111,
+        1512135766,
+        1227500893,
+        3125300148
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            230,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            125,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            273,
+            1,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            60,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            34,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            254,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 14,
+      "rectangles": [
+        [
+          0,
+          2,
+          3,
+          1
+        ],
+        [
+          4,
+          5,
+          7,
+          6
+        ]
+      ],
+      "targets": [
+        1910576555,
+        3247393026,
+        3533191673,
+        1368806992,
+        1526874111,
+        1512135766,
+        1227500893,
+        3125300148
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            230,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            125,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            273,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            60,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            34,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            254,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 524288,
+      "rectangles": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      "targets": [
+        1788423196,
+        2423720837,
+        2021119718,
+        1598403919,
+        4245117112,
+        1390163873,
+        986112402,
+        1094436987
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            252,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            129,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            16,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            261,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            255,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            127,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            136,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            313,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 2165886373,
+      "rectangles": [
+        [
+          0,
+          1,
+          6,
+          7
+        ],
+        [
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "targets": [
+        4036986241,
+        286009952,
+        2689122171,
+        1375330834,
+        1911456429,
+        1188125932,
+        577550839,
+        4114419342
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            131,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            130,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            6,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            253,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            254,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            260,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            255,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            63,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 1200646437,
+      "rectangles": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      "targets": [
+        2265117738,
+        3677558163,
+        42693396,
+        3474136061,
+        2550134582,
+        4238827551,
+        1586076976,
+        4128323097
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            63,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            257,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            260,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            18,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            8,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            264,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            66,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            256,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 1200646437,
+      "rectangles": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          7,
+          6
+        ]
+      ],
+      "targets": [
+        2265117738,
+        3677558163,
+        42693396,
+        3474136061,
+        2550134582,
+        4238827551,
+        1586076976,
+        4128323097
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            63,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            257,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            260,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            18,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            8,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            264,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            66,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            256,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 1187027676,
+      "rectangles": [
+        [
+          0,
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          6,
+          7
+        ]
+      ],
+      "targets": [
+        3041928230,
+        2404794685,
+        4112114660,
+        1327432939,
+        68064714,
+        2654320369,
+        3539421048,
+        2920179615
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            257,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            64,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            255,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            246,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            127,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            254,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            125,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            253,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 3963643147,
+      "rectangles": [
+        [
+          0,
+          2,
+          4,
+          6
+        ],
+        [
+          1,
+          3,
+          5,
+          7
+        ]
+      ],
+      "targets": [
+        1894708027,
+        1840337940,
+        1830843757,
+        3954105478,
+        1499267039,
+        589307576,
+        1924035601,
+        4053586218
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            255,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            284,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            257,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            255,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            126,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            256,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    },
+    {
+      "base": 487608801,
+      "rectangles": [
+        [
+          0,
+          2,
+          3,
+          1
+        ],
+        [
+          4,
+          6,
+          7,
+          5
+        ]
+      ],
+      "targets": [
+        4131569566,
+        1916518657,
+        4226537880,
+        1161075051,
+        1749830274,
+        4093201429,
+        1814645932,
+        1740981695
+      ],
+      "scan": [
+        {
+          "count": 16,
+          "survivors_by_stage": [
+            249,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 17,
+          "survivors_by_stage": [
+            127,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 18,
+          "survivors_by_stage": [
+            128,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 19,
+          "survivors_by_stage": [
+            251,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 20,
+          "survivors_by_stage": [
+            257,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 21,
+          "survivors_by_stage": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 22,
+          "survivors_by_stage": [
+            258,
+            0,
+            0
+          ]
+        },
+        {
+          "count": 23,
+          "survivors_by_stage": [
+            279,
+            0,
+            0
+          ]
+        }
+      ],
+      "scalar_full_word_scan_agrees": true
+    }
+  ],
+  "source": "codex/runtime_count_tail863_rectangles_20261029.json",
+  "source_sha256": "8966639b88dc223b35dcd8cf6b0ff6b5119fbd32728e9d72f74acb7f3c64cd30",
+  "scanner_source_sha256": "193784abe50418b998fdd0f09223402efb050eb88708df2c97c45b902048cce3",
+  "vector_high_half_and_scalar_full_word_implementations_agree": true,
+  "proof": "If count clamps, q=0 and Y=count, but all eight target low16 words avoid16..23. Thus every point is active and shares c in16..23. Common low16 h=H must be odd, since target low3 has eight values. Each q is uniquely (Ylow16-c)*H^-1 mod2^16. Write h=H+2^16*t. The full product equation gives q*t=(Y-c-q*H)/2^16 mod2^16. Its solution is a residue class modulo2^16/gcd(q,2^16). A rectangle with Delta(h)=0 is feasible iff the signed residue sum vanishes modulo the gcd of its four moduli. Exhaust every odd H and all eight c. All frames have zero survivors. An independent scalar implementation solves q*h=Y-c modulo2^32, then checks h low16 and both rectangles.",
+  "complete": true,
+  "seconds": 10.4789,
+  "remaining_models": 0,
+  "new_executable": false,
+  "best_executable_cycles": 864,
+  "no_global_optimality_claim": true
+}

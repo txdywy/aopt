@@ -1,0 +1,301 @@
+{
+  "controls": [
+    {
+      "degrees": [
+        8,
+        4
+      ],
+      "width": 11,
+      "input_key": 1024,
+      "output_key": 3042638419,
+      "control": true,
+      "family": "xor",
+      "bitop": "^",
+      "pinned_control": true,
+      "status": "relaxed_reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "constants": {
+        "p": [
+          1000,
+          2031,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "q": [
+          1016,
+          2007,
+          0,
+          0,
+          0
+        ]
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.02
+    },
+    {
+      "degrees": [
+        1,
+        2
+      ],
+      "width": 11,
+      "input_key": 0,
+      "output_key": 3042638419,
+      "control": true,
+      "family": "product",
+      "bitop": "^",
+      "pinned_control": true,
+      "status": "relaxed_reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "constants": {
+        "p": [
+          1000,
+          2031
+        ],
+        "q": [
+          1016,
+          2007,
+          0
+        ],
+        "g": [
+          3,
+          1,
+          0
+        ],
+        "r": [
+          5,
+          1,
+          1
+        ]
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.095
+    },
+    {
+      "degrees": [
+        1,
+        2
+      ],
+      "width": 11,
+      "input_key": 0,
+      "output_key": 3042638419,
+      "control": true,
+      "family": "bypass",
+      "bitop": "^",
+      "pinned_control": true,
+      "status": "relaxed_reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "constants": {
+        "p": [
+          1000,
+          2031
+        ],
+        "q": [
+          1016,
+          2007,
+          0
+        ],
+        "r": [
+          5,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.07
+    },
+    {
+      "degrees": [
+        1,
+        2
+      ],
+      "width": 11,
+      "input_key": 0,
+      "output_key": 3042638419,
+      "control": true,
+      "family": "square",
+      "bitop": "^",
+      "pinned_control": true,
+      "status": "relaxed_reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "constants": {
+        "p": [
+          1000,
+          2031
+        ],
+        "q": [
+          1016,
+          2007,
+          0
+        ],
+        "r": [
+          5,
+          1,
+          1
+        ]
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.059
+    }
+  ],
+  "invalid_four_op_macro_rejected": true,
+  "interpolation_controls": [
+    {
+      "degrees": [
+        1,
+        2
+      ],
+      "width": 11,
+      "input_key": 0,
+      "output_key": 3042638419,
+      "control": true,
+      "family": "product",
+      "bitop": "^",
+      "pinned_control": true,
+      "interpolated_residual": true,
+      "status": "relaxed_reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "constants": {
+        "p": [
+          1000,
+          2031
+        ],
+        "q": [
+          1016,
+          2007,
+          0
+        ],
+        "g": [
+          3,
+          1,
+          0
+        ],
+        "r": [
+          5,
+          1,
+          1
+        ]
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.139
+    },
+    {
+      "degrees": [
+        1,
+        2
+      ],
+      "width": 11,
+      "input_key": 0,
+      "output_key": 3042638419,
+      "control": true,
+      "family": "bypass",
+      "bitop": "^",
+      "pinned_control": true,
+      "interpolated_residual": true,
+      "status": "relaxed_reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "constants": {
+        "p": [
+          1000,
+          2031
+        ],
+        "q": [
+          1016,
+          2007,
+          0
+        ],
+        "r": [
+          5,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.105
+    },
+    {
+      "degrees": [
+        1,
+        2
+      ],
+      "width": 11,
+      "input_key": 0,
+      "output_key": 3042638419,
+      "control": true,
+      "family": "square",
+      "bitop": "^",
+      "pinned_control": true,
+      "interpolated_residual": true,
+      "status": "relaxed_reduced_sat",
+      "events": [
+        {
+          "samples": 59,
+          "status": "sat"
+        }
+      ],
+      "new_executable": false,
+      "constants": {
+        "p": [
+          1000,
+          2031
+        ],
+        "q": [
+          1016,
+          2007,
+          0
+        ],
+        "r": [
+          5,
+          1,
+          1
+        ]
+      },
+      "verified_inputs": 2048,
+      "seconds": 0.088
+    }
+  ]
+}

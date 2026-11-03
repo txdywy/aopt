@@ -1,0 +1,10703 @@
+{
+  "node": 2809010545,
+  "input_names": [
+    "e",
+    "z",
+    "u",
+    "v",
+    "b",
+    "prior",
+    "a",
+    "a_shr19",
+    "a_xor_c1"
+  ],
+  "literal_shift_dependencies": {
+    "initial_source_cases": [
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 0,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 1,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 2,
+        "primary_pair": [
+          3,
+          5
+        ],
+        "signature": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 3,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 4,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 5,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 6,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 7,
+        "primary_pair": [
+          1,
+          5
+        ],
+        "signature": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 8,
+        "primary_pair": [
+          3,
+          5
+        ],
+        "signature": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 9,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 10,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 11,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 12,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 13,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 14,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 15,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 17,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 18,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 19,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 20,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 21,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 22,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 23,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 24,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 25,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 26,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 27,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 28,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 29,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 30,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 31,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "source_name": "e",
+        "shift": 32,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 0,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 1,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 2,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 3,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 4,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 5,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 6,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 7,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 8,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 9,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 10,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 11,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 12,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 13,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 14,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 15,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 16,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 17,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 18,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 19,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 20,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 21,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 22,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 23,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 24,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 25,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 26,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 27,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 28,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 29,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 30,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 31,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "source_name": "z",
+        "shift": 32,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 0,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 1,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 2,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 3,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 4,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 5,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 6,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 7,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 8,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 9,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 10,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 11,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 12,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 13,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 14,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 15,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 16,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 17,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 18,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 19,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 20,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 21,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 22,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 23,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 24,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 25,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 26,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 27,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 28,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 29,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 30,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 31,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 2,
+        "source_name": "u",
+        "shift": 32,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 0,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 1,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 2,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 3,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 4,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 5,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 6,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 7,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 8,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 9,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 10,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 11,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 12,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 13,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 14,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 15,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 16,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 17,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 18,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 19,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 20,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 21,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 22,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 23,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 24,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 25,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 26,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 27,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 28,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 29,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 30,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 31,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 3,
+        "source_name": "v",
+        "shift": 32,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 0,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 1,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 2,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 3,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 4,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 5,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 6,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 7,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 8,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 9,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 10,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 11,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 12,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 13,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 14,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 15,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 16,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 17,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 18,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 19,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 20,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 21,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 22,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 23,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 24,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 25,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 26,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 27,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 28,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 29,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 30,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 31,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 4,
+        "source_name": "b",
+        "shift": 32,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 0,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 1,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 2,
+        "primary_pair": [
+          3,
+          5
+        ],
+        "signature": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 3,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 4,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 5,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 6,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 7,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 8,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 9,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 10,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 11,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 12,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 13,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 14,
+        "primary_pair": [
+          3,
+          5
+        ],
+        "signature": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 15,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 16,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 17,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 18,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 19,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 20,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 21,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 22,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 23,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 24,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 25,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 26,
+        "primary_pair": [
+          3,
+          5
+        ],
+        "signature": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 27,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 28,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 29,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 30,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 31,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 5,
+        "source_name": "prior",
+        "shift": 32,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 0,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 1,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 2,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 3,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 4,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 5,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 6,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 7,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 8,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 9,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 10,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 11,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 12,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 13,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 14,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 15,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 16,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 17,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 18,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 19,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 20,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 21,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 22,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 23,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 24,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 25,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 26,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 27,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 28,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 29,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 30,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 31,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 6,
+        "source_name": "a",
+        "shift": 32,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 0,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 1,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 2,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 3,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 4,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 5,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 6,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 7,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 8,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 9,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 10,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 11,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 12,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 13,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 14,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 15,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 16,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 17,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 18,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 19,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 20,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 21,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 22,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 23,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 24,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 25,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 26,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 27,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 28,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 29,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 30,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 31,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 7,
+        "source_name": "a_shr19",
+        "shift": 32,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 0,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 1,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 2,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 3,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 4,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 5,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 6,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 7,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 8,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 9,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 10,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 11,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 12,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 13,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 14,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 15,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 16,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 17,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 18,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 19,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 20,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 21,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 22,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 23,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 24,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 25,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 26,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 27,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 28,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 29,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 30,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 31,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "source": 8,
+        "source_name": "a_xor_c1",
+        "shift": 32,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "bitwise_prefix_cases": [
+      {
+        "shift": 0,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 1,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 2,
+        "primary_pair": [
+          1,
+          9
+        ],
+        "signature": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "shift": 3,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "shift": 4,
+        "primary_pair": [
+          8,
+          12
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 5,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "shift": 6,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "shift": 7,
+        "primary_pair": [
+          2,
+          8
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "shift": 8,
+        "primary_pair": [
+          3,
+          5
+        ],
+        "signature": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 9,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 10,
+        "primary_pair": [
+          1,
+          9
+        ],
+        "signature": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 11,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "shift": 12,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "shift": 13,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 14,
+        "primary_pair": [
+          7,
+          9
+        ],
+        "signature": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 15,
+        "primary_pair": [
+          0,
+          4
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 17,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 18,
+        "primary_pair": [
+          3,
+          5
+        ],
+        "signature": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 19,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 20,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 21,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 22,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 23,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 24,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 25,
+        "primary_pair": [
+          4,
+          8
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 26,
+        "primary_pair": [
+          3,
+          5
+        ],
+        "signature": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 27,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 28,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 29,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 30,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 31,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "shift": 32,
+        "primary_pair": [
+          0,
+          2
+        ],
+        "signature": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "surviving_initial_source": [
+      0,
+      16
+    ],
+    "surviving_bitwise_prefix_shift": 16,
+    "shift32_represents_all_larger_counts": true,
+    "legal_points": [
+      {
+        "primary_b": 0,
+        "prior": 984669626,
+        "values": [
+          1818584522,
+          1161276957,
+          3925396509,
+          2899272192,
+          0,
+          984669626,
+          3345078992,
+          6380,
+          6380
+        ],
+        "target": 4209921524,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 1054563911,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 1,
+        "prior": 1001442747,
+        "values": [
+          1818423539,
+          1161259070,
+          3925396542,
+          2899289088,
+          1,
+          1001442747,
+          3345078993,
+          6380,
+          6381
+        ],
+        "target": 306176758,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 1071337030,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 2,
+        "prior": 1018215868,
+        "values": [
+          1818280988,
+          1161243231,
+          3925396575,
+          2899305984,
+          2,
+          1018215868,
+          3345078994,
+          6380,
+          6382
+        ],
+        "target": 888462883,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 953892417,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3,
+        "prior": 1034988989,
+        "values": [
+          1809862469,
+          1160307840,
+          3925396608,
+          2899322880,
+          3,
+          1034988989,
+          3345078995,
+          6380,
+          6383
+        ],
+        "target": 792779498,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 970665536,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 4,
+        "prior": 1051762110,
+        "values": [
+          1809719918,
+          1160292001,
+          3925396641,
+          2899339776,
+          4,
+          1051762110,
+          3345078996,
+          6380,
+          6376
+        ],
+        "target": 1351728599,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 987438659,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 5,
+        "prior": 1068535231,
+        "values": [
+          1809558935,
+          1160274114,
+          3925396674,
+          2899356672,
+          5,
+          1068535231,
+          3345078997,
+          6380,
+          6377
+        ],
+        "target": 2843675731,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 1004211778,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 7,
+        "prior": 1102081473,
+        "values": [
+          1810508777,
+          1160379652,
+          3925396740,
+          2899390464,
+          7,
+          1102081473,
+          3345078999,
+          6380,
+          6379
+        ],
+        "target": 2431702664,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 10,
+          "leaf_index": 1629,
+          "leaf_value": 212239425,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 8,
+        "prior": 1118854594,
+        "values": [
+          1810366226,
+          1160363813,
+          3925396773,
+          2899407360,
+          8,
+          1118854594,
+          3345079000,
+          6380,
+          6372
+        ],
+        "target": 3828820634,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 10,
+          "leaf_index": 1629,
+          "leaf_value": 262583362,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 9,
+        "prior": 1135627715,
+        "values": [
+          1810205243,
+          1160345926,
+          3925396806,
+          2899424256,
+          9,
+          1135627715,
+          3345079001,
+          6380,
+          6373
+        ],
+        "target": 183256517,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 10,
+          "leaf_index": 1629,
+          "leaf_value": 245802051,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 12,
+        "prior": 1185947078,
+        "values": [
+          1810938806,
+          1160427433,
+          3925396905,
+          2899474944,
+          12,
+          1185947078,
+          3345079004,
+          6380,
+          6368
+        ],
+        "target": 940021325,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 10,
+          "leaf_index": 1629,
+          "leaf_value": 195490886,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      }
+    ]
+  },
+  "small_shift_facts": {
+    "full32_facts": [
+      {
+        "name": "e_low16_ignores_b16",
+        "status": "unsat"
+      },
+      {
+        "name": "z_low16_ignores_b16",
+        "status": "unsat"
+      },
+      {
+        "name": "u_low16_ignores_b16",
+        "status": "unsat"
+      },
+      {
+        "name": "v_low16_ignores_b16",
+        "status": "unsat"
+      },
+      {
+        "name": "b_low16_ignores_b16",
+        "status": "unsat"
+      },
+      {
+        "name": "prior_low16_ignores_b16",
+        "status": "unsat"
+      },
+      {
+        "name": "a_low16_ignores_b16",
+        "status": "unsat"
+      },
+      {
+        "name": "a_shr19_low16_ignores_b16",
+        "status": "unsat"
+      },
+      {
+        "name": "a_xor_c1_low16_ignores_b16",
+        "status": "unsat"
+      }
+    ],
+    "excluded_unique_literal_shifts": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "proof": "T operations before the only right shift preserve low16 indistinguishability. A shift<=15 cannot bring b16 into bit0; the target bit0 flips on b16."
+  },
+  "runtime_initial_amount_probe": {
+    "primary_b": [
+      0,
+      65536,
+      131072,
+      196608,
+      262144,
+      327680,
+      393216,
+      458752
+    ],
+    "initial_values": [
+      [
+        1818584522,
+        1161276957,
+        3925396509,
+        2899272192,
+        0,
+        984669626,
+        3345078992,
+        6380,
+        6380
+      ],
+      [
+        687629770,
+        81178141,
+        3927559197,
+        4006568448,
+        65536,
+        1253039546,
+        3345013456,
+        6380,
+        71916
+      ],
+      [
+        2954061258,
+        3673533981,
+        3929721885,
+        818897408,
+        131072,
+        447929786,
+        3345210064,
+        6380,
+        137452
+      ],
+      [
+        1521116618,
+        2559880733,
+        3931884573,
+        1926193664,
+        196608,
+        716299706,
+        3345144528,
+        6380,
+        202988
+      ],
+      [
+        1371629002,
+        1588833821,
+        3934047261,
+        3033489920,
+        262144,
+        4206157242,
+        3345341136,
+        6380,
+        268524
+      ],
+      [
+        4233651658,
+        475180573,
+        3936209949,
+        4140786176,
+        327680,
+        179559866,
+        3345275600,
+        6380,
+        334060
+      ],
+      [
+        1668244938,
+        3530665501,
+        3938372637,
+        953115136,
+        393216,
+        3669417402,
+        3345472208,
+        6380,
+        399596
+      ],
+      [
+        235300298,
+        2417012253,
+        3940535325,
+        2060411392,
+        458752,
+        3937787322,
+        3345406672,
+        6380,
+        465132
+      ]
+    ],
+    "common_low16": [
+      26058,
+      44573,
+      52253,
+      25088,
+      0,
+      56762,
+      56016,
+      6380,
+      6380
+    ],
+    "target": [
+      4209921524,
+      866918749,
+      1931323838,
+      3204092711,
+      1750870672,
+      1109003769,
+      1423162602,
+      2942934995
+    ],
+    "large_amount_counts": {
+      "e": 8,
+      "z": 8,
+      "u": 8,
+      "v": 8,
+      "b": 7,
+      "prior": 8,
+      "a": 8,
+      "a_shr19": 8,
+      "a_xor_c1": 8
+    },
+    "allowed_large_amounts_at_most": 1,
+    "legal_points": [
+      {
+        "primary_b": 0,
+        "prior": 984669626,
+        "values": [
+          1818584522,
+          1161276957,
+          3925396509,
+          2899272192,
+          0,
+          984669626,
+          3345078992,
+          6380,
+          6380
+        ],
+        "target": 4209921524,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 1054563911,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 65536,
+        "prior": 1253039546,
+        "values": [
+          687629770,
+          81178141,
+          3927559197,
+          4006568448,
+          65536,
+          1253039546,
+          3345013456,
+          6380,
+          71916
+        ],
+        "target": 866918749,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 10,
+          "leaf_index": 1629,
+          "leaf_value": 129578042,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 131072,
+        "prior": 447929786,
+        "values": [
+          2954061258,
+          3673533981,
+          3929721885,
+          818897408,
+          131072,
+          447929786,
+          3345210064,
+          6380,
+          137452
+        ],
+        "target": 1931323838,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 517561927,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 196608,
+        "prior": 716299706,
+        "values": [
+          1521116618,
+          2559880733,
+          3931884573,
+          1926193664,
+          196608,
+          716299706,
+          3345144528,
+          6380,
+          202988
+        ],
+        "target": 3204092711,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 786062919,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 262144,
+        "prior": 4206157242,
+        "values": [
+          1371629002,
+          1588833821,
+          3934047261,
+          3033489920,
+          262144,
+          4206157242,
+          3345341136,
+          6380,
+          268524
+        ],
+        "target": 1750870672,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 509415685,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 327680,
+        "prior": 179559866,
+        "values": [
+          4233651658,
+          475180573,
+          3936209949,
+          4140786176,
+          327680,
+          179559866,
+          3345275600,
+          6380,
+          334060
+        ],
+        "target": 1109003769,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 249060935,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 393216,
+        "prior": 3669417402,
+        "values": [
+          1668244938,
+          3530665501,
+          3938372637,
+          953115136,
+          393216,
+          3669417402,
+          3345472208,
+          6380,
+          399596
+        ],
+        "target": 1423162602,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 1046417669,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 458752,
+        "prior": 3937787322,
+        "values": [
+          235300298,
+          2417012253,
+          3940535325,
+          2060411392,
+          458752,
+          3937787322,
+          3345406672,
+          6380,
+          465132
+        ],
+        "target": 2942934995,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 240914693,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      }
+    ],
+    "proof": "All other operations are T functions of the initial words and shift result. If two amounts>=32, both shift results are zero; the outputs have equal low16, contradicting eight distinct target low3 values.",
+    "scope": "Exactly one data-dependent SHR, its amount reads an initial word, and every other operation is MAD/arithmetic/bitwise/literal-SHL. A new first-operation amount and multiple downward shifts remain open."
+  },
+  "rectangle": {
+    "primary_b": [
+      3752425706,
+      3752360170,
+      3752556778,
+      3752491242
+    ],
+    "coordinates": [
+      [
+        4193369412,
+        3811234887,
+        3201393223,
+        1576777216,
+        3752425706,
+        489147577,
+        415807951,
+        793,
+        3752426483,
+        3079643
+      ],
+      [
+        3441081668,
+        2773210183,
+        3199230535,
+        469480960,
+        3752360170,
+        220777657,
+        415873487,
+        793,
+        3752360947,
+        916955
+      ],
+      [
+        1402977604,
+        1592316999,
+        3205718599,
+        3791369728,
+        3752556778,
+        4247375033,
+        415939023,
+        793,
+        3752557555,
+        7405019
+      ],
+      [
+        650689860,
+        554292295,
+        3203555911,
+        2684073472,
+        3752491242,
+        3979005113,
+        416004559,
+        793,
+        3752492019,
+        5242331
+      ]
+    ],
+    "coordinate_names": [
+      "e",
+      "z",
+      "u",
+      "v",
+      "b",
+      "prior",
+      "a",
+      "a_shr19",
+      "a_xor_c1",
+      "v_shr9"
+    ],
+    "target": [
+      3545299674,
+      802993733,
+      2470573248,
+      1756082195
+    ],
+    "target_mixed": 2027814888,
+    "distance": 2027814888,
+    "maximum_mixed_bounded_residual": 131070,
+    "proof": "Every integer polynomial in the ten coordinates has mixed difference zero modulo 2^32; all coordinate increments are divisible by 2^16.",
+    "legal_points": [
+      {
+        "primary_b": 3752425706,
+        "prior": 489147577,
+        "values": [
+          4193369412,
+          3811234887,
+          3201393223,
+          1576777216,
+          3752425706,
+          489147577,
+          415807951,
+          793,
+          3752426483
+        ],
+        "target": 3545299674,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 424431428,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752360170,
+        "prior": 220777657,
+        "values": [
+          3441081668,
+          2773210183,
+          3199230535,
+          469480960,
+          3752360170,
+          220777657,
+          415873487,
+          793,
+          3752360947
+        ],
+        "target": 802993733,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 155406148,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752556778,
+        "prior": 4247375033,
+        "values": [
+          1402977604,
+          1592316999,
+          3205718599,
+          3791369728,
+          3752556778,
+          4247375033,
+          415939023,
+          793,
+          3752557555
+        ],
+        "target": 2470573248,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 432013318,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3752491242,
+        "prior": 3979005113,
+        "values": [
+          650689860,
+          554292295,
+          3203555911,
+          2684073472,
+          3752491242,
+          3979005113,
+          416004559,
+          793,
+          3752492019
+        ],
+        "target": 1756082195,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 163774470,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      }
+    ]
+  },
+  "residual_images": {
+    "primary_b_range": [
+      0,
+      131072
+    ],
+    "maximum_function_of_one_shr16_values": 65536,
+    "results": [
+      {
+        "source_name": "e",
+        "distinct_residuals": 131067,
+        "sequence_sha256": "4ad8a9ae309e3b948848186eab51ce0166e2e480f6a8dfc8915185a55111de13"
+      },
+      {
+        "source_name": "z",
+        "distinct_residuals": 131069,
+        "sequence_sha256": "9d988a1d68b8a922ed659d3ab384dd81ccddc29700f7485b3c7d5090c24004a8"
+      },
+      {
+        "source_name": "u",
+        "distinct_residuals": 131071,
+        "sequence_sha256": "a5b6a3ac154c90b7163661d2db9cdcb37356390dff67528be089e86a03716155"
+      },
+      {
+        "source_name": "v",
+        "distinct_residuals": 131070,
+        "sequence_sha256": "1956f05e1e50dbdb396bd8a9aba10375ef57c101c52843e6177549eb91839b26"
+      },
+      {
+        "source_name": "b",
+        "distinct_residuals": 131070,
+        "sequence_sha256": "cbe0a281d10bc42158391f0084613bb5e0ab86de7cc73b10a40a25ce03c216b4"
+      },
+      {
+        "source_name": "prior",
+        "distinct_residuals": 131071,
+        "sequence_sha256": "e73ff3bc8912f2981c962ff039a3dd44ef7d0bddc1777323ea0f0ee006c3f1f8"
+      },
+      {
+        "source_name": "a",
+        "distinct_residuals": 131070,
+        "sequence_sha256": "9c29e74a4e83aa38e01524f5eb8fb29dfd20ae950a4f182babdc74e745f16ea4"
+      },
+      {
+        "source_name": "a_shr19",
+        "distinct_residuals": 131072,
+        "sequence_sha256": "d341b1f201e451cae2181a7043e4bf45f7e76f263edeffa85b2e6841bdbc7384"
+      },
+      {
+        "source_name": "a_xor_c1",
+        "distinct_residuals": 131070,
+        "sequence_sha256": "8abc73671e1ccfcb0326209faa3ca4589d9505fcbfeee41f331bee966c7e522a"
+      },
+      {
+        "source_name": "v_shr9",
+        "distinct_residuals": 131071,
+        "sequence_sha256": "3ab5ee8197e1cce8c9c8cde7eaef9b7c251332af5544dec564026ed44e9043ec"
+      }
+    ],
+    "proof": "K*q or q*q has at most 65536 values when q is a literal SHR with count >=16."
+  },
+  "inverse_fold_polynomial": {
+    "samples": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      4294967295,
+      4294967294,
+      64,
+      128,
+      256,
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      16384,
+      32768,
+      65536,
+      131072,
+      262144,
+      524288,
+      1048576,
+      2097152,
+      4194304,
+      8388608,
+      16777216,
+      33554432,
+      67108864,
+      134217728,
+      268435456,
+      536870912,
+      1073741824,
+      2147483648,
+      2150357473,
+      3399227631,
+      2781878646,
+      310352622,
+      2022221021,
+      1071843032,
+      776842622,
+      17851763,
+      885495627,
+      4193565751,
+      741417435,
+      291183182,
+      2435480110,
+      2632757404,
+      3618315838,
+      295447062,
+      1965099828,
+      504729718,
+      199845506,
+      3535855719,
+      2934410484,
+      4284472927,
+      1188749983,
+      2737287516,
+      918142794,
+      2851279681,
+      3608250120,
+      1676080785,
+      3636083448,
+      1389184257,
+      2784963562,
+      2052896469,
+      1272649616,
+      623006366,
+      92997174,
+      797310903,
+      1221047821,
+      2069407917,
+      6988390,
+      3059827694,
+      3582944712,
+      1320064366,
+      2712626989,
+      3032395216,
+      870609570,
+      253621731,
+      4043171682,
+      3824063155,
+      2053810381,
+      3239989452,
+      2496867034,
+      208250504,
+      2663261872,
+      3088684471,
+      3948626415,
+      3712355586,
+      3050095927,
+      3001489856,
+      3270090810,
+      556542549,
+      3556627384,
+      1699719185,
+      1595795979,
+      170388019,
+      2429173419,
+      168206617,
+      1628136269,
+      845718181,
+      4048133610,
+      2636955262,
+      1730701783,
+      1603769421,
+      646971739,
+      2841472632,
+      2288545130,
+      3851698186,
+      721897071,
+      2197543602,
+      75519771,
+      1174158994,
+      844152348,
+      2032481316,
+      1358929874,
+      4158166798,
+      2636649276,
+      1996099030,
+      1422162721,
+      743868695,
+      1244430136,
+      2121443854,
+      2608727853,
+      3743223382,
+      1361411622,
+      2047547753,
+      1775884663,
+      2426744031,
+      3018594205,
+      365298089,
+      2858486205,
+      1949105977,
+      3146804363,
+      2530129000,
+      2667504674,
+      90699919,
+      1187175573,
+      3622061065,
+      1113570575,
+      1672845116,
+      3194928900,
+      2604513096,
+      3989954806,
+      25078615,
+      3695048265,
+      1380922849,
+      389621159,
+      1714140914,
+      4099343192,
+      850162424,
+      114337888,
+      257386529,
+      1948640662,
+      305300938,
+      3370525280,
+      1687483644,
+      2269307701,
+      1780787514,
+      1050509279,
+      2953078880,
+      1103976044,
+      4131510758,
+      1564071303,
+      3685823559,
+      697953447,
+      4050745036,
+      2690567774,
+      3917736355,
+      3580995059,
+      1408678489,
+      776205992,
+      4041370866,
+      571837784,
+      2400213961,
+      3458340775,
+      195122347,
+      1738784728,
+      2854217579,
+      1900040775,
+      4073010545,
+      514675482,
+      716457461,
+      2017166366,
+      314977845,
+      3666414591,
+      2821372172,
+      2242143080,
+      1964145948,
+      95101646,
+      3376345930,
+      931614081,
+      2613613008,
+      1917103546,
+      1796679842,
+      2553538577,
+      775976931,
+      3097625967,
+      3149326928,
+      3716737537,
+      3230870573,
+      2136863011,
+      1247919662,
+      499561251,
+      3727634023,
+      1841712306,
+      4018951109,
+      24865300,
+      1382266191,
+      3178992930,
+      2101683456,
+      3681947289,
+      1963275146,
+      1658325163,
+      3817298409,
+      237536403,
+      278565916,
+      2935272370,
+      1333984190,
+      2871597767,
+      3094025543,
+      4110244509,
+      4102948667,
+      256027212,
+      617833482,
+      1825714461,
+      1077096255,
+      2077048754,
+      2093787030,
+      2266534993,
+      3802420514,
+      880113132,
+      3895491405,
+      467486376,
+      4061205561,
+      1279396583,
+      3884376898,
+      335228010,
+      3502885497,
+      3281148022,
+      1702730523,
+      1967047325,
+      4240613641,
+      2751417074,
+      2891388431,
+      3120657200,
+      3216655380,
+      1511751728,
+      2327604687,
+      3883791650,
+      2603029453,
+      93751973,
+      264731687,
+      3095662338,
+      2802814105,
+      1757723567,
+      1509860261,
+      2926667603,
+      1514341364,
+      1181850848,
+      4264781633,
+      1968636535,
+      1415912259,
+      2901564185,
+      1586583927,
+      1396440285,
+      2321655547,
+      3363089580,
+      244868977,
+      981224827,
+      937602913,
+      3786362773,
+      3715246239,
+      2168284885,
+      1789631181,
+      420618672,
+      1502606423,
+      3024486946,
+      4259365256,
+      3704450975,
+      3895828416,
+      3699643020,
+      608988453,
+      3236887019,
+      3492338052,
+      753374556,
+      3028552042,
+      3391690233,
+      558829056,
+      1716069027,
+      245785617,
+      3604881831,
+      1820050484,
+      3582030827,
+      2934898500,
+      2765066189,
+      1312463694,
+      1465720413,
+      3233818559,
+      1920572902,
+      1992216702,
+      2308341987,
+      82460993,
+      2553874289,
+      941582205,
+      3733558336,
+      2495331786,
+      3399933555,
+      3484497999,
+      1984312012,
+      290733838,
+      2821888390,
+      1271568791,
+      90935520,
+      3092288491,
+      940944796,
+      2350744325,
+      170394685,
+      3607592812,
+      4281040366,
+      3861884576,
+      3448210728,
+      766073340,
+      518130593,
+      1035201795,
+      1715430496,
+      3901893480,
+      1167569340,
+      408410450,
+      2191385838,
+      273641697,
+      2560769471,
+      3470226277,
+      3693972163,
+      3671506526,
+      906432085,
+      3617619649,
+      2217183411,
+      2268910393,
+      3419243538,
+      152117623,
+      218572106,
+      3090091766,
+      4098045075,
+      219644933,
+      2922334034,
+      86853307,
+      1648013155,
+      2050834548,
+      4044382862,
+      3430077612,
+      3264610382,
+      2151425360,
+      3869692715,
+      2852915990,
+      104887500,
+      1543028178,
+      1275372021,
+      1259036120,
+      544508253,
+      43887309,
+      562485888,
+      4156536221,
+      229624910,
+      455794270,
+      3297848779,
+      3700128789,
+      3036547194,
+      1079451350,
+      3601132729,
+      2765678339,
+      844265974,
+      2062677367,
+      642655909,
+      1405455182,
+      634373862,
+      1832128058,
+      359903667,
+      2015952689,
+      2995390306,
+      3450568229,
+      550586491,
+      2605594363,
+      3779430272,
+      783208347,
+      2754038008,
+      2076086949,
+      312294097,
+      2321253066,
+      390325039,
+      2590702330,
+      4014184009,
+      3784966009,
+      3321109081,
+      1346887927,
+      1758581351,
+      2882743094,
+      1955509155,
+      2317196756,
+      1281467125,
+      1518559824,
+      185385288,
+      3529730990,
+      1251775017,
+      2785546891,
+      3150396797,
+      654724774,
+      1557880130,
+      723101593,
+      2432531625,
+      2278750993,
+      3354159877,
+      541707943,
+      2953514227,
+      421034121,
+      4063849923,
+      2399441136,
+      3529811317,
+      2438672588,
+      667430939,
+      2170604335,
+      2081119037,
+      1151059880,
+      3730668614,
+      1469567373,
+      2094893755,
+      1728530933,
+      3248982093,
+      3118053850,
+      631563188,
+      4088681911,
+      715664504,
+      3399773842,
+      1998042126,
+      2351647255,
+      227291381,
+      721550532,
+      353395576,
+      964633896,
+      2372359040,
+      1712720540,
+      969258957,
+      1784843642,
+      3307245613,
+      3261255351,
+      872727724,
+      3594156005,
+      222384356,
+      875562419,
+      1571305053,
+      3466710607,
+      1187856047,
+      4216698523,
+      1709234819,
+      2052869247,
+      3218597580,
+      3095489199,
+      2587416263,
+      4073877591,
+      1417593920,
+      1418097286,
+      739557280,
+      2170529279,
+      2257738306,
+      876414555,
+      3050534405,
+      1106934482,
+      2057307997,
+      21151765,
+      3096557125,
+      1017669164,
+      1280803333,
+      3907265056,
+      3997108505,
+      1573317560,
+      2277247419,
+      4247312739,
+      1832571051,
+      1040474392,
+      892480104,
+      749821230,
+      2759457314,
+      1589888125,
+      2176170634,
+      540588985,
+      1258613267,
+      1417421727,
+      458484645,
+      3008625242,
+      2507092604,
+      2443795152,
+      402535818,
+      2237916769,
+      421029795,
+      3564697690,
+      2810161688,
+      2828146709,
+      3081703354,
+      1450558620,
+      1403595587,
+      3710630653,
+      2344000101,
+      2687359626,
+      405164719,
+      1018537065,
+      2250531443,
+      784751029,
+      1268921515,
+      4138480707,
+      3267794593,
+      104083879,
+      2059857155,
+      2104951656,
+      3170764139,
+      1684147691,
+      3326681699,
+      2863852857,
+      2290850547,
+      3993692578,
+      1120274237,
+      825825792,
+      978338656,
+      3680464128,
+      1817158103,
+      1489583138,
+      1660611035,
+      3249019250,
+      2140109029,
+      3793570984,
+      370871333,
+      3986944600,
+      1834413339,
+      2669446118,
+      3430026081,
+      1874575788,
+      2244798380,
+      819780049,
+      4045871580,
+      1406367759,
+      2635395893,
+      3530300841,
+      1694735028,
+      1491260520,
+      2535342814,
+      2085169339
+    ],
+    "monomial_indices": [
+      [],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "arbitrary_coefficients": 21,
+    "variables": [
+      "b",
+      "z",
+      "a",
+      "a_shr19",
+      "a_xor_c1"
+    ],
+    "results": [
+      {
+        "shift": 1,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 2,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 3,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 4,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 5,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 6,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 7,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 8,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 9,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 10,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 11,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 12,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 13,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 14,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 15,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 16,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 17,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 18,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 19,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 20,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 21,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 22,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 23,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 24,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 25,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 26,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 27,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 28,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 29,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 30,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      },
+      {
+        "shift": 31,
+        "status": "inconsistent_full32",
+        "inverse_proved": true
+      }
+    ],
+    "single_mad_positive_control": true,
+    "scope": "t is any one-MAD expression in the nine initial words; output t XOR (t>>s)."
+  },
+  "odd_product": {
+    "residual_points": [
+      {
+        "source": 0,
+        "name": "e",
+        "primary_b": 2418667174,
+        "target": 2608854112,
+        "addend": 442233952,
+        "residual": 2166620160,
+        "legal_point": {
+          "primary_b": 2418667174,
+          "prior": 148699485,
+          "values": [
+            442233952,
+            53911939,
+            2137034627,
+            2086022656,
+            2418667174,
+            148699485,
+            1464346227,
+            2793,
+            2418664527
+          ],
+          "target": 2608854112,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 213351072,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      },
+      {
+        "source": 1,
+        "name": "z",
+        "primary_b": 2210462107,
+        "target": 3952451864,
+        "addend": 2297536792,
+        "residual": 1654915072,
+        "legal_point": {
+          "primary_b": 2210462107,
+          "prior": 627705373,
+          "values": [
+            3454988445,
+            2297536792,
+            3856202008,
+            1831426048,
+            2210462107,
+            627705373,
+            1151415091,
+            2196,
+            2210459919
+          ],
+          "target": 3952451864,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 553747936,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      },
+      {
+        "source": 2,
+        "name": "u",
+        "primary_b": 1755490164,
+        "target": 1776247313,
+        "addend": 1727029777,
+        "residual": 49217536,
+        "legal_point": {
+          "primary_b": 1755490164,
+          "prior": 3920917402,
+          "values": [
+            3805589342,
+            4245366801,
+            1727029777,
+            2616936960,
+            1755490164,
+            3920917402,
+            2948821168,
+            5624,
+            1755493004
+          ],
+          "target": 1776247313,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 8,
+            "leaf_index": 1752,
+            "leaf_value": 224247589,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      },
+      {
+        "source": 3,
+        "name": "v",
+        "primary_b": 924155396,
+        "target": 3024054784,
+        "addend": 927754752,
+        "residual": 2096300032,
+        "legal_point": {
+          "primary_b": 924155396,
+          "prior": 2639086880,
+          "values": [
+            3656756334,
+            888299681,
+            62786209,
+            927754752,
+            924155396,
+            2639086880,
+            4034175542,
+            7694,
+            924147722
+          ],
+          "target": 3024054784,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 1,
+            "leaf_index": 1797,
+            "leaf_value": 617386664,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      },
+      {
+        "source": 4,
+        "name": "b",
+        "primary_b": 794392646,
+        "target": 2528606278,
+        "addend": 794392646,
+        "residual": 1734213632,
+        "legal_point": {
+          "primary_b": 794392646,
+          "prior": 2612845159,
+          "values": [
+            2168554240,
+            3109036835,
+            75582755,
+            3184619008,
+            794392646,
+            2612845159,
+            3896027005,
+            7431,
+            794387777
+          ],
+          "target": 2528606278,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 1,
+            "leaf_index": 1797,
+            "leaf_value": 574426607,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      },
+      {
+        "source": 5,
+        "name": "prior",
+        "primary_b": 2711053979,
+        "target": 1133124451,
+        "addend": 912989027,
+        "residual": 220135424,
+        "legal_point": {
+          "primary_b": 2711053979,
+          "prior": 912989027,
+          "values": [
+            1654756765,
+            188636696,
+            3195864600,
+            3041089536,
+            2711053979,
+            912989027,
+            1727441017,
+            3294,
+            2711054917
+          ],
+          "target": 1133124451,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 838899870,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      },
+      {
+        "source": 6,
+        "name": "a",
+        "primary_b": 2682505225,
+        "target": 2990670117,
+        "addend": 1484914981,
+        "residual": 1505755136,
+        "legal_point": {
+          "primary_b": 2682505225,
+          "prior": 510374927,
+          "values": [
+            3745870395,
+            3761512774,
+            2253755718,
+            1717679104,
+            2682505225,
+            510374927,
+            1484914981,
+            2832,
+            2682503961
+          ],
+          "target": 2990670117,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 436221938,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      },
+      {
+        "source": 7,
+        "name": "a_shr19",
+        "primary_b": 2917341350,
+        "target": 1142820176,
+        "addend": 3408,
+        "residual": 1142816768,
+        "legal_point": {
+          "primary_b": 2917341350,
+          "prior": 3355589300,
+          "values": [
+            3542866528,
+            1830082435,
+            1413413251,
+            959065600,
+            2917341350,
+            3355589300,
+            1786959818,
+            3408,
+            2917340662
+          ],
+          "target": 1142820176,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 8,
+            "leaf_index": 1752,
+            "leaf_value": 753661451,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      },
+      {
+        "source": 8,
+        "name": "a_xor_c1",
+        "primary_b": 1225381534,
+        "target": 4289972051,
+        "addend": 1225377619,
+        "residual": 3064594432,
+        "legal_point": {
+          "primary_b": 1225381534,
+          "prior": 1041045593,
+          "values": [
+            1884615448,
+            1645832315,
+            1413314171,
+            908336640,
+            1225381534,
+            1041045593,
+            2389181807,
+            4557,
+            1225377619
+          ],
+          "target": 4289972051,
+          "legal_tree": {
+            "height": 10,
+            "root": 305419896,
+            "initial": 0,
+            "leaf_index": 2000,
+            "leaf_value": 979803044,
+            "other_nodes": 0
+          },
+          "frozen_reference_checked": true
+        }
+      }
+    ],
+    "proof": "LSB transfer requires t odd. Then t*q nonzero and divisible by 2^16 is impossible for 0<=q<2^16: reduce modulo 2^16 and invert odd t.",
+    "q_times_v_plus_one": {
+      "primary_b": 0,
+      "multiplier": 2899272193,
+      "target": 4209921524,
+      "required_q": 3466257908,
+      "legal_point": {
+        "primary_b": 0,
+        "prior": 984669626,
+        "values": [
+          1818584522,
+          1161276957,
+          3925396509,
+          2899272192,
+          0,
+          984669626,
+          3345078992,
+          6380,
+          6380
+        ],
+        "target": 4209921524,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 0,
+          "leaf_index": 2000,
+          "leaf_value": 1054563911,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      }
+    }
+  },
+  "permutation_sums": {
+    "results": [
+      {
+        "shift": 16,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 1073741824
+      },
+      {
+        "shift": 17,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 1073741824
+      },
+      {
+        "shift": 18,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 1073741824
+      },
+      {
+        "shift": 19,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 1073741824
+      },
+      {
+        "shift": 20,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 1073741824
+      },
+      {
+        "shift": 21,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 1073741824
+      },
+      {
+        "shift": 22,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 1073741824
+      },
+      {
+        "shift": 23,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 1073741824
+      },
+      {
+        "shift": 24,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 1073741824
+      },
+      {
+        "shift": 25,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 1073741824
+      },
+      {
+        "shift": 26,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 1073741824
+      },
+      {
+        "shift": 27,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 1073741824
+      },
+      {
+        "shift": 28,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 1073741824
+      },
+      {
+        "shift": 29,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 1073741824
+      },
+      {
+        "shift": 30,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 1073741824
+      },
+      {
+        "shift": 31,
+        "sum_q": 2147483648,
+        "sum_q_square": 2147483648,
+        "sum_tq": 3221225472
+      }
+    ],
+    "exhaustive_small_odd_products": 1080,
+    "proof": "A permutation of uint32 preserves the sum. t+K*q requires K even; t+q*q and t+t*q never preserve the sum."
+  },
+  "two_mad": {
+    "first_options": 567,
+    "last_options": 212,
+    "cases_per_shift": 120204,
+    "literal_shifts": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "counts": {
+      "polynomial_plus_bounded_q_rectangle": 37989,
+      "lsb_dependency": 67441,
+      "q_times_v_plus_one_requires_large_q": 567,
+      "noninjective_g_of_t_wordcut": 149,
+      "residual_image": 10206,
+      "sum_q_square": 567,
+      "q_only_image": 2268,
+      "sum_Kq_requires_even_but_lsb_requires_odd": 567,
+      "odd_tq_cannot_have_nonzero_16_divisible_residual": 405,
+      "sum_tq": 45
+    },
+    "unresolved": 0,
+    "deterministic_classified_manifest_sha256": "5b88754930268c7009f53cce827f93bfb2154e0a329d30273b5d6c34501f35da",
+    "scope": "MAD, SHR of its result, MAD; all nine inputs, all canonical operand roles and arbitrary constants. Same certificate holds for each count16..31."
+  },
+  "two_shr": {
+    "samples": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      71721171,
+      1863362822,
+      1136880257,
+      3053502864,
+      4247078967,
+      1688779084,
+      3431038993,
+      2898807668,
+      2101353309,
+      1268925507,
+      3415060886,
+      332943919,
+      295504457,
+      3925955566,
+      4290218678,
+      378991605,
+      1856702471,
+      1278407505,
+      1086561114,
+      1419732168,
+      3867051528,
+      2176225690,
+      3341944298,
+      2498028137,
+      4140754700,
+      1222005298,
+      3591437250,
+      846946785,
+      2175524202,
+      4232033920,
+      658798426,
+      1076912016,
+      2306214411,
+      3416125156,
+      530977686,
+      4290044128,
+      1217397549,
+      2502043393,
+      3327114510,
+      4038851867,
+      3071865490,
+      3315806065,
+      1842606484,
+      148803398,
+      1894061226,
+      1110678763,
+      1710909626,
+      2238543335,
+      1392426448,
+      3309789630,
+      1604729798,
+      3487775947,
+      186222122,
+      1079400170,
+      2935545828,
+      1312100817,
+      695269212,
+      99431913,
+      2761001333,
+      3657243128,
+      2893676468,
+      1557763983,
+      742588564,
+      2675396971,
+      4293636712,
+      4286886553,
+      4175011328,
+      1522067761,
+      4282544193,
+      2370709521,
+      902198190,
+      1938514160,
+      1168466938,
+      31142269,
+      2869380217,
+      2814650184,
+      643925502,
+      1676569506,
+      2449355760,
+      1095787307,
+      3333712430,
+      614625622,
+      1735926906,
+      1556610333,
+      1848570159,
+      1376894460,
+      76690829,
+      4285702837,
+      2133161170,
+      2463858018,
+      2860303964,
+      386122081,
+      1233875008,
+      1993247992,
+      1657017611,
+      1574431754,
+      2430470831,
+      2004613465,
+      3805472059,
+      4132951756,
+      2310036943,
+      2269008236,
+      2484643854,
+      3362916158,
+      3244977412,
+      999162661,
+      2161612843,
+      1045500958,
+      3901399490,
+      2964182704,
+      3452247849,
+      2470046348,
+      513232826,
+      1752845103,
+      3078801037,
+      1416244083,
+      2579272500,
+      366975422,
+      1260095770,
+      4250607758,
+      2438352012,
+      2167504303,
+      3904035898,
+      2823949942,
+      1978976116,
+      1218897794,
+      4281304332,
+      679486466,
+      4098801852,
+      3222197180,
+      1468868918,
+      975581702,
+      1457493770,
+      4050833151,
+      1281813023,
+      2217499978,
+      2969499294,
+      1103074579,
+      3642659672,
+      4086205086,
+      3892249979,
+      3439297712,
+      3652207859,
+      2768127558,
+      3106396195,
+      3858696887,
+      3465528695,
+      463939024,
+      3378656591,
+      3178405883,
+      2328457504,
+      2822103272,
+      3765549474,
+      3649254080,
+      684458122,
+      3881193214,
+      3007167094,
+      2746144378,
+      1362699327,
+      38187799,
+      176987945,
+      322379917,
+      3329167572,
+      849318978,
+      3972488574,
+      4250643753,
+      2220006830,
+      2911903122,
+      154434624,
+      3264668972,
+      272548108,
+      3681495234,
+      2338026970,
+      651486360,
+      235770605,
+      414267678,
+      1134372704,
+      1872350932,
+      395309538,
+      3984542097,
+      3470325927,
+      1812712749,
+      3502580084,
+      1224632043,
+      2656339394,
+      1552135779,
+      1184002913,
+      1508887931,
+      1098795931,
+      420073683,
+      2015893470,
+      2038082932,
+      1676741411,
+      4040640342,
+      3413029398,
+      2156140573,
+      2545139254,
+      1780648294,
+      282439789,
+      82380236,
+      3852304515,
+      3001803100,
+      3317003197,
+      2585808513,
+      2593625207,
+      861668909,
+      1848775711,
+      3484803316,
+      1851299672,
+      3192131744,
+      3957900234,
+      1323233342,
+      3369512970,
+      1980655564,
+      3430259966,
+      1286405995,
+      705727468,
+      1323597089,
+      955053556,
+      1113154310,
+      4007855983,
+      1302996447,
+      2898458316,
+      2694518864,
+      942107495,
+      708371436,
+      1721854002,
+      1088026216,
+      706023635,
+      2931966462,
+      2794130345,
+      2237904586,
+      4045197678,
+      2539991276,
+      217443447,
+      373109436,
+      1854058235,
+      2338337914,
+      971768161,
+      1172506981,
+      3349399182,
+      1543377553,
+      3376798605,
+      4272687974,
+      1833428714,
+      3117095286,
+      1003010258,
+      2579937354,
+      590528493,
+      25661176,
+      3510133230,
+      460218264,
+      792623556,
+      279090637,
+      291494569,
+      2534601533,
+      2476638722,
+      2124892922,
+      689567220,
+      4033018231,
+      3973986187,
+      2803480882,
+      811045187,
+      3372249564,
+      660128733,
+      1465608843,
+      2764399987,
+      937252112,
+      838399218,
+      2008429015,
+      2928880153,
+      1011227297,
+      1926049452,
+      2632909860,
+      2970843142,
+      2486217117,
+      2451542374,
+      1391386893,
+      314431874,
+      2524030695,
+      3585310533,
+      879344714,
+      4006592598,
+      2732312608,
+      2082565244,
+      3822927332,
+      4102842283,
+      2652368031,
+      393781,
+      824165601,
+      859544092,
+      916650111,
+      2810593662,
+      2726579953,
+      2480016293,
+      911527856,
+      1164215229,
+      1430499143,
+      2100997160,
+      3243318592,
+      2469139141,
+      939770438,
+      2194332393,
+      2795576764,
+      1785647988,
+      2478016196,
+      1182328979,
+      3032818908,
+      1023246606,
+      688155039,
+      45734633,
+      528387294,
+      2487094140,
+      2468014290,
+      4018714171,
+      862434004,
+      1878052575,
+      3609890058,
+      4204604768,
+      194260669,
+      2547313866,
+      2834788903,
+      97424680,
+      1370437148,
+      3721274498,
+      2514210981,
+      2794085568,
+      2067121014,
+      1262677013,
+      1387483678,
+      321515255,
+      2868709394,
+      3854314821,
+      3825482519,
+      4220118750,
+      1157226483,
+      2745843456,
+      2142002346,
+      3630316322,
+      984488936,
+      2008862117,
+      3596041724,
+      2222730398,
+      3709428410,
+      2714699803,
+      110264473,
+      3383744283,
+      3692905935,
+      4155195607,
+      2969157227,
+      3038139561,
+      3860557530,
+      1232990452,
+      196058566,
+      1953887687,
+      3543961198,
+      3181561290,
+      3409694474,
+      1230940045,
+      3476199715,
+      3673992477,
+      1599845378,
+      2400966961,
+      2004889872,
+      1061057067,
+      1895222318,
+      444761777,
+      1691583594,
+      2858873088,
+      3689000932,
+      225018963,
+      2591060996,
+      1274283856,
+      1052518763,
+      1256360064,
+      4218668176,
+      1639003378,
+      4277278280,
+      2100879368,
+      1270435347,
+      3604091787,
+      281578284,
+      3199648857,
+      1629378965,
+      1011630901,
+      1444714015,
+      1890214971,
+      369116233,
+      1025320635,
+      840244094,
+      3367924979,
+      2898753666,
+      1125969666,
+      1523815948,
+      519784534,
+      2401769649,
+      2599453589,
+      1307709755,
+      3146697689,
+      1041386046,
+      241389850,
+      4013167404,
+      2395207946,
+      1577439029,
+      2825982943,
+      3294902635,
+      2504793778,
+      4063678235,
+      126140585,
+      1429464251,
+      2144605692,
+      1877902932,
+      2902510477,
+      3218927753,
+      4114035968,
+      2748620778,
+      1996091142,
+      1617020230,
+      1805915225,
+      1414449458,
+      724617647,
+      586892077,
+      989953608,
+      2399254290,
+      3036310446,
+      3389517875,
+      412468928,
+      106760715,
+      1556480427,
+      1490034495,
+      1918149336,
+      3555526273,
+      3124253964,
+      2000827598,
+      3385229768,
+      3330661388,
+      789287951,
+      1006218116,
+      2311992546,
+      402306262,
+      1603323174,
+      1329575207,
+      3558055352,
+      1235652824,
+      3886763418,
+      1158373161,
+      2355797887,
+      947566573,
+      1162199787,
+      1187805089,
+      481362122,
+      211423544,
+      580650354,
+      2678223433,
+      544888927,
+      535752926,
+      3747973540,
+      1110844034,
+      3677463625,
+      1184307293,
+      2283462526,
+      474951344,
+      651630905,
+      631686743,
+      1053034581,
+      3789751649,
+      3486942528,
+      2615937639,
+      171828515,
+      670472740,
+      2841854314,
+      4104858781,
+      2396528744,
+      1784268714,
+      3321032402,
+      3351554489,
+      259613114,
+      2689114955,
+      524306253,
+      3512046780,
+      3273940773,
+      3612517165,
+      3981176091,
+      3060405368,
+      169181997,
+      3688985027,
+      1973745026,
+      786517320,
+      3844020086,
+      1324602216,
+      4065657592,
+      3147736802,
+      2668823720,
+      102171749,
+      1664914840,
+      144709710,
+      1589171895,
+      2001495176,
+      712422242,
+      149557665,
+      2516281075,
+      3788377699,
+      3038891512,
+      4127054008,
+      1979780171,
+      1279257110,
+      683697362,
+      2473881500,
+      1142929995,
+      118717919,
+      1132899254,
+      3216233210,
+      2169281654,
+      3814214302,
+      1722668050,
+      544740395,
+      1348194721,
+      3884857474,
+      1581709650,
+      1556202932,
+      2288819793,
+      2909953006,
+      646549455,
+      137005530,
+      3014836122,
+      3024619907,
+      2842945211,
+      624927563,
+      1631451254,
+      3419310459,
+      528013012,
+      3579213485,
+      2757704322,
+      4215930149,
+      2264804560,
+      389239042,
+      1917602111,
+      3158046236,
+      1080722034,
+      2152279187,
+      419018654,
+      521315365,
+      506163298,
+      17683011,
+      3864388084,
+      1921398184,
+      3901410286,
+      3091534301,
+      1346538731,
+      451421922,
+      2869557445,
+      3087979514,
+      470835011,
+      2814906213,
+      3604380304,
+      2169616605,
+      4011399831,
+      370794568,
+      2849066951,
+      525742101,
+      2730425652,
+      909547444,
+      1159914148,
+      3522659842,
+      3342666557,
+      698288465,
+      3610842603,
+      1207600296,
+      3980274380,
+      1655513145,
+      2432787986,
+      2284738318,
+      1425806874,
+      2683386886,
+      2199366607,
+      4129988213,
+      1191310056,
+      4035535077,
+      2999072482,
+      3848482650,
+      2551967559,
+      3000064294,
+      529286268,
+      1134951448,
+      2765988050,
+      3570182243,
+      1370477291,
+      2136128968,
+      3267101505,
+      1687621623,
+      8632612,
+      386707994,
+      3268387173,
+      764946461,
+      1479089399,
+      827704759,
+      2928498765,
+      3992898375,
+      578771980,
+      2898596426,
+      987423872,
+      482796272,
+      3234392823,
+      3220370936,
+      3834067482,
+      418124287,
+      2041059899,
+      226611340,
+      1750391942,
+      378752924,
+      1542571304,
+      2569768516,
+      3937798095,
+      1023144678,
+      4242488309,
+      2298771470,
+      3915582760,
+      2934216143,
+      99422640,
+      3203237730,
+      934643480,
+      4198936915,
+      4032538492,
+      1765539590,
+      1388161600,
+      594983382,
+      3300119511,
+      111981846,
+      420046608,
+      2015929377,
+      1890005111,
+      2277522293,
+      1615672308,
+      1630030360,
+      1517358959,
+      3030300593,
+      3975672500,
+      443316150,
+      4112109505,
+      1844722470,
+      1962889830,
+      800890519,
+      2942467568,
+      721543795,
+      1467469240,
+      1156844574,
+      194984999,
+      2239791772,
+      122768260,
+      1944440731,
+      1315215741,
+      1997156507,
+      2035059887,
+      273546099,
+      73549898,
+      1253180829,
+      695520663,
+      3452268426,
+      454834811,
+      1140315890,
+      181718918,
+      2875611758,
+      1995090052,
+      1898409063,
+      1572215131,
+      3526507044,
+      3619449718,
+      1703168810,
+      1641365870,
+      2521285839,
+      1530729248,
+      2243472672,
+      3250985700,
+      3965892778,
+      1422562001,
+      592442710,
+      1149607109,
+      3055980939,
+      562400849,
+      3709731858,
+      304148448,
+      2392408774,
+      1567831674,
+      1511090732,
+      3519094570,
+      373073537,
+      381786771,
+      2830016595,
+      4030519897,
+      1044977612,
+      406464118,
+      3000191192,
+      1569095513,
+      1154125096,
+      2204656518,
+      563302977,
+      2663599148,
+      827259965,
+      2725196336,
+      109305293,
+      2099941274,
+      3548083262,
+      2219071,
+      885970719,
+      1515284795,
+      2102459730,
+      2962059484,
+      2091920530,
+      2766398004,
+      2997545207,
+      2348218530,
+      2395566935,
+      2478075765,
+      1992856568,
+      2750448668,
+      1493860834,
+      1231874794,
+      1558091342,
+      134602546,
+      542494076,
+      3723236433,
+      1687075699,
+      3938088045,
+      226844704,
+      992691968,
+      1020224769,
+      2860826210,
+      530136900,
+      3270668751,
+      2829914900,
+      4130398279,
+      4192082508,
+      2711682485,
+      2636958597,
+      2063955816,
+      2627407269,
+      3618245929,
+      2934742042,
+      964886859,
+      3514397535,
+      2755495267,
+      4189539130,
+      3404988461,
+      2337195848,
+      3035828005,
+      3035280754,
+      2696357201,
+      1327708047,
+      2716953307,
+      1934263125,
+      1774148455,
+      1984870898,
+      4271515432,
+      2852501509,
+      2572699292,
+      1916855806,
+      2436381470,
+      330361061,
+      1128422728,
+      1790077993,
+      1899708423,
+      4229681263,
+      3503739852,
+      3080655424,
+      3424298330,
+      2714207894,
+      1327989245,
+      278025777,
+      2371184976,
+      3296091606,
+      3671968802,
+      1949934372,
+      3664354121,
+      461519461,
+      3637715075,
+      2166822381,
+      3657853376,
+      3158438923,
+      1667610229,
+      1368034105,
+      3256268883,
+      1153511204,
+      799255330,
+      2667915477,
+      3657585006,
+      1010273241,
+      570769210,
+      336876153,
+      291924639,
+      3074587048,
+      802507320,
+      3701740445,
+      3997962785,
+      374993595,
+      122481280,
+      865936043,
+      611580689,
+      3161390206,
+      2511296062,
+      2354838064,
+      3695807217,
+      2884087546,
+      3564379653,
+      1071396958,
+      4026167463,
+      3854162142,
+      381230278,
+      2151976379,
+      3338088711,
+      3094629792,
+      3421008779,
+      1112936667,
+      508851661,
+      2492240457,
+      1116763876,
+      549335719,
+      1184962370,
+      1361193251,
+      1725327931,
+      3049784777,
+      466600118,
+      1056448038,
+      962361422,
+      1784204426,
+      2011146229,
+      3038132727,
+      1037509194,
+      3704808866,
+      1955140695,
+      3131073069,
+      2526783271,
+      2741471564,
+      2203029894,
+      3781299345,
+      4007726233,
+      1489681534,
+      3092736202,
+      3682691589,
+      2547531409,
+      1352544753,
+      4197975379,
+      368717211,
+      1376031494,
+      2684197668,
+      345812299,
+      1469367193,
+      2925856507,
+      3648477087,
+      3770633877,
+      3505956432,
+      3065903873,
+      2976374612,
+      4039420317,
+      1656331993,
+      1623262148,
+      3634710959,
+      2223996114,
+      2544348818,
+      521486160,
+      208655320,
+      552106425,
+      3016324620,
+      946858122,
+      3151971661,
+      3519908768,
+      2552987690,
+      3263896543,
+      965407526,
+      1901037280,
+      1379517695,
+      3464719751,
+      281623246,
+      2905481261,
+      2075441076,
+      1583496524,
+      4070161018,
+      54379039,
+      1637061942,
+      3072292770,
+      1627570318,
+      1816522577,
+      4188595297,
+      2640456478,
+      641413203,
+      952333048,
+      4292384865,
+      2127382587,
+      1703757020,
+      417032486,
+      3906091435,
+      817023409,
+      1742643150,
+      2595284944,
+      894475859,
+      1478173333,
+      1122956655,
+      2699902250,
+      1567402005,
+      3862504065,
+      2135013365,
+      3167796189,
+      2864130712,
+      3507188922,
+      4175314567,
+      1621753289,
+      2692287132,
+      1354166963,
+      3726981211,
+      2384700577,
+      572466405,
+      3631955698,
+      3494843219,
+      242773315,
+      723500868,
+      2468512155,
+      2526488373,
+      1008152691,
+      1557823983,
+      2933393288,
+      4130153921,
+      2298713048,
+      3742659754,
+      2050266914,
+      521959132,
+      237228300,
+      527663571,
+      2648597520,
+      2982576534,
+      2432875956,
+      3047242192,
+      2173642745,
+      679889823,
+      824213352,
+      2830281264,
+      4281007357,
+      3894598397,
+      269448733,
+      2057503506,
+      912160381,
+      3224140226,
+      214425883,
+      2748800054,
+      2773576081,
+      3648393978,
+      3379764136,
+      1411299033,
+      3049296299,
+      3828390615,
+      3794330042,
+      1327972155,
+      2849914466,
+      219227308,
+      736967257,
+      3107414736,
+      3092863979,
+      1986813565,
+      501365452,
+      626843851,
+      2243556211,
+      3038404263,
+      3882701244,
+      1676819272,
+      3531845899,
+      872697191,
+      1690486700,
+      3651108812,
+      676286373,
+      2663765664,
+      2715592119,
+      2577381967,
+      536329803,
+      3014253869,
+      850094216,
+      2677501807,
+      62118405,
+      1736472475,
+      1361980698,
+      3193731899,
+      2135768043,
+      730419133,
+      3927648224,
+      3676534895,
+      965570291,
+      2693515114,
+      3632824001,
+      999257737,
+      1078217964,
+      135207352,
+      92578497,
+      1639206549,
+      1024568268,
+      2831128063,
+      3088583023,
+      3198885466,
+      3364253048,
+      4061782108,
+      3062281793,
+      3909779915,
+      2335928514,
+      3032888109,
+      1070829506,
+      1772353461,
+      3596314181,
+      2830781360,
+      2218981380,
+      3635515514,
+      913708006,
+      3698036831,
+      1632425666,
+      3430452124,
+      2034065919,
+      935035902,
+      525423677,
+      1885923462,
+      185886185,
+      1785499574,
+      2612502217,
+      647316181,
+      1064192530,
+      2618045541,
+      1819925712,
+      2692742481,
+      937932961,
+      832731044
+    ],
+    "fields": 297,
+    "necessary_boolean_cases": 1725867,
+    "necessary_survivors": [
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          0,
+          16
+        ],
+        "other": 1,
+        "pattern": "q1*q2+h",
+        "certificate": "residual_image"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          0,
+          16
+        ],
+        "other": 2,
+        "pattern": "q1*q2+h",
+        "certificate": "residual_image"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          1,
+          0
+        ],
+        "other": 1,
+        "pattern": "q2*h+q1",
+        "certificate": "polynomial_plus_bounded_q_rectangle"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          1,
+          0
+        ],
+        "other": 2,
+        "pattern": "q2*h+q1",
+        "certificate": "polynomial_plus_bounded_q_rectangle"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          1,
+          0
+        ],
+        "other": 9,
+        "pattern": "q1*h+q2",
+        "certificate": "residual_image"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          1,
+          0
+        ],
+        "other": 10,
+        "pattern": "q2*h+q1",
+        "certificate": "polynomial_plus_bounded_q_rectangle"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          1,
+          0
+        ],
+        "other": 12,
+        "pattern": "q1*h+q2",
+        "certificate": "residual_image"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          1,
+          0
+        ],
+        "other": 12,
+        "pattern": "q2*h+q1",
+        "certificate": "polynomial_plus_bounded_q_rectangle"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          2,
+          0
+        ],
+        "other": 1,
+        "pattern": "q2*h+q1",
+        "certificate": "polynomial_plus_bounded_q_rectangle"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          2,
+          0
+        ],
+        "other": 2,
+        "pattern": "q2*h+q1",
+        "certificate": "polynomial_plus_bounded_q_rectangle"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          2,
+          0
+        ],
+        "other": 9,
+        "pattern": "q1*h+q2",
+        "certificate": "residual_image"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          2,
+          0
+        ],
+        "other": 10,
+        "pattern": "q2*h+q1",
+        "certificate": "polynomial_plus_bounded_q_rectangle"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          2,
+          0
+        ],
+        "other": 12,
+        "pattern": "q1*h+q2",
+        "certificate": "residual_image"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          2,
+          0
+        ],
+        "other": 12,
+        "pattern": "q2*h+q1",
+        "certificate": "polynomial_plus_bounded_q_rectangle"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          3,
+          9
+        ],
+        "other": 1,
+        "pattern": "q2*h+q1",
+        "certificate": "polynomial_plus_bounded_q_rectangle"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          3,
+          9
+        ],
+        "other": 2,
+        "pattern": "q2*h+q1",
+        "certificate": "polynomial_plus_bounded_q_rectangle"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          3,
+          9
+        ],
+        "other": 9,
+        "pattern": "q1*h+q2",
+        "certificate": "residual_image"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          3,
+          9
+        ],
+        "other": 10,
+        "pattern": "q2*h+q1",
+        "certificate": "polynomial_plus_bounded_q_rectangle"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          3,
+          9
+        ],
+        "other": 12,
+        "pattern": "q1*h+q2",
+        "certificate": "residual_image"
+      },
+      {
+        "first": [
+          0,
+          16
+        ],
+        "second": [
+          3,
+          9
+        ],
+        "other": 12,
+        "pattern": "q2*h+q1",
+        "certificate": "polynomial_plus_bounded_q_rectangle"
+      }
+    ],
+    "remaining": 0,
+    "scope": "Two initial-word literal right shifts then MAD. Consecutive shifts of one word are included by summing shift counts; amounts>=32 canonicalize to32."
+  },
+  "one_mad": {
+    "nine_word_new_early_manifest": 233640,
+    "original_first_shift_manifest": 74100,
+    "counts": {
+      "unsat": 75914,
+      "lsb_dependency_excluded": 157726
+    },
+    "old_five_word_grammar_reused": 113265,
+    "all_low_truth_tables_independently_rechecked": true,
+    "remaining": 0
+  },
+  "evidence_sha256": {
+    "codex/early_boundary863_first_shift.json.gz": "24f57b2c4cfa2d21d981eb264c833424109c39f776151f193939a8ce4946d182",
+    "codex/early_boundary863_one_mad_complete.json.gz": "408264dee2059763e5a488d40b5245767842a1fd5dfbc9e42d7f5551ed91d951",
+    "codex/live_boundary863_arms_closed_audit.json": "2fae1cc34299533bb6d633a1815e2975c8d2f26ffbcaf9d808413c2be226cab6",
+    "codex/early_boundary863_proofs.json": "182daf553a65a3ad71295e75f052a172ff1ba73743f9638ba4cf3cffd7544736"
+  },
+  "remaining_in_stated_core_grammar": 0,
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "scope": "At most three straight-line MAD/XOR/AND/OR/literal-SHR operations, nine stated live inputs and arbitrary prepared root-dependent constants. ADD/SUB/MUL/literal-SHL normalize to MAD. Does not cover data-dependent shifts, division, comparison, FLOW or larger windows; no global kernel lower bound."
+}

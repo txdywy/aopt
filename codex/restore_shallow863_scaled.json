@@ -1,0 +1,28 @@
+{
+  "normalization_control": {
+    "programs": 80,
+    "inputs_per_program": 64,
+    "exposed_function_preserved": true
+  },
+  "query": {
+    "width": 11,
+    "family": "G*(P1 XOR Q2)+H",
+    "output_key": 3042638419,
+    "arbitrary_input_key": true,
+    "normalized_input_key_bits": [
+      0,
+      10
+    ],
+    "control": false,
+    "pinned_control": false,
+    "status": "unsat",
+    "events": [
+      {
+        "samples": 59,
+        "status": "unsat"
+      }
+    ],
+    "new_executable": false,
+    "seconds": 2.243
+  }
+}

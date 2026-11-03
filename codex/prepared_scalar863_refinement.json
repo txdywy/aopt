@@ -1,0 +1,204 @@
+{
+  "node": 2809010545,
+  "source": 0,
+  "source_name": "e",
+  "status": "excluded",
+  "previous_sha256": "5586b33882c402dcf3c856c8b73fbe6494a48390e82029126a8672fb015da37b",
+  "primary_b": [
+    1870635334,
+    621977926,
+    2468979014,
+    1222091078,
+    3354435910,
+    3776356678,
+    1199415622,
+    2606080326,
+    3372851526,
+    980132166,
+    2822742342,
+    880451910,
+    1234018630,
+    1794744646,
+    2036834630,
+    2264244550,
+    918593862,
+    2612371782,
+    2696061254,
+    956735814,
+    2919407942,
+    1473356102,
+    324116806,
+    2421006662,
+    294232390,
+    1842127174
+  ],
+  "initial_factors": [
+    3271557120,
+    580190208,
+    3646291968,
+    1415053312,
+    3825664000,
+    3908632576,
+    3104440320,
+    2967601152,
+    3698720768,
+    151781376,
+    4265607168,
+    574423040,
+    4254728192,
+    2615541760,
+    2473066496,
+    3410100224,
+    563544064,
+    1501691904,
+    3975479296,
+    749273088,
+    285540352,
+    2650669056,
+    3581804544,
+    3453616128,
+    687210496,
+    1988296704
+  ],
+  "targets": [
+    3505080199,
+    3096369402,
+    2299563325,
+    3604888127,
+    1645656716,
+    1300614814,
+    3879841169,
+    1627076265,
+    2252247581,
+    1312767379,
+    3329709127,
+    937252962,
+    672723457,
+    1132941229,
+    461207343,
+    3089456969,
+    2573006332,
+    1104203273,
+    2311688858,
+    2113540846,
+    3855066506,
+    3249459621,
+    4255586597,
+    919921089,
+    2441477789,
+    667020552
+  ],
+  "history": [
+    {
+      "index": 0,
+      "low_scalar_survivors": 65536
+    },
+    {
+      "index": 1,
+      "low_scalar_survivors": 49152
+    },
+    {
+      "index": 2,
+      "low_scalar_survivors": 32768
+    },
+    {
+      "index": 3,
+      "low_scalar_survivors": 20480
+    },
+    {
+      "index": 4,
+      "low_scalar_survivors": 12293
+    },
+    {
+      "index": 5,
+      "low_scalar_survivors": 7181
+    },
+    {
+      "index": 6,
+      "low_scalar_survivors": 4115
+    },
+    {
+      "index": 7,
+      "low_scalar_survivors": 2332
+    },
+    {
+      "index": 8,
+      "low_scalar_survivors": 1299
+    },
+    {
+      "index": 9,
+      "low_scalar_survivors": 717
+    },
+    {
+      "index": 10,
+      "low_scalar_survivors": 379
+    },
+    {
+      "index": 11,
+      "low_scalar_survivors": 225
+    },
+    {
+      "index": 12,
+      "low_scalar_survivors": 124
+    },
+    {
+      "index": 13,
+      "low_scalar_survivors": 55
+    },
+    {
+      "index": 14,
+      "low_scalar_survivors": 32
+    },
+    {
+      "index": 15,
+      "low_scalar_survivors": 17
+    },
+    {
+      "index": 16,
+      "low_scalar_survivors": 10
+    },
+    {
+      "index": 17,
+      "low_scalar_survivors": 4
+    },
+    {
+      "index": 18,
+      "low_scalar_survivors": 3
+    },
+    {
+      "index": 19,
+      "low_scalar_survivors": 3
+    },
+    {
+      "index": 20,
+      "low_scalar_survivors": 3
+    },
+    {
+      "index": 21,
+      "low_scalar_survivors": 3
+    },
+    {
+      "index": 22,
+      "low_scalar_survivors": 1
+    },
+    {
+      "index": 23,
+      "low_scalar_survivors": 1
+    },
+    {
+      "index": 24,
+      "low_scalar_survivors": 1
+    },
+    {
+      "index": 25,
+      "low_scalar_survivors": 0
+    }
+  ],
+  "low16_survivors": [],
+  "low16_scalars_enumerated": 65536,
+  "represented_word_scalars": 4294967296,
+  "omitted_high16_bits_annihilated": true,
+  "scope": "Y=G*e+DIV/REM/CDIV(C,P), arbitrary32-bit prepared G/C, arbitrary nonzero denominator P.",
+  "best_executable_cycles": 864,
+  "new_executable": false
+}

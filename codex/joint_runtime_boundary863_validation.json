@@ -1,0 +1,172 @@
+{
+  "date": "2026-10-28",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "runtime": {
+    "python": "3.12.16",
+    "numpy": "2.3.5",
+    "z3": "Z3 5.1.0.0"
+  },
+  "three_op_bidirectional_core": {
+    "input_words": [
+      "e",
+      "z",
+      "u",
+      "v",
+      "b",
+      "prior",
+      "a",
+      "a_shr19",
+      "a_xor_c1"
+    ],
+    "node": 2809010545,
+    "remaining": 0,
+    "scope": "At most3 straight-line uint32 MAD/XOR/AND/OR/SHL/SHR operations on nine stated live words, arbitrary root-prepared constants and arbitrary data-dependent shift operands. ADD/SUB/MUL normalize to MAD. No DIV/REM/CDIV/comparison/vbroadcast/FLOW/memory/cross-lane operations or larger windows; no global kernel bound.",
+    "right_order_partition": {
+      "TTT": "No downward bit transfer: target LSB flips on b16 while all initial LSBs stay fixed.",
+      "STT": "Initial-word amount makes shift0 on the rectangle; prepared-root amounts use the fixed-shift core audit.",
+      "TST": "Initial/root amounts as above; a BIT-computed amount uses the computed-amount audit; a MAD-computed amount uses the rectangle. Constant data sources and t>>t are separately closed.",
+      "TTS": "High-output ancestor pair: final right shift must have count0, and its T-only data ancestor has equal LSB on the pair.",
+      "TSS": "High-output ancestor pair along every value-operand shift chain.",
+      "STS": "For initial/root constant value ancestors use the high pair. For middle T value ancestors, high-output quadratic/bitwise tests cover every first fixed shift; initial-word first amounts make q=0 on all selected high samples.",
+      "SST": "Both prepared-root amounts use fixed-shift core. An initial-word amount uses the rectangle. Second amount=first_q uses297 conditional quadratic/bitwise tests. A constant first source reduces to prepared-root amounts.",
+      "SSS": "High-output ancestor pair along the value-operand shift chain."
+    },
+    "rectangle_cases": 297,
+    "high_middle_cases": 297,
+    "conditional_second_cases": 297,
+    "minimum_conditional_samples": 462,
+    "odd_output_count_cases": 297,
+    "identically_zero_first_counts": 28
+  },
+  "four_op_joint": {
+    "input_words": [
+      "z",
+      "u",
+      "v",
+      "b",
+      "prior",
+      "a",
+      "a_shr19",
+      "a_xor_c1"
+    ],
+    "free_e": false,
+    "broad_samples": 14208,
+    "remaining_sampled": 0,
+    "not_complete_four_op_grammar": true,
+    "complete_affine_tail_cases": 4200,
+    "affine_tail_counts": {
+      "unsat": 3775,
+      "shift_wordcut_excluded": 420,
+      "full32_sliced_z_times_K_plus_u": 1,
+      "prior_full32_fold_affine_z_family": 2,
+      "full32_sliced_affine_u": 2
+    },
+    "affine_tail_remaining": 0,
+    "original_unknown_records_preserved": true
+  },
+  "native_control": {
+    "boundaries": 32,
+    "removed_ops_each": 5,
+    "control_ops_each": 5,
+    "lane_work_before": 51665,
+    "lane_work_after": 51665,
+    "setup_added": 0,
+    "scratch": 1111,
+    "frozen_seeds": 3,
+    "serial_cycles_not_a_contest_score": 12083
+  },
+  "checks": {
+    "research_tests": 34,
+    "new_tests": 10,
+    "random_four_op_programs": 200,
+    "random_four_op_lanes": 1600,
+    "independent_z3_parity_cases": 80,
+    "frozen_variable_shift_cases": 64,
+    "frozen_mad_rectangles": 100,
+    "small_wrap_cases": 65536,
+    "random_full32_slice_controls": 16,
+    "exhaustive_inputs_per_slice_control": 2048,
+    "frozen_shift_edges": [
+      0,
+      1,
+      15,
+      31,
+      32,
+      63
+    ],
+    "frozen_problem_and_tests_unchanged": true,
+    "archive_roundtrip": true
+  },
+  "claude_progress": {
+    "commit": "42c1f533daa5f72466e349bfa2e2d946556ac3c0",
+    "commits_ahead_of_previous_read": 5,
+    "document": "codex/SUB863_ROUND0_PINNED_20261028.md",
+    "document_blob_sha": "bcf241aaea269c4cec27365fe7141134f79c66d2",
+    "division_source_blob_sha": "2f48252d9d70ab14b56b11afbd432c26f502c209",
+    "reported_best_cycles": 864,
+    "reported_round0_shift_combinations_open": 97,
+    "reported_division_templates_open": 9,
+    "results_independently_rerun": false
+  },
+  "official_baseline_evidence": {
+    "path": "codex/root_boundary863_validation.json",
+    "sha256": "2b8a33054353015dfad1bbe7794f3f27803c2c933d7012e737b141d74740e5e4",
+    "cycles": 864,
+    "official_not_rerun_this_turn": true
+  },
+  "protected_sha256": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  },
+  "files_sha256": {
+    "codex/SUB863_JOINT_RUNTIME_20261028.md": "05ac5b23218da7de358b4655615893935bd8ca8baa3ab8c07c09a6dc0f089556",
+    "codex/audit_bidirectional_shift_core863.py": "fddd8f46acf45bfa302f121186abb4be7b9deece9d9b35782a19963834721a0c",
+    "codex/audit_computed_shift_amount863.py": "97a33945fa781042d41da6af69ad9f97da68c20fcca10a7f74d73e126e610f83",
+    "codex/audit_runtime_shift_core863.py": "c3ed5071c3ec78baa77bbda45fd5060b06bd1ef838523aec8311a3554cc35e7b",
+    "codex/bidirectional_shift_core863_audit.json": "0ee8567b8182a9f12e71b12722bf892b1ebe71bafead0d23cbc20ad966b8e694",
+    "codex/build_joint_live_boundary863.py": "3f4fa8a7bb875670dff48871085cc34ca0f242dce0ae2612fd88d7ea5de5418d",
+    "codex/close_joint_live_boundary863.py": "695ebf855c71b7fa7cc77ca7a125c850e548506336f95072d1feb65397617815",
+    "codex/computed_shift_amount863_audit.json": "f0e1636075ab2592046e4a428305f6d165b5fe05438f32a93299c62d989a1832",
+    "codex/joint_live_boundary863_affine_dense.json": "3447aa638bdeb716e72ff80827aebef25033a7ac5447485f278421a9aa65f592",
+    "codex/joint_live_boundary863_affine_final.json": "76855d150c5936cc566e02a9d5146350d9255582ecf83ba59c1be7fd576af11a",
+    "codex/joint_live_boundary863_affine_high.json": "2451857ea897d7944b7eff5e99851e2c158f96c372669821bb6f1a458fb3da11",
+    "codex/joint_live_boundary863_affine_refinement.json": "dcfcdce313a0d53b2278deefe1d43bb39a40d97e72c87ad80bcaa85781b61643",
+    "codex/joint_live_boundary863_affine_slice.json": "301421f7f8c89f55ded6ddf94e25598e649a6528cc16bbc0659b71fa6659bcd2",
+    "codex/joint_live_boundary863_affine_tail.json.gz": "a5e35e9d8a6aa98541ae157ab9685c8acf404058a3b35dd4e80fb6c79eb6560f",
+    "codex/joint_live_boundary863_archives.json": "b23ea7b905e08d74940632083790aa4f4af293cffa65b252f99f2b631b69d13c",
+    "codex/joint_live_boundary863_closed_audit.json": "fde3950ef96218e28c5920513ea93fd5393a000e4f6b46eed2f3917d76cb396d",
+    "codex/joint_live_boundary863_ir_control.json": "4e9362e3138b06c4945aea66a9fa78ca04d3d0bf0eb44acd4f82919589418ea9",
+    "codex/joint_live_boundary863_refinement.json": "efa9a4fe3fbc066f2fb49bdd821ad4524fdbfe8b25e8042485da960e4380c1f2",
+    "codex/joint_live_boundary863_scout.json.gz": "309b568920b19ec42223b0d4550156d318e988da131b6c23c3c63f0afb1bea07",
+    "codex/runtime_shift_core863_audit.json": "48884cb4e556915f6ed50649ebd645844167e94bdc96af9e884605b5fde005ba",
+    "codex/screen_joint_affine_high863.py": "f979d9e5a66c59b1a5dd40f9502fa422b3b0660935b65357e586af3c7014d997",
+    "codex/screen_joint_affine_slice863.py": "8c0d39fdd34e0659c4330599514b616a3fb45194343784ff66c5b910a783ee56",
+    "codex/search_joint_live_boundary863.py": "7cb5c7782a113de45214fe9769bb5d869b3b1848435e9852ed7262ea501718cc",
+    "codex/test_joint_live_boundary863.py": "bd86958634931a4806d737d921e44cb6ce278b81a3b3f66a3f6faae1c96271eb",
+    "codex/test_runtime_shift_core863.py": "865941328a882988e1b9023f077b9a888445465505c021d594ec0fd9499680bf"
+  },
+  "logs_sha256": {
+    "/tmp/aopt-joint-runtime-regression.log": "e12323335e41df7f608a4fbee65d38005ae6c8321742f59dd20b8953d8fa8d58",
+    "/tmp/aopt-joint-live-boundary-scout.log": "0f433e8616a1311ff5bd2b2f86a53755fbe52f606d879cf6e085f682963db607",
+    "/tmp/aopt-joint-live-boundary-refinement.log": "1cdf9eeac58358cf6999f1a22fcf63fae4347851bacce7147e61988d634bfb84",
+    "/tmp/aopt-joint-live-boundary-affine-tail.log": "87e1788ffc6540f453e557d4de8b566063168825f2d9dcc684ac3fee1a59a09b",
+    "/tmp/aopt-joint-live-boundary-affine-refinement.log": "43577b341a1e1da377078846a5be7cf8c0e8bfec13af5225773523e54808e42f",
+    "/tmp/aopt-joint-live-boundary-affine-dense.log": "b2800b97a7c6494b0c24ff7439ebb643c981a229879afdfe81e67f32c83f6e0f",
+    "/tmp/aopt-joint-live-boundary-affine-final.log": "f5ad92e98887dceddec4c1938c99ba406458101d12a27f2621c7d60a00952b6e",
+    "/tmp/aopt-joint-live-boundary-affine-high.log": "74147dc0493d68462f38cc40bcc422155c7e0f8c6cb7a09f5d762b73962789ea",
+    "/tmp/aopt-joint-live-boundary-affine-slice.log": "37264cdc2677ff0113da9db0d3f509183ba18ef1570f3143d66bc2f86c82af45",
+    "/tmp/aopt-joint-live-boundary-ir-control.log": "3fe68f0a072aed221a9ed8f77602c793e8a166e3abf6770166deb759200168c3",
+    "/tmp/aopt-joint-live-boundary-closed-audit.log": "7f12b127d5eebc5cd1369b00377cf8facd9699af3349e6827e79fad391bf83b6",
+    "/tmp/aopt-computed-shift-amount-audit.log": "f372b884e58daba15ce7a2e5f8d63a1602c2765a0b385bafcf7dc6cc51ebac44",
+    "/tmp/aopt-runtime-shift-core-audit.log": "51150d85ae3ad1c48c4ff0127e26997840fbd3050b69ad1175fb16835fa30a49",
+    "/tmp/aopt-bidirectional-shift-core-audit.log": "4406369f329ca7d595539afacb475f40fd7586322d944cb8b7b38217492673e8"
+  },
+  "remaining_global_directions": [
+    "DIV/REM/CDIV/comparison",
+    "Other live inputs or state encodings",
+    "Four-op joint topologies beyond the affine-tail family",
+    "FLOW/memory/cross-lane/whole-kernel changes"
+  ]
+}

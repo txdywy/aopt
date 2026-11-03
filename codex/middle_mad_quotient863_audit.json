@@ -1,0 +1,236 @@
+{
+  "node": 2809010545,
+  "input_names": [
+    "e",
+    "z",
+    "u",
+    "v",
+    "b",
+    "prior",
+    "a",
+    "a_shr19",
+    "a_xor_c1"
+  ],
+  "rectangle": {
+    "primary_b": [
+      3597240495,
+      3597174959,
+      3597371567,
+      3597306031
+    ],
+    "initial_values": [
+      [
+        3926886097,
+        1872751276,
+        2375248556,
+        3792470016,
+        3597240495,
+        4286131100,
+        285755570,
+        545,
+        3597240974
+      ],
+      [
+        2531690193,
+        763292332,
+        2373085868,
+        2685173760,
+        3597174959,
+        4017761180,
+        285821106,
+        545,
+        3597175438
+      ],
+      [
+        1209632465,
+        3956927148,
+        2379573932,
+        1712095232,
+        3597371567,
+        3749391260,
+        285886642,
+        545,
+        3597372046
+      ],
+      [
+        4109403857,
+        2847468204,
+        2377411244,
+        604798976,
+        3597306031,
+        3481021340,
+        285952178,
+        545,
+        3597306510
+      ]
+    ],
+    "targets": [
+      3817980613,
+      821151324,
+      3955803343,
+      3106457702
+    ],
+    "target_mixed": 2147483648,
+    "legal_points": [
+      {
+        "primary_b": 3597240495,
+        "prior": 4286131100,
+        "values": [
+          3926886097,
+          1872751276,
+          2375248556,
+          3792470016,
+          3597240495,
+          4286131100,
+          285755570,
+          545,
+          3597240974
+        ],
+        "target": 3817980613,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 462481187,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3597174959,
+        "prior": 4017761180,
+        "values": [
+          2531690193,
+          763292332,
+          2373085868,
+          2685173760,
+          3597174959,
+          4017761180,
+          285821106,
+          545,
+          3597175438
+        ],
+        "target": 821151324,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 194242339,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3597371567,
+        "prior": 3749391260,
+        "values": [
+          1209632465,
+          3956927148,
+          2379573932,
+          1712095232,
+          3597371567,
+          3749391260,
+          285886642,
+          545,
+          3597372046
+        ],
+        "target": 3955803343,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 999483171,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      },
+      {
+        "primary_b": 3597306031,
+        "prior": 3481021340,
+        "values": [
+          4109403857,
+          2847468204,
+          2377411244,
+          604798976,
+          3597306031,
+          3481021340,
+          285952178,
+          545,
+          3597306510
+        ],
+        "target": 3106457702,
+        "legal_tree": {
+          "height": 10,
+          "root": 305419896,
+          "initial": 8,
+          "leaf_index": 1752,
+          "leaf_value": 731244323,
+          "other_nodes": 0
+        },
+        "frozen_reference_checked": true
+      }
+    ]
+  },
+  "prefix_lemma": "If all word increments are multiples of2^16 and each mixed difference is0 modulo2^32, cross-products of increments vanish. Therefore every integer polynomial in these words, including a first MAD and any polynomial tail R, has zero mixed difference.",
+  "families": [
+    "P=one arbitrary MAD(initials/K);q=DIV/REM/CDIV(P,D);out=R(initials,P,K)+q, for any integer polynomial R.",
+    "P=one arbitrary MAD(initials/K);q=DIV/REM/CDIV(P,D);out=P+G*q, G an arbitrary root-only constant."
+  ],
+  "odd_g_necessity": "In the second family, target parity flips under b16, while P parity does not. Thus G is odd and G*x=2^31 implies x=2^31 modulo2^32.",
+  "large_divisor_cuts": {
+    "floor_D_at_least4": "excluded: q<=floor(MASK/D), so |mixed(q)|<2^31",
+    "ceil_D_at_least5": "excluded: q<=ceil(MASK/D), so |mixed(q)|<2^31"
+  },
+  "small_divisor_cases": [
+    {
+      "op": "//",
+      "divisor": 1,
+      "status": "excluded",
+      "proof": "D*target_mixed=2^31, but the four remainder/ceil-adjustment terms have absolute mixed value<=2*(D-1). An odd tail quotient coefficient preserves2^31."
+    },
+    {
+      "op": "//",
+      "divisor": 2,
+      "status": "excluded",
+      "proof": "For D=2 or4, floor/ceil parity depends only on prefix low3. All prefix low3 and T-only tail low bits ignore b16, whereas target parity flips."
+    },
+    {
+      "op": "//",
+      "divisor": 3,
+      "status": "excluded",
+      "proof": "D*target_mixed=2^31, but the four remainder/ceil-adjustment terms have absolute mixed value<=2*(D-1). An odd tail quotient coefficient preserves2^31."
+    },
+    {
+      "op": "cdiv",
+      "divisor": 1,
+      "status": "excluded",
+      "proof": "D*target_mixed=2^31, but the four remainder/ceil-adjustment terms have absolute mixed value<=2*(D-1). An odd tail quotient coefficient preserves2^31."
+    },
+    {
+      "op": "cdiv",
+      "divisor": 2,
+      "status": "excluded",
+      "proof": "For D=2 or4, floor/ceil parity depends only on prefix low3. All prefix low3 and T-only tail low bits ignore b16, whereas target parity flips."
+    },
+    {
+      "op": "cdiv",
+      "divisor": 3,
+      "status": "excluded",
+      "proof": "D*target_mixed=2^31, but the four remainder/ceil-adjustment terms have absolute mixed value<=2*(D-1). An odd tail quotient coefficient preserves2^31."
+    },
+    {
+      "op": "cdiv",
+      "divisor": 4,
+      "status": "excluded",
+      "proof": "For D=2 or4, floor/ceil parity depends only on prefix low3. All prefix low3 and T-only tail low bits ignore b16, whereas target parity flips."
+    }
+  ],
+  "rem_proof": "An even D preserves prefix parity and cannot transfer b16. For odd D, |mixed(q)|<=2*(D-1) forces D>2^30. Then k=floor(P/D)<=3, and q=P-D*k gives target_mixed=-D*mixed(k), up to the odd constant G in the second family. Odd multiplication preserves the unique element2^31; |mixed(k)|<=6 cannot equal it.",
+  "remaining_in_stated_families": 0,
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "scope": "One arbitrary MAD prefix, constant nonzero uint32 divisor, and the stated polynomial-plus-quotient / prefix-plus-constant-times-quotient output. This covers every final MAD with q as its addend, and the final P+G*q form. Does not cover a computed denominator or every q-multiplicative tail."
+}

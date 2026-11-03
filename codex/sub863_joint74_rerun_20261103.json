@@ -1,0 +1,247 @@
+{
+ "z3": "5.3.3",
+ "date": "2026-11-03",
+ "budget_s": 200,
+ "check_ms": 60000,
+ "purpose": "Re-run of genuinely-open joint b->G 5-op queries (6->5) from joint_direct_* and joint_middle_tail u/v variants, after removing 4 already closed by the affine-fold certificate.",
+ "total": 74,
+ "counts": {
+  "finite_grammar_unsat": 33,
+  "unknown": 41
+ },
+ "per_file": {
+  "joint_direct_b863": {
+   "finite_grammar_unsat": 8,
+   "unknown": 20
+  },
+  "joint_direct_b863_sparse": {
+   "finite_grammar_unsat": 10,
+   "unknown": 1
+  },
+  "joint_direct_bu_shift16863": {
+   "finite_grammar_unsat": 2,
+   "unknown": 5
+  },
+  "joint_direct_bv_shift16863": {
+   "finite_grammar_unsat": 1,
+   "unknown": 4
+  },
+  "joint_direct_arbitrary_bu863": {
+   "unknown": 6,
+   "finite_grammar_unsat": 1
+  },
+  "joint_middle_tail863_u": {
+   "finite_grammar_unsat": 3
+  },
+  "joint_middle_tail863_v": {
+   "finite_grammar_unsat": 1,
+   "unknown": 1
+  },
+  "joint_middle_tail863_u_extended": {
+   "finite_grammar_unsat": 4,
+   "unknown": 2
+  },
+  "joint_middle_tail863_v_extended": {
+   "finite_grammar_unsat": 3,
+   "unknown": 2
+  }
+ },
+ "unknown": [
+  {
+   "file": "joint_direct_b863",
+   "sequence": "^,^,mad,>>,mad"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "^,mad,>>,^,mad"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "^,mad,>>,mad,^"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "^,mad,>>,mad,mad"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "^,mad,mad,>>,^"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "^,mad,^,>>,mad"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "^,mad,mad,>>,mad"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "mad,>>,^,mad,^"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "mad,>>,mad,mad,^"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "mad,^,>>,^,mad"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "mad,^,>>,mad,^"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "mad,^,>>,mad,mad"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "mad,^,^,>>,mad"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "mad,^,mad,>>,mad"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "mad,mad,>>,^,^"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "mad,mad,>>,^,mad"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "mad,mad,>>,mad,^"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "mad,mad,^,>>,^"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "mad,mad,^,>>,mad"
+  },
+  {
+   "file": "joint_direct_b863",
+   "sequence": "mad,mad,mad,>>,^"
+  },
+  {
+   "file": "joint_direct_b863_sparse",
+   "sequence": "mad,mad,^,>>,mad"
+  },
+  {
+   "file": "joint_direct_bu_shift16863",
+   "sequence": "^,mad,>>,mad"
+  },
+  {
+   "file": "joint_direct_bu_shift16863",
+   "sequence": "mad,>>,mad,^"
+  },
+  {
+   "file": "joint_direct_bu_shift16863",
+   "sequence": "mad,>>,mad,mad"
+  },
+  {
+   "file": "joint_direct_bu_shift16863",
+   "sequence": "mad,^,>>,mad"
+  },
+  {
+   "file": "joint_direct_bu_shift16863",
+   "sequence": "mad,mad,>>,mad"
+  },
+  {
+   "file": "joint_direct_bv_shift16863",
+   "sequence": "^,mad,>>,mad"
+  },
+  {
+   "file": "joint_direct_bv_shift16863",
+   "sequence": "mad,>>,mad,mad"
+  },
+  {
+   "file": "joint_direct_bv_shift16863",
+   "sequence": "mad,^,>>,mad"
+  },
+  {
+   "file": "joint_direct_bv_shift16863",
+   "sequence": "mad,mad,>>,mad"
+  },
+  {
+   "file": "joint_direct_arbitrary_bu863",
+   "sequence": "^,mad,>>,mad"
+  },
+  {
+   "file": "joint_direct_arbitrary_bu863",
+   "sequence": "mad,>>,^,^"
+  },
+  {
+   "file": "joint_direct_arbitrary_bu863",
+   "sequence": "mad,>>,^,mad"
+  },
+  {
+   "file": "joint_direct_arbitrary_bu863",
+   "sequence": "mad,>>,mad,^"
+  },
+  {
+   "file": "joint_direct_arbitrary_bu863",
+   "sequence": "mad,^,>>,mad"
+  },
+  {
+   "file": "joint_direct_arbitrary_bu863",
+   "sequence": "mad,mad,>>,^"
+  },
+  {
+   "file": "joint_middle_tail863_v",
+   "sequence": "mad,mad,>>,mad"
+  },
+  {
+   "file": "joint_middle_tail863_u_extended",
+   "sequence": "^,mad,>>,mad"
+  },
+  {
+   "file": "joint_middle_tail863_u_extended",
+   "sequence": "mad,mad,>>,mad"
+  },
+  {
+   "file": "joint_middle_tail863_v_extended",
+   "sequence": "^,mad,>>,mad"
+  },
+  {
+   "file": "joint_middle_tail863_v_extended",
+   "sequence": "mad,mad,>>,mad"
+  }
+ ],
+ "candidates_full32": 0,
+ "keyed_live_extra": {
+  "queries": [
+   "mad,mad,&",
+   "mad,mad,|"
+  ],
+  "width": 11,
+  "budget_s": 600,
+  "check_ms": 300000,
+  "results": [
+   "unknown",
+   "unknown"
+  ],
+  "note": "Low domain a<2048 makes a>>19=0 and the program shift-free, so a width-11 UNSAT would be sound; the general operand-selector model still times out at 600s. Inclusion argument disposes of permutation/constant operands; residual is AND/OR of two non-bijective MAD results, which needs a structural partition."
+ },
+ "triage": {
+  "files_with_openish_labels": 121,
+  "superseded_families": [
+   "head_* C1 absorption (affine_frontier -> four_xor 10/10 -> single_bitwise 8/8 -> cegis_c1_absorb open17)",
+   "middle_live/roles/cross_stage/bitwise (middle_live_closure 64/64)",
+   "grammar3/4, round0, head_c5, tail_c5, division (certificates and lemmas in ROUND0_PINNED, HEAD_GRAMMAR, C5_ABSORPTION, CLAUDE_REVIEW)",
+   "cegis_middle_c5 236 timeouts (146 carry-free rectangles + 90 exact lifts)",
+   "free_keys/keyed partitions (FLOW_ENCODING, KEYED_LIVE, NONLINEAR_LIVE)",
+   "positive controls (*_control, cross_encoding controls)"
+  ],
+  "genuinely_open_rerun": 76
+ },
+ "region_d": {
+  "description": "C5 folded into the middle, F(z^K)^O in four instructions, with right shifts (MIDDLE_C5 explicitly unsearched).",
+  "reduction": "Target is a T-function. One SHR u=v>>s leaks high input bits into every bit of u; XOR/AND/OR/add cannot cancel it. Only a multiplier with v2>=s removes the leak. A constant multiplier 2^s*c gives (v&~(2^s-1))*c, i.e. the SHR is equivalent to an AND (closed by MIDDLE_C5). Remaining: runtime multipliers always divisible by 2^s (e.g. z*z+z), plus the edge case where v has constant bits [w,w+s) which needs an extra free high-bit constant for sound low-width checks.",
+  "status": "not searched; follow-up"
+ }
+}

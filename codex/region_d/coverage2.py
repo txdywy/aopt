@@ -129,9 +129,14 @@ def ktype():
 
 def multi():
     out = {}
-    for name, fn, tot in (('cc', 'cs_m2_s1_31.jsonl', 6534), ('ccc', 'cs_m3_s1_31.jsonl', 116)):
+    for name, fn, fix, tot in (('cc', 'cs_m2_s1_31.jsonl', 'cm2_res.jsonl', 6534),
+                               ('ccc', 'cs_m3_s1_31.jsonl', 'cm3_res.jsonl', 116)):
         b = best(load(fn), lambda r: r['i'])
+        for r in load(fix):
+            if r.get('result') == 'unsat':
+                b[r['i']] = 'unsat'
         out[name] = dict(total=tot, **Counter(b.values()))
+        out[name + '_open'] = sorted(i for i, v in b.items() if v != 'unsat')
     g = best(load('cg_multi.jsonl'), lambda r: r['i'])
     for r in load('cm_res.jsonl'):
         if r.get('result') == 'unsat':

@@ -87,7 +87,7 @@ def run_rdg_fixed_s(o, w, sec):
 
 def main():
     out, sec = sys.argv[1], float(sys.argv[2])
-    done = {(r['pos'], r['i']) for r in load(out)}
+    done = {(r['pos'], r['i']) for r in load(out) if r.get('result') == 'unsat'}
     res = residuals()
     todo = sorted(k for k in res if k not in done)
     print('residuals', len(res), 'todo', len(todo), flush=True)

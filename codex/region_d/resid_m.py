@@ -35,7 +35,7 @@ def part_verdict(o, w, extra, sec):
 
 def main():
     src, out, sec = sys.argv[1], sys.argv[2], float(sys.argv[3])
-    done = {r['i'] for r in load(out)}
+    done = {r['i'] for r in load(out) if r.get('result') == 'unsat'}
     best = {}
     for r in load(src):
         if best.get(r['i'], {}).get('result') == 'unsat':

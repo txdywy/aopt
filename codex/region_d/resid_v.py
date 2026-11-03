@@ -28,16 +28,24 @@ if __name__ == '__main__':
     done = set()
     if os.path.exists(out):
         for l in open(out):
-            try: done.add(json.loads(l)['i'])
+            try:
+                rr = json.loads(l)
+                if rr.get('result') == 'unsat':
+                    done.add(rr['i'])
             except Exception: pass
     items, skip = [], []
+    best = {}
     for l in open('cv_c8.jsonl'):
         try: r = json.loads(l)
         except Exception: continue
-        if r['result'] == 'unsat' or r.get('rdvf') or r.get('rdvq') or r['i'] in done:
+        if best.get(r['i'], {}).get('result') == 'unsat':
+            continue
+        best[r['i']] = r
+    for i, r in sorted(best.items()):
+        if r['result'] == 'unsat' or i in done:
             continue
         o = tuple(r['order']); w = tuple(tuple(x) for x in r['wiring'])
-        (items if (rdvf.applicable(o, w) or rdvq.applicable(o, w)) else skip).append((r['i'], o, w, sec))
+        (items if (rdvf.applicable(o, w) or rdvq.applicable(o, w)) else skip).append((i, o, w, sec))
     print('todo', len(items), 'not rdvf-applicable', len(skip), flush=True)
     for s in skip:
         print('SKIP', s[0], s[1], s[2], flush=True)

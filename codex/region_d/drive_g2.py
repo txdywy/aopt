@@ -31,7 +31,7 @@ def enumerate_all():
 def work(args):
     i, o, w, c, sec, t_fast = args
     import rdg
-    import rdvf
+    import rdvf2 as rdvf
     t = time.time()
     try:
         r = rdg.solve(o, w, c, t_fast)

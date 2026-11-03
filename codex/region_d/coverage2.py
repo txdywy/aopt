@@ -35,6 +35,8 @@ def final(rec):
     """Return 'unsat' / 'sat' / 'timeout' / 'error' for one record of any driver."""
     if rec.get('rdg') == 'unsat':
         return 'unsat'
+    if 'rda2_final' in rec:
+        return rec['rda2_final']
     for key in ('rda', 'rda2'):
         if key in rec and rec[key]:
             last = rec[key][max(rec[key], key=int)]
@@ -117,6 +119,9 @@ def variable():
 
 def ktype():
     k = best(load('cg_kescape.jsonl'), lambda r: r['i'])
+    for r in load('ck_res.jsonl'):
+        if r.get('result') == 'unsat':
+            k[r['i']] = 'unsat'
     c = Counter(k.values())
     return dict(theorem_bz=71580, theorem_escape_unsat=20538, escaping=16632, computed=dict(c),
                 open=sorted(i for i, v in k.items() if v != 'unsat'))
@@ -128,7 +133,11 @@ def multi():
         b = best(load(fn), lambda r: r['i'])
         out[name] = dict(total=tot, **Counter(b.values()))
     g = best(load('cg_multi.jsonl'), lambda r: r['i'])
+    for r in load('cm_res.jsonl'):
+        if r.get('result') == 'unsat':
+            g[r['i']] = 'unsat'
     out['other'] = dict(total=113866, **Counter(g.values()))
+    out['other_open'] = sorted(i for i, v in g.items() if v != 'unsat')
     return out
 
 

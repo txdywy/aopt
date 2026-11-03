@@ -3,7 +3,7 @@ decided by rdvf. usage: resid_v.py OUT.jsonl SECONDS WORKERS"""
 import json, os, sys, time
 from multiprocessing import Pool
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import rdvf
+import rdvf2 as rdvf
 import rdvq
 
 

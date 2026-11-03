@@ -32,7 +32,7 @@ def all_v():
 def work(args):
     i, o, w, c, sec, t_fast = args
     import rdv
-    import rdvf
+    import rdvf2 as rdvf
     import rdvq
     t = time.time()
     try:

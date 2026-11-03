@@ -36,25 +36,13 @@ def work(args):
         if r['result'] == 'sat':
             rec['rdg_consts'], rec['rdg_K'] = r.get('consts'), r.get('K')
         if r['result'] != 'unsat':
-            if rda.applicable(o, w):
-                rec['rda'] = {}
-                for c in (11, 13, 15):
-                    x = rda.solve(o, w, c, t_band)
-                    ent = dict(result=x['result'], cases={k: v['result'] for k, v in x['cases'].items()})
-                    for k, v in x['cases'].items():
-                        if v['result'] == 'sat':
-                            ent.setdefault('sat', {})[k] = dict(params=v['params'], K=v['K'], consts=v['consts'])
-                    rec['rda'][c] = ent
-                    if x['result'] != 'sat':
-                        break
-            elif rda2.applicable(o, w):
-                rec['rda2'] = {}
-                for c in (11, 13, 15):
-                    x = rda2.solve(o, w, c, t_band)
-                    ent = dict(result=x['result'], cases={k: v['result'] for k, v in x['cases'].items()})
-                    rec['rda2'][c] = ent
-                    if x['result'] != 'sat':
-                        break
+            if rda2.applicable(o, w):
+                # per fiber case with budget t_band; a case that times out is split
+                # (rda2.split_plan); SAT at c=11 escalates to c=13, 15 (resid_c.run_rda2)
+                from resid_c import run_rda2
+                v, log = run_rda2(o, w, t_band)
+                rec['rda2_final'] = v
+                rec['rda2_log'] = log
             elif rdq.applicable(o, w):
                 x = rdq.solve_all(o, w, 11, t_band)
                 rec['rdq'] = dict(result=x['result'], parts=x['parts'])
@@ -98,6 +86,8 @@ def main():
                     last = r[key][max(r[key])]
                     if last['result'] != 'unsat':
                         bad.append('%s c=%d %s' % (key, max(r[key]), last['result']))
+            if r.get('rda2_final', 'unsat') != 'unsat':
+                bad.append('rda2 split %s' % r['rda2_final'])
             if 'rdq' in r and r['rdq']['result'] != 'unsat':
                 bad.append('rdq %s' % r['rdq']['result'])
             if 'error' in r or bad:

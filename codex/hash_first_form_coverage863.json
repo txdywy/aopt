@@ -1,0 +1,714 @@
+{
+  "first_instruction_shapes": 60,
+  "normalized": 54,
+  "invalid_at_zero": 6,
+  "scope": "Check first-instruction coverage for two-op, one-input arithmetic programs.\n\nScope: the 14 arithmetic opcodes in search_hash_transport863, arbitrary\npreloaded uint32 constants, one variable x, and no other live inputs. This\ndoes NOT cover FLOW select, memory lookup, branch-dependent programs, or\njoint rewrites with additional live values. No whole-kernel bound follows.",
+  "rows": [
+    {
+      "op": "+",
+      "variable_operands": [
+        false,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "+",
+      "variable_operands": [
+        false,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "+",
+      "variable_operands": [
+        true,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "+",
+      "variable_operands": [
+        true,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "-",
+      "variable_operands": [
+        false,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "-",
+      "variable_operands": [
+        false,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "-",
+      "variable_operands": [
+        true,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "-",
+      "variable_operands": [
+        true,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "^",
+      "variable_operands": [
+        false,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "^",
+      "variable_operands": [
+        false,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "^"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "^",
+      "variable_operands": [
+        true,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "^"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "^",
+      "variable_operands": [
+        true,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "&",
+      "variable_operands": [
+        false,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "&",
+      "variable_operands": [
+        false,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "&"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "&",
+      "variable_operands": [
+        true,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "&"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "&",
+      "variable_operands": [
+        true,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "|",
+      "variable_operands": [
+        false,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "|",
+      "variable_operands": [
+        false,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "|"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "|",
+      "variable_operands": [
+        true,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "|"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "|",
+      "variable_operands": [
+        true,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "*",
+      "variable_operands": [
+        false,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "*",
+      "variable_operands": [
+        false,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "*",
+      "variable_operands": [
+        true,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "*",
+      "variable_operands": [
+        true,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "square"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "mad",
+      "variable_operands": [
+        false,
+        false,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "mad",
+      "variable_operands": [
+        false,
+        false,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "mad",
+      "variable_operands": [
+        false,
+        true,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "mad",
+      "variable_operands": [
+        false,
+        true,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "mad",
+      "variable_operands": [
+        true,
+        false,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "mad",
+      "variable_operands": [
+        true,
+        false,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "mad",
+      "variable_operands": [
+        true,
+        true,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "square"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "mad",
+      "variable_operands": [
+        true,
+        true,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "square-input"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "<<",
+      "variable_operands": [
+        false,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "<<",
+      "variable_operands": [
+        false,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "constant-shl"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "<<",
+      "variable_operands": [
+        true,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "<<",
+      "variable_operands": [
+        true,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "self-shl"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": ">>",
+      "variable_operands": [
+        false,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": ">>",
+      "variable_operands": [
+        false,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "constant-shr"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": ">>",
+      "variable_operands": [
+        true,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine",
+        "shr",
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": ">>",
+      "variable_operands": [
+        true,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "self-shr"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "//",
+      "variable_operands": [
+        false,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "//",
+      "variable_operands": [
+        false,
+        true
+      ],
+      "classification": "invalid_at_input_zero"
+    },
+    {
+      "op": "//",
+      "variable_operands": [
+        true,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "//"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "//",
+      "variable_operands": [
+        true,
+        true
+      ],
+      "classification": "invalid_at_input_zero"
+    },
+    {
+      "op": "%",
+      "variable_operands": [
+        false,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "%",
+      "variable_operands": [
+        false,
+        true
+      ],
+      "classification": "invalid_at_input_zero"
+    },
+    {
+      "op": "%",
+      "variable_operands": [
+        true,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "%"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "%",
+      "variable_operands": [
+        true,
+        true
+      ],
+      "classification": "invalid_at_input_zero"
+    },
+    {
+      "op": "cdiv",
+      "variable_operands": [
+        false,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "cdiv",
+      "variable_operands": [
+        false,
+        true
+      ],
+      "classification": "invalid_at_input_zero"
+    },
+    {
+      "op": "cdiv",
+      "variable_operands": [
+        true,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "cdiv"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "cdiv",
+      "variable_operands": [
+        true,
+        true
+      ],
+      "classification": "invalid_at_input_zero"
+    },
+    {
+      "op": "<",
+      "variable_operands": [
+        false,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "<",
+      "variable_operands": [
+        false,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "greater-than"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "<",
+      "variable_operands": [
+        true,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "less-than"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "<",
+      "variable_operands": [
+        true,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "==",
+      "variable_operands": [
+        false,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "==",
+      "variable_operands": [
+        false,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "equal"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "==",
+      "variable_operands": [
+        true,
+        false
+      ],
+      "classification": "normalized",
+      "families": [
+        "equal"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    },
+    {
+      "op": "==",
+      "variable_operands": [
+        true,
+        true
+      ],
+      "classification": "normalized",
+      "families": [
+        "affine"
+      ],
+      "proof": "full_uint32_symbolic_constants"
+    }
+  ]
+}

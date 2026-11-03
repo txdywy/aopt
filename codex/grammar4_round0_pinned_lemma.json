@@ -1,0 +1,94 @@
+{
+"lin1(ork(u),u)@20": {
+"seconds": 120.04,
+"verdict": "timeout"
+},
+"lin1(ork(u),u)@25": {
+"seconds": 120.05,
+"verdict": "timeout"
+},
+"lin1(ork(u),u)@26": {
+"seconds": 120.89,
+"verdict": "timeout"
+},
+"lin1(ork(u),u)@27": {
+"seconds": 120.07,
+"verdict": "timeout"
+},
+"lin1(ork(u),u)@28": {
+"seconds": 120.07,
+"verdict": "timeout"
+},
+"lin1(u,andk(u))@26": {
+"seconds": 120.04,
+"verdict": "timeout"
+},
+"lin1(u,ork(u))@19": {
+"seconds": 11.72,
+"verdict": "unsat"
+},
+"lin1(u,ork(u))@25": {
+"seconds": 120.03,
+"verdict": "timeout"
+},
+"lin1(u,ork(u))@26": {
+"seconds": 120.03,
+"verdict": "timeout"
+},
+"lin1(u,ork(u))@27": {
+"seconds": 120.02,
+"verdict": "timeout"
+},
+"lin1(u,ork(u))@28": {
+"seconds": 120.03,
+"verdict": "timeout"
+},
+"lin1(u,ork(u))@29": {
+"seconds": 120.03,
+"verdict": "timeout"
+},
+"lin1(u,xk(u))@25": {
+"seconds": 120.04,
+"verdict": "timeout"
+},
+"lin1(u,xk(u))@26": {
+"seconds": 120.06,
+"verdict": "timeout"
+},
+"lin1(u,xk(u))@27": {
+"seconds": 120.06,
+"verdict": "timeout"
+},
+"lin1(xk(u),u)@25": {
+"seconds": 120.05,
+"verdict": "timeout"
+},
+"lin1(xk(u),u)@26": {
+"seconds": 120.97,
+"verdict": "timeout"
+},
+"prod(ork(u),u)@26": {
+"seconds": 73.49,
+"verdict": "unsat"
+},
+"prod(u,xk(u))@25": {
+"seconds": 120.03,
+"verdict": "timeout"
+},
+"prod(u,xk(u))@26": {
+"seconds": 120.05,
+"verdict": "timeout"
+},
+"prod(u,xk(u))@27": {
+"seconds": 120.36,
+"verdict": "timeout"
+},
+"xor(aff(u),u)@19": {
+"seconds": 9.67,
+"verdict": "unsat"
+},
+"xor(aff(u),u)@20": {
+"seconds": 22.31,
+"verdict": "unsat"
+}
+}

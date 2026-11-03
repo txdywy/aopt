@@ -1,0 +1,1837 @@
+{
+  "scope": "four instructions, arbitrary SSA operands, one input; 3 MAD + 1 XOR or 2 MAD + 2 XOR; arbitrary constants",
+  "width": 11,
+  "new_executable": false,
+  "rows": [
+    {
+      "sequence": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "mode": "both",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=^,^,mad,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "^",
+            "^",
+            "mad",
+            "mad"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.31
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "mode": "both",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=^,mad,^,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "^",
+            "mad",
+            "^",
+            "mad"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.307
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "mode": "both",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=^,mad,mad,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "^",
+            "mad",
+            "mad",
+            "^"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.307
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "mad"
+      ],
+      "mode": "both",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=^,mad,mad,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "^",
+            "mad",
+            "mad",
+            "mad"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.31
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "mode": "both",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,^,^,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "^",
+            "^",
+            "mad"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.308
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "mode": "both",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,^,mad,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "^",
+            "mad",
+            "^"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.307
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "mode": "both",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,^,mad,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "^",
+            "mad",
+            "mad"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.313
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "^"
+      ],
+      "mode": "both",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,mad,^,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unsat"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "mad",
+            "^",
+            "^"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 3042638419,
+          "result": "grammar_unsatisfiable",
+          "right_shift_amount": null,
+          "reason": null
+        }
+      ],
+      "stderr": "",
+      "seconds": 2.678
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "mode": "both",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,mad,^,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "mad",
+            "^",
+            "mad"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.513
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "mode": "both",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,mad,mad,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "mad",
+            "mad",
+            "^"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.311
+    },
+    {
+      "sequence": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "mode": "input",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=^,^,mad,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0x0",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "^",
+            "^",
+            "mad",
+            "mad"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 0,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.422
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "mode": "input",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=^,mad,^,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0x0",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "^",
+            "mad",
+            "^",
+            "mad"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 0,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.314
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "mode": "input",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=^,mad,mad,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0x0",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "^",
+            "mad",
+            "mad",
+            "^"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 0,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.317
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "mad"
+      ],
+      "mode": "input",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=^,mad,mad,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0x0",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "^",
+            "mad",
+            "mad",
+            "mad"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 0,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.305
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "mode": "input",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,^,^,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0x0",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "^",
+            "^",
+            "mad"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 0,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.432
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "mode": "input",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,^,mad,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0x0",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "^",
+            "mad",
+            "^"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 0,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.299
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "mode": "input",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,^,mad,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0x0",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "^",
+            "mad",
+            "mad"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 0,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.308
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "^"
+      ],
+      "mode": "input",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,mad,^,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0x0",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unsat"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "mad",
+            "^",
+            "^"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 0,
+          "result": "grammar_unsatisfiable",
+          "right_shift_amount": null,
+          "reason": null
+        }
+      ],
+      "stderr": "",
+      "seconds": 3.16
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "mode": "input",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,mad,^,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0x0",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "mad",
+            "^",
+            "mad"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 0,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.515
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "mode": "input",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,mad,mad,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0xc761c23c",
+        "--middle-output-xor",
+        "0x0",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "mad",
+            "mad",
+            "^"
+          ],
+          "middle_input_xor": 3345072700,
+          "middle_output_xor": 0,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.318
+    },
+    {
+      "sequence": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=^,^,mad,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "^",
+            "^",
+            "mad",
+            "mad"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.42
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=^,mad,^,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "^",
+            "mad",
+            "^",
+            "mad"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.31
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=^,mad,mad,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "^",
+            "mad",
+            "mad",
+            "^"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.417
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "mad"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=^,mad,mad,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "^",
+            "mad",
+            "mad",
+            "mad"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.313
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,^,^,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "^",
+            "^",
+            "mad"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.31
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,^,mad,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "^",
+            "mad",
+            "^"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.308
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,^,mad,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "^",
+            "mad",
+            "mad"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.309
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "^"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,mad,^,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "mad",
+            "^",
+            "^"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.311
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,mad,^,mad",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "mad",
+            "^",
+            "mad"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.308
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "mode": "output",
+      "width": 11,
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "11",
+        "--instructions",
+        "4",
+        "--op-sequence=mad,mad,mad,^",
+        "--canonical-operands",
+        "--middle-input-xor",
+        "0x0",
+        "--middle-output-xor",
+        "0xb55afa53",
+        "--extra-samples",
+        "16",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--seconds",
+        "8",
+        "--check-ms",
+        "6000"
+      ],
+      "returncode": 0,
+      "events": [
+        {
+          "iteration": 1,
+          "samples": 96,
+          "synthesis": "unknown"
+        },
+        {
+          "slice": "middle",
+          "width": 11,
+          "op_sequence": [
+            "mad",
+            "mad",
+            "mad",
+            "^"
+          ],
+          "middle_input_xor": 0,
+          "middle_output_xor": 3042638419,
+          "result": "inconclusive",
+          "right_shift_amount": null,
+          "reason": "timeout"
+        }
+      ],
+      "stderr": "",
+      "seconds": 6.316
+    }
+  ]
+}

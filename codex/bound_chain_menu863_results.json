@@ -1,0 +1,149 @@
+{
+  "without_joint": {
+    "cases": 5452,
+    "maximum_saving": 51,
+    "witnesses": [
+      {
+        "changed": 11,
+        "roots": 5,
+        "root_load": 0,
+        "root_flow": 0,
+        "root_alu": 5,
+        "staged": 4,
+        "joint_constants": 0,
+        "thirds": 0,
+        "chains": [
+          2,
+          5
+        ],
+        "extra_flow": 8,
+        "fused_digits": 3,
+        "saving": 51
+      },
+      {
+        "changed": 11,
+        "roots": 5,
+        "root_load": 0,
+        "root_flow": 0,
+        "root_alu": 5,
+        "staged": 4,
+        "joint_constants": 0,
+        "thirds": 0,
+        "chains": [
+          3,
+          4
+        ],
+        "extra_flow": 8,
+        "fused_digits": 3,
+        "saving": 51
+      }
+    ]
+  },
+  "with_joint": {
+    "cases": 17479,
+    "maximum_saving": 53,
+    "witnesses": [
+      {
+        "changed": 11,
+        "roots": 5,
+        "root_load": 0,
+        "root_flow": 0,
+        "root_alu": 5,
+        "staged": 4,
+        "joint_constants": 1,
+        "thirds": 0,
+        "chains": [
+          2,
+          4
+        ],
+        "extra_flow": 8,
+        "fused_digits": 3,
+        "saving": 53
+      },
+      {
+        "changed": 11,
+        "roots": 5,
+        "root_load": 0,
+        "root_flow": 0,
+        "root_alu": 5,
+        "staged": 4,
+        "joint_constants": 1,
+        "thirds": 0,
+        "chains": [
+          3,
+          3
+        ],
+        "extra_flow": 8,
+        "fused_digits": 3,
+        "saving": 53
+      },
+      {
+        "changed": 11,
+        "roots": 5,
+        "root_load": 0,
+        "root_flow": 0,
+        "root_alu": 5,
+        "staged": 4,
+        "joint_constants": 2,
+        "thirds": 0,
+        "chains": [
+          2,
+          3
+        ],
+        "extra_flow": 8,
+        "fused_digits": 3,
+        "saving": 53
+      },
+      {
+        "changed": 11,
+        "roots": 5,
+        "root_load": 0,
+        "root_flow": 0,
+        "root_alu": 5,
+        "staged": 4,
+        "joint_constants": 3,
+        "thirds": 0,
+        "chains": [
+          2,
+          2
+        ],
+        "extra_flow": 8,
+        "fused_digits": 3,
+        "saving": 53
+      },
+      {
+        "changed": 11,
+        "roots": 5,
+        "root_load": 0,
+        "root_flow": 0,
+        "root_alu": 5,
+        "staged": 4,
+        "joint_constants": 7,
+        "thirds": 0,
+        "chains": [],
+        "extra_flow": 10,
+        "fused_digits": 4,
+        "saving": 53
+      }
+    ]
+  },
+  "baseline_arithmetic": 51665,
+  "conditional_old_prefix_waste": 52,
+  "conditional_old_suffix_waste": 116,
+  "conditional_cycle_lower_bound": 863,
+  "new_executable": false,
+  "scope": "A limited menu with optimistic idealizations; no universal lower bound. The 52/116 boundary losses apply only if independently preserved.",
+  "assumptions": [
+    "At most eleven original native uniforms are changed.",
+    "At least max(0,changed-6) independent roots use one ALU/FLOW/LOAD each; six are granted free.",
+    "A staged uniform saves 8 arithmetic lanes and consumes a LOAD exchange.",
+    "A third uniform saves 6 lanes and uses 1 FLOW.",
+    "A normal m-uniform chain is granted cost m+4 lanes and m-1 FLOWs.",
+    "A self-masked ones-plus-k chain is granted saving 7k+2 lanes and k FLOWs.",
+    "At most four LOAD exchanges; the fourth costs one arithmetic lane.",
+    "Two additional net FLOWs are allowed; each digit fusion refunds two at cost 8 lanes.",
+    "An extra 8-lane dead-uniform saving is granted unconditionally.",
+    "No startup, layout, liveness, instruction-order or scratch penalties are charged.",
+    "New record layouts and changes to the hash, boundary or LOAD/FLOW streams are outside the menu."
+  ]
+}

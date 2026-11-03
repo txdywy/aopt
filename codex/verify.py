@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(TESTS))
 
 from frozen_problem import Input, Machine, N_CORES, Tree, build_mem_image, reference_kernel2
-from codex.perf_takehome import KernelBuilder
+from codex.perf_takehome_under1000 import KernelBuilder
 
 
 @lru_cache(maxsize=1)

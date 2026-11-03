@@ -1,0 +1,259 @@
+{
+  "scope": "Sound necessary low12 screen restricted to full32 a<2**12 (zero shift19); extra live pool b,a,prior,zero. UNKNOWN is not exclusion.",
+  "candidates_found": 0,
+  "rows": [
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^"
+      ],
+      "width": 12,
+      "samples": 64,
+      "timeout_ms": 5000,
+      "control": false,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 5.024
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "width": 12,
+      "samples": 64,
+      "timeout_ms": 5000,
+      "control": false,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 5.025
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad"
+      ],
+      "width": 12,
+      "samples": 64,
+      "timeout_ms": 5000,
+      "control": false,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 5.021
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "&"
+      ],
+      "width": 12,
+      "samples": 64,
+      "timeout_ms": 5000,
+      "control": false,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 5.021
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "width": 12,
+      "samples": 64,
+      "timeout_ms": 5000,
+      "control": false,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 5.017
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "mad"
+      ],
+      "width": 12,
+      "samples": 64,
+      "timeout_ms": 5000,
+      "control": false,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 5.011
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "|"
+      ],
+      "width": 12,
+      "samples": 64,
+      "timeout_ms": 5000,
+      "control": false,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 5.022
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "width": 12,
+      "samples": 64,
+      "timeout_ms": 5000,
+      "control": false,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 5.023
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "mad"
+      ],
+      "width": 12,
+      "samples": 64,
+      "timeout_ms": 5000,
+      "control": false,
+      "result": "unknown",
+      "live_pool": [
+        "b",
+        "a=b XOR C1",
+        "prior=(a-C0)/4097",
+        "zero"
+      ],
+      "reason": "timeout",
+      "seconds": 5.022
+    }
+  ],
+  "unrestricted_positive_control": {
+    "sequence": [
+      "mad",
+      "mad",
+      "^"
+    ],
+    "width": 12,
+    "samples": 64,
+    "timeout_ms": 10000,
+    "control": true,
+    "result": "unknown",
+    "live_pool": [
+      "b",
+      "a=b XOR C1",
+      "prior=(a-C0)/4097",
+      "zero"
+    ],
+    "reason": "timeout",
+    "seconds": 10.023
+  },
+  "pinned_positive_witness": {
+    "sequence": [
+      "mad",
+      "mad",
+      "^"
+    ],
+    "width": 12,
+    "samples": 64,
+    "timeout_ms": 5000,
+    "control": true,
+    "pin_control": true,
+    "result": "sat",
+    "live_pool": [
+      "b",
+      "a=b XOR C1",
+      "prior=(a-C0)/4097",
+      "zero"
+    ],
+    "verification": "unsat",
+    "program": [
+      {
+        "op": "mad",
+        "selectors_constants": [
+          0,
+          4,
+          5,
+          33,
+          17
+        ]
+      },
+      {
+        "op": "mad",
+        "selectors_constants": [
+          1,
+          5,
+          6,
+          512,
+          29
+        ]
+      },
+      {
+        "op": "^",
+        "selectors_constants": [
+          4,
+          5,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "seconds": 0.004
+  }
+}

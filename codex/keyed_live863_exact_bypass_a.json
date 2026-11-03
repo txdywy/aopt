@@ -1,0 +1,22 @@
+{
+  "width": 11,
+  "parity": 1,
+  "control": false,
+  "bypass_source": "a",
+  "seconds_limit": 30,
+  "normalizations": [
+    "A+D odd",
+    "I,K,O lowest and highest bits zero",
+    "exact offset from the bypass source"
+  ],
+  "family": "((A*(x XOR I)+B) XOR K)+D*x+E",
+  "events": [
+    {
+      "samples": 59,
+      "synthesis": "unsat"
+    }
+  ],
+  "new_executable": false,
+  "result": "relaxed_family_unsat",
+  "seconds": 0.481
+}

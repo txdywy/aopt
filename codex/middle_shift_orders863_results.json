@@ -1,0 +1,2354 @@
+[
+  {
+    "sequence": [
+      "&",
+      ">>",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "&",
+          ">>",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.754,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=&,>>,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "&",
+      "mad",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unsat"
+      },
+      {
+        "result": "grammar_unsatisfiable",
+        "width": 32,
+        "op_sequence": [
+          "&",
+          "mad",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": null
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.048,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=&,mad,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "*",
+      ">>",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "*",
+          ">>",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.77,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=*,>>,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "*",
+      "mad",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "*",
+          "mad",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.74,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=*,mad,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "+",
+      ">>",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "+",
+          ">>",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.765,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=+,>>,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "+",
+      "mad",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "+",
+          "mad",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.741,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=+,mad,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "-",
+      ">>",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "-",
+          ">>",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.752,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=-,>>,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "-",
+      "mad",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "-",
+          "mad",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.74,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=-,mad,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "<<",
+      ">>",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "<<",
+          ">>",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.754,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=<<,>>,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "<<",
+      "mad",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unsat"
+      },
+      {
+        "result": "grammar_unsatisfiable",
+        "width": 32,
+        "op_sequence": [
+          "<<",
+          "mad",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": null
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.404,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=<<,mad,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "&",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "&",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.75,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,&,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "*",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "*",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.738,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,*,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "+",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "+",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.748,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,+,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "-",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "-",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.736,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,-,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "<<",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "<<",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.746,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,<<,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      ">>",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          ">>",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.736,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,>>,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "^",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "^",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.846,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,^,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "mad",
+      "&"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "mad",
+          "&"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.73,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,mad,&",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "mad",
+      "*"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "mad",
+          "*"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.746,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,mad,*",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "mad",
+      "+"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "mad",
+          "+"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.734,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,mad,+",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "mad",
+      "-"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "mad",
+          "-"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.744,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,mad,-",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "mad",
+      "<<"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "mad",
+          "<<"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.732,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,mad,<<",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "mad",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "mad",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.738,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,mad,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "mad",
+      "^"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "mad",
+          "^"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.723,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,mad,^",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "mad",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "mad",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.745,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,mad,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "mad",
+      "|"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "mad",
+          "|"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.725,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,mad,|",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      ">>",
+      "|",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          ">>",
+          "|",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.745,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=>>,|,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "^",
+      ">>",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "^",
+          ">>",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.816,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=^,>>,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "^",
+      "mad",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unsat"
+      },
+      {
+        "result": "grammar_unsatisfiable",
+        "width": 32,
+        "op_sequence": [
+          "^",
+          "mad",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": null
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.041,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=^,mad,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      "&",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          "&",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.711,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,&,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      "*",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          "*",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.761,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,*,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      "+",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          "+",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.724,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,+,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      "-",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          "-",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.74,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,-,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      "<<",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unsat"
+      },
+      {
+        "result": "grammar_unsatisfiable",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          "<<",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": null
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.115,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,<<,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      ">>",
+      "&"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unsat"
+      },
+      {
+        "result": "grammar_unsatisfiable",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          ">>",
+          "&"
+        ],
+        "right_shift_amount": null,
+        "reason": null
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.04,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,>>,&",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      ">>",
+      "*"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          ">>",
+          "*"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.754,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,>>,*",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      ">>",
+      "+"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          ">>",
+          "+"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.719,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,>>,+",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      ">>",
+      "-"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          ">>",
+          "-"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.72,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,>>,-",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      ">>",
+      "<<"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unsat"
+      },
+      {
+        "result": "grammar_unsatisfiable",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          ">>",
+          "<<"
+        ],
+        "right_shift_amount": null,
+        "reason": null
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.105,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,>>,<<",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      ">>",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unsat"
+      },
+      {
+        "result": "grammar_unsatisfiable",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          ">>",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": null
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.084,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,>>,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      ">>",
+      "^"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          ">>",
+          "^"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.723,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,>>,^",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      ">>",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          ">>",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.756,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,>>,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      ">>",
+      "|"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          ">>",
+          "|"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.715,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,>>,|",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      "^",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          "^",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.735,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,^,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      "mad",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          "mad",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.752,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,mad,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "mad",
+      "|",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unsat"
+      },
+      {
+        "result": "grammar_unsatisfiable",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          "|",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": null
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.046,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=mad,|,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "|",
+      ">>",
+      "mad"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unknown"
+      },
+      {
+        "result": "inconclusive",
+        "width": 32,
+        "op_sequence": [
+          "|",
+          ">>",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": "timeout"
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.731,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=|,>>,mad",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  },
+  {
+    "sequence": [
+      "|",
+      "mad",
+      ">>"
+    ],
+    "returncode": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "samples": 51,
+        "synthesis": "unsat"
+      },
+      {
+        "result": "grammar_unsatisfiable",
+        "width": 32,
+        "op_sequence": [
+          "|",
+          "mad",
+          ">>"
+        ],
+        "right_shift_amount": null,
+        "reason": null
+      }
+    ],
+    "stderr": "",
+    "seconds": 1.035,
+    "command": [
+      "/opt/homebrew/bin/python3.12",
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "middle",
+      "--width",
+      "32",
+      "--instructions",
+      "3",
+      "--op-sequence=|,mad,>>",
+      "--canonical-operands",
+      "--extra-samples",
+      "24",
+      "--consecutive-samples",
+      "24",
+      "--seconds",
+      "4",
+      "--check-ms",
+      "1500"
+    ]
+  }
+]

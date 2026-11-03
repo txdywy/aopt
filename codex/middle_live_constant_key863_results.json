@@ -1,0 +1,70 @@
+{
+  "width": 11,
+  "affine_b_enumeration": {
+    "width": 11,
+    "affine_bits": 9,
+    "low_slope": 297,
+    "low_intercept": 458,
+    "normalized_keys": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "pairs_tested": 8388608,
+    "survivors": [],
+    "rejection_counts": {
+      "16": 2097152,
+      "2": 3670016,
+      "3": 873888,
+      "4": 436832,
+      "5": 262304,
+      "7": 299584,
+      "15": 396256,
+      "31": 179360,
+      "127": 104256,
+      "255": 50368,
+      "511": 17472,
+      "513": 1120
+    },
+    "seconds": 0.329
+  },
+  "smt_rows": [
+    {
+      "family": "affine_a",
+      "width": 11,
+      "timeout_ms": 15000,
+      "initial_samples": 64,
+      "target_is_permutation": true,
+      "result": "unsat",
+      "iterations": 1,
+      "seconds": 1.353
+    },
+    {
+      "family": "mixed_ba",
+      "width": 11,
+      "timeout_ms": 15000,
+      "initial_samples": 64,
+      "target_is_permutation": true,
+      "result": "unsat",
+      "iterations": 1,
+      "seconds": 1.504
+    },
+    {
+      "family": "mixed_ab",
+      "width": 11,
+      "timeout_ms": 15000,
+      "initial_samples": 64,
+      "target_is_permutation": true,
+      "result": "unsat",
+      "iterations": 1,
+      "seconds": 5.573
+    }
+  ],
+  "excluded": true,
+  "noninjective_first_families": {
+    "product_key": "t(b+2**10)=t(b): every live input toggles its top bit and both multiplicands have the same parity",
+    "product_live": "t is always even because every live input has parity b"
+  },
+  "scope": "t=one MAD from b,a,prior,constants; u=t XOR K; output=D*u+E. Valid restricted full32 domain; no other final-MAD live operands."
+}

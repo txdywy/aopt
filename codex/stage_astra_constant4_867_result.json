@@ -1,0 +1,23 @@
+{
+  "cycles": 867,
+  "verified_full32_cases": 20,
+  "scratch_words": 1289,
+  "arithmetic_lanes": 51665,
+  "operations": {
+    "load": 1688,
+    "valu": 5184,
+    "flow": 851,
+    "alu": 10193,
+    "store": 530
+  },
+  "first_nonfull_compute_cycle_after_zero": 122,
+  "actual_prefix_waste": {
+    "12": 52,
+    "100": 52,
+    "670": 131
+  },
+  "model_text_sha256": "5f088c550592a1a349413aa33ec1186c0ed38f37a133613cedd9efffaaeb3946",
+  "schedule_sha256": "b53cf4f5abce25d692482d3dd53149de550dea3ee79335aa07fbec838b42bb73",
+  "recipe": "/opt/homebrew/bin/python3.12 -m codex.research_stage864 --prefix /tmp/astra4 --small-stage 4 --stage-hash final --stage-uniform=-60,-40 --cheap-coeff --head-fill --head-flow --alu-layout --tail-transposes 29,31 --tail-low --low-alu --bootstrap-flow 2 --scalar-leaves --fold-raw-hash --sink 8 --literals 2",
+  "scope": "867 frozen-machine replay. 864 boundary feasibility is a necessary condition only. Active 865 submission is unchanged."
+}

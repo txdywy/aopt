@@ -1,0 +1,26 @@
+{
+  "counts": {
+    "load": 1688,
+    "valu": 6158,
+    "flow": 851,
+    "alu": 2665,
+    "store": 530
+  },
+  "arithmetic_lanes": 51929,
+  "arithmetic_only_cycle_lower_bound": 866,
+  "scalar_d9_loads": 256,
+  "d9_vector_node_xors": 32,
+  "bias_mask": 4294967290,
+  "wrong_shortcut_counterexample": {
+    "state": 4,
+    "shortcut": 4294967294,
+    "correct": 4294967290
+  },
+  "seeds": 2,
+  "serial_control": {
+    "scratch": 1111,
+    "verified": 11892
+  },
+  "new_executable": false,
+  "scope": "This direct-load graph with an explicit extra bit-6 instruction per group; the arithmetic bound ignores startup/drain and is not a scheduled score."
+}

@@ -1,0 +1,140 @@
+{
+  "counts": {
+    "load": 1688,
+    "valu": 6090,
+    "flow": 853,
+    "alu": 2928,
+    "store": 530
+  },
+  "arithmetic_lanes": 51648,
+  "streams": {
+    "load": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 0,
+      "suffix_at_least": 21,
+      "instructions": 1684,
+      "capacity": 2
+    },
+    "store": {
+      "cycle_lower_bound": 345,
+      "prefix_at_least": 72,
+      "suffix_at_least": 237,
+      "instructions": 72,
+      "capacity": 2
+    },
+    "flow": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 0,
+      "suffix_at_least": 10,
+      "instructions": 853,
+      "capacity": 1
+    }
+  },
+  "layout": {
+    "order": [
+      "root",
+      "c0",
+      "c1"
+    ],
+    "direct_scalars": false,
+    "root_detached": false,
+    "roots": [
+      15,
+      24,
+      26
+    ],
+    "seed_lengths": [
+      4,
+      2,
+      4
+    ],
+    "first_output": [
+      75482,
+      75483,
+      75484,
+      75485,
+      75486,
+      75487,
+      75488,
+      75489
+    ],
+    "second_output": [
+      75490,
+      75491,
+      75492,
+      75493,
+      75494,
+      75495,
+      75496,
+      75497
+    ],
+    "vectors": [
+      [
+        15,
+        75475,
+        75476,
+        75477,
+        75482,
+        75483,
+        75484,
+        75485
+      ],
+      [
+        75486,
+        75487,
+        75488,
+        75489,
+        75490,
+        75491,
+        75492,
+        75493
+      ],
+      [
+        75494,
+        75495,
+        75496,
+        75497,
+        26,
+        75479,
+        75480,
+        75481
+      ]
+    ]
+  },
+  "stats": {
+    "third_broadcast": 8,
+    "broadcast_copies": 16,
+    "stage": 11,
+    "reused_image_pointer": 23,
+    "small_stages": 1,
+    "early_input_literal": 1,
+    "stride16_pointer_roots": 2,
+    "literal_to_flow": 7,
+    "cheap_coefficient_roots": 2,
+    "rederived_head_roots": 12,
+    "alu_layout_roots": 2,
+    "hash_stage_final": 1,
+    "hash_stage_-60": 1,
+    "hash_stage_-40": 1,
+    "tail_child_transposes": 2,
+    "low_tail_bank": 1,
+    "arithmetic_to_flow": 8,
+    "arithmetic_to_load": 2,
+    "head_flow_literal_exchange": 1,
+    "bootstrap_loads_to_flow": 2,
+    "bootstrap_early_literals": 2,
+    "scalar_leaf_payloads": 256,
+    "additional_leaf_xor_groups": 32,
+    "raw_hash_parallel_restorations": 64,
+    "triple_uniform_vectors": 3,
+    "triple_uniform_seed_lanes": 7,
+    "triple_uniform_flow_ops": 2
+  },
+  "new_executable": false,
+  "scope": "One concrete triple-uniform graph. The serial replay below is correctness only; only a separately verified packed schedule can be a score.",
+  "serial_control": {
+    "scratch": 1087,
+    "serialized_cycles": 12089,
+    "seeds": 2
+  }
+}

@@ -1,0 +1,349 @@
+{
+  "executable_best_cycles": 864,
+  "new_executable": false,
+  "width": 11,
+  "input_key": 3345072700,
+  "free_output_key": true,
+  "first_partition_counts": {
+    "projected_grammar_unsat": 11,
+    "unknown": 7
+  },
+  "second_partition_counts": {
+    "projected_grammar_unsat": 105,
+    "unknown": 55
+  },
+  "first_families": [
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "first_form": "affine",
+      "status": "open",
+      "second_role_counts": {
+        "projected_grammar_unsat": 4,
+        "unknown": 6
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "first_form": "square_const",
+      "status": "closed_directly",
+      "second_role_counts": {}
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "first_form": "square_x",
+      "status": "closed_directly",
+      "second_role_counts": {}
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "first_form": "affine",
+      "status": "open",
+      "second_role_counts": {
+        "projected_grammar_unsat": 6,
+        "unknown": 4
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "first_form": "square_const",
+      "status": "closed_directly",
+      "second_role_counts": {}
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "first_form": "square_x",
+      "status": "closed_directly",
+      "second_role_counts": {}
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "first_form": "affine",
+      "status": "open",
+      "second_role_counts": {
+        "projected_grammar_unsat": 4,
+        "unknown": 6
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "first_form": "square_const",
+      "status": "closed_by_square_rectangle",
+      "second_role_counts": {
+        "projected_grammar_unsat": 8,
+        "unknown": 2
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "first_form": "square_x",
+      "status": "closed_directly",
+      "second_role_counts": {}
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "^"
+      ],
+      "first_form": "affine",
+      "status": "closed_directly",
+      "second_role_counts": {}
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "^"
+      ],
+      "first_form": "square_const",
+      "status": "closed_directly",
+      "second_role_counts": {}
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "^"
+      ],
+      "first_form": "square_x",
+      "status": "closed_directly",
+      "second_role_counts": {}
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "first_form": "affine",
+      "status": "open",
+      "second_role_counts": {
+        "projected_grammar_unsat": 7,
+        "unknown": 33
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "first_form": "square_const",
+      "status": "closed_by_second_role_partition",
+      "second_role_counts": {
+        "projected_grammar_unsat": 40
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "first_form": "square_x",
+      "status": "closed_directly",
+      "second_role_counts": {}
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "first_form": "affine",
+      "status": "open",
+      "second_role_counts": {
+        "projected_grammar_unsat": 36,
+        "unknown": 4
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "first_form": "square_const",
+      "status": "closed_directly",
+      "second_role_counts": {}
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "first_form": "square_x",
+      "status": "closed_directly",
+      "second_role_counts": {}
+    }
+  ],
+  "remaining_second_role_unknowns": 53,
+  "order_statuses": [
+    {
+      "sequence": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "new live MAD/XOR/MAD proof after x XOR K; extra prior input is unused"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "status": "open",
+      "reason": "initial XOR followed by two MADs and final XOR is outside these partitions"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "status": "open",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "status": "open",
+      "reason": "first-MAD partitions"
+    }
+  ],
+  "closed_orders": 4,
+  "open_orders": 6,
+  "evidence_sha256": {
+    "head_nonlinear863_first_forms.json": "d7ccee6a4b052f05779e4ae1e8fcda7073a2938bcd66458816fb6a237426ebe1",
+    "head_nonlinear863_second_roles.json": "6b24cf9803c7fc6d2598467c37ed9b3bb02145f9d6010a64b3c8a1af16dc027e",
+    "head_nonlinear863_square_certificate.json": "225d96c01ff3ec286b85387ad12c7fa7746a07bafa806d13bbb4b864731d97d0",
+    "keyed_live863_nonlinear_audit.json": "758eef045456ab1b91ecffc63a97725c98cffecad6517188e3dd089c1cab36a9",
+    "keyed_live863_rectangles.json": "d9c0cd939f167d38711faf35174762325752b6feeb44002fa874fabc079014c4"
+  },
+  "scope": "One input, arbitrary constants and output XOR key; four instructions with three MAD/one XOR or two MAD/two XOR. Only listed exclusions are proved.",
+  "remaining": "Five affine-first families and XOR/MAD/MAD/XOR stay open, alongside other opcodes, other live inputs, whole-hash and layout changes."
+}

@@ -1,0 +1,20 @@
+{
+  "relaxed_calendar_only": true,
+  "verified_executable_cycles": null,
+  "horizon": 864,
+  "compute_packed_before": 720,
+  "prefix_compute_lanes": 43147,
+  "prefix_waste": 53,
+  "fixed_dag_edges_and_resources_valid": true,
+  "future_arithmetic_energy_audit": {
+    "horizon": 864,
+    "freeze_before": 720,
+    "inconsistent_nodes": [],
+    "positive_windows": 0,
+    "cuts": [],
+    "supplied_tail_waste": 116,
+    "scope": "fixed LF calendar and frozen compute prefix; necessary tests only"
+  },
+  "calendar_sha256": "d64ea2f07e878131dd40b3d4033f5c07fcd1bd03940ce5bfab89098cb379d9a6",
+  "source_calendar": "/tmp/aopt-rawfold-lookahead-720-w0-r0.sol"
+}

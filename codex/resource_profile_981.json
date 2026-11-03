@@ -1,0 +1,26 @@
+{
+  "source": "perf_takehome.py",
+  "cycles": 981,
+  "case": "Random(0), full32 tree and values",
+  "verified_final_values": true,
+  "slots": {
+    "load": 1886,
+    "flow": 937,
+    "alu": 11471,
+    "valu": 5770,
+    "store": 62
+  },
+  "arithmetic_lane_work": 57631,
+  "fixed_work_relaxed_bounds": {
+    "arithmetic": 961,
+    "load": 943,
+    "flow": 937
+  },
+  "target": 899,
+  "fixed_work_deficits": {
+    "arithmetic_lane_units": 3691,
+    "load": 88,
+    "flow": 38
+  },
+  "scope": "Executed work on this input; not a lower bound for other algorithms."
+}

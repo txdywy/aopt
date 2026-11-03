@@ -1,0 +1,300 @@
+[
+  {
+    "scalar_groups": 0,
+    "counts": {
+      "load": 1688,
+      "valu": 6093,
+      "flow": 851,
+      "alu": 2921,
+      "store": 530
+    },
+    "arithmetic_lanes": 51665,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 431,
+      "objective_incumbent": 308.0,
+      "objective_upper_bound": 308,
+      "waste_lower_bound": 52,
+      "structural_upper_bound": null,
+      "seconds": 0.19317900000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "OPTIMAL",
+      "eligible_ops": 800,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 64,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": 64,
+      "seconds": 0.093879
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 864,
+    "new_executable": false
+  },
+  {
+    "scalar_groups": 1,
+    "counts": {
+      "load": 1688,
+      "valu": 6093,
+      "flow": 851,
+      "alu": 2928,
+      "store": 537
+    },
+    "arithmetic_lanes": 51672,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 431,
+      "objective_incumbent": 308.0,
+      "objective_upper_bound": 308,
+      "waste_lower_bound": 52,
+      "structural_upper_bound": null,
+      "seconds": 0.178326
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "FEASIBLE",
+      "eligible_ops": 809,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 65,
+      "waste_lower_bound": 115,
+      "structural_upper_bound": 65,
+      "seconds": 1.001227
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 864,
+    "new_executable": false,
+    "serial_control": {
+      "scratch": 1108,
+      "verified": 12097
+    }
+  },
+  {
+    "scalar_groups": 2,
+    "counts": {
+      "load": 1688,
+      "valu": 6093,
+      "flow": 851,
+      "alu": 2935,
+      "store": 544
+    },
+    "arithmetic_lanes": 51679,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 431,
+      "objective_incumbent": 308.0,
+      "objective_upper_bound": 308,
+      "waste_lower_bound": 52,
+      "structural_upper_bound": null,
+      "seconds": 0.174851
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "FEASIBLE",
+      "eligible_ops": 818,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 66,
+      "waste_lower_bound": 114,
+      "structural_upper_bound": 66,
+      "seconds": 1.00215
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 72,
+        "suffix_at_least": 237,
+        "instructions": 72,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "scalar_groups": 8,
+    "counts": {
+      "load": 1688,
+      "valu": 6093,
+      "flow": 851,
+      "alu": 2977,
+      "store": 586
+    },
+    "arithmetic_lanes": 51721,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 431,
+      "objective_incumbent": 308.0,
+      "objective_upper_bound": 308,
+      "waste_lower_bound": 52,
+      "structural_upper_bound": null,
+      "seconds": 0.174295
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "FEASIBLE",
+      "eligible_ops": 872,
+      "objective_incumbent": 64.0,
+      "objective_upper_bound": 72,
+      "waste_lower_bound": 108,
+      "structural_upper_bound": 72,
+      "seconds": 1.000532
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 349,
+        "prefix_at_least": 298,
+        "suffix_at_least": 0,
+        "instructions": 102,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false
+  },
+  {
+    "scalar_groups": 32,
+    "counts": {
+      "load": 1688,
+      "valu": 6093,
+      "flow": 851,
+      "alu": 3145,
+      "store": 754
+    },
+    "arithmetic_lanes": 51889,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 476,
+      "objective_incumbent": 308.0,
+      "objective_upper_bound": 308,
+      "waste_lower_bound": 52,
+      "structural_upper_bound": null,
+      "seconds": 0.14636000000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "FEASIBLE",
+      "eligible_ops": 1088,
+      "objective_incumbent": 12.0,
+      "objective_upper_bound": 24,
+      "waste_lower_bound": 156,
+      "structural_upper_bound": 44,
+      "seconds": 1.002212
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 381,
+        "prefix_at_least": 4,
+        "suffix_at_least": 0,
+        "instructions": 754,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 861,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 851,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 869,
+    "new_executable": false,
+    "serial_control": {
+      "scratch": 1108,
+      "verified": 12531
+    }
+  }
+]

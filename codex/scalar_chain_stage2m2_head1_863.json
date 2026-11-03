@@ -1,0 +1,162 @@
+{
+  "config": {
+    "full": [
+      "cache0",
+      3042594569
+    ],
+    "chain": [
+      "c1",
+      "19",
+      "9",
+      "3",
+      "2310"
+    ],
+    "staged": [
+      2,
+      -2
+    ],
+    "thirds": [],
+    "fused": 1,
+    "trades": 0,
+    "init4097": null,
+    "head_root": 1
+  },
+  "layout": {
+    "converted": [
+      {
+        "name": "cache0",
+        "partial": false,
+        "converted_vectors": 32,
+        "scalar_source": 1215
+      },
+      {
+        "name": 3042594569,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 238
+      }
+    ],
+    "head_root_groups": [
+      0
+    ],
+    "chain": {
+      "names": [
+        "c1",
+        "19",
+        "9",
+        "3",
+        "2310"
+      ],
+      "vectors": [
+        [
+          26,
+          75479,
+          75480,
+          75481,
+          75482,
+          75483,
+          75484,
+          75485
+        ],
+        [
+          75486,
+          75487,
+          75488,
+          75489,
+          75495,
+          75496,
+          75497,
+          75498
+        ],
+        [
+          75499,
+          75500,
+          75501,
+          75502,
+          75508,
+          75509,
+          75510,
+          75511
+        ],
+        [
+          75512,
+          75513,
+          75514,
+          75515,
+          75521,
+          75522,
+          75523,
+          75524
+        ],
+        [
+          75525,
+          75526,
+          75527,
+          75528,
+          75478,
+          75529,
+          75530,
+          75531
+        ]
+      ],
+      "root_detached": false
+    }
+  },
+  "counts": {
+    "load": 1688,
+    "valu": 5958,
+    "flow": 853,
+    "alu": 3968,
+    "store": 530
+  },
+  "arithmetic_lanes": 51632,
+  "mandatory_alu": 3952,
+  "prefix": {
+    "width": 6,
+    "availability_by_cycle": [
+      8,
+      62,
+      118,
+      178,
+      247,
+      364
+    ],
+    "objective_upper_bound": 298,
+    "waste_lower_bound": 62,
+    "scope": "Grant all arithmetic with ASAP<k for free and all later slots full; ignore non-arithmetic and cross-node resource contention."
+  },
+  "suffix": {
+    "width": 3,
+    "store_roots": 32,
+    "free_work": 0,
+    "objective_upper_bound": 64,
+    "waste_lower_bound": 116,
+    "scope": "Two stores per cycle; shared/non-store-root arithmetic is granted free placement and all other resources are relaxed."
+  },
+  "streams": {
+    "load": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 0,
+      "suffix_at_least": 21,
+      "instructions": 1684,
+      "capacity": 2
+    },
+    "store": {
+      "cycle_lower_bound": 345,
+      "prefix_at_least": 4,
+      "suffix_at_least": 109,
+      "instructions": 464,
+      "capacity": 2
+    },
+    "flow": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 0,
+      "suffix_at_least": 10,
+      "instructions": 853,
+      "capacity": 1
+    }
+  },
+  "cycle_lower_bound": 864,
+  "new_executable": false,
+  "scope": "This explicit scalar-plus-chain graph. Bounds and serial replay are not scores."
+}

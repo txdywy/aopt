@@ -1,0 +1,792 @@
+{
+  "width": 11,
+  "executable_best_cycles": 864,
+  "new_executable": false,
+  "input_key": 3345072700,
+  "output_key": "arbitrary",
+  "refinement_queries": 70,
+  "raw_refinement_counts": {
+    "projected_grammar_unsat": 46,
+    "unknown": 24
+  },
+  "unknown_reductions": {
+    "still_open": 16,
+    "three_operations": 8
+  },
+  "remaining_distinct_refinement_classes": [
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "^",
+        "mad"
+      ],
+      "second_operands": [
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "^",
+        "mad"
+      ],
+      "second_operands": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "&",
+        "mad"
+      ],
+      "second_operands": [
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "&",
+        "mad"
+      ],
+      "second_operands": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "|",
+        "mad"
+      ],
+      "second_operands": [
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "|",
+        "mad"
+      ],
+      "second_operands": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "^",
+        "mad"
+      ],
+      "second_operands": [
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "^",
+        "mad"
+      ],
+      "second_operands": [
+        1,
+        2,
+        0
+      ]
+    }
+  ],
+  "order_statuses": [
+    {
+      "sequence": [
+        "&",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 1
+      }
+    },
+    {
+      "sequence": [
+        "&",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 1
+      }
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "mad",
+        "&"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 1
+      }
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 1
+      }
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "mad",
+        "|"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 1
+      }
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "&",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "^",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "&"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "|"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "^",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "&",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 3
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "^",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "projected_grammar_unsat": 2,
+        "unknown": 1
+      },
+      "refinement_counts": {
+        "projected_grammar_unsat": 2,
+        "unknown": 8
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad",
+        "&"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 3
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 3
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad",
+        "|"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 3
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "|",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "ten fixed first-bitwise operand pairs UNSAT; previous square-first partitions and three-op dead-code proof",
+      "raw_counts": {
+        "projected_grammar_unsat": 2,
+        "unknown": 1
+      },
+      "refinement_counts": {
+        "projected_grammar_unsat": 10
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "&",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "projected_grammar_unsat": 2,
+        "unknown": 1
+      },
+      "refinement_counts": {
+        "projected_grammar_unsat": 6,
+        "unknown": 4
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "&"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "projected_grammar_unsat": 2,
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "|"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "projected_grammar_unsat": 2,
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "|",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "projected_grammar_unsat": 2,
+        "unknown": 1
+      },
+      "refinement_counts": {
+        "projected_grammar_unsat": 6,
+        "unknown": 4
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "&",
+        "&"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 3
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "&",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 3
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "&",
+        "|"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 3
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "&"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 3
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "|"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 3
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "|",
+        "&"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 3
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "|",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 3
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "|",
+        "|"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 3
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "&",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "ten fixed first-bitwise operand pairs UNSAT; previous square-first partitions and three-op dead-code proof",
+      "raw_counts": {
+        "projected_grammar_unsat": 2,
+        "unknown": 1
+      },
+      "refinement_counts": {
+        "projected_grammar_unsat": 10
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "^",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "projected_grammar_unsat": 2,
+        "unknown": 1
+      },
+      "refinement_counts": {
+        "projected_grammar_unsat": 2,
+        "unknown": 8
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad",
+        "&"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 3
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 3
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad",
+        "|"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 3
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "|",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "ten fixed first-bitwise operand pairs UNSAT; previous square-first partitions and three-op dead-code proof",
+      "raw_counts": {
+        "projected_grammar_unsat": 2,
+        "unknown": 1
+      },
+      "refinement_counts": {
+        "projected_grammar_unsat": 10
+      }
+    },
+    {
+      "sequence": [
+        "|",
+        "&",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "|",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "&",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "mad",
+        "&"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "mad",
+        "|"
+      ],
+      "status": "closed",
+      "reason": "all first-MAD partitions directly UNSAT",
+      "raw_counts": {
+        "projected_grammar_unsat": 1
+      }
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "|",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "coarse search has an unresolved or reduced-SAT partition",
+      "raw_counts": {
+        "unknown": 1
+      }
+    },
+    {
+      "sequence": [
+        "|",
+        "|",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key",
+      "raw_counts": {
+        "unknown": 1
+      }
+    }
+  ],
+  "total_orders": 48,
+  "closed_orders": 31,
+  "open_orders": 17,
+  "evidence_sha256": {
+    "head_two_bitwise863_audit.json": "3c337e08d74b9213dcb7cea968445c5d1a6ee4afb05ec04e7b542059042f9ea7",
+    "head_two_bitwise863_results.json": "f58a00c413f8c1c804da99efc83f12398be9091d121be6b0b4ea4586c0071be0",
+    "head_two_bitwise863_refinement.json": "4bbcdb3bcf1929d03ea71f46104f530d21e7784e30694ee7e1e96c006a89f2c5"
+  },
+  "scope": "Exactly two arbitrary MAD and two XOR/AND/OR operations with at least one AND/OR, one input and arbitrary constants/output XOR. No shifts or live inputs.",
+  "note": "Synthesis requires live intermediate results; dead instructions are covered by the complete three-operation proof referenced in the earlier audit."
+}

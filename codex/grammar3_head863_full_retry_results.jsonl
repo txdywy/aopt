@@ -1,0 +1,148 @@
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 54.02, "idx": 9, "template": "i1=aff(u) ; i2=sq(u) ; i3=div_ba(i1,i2)", "wall": 54.06}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 91.5, "idx": 27, "template": "i1=aff(u) ; i2=xk(u) ; i3=cdiv_ba(i1,i2)", "wall": 91.53}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 96.8, "idx": 25, "template": "i1=aff(u) ; i2=xk(u) ; i3=div_ba(i1,i2)", "wall": 96.82}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 9.94, "idx": 166, "template": "i1=aff(u) ; i2=divk(u) ; i3=cdiv_ba(i1,i2)", "wall": 9.94}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 114.26, "idx": 11, "template": "i1=aff(u) ; i2=sq(u) ; i3=cdiv_ba(i1,i2)", "wall": 114.3}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 87.47, "idx": 41, "template": "i1=aff(u) ; i2=ork(u) ; i3=div_ba(i1,i2)", "wall": 87.47}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 42.48, "idx": 208, "template": "i1=aff(u) ; i2=cdivk(u) ; i3=cdiv_ba(i1,i2)", "wall": 42.48}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 54.31, "idx": 547, "template": "i1=aff(u) ; i2=divk(i1) ; i3=xor(u,i2)", "wall": 54.31}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 118.86, "idx": 43, "template": "i1=aff(u) ; i2=ork(u) ; i3=cdiv_ba(i1,i2)", "wall": 118.86}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 26.69, "idx": 554, "template": "i1=aff(u) ; i2=divk(i1) ; i3=aab(u,i2)", "wall": 26.7}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 544, "template": "i1=aff(u) ; i2=divk(i1) ; i3=lin1(u,i2)", "wall": 120.09}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 545, "template": "i1=aff(u) ; i2=divk(i1) ; i3=lin2(u,i2)", "wall": 120.11}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 560, "template": "i1=aff(u) ; i2=divk(i1) ; i3=lin1(i1,i2)", "wall": 120.08}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 561, "template": "i1=aff(u) ; i2=divk(i1) ; i3=lin2(i1,i2)", "wall": 120.13}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 562, "template": "i1=aff(u) ; i2=divk(i1) ; i3=prod(i1,i2)", "wall": 120.12}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 563, "template": "i1=aff(u) ; i2=divk(i1) ; i3=xor(i1,i2)", "wall": 120.08}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 565, "template": "i1=aff(u) ; i2=divk(i1) ; i3=or(i1,i2)", "wall": 121.56}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 568, "template": "i1=aff(u) ; i2=divk(i1) ; i3=shr_ab(i1,i2)", "wall": 120.1}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 570, "template": "i1=aff(u) ; i2=divk(i1) ; i3=aab(i1,i2)", "wall": 120.13}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 572, "template": "i1=aff(u) ; i2=divk(i1) ; i3=aba(i1,i2)", "wall": 123.17}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 573, "template": "i1=aff(u) ; i2=divk(i1) ; i3=abb(i1,i2)", "wall": 120.15}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 578, "template": "i1=aff(u) ; i2=divk(i1) ; i3=mad_c(u,i1,i2)", "wall": 120.11}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 580, "template": "i1=aff(u) ; i2=divk(i1) ; i3=mad_a(u,i1,i2)", "wall": 120.14}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 581, "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=lin1(u,i2)", "wall": 120.12}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 44.73, "idx": 584, "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=xor(u,i2)", "wall": 44.73}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 48.99, "idx": 591, "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=aab(u,i2)", "wall": 48.99}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 582, "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=lin2(u,i2)", "wall": 120.14}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 597, "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=lin1(i1,i2)", "wall": 120.11}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 54.54, "idx": 600, "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=xor(i1,i2)", "wall": 54.54}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 598, "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=lin2(i1,i2)", "wall": 121.84}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 12.52, "idx": 602, "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=or(i1,i2)", "wall": 12.52}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 599, "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=prod(i1,i2)", "wall": 120.18}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 605, "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=shr_ab(i1,i2)", "wall": 121.52}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 607, "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=aab(i1,i2)", "wall": 120.12}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 609, "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=aba(i1,i2)", "wall": 120.14}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 610, "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=abb(i1,i2)", "wall": 122.14}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 615, "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=mad_c(u,i1,i2)", "wall": 120.12}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 617, "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=mad_a(u,i1,i2)", "wall": 120.15}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 618, "template": "i1=aff(u) ; i2=modk(i1) ; i3=lin1(u,i2)", "wall": 120.1}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 619, "template": "i1=aff(u) ; i2=modk(i1) ; i3=lin2(u,i2)", "wall": 120.21}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 621, "template": "i1=aff(u) ; i2=modk(i1) ; i3=xor(u,i2)", "wall": 120.11}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 628, "template": "i1=aff(u) ; i2=modk(i1) ; i3=aab(u,i2)", "wall": 120.12}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 634, "template": "i1=aff(u) ; i2=modk(i1) ; i3=lin1(i1,i2)", "wall": 120.12}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 635, "template": "i1=aff(u) ; i2=modk(i1) ; i3=lin2(i1,i2)", "wall": 120.14}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 636, "template": "i1=aff(u) ; i2=modk(i1) ; i3=prod(i1,i2)", "wall": 120.18}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 637, "template": "i1=aff(u) ; i2=modk(i1) ; i3=xor(i1,i2)", "wall": 120.11}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 638, "template": "i1=aff(u) ; i2=modk(i1) ; i3=and(i1,i2)", "wall": 120.12}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 639, "template": "i1=aff(u) ; i2=modk(i1) ; i3=or(i1,i2)", "wall": 120.12}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 642, "template": "i1=aff(u) ; i2=modk(i1) ; i3=shr_ab(i1,i2)", "wall": 120.11}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 644, "template": "i1=aff(u) ; i2=modk(i1) ; i3=aab(i1,i2)", "wall": 120.13}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 646, "template": "i1=aff(u) ; i2=modk(i1) ; i3=aba(i1,i2)", "wall": 120.15}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 647, "template": "i1=aff(u) ; i2=modk(i1) ; i3=abb(i1,i2)", "wall": 120.12}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 652, "template": "i1=aff(u) ; i2=modk(i1) ; i3=mad_c(u,i1,i2)", "wall": 120.08}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 654, "template": "i1=aff(u) ; i2=modk(i1) ; i3=mad_a(u,i1,i2)", "wall": 120.11}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 655, "template": "i1=aff(u) ; i2=kmod(i1) ; i3=lin1(u,i2)", "wall": 120.1}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 656, "template": "i1=aff(u) ; i2=kmod(i1) ; i3=lin2(u,i2)", "wall": 120.11}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 658, "template": "i1=aff(u) ; i2=kmod(i1) ; i3=xor(u,i2)", "wall": 120.08}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 671, "template": "i1=aff(u) ; i2=kmod(i1) ; i3=lin1(i1,i2)", "wall": 120.09}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 665, "template": "i1=aff(u) ; i2=kmod(i1) ; i3=aab(u,i2)", "wall": 121.44}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 672, "template": "i1=aff(u) ; i2=kmod(i1) ; i3=lin2(i1,i2)", "wall": 120.11}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 673, "template": "i1=aff(u) ; i2=kmod(i1) ; i3=prod(i1,i2)", "wall": 120.12}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 674, "template": "i1=aff(u) ; i2=kmod(i1) ; i3=xor(i1,i2)", "wall": 120.08}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 675, "template": "i1=aff(u) ; i2=kmod(i1) ; i3=and(i1,i2)", "wall": 120.08}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 679, "template": "i1=aff(u) ; i2=kmod(i1) ; i3=shr_ab(i1,i2)", "wall": 120.09}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 681, "template": "i1=aff(u) ; i2=kmod(i1) ; i3=aab(i1,i2)", "wall": 122.05}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 683, "template": "i1=aff(u) ; i2=kmod(i1) ; i3=aba(i1,i2)", "wall": 120.15}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 689, "template": "i1=aff(u) ; i2=kmod(i1) ; i3=mad_c(u,i1,i2)", "wall": 120.12}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 691, "template": "i1=aff(u) ; i2=kmod(i1) ; i3=mad_a(u,i1,i2)", "wall": 120.13}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 60.85, "idx": 695, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=xor(u,i2)", "wall": 60.85}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 73.96, "idx": 702, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=aab(u,i2)", "wall": 73.96}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 692, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=lin1(u,i2)", "wall": 120.11}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 693, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=lin2(u,i2)", "wall": 120.1}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 708, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=lin1(i1,i2)", "wall": 120.07}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 709, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=lin2(i1,i2)", "wall": 120.08}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 41.9, "idx": 712, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=and(i1,i2)", "wall": 41.9}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 710, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=prod(i1,i2)", "wall": 120.09}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 711, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=xor(i1,i2)", "wall": 120.06}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 713, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=or(i1,i2)", "wall": 121.46}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 716, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=shr_ab(i1,i2)", "wall": 120.07}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 718, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=aab(i1,i2)", "wall": 121.81}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 720, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=aba(i1,i2)", "wall": 120.13}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 721, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=abb(i1,i2)", "wall": 120.11}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 726, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=mad_c(u,i1,i2)", "wall": 120.1}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 728, "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=mad_a(u,i1,i2)", "wall": 120.1}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 729, "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=lin1(u,i2)", "wall": 120.09}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 69.75, "idx": 732, "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=xor(u,i2)", "wall": 69.75}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 79.05, "idx": 739, "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=aab(u,i2)", "wall": 79.05}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 730, "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=lin2(u,i2)", "wall": 120.1}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 745, "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=lin1(i1,i2)", "wall": 120.08}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 12.03, "idx": 750, "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=or(i1,i2)", "wall": 12.03}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 746, "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=lin2(i1,i2)", "wall": 120.1}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 747, "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=prod(i1,i2)", "wall": 120.12}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 748, "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=xor(i1,i2)", "wall": 120.08}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 753, "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=shr_ab(i1,i2)", "wall": 121.44}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 755, "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=aab(i1,i2)", "wall": 120.1}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 757, "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=aba(i1,i2)", "wall": 120.13}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 758, "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=abb(i1,i2)", "wall": 120.09}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 763, "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=mad_c(u,i1,i2)", "wall": 120.08}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 765, "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=mad_a(u,i1,i2)", "wall": 120.1}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 902, "template": "i1=aff(u) ; i2=lin2(u,i1) ; i3=div_ba(i1,i2)", "wall": 120.1}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 71.86, "idx": 916, "template": "i1=aff(u) ; i2=prod(u,i1) ; i3=div_ba(i1,i2)", "wall": 71.86}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 904, "template": "i1=aff(u) ; i2=lin2(u,i1) ; i3=cdiv_ba(i1,i2)", "wall": 121.72}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 12.21, "idx": 1138, "template": "i1=aff(u) ; i2=bba(u,i1) ; i3=div_ba(i1,i2)", "wall": 12.21}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 27.67, "idx": 1140, "template": "i1=aff(u) ; i2=bba(u,i1) ; i3=cdiv_ba(i1,i2)", "wall": 27.67}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 27.64, "idx": 3704, "template": "i1=xk(u) ; i2=modk(u) ; i3=lin1(i1,i2)", "wall": 27.64}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 43.02, "idx": 3684, "template": "i1=xk(u) ; i2=divk(u) ; i3=lin2(i1,i2)", "wall": 43.02}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 118.79, "idx": 918, "template": "i1=aff(u) ; i2=prod(u,i1) ; i3=cdiv_ba(i1,i2)", "wall": 118.79}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 4094, "template": "i1=xk(u) ; i2=divk(i1) ; i3=lin1(i1,i2)", "wall": 120.07}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 4095, "template": "i1=xk(u) ; i2=divk(i1) ; i3=lin2(i1,i2)", "wall": 120.08}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 2.16, "idx": 4186, "template": "i1=xk(u) ; i2=modk(i1) ; i3=mad_c(u,i1,i2)", "wall": 2.16}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 5.4, "idx": 4176, "template": "i1=xk(u) ; i2=modk(i1) ; i3=shr_ab(i1,i2)", "wall": 5.41}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 4152, "template": "i1=xk(u) ; i2=modk(i1) ; i3=lin1(u,i2)", "wall": 120.07}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 19.51, "idx": 4229, "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=xor(u,i2)", "wall": 19.52}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 4168, "template": "i1=xk(u) ; i2=modk(i1) ; i3=lin1(i1,i2)", "wall": 120.07}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 68.48, "idx": 4236, "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=aab(u,i2)", "wall": 68.48}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 4226, "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=lin1(u,i2)", "wall": 120.08}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 4227, "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=lin2(u,i2)", "wall": 121.6}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 19.25, "idx": 4250, "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=shr_ab(i1,i2)", "wall": 19.25}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 51.7, "idx": 4245, "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=xor(i1,i2)", "wall": 51.71}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 4242, "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=lin1(i1,i2)", "wall": 120.08}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 4243, "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=lin2(i1,i2)", "wall": 120.09}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 4252, "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=aab(i1,i2)", "wall": 121.55}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 4260, "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=mad_c(u,i1,i2)", "wall": 120.08}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 6374, "template": "i1=ork(u) ; i2=divk(i1) ; i3=mad_a(u,i1,i2)", "wall": 120.07}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 29.79, "idx": 6435, "template": "i1=ork(u) ; i2=cdivk(i1) ; i3=xor(u,i2)", "wall": 29.79}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 6412, "template": "i1=ork(u) ; i2=modk(i1) ; i3=mad_a(u,i1,i2)", "wall": 120.07}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 29.16, "idx": 6442, "template": "i1=ork(u) ; i2=cdivk(i1) ; i3=aab(u,i2)", "wall": 29.16}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 33.05, "idx": 6448, "template": "i1=ork(u) ; i2=cdivk(i1) ; i3=mad_c(u,i1,i2)", "wall": 33.05}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 6432, "template": "i1=ork(u) ; i2=cdivk(i1) ; i3=lin1(u,i2)", "wall": 120.09}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 6433, "template": "i1=ork(u) ; i2=cdivk(i1) ; i3=lin2(u,i2)", "wall": 120.09}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 8.81, "idx": 14904, "template": "i1=modk(u) ; i2=cdivk(u) ; i3=prod(i1,i2)", "wall": 8.81}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 5.42, "idx": 15233, "template": "i1=modk(u) ; i2=modk(i1) ; i3=lin1(u,i2)", "wall": 5.42}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 21.34, "idx": 16123, "template": "i1=cdivk(u) ; i2=cdivk(u) ; i3=lin1(i1,i2)", "wall": 21.35}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 6450, "template": "i1=ork(u) ; i2=cdivk(i1) ; i3=mad_a(u,i1,i2)", "wall": 121.67}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 29.92, "idx": 16124, "template": "i1=cdivk(u) ; i2=cdivk(u) ; i3=prod(i1,i2)", "wall": 29.92}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 8.27, "idx": 16272, "template": "i1=cdivk(u) ; i2=xk(i1) ; i3=mad_c(u,i1,i2)", "wall": 8.28}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 8.2, "idx": 16446, "template": "i1=cdivk(u) ; i2=modk(i1) ; i3=lin1(u,i2)", "wall": 8.2}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 6551, "template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=div_ab(i1,i2)", "wall": 120.08}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 8.93, "idx": 16449, "template": "i1=cdivk(u) ; i2=modk(i1) ; i3=xor(u,i2)", "wall": 8.93}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 11.4, "idx": 16447, "template": "i1=cdivk(u) ; i2=modk(i1) ; i3=lin2(u,i2)", "wall": 11.41}
+{"result": "timeout", "rounds": 1, "samples": 20, "idx": 6553, "template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=cdiv_ab(i1,i2)", "wall": 120.08}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 8.1, "idx": 16456, "template": "i1=cdivk(u) ; i2=modk(i1) ; i3=aab(u,i2)", "wall": 8.11}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 14.12, "idx": 16484, "template": "i1=cdivk(u) ; i2=cdivk(i1) ; i3=lin1(u,i2)", "wall": 14.12}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 16.16, "idx": 16485, "template": "i1=cdivk(u) ; i2=cdivk(i1) ; i3=lin2(u,i2)", "wall": 16.16}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 11.67, "idx": 16500, "template": "i1=cdivk(u) ; i2=cdivk(i1) ; i3=mad_c(u,i1,i2)", "wall": 11.67}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 5.22, "idx": 16617, "template": "i1=cdivk(u) ; i2=lin2(u,i1) ; i3=xk(i2)", "wall": 5.22}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 61.67, "idx": 16135, "template": "i1=cdivk(u) ; i2=cdivk(u) ; i3=mad_a(u,i1,i2)", "wall": 61.67}
+{"result": "unsat", "rounds": 1, "samples": 20, "seconds": 23.02, "idx": 16502, "template": "i1=cdivk(u) ; i2=cdivk(i1) ; i3=mad_a(u,i1,i2)", "wall": 23.02}

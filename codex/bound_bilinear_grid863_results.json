@@ -1,0 +1,21 @@
+{
+  "shape_count": 1380,
+  "valid_sum_pairs_examined": 44842,
+  "minimum_grid_cells": 50,
+  "minimum_word_span": 800,
+  "witness": {
+    "x": [
+      -30,
+      -20
+    ],
+    "v": [
+      -6,
+      -4
+    ],
+    "y_delta": 1
+  },
+  "distinct_addresses": 32,
+  "new_executable": false,
+  "scope": "Only common-grid p5=x[b0]*s2+y[b1]+v[b3]*s4 with s2,s4 in {-2,-1}, four d7 records at offsets 0,4,8,12, and 32 distinct p5 addresses. Other encodings, record placements, arithmetic graphs and wrapping outside a compact real memory interval are not excluded.",
+  "proof": "Any span <=50 grid cells bounds every x/v coefficient and the y difference by 49; all 4-element contribution shapes are enumerated. For each distinct 16-element pairwise sumset, the minimum disjoint translation of the two y choices gives the minimum possible span."
+}

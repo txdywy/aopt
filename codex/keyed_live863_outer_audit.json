@@ -1,0 +1,34 @@
+{
+  "width": 11,
+  "executable_best_cycles": 864,
+  "new_executable": false,
+  "coarse_counts": {
+    "necessary_subdomain_unsat": 29,
+    "unknown": 1
+  },
+  "refinement_queries": 86,
+  "one_input_second_roles": 40,
+  "unresolved_within_order": 0,
+  "closed_order": [
+    "mad",
+    "mad",
+    "^"
+  ],
+  "wiring_patterns": 264600,
+  "wiring_classes": {
+    "constant": 66150,
+    "polynomial_xor_a": 66150,
+    "polynomial_xor_constant": 103950,
+    "polynomial_xor_prior": 18900,
+    "two_mad_outputs": 9450
+  },
+  "evidence_sha256": {
+    "keyed_live863_outer_first_forms.json": "bb4a614f0bbde923ca79261cfed56f05489cfc52101de321215551fe541aeb85",
+    "keyed_live863_outer_second_roles.json": "47afa730cbdc3d1ecc9a05235150ea13bdd147a53a4f2e3149b44c1734f8ac10",
+    "free_keys863_complete_grammar.json": "68893cae943b55d5637204482c735bd9c341a541b91a620b1612fef47671c109",
+    "keyed_live863_rectangles.json": "d9c0cd939f167d38711faf35174762325752b6feeb44002fa874fabc079014c4"
+  },
+  "scope": "Live inputs a, prior=(a-C0)/4097, a XOR (a>>19) XOR K; arbitrary K,O; target F(a XOR (a>>19) XOR C1) XOR O. Exactly MAD/MAD/XOR with arbitrary constant and runtime operands, including dead code and aliases.",
+  "reduction": "Final XOR with keyed is final XOR with a plus a constant on the legal low-a domain. Other final initial words use the recorded rectangle screens; two MAD results use the complete first/second partitions.",
+  "excluded_from_claim": "Other orders/opcodes, additional live words, whole-kernel optimality."
+}

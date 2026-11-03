@@ -1,0 +1,250 @@
+{
+  "scope": "Nested affine/XOR/affine at width11; endpoint keys have zero low9 bits",
+  "rows": [
+    {
+      "width": 11,
+      "affine_bits": 9,
+      "low_slope": 297,
+      "low_intercept": 458,
+      "normalized_keys": [
+        0,
+        256,
+        512,
+        768
+      ],
+      "pairs_tested": 8388608,
+      "survivors": [],
+      "rejection_counts": {
+        "16": 2097152,
+        "2": 3670016,
+        "3": 873888,
+        "4": 436832,
+        "5": 262304,
+        "7": 299584,
+        "15": 396256,
+        "31": 179360,
+        "127": 104256,
+        "255": 50368,
+        "511": 17472,
+        "513": 1120
+      },
+      "seconds": 0.315,
+      "input_key": 0,
+      "output_key": 0
+    },
+    {
+      "width": 11,
+      "affine_bits": 9,
+      "low_slope": 297,
+      "low_intercept": 458,
+      "normalized_keys": [
+        0,
+        256,
+        512,
+        768
+      ],
+      "pairs_tested": 8388608,
+      "survivors": [],
+      "rejection_counts": {
+        "3": 4369056,
+        "2": 3670016,
+        "5": 279616,
+        "7": 39968,
+        "15": 5472,
+        "31": 7424,
+        "127": 9120,
+        "255": 3968,
+        "9": 1024,
+        "14": 1952,
+        "16": 992
+      },
+      "seconds": 0.09,
+      "input_key": 0,
+      "output_key": 512
+    },
+    {
+      "width": 11,
+      "affine_bits": 9,
+      "low_slope": 297,
+      "low_intercept": 458,
+      "normalized_keys": [
+        0,
+        256,
+        512,
+        768
+      ],
+      "pairs_tested": 8388608,
+      "survivors": [],
+      "rejection_counts": {
+        "16": 2097152,
+        "2": 3670016,
+        "3": 873888,
+        "4": 436832,
+        "5": 262304,
+        "7": 299584,
+        "15": 396256,
+        "31": 179360,
+        "127": 104256,
+        "255": 50368,
+        "511": 17472,
+        "513": 1120
+      },
+      "seconds": 0.31,
+      "input_key": 0,
+      "output_key": 1024
+    },
+    {
+      "width": 11,
+      "affine_bits": 9,
+      "low_slope": 297,
+      "low_intercept": 458,
+      "normalized_keys": [
+        0,
+        256,
+        512,
+        768
+      ],
+      "pairs_tested": 8388608,
+      "survivors": [],
+      "rejection_counts": {
+        "3": 4369056,
+        "2": 3670016,
+        "5": 279616,
+        "7": 39968,
+        "15": 5472,
+        "31": 7424,
+        "127": 9120,
+        "255": 3968,
+        "9": 1024,
+        "14": 1952,
+        "16": 992
+      },
+      "seconds": 0.086,
+      "input_key": 0,
+      "output_key": 1536
+    },
+    {
+      "width": 11,
+      "affine_bits": 9,
+      "low_slope": 297,
+      "low_intercept": 458,
+      "normalized_keys": [
+        0,
+        256,
+        512,
+        768
+      ],
+      "pairs_tested": 8388608,
+      "survivors": [],
+      "rejection_counts": {
+        "513": 2097152,
+        "2": 3670016,
+        "3": 873888,
+        "4": 436832,
+        "5": 262304,
+        "7": 299584,
+        "15": 396256,
+        "31": 179360,
+        "127": 104256,
+        "255": 50368,
+        "511": 17472,
+        "8": 288,
+        "16": 320,
+        "17": 512
+      },
+      "seconds": 0.192,
+      "input_key": 512,
+      "output_key": 0
+    },
+    {
+      "width": 11,
+      "affine_bits": 9,
+      "low_slope": 297,
+      "low_intercept": 458,
+      "normalized_keys": [
+        0,
+        256,
+        512,
+        768
+      ],
+      "pairs_tested": 8388608,
+      "survivors": [],
+      "rejection_counts": {
+        "3": 4369056,
+        "2": 3670016,
+        "5": 279616,
+        "7": 39968,
+        "15": 5472,
+        "31": 7424,
+        "127": 9120,
+        "255": 3968,
+        "513": 3968
+      },
+      "seconds": 0.088,
+      "input_key": 512,
+      "output_key": 512
+    },
+    {
+      "width": 11,
+      "affine_bits": 9,
+      "low_slope": 297,
+      "low_intercept": 458,
+      "normalized_keys": [
+        0,
+        256,
+        512,
+        768
+      ],
+      "pairs_tested": 8388608,
+      "survivors": [],
+      "rejection_counts": {
+        "513": 2097152,
+        "2": 3670016,
+        "3": 873888,
+        "4": 436832,
+        "5": 262304,
+        "7": 299584,
+        "15": 396256,
+        "31": 179360,
+        "127": 104256,
+        "255": 50368,
+        "511": 17472,
+        "8": 288,
+        "16": 320,
+        "17": 512
+      },
+      "seconds": 0.201,
+      "input_key": 512,
+      "output_key": 1024
+    },
+    {
+      "width": 11,
+      "affine_bits": 9,
+      "low_slope": 297,
+      "low_intercept": 458,
+      "normalized_keys": [
+        0,
+        256,
+        512,
+        768
+      ],
+      "pairs_tested": 8388608,
+      "survivors": [],
+      "rejection_counts": {
+        "3": 4369056,
+        "2": 3670016,
+        "5": 279616,
+        "7": 39968,
+        "15": 5472,
+        "31": 7424,
+        "127": 9120,
+        "255": 3968,
+        "513": 3968
+      },
+      "seconds": 0.09,
+      "input_key": 512,
+      "output_key": 1536
+    }
+  ],
+  "new_executable": false
+}

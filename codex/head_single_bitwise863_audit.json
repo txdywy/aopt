@@ -1,0 +1,92 @@
+{
+  "executable_best_cycles": 864,
+  "new_executable": false,
+  "width": 11,
+  "input_key": 3345072700,
+  "output_key": "arbitrary",
+  "closed_orders": 8,
+  "orders": [
+    [
+      "&",
+      "mad",
+      "mad",
+      "mad"
+    ],
+    [
+      "mad",
+      "&",
+      "mad",
+      "mad"
+    ],
+    [
+      "mad",
+      "mad",
+      "&",
+      "mad"
+    ],
+    [
+      "mad",
+      "mad",
+      "mad",
+      "&"
+    ],
+    [
+      "|",
+      "mad",
+      "mad",
+      "mad"
+    ],
+    [
+      "mad",
+      "|",
+      "mad",
+      "mad"
+    ],
+    [
+      "mad",
+      "mad",
+      "|",
+      "mad"
+    ],
+    [
+      "mad",
+      "mad",
+      "mad",
+      "|"
+    ]
+  ],
+  "input_module_pairs": 123008,
+  "key_module_pairs": 7712,
+  "key_module_triples": 3973120,
+  "coarse_counts": {
+    "projected_grammar_unsat": 286,
+    "unknown": 20
+  },
+  "refinement_queries": 90,
+  "affine_final_wiring_patterns": 151200,
+  "affine_final_wiring_classes": {
+    "three_operations": 120780,
+    "reordered_bitwise_prefix": 17880,
+    "coarse_query": 11372,
+    "quadratic_query": 408,
+    "affine_module": 760
+  },
+  "evidence_sha256": {
+    "head_four_xor863_audit.json": "e50a6780878a71eda4ddf9c7f86f351503cf7d25f68bb2d7f43741c2d432c9f9",
+    "affine_head_cubes863_joint.json": "59ba7dae44644c1ecfe2caa1d998a1227cdbdb5dc9597cd36859543b9aabeccd",
+    "head_and_module863_input.json": "6dc180ce757ce528d8ed0cf9bf5dd8cc178c5abf27c67982654bb23142d3db27",
+    "head_and_module863_key_shard_0.json": "3e16ad6963252630364f78314f0f87c7d45d4c34a85ed2abdcd9b5d7dbdc3ad4",
+    "head_and_module863_key_shard_1.json": "edb6e00ad4f0151f2f3e097982e132dd02709b4cc810a95bbb89acdec0ef7c21",
+    "head_and_module863_key_shard_2.json": "9f7235daab68000210c7ff99342900ebc3cf893747543e3e571aa9e9880cb38a",
+    "head_and_module863_input_control.json": "a4e70764ff55a77fda90ea8ebee1aba0fd06b2b5e34796a75d76c1f85310e96a",
+    "head_and_module863_key_control.json": "b356cfac4501397e1948a27a40afe27d02632ef24e89cec28d744e2e5c527096",
+    "head_single_bitwise863_results.json": "1baf07f61f6100f75b42214f4ac483ec5e405222cf0531f9df9080ecc880f49e",
+    "head_polynomial_and863_result.json": "ccb60632f29739ddcd10e3f356c96d137f55a44eb9612987bc7aaa1cec47cede",
+    "head_polynomial_or863_result.json": "6eaef044eca4c3167411e51bee42dc9de434e3e6f879a021a076f2bc84c1c87e",
+    "head_and_final863_results.json": "4297dbbce2470802b036c84c47a2308a8cda3cc9139c066a168d7a83eba57b71",
+    "head_and_final863_refinement.json": "baa8bd71a7ca1d3b2bf7f67ded50657f9218cc0c6a765f1629834250ee45e4c8"
+  },
+  "result": "all_eight_single_and_or_orders_excluded",
+  "scope": "One input; four instructions consisting of exactly three arbitrary MAD and one AND/OR; arbitrary constants/runtime operands and output XOR.",
+  "excluded_from_claim": "XOR combinations, other opcodes, extra live values, whole-hash and memory-layout transformations, global kernel optimum."
+}

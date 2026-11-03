@@ -1,0 +1,38 @@
+{
+  "executable_best_cycles": 864,
+  "new_executable": false,
+  "width": 11,
+  "constant_middle_partitions": 200,
+  "raw_partition_counts": {
+    "necessary_subdomain_unsat": 135,
+    "unknown": 2,
+    "covered_by_prior_single_input_proof": 63
+  },
+  "refined_unknowns": 2,
+  "unresolved_within_this_family": 0,
+  "last_mad_operand_wirings_before_constant_relaxation": 70,
+  "canonical_last_mad_roles": 50,
+  "runtime_xor_cases": 6,
+  "lattice_coarse_cases": 16,
+  "evidence_sha256": {
+    "free_keys863_complete_grammar.json": "68893cae943b55d5637204482c735bd9c341a541b91a620b1612fef47671c109",
+    "keyed_live863_bypass_even.json": "2ade69663ea88acbb2113fc98be74e2601546a41c95348cc75ea453ba796cb49",
+    "keyed_live863_exact_bypass_a.json": "714d09cb919e61df3071af47186e12e9abf17f27601c19c8b0cecb9d9098abb2",
+    "keyed_live863_exact_bypass_prior.json": "b259e8a32fd8462b5ef884ee2b1cd5a609d0b6e112b5a2a08183b3b9eb4e9de1",
+    "keyed_live863_affine_key_frontier.json": "e9bb0a1254d784c680066cd5fbac0c844807a2fa58ec9662d3b29c77962f1a4f",
+    "keyed_live863_and_key_frontier.json": "a926e48c960c068fbc14a47b2e5ce3b98e507d27f60eb79c0fe8f140cab81e0e",
+    "keyed_live863_or_key_frontier.json": "b6019bcbeecd0ecf67b47cb16626d3db70a63f6c8fccca3710c24e00b1995ec8",
+    "keyed_live863_xor_a_a.json": "c2cc1ea47c352c4ddaef974557ca2b51bec93afa3f1ae92ecb481dd1450a538c",
+    "keyed_live863_xor_a_prior.json": "2a51c346cf843fa41fa475f70b490196163b6f667b5a7592e1674b3132927eae",
+    "keyed_live863_xor_a_keyed.json": "102fdb644b47121c80258196d829a21f97373b91998c247d9a1cd2b29599a24a",
+    "keyed_live863_xor_keyed_a.json": "59766db6524ba680e8c3ad76571ca9059f1787ab943bd812803dd708c011d935",
+    "keyed_live863_xor_keyed_prior.json": "7ec27eb2c0a5311a4d5bffdeeb1264c4871936e8aaddd95986a876124025cd04",
+    "keyed_live863_xor_keyed_keyed.json": "986af761df8aa8382fb138faddec97077508c7eea163e8dda0f9e1af38ddfd37",
+    "keyed_live863_affine_lattice.json": "bd973432af0dabd257c0833ea2ec961d36a90f7864af8ee5a5fb0d6427e48230",
+    "keyed_live863_rectangles.json": "d9c0cd939f167d38711faf35174762325752b6feeb44002fa874fabc079014c4",
+    "keyed_live863_full32_control.json": "20af213ba99c3d06fdd9c1c3d421284ebf775064e4f70873a18f0accf94a4106"
+  },
+  "first_prior_reduction": "prior=a-C0 mod 2048; absorb -A*C0 into the arbitrary first offset B.",
+  "scope": "t=A*s+B with s in {a,prior,keyed}; q=t OP u with OP in {XOR,AND,OR}, u an initial live source or arbitrary constant; final MAD has arbitrary live operands and two constants. Input/output XOR keys are free. A bitwise prefix followed by arbitrary integer polynomials is separately excluded.",
+  "remaining": "No general live-input minimum: mixed-source or nonlinear first MADs, different orders, shifts and other opcodes, larger full-hash rewrites, record-layout changes remain outside this audit."
+}

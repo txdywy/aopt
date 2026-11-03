@@ -1,0 +1,834 @@
+{
+  "config": {
+    "full": [
+      "cache0",
+      3042594569
+    ],
+    "chain": [
+      "c1",
+      "19",
+      "9",
+      "3",
+      "2310"
+    ],
+    "staged": [
+      2,
+      -2
+    ],
+    "thirds": [],
+    "fused": 1,
+    "trades": 0,
+    "init4097": null,
+    "head_root": 0,
+    "prolog19": 0,
+    "prolog_c1": 0,
+    "cache_pairs": [],
+    "cache_stages": [],
+    "rederive_head": true
+  },
+  "layout": {
+    "converted": [
+      {
+        "name": "cache0",
+        "partial": false,
+        "converted_vectors": 32,
+        "scalar_source": 1215
+      },
+      {
+        "name": 3042594569,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 238
+      }
+    ],
+    "cache_pairs": [],
+    "cache_stages": [],
+    "head_root_groups": [],
+    "rederived": {
+      "source_values": 26,
+      "rewritten": 43,
+      "operations": [
+        {
+          "value": 30,
+          "old_code": "+",
+          "new_code": "//",
+          "operands": [
+            494,
+            16
+          ],
+          "old_earliest": 3,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 38,
+          "old_code": "+",
+          "new_code": "//",
+          "operands": [
+            382,
+            10
+          ],
+          "old_earliest": 3,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 46,
+          "old_code": "+",
+          "new_code": "//",
+          "operands": [
+            462,
+            10
+          ],
+          "old_earliest": 4,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 54,
+          "old_code": "+",
+          "new_code": "//",
+          "operands": [
+            382,
+            7
+          ],
+          "old_earliest": 4,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 62,
+          "old_code": "+",
+          "new_code": "cdiv",
+          "operands": [
+            430,
+            7
+          ],
+          "old_earliest": 5,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 78,
+          "old_code": "+",
+          "new_code": "%",
+          "operands": [
+            2054,
+            494
+          ],
+          "old_earliest": 6,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 94,
+          "old_code": "+",
+          "new_code": "%",
+          "operands": [
+            2127912214,
+            2430
+          ],
+          "old_earliest": 7,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 102,
+          "old_code": "+",
+          "new_code": "//",
+          "operands": [
+            1029,
+            10
+          ],
+          "old_earliest": 4,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 110,
+          "old_code": "+",
+          "new_code": "-",
+          "operands": [
+            366,
+            256
+          ],
+          "old_earliest": 8,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 126,
+          "old_code": "+",
+          "new_code": "-",
+          "operands": [
+            382,
+            256
+          ],
+          "old_earliest": 9,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 142,
+          "old_code": "+",
+          "new_code": "-",
+          "operands": [
+            398,
+            256
+          ],
+          "old_earliest": 10,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 158,
+          "old_code": "+",
+          "new_code": "-",
+          "operands": [
+            414,
+            256
+          ],
+          "old_earliest": 11,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 174,
+          "old_code": "+",
+          "new_code": "-",
+          "operands": [
+            430,
+            256
+          ],
+          "old_earliest": 12,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 190,
+          "old_code": "%",
+          "new_code": "-",
+          "operands": [
+            446,
+            256
+          ],
+          "old_earliest": 3,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 222,
+          "old_code": "+",
+          "new_code": "-",
+          "operands": [
+            478,
+            256
+          ],
+          "old_earliest": 3,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 238,
+          "old_code": "+",
+          "new_code": "-",
+          "operands": [
+            494,
+            256
+          ],
+          "old_earliest": 4,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 254,
+          "old_code": "+",
+          "new_code": "-",
+          "operands": [
+            510,
+            256
+          ],
+          "old_earliest": 5,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 278,
+          "old_code": "+",
+          "new_code": "&",
+          "operands": [
+            2127912214,
+            382
+          ],
+          "old_earliest": 3,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 342,
+          "old_code": "+",
+          "new_code": "%",
+          "operands": [
+            2318,
+            494
+          ],
+          "old_earliest": 5,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 390,
+          "old_code": "+",
+          "new_code": "%",
+          "operands": [
+            2430,
+            510
+          ],
+          "old_earliest": 8,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 406,
+          "old_code": "+",
+          "new_code": "%",
+          "operands": [
+            2318,
+            478
+          ],
+          "old_earliest": 9,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 454,
+          "old_code": "+",
+          "new_code": "%",
+          "operands": [
+            2127912214,
+            1032
+          ],
+          "old_earliest": 12,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 286,
+          "old_code": "+",
+          "new_code": "&",
+          "operands": [
+            2430,
+            414
+          ],
+          "old_earliest": 3,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 302,
+          "old_code": "+",
+          "new_code": "&",
+          "operands": [
+            2430,
+            430
+          ],
+          "old_earliest": 4,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 318,
+          "old_code": "+",
+          "new_code": "&",
+          "operands": [
+            2430,
+            446
+          ],
+          "old_earliest": 5,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 334,
+          "old_code": "+",
+          "new_code": "&",
+          "operands": [
+            2430,
+            462
+          ],
+          "old_earliest": 6,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 350,
+          "old_code": "+",
+          "new_code": "-",
+          "operands": [
+            366,
+            16
+          ],
+          "old_earliest": 7,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 2414,
+          "old_code": "+",
+          "new_code": "-",
+          "operands": [
+            2430,
+            16
+          ],
+          "old_earliest": 7,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 2462,
+          "old_code": "+",
+          "new_code": "|",
+          "operands": [
+            2054,
+            414
+          ],
+          "old_earliest": 3,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 2478,
+          "old_code": "+",
+          "new_code": "|",
+          "operands": [
+            2054,
+            430
+          ],
+          "old_earliest": 4,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 2494,
+          "old_code": "+",
+          "new_code": "|",
+          "operands": [
+            2054,
+            446
+          ],
+          "old_earliest": 5,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 2510,
+          "old_code": "+",
+          "new_code": "|",
+          "operands": [
+            2054,
+            462
+          ],
+          "old_earliest": 6,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 2526,
+          "old_code": "+",
+          "new_code": "|",
+          "operands": [
+            2054,
+            478
+          ],
+          "old_earliest": 7,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 2542,
+          "old_code": "+",
+          "new_code": "|",
+          "operands": [
+            2054,
+            494
+          ],
+          "old_earliest": 8,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 2558,
+          "old_code": "+",
+          "new_code": "|",
+          "operands": [
+            2054,
+            510
+          ],
+          "old_earliest": 9,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 2058,
+          "old_code": "^",
+          "new_code": "+",
+          "operands": [
+            1029,
+            1029
+          ],
+          "old_earliest": 3,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 2059,
+          "old_code": "^",
+          "new_code": "+",
+          "operands": [
+            1029,
+            1030
+          ],
+          "old_earliest": 3,
+          "new_earliest": 2,
+          "tag": [
+            "setup",
+            []
+          ]
+        },
+        {
+          "value": 9,
+          "old_code": "|",
+          "new_code": "-",
+          "operands": [
+            16,
+            7
+          ],
+          "old_earliest": 3,
+          "new_earliest": 2,
+          "tag": [
+            "chain_seed",
+            [
+              "9",
+              0
+            ]
+          ]
+        },
+        {
+          "value": 3,
+          "old_code": "|",
+          "new_code": "-",
+          "operands": [
+            10,
+            7
+          ],
+          "old_earliest": 3,
+          "new_earliest": 2,
+          "tag": [
+            "chain_seed",
+            [
+              "3",
+              0
+            ]
+          ]
+        },
+        {
+          "value": 2310,
+          "old_code": "|",
+          "new_code": "+",
+          "operands": [
+            0,
+            2310
+          ],
+          "old_earliest": 3,
+          "new_earliest": 2,
+          "tag": [
+            "chain_seed",
+            [
+              "2310",
+              0
+            ]
+          ]
+        },
+        {
+          "value": 2310,
+          "old_code": "|",
+          "new_code": "+",
+          "operands": [
+            0,
+            2310
+          ],
+          "old_earliest": 3,
+          "new_earliest": 2,
+          "tag": [
+            "chain_seed",
+            [
+              "2310",
+              1
+            ]
+          ]
+        },
+        {
+          "value": 2310,
+          "old_code": "|",
+          "new_code": "+",
+          "operands": [
+            0,
+            2310
+          ],
+          "old_earliest": 3,
+          "new_earliest": 2,
+          "tag": [
+            "chain_seed",
+            [
+              "2310",
+              2
+            ]
+          ]
+        },
+        {
+          "value": 4294967294,
+          "old_code": "-",
+          "new_code": "-",
+          "operands": [
+            1029,
+            1031
+          ],
+          "old_earliest": 3,
+          "new_earliest": 2,
+          "tag": [
+            "uniform_root",
+            []
+          ]
+        }
+      ]
+    },
+    "prolog19_groups": [],
+    "chain": {
+      "names": [
+        "c1",
+        "19",
+        "9",
+        "3",
+        "2310"
+      ],
+      "vectors": [
+        [
+          26,
+          75479,
+          75480,
+          75481,
+          75482,
+          75483,
+          75484,
+          75485
+        ],
+        [
+          75486,
+          75487,
+          75488,
+          75489,
+          75495,
+          75496,
+          75497,
+          75498
+        ],
+        [
+          75499,
+          75500,
+          75501,
+          75502,
+          75508,
+          75509,
+          75510,
+          75511
+        ],
+        [
+          75512,
+          75513,
+          75514,
+          75515,
+          75521,
+          75522,
+          75523,
+          75524
+        ],
+        [
+          75525,
+          75526,
+          75527,
+          75528,
+          75478,
+          75529,
+          75530,
+          75531
+        ]
+      ],
+      "root_detached": false
+    }
+  },
+  "counts": {
+    "load": 1688,
+    "valu": 5959,
+    "flow": 853,
+    "alu": 3960,
+    "store": 530
+  },
+  "arithmetic_lanes": 51632,
+  "mandatory_alu": 3944,
+  "prefix": {
+    "width": 6,
+    "availability_by_cycle": [
+      8,
+      105,
+      152,
+      273,
+      393,
+      586
+    ],
+    "objective_upper_bound": 308,
+    "waste_lower_bound": 52,
+    "scope": "Grant all arithmetic with ASAP<k for free and all later slots full; ignore non-arithmetic and cross-node resource contention."
+  },
+  "suffix": {
+    "width": 3,
+    "store_roots": 32,
+    "free_work": 0,
+    "objective_upper_bound": 64,
+    "waste_lower_bound": 116,
+    "scope": "Two stores per cycle; shared/non-store-root arithmetic is granted free placement and all other resources are relaxed."
+  },
+  "streams": {
+    "load": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 0,
+      "suffix_at_least": 21,
+      "instructions": 1684,
+      "capacity": 2
+    },
+    "store": {
+      "cycle_lower_bound": 345,
+      "prefix_at_least": 4,
+      "suffix_at_least": 109,
+      "instructions": 464,
+      "capacity": 2
+    },
+    "flow": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 0,
+      "suffix_at_least": 10,
+      "instructions": 853,
+      "capacity": 1
+    }
+  },
+  "cycle_lower_bound": 864,
+  "new_executable": false,
+  "scope": "This explicit scalar-plus-chain graph. Bounds and serial replay are not scores."
+}

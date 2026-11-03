@@ -1,0 +1,219 @@
+{
+  "counts": {
+    "alu": 2933,
+    "flow": 854,
+    "load": 1688,
+    "valu": 6089,
+    "store": 530
+  },
+  "arithmetic_lanes": 51645,
+  "streams": {
+    "load": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 4,
+      "suffix_at_least": 21,
+      "instructions": 1675,
+      "capacity": 2
+    },
+    "store": {
+      "cycle_lower_bound": 348,
+      "prefix_at_least": 75,
+      "suffix_at_least": 237,
+      "instructions": 72,
+      "capacity": 2
+    },
+    "flow": {
+      "cycle_lower_bound": 866,
+      "prefix_at_least": 3,
+      "suffix_at_least": 10,
+      "instructions": 853,
+      "capacity": 1
+    }
+  },
+  "prefix": {
+    "width": 6,
+    "availability_by_cycle": [
+      1,
+      5,
+      8,
+      19,
+      79,
+      129
+    ],
+    "objective_upper_bound": 129,
+    "waste_lower_bound": 231,
+    "scope": "Grant all arithmetic with ASAP<k for free and all later slots full; ignore non-arithmetic and cross-node resource contention."
+  },
+  "suffix": {
+    "width": 3,
+    "store_roots": 32,
+    "free_work": 0,
+    "objective_upper_bound": 64,
+    "waste_lower_bound": 116,
+    "scope": "Two stores per cycle; shared/non-store-root arithmetic is granted free placement and all other resources are relaxed."
+  },
+  "cycle_lower_bound": 867,
+  "layout": {
+    "old": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "root": 75475,
+    "condition_seed": 75476,
+    "seeds": [
+      75477,
+      75478,
+      75479
+    ],
+    "initial_zeros": [
+      75488,
+      75489,
+      75490
+    ],
+    "output": [
+      75480,
+      75481,
+      75482,
+      75483,
+      75484,
+      75485,
+      75486,
+      75487
+    ],
+    "vector": [
+      75477,
+      75478,
+      75479,
+      75480,
+      75481,
+      75482,
+      75483,
+      75484
+    ],
+    "new_zeros": [
+      75485,
+      75486,
+      75487,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "triple": {
+      "order": [
+        "root",
+        "c0",
+        "c1"
+      ],
+      "direct_scalars": true,
+      "root_detached": false,
+      "roots": [
+        15,
+        24,
+        26
+      ],
+      "seed_lengths": [
+        4,
+        2,
+        4
+      ],
+      "first_output": [
+        75505,
+        75506,
+        75507,
+        75508,
+        75509,
+        75510,
+        75511,
+        75512
+      ],
+      "second_output": [
+        75513,
+        75514,
+        75515,
+        75516,
+        75517,
+        75518,
+        75519,
+        75520
+      ],
+      "vectors": [
+        [
+          15,
+          75498,
+          75499,
+          75500,
+          75505,
+          75506,
+          75507,
+          75508
+        ],
+        [
+          75509,
+          75510,
+          75511,
+          75512,
+          75513,
+          75514,
+          75515,
+          75516
+        ],
+        [
+          75517,
+          75518,
+          75519,
+          75520,
+          26,
+          75502,
+          75503,
+          75504
+        ]
+      ]
+    }
+  },
+  "stats": {
+    "third_broadcast": 8,
+    "broadcast_copies": 16,
+    "stage": 11,
+    "reused_image_pointer": 23,
+    "small_stages": 1,
+    "early_input_literal": 1,
+    "stride16_pointer_roots": 2,
+    "literal_to_flow": 7,
+    "cheap_coefficient_roots": 2,
+    "rederived_head_roots": 12,
+    "alu_layout_roots": 2,
+    "hash_stage_final": 1,
+    "hash_stage_-60": 1,
+    "hash_stage_-40": 1,
+    "tail_child_transposes": 2,
+    "low_tail_bank": 1,
+    "arithmetic_to_flow": 8,
+    "arithmetic_to_load": 2,
+    "head_flow_literal_exchange": 1,
+    "bootstrap_loads_to_flow": 2,
+    "bootstrap_early_literals": 2,
+    "scalar_leaf_payloads": 256,
+    "additional_leaf_xor_groups": 32,
+    "raw_hash_parallel_restorations": 64,
+    "ones_seed_lanes": 5,
+    "ones_flow_ops": 1,
+    "triple_uniform_vectors": 3,
+    "triple_uniform_seed_lanes": 7,
+    "triple_uniform_flow_ops": 2
+  },
+  "new_executable": false,
+  "scope": "This concrete in-place ones pack and optional triple pack. Bound is necessary, not a score.",
+  "serial_control": {
+    "scratch": 1087,
+    "serialized_cycles": 12094,
+    "seeds": 2
+  }
+}

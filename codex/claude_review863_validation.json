@@ -1,0 +1,40 @@
+{
+  "reviewed_github_head": "866e2ceb17931c5c53a1ede280a4f416395d7c58",
+  "best_executable_cycles": 864,
+  "new_executable": false,
+  "official_tests": {
+    "passed": 9,
+    "cycles": [
+      864,
+      864,
+      864,
+      864,
+      864,
+      864,
+      864,
+      864,
+      864
+    ]
+  },
+  "hash_transport_tests": {
+    "passed": 9
+  },
+  "full_uint32_positive_controls": 3,
+  "raw_queries": 152,
+  "raw_statuses": {
+    "unsat": 151,
+    "unknown": 1
+  },
+  "independent_refinement_cases": 5,
+  "unknowns_closed_by_refinement": 1,
+  "protected_hashes": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  },
+  "artifact_hashes": {
+    "codex/audit_division_frontier863.py": "8bdd1e012c79fbad3004251ece947a5564fac6f828d0a00a6416b73bd85f676a",
+    "codex/division_frontier863_results.json": "5bd40806f5bbc2a42f429318b028ed6cb3b9a053c8ce9b02b5fb125633a10552",
+    "codex/division_frontier863_refinement.json": "36f3c6e3309b7c59828a029d9608be3dc561a7fe3dba89bd95f83beb290c4dc3"
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "config": {
+    "kind": "triple",
+    "names": [
+      "root",
+      "c0",
+      "c1"
+    ],
+    "staged": [
+      9
+    ],
+    "thirds": [],
+    "fused": 1,
+    "trades": 1,
+    "load4097": true
+  },
+  "layout": {
+    "order": [
+      "root",
+      "c0",
+      "c1"
+    ],
+    "direct_scalars": false,
+    "root_detached": false,
+    "roots": [
+      15,
+      24,
+      26
+    ],
+    "seed_lengths": [
+      4,
+      2,
+      4
+    ],
+    "first_output": [
+      75483,
+      75484,
+      75485,
+      75486,
+      75487,
+      75488,
+      75489,
+      75490
+    ],
+    "second_output": [
+      75491,
+      75492,
+      75493,
+      75494,
+      75495,
+      75496,
+      75497,
+      75498
+    ],
+    "vectors": [
+      [
+        15,
+        75476,
+        75477,
+        75478,
+        75483,
+        75484,
+        75485,
+        75486
+      ],
+      [
+        75487,
+        75488,
+        75489,
+        75490,
+        75491,
+        75492,
+        75493,
+        75494
+      ],
+      [
+        75495,
+        75496,
+        75497,
+        75498,
+        26,
+        75480,
+        75481,
+        75482
+      ]
+    ]
+  },
+  "counts": {
+    "load": 1688,
+    "valu": 6089,
+    "flow": 852,
+    "alu": 2930,
+    "store": 538
+  },
+  "arithmetic_lanes": 51642,
+  "prefix": {
+    "width": 6,
+    "availability_by_cycle": [
+      8,
+      62,
+      103,
+      155,
+      231,
+      369
+    ],
+    "objective_upper_bound": 275,
+    "waste_lower_bound": 85,
+    "scope": "Grant all arithmetic with ASAP<k for free and all later slots full; ignore non-arithmetic and cross-node resource contention."
+  },
+  "suffix": {
+    "width": 3,
+    "store_roots": 32,
+    "free_work": 0,
+    "objective_upper_bound": 64,
+    "waste_lower_bound": 116,
+    "scope": "Two stores per cycle; shared/non-store-root arithmetic is granted free placement and all other resources are relaxed."
+  },
+  "streams": {
+    "load": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 0,
+      "suffix_at_least": 21,
+      "instructions": 1684,
+      "capacity": 2
+    },
+    "store": {
+      "cycle_lower_bound": 349,
+      "prefix_at_least": 4,
+      "suffix_at_least": 109,
+      "instructions": 472,
+      "capacity": 2
+    },
+    "flow": {
+      "cycle_lower_bound": 862,
+      "prefix_at_least": 0,
+      "suffix_at_least": 10,
+      "instructions": 852,
+      "capacity": 1
+    }
+  },
+  "cycle_lower_bound": 865,
+  "new_executable": false,
+  "scope": "Only this explicit combined graph; bounds and serial replay are not scores."
+}

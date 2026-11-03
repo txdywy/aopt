@@ -1,0 +1,129 @@
+{"changes": {"cheap_coeff": false}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"head_fill": false}, "ok": true, "productive": 51665, "head": 61, "tail": 116, "effective": 51842, "bound": 865}
+{"changes": {"alu_layout": false}, "ok": true, "productive": 51663, "head": 52, "tail": 116, "effective": 51831, "bound": 864}
+{"changes": {"tail_low": false}, "ok": true, "productive": 51664, "head": 52, "tail": 116, "effective": 51832, "bound": 864}
+{"changes": {"low_alu": false}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"tail_single": true}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"early_literals": true}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"scalar_leaves": false}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"fold_raw_hash": false}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"scalar_root_head": true}, "ok": true, "productive": 51658, "head": 116, "tail": 116, "effective": 51890, "bound": 865}
+{"changes": {"root_flow_exchange": true}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"low_bank_records": true}, "ok": true, "productive": 51916, "head": 52, "tail": 116, "effective": 52084, "bound": 869}
+{"changes": {"early_small_low_bank": true}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"small_stage": ""}, "ok": true, "productive": 51672, "head": 52, "tail": 116, "effective": 51840, "bound": 864}
+{"changes": {"stage_hash": ""}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"stage_uniform": ""}, "ok": true, "productive": 51669, "head": 52, "tail": 116, "effective": 51837, "bound": 864}
+{"changes": {"stage_uniform": "-60"}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"stage_uniform": "-40"}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"tail_transposes": ""}, "ok": true, "productive": 51664, "head": 52, "tail": 116, "effective": 51832, "bound": 864}
+{"changes": {"tail_transposes": "31"}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"tail_transposes": "30,31"}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"tail_transposes": "28,29,30,31"}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"tail_transposes": "27,29,31"}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"bootstrap_flow": 3}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"bootstrap_flow": 4}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"bootstrap_early": 1}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"sink": 4}, "ok": true, "productive": 51669, "head": 52, "tail": 116, "effective": 51837, "bound": 864}
+{"changes": {"literals": 0}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"scalar_leaves": false, "tail_transposes": "27,29,31", "early_small_low_bank": true, "sink": 4}, "ok": true, "productive": 51669, "head": 52, "tail": 116, "effective": 51837, "bound": 864}
+{"changes": {"cheap_coeff": false, "tail_transposes": "28,29,30,31"}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"literals": 0, "low_alu": false, "tail_single": true}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"early_literals": true, "stage_uniform": "-60"}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"bootstrap_early": 1, "early_small_low_bank": true, "root_flow_exchange": true, "sink": 4}, "ok": true, "productive": 51669, "head": 52, "tail": 116, "effective": 51837, "bound": 864}
+{"changes": {"root_flow_exchange": true, "head_fill": false}, "ok": true, "productive": 51665, "head": 61, "tail": 116, "effective": 51842, "bound": 865}
+{"changes": {"head_fill": false, "fold_raw_hash": false, "early_literals": true, "tail_single": true}, "ok": true, "productive": 51665, "head": 61, "tail": 116, "effective": 51842, "bound": 865}
+{"changes": {"early_small_low_bank": true, "sink": 4}, "ok": true, "productive": 51669, "head": 52, "tail": 116, "effective": 51837, "bound": 864}
+{"changes": {"head_fill": false, "low_bank_records": true, "tail_transposes": "27,29,31", "fold_raw_hash": false}, "ok": true, "productive": 51916, "head": 66, "tail": 116, "effective": 52098, "bound": 869}
+{"changes": {"scalar_leaves": false, "tail_low": false}, "ok": true, "productive": 51664, "head": 52, "tail": 116, "effective": 51832, "bound": 864}
+{"changes": {"stage_uniform": "-60", "fold_raw_hash": false, "bootstrap_early": 1, "low_alu": false}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"stage_hash": "", "head_fill": false, "early_literals": true, "small_stage": "4,9"}, "ok": true, "productive": 51660, "head": 66, "tail": 116, "effective": 51842, "bound": 865}
+{"changes": {"bootstrap_flow": 4, "literals": 0, "low_bank_records": true, "scalar_root_head": true}, "ok": true, "productive": 51911, "head": 116, "tail": 116, "effective": 52143, "bound": 870}
+{"changes": {"scalar_leaves": false, "low_alu": false, "head_fill": false, "early_small_low_bank": true}, "ok": true, "productive": 51665, "head": 61, "tail": 116, "effective": 51842, "bound": 865}
+{"changes": {"low_bank_records": true, "scalar_root_head": true, "early_small_low_bank": true}, "ok": true, "productive": 51909, "head": 116, "tail": 116, "effective": 52141, "bound": 870}
+{"changes": {"early_small_low_bank": true, "scalar_root_head": true, "early_literals": true, "stage_hash": ""}, "ok": true, "productive": 51660, "head": 116, "tail": 116, "effective": 51892, "bound": 865}
+{"changes": {"small_stage": "4,9", "literals": 0, "cheap_coeff": false, "alu_layout": false}, "ok": true, "productive": 51660, "head": 60, "tail": 116, "effective": 51836, "bound": 864}
+{"changes": {"scalar_root_head": true, "stage_uniform": "-40", "tail_low": false}, "ok": true, "productive": 51659, "head": 116, "tail": 116, "effective": 51891, "bound": 865}
+{"changes": {"early_small_low_bank": true, "low_alu": false, "early_literals": true}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"scalar_root_head": true, "alu_layout": false, "stage_hash": "coeff,final", "low_alu": false}, "ok": true, "productive": 51653, "head": 116, "tail": 116, "effective": 51885, "bound": 865}
+{"changes": {"scalar_leaves": false, "head_fill": false, "root_flow_exchange": true}, "ok": true, "productive": 51665, "head": 61, "tail": 116, "effective": 51842, "bound": 865}
+{"changes": {"tail_transposes": "27,29,31", "tail_low": false, "fold_raw_hash": false}, "ok": true, "productive": 51664, "head": 52, "tail": 116, "effective": 51832, "bound": 864}
+{"changes": {"stage_hash": "", "scalar_root_head": true}, "ok": true, "productive": 51660, "head": 116, "tail": 116, "effective": 51892, "bound": 865}
+{"changes": {"fold_raw_hash": false, "scalar_leaves": false, "early_literals": true}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"tail_low": false, "alu_layout": false}, "ok": true, "productive": 51662, "head": 52, "tail": 116, "effective": 51830, "bound": 864}
+{"changes": {"alu_layout": false, "small_stage": "", "scalar_root_head": true}, "ok": true, "productive": 51663, "head": 108, "tail": 116, "effective": 51887, "bound": 865}
+{"changes": {"stage_uniform": "", "tail_low": false, "low_bank_records": true}, "ok": true, "productive": 51920, "head": 52, "tail": 116, "effective": 52088, "bound": 869}
+{"changes": {"head_fill": false, "fold_raw_hash": false}, "ok": true, "productive": 51665, "head": 61, "tail": 116, "effective": 51842, "bound": 865}
+{"changes": {"head_fill": false, "bootstrap_early": 1, "scalar_leaves": false, "tail_single": true}, "ok": true, "productive": 51665, "head": 61, "tail": 116, "effective": 51842, "bound": 865}
+{"changes": {"early_literals": true, "tail_transposes": "31"}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"low_alu": false, "tail_low": false}, "ok": true, "productive": 51664, "head": 52, "tail": 116, "effective": 51832, "bound": 864}
+{"changes": {"tail_transposes": "31", "tail_single": true, "scalar_leaves": false}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"bootstrap_early": 1, "sink": 4}, "ok": true, "productive": 51669, "head": 52, "tail": 116, "effective": 51837, "bound": 864}
+{"changes": {"head_fill": false, "tail_low": false, "low_bank_records": true}, "ok": true, "productive": 51916, "head": 66, "tail": 116, "effective": 52098, "bound": 869}
+{"changes": {"early_literals": true, "early_small_low_bank": true, "tail_single": true, "scalar_root_head": true}, "ok": true, "productive": 51658, "head": 116, "tail": 116, "effective": 51890, "bound": 865}
+{"changes": {"bootstrap_early": 1, "cheap_coeff": false}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"bootstrap_flow": 3, "tail_low": false}, "ok": true, "productive": 51664, "head": 52, "tail": 116, "effective": 51832, "bound": 864}
+{"changes": {"tail_transposes": "30,31", "cheap_coeff": false}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"low_bank_records": true, "stage_hash": "add,final", "small_stage": "", "scalar_leaves": false}, "ok": true, "productive": 51920, "head": 52, "tail": 116, "effective": 52088, "bound": 869}
+{"changes": {"bootstrap_flow": 3, "root_flow_exchange": true}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"tail_single": true, "fold_raw_hash": false, "bootstrap_early": 1}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"low_bank_records": true, "early_small_low_bank": true, "scalar_root_head": true, "bootstrap_early": 1}, "ok": true, "productive": 51909, "head": 116, "tail": 116, "effective": 52141, "bound": 870}
+{"changes": {"fold_raw_hash": false, "tail_low": false, "tail_transposes": "31"}, "ok": true, "productive": 51664, "head": 52, "tail": 116, "effective": 51832, "bound": 864}
+{"changes": {"alu_layout": false, "tail_low": false, "scalar_leaves": false, "head_fill": false}, "ok": true, "productive": 51662, "head": 63, "tail": 116, "effective": 51841, "bound": 865}
+{"changes": {"root_flow_exchange": true, "cheap_coeff": false}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"tail_single": true, "root_flow_exchange": true}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"sink": 4, "scalar_leaves": false, "cheap_coeff": false}, "ok": true, "productive": 51671, "head": 52, "tail": 116, "effective": 51839, "bound": 864}
+{"changes": {"fold_raw_hash": false, "tail_transposes": "28,29,30,31", "early_literals": true, "scalar_leaves": false}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"low_alu": false, "head_fill": false, "stage_hash": "coeff,final"}, "ok": true, "productive": 51662, "head": 62, "tail": 116, "effective": 51840, "bound": 864}
+{"changes": {"alu_layout": false, "bootstrap_early": 1, "fold_raw_hash": false, "head_fill": false}, "ok": true, "productive": 51663, "head": 62, "tail": 116, "effective": 51841, "bound": 865}
+{"changes": {"head_fill": false, "literals": 0, "scalar_leaves": false}, "ok": true, "productive": 51667, "head": 61, "tail": 116, "effective": 51844, "bound": 865}
+{"changes": {"tail_transposes": "28,29,30,31", "head_fill": false}, "ok": true, "productive": 51665, "head": 61, "tail": 116, "effective": 51842, "bound": 865}
+{"changes": {"early_literals": true, "bootstrap_early": 1}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"literals": 0, "alu_layout": false, "small_stage": "", "early_literals": true}, "ok": true, "productive": 51672, "head": 52, "tail": 116, "effective": 51840, "bound": 864}
+{"changes": {"low_bank_records": true, "bootstrap_early": 1}, "ok": true, "productive": 51916, "head": 52, "tail": 116, "effective": 52084, "bound": 869}
+{"changes": {"tail_single": true, "early_small_low_bank": true}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"scalar_leaves": false, "scalar_root_head": true}, "ok": true, "productive": 51658, "head": 116, "tail": 116, "effective": 51890, "bound": 865}
+{"changes": {"early_literals": true, "scalar_root_head": true, "low_bank_records": true, "alu_layout": false}, "ok": true, "productive": 51907, "head": 116, "tail": 116, "effective": 52139, "bound": 869}
+{"changes": {"early_small_low_bank": true, "scalar_leaves": false, "scalar_root_head": true}, "ok": true, "productive": 51658, "head": 116, "tail": 116, "effective": 51890, "bound": 865}
+{"changes": {"early_small_low_bank": true, "head_fill": false}, "ok": true, "productive": 51665, "head": 61, "tail": 116, "effective": 51842, "bound": 865}
+{"changes": {"tail_single": true, "root_flow_exchange": true, "cheap_coeff": false}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"tail_single": true, "stage_uniform": ""}, "ok": true, "productive": 51669, "head": 52, "tail": 116, "effective": 51837, "bound": 864}
+{"changes": {"low_alu": false, "scalar_root_head": true, "scalar_leaves": false}, "ok": true, "productive": 51658, "head": 116, "tail": 116, "effective": 51890, "bound": 865}
+{"changes": {"fold_raw_hash": false, "bootstrap_early": 1, "tail_transposes": "27,29,31"}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"tail_transposes": "", "low_bank_records": true}, "ok": true, "productive": 51916, "head": 52, "tail": 116, "effective": 52084, "bound": 869}
+{"changes": {"low_alu": false, "small_stage": "4,19", "scalar_leaves": false}, "ok": true, "productive": 51659, "head": 60, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"cheap_coeff": false, "bootstrap_flow": 4}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"low_bank_records": true, "sink": 4, "bootstrap_flow": 3, "fold_raw_hash": false}, "ok": true, "productive": 51920, "head": 52, "tail": 116, "effective": 52088, "bound": 869}
+{"changes": {"early_literals": true, "fold_raw_hash": false}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"root_flow_exchange": true, "fold_raw_hash": false, "early_small_low_bank": true}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"scalar_root_head": true, "bootstrap_flow": 4, "scalar_leaves": false}, "ok": true, "productive": 51658, "head": 116, "tail": 116, "effective": 51890, "bound": 865}
+{"changes": {"head_fill": false, "fold_raw_hash": false, "cheap_coeff": false}, "ok": true, "productive": 51667, "head": 59, "tail": 116, "effective": 51842, "bound": 865}
+{"changes": {"root_flow_exchange": true, "low_bank_records": true, "fold_raw_hash": false, "alu_layout": false}, "ok": true, "productive": 51914, "head": 53, "tail": 116, "effective": 52083, "bound": 869}
+{"changes": {"low_bank_records": true, "early_small_low_bank": true, "head_fill": false, "scalar_leaves": false}, "ok": true, "productive": 51916, "head": 66, "tail": 116, "effective": 52098, "bound": 869}
+{"changes": {"bootstrap_early": 1, "scalar_root_head": true, "scalar_leaves": false, "alu_layout": false}, "ok": true, "productive": 51656, "head": 116, "tail": 116, "effective": 51888, "bound": 865}
+{"changes": {"root_flow_exchange": true, "tail_transposes": "28,29,30,31", "scalar_root_head": true, "tail_low": false}, "ok": true, "productive": 51657, "head": 116, "tail": 116, "effective": 51889, "bound": 865}
+{"changes": {"bootstrap_early": 1, "stage_uniform": "-40", "cheap_coeff": false, "low_alu": false}, "ok": true, "productive": 51669, "head": 52, "tail": 116, "effective": 51837, "bound": 864}
+{"changes": {"sink": 4, "bootstrap_early": 1, "head_fill": false}, "ok": true, "productive": 51669, "head": 61, "tail": 116, "effective": 51846, "bound": 865}
+{"changes": {"stage_hash": "", "tail_transposes": "31"}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"low_alu": false, "fold_raw_hash": false, "literals": 0}, "ok": true, "productive": 51667, "head": 52, "tail": 116, "effective": 51835, "bound": 864}
+{"changes": {"bootstrap_early": 1, "alu_layout": false}, "ok": true, "productive": 51663, "head": 52, "tail": 116, "effective": 51831, "bound": 864}
+{"changes": {"scalar_shifts": 1}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"scalar_shifts": 2}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"scalar_shifts": 4}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"cache_vector": true}, "ok": true, "productive": 51675, "head": 52, "tail": 116, "effective": 51843, "bound": 865}
+{"changes": {"header_pack": "-:2"}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"header_pack": "+:16"}, "ok": true, "productive": 51665, "head": 59, "tail": 116, "effective": 51840, "bound": 864}
+{"changes": {"replicate_pack": true}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"coefficients": false}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}
+{"changes": {"head4097": false}, "ok": true, "productive": 51657, "head": 68, "tail": 116, "effective": 51841, "bound": 865}
+{"changes": {"stride16": false}, "ok": true, "productive": 51668, "head": 52, "tail": 116, "effective": 51836, "bound": 864}
+{"changes": {"early_input": false}, "ok": true, "productive": 51666, "head": 60, "tail": 116, "effective": 51842, "bound": 865}
+{"changes": {"cache_vector": true, "small_stage": "3,4"}, "ok": true, "productive": 51670, "head": 60, "tail": 116, "effective": 51846, "bound": 865}
+{"changes": {"early_input": false, "small_stage": "3,4"}, "ok": true, "productive": 51661, "head": 60, "tail": 116, "effective": 51837, "bound": 864}
+{"changes": {"cache_vector": true, "scalar_shifts": 1, "head4097": false}, "ok": true, "productive": 51667, "head": 68, "tail": 116, "effective": 51851, "bound": 865}
+{"changes": {"cache_vector": true, "early_input": false}, "ok": true, "productive": 51676, "head": 60, "tail": 116, "effective": 51852, "bound": 865}
+{"changes": {"coefficients": false, "head4097": false, "early_input": false}, "ok": true, "productive": 51658, "head": 76, "tail": 116, "effective": 51850, "bound": 865}
+{"changes": {"replicate_pack": true, "head4097": false, "cache_vector": true, "small_stage": "3,4"}, "ok": true, "productive": 51662, "head": 68, "tail": 116, "effective": 51846, "bound": 865}
+{"changes": {"replicate_pack": true, "early_input": false, "scalar_shifts": 1}, "ok": true, "productive": 51666, "head": 60, "tail": 116, "effective": 51842, "bound": 865}
+{"changes": {"head4097": false, "early_input": false, "small_stage": "3,4"}, "ok": true, "productive": 51653, "head": 84, "tail": 116, "effective": 51853, "bound": 865}
+{"changes": {}, "ok": true, "productive": 51665, "head": 52, "tail": 116, "effective": 51833, "bound": 864}

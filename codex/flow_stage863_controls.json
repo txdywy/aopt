@@ -1,0 +1,172 @@
+[
+  {
+    "config": {
+      "fused": 3
+    },
+    "control": {
+      "scratch": 1108,
+      "verified": 12080
+    },
+    "stats": {
+      "third_broadcast": 8,
+      "broadcast_copies": 16,
+      "stage": 11,
+      "reused_image_pointer": 23,
+      "small_stages": 1,
+      "early_input_literal": 1,
+      "stride16_pointer_roots": 2,
+      "literal_to_flow": 7,
+      "cheap_coefficient_roots": 2,
+      "rederived_head_roots": 12,
+      "alu_layout_roots": 2,
+      "hash_stage_final": 1,
+      "hash_stage_-60": 1,
+      "hash_stage_-40": 1,
+      "tail_child_transposes": 2,
+      "low_tail_bank": 1,
+      "arithmetic_to_flow": 8,
+      "arithmetic_to_load": 2,
+      "head_flow_literal_exchange": 1,
+      "bootstrap_loads_to_flow": 2,
+      "bootstrap_early_literals": 2,
+      "scalar_leaf_payloads": 256,
+      "additional_leaf_xor_groups": 32,
+      "raw_hash_parallel_restorations": 64,
+      "fused_d7_digits": 3,
+      "additional_literal_trades": 0
+    }
+  },
+  {
+    "config": {
+      "methods": {
+        "9": "stage",
+        "2310": "third"
+      },
+      "fused": 2,
+      "trades": 1
+    },
+    "control": {
+      "scratch": 1091,
+      "verified": 12093
+    },
+    "stats": {
+      "third_broadcast": 8,
+      "broadcast_copies": 16,
+      "stage": 11,
+      "reused_image_pointer": 23,
+      "small_stages": 1,
+      "early_input_literal": 1,
+      "stride16_pointer_roots": 2,
+      "literal_to_flow": 7,
+      "cheap_coefficient_roots": 2,
+      "rederived_head_roots": 12,
+      "alu_layout_roots": 2,
+      "hash_stage_final": 1,
+      "hash_stage_-60": 1,
+      "hash_stage_-40": 1,
+      "tail_child_transposes": 2,
+      "low_tail_bank": 1,
+      "arithmetic_to_flow": 8,
+      "arithmetic_to_load": 2,
+      "head_flow_literal_exchange": 1,
+      "bootstrap_loads_to_flow": 2,
+      "bootstrap_early_literals": 2,
+      "scalar_leaf_payloads": 256,
+      "additional_leaf_xor_groups": 32,
+      "raw_hash_parallel_restorations": 64,
+      "fused_d7_digits": 2,
+      "uniform_stage": 1,
+      "uniform_third": 1,
+      "additional_literal_trades": 1
+    }
+  },
+  {
+    "config": {
+      "methods": {
+        "3": "stage",
+        "-2": "third",
+        "4097": "stage"
+      },
+      "fused": 3,
+      "trades": 2
+    },
+    "control": {
+      "scratch": 1066,
+      "verified": 12102
+    },
+    "stats": {
+      "third_broadcast": 8,
+      "broadcast_copies": 16,
+      "stage": 11,
+      "reused_image_pointer": 23,
+      "small_stages": 1,
+      "early_input_literal": 1,
+      "stride16_pointer_roots": 2,
+      "literal_to_flow": 7,
+      "cheap_coefficient_roots": 2,
+      "rederived_head_roots": 12,
+      "alu_layout_roots": 2,
+      "hash_stage_final": 1,
+      "hash_stage_-60": 1,
+      "hash_stage_-40": 1,
+      "tail_child_transposes": 2,
+      "low_tail_bank": 1,
+      "arithmetic_to_flow": 8,
+      "arithmetic_to_load": 2,
+      "head_flow_literal_exchange": 1,
+      "bootstrap_loads_to_flow": 2,
+      "bootstrap_early_literals": 2,
+      "scalar_leaf_payloads": 256,
+      "additional_leaf_xor_groups": 32,
+      "raw_hash_parallel_restorations": 64,
+      "fused_d7_digits": 3,
+      "uniform_stage": 2,
+      "uniform_third": 1,
+      "additional_literal_trades": 2
+    }
+  },
+  {
+    "config": {
+      "methods": {
+        "root": "third",
+        "2": "stage"
+      },
+      "fused": 3,
+      "trades": 1
+    },
+    "control": {
+      "scratch": 1058,
+      "verified": 12094
+    },
+    "stats": {
+      "third_broadcast": 8,
+      "broadcast_copies": 16,
+      "stage": 11,
+      "reused_image_pointer": 23,
+      "small_stages": 1,
+      "early_input_literal": 1,
+      "stride16_pointer_roots": 2,
+      "literal_to_flow": 7,
+      "cheap_coefficient_roots": 2,
+      "rederived_head_roots": 12,
+      "alu_layout_roots": 2,
+      "hash_stage_final": 1,
+      "hash_stage_-60": 1,
+      "hash_stage_-40": 1,
+      "tail_child_transposes": 2,
+      "low_tail_bank": 1,
+      "arithmetic_to_flow": 8,
+      "arithmetic_to_load": 2,
+      "head_flow_literal_exchange": 1,
+      "bootstrap_loads_to_flow": 2,
+      "bootstrap_early_literals": 2,
+      "scalar_leaf_payloads": 256,
+      "additional_leaf_xor_groups": 32,
+      "raw_hash_parallel_restorations": 64,
+      "fused_d7_digits": 3,
+      "uniform_third": 1,
+      "uniform_stage": 1,
+      "additional_literal_trades": 1
+    }
+  }
+]

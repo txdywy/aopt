@@ -1,0 +1,32 @@
+{
+  "objective": "middle-tail",
+  "first": "affine",
+  "op": "mad",
+  "width": 11,
+  "status": "polynomial_template_excluded",
+  "coefficient_equation": {
+    "c": 1733,
+    "delta": 521,
+    "rhs": 0
+  },
+  "rejected": [
+    {
+      "a": 0,
+      "b": 521,
+      "c": 1733,
+      "input": 513,
+      "candidate": 718,
+      "expected": 1742
+    },
+    {
+      "a": 1024,
+      "b": 1545,
+      "c": 1733,
+      "input": 513,
+      "candidate": 718,
+      "expected": 1742
+    }
+  ],
+  "survivors": [],
+  "scope": "All degree-at-most-two polynomials modulo 2**width; hence affine then MAD over uint32"
+}

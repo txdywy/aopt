@@ -1,0 +1,13 @@
+{
+  "horizon": 864,
+  "freeze_before": 122,
+  "inconsistent_nodes": [],
+  "positive_windows": 0,
+  "cuts": [],
+  "supplied_tail_waste": 116,
+  "scope": "fixed LF calendar and frozen compute prefix; necessary tests only",
+  "arithmetic_lanes": 51665,
+  "model_text_sha256": "5f088c550592a1a349413aa33ec1186c0ed38f37a133613cedd9efffaaeb3946",
+  "calendar_sha256": "c1955752b3976a1c48cb536558431370ce62e1c0fe36c441c7c337f0691e37f2",
+  "status": "Relaxed LF calendar only; no verified 864 program"
+}

@@ -1,0 +1,608 @@
+{
+  "evaluations": 44,
+  "distinct_configs": 42,
+  "distinct_graphs": 42,
+  "graphs": [
+    {
+      "sha256": "7d5d82fc576bf44c7117dc8c7246a1517afd48345715da674f80129a462d0bff",
+      "configs": [
+        {
+          "fused": 0,
+          "methods": {},
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "9904ba6434c70214caa11ef9969e972399c186d65b013da0e0a91ddd1f35a9c2",
+      "configs": [
+        {
+          "fused": 2,
+          "methods": {},
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "fe1a0e0aadb7054ba1ff9446adbfa0021cee39b4b3a25e3608b1bba1c83cc9b3",
+      "configs": [
+        {
+          "fused": 0,
+          "methods": {
+            "9": "stage"
+          },
+          "trades": 1
+        }
+      ]
+    },
+    {
+      "sha256": "8c7b3782b5f4108133d21847389ad2725abc56b1ad899ee27822b41eed6f2f3f",
+      "configs": [
+        {
+          "fused": 2,
+          "methods": {
+            "9": "stage"
+          },
+          "trades": 1
+        }
+      ]
+    },
+    {
+      "sha256": "dfa5d9c51048f157a7d059f3d19307154159bb1664f7a810ea2e6e1fa51620a7",
+      "configs": [
+        {
+          "fused": 0,
+          "methods": {
+            "9": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "897237b3e4ac4b6949c8ef72fafc6f784eeb00604ddd8cfc9601e6bb9df4d12c",
+      "configs": [
+        {
+          "fused": 2,
+          "methods": {
+            "9": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "3b7931372c6573c1d74ab9e30d2728f5f9601b8d18e80de8b17238ecb3c939e4",
+      "configs": [
+        {
+          "fused": 0,
+          "methods": {
+            "-2": "stage"
+          },
+          "trades": 1
+        }
+      ]
+    },
+    {
+      "sha256": "de248adba1401e8afefabf5cd854308ee40f7dd7092e9c39044d5fcbc45e977e",
+      "configs": [
+        {
+          "fused": 2,
+          "methods": {
+            "-2": "stage"
+          },
+          "trades": 1
+        }
+      ]
+    },
+    {
+      "sha256": "a88e5c4ab29f294fccc725a8dd8de2e0b39901099eb8f2850e01f9bb381ed6ff",
+      "configs": [
+        {
+          "fused": 0,
+          "methods": {
+            "-2": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "621142ca3c5070606f6e496d1d23ffa9be281e1c118541458c54fb1d677cb2ba",
+      "configs": [
+        {
+          "fused": 2,
+          "methods": {
+            "-2": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "fb5c014e6bc7f2eb7947e8c8e397cf48499a10a0e15e08df37b98d4e5d671751",
+      "configs": [
+        {
+          "fused": 0,
+          "methods": {
+            "2310": "stage"
+          },
+          "trades": 1
+        }
+      ]
+    },
+    {
+      "sha256": "b889e044e1566ae2dbc0fc9c9612117eb5562f4d7dc2509433b33ae901f189b4",
+      "configs": [
+        {
+          "fused": 2,
+          "methods": {
+            "2310": "stage"
+          },
+          "trades": 1
+        }
+      ]
+    },
+    {
+      "sha256": "12e481e525609ceb068cc7b7edf3adf9ad10a54760e63f936fedf90126aec7f1",
+      "configs": [
+        {
+          "fused": 0,
+          "methods": {
+            "2310": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "ec2f8f8652d859aa309f6ba3dacc753afd1e5f11a2c134cbd5099136a83fe802",
+      "configs": [
+        {
+          "fused": 2,
+          "methods": {
+            "2310": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "6508448937b210ba397322d7c94c69e7550b7102aa15c04956859435caa617ef",
+      "configs": [
+        {
+          "fused": 0,
+          "methods": {
+            "4097": "stage"
+          },
+          "trades": 1
+        }
+      ]
+    },
+    {
+      "sha256": "bbac4de69d52d115981291a928addfdac38d58030185c332463882dc8e96f825",
+      "configs": [
+        {
+          "fused": 2,
+          "methods": {
+            "4097": "stage"
+          },
+          "trades": 1
+        }
+      ]
+    },
+    {
+      "sha256": "86379cfe1eee6f055093efd9ba8fcfb6973ba13a885ada52fb29701edd8df34d",
+      "configs": [
+        {
+          "fused": 0,
+          "methods": {
+            "4097": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "b1b9b01b35f1ff5ac5f269ff1c5a4a793da9a59214bff1dd6bfc55436b38ce88",
+      "configs": [
+        {
+          "fused": 2,
+          "methods": {
+            "4097": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "4d5082d3be87ecc6c87b3971f839360b0ca369875fb75f11fda711fad535ce68",
+      "configs": [
+        {
+          "fused": 1,
+          "methods": {
+            "-2": "stage",
+            "19": "stage",
+            "3": "stage",
+            "9": "stage"
+          },
+          "trades": 3
+        }
+      ]
+    },
+    {
+      "sha256": "745219efca1e2f84e20549e2821e6b9144a27e931263dddc3d55487b4070b1a3",
+      "configs": [
+        {
+          "fused": 3,
+          "methods": {
+            "-2": "stage",
+            "19": "stage",
+            "3": "stage",
+            "9": "stage"
+          },
+          "trades": 3
+        }
+      ]
+    },
+    {
+      "sha256": "c719e82d43610423aa6b5c22364666351a502ffce9720b14878bd70ed8f8e35b",
+      "configs": [
+        {
+          "fused": 1,
+          "methods": {
+            "-2": "third",
+            "19": "third",
+            "3": "third",
+            "9": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "58b81eac28d6c3ba5835212f581316f0e365478f30f5e024ac2f2267dea3d48f",
+      "configs": [
+        {
+          "fused": 3,
+          "methods": {
+            "-2": "third",
+            "19": "third",
+            "3": "third",
+            "9": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "fcfa58d050aca612aba4e952929a6c4cd2ddd93ab895ba35e29a7030015d5c5c",
+      "configs": [
+        {
+          "fused": 1,
+          "methods": {
+            "-2": "stage",
+            "2310": "stage",
+            "9": "stage"
+          },
+          "trades": 3
+        }
+      ]
+    },
+    {
+      "sha256": "8d8b9f1b0091e22a52fbd8278416400f21ab96fe214de7418416a92fe9f625d3",
+      "configs": [
+        {
+          "fused": 3,
+          "methods": {
+            "-2": "stage",
+            "2310": "stage",
+            "9": "stage"
+          },
+          "trades": 3
+        }
+      ]
+    },
+    {
+      "sha256": "3e91ee4d2c57a5689c9d33780fc55c36a535d8fb5dc5fb2526011d4444551ec9",
+      "configs": [
+        {
+          "fused": 1,
+          "methods": {
+            "-2": "third",
+            "2310": "third",
+            "9": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "a947f4cc22c0856454fba604a670f2dea53210e2359f503429299d510522bee4",
+      "configs": [
+        {
+          "fused": 3,
+          "methods": {
+            "-2": "third",
+            "2310": "third",
+            "9": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "5a85714d77bcb372c530dba219094f086fd6d148bff4dcb012f4206e09b46690",
+      "configs": [
+        {
+          "fused": 1,
+          "methods": {
+            "-2": "stage",
+            "2310": "stage",
+            "4097": "stage",
+            "9": "stage"
+          },
+          "trades": 3
+        }
+      ]
+    },
+    {
+      "sha256": "b9aea1ffeb37d5a162a3b67b53b7849bc8d9805b41da4b0582a1dd60fde56ef5",
+      "configs": [
+        {
+          "fused": 3,
+          "methods": {
+            "-2": "stage",
+            "2310": "stage",
+            "4097": "stage",
+            "9": "stage"
+          },
+          "trades": 3
+        }
+      ]
+    },
+    {
+      "sha256": "b5111c102881bf2080c7a93806dbe03faea969d59bc338e86a5d11afc27c12ec",
+      "configs": [
+        {
+          "fused": 2,
+          "methods": {
+            "-2": "third",
+            "2310": "third",
+            "4097": "third",
+            "9": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "658f2a72ad7a89449d68d840bbf73f640b1cc676525e10a61f7d3d0e6b6315ee",
+      "configs": [
+        {
+          "fused": 4,
+          "methods": {
+            "-2": "third",
+            "2310": "third",
+            "4097": "third",
+            "9": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "bf73d379c59ac2b6e121e1c6ca12d1237e02a798e4dc77dee8de931f638a7e79",
+      "configs": [
+        {
+          "fused": 1,
+          "methods": {
+            "-2": "stage",
+            "16": "stage",
+            "19": "stage",
+            "2": "stage",
+            "2127912214": "stage",
+            "2310": "stage",
+            "3": "stage",
+            "3345072700": "stage",
+            "4097": "stage",
+            "9": "stage"
+          },
+          "trades": 3
+        }
+      ]
+    },
+    {
+      "sha256": "fe990aa27e45f1620e706bf041c08c12c09d3360dbdb6f98de97ea8945cfde40",
+      "configs": [
+        {
+          "fused": 3,
+          "methods": {
+            "-2": "stage",
+            "16": "stage",
+            "19": "stage",
+            "2": "stage",
+            "2127912214": "stage",
+            "2310": "stage",
+            "3": "stage",
+            "3345072700": "stage",
+            "4097": "stage",
+            "9": "stage"
+          },
+          "trades": 3
+        }
+      ]
+    },
+    {
+      "sha256": "06f8571bcb06264922f0d6173a247ff88e53ff5e534735ca707fdf7551d4500b",
+      "configs": [
+        {
+          "fused": 5,
+          "methods": {
+            "-2": "third",
+            "16": "third",
+            "19": "third",
+            "2": "third",
+            "2127912214": "third",
+            "2310": "third",
+            "3": "third",
+            "3345072700": "third",
+            "4097": "third",
+            "9": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "317fc5d0e3cdf1872d0c3d16033e5da5f72dbecdae976aea9a3460a257af0fb8",
+      "configs": [
+        {
+          "fused": 7,
+          "methods": {
+            "-2": "third",
+            "16": "third",
+            "19": "third",
+            "2": "third",
+            "2127912214": "third",
+            "2310": "third",
+            "3": "third",
+            "3345072700": "third",
+            "4097": "third",
+            "9": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "abd7c367d8ada0ec49036bf104bba209b63190a871355cfe184cf75121041d3d",
+      "configs": [
+        {
+          "fused": 1,
+          "methods": {
+            "-2": "stage",
+            "19": "stage",
+            "2": "stage",
+            "2310": "stage",
+            "3": "stage",
+            "3345072700": "stage",
+            "4097": "stage",
+            "9": "stage"
+          },
+          "trades": 3
+        }
+      ]
+    },
+    {
+      "sha256": "c248b591605f4790d7a2a14e3d21637ea784a2cfa82b272e8fe06e2d69d0b887",
+      "configs": [
+        {
+          "fused": 3,
+          "methods": {
+            "-2": "stage",
+            "19": "stage",
+            "2": "stage",
+            "2310": "stage",
+            "3": "stage",
+            "3345072700": "stage",
+            "4097": "stage",
+            "9": "stage"
+          },
+          "trades": 3
+        }
+      ]
+    },
+    {
+      "sha256": "4c2a9c8dff9da3d04fd3a10a8281bbf36ceaed6c86e7a0e5aa78df7530126145",
+      "configs": [
+        {
+          "fused": 4,
+          "methods": {
+            "-2": "third",
+            "19": "third",
+            "2": "third",
+            "2310": "third",
+            "3": "third",
+            "3345072700": "third",
+            "4097": "third",
+            "9": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "90e90e56c0e00a8ded354639592962f48d08d3a99b0f24ad9b25be12e8bc4ad2",
+      "configs": [
+        {
+          "fused": 6,
+          "methods": {
+            "-2": "third",
+            "19": "third",
+            "2": "third",
+            "2310": "third",
+            "3": "third",
+            "3345072700": "third",
+            "4097": "third",
+            "9": "third"
+          },
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "sha256": "ef627b9c286cae35921acb45a3d514e67a1730a7fe27b37132a5403aa10488e1",
+      "configs": [
+        {
+          "load4097": true
+        }
+      ]
+    },
+    {
+      "sha256": "7105bdb6d1be95b82e6c64d8c159986f4ee6ef79230a92c35eb289c40b05a38b",
+      "configs": [
+        {
+          "load4097": true,
+          "methods": {
+            "9": "stage"
+          },
+          "trades": 1
+        }
+      ]
+    },
+    {
+      "sha256": "51937e7be3e9f12f3fbdadb449c140c6e3f67fcdbe7820a0e1a92a09ed2459f7",
+      "configs": [
+        {
+          "fused": 1,
+          "load4097": true,
+          "methods": {
+            "-2": "third",
+            "2310": "stage",
+            "9": "stage"
+          },
+          "trades": 2
+        }
+      ]
+    },
+    {
+      "sha256": "4a605c5bbba40017bc551e1ed11d31dee7a65c0d9ea709fb3220d51537ee3525",
+      "configs": [
+        {
+          "fused": 2,
+          "load4097": true,
+          "methods": {
+            "-2": "stage",
+            "19": "third",
+            "2310": "third",
+            "3": "third",
+            "9": "stage"
+          },
+          "trades": 2
+        }
+      ]
+    }
+  ],
+  "scope": "Ordered cleaned virtual-SSA instructions and operand roles; no optimized executable score."
+}

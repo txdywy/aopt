@@ -1,0 +1,24 @@
+{
+  "width": 11,
+  "input_stride": 8,
+  "upper_width": 8,
+  "control": true,
+  "input_key": null,
+  "total_affine_pairs": 65536,
+  "remaining_affine_pairs": 65536,
+  "rectangles_tested": 1408,
+  "universally_bad_rectangles": 0,
+  "witnesses": [],
+  "positive_pair_retained": true,
+  "result": "necessary_pairs_survive",
+  "seconds": 0.026,
+  "new_executable": false,
+  "scope": "First t=A*x+B, arbitrary XOR/AND/OR prefix over x,t and constants, then arbitrary integer-polynomial continuation. Only universally bad output-key rectangles are used; surviving pairs are necessary conditions, not candidates.",
+  "pair_membership": {
+    "coefficient_bits": 8,
+    "bitorder": "little",
+    "pairs": 65536,
+    "sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f",
+    "zlib_base64": "eNrtwQENAAAAwqD+qW8ON6AAAAAAAAAAgHcD9KPh0g=="
+  }
+}

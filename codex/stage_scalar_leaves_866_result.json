@@ -1,0 +1,13 @@
+{
+  "cycles": 866,
+  "verified_full32_cases": 20,
+  "scratch_words": 1271,
+  "arithmetic_lanes": 51671,
+  "load": 1690,
+  "flow": 849,
+  "store": 522,
+  "model_text_sha256": "a7c8e4fbe12487cadfaa4b14fd8a4fc8d6f04c14e6df6827f7381b244fd24935",
+  "schedule_sha256": "c9e2c97aa5185c957843c16a4cad41469f75a5211bd8384596e0a51129491c7b",
+  "recipe": "python3.12 -m codex.research_stage864 --prefix /tmp/leaf866 --stage-hash final --stage-uniform=-60,-40 --cheap-coeff --head-fill --head-flow --alu-layout --tail-transposes 29,31 --tail-low --low-alu --early-literals --scalar-leaves --sink 8 --literals 3",
+  "scope": "Original frozen-machine replay. The active 865 submission remains unchanged."
+}

@@ -1,0 +1,120 @@
+{
+  "sequence": [
+    "mad",
+    "mad",
+    "^",
+    "mad"
+  ],
+  "width": 32,
+  "seconds_limit": 10,
+  "check_ms": 9000,
+  "endpoint_keys": "arbitrary; input highest bit normalized to zero",
+  "constant_multipliers_only": false,
+  "two_arbitrary_constants_per_instruction": true,
+  "initial_samples": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    256,
+    264,
+    288,
+    296,
+    511,
+    512,
+    1023,
+    1024,
+    4294967295,
+    4282271655,
+    50195370,
+    2985400128,
+    2755324811,
+    3657624615,
+    4260625561,
+    1371353666,
+    585497797,
+    3493307130,
+    2688784331,
+    2729064113,
+    2305346838,
+    3894334063,
+    2066121150,
+    2188884389,
+    3007176284
+  ],
+  "pin_original": true,
+  "events": [
+    {
+      "samples": 41,
+      "synthesis": "sat",
+      "full32_verification": "unsat"
+    }
+  ],
+  "result": "proved_equivalent_full32",
+  "new_executable": false,
+  "program": [
+    {
+      "op": "mad",
+      "operands": [
+        0,
+        1,
+        2
+      ],
+      "constants": [
+        33,
+        3925396509
+      ]
+    },
+    {
+      "op": "mad",
+      "operands": [
+        0,
+        2,
+        3
+      ],
+      "constants": [
+        16896,
+        2899272192
+      ]
+    },
+    {
+      "op": "^",
+      "operands": [
+        1,
+        2,
+        0
+      ],
+      "constants": [
+        0,
+        0
+      ]
+    },
+    {
+      "op": "mad",
+      "operands": [
+        3,
+        4,
+        5
+      ],
+      "constants": [
+        9,
+        4251993797
+      ]
+    }
+  ],
+  "input_key": 0,
+  "output_key": 0,
+  "seconds": 0.005
+}

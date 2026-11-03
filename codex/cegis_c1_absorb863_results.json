@@ -1,0 +1,624 @@
+{
+ "c1_all": {
+  "wirings": 1748,
+  "counts": {
+   "unsat": 1748
+  },
+  "final_ladder_step": {
+   "(8, 'unsat')": 1606,
+   "(11, 'unsat')": 116,
+   "(10, 'unsat')": 26
+  },
+  "orders": {
+   "mad,&,^,mad": {
+    "unsat": 437
+   },
+   "mad,^,&,mad": {
+    "unsat": 437
+   },
+   "mad,^,|,mad": {
+    "unsat": 437
+   },
+   "mad,|,^,mad": {
+    "unsat": 437
+   }
+  },
+  "unresolved": [],
+  "cpu_seconds": 262
+ },
+ "open17": {
+  "wirings": 42868,
+  "counts": {
+   "unsat": 42864,
+   "timeout": 4
+  },
+  "final_ladder_step": {
+   "(8, 'unsat')": 42394,
+   "(11, 'unsat')": 435,
+   "(10, 'unsat')": 35,
+   "(11, 'timeout')": 4
+  },
+  "orders": {
+   "&,mad,^,mad": {
+    "unsat": 2744
+   },
+   "&,mad,|,mad": {
+    "unsat": 2744
+   },
+   "^,mad,&,mad": {
+    "unsat": 2743,
+    "timeout": 1
+   },
+   "^,mad,mad,&": {
+    "unsat": 2113,
+    "timeout": 1
+   },
+   "^,mad,mad,|": {
+    "unsat": 2113,
+    "timeout": 1
+   },
+   "^,mad,|,mad": {
+    "unsat": 2743,
+    "timeout": 1
+   },
+   "mad,&,^,mad": {
+    "unsat": 2744
+   },
+   "mad,^,&,mad": {
+    "unsat": 2744
+   },
+   "mad,^,mad,&": {
+    "unsat": 2114
+   },
+   "mad,^,mad,|": {
+    "unsat": 2114
+   },
+   "mad,^,|,mad": {
+    "unsat": 2744
+   },
+   "mad,|,^,mad": {
+    "unsat": 2744
+   },
+   "|,mad,&,mad": {
+    "unsat": 2744
+   },
+   "|,mad,^,mad": {
+    "unsat": 2744
+   },
+   "|,mad,mad,&": {
+    "unsat": 2114
+   },
+   "|,mad,mad,^": {
+    "unsat": 2114
+   },
+   "|,mad,|,mad": {
+    "unsat": 2744
+   }
+  },
+  "unresolved": [
+   {
+    "order": [
+     "^",
+     "mad",
+     "&",
+     "mad"
+    ],
+    "wiring": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      4,
+      5
+     ]
+    ],
+    "ladder": [
+     [
+      8,
+      "sat"
+     ],
+     [
+      10,
+      "sat"
+     ],
+     [
+      11,
+      "timeout"
+     ]
+    ]
+   },
+   {
+    "order": [
+     "^",
+     "mad",
+     "mad",
+     "&"
+    ],
+    "wiring": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      2,
+      3,
+      4
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "ladder": [
+     [
+      8,
+      "sat"
+     ],
+     [
+      10,
+      "sat"
+     ],
+     [
+      11,
+      "timeout"
+     ]
+    ]
+   },
+   {
+    "order": [
+     "^",
+     "mad",
+     "mad",
+     "|"
+    ],
+    "wiring": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      2,
+      3,
+      4
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "ladder": [
+     [
+      8,
+      "sat"
+     ],
+     [
+      10,
+      "sat"
+     ],
+     [
+      11,
+      "timeout"
+     ]
+    ]
+   },
+   {
+    "order": [
+     "^",
+     "mad",
+     "|",
+     "mad"
+    ],
+    "wiring": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      4,
+      5
+     ]
+    ],
+    "ladder": [
+     [
+      8,
+      "sat"
+     ],
+     [
+      10,
+      "sat"
+     ],
+     [
+      11,
+      "timeout"
+     ]
+    ]
+   }
+  ],
+  "cpu_seconds": 2249,
+  "unresolved_closure": "Each of the 4 unresolved wirings depends on x only through one AND/OR with a constant (or ends in one). F is a bijection modulo every 2^w, so such a program must keep the constant trivial and collapse to (x XOR A)*B+C. That two-instruction form is SAT at widths 8 and 10 but UNSAT at width 11, closing all four."
+ },
+ "onemad": {
+  "wirings": 33102,
+  "counts": {
+   "unsat": 33102
+  },
+  "final_ladder_step": {
+   "(8, 'unsat')": 32930,
+   "(11, 'unsat')": 170,
+   "(10, 'unsat')": 2
+  },
+  "orders": {
+   "&,&,&,mad": {
+    "unsat": 392
+   },
+   "&,&,^,mad": {
+    "unsat": 392
+   },
+   "&,&,mad,&": {
+    "unsat": 302
+   },
+   "&,&,mad,^": {
+    "unsat": 302
+   },
+   "&,&,mad,|": {
+    "unsat": 302
+   },
+   "&,&,|,mad": {
+    "unsat": 392
+   },
+   "&,^,&,mad": {
+    "unsat": 392
+   },
+   "&,^,^,mad": {
+    "unsat": 392
+   },
+   "&,^,mad,&": {
+    "unsat": 302
+   },
+   "&,^,mad,^": {
+    "unsat": 302
+   },
+   "&,^,mad,|": {
+    "unsat": 302
+   },
+   "&,^,|,mad": {
+    "unsat": 392
+   },
+   "&,mad,&,&": {
+    "unsat": 266
+   },
+   "&,mad,&,^": {
+    "unsat": 266
+   },
+   "&,mad,&,|": {
+    "unsat": 266
+   },
+   "&,mad,^,&": {
+    "unsat": 266
+   },
+   "&,mad,^,^": {
+    "unsat": 266
+   },
+   "&,mad,^,|": {
+    "unsat": 266
+   },
+   "&,mad,|,&": {
+    "unsat": 266
+   },
+   "&,mad,|,^": {
+    "unsat": 266
+   },
+   "&,mad,|,|": {
+    "unsat": 266
+   },
+   "&,|,&,mad": {
+    "unsat": 392
+   },
+   "&,|,^,mad": {
+    "unsat": 392
+   },
+   "&,|,mad,&": {
+    "unsat": 302
+   },
+   "&,|,mad,^": {
+    "unsat": 302
+   },
+   "&,|,mad,|": {
+    "unsat": 302
+   },
+   "&,|,|,mad": {
+    "unsat": 392
+   },
+   "^,&,&,mad": {
+    "unsat": 392
+   },
+   "^,&,^,mad": {
+    "unsat": 392
+   },
+   "^,&,mad,&": {
+    "unsat": 302
+   },
+   "^,&,mad,^": {
+    "unsat": 302
+   },
+   "^,&,mad,|": {
+    "unsat": 302
+   },
+   "^,&,|,mad": {
+    "unsat": 392
+   },
+   "^,^,&,mad": {
+    "unsat": 392
+   },
+   "^,^,^,mad": {
+    "unsat": 392
+   },
+   "^,^,mad,&": {
+    "unsat": 302
+   },
+   "^,^,mad,^": {
+    "unsat": 302
+   },
+   "^,^,mad,|": {
+    "unsat": 302
+   },
+   "^,^,|,mad": {
+    "unsat": 392
+   },
+   "^,mad,&,&": {
+    "unsat": 266
+   },
+   "^,mad,&,^": {
+    "unsat": 266
+   },
+   "^,mad,&,|": {
+    "unsat": 266
+   },
+   "^,mad,^,&": {
+    "unsat": 266
+   },
+   "^,mad,^,^": {
+    "unsat": 266
+   },
+   "^,mad,^,|": {
+    "unsat": 266
+   },
+   "^,mad,|,&": {
+    "unsat": 266
+   },
+   "^,mad,|,^": {
+    "unsat": 266
+   },
+   "^,mad,|,|": {
+    "unsat": 266
+   },
+   "^,|,&,mad": {
+    "unsat": 392
+   },
+   "^,|,^,mad": {
+    "unsat": 392
+   },
+   "^,|,mad,&": {
+    "unsat": 302
+   },
+   "^,|,mad,^": {
+    "unsat": 302
+   },
+   "^,|,mad,|": {
+    "unsat": 302
+   },
+   "^,|,|,mad": {
+    "unsat": 392
+   },
+   "mad,&,&,&": {
+    "unsat": 266
+   },
+   "mad,&,&,^": {
+    "unsat": 266
+   },
+   "mad,&,&,|": {
+    "unsat": 266
+   },
+   "mad,&,^,&": {
+    "unsat": 266
+   },
+   "mad,&,^,^": {
+    "unsat": 266
+   },
+   "mad,&,^,|": {
+    "unsat": 266
+   },
+   "mad,&,|,&": {
+    "unsat": 266
+   },
+   "mad,&,|,^": {
+    "unsat": 266
+   },
+   "mad,&,|,|": {
+    "unsat": 266
+   },
+   "mad,^,&,&": {
+    "unsat": 266
+   },
+   "mad,^,&,^": {
+    "unsat": 266
+   },
+   "mad,^,&,|": {
+    "unsat": 266
+   },
+   "mad,^,^,&": {
+    "unsat": 266
+   },
+   "mad,^,^,^": {
+    "unsat": 266
+   },
+   "mad,^,^,|": {
+    "unsat": 266
+   },
+   "mad,^,|,&": {
+    "unsat": 266
+   },
+   "mad,^,|,^": {
+    "unsat": 266
+   },
+   "mad,^,|,|": {
+    "unsat": 266
+   },
+   "mad,|,&,&": {
+    "unsat": 266
+   },
+   "mad,|,&,^": {
+    "unsat": 266
+   },
+   "mad,|,&,|": {
+    "unsat": 266
+   },
+   "mad,|,^,&": {
+    "unsat": 266
+   },
+   "mad,|,^,^": {
+    "unsat": 266
+   },
+   "mad,|,^,|": {
+    "unsat": 266
+   },
+   "mad,|,|,&": {
+    "unsat": 266
+   },
+   "mad,|,|,^": {
+    "unsat": 266
+   },
+   "mad,|,|,|": {
+    "unsat": 266
+   },
+   "|,&,&,mad": {
+    "unsat": 392
+   },
+   "|,&,^,mad": {
+    "unsat": 392
+   },
+   "|,&,mad,&": {
+    "unsat": 302
+   },
+   "|,&,mad,^": {
+    "unsat": 302
+   },
+   "|,&,mad,|": {
+    "unsat": 302
+   },
+   "|,&,|,mad": {
+    "unsat": 392
+   },
+   "|,^,&,mad": {
+    "unsat": 392
+   },
+   "|,^,^,mad": {
+    "unsat": 392
+   },
+   "|,^,mad,&": {
+    "unsat": 302
+   },
+   "|,^,mad,^": {
+    "unsat": 302
+   },
+   "|,^,mad,|": {
+    "unsat": 302
+   },
+   "|,^,|,mad": {
+    "unsat": 392
+   },
+   "|,mad,&,&": {
+    "unsat": 266
+   },
+   "|,mad,&,^": {
+    "unsat": 266
+   },
+   "|,mad,&,|": {
+    "unsat": 266
+   },
+   "|,mad,^,&": {
+    "unsat": 266
+   },
+   "|,mad,^,^": {
+    "unsat": 266
+   },
+   "|,mad,^,|": {
+    "unsat": 266
+   },
+   "|,mad,|,&": {
+    "unsat": 266
+   },
+   "|,mad,|,^": {
+    "unsat": 266
+   },
+   "|,mad,|,|": {
+    "unsat": 266
+   },
+   "|,|,&,mad": {
+    "unsat": 392
+   },
+   "|,|,^,mad": {
+    "unsat": 392
+   },
+   "|,|,mad,&": {
+    "unsat": 302
+   },
+   "|,|,mad,^": {
+    "unsat": 302
+   },
+   "|,|,mad,|": {
+    "unsat": 302
+   },
+   "|,|,|,mad": {
+    "unsat": 392
+   }
+  },
+  "unresolved": [],
+  "cpu_seconds": 228
+ },
+ "controls": {
+  "original_program_C1_zero": {
+   "width8": "sat",
+   "width11": "sat"
+  },
+  "brute_force_width4": {
+   "checked": 40,
+   "agree": 40,
+   "sat": 5,
+   "unsat": 35
+  }
+ },
+ "scope": "Target P(x) XOR O == F(x XOR 0xc761c23c), F the middle hash. Four instructions over MAD/XOR/AND/OR, one input, private constants, arbitrary output key, live intermediates. Low-bit UNSAT excludes full uint32.",
+ "new_executable": false
+}

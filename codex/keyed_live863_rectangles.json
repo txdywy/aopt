@@ -1,0 +1,395 @@
+{
+  "experiments": [
+    {
+      "width": 11,
+      "bypass": null,
+      "control": false,
+      "free_input_key": "all K; axis masks are invariant under a XOR K",
+      "initial_output_keys": 2048,
+      "remaining_output_keys": 0,
+      "rectangles": [
+        {
+          "base": 0,
+          "h": 2,
+          "k": 1024,
+          "divisor": 2048,
+          "a_values": [
+            0,
+            2,
+            1024,
+            1026
+          ],
+          "prior_values": [
+            746,
+            748,
+            1770,
+            1772
+          ],
+          "h_changed_bits": 6,
+          "k_changed_bits": 1024,
+          "before": 2048,
+          "after": 2048
+        },
+        {
+          "base": 0,
+          "h": 8,
+          "k": 256,
+          "divisor": 2048,
+          "a_values": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "prior_values": [
+            746,
+            754,
+            1002,
+            1010
+          ],
+          "h_changed_bits": 24,
+          "k_changed_bits": 256,
+          "before": 2048,
+          "after": 1024
+        },
+        {
+          "base": 0,
+          "h": 16,
+          "k": 128,
+          "divisor": 2048,
+          "a_values": [
+            0,
+            16,
+            128,
+            144
+          ],
+          "prior_values": [
+            746,
+            762,
+            874,
+            890
+          ],
+          "h_changed_bits": 16,
+          "k_changed_bits": 384,
+          "before": 1024,
+          "after": 512
+        },
+        {
+          "base": 0,
+          "h": 16,
+          "k": 256,
+          "divisor": 2048,
+          "a_values": [
+            0,
+            16,
+            256,
+            272
+          ],
+          "prior_values": [
+            746,
+            762,
+            1002,
+            1018
+          ],
+          "h_changed_bits": 16,
+          "k_changed_bits": 256,
+          "before": 512,
+          "after": 0
+        }
+      ],
+      "survivor_examples": [],
+      "zero_control_retained": null,
+      "result": "all_output_keys_excluded",
+      "seconds": 0.001,
+      "new_executable": false,
+      "scope": "Arbitrary bitwise prefixes over a, prior, a XOR K, then integer polynomials; optional final XOR with a or prior. Restricted low-a full32 subdomain."
+    },
+    {
+      "width": 11,
+      "bypass": "a",
+      "control": false,
+      "free_input_key": "all K; axis masks are invariant under a XOR K",
+      "initial_output_keys": 2048,
+      "remaining_output_keys": 0,
+      "rectangles": [
+        {
+          "base": 0,
+          "h": 2,
+          "k": 1024,
+          "divisor": 2048,
+          "a_values": [
+            0,
+            2,
+            1024,
+            1026
+          ],
+          "prior_values": [
+            746,
+            748,
+            1770,
+            1772
+          ],
+          "h_changed_bits": 6,
+          "k_changed_bits": 1024,
+          "before": 2048,
+          "after": 2048
+        },
+        {
+          "base": 0,
+          "h": 8,
+          "k": 256,
+          "divisor": 2048,
+          "a_values": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "prior_values": [
+            746,
+            754,
+            1002,
+            1010
+          ],
+          "h_changed_bits": 24,
+          "k_changed_bits": 256,
+          "before": 2048,
+          "after": 0
+        }
+      ],
+      "survivor_examples": [],
+      "zero_control_retained": null,
+      "result": "all_output_keys_excluded",
+      "seconds": 0.0,
+      "new_executable": false,
+      "scope": "Arbitrary bitwise prefixes over a, prior, a XOR K, then integer polynomials; optional final XOR with a or prior. Restricted low-a full32 subdomain."
+    },
+    {
+      "width": 11,
+      "bypass": "prior",
+      "control": false,
+      "free_input_key": "all K; axis masks are invariant under a XOR K",
+      "initial_output_keys": 2048,
+      "remaining_output_keys": 0,
+      "rectangles": [
+        {
+          "base": 0,
+          "h": 2,
+          "k": 1024,
+          "divisor": 2048,
+          "a_values": [
+            0,
+            2,
+            1024,
+            1026
+          ],
+          "prior_values": [
+            746,
+            748,
+            1770,
+            1772
+          ],
+          "h_changed_bits": 6,
+          "k_changed_bits": 1024,
+          "before": 2048,
+          "after": 2048
+        },
+        {
+          "base": 0,
+          "h": 8,
+          "k": 256,
+          "divisor": 2048,
+          "a_values": [
+            0,
+            8,
+            256,
+            264
+          ],
+          "prior_values": [
+            746,
+            754,
+            1002,
+            1010
+          ],
+          "h_changed_bits": 24,
+          "k_changed_bits": 256,
+          "before": 2048,
+          "after": 0
+        }
+      ],
+      "survivor_examples": [],
+      "zero_control_retained": null,
+      "result": "all_output_keys_excluded",
+      "seconds": 0.0,
+      "new_executable": false,
+      "scope": "Arbitrary bitwise prefixes over a, prior, a XOR K, then integer polynomials; optional final XOR with a or prior. Restricted low-a full32 subdomain."
+    }
+  ],
+  "controls": [
+    {
+      "width": 6,
+      "bypass": null,
+      "control": true,
+      "free_input_key": "all K; axis masks are invariant under a XOR K",
+      "initial_output_keys": 64,
+      "remaining_output_keys": 64,
+      "rectangles": [
+        {
+          "base": 0,
+          "h": 2,
+          "k": 32,
+          "divisor": 64,
+          "a_values": [
+            0,
+            2,
+            32,
+            34
+          ],
+          "prior_values": [
+            42,
+            44,
+            10,
+            12
+          ],
+          "h_changed_bits": 6,
+          "k_changed_bits": 32,
+          "before": 64,
+          "after": 64
+        }
+      ],
+      "survivor_examples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "zero_control_retained": true,
+      "result": "necessary_conditions_survive",
+      "seconds": 0.001,
+      "new_executable": false,
+      "scope": "Arbitrary bitwise prefixes over a, prior, a XOR K, then integer polynomials; optional final XOR with a or prior. Restricted low-a full32 subdomain."
+    },
+    {
+      "width": 6,
+      "bypass": "a",
+      "control": true,
+      "free_input_key": "all K; axis masks are invariant under a XOR K",
+      "initial_output_keys": 64,
+      "remaining_output_keys": 64,
+      "rectangles": [
+        {
+          "base": 0,
+          "h": 2,
+          "k": 32,
+          "divisor": 64,
+          "a_values": [
+            0,
+            2,
+            32,
+            34
+          ],
+          "prior_values": [
+            42,
+            44,
+            10,
+            12
+          ],
+          "h_changed_bits": 6,
+          "k_changed_bits": 32,
+          "before": 64,
+          "after": 64
+        }
+      ],
+      "survivor_examples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "zero_control_retained": true,
+      "result": "necessary_conditions_survive",
+      "seconds": 0.001,
+      "new_executable": false,
+      "scope": "Arbitrary bitwise prefixes over a, prior, a XOR K, then integer polynomials; optional final XOR with a or prior. Restricted low-a full32 subdomain."
+    },
+    {
+      "width": 6,
+      "bypass": "prior",
+      "control": true,
+      "free_input_key": "all K; axis masks are invariant under a XOR K",
+      "initial_output_keys": 64,
+      "remaining_output_keys": 64,
+      "rectangles": [
+        {
+          "base": 0,
+          "h": 2,
+          "k": 32,
+          "divisor": 64,
+          "a_values": [
+            0,
+            2,
+            32,
+            34
+          ],
+          "prior_values": [
+            42,
+            44,
+            10,
+            12
+          ],
+          "h_changed_bits": 6,
+          "k_changed_bits": 32,
+          "before": 64,
+          "after": 64
+        }
+      ],
+      "survivor_examples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "zero_control_retained": true,
+      "result": "necessary_conditions_survive",
+      "seconds": 0.001,
+      "new_executable": false,
+      "scope": "Arbitrary bitwise prefixes over a, prior, a XOR K, then integer polynomials; optional final XOR with a or prior. Restricted low-a full32 subdomain."
+    }
+  ]
+}

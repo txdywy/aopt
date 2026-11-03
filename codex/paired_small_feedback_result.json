@@ -1,0 +1,20 @@
+{
+  "base_configuration": "table_981_result.json command",
+  "overrides": "--arity 2 --feedback-rounds 4 --feedback-percent 10 --scalar-level4-cache --alias-level4-cache --seeds 20 --profile-json",
+  "cycles": 1002,
+  "full32_seeds": 20,
+  "instructions": 33071,
+  "instruction_json_bytes": 16910901,
+  "dag_operations": {"load":1877,"alu":10895,"valu":5641,"flow":970,"store":62},
+  "browser_acceptance_verified": false,
+  "return_fusion_probe": {
+    "sites": 92,
+    "fused_sites": [],
+    "rejected": {"capacity":89,"register_dependency":2,"memory_order":1},
+    "first_conflicting_variant_capacity_sites": {"alu":84,"valu":85,"load":86},
+    "first_conflicting_variant_excess_slots": {"alu":894,"valu":443,"load":172},
+    "full32_seeds":20,
+    "cycles":1002
+  },
+  "conclusion": "Small tables solve the multi-gigabyte serialization scale, but extra flow work prevents this configuration from reaching899 without structural change."
+}

@@ -1,0 +1,815 @@
+{
+  "new_executable": false,
+  "results": [
+    {
+      "order": [
+        "c1",
+        "19",
+        "9"
+      ],
+      "layout": {
+        "order": [
+          "c1",
+          "19",
+          "9"
+        ],
+        "direct_scalars": true,
+        "root_detached": false,
+        "roots": [
+          26,
+          75476,
+          75475
+        ],
+        "seed_lengths": [
+          4,
+          2,
+          4
+        ],
+        "first_output": [
+          75484,
+          75485,
+          75486,
+          75487,
+          75488,
+          75489,
+          75490,
+          75491
+        ],
+        "second_output": [
+          75492,
+          75493,
+          75494,
+          75495,
+          75496,
+          75497,
+          75498,
+          75499
+        ],
+        "vectors": [
+          [
+            26,
+            75477,
+            75478,
+            75479,
+            75484,
+            75485,
+            75486,
+            75487
+          ],
+          [
+            75488,
+            75489,
+            75490,
+            75491,
+            75492,
+            75493,
+            75494,
+            75495
+          ],
+          [
+            75496,
+            75497,
+            75498,
+            75499,
+            75475,
+            75481,
+            75482,
+            75483
+          ]
+        ]
+      },
+      "counts": {
+        "load": 1688,
+        "valu": 6090,
+        "flow": 853,
+        "alu": 2930,
+        "store": 530
+      },
+      "arithmetic_lanes": 51650,
+      "prefix": {
+        "width": 6,
+        "availability_by_cycle": [
+          8,
+          75,
+          143,
+          204,
+          277,
+          347
+        ],
+        "objective_upper_bound": 308,
+        "waste_lower_bound": 52,
+        "scope": "Grant all arithmetic with ASAP<k for free and all later slots full; ignore non-arithmetic and cross-node resource contention."
+      },
+      "suffix": {
+        "width": 3,
+        "store_roots": 32,
+        "free_work": 0,
+        "objective_upper_bound": 64,
+        "waste_lower_bound": 116,
+        "scope": "Two stores per cycle; shared/non-store-root arithmetic is granted free placement and all other resources are relaxed."
+      },
+      "streams": {
+        "load": {
+          "cycle_lower_bound": 863,
+          "prefix_at_least": 0,
+          "suffix_at_least": 21,
+          "instructions": 1684,
+          "capacity": 2
+        },
+        "store": {
+          "cycle_lower_bound": 347,
+          "prefix_at_least": 74,
+          "suffix_at_least": 237,
+          "instructions": 72,
+          "capacity": 2
+        },
+        "flow": {
+          "cycle_lower_bound": 863,
+          "prefix_at_least": 0,
+          "suffix_at_least": 10,
+          "instructions": 853,
+          "capacity": 1
+        }
+      },
+      "cycle_lower_bound": 864,
+      "status": "necessary_bound_only",
+      "new_executable": false
+    },
+    {
+      "order": [
+        "c1",
+        "9",
+        "19"
+      ],
+      "layout": {
+        "order": [
+          "c1",
+          "9",
+          "19"
+        ],
+        "direct_scalars": true,
+        "root_detached": false,
+        "roots": [
+          26,
+          75475,
+          75476
+        ],
+        "seed_lengths": [
+          4,
+          2,
+          4
+        ],
+        "first_output": [
+          75484,
+          75485,
+          75486,
+          75487,
+          75488,
+          75489,
+          75490,
+          75491
+        ],
+        "second_output": [
+          75492,
+          75493,
+          75494,
+          75495,
+          75496,
+          75497,
+          75498,
+          75499
+        ],
+        "vectors": [
+          [
+            26,
+            75477,
+            75478,
+            75479,
+            75484,
+            75485,
+            75486,
+            75487
+          ],
+          [
+            75488,
+            75489,
+            75490,
+            75491,
+            75492,
+            75493,
+            75494,
+            75495
+          ],
+          [
+            75496,
+            75497,
+            75498,
+            75499,
+            75476,
+            75481,
+            75482,
+            75483
+          ]
+        ]
+      },
+      "counts": {
+        "load": 1688,
+        "valu": 6090,
+        "flow": 853,
+        "alu": 2930,
+        "store": 530
+      },
+      "arithmetic_lanes": 51650,
+      "prefix": {
+        "width": 6,
+        "availability_by_cycle": [
+          8,
+          75,
+          141,
+          202,
+          280,
+          395
+        ],
+        "objective_upper_bound": 308,
+        "waste_lower_bound": 52,
+        "scope": "Grant all arithmetic with ASAP<k for free and all later slots full; ignore non-arithmetic and cross-node resource contention."
+      },
+      "suffix": {
+        "width": 3,
+        "store_roots": 32,
+        "free_work": 0,
+        "objective_upper_bound": 64,
+        "waste_lower_bound": 116,
+        "scope": "Two stores per cycle; shared/non-store-root arithmetic is granted free placement and all other resources are relaxed."
+      },
+      "streams": {
+        "load": {
+          "cycle_lower_bound": 863,
+          "prefix_at_least": 0,
+          "suffix_at_least": 21,
+          "instructions": 1684,
+          "capacity": 2
+        },
+        "store": {
+          "cycle_lower_bound": 346,
+          "prefix_at_least": 73,
+          "suffix_at_least": 237,
+          "instructions": 72,
+          "capacity": 2
+        },
+        "flow": {
+          "cycle_lower_bound": 863,
+          "prefix_at_least": 0,
+          "suffix_at_least": 10,
+          "instructions": 853,
+          "capacity": 1
+        }
+      },
+      "cycle_lower_bound": 864,
+      "status": "necessary_bound_only",
+      "new_executable": false
+    },
+    {
+      "order": [
+        "19",
+        "c1",
+        "9"
+      ],
+      "layout": {
+        "order": [
+          "19",
+          "c1",
+          "9"
+        ],
+        "direct_scalars": true,
+        "root_detached": false,
+        "roots": [
+          75476,
+          26,
+          75475
+        ],
+        "seed_lengths": [
+          4,
+          2,
+          4
+        ],
+        "first_output": [
+          75484,
+          75485,
+          75486,
+          75487,
+          75488,
+          75489,
+          75490,
+          75491
+        ],
+        "second_output": [
+          75492,
+          75493,
+          75494,
+          75495,
+          75496,
+          75497,
+          75498,
+          75499
+        ],
+        "vectors": [
+          [
+            75476,
+            75477,
+            75478,
+            75479,
+            75484,
+            75485,
+            75486,
+            75487
+          ],
+          [
+            75488,
+            75489,
+            75490,
+            75491,
+            75492,
+            75493,
+            75494,
+            75495
+          ],
+          [
+            75496,
+            75497,
+            75498,
+            75499,
+            75475,
+            75481,
+            75482,
+            75483
+          ]
+        ]
+      },
+      "counts": {
+        "load": 1688,
+        "valu": 6090,
+        "flow": 853,
+        "alu": 2930,
+        "store": 530
+      },
+      "arithmetic_lanes": 51650,
+      "prefix": {
+        "width": 6,
+        "availability_by_cycle": [
+          8,
+          75,
+          141,
+          202,
+          268,
+          347
+        ],
+        "objective_upper_bound": 308,
+        "waste_lower_bound": 52,
+        "scope": "Grant all arithmetic with ASAP<k for free and all later slots full; ignore non-arithmetic and cross-node resource contention."
+      },
+      "suffix": {
+        "width": 3,
+        "store_roots": 32,
+        "free_work": 0,
+        "objective_upper_bound": 64,
+        "waste_lower_bound": 116,
+        "scope": "Two stores per cycle; shared/non-store-root arithmetic is granted free placement and all other resources are relaxed."
+      },
+      "streams": {
+        "load": {
+          "cycle_lower_bound": 863,
+          "prefix_at_least": 0,
+          "suffix_at_least": 21,
+          "instructions": 1684,
+          "capacity": 2
+        },
+        "store": {
+          "cycle_lower_bound": 347,
+          "prefix_at_least": 74,
+          "suffix_at_least": 237,
+          "instructions": 72,
+          "capacity": 2
+        },
+        "flow": {
+          "cycle_lower_bound": 863,
+          "prefix_at_least": 0,
+          "suffix_at_least": 10,
+          "instructions": 853,
+          "capacity": 1
+        }
+      },
+      "cycle_lower_bound": 864,
+      "status": "necessary_bound_only",
+      "new_executable": false
+    },
+    {
+      "order": [
+        "19",
+        "9",
+        "c1"
+      ],
+      "layout": {
+        "order": [
+          "19",
+          "9",
+          "c1"
+        ],
+        "direct_scalars": true,
+        "root_detached": false,
+        "roots": [
+          75476,
+          75475,
+          26
+        ],
+        "seed_lengths": [
+          4,
+          2,
+          4
+        ],
+        "first_output": [
+          75484,
+          75485,
+          75486,
+          75487,
+          75488,
+          75489,
+          75490,
+          75491
+        ],
+        "second_output": [
+          75492,
+          75493,
+          75494,
+          75495,
+          75496,
+          75497,
+          75498,
+          75499
+        ],
+        "vectors": [
+          [
+            75476,
+            75477,
+            75478,
+            75479,
+            75484,
+            75485,
+            75486,
+            75487
+          ],
+          [
+            75488,
+            75489,
+            75490,
+            75491,
+            75492,
+            75493,
+            75494,
+            75495
+          ],
+          [
+            75496,
+            75497,
+            75498,
+            75499,
+            26,
+            75481,
+            75482,
+            75483
+          ]
+        ]
+      },
+      "counts": {
+        "load": 1688,
+        "valu": 6090,
+        "flow": 853,
+        "alu": 2930,
+        "store": 530
+      },
+      "arithmetic_lanes": 51650,
+      "prefix": {
+        "width": 6,
+        "availability_by_cycle": [
+          8,
+          75,
+          141,
+          202,
+          280,
+          371
+        ],
+        "objective_upper_bound": 308,
+        "waste_lower_bound": 52,
+        "scope": "Grant all arithmetic with ASAP<k for free and all later slots full; ignore non-arithmetic and cross-node resource contention."
+      },
+      "suffix": {
+        "width": 3,
+        "store_roots": 32,
+        "free_work": 0,
+        "objective_upper_bound": 64,
+        "waste_lower_bound": 116,
+        "scope": "Two stores per cycle; shared/non-store-root arithmetic is granted free placement and all other resources are relaxed."
+      },
+      "streams": {
+        "load": {
+          "cycle_lower_bound": 863,
+          "prefix_at_least": 0,
+          "suffix_at_least": 21,
+          "instructions": 1684,
+          "capacity": 2
+        },
+        "store": {
+          "cycle_lower_bound": 347,
+          "prefix_at_least": 74,
+          "suffix_at_least": 237,
+          "instructions": 72,
+          "capacity": 2
+        },
+        "flow": {
+          "cycle_lower_bound": 863,
+          "prefix_at_least": 0,
+          "suffix_at_least": 10,
+          "instructions": 853,
+          "capacity": 1
+        }
+      },
+      "cycle_lower_bound": 864,
+      "status": "necessary_bound_only",
+      "new_executable": false
+    },
+    {
+      "order": [
+        "9",
+        "c1",
+        "19"
+      ],
+      "layout": {
+        "order": [
+          "9",
+          "c1",
+          "19"
+        ],
+        "direct_scalars": true,
+        "root_detached": false,
+        "roots": [
+          75475,
+          26,
+          75476
+        ],
+        "seed_lengths": [
+          4,
+          2,
+          4
+        ],
+        "first_output": [
+          75484,
+          75485,
+          75486,
+          75487,
+          75488,
+          75489,
+          75490,
+          75491
+        ],
+        "second_output": [
+          75492,
+          75493,
+          75494,
+          75495,
+          75496,
+          75497,
+          75498,
+          75499
+        ],
+        "vectors": [
+          [
+            75475,
+            75477,
+            75478,
+            75479,
+            75484,
+            75485,
+            75486,
+            75487
+          ],
+          [
+            75488,
+            75489,
+            75490,
+            75491,
+            75492,
+            75493,
+            75494,
+            75495
+          ],
+          [
+            75496,
+            75497,
+            75498,
+            75499,
+            75476,
+            75481,
+            75482,
+            75483
+          ]
+        ]
+      },
+      "counts": {
+        "load": 1688,
+        "valu": 6090,
+        "flow": 853,
+        "alu": 2930,
+        "store": 530
+      },
+      "arithmetic_lanes": 51650,
+      "prefix": {
+        "width": 6,
+        "availability_by_cycle": [
+          8,
+          75,
+          141,
+          202,
+          280,
+          371
+        ],
+        "objective_upper_bound": 308,
+        "waste_lower_bound": 52,
+        "scope": "Grant all arithmetic with ASAP<k for free and all later slots full; ignore non-arithmetic and cross-node resource contention."
+      },
+      "suffix": {
+        "width": 3,
+        "store_roots": 32,
+        "free_work": 0,
+        "objective_upper_bound": 64,
+        "waste_lower_bound": 116,
+        "scope": "Two stores per cycle; shared/non-store-root arithmetic is granted free placement and all other resources are relaxed."
+      },
+      "streams": {
+        "load": {
+          "cycle_lower_bound": 863,
+          "prefix_at_least": 0,
+          "suffix_at_least": 21,
+          "instructions": 1684,
+          "capacity": 2
+        },
+        "store": {
+          "cycle_lower_bound": 346,
+          "prefix_at_least": 73,
+          "suffix_at_least": 237,
+          "instructions": 72,
+          "capacity": 2
+        },
+        "flow": {
+          "cycle_lower_bound": 863,
+          "prefix_at_least": 0,
+          "suffix_at_least": 10,
+          "instructions": 853,
+          "capacity": 1
+        }
+      },
+      "cycle_lower_bound": 864,
+      "status": "necessary_bound_only",
+      "new_executable": false
+    },
+    {
+      "order": [
+        "9",
+        "19",
+        "c1"
+      ],
+      "layout": {
+        "order": [
+          "9",
+          "19",
+          "c1"
+        ],
+        "direct_scalars": true,
+        "root_detached": false,
+        "roots": [
+          75475,
+          75476,
+          26
+        ],
+        "seed_lengths": [
+          4,
+          2,
+          4
+        ],
+        "first_output": [
+          75484,
+          75485,
+          75486,
+          75487,
+          75488,
+          75489,
+          75490,
+          75491
+        ],
+        "second_output": [
+          75492,
+          75493,
+          75494,
+          75495,
+          75496,
+          75497,
+          75498,
+          75499
+        ],
+        "vectors": [
+          [
+            75475,
+            75477,
+            75478,
+            75479,
+            75484,
+            75485,
+            75486,
+            75487
+          ],
+          [
+            75488,
+            75489,
+            75490,
+            75491,
+            75492,
+            75493,
+            75494,
+            75495
+          ],
+          [
+            75496,
+            75497,
+            75498,
+            75499,
+            26,
+            75481,
+            75482,
+            75483
+          ]
+        ]
+      },
+      "counts": {
+        "load": 1688,
+        "valu": 6090,
+        "flow": 853,
+        "alu": 2930,
+        "store": 530
+      },
+      "arithmetic_lanes": 51650,
+      "prefix": {
+        "width": 6,
+        "availability_by_cycle": [
+          8,
+          75,
+          143,
+          204,
+          277,
+          347
+        ],
+        "objective_upper_bound": 308,
+        "waste_lower_bound": 52,
+        "scope": "Grant all arithmetic with ASAP<k for free and all later slots full; ignore non-arithmetic and cross-node resource contention."
+      },
+      "suffix": {
+        "width": 3,
+        "store_roots": 32,
+        "free_work": 0,
+        "objective_upper_bound": 64,
+        "waste_lower_bound": 116,
+        "scope": "Two stores per cycle; shared/non-store-root arithmetic is granted free placement and all other resources are relaxed."
+      },
+      "streams": {
+        "load": {
+          "cycle_lower_bound": 863,
+          "prefix_at_least": 0,
+          "suffix_at_least": 21,
+          "instructions": 1684,
+          "capacity": 2
+        },
+        "store": {
+          "cycle_lower_bound": 347,
+          "prefix_at_least": 74,
+          "suffix_at_least": 237,
+          "instructions": 72,
+          "capacity": 2
+        },
+        "flow": {
+          "cycle_lower_bound": 863,
+          "prefix_at_least": 0,
+          "suffix_at_least": 10,
+          "instructions": 853,
+          "capacity": 1
+        }
+      },
+      "cycle_lower_bound": 864,
+      "status": "necessary_bound_only",
+      "new_executable": false
+    }
+  ],
+  "scope": "Six concrete triple-pack orders; source roots may require real extra ALUs. Bounds relax instruction packing and are not scores.",
+  "groups": [
+    "c1",
+    "19",
+    "9"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "arithmetic_lanes": 51707,
+  "prefix": {
+    "side": "prefix",
+    "width": 6,
+    "status": "OPTIMAL",
+    "eligible_ops": 392,
+    "objective_incumbent": 298.0,
+    "objective_upper_bound": 298,
+    "waste_lower_bound": 62,
+    "structural_upper_bound": null,
+    "seconds": 0.19981200000000002
+  },
+  "suffix": {
+    "side": "suffix",
+    "width": 3,
+    "status": "OPTIMAL",
+    "eligible_ops": 800,
+    "objective_incumbent": 64.0,
+    "objective_upper_bound": 64,
+    "waste_lower_bound": 116,
+    "structural_upper_bound": 64,
+    "seconds": 0.159192
+  },
+  "cycle_lower_bound": 865,
+  "boundary_windows_disjoint_by_compute_bound": true,
+  "model_file_sha256": "60b4bbe058641b193dd8350b48cc364e95ecbe813263b1727611e1b7f3511772",
+  "model_text_sha256": "29e9b35d471646f6d7810ad6b0d0d92d44d258b7241ae747900db28913a521dc",
+  "scope": "this IR and its exported scalar/native groups; no instruction elimination"
+}

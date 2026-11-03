@@ -1,0 +1,3451 @@
+{
+  "best_executable_cycles": 864,
+  "new_executable_candidate": false,
+  "scope": "Exactly three instructions over MAD,XOR,AND,OR; one uint32 input and arbitrary constants. Additional live inputs, shifts, division, selection and memory excluded from this claim.",
+  "prior_xor_evidence": "middle_cross_stage863_results.json",
+  "orders_closed": {
+    "three_MAD": 1,
+    "two_MAD": 9,
+    "one_MAD": 27,
+    "pure_bitwise": 27,
+    "total": 64
+  },
+  "pure_bitwise_witness": {
+    "inputs": [
+      0,
+      1
+    ],
+    "outputs_mod2048": [
+      1482,
+      243
+    ],
+    "nonlocal_xor_bits": 1336
+  },
+  "experiments": {
+    "first_and": {
+      "width": 11,
+      "slice": "middle",
+      "samples": 125,
+      "bitwise": "&",
+      "tested_keys": 2048,
+      "survivors": [],
+      "control": false,
+      "seconds": 4.67
+    },
+    "last_and": {
+      "width": 11,
+      "bitwise": "&",
+      "affine_pairs_tested": 4194304,
+      "affine_survivors": [
+        [
+          0,
+          2047
+        ]
+      ],
+      "square_keys_tested": 2048,
+      "square_survivors": [],
+      "square_input_survives": false,
+      "degree_four_samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        127,
+        255,
+        511,
+        512,
+        513,
+        1023,
+        1024,
+        1025,
+        2047
+      ],
+      "degree_four_consistent": false,
+      "excluded": true,
+      "seconds": 0.021
+    },
+    "outer_and": {
+      "width": 11,
+      "timeout_ms": 2000,
+      "bitwise": "&",
+      "z3": "5.1.0",
+      "operand_pool": [
+        "x",
+        "t",
+        "u",
+        "k0",
+        "k1"
+      ],
+      "counts": {
+        "unsat": 70
+      },
+      "rows": [
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            0,
+            0,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.002
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            0,
+            1,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            0,
+            2,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            0,
+            2,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.002
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            0,
+            2,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            0,
+            2,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            0,
+            2,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            0,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            0,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            1,
+            1,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.007
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            1,
+            2,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            1,
+            2,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.004
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            1,
+            2,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            1,
+            2,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.064
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            1,
+            2,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.063
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            1,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.087
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            1,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.086
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            2,
+            2,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            2,
+            2,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.004
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            2,
+            2,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            2,
+            2,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.003
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            2,
+            2,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.003
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            2,
+            3,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            2,
+            3,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.031
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            2,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            2,
+            3,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.002
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            2,
+            3,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.027
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            2,
+            4,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            2,
+            4,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.036
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            2,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            2,
+            4,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.025
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            2,
+            4,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.002
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            3,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            3,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "input",
+          "role": [
+            4,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            0,
+            0,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.015
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            0,
+            1,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.084
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            0,
+            2,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            0,
+            2,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.022
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            0,
+            2,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            0,
+            2,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.013
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            0,
+            2,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.013
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            0,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.04
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            0,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.042
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            1,
+            1,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.104
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            1,
+            2,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.146
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            1,
+            2,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.19
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            1,
+            2,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.051
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            1,
+            2,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.093
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            1,
+            2,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.092
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            1,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 1.005
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            1,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 1.59
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            2,
+            2,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.002
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            2,
+            2,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.147
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            2,
+            2,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.002
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            2,
+            2,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.042
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            2,
+            2,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.035
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            2,
+            3,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.715
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            2,
+            3,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.792
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            2,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.898
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            2,
+            3,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.673
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            2,
+            3,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.979
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            2,
+            4,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.976
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            2,
+            4,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.716
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            2,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.528
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            2,
+            4,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.72
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            2,
+            4,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 1.184
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            3,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.036
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            3,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.031
+        },
+        {
+          "bitwise": "&",
+          "xor_source": "constant",
+          "role": [
+            4,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.031
+        }
+      ]
+    },
+    "square_and_constant": {
+      "command": "python3.12 -m codex.synthesize_hash_cegis --slice middle --instructions 3 --width 12 --op-sequence 'mad,&,mad' --first-mad-form square-constant --seconds 15 --check-ms 14000 --canonical-operands --consecutive-samples 32 --extra-samples 16",
+      "output": [
+        {
+          "iteration": 1,
+          "samples": 49,
+          "synthesis": "unsat"
+        },
+        {
+          "result": "grammar_unsatisfiable",
+          "width": 12,
+          "op_sequence": [
+            "mad",
+            "&",
+            "mad"
+          ],
+          "right_shift_amount": null,
+          "reason": null
+        }
+      ]
+    },
+    "square_and_input": {
+      "command": "python3.12 -m codex.synthesize_hash_cegis --slice middle --instructions 3 --width 12 --op-sequence 'mad,&,mad' --first-mad-form square-input --seconds 15 --check-ms 14000 --canonical-operands --consecutive-samples 32 --extra-samples 16",
+      "output": [
+        {
+          "iteration": 1,
+          "samples": 49,
+          "synthesis": "unsat"
+        },
+        {
+          "result": "grammar_unsatisfiable",
+          "width": 12,
+          "op_sequence": [
+            "mad",
+            "&",
+            "mad"
+          ],
+          "right_shift_amount": null,
+          "reason": null
+        }
+      ]
+    },
+    "first_or": {
+      "width": 11,
+      "slice": "middle",
+      "samples": 125,
+      "bitwise": "|",
+      "tested_keys": 2048,
+      "survivors": [],
+      "control": false,
+      "seconds": 4.759
+    },
+    "last_or": {
+      "width": 11,
+      "bitwise": "|",
+      "affine_pairs_tested": 4194304,
+      "affine_survivors": [
+        [
+          0,
+          0
+        ]
+      ],
+      "square_keys_tested": 2048,
+      "square_survivors": [],
+      "square_input_survives": false,
+      "degree_four_samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        127,
+        255,
+        511,
+        512,
+        513,
+        1023,
+        1024,
+        1025,
+        2047
+      ],
+      "degree_four_consistent": false,
+      "excluded": true,
+      "seconds": 0.019
+    },
+    "outer_or": {
+      "width": 11,
+      "timeout_ms": 2000,
+      "bitwise": "|",
+      "z3": "5.1.0",
+      "operand_pool": [
+        "x",
+        "t",
+        "u",
+        "k0",
+        "k1"
+      ],
+      "counts": {
+        "unsat": 69,
+        "unknown": 1
+      },
+      "rows": [
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            0,
+            0,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            0,
+            1,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.003
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            0,
+            2,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            0,
+            2,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.002
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            0,
+            2,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            0,
+            2,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            0,
+            2,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            0,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            0,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            1,
+            1,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.039
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            1,
+            2,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.003
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            1,
+            2,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            1,
+            2,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.004
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            1,
+            2,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.139
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            1,
+            2,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.145
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            1,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.087
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            1,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.078
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            2,
+            2,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            2,
+            2,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.04
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            2,
+            2,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            2,
+            2,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.003
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            2,
+            2,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.003
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            2,
+            3,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.004
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            2,
+            3,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.103
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            2,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.002
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            2,
+            3,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            2,
+            3,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.076
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            2,
+            4,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.004
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            2,
+            4,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.112
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            2,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.002
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            2,
+            4,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.084
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            2,
+            4,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            3,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            3,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "input",
+          "role": [
+            4,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.001
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            0,
+            0,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.009
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            0,
+            1,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.027
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            0,
+            2,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            0,
+            2,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.019
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            0,
+            2,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.0
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            0,
+            2,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.011
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            0,
+            2,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.011
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            0,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.053
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            0,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.053
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            1,
+            1,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.107
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            1,
+            2,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.335
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            1,
+            2,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.241
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            1,
+            2,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.137
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            1,
+            2,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 1.906
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            1,
+            2,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 1.519
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            1,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 1.249
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            1,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 1.111
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            2,
+            2,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.002
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            2,
+            2,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.159
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            2,
+            2,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.002
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            2,
+            2,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.05
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            2,
+            2,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.033
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            2,
+            3,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 1.027
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            2,
+            3,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unknown",
+          "reason": "timeout",
+          "seconds": 2.02
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            2,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.527
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            2,
+            3,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.781
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            2,
+            3,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 1.846
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            2,
+            4,
+            0
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 1.033
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            2,
+            4,
+            1
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 1.674
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            2,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.452
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            2,
+            4,
+            3
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.781
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            2,
+            4,
+            4
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.573
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            3,
+            3,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.031
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            3,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.03
+        },
+        {
+          "bitwise": "|",
+          "xor_source": "constant",
+          "role": [
+            4,
+            4,
+            2
+          ],
+          "samples": 103,
+          "injective_cut": false,
+          "result": "unsat",
+          "seconds": 0.033
+        }
+      ]
+    },
+    "square_or_constant": {
+      "command": "python3.12 -m codex.synthesize_hash_cegis --slice middle --instructions 3 --width 12 --op-sequence 'mad,|,mad' --first-mad-form square-constant --seconds 15 --check-ms 14000 --canonical-operands --consecutive-samples 32 --extra-samples 16",
+      "output": [
+        {
+          "iteration": 1,
+          "samples": 49,
+          "synthesis": "unsat"
+        },
+        {
+          "result": "grammar_unsatisfiable",
+          "width": 12,
+          "op_sequence": [
+            "mad",
+            "|",
+            "mad"
+          ],
+          "right_shift_amount": null,
+          "reason": null
+        }
+      ]
+    },
+    "square_or_input": {
+      "command": "python3.12 -m codex.synthesize_hash_cegis --slice middle --instructions 3 --width 12 --op-sequence 'mad,|,mad' --first-mad-form square-input --seconds 15 --check-ms 14000 --canonical-operands --consecutive-samples 32 --extra-samples 16",
+      "output": [
+        {
+          "iteration": 1,
+          "samples": 49,
+          "synthesis": "unsat"
+        },
+        {
+          "result": "grammar_unsatisfiable",
+          "width": 12,
+          "op_sequence": [
+            "mad",
+            "|",
+            "mad"
+          ],
+          "right_shift_amount": null,
+          "reason": null
+        }
+      ]
+    },
+    "outer_or_refined": {
+      "bitwise": "|",
+      "xor_source": "constant",
+      "role": [
+        2,
+        3,
+        1
+      ],
+      "samples": 103,
+      "injective_cut": true,
+      "result": "unsat",
+      "seconds": 1.588
+    },
+    "single_mad": [
+      {
+        "order": [
+          "&",
+          "&",
+          "mad"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=&,&,mad",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "&",
+              "&",
+              "mad"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "&",
+          "^",
+          "mad"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=&,^,mad",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "&",
+              "^",
+              "mad"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "&",
+          "mad",
+          "&"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=&,mad,&",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "&",
+              "mad",
+              "&"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "&",
+          "mad",
+          "^"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=&,mad,^",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "&",
+              "mad",
+              "^"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "&",
+          "mad",
+          "|"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=&,mad,|",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "&",
+              "mad",
+              "|"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "&",
+          "|",
+          "mad"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=&,|,mad",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "&",
+              "|",
+              "mad"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "^",
+          "&",
+          "mad"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=^,&,mad",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "^",
+              "&",
+              "mad"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "^",
+          "^",
+          "mad"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=^,^,mad",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "^",
+              "^",
+              "mad"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "^",
+          "mad",
+          "&"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=^,mad,&",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "^",
+              "mad",
+              "&"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "^",
+          "mad",
+          "^"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=^,mad,^",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "^",
+              "mad",
+              "^"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "^",
+          "mad",
+          "|"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=^,mad,|",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "^",
+              "mad",
+              "|"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "^",
+          "|",
+          "mad"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=^,|,mad",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "^",
+              "|",
+              "mad"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "mad",
+          "&",
+          "&"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=mad,&,&",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "mad",
+              "&",
+              "&"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "mad",
+          "&",
+          "^"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=mad,&,^",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "mad",
+              "&",
+              "^"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "mad",
+          "&",
+          "|"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=mad,&,|",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "mad",
+              "&",
+              "|"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "mad",
+          "^",
+          "&"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=mad,^,&",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "mad",
+              "^",
+              "&"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "mad",
+          "^",
+          "^"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=mad,^,^",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "mad",
+              "^",
+              "^"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "mad",
+          "^",
+          "|"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=mad,^,|",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "mad",
+              "^",
+              "|"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "mad",
+          "|",
+          "&"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=mad,|,&",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "mad",
+              "|",
+              "&"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "mad",
+          "|",
+          "^"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=mad,|,^",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "mad",
+              "|",
+              "^"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "mad",
+          "|",
+          "|"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=mad,|,|",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "mad",
+              "|",
+              "|"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "|",
+          "&",
+          "mad"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=|,&,mad",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "|",
+              "&",
+              "mad"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "|",
+          "^",
+          "mad"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=|,^,mad",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "|",
+              "^",
+              "mad"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "|",
+          "mad",
+          "&"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=|,mad,&",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "|",
+              "mad",
+              "&"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "|",
+          "mad",
+          "^"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=|,mad,^",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "|",
+              "mad",
+              "^"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "|",
+          "mad",
+          "|"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=|,mad,|",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "|",
+              "mad",
+              "|"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      },
+      {
+        "order": [
+          "|",
+          "|",
+          "mad"
+        ],
+        "command": [
+          "/opt/homebrew/opt/python@3.12/bin/python3.12",
+          "-m",
+          "codex.synthesize_hash_cegis",
+          "--slice",
+          "middle",
+          "--instructions",
+          "3",
+          "--width",
+          "12",
+          "--op-sequence=|,|,mad",
+          "--canonical-operands",
+          "--consecutive-samples",
+          "32",
+          "--extra-samples",
+          "32",
+          "--seconds",
+          "5",
+          "--check-ms",
+          "3000"
+        ],
+        "output": [
+          {
+            "iteration": 1,
+            "samples": 65,
+            "synthesis": "unsat"
+          },
+          {
+            "result": "grammar_unsatisfiable",
+            "width": 12,
+            "op_sequence": [
+              "|",
+              "|",
+              "mad"
+            ],
+            "right_shift_amount": null,
+            "reason": null
+          }
+        ]
+      }
+    ],
+    "polynomial": {
+      "width": 11,
+      "strides": [
+        256,
+        8
+      ],
+      "inputs": [
+        0,
+        8,
+        256,
+        264
+      ],
+      "outputs": [
+        1482,
+        1810,
+        1738,
+        1042
+      ],
+      "mixed_difference": 1024,
+      "excluded": true,
+      "scope": "Every integer polynomial from x alone; no shifts, bitwise ops, division, selection, memory or extra non-polynomial inputs"
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "executable_best_cycles": 864,
+  "new_executable": false,
+  "width": 11,
+  "fixed_input_key": 3345072700,
+  "free_output_key": true,
+  "direct_refinement_queries": 110,
+  "live_refinement_queries": 104,
+  "dead_first_refinement_queries": 6,
+  "remaining_template_second_roles": 480,
+  "second_role_coverage": {
+    "fixed_quadratic_or_affine_query": 191,
+    "affine_prefix_module": 235,
+    "dead_first_three_operations": 54
+  },
+  "order_statuses": [
+    {
+      "sequence": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "new live MAD/XOR/MAD proof after x XOR K; extra prior input is unused"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "new complete live MAD/MAD/XOR proof after x XOR K; unused prior input only enlarges the candidate set"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "complete affine XOR-pair classification and 52 fixed-DAG UNSAT queries; earlier square-first exclusions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "150 fixed-third queries; six raw UNKNOWN cases closed by polynomial/scaled-family proofs and three fixed-final queries; complete wiring enumeration and earlier square-first exclusions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "complete affine-prefix degree-four module screens for t XOR x and t XOR K; earlier square-prefix and initial-XOR proofs"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "110 complete second-MAD refinements UNSAT; affine second terms in input/constant XOR branches covered by exact modules"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "new degree-four XOR degree-two relaxation excludes the affine-first case; prior square-first exclusions remain valid"
+    }
+  ],
+  "closed_orders": 10,
+  "open_orders": 0,
+  "evidence_sha256": {
+    "head_affine_frontier863_audit.json": "2d85cbe24e512f6ec6d1b2debf49a1b4ff2b08d81136125f21ce27f7970117f6",
+    "head_final_quadratic863_results.json": "f7c2a4ff0fc5f912b8357d185d4f5f42039522a9565ece423911552d6fd68da2"
+  },
+  "scope": "One input, arbitrary constants and output XOR key; four instructions with three MAD/one XOR or two MAD/two XOR. Only listed exclusions are proved.",
+  "result": "all_ten_specified_mad_xor_orders_excluded",
+  "excluded_from_claim": "Other opcode counts, AND/OR/shift and other instructions, extra live inputs, whole-hash changes, layouts, kernel-wide optimum. No lower-than-864 executable was found."
+}

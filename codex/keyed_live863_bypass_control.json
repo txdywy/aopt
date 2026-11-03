@@ -1,0 +1,31 @@
+{
+  "width": 8,
+  "parity": null,
+  "control": true,
+  "seconds_limit": 30,
+  "normalizations": [
+    "A+D odd",
+    "I,K,O lowest and highest bits zero",
+    "infer E from x=0"
+  ],
+  "family": "((A*(x XOR I)+B) XOR K)+D*x+E",
+  "events": [
+    {
+      "samples": 50,
+      "synthesis": "sat"
+    }
+  ],
+  "new_executable": false,
+  "result": "equivalent_on_relaxed_low_domain",
+  "coefficients": [
+    43,
+    204,
+    70,
+    247,
+    42,
+    114
+  ],
+  "output_key": 0,
+  "verified_inputs": 256,
+  "seconds": 1.612
+}

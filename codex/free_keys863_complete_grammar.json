@@ -1,0 +1,1101 @@
+{
+  "orders": [
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "mad"
+      ],
+      "mad_count": 3,
+      "certificate": "pure integer polynomial, all endpoint keys",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^"
+      ],
+      "mad_count": 2,
+      "certificate": "XOR wiring audit",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "&"
+      ],
+      "mad_count": 2,
+      "certificate": "AND/OR lattice and wiring audit",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "|"
+      ],
+      "mad_count": 2,
+      "certificate": "AND/OR lattice and wiring audit",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "mad_count": 2,
+      "certificate": "XOR wiring audit",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "&"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "|"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "mad_count": 2,
+      "certificate": "AND/OR lattice and wiring audit",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "^"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "&"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "|"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "mad_count": 2,
+      "certificate": "AND/OR lattice and wiring audit",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "^"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "&"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "|"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad"
+      ],
+      "mad_count": 2,
+      "certificate": "XOR wiring audit",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "^"
+      ],
+      "mad_count": 1,
+      "raw_result": "unknown",
+      "certificate": "carry-free rectangles, allowing a final XOR with x and a constant",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "&"
+      ],
+      "mad_count": 1,
+      "raw_result": "unknown",
+      "certificate": "final operand is bijective XOR prefix, constant, or repeated MAD output",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "|"
+      ],
+      "mad_count": 1,
+      "raw_result": "unknown",
+      "certificate": "final operand is bijective XOR prefix, constant, or repeated MAD output",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "^",
+        "mad"
+      ],
+      "mad_count": 1,
+      "raw_result": "unknown",
+      "certificate": "polynomial in coordinate-wise bitwise prefixes, carry-free rectangles",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "^",
+        "^"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "^",
+        "&"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "^",
+        "|"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "&",
+        "mad"
+      ],
+      "mad_count": 1,
+      "raw_result": "unknown",
+      "certificate": "polynomial in coordinate-wise bitwise prefixes, carry-free rectangles",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "&",
+        "^"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "&",
+        "&"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "&",
+        "|"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "|",
+        "mad"
+      ],
+      "mad_count": 1,
+      "raw_result": "unknown",
+      "certificate": "polynomial in coordinate-wise bitwise prefixes, carry-free rectangles",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "|",
+        "^"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "|",
+        "&"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "^",
+        "|",
+        "|"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "mad"
+      ],
+      "mad_count": 2,
+      "certificate": "AND/OR lattice and wiring audit",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "^"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "&"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "|"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "^",
+        "mad"
+      ],
+      "mad_count": 1,
+      "raw_result": "unknown",
+      "certificate": "polynomial in coordinate-wise bitwise prefixes, carry-free rectangles",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "^",
+        "^"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "^",
+        "&"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "^",
+        "|"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "&",
+        "mad"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "&",
+        "^"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "&",
+        "&"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "&",
+        "|"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "|",
+        "mad"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "|",
+        "^"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "|",
+        "&"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "&",
+        "|",
+        "|"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "mad"
+      ],
+      "mad_count": 2,
+      "certificate": "AND/OR lattice and wiring audit",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "^"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "&"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "|"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "^",
+        "mad"
+      ],
+      "mad_count": 1,
+      "raw_result": "unknown",
+      "certificate": "polynomial in coordinate-wise bitwise prefixes, carry-free rectangles",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "^",
+        "^"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "^",
+        "&"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "^",
+        "|"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "&",
+        "mad"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "&",
+        "^"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "&",
+        "&"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "&",
+        "|"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "|",
+        "mad"
+      ],
+      "mad_count": 1,
+      "raw_result": "projected_grammar_unsat",
+      "certificate": "fixed-order UNSAT",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "|",
+        "^"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "|",
+        "&"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    },
+    {
+      "sequence": [
+        "|",
+        "|",
+        "|"
+      ],
+      "mad_count": 0,
+      "certificate": "bit-local programs cannot match the nonlocal input-pair witness",
+      "result": "excluded"
+    }
+  ],
+  "excluded_orders": 64,
+  "unresolved_orders": 0,
+  "one_mad_raw_counts": {
+    "projected_grammar_unsat": 19,
+    "unknown": 8
+  },
+  "evidence_sha256": {
+    "free_keys863_bypass_polynomial.json": "92d278a621e9227530486f5faae5d30e9b75317f3eed06bb7634465f0f721129",
+    "middle_free_keys863_polynomial.json": "67d14c6a881ee6057cc73f43af10a38a427436687b6fc6915168fcf92cbf07bf",
+    "middle_free_keys863_control_w32.json": "eb3e4fccf756b8ef7078561569a800c5cee76599b6c0a308aecd9bbb38d35e71",
+    "free_keys863_one_mad_mad_xor_xor.json": "4fb9235919a4d28da08580d9227c533c069223ad12cfb753b11b8893e46b0eab",
+    "free_keys863_one_mad_mad_xor_and.json": "03714125f20a358bc1c64f5954789f8f250336f587f1b3ea53a444dd5db093a7",
+    "free_keys863_one_mad_mad_xor_or.json": "696c2d2a5f9a2d09fe4f4531e78a6e0e542ca67cb7eab9c3e55fcd2f64579259",
+    "free_keys863_one_mad_mad_and_xor.json": "5a1e877e0d2d4d255fe9264c0db8fbbbfeec049e6f4c4d523b1ea8aaab855ab1",
+    "free_keys863_one_mad_mad_and_and.json": "b4cf79de481c655f9f8248315b42156d5cfabe3ef40d9ae84c0905d14be6f745",
+    "free_keys863_one_mad_mad_and_or.json": "a32810e5fdf09ddd0abe37765afa144ac4291742f83e258cd1a60601c90703ae",
+    "free_keys863_one_mad_mad_or_xor.json": "32979008eabb0a14faee9cdc4cb0939ff2ab0baebd4a7e7fa0ef2ddec402c7ee",
+    "free_keys863_one_mad_mad_or_and.json": "5c5cda457d623d4231bb71a4b810309dc787cd4ddb03b68ee54d0258d584b19d",
+    "free_keys863_one_mad_mad_or_or.json": "54b46887784bd968f680e9bd3fd0fe1e6f8ae5d6b14a30a05e9da2a473adfbc0",
+    "free_keys863_one_mad_xor_mad_xor.json": "844f670359c9aa3859edb93f3a55190312a53e5bba1bc3ed3b2f44ec2d89e76c",
+    "free_keys863_one_mad_xor_mad_and.json": "9bc7216325b27af2005a91028c254fc660920bdfa450e2383360f4df228506bd",
+    "free_keys863_one_mad_xor_mad_or.json": "0f45c4b8255b2f362a69300824a1f0288ef31518073483c673ead3e62b0aa541",
+    "free_keys863_one_mad_xor_xor_mad.json": "234ae7f6340901b9613f33f31dcf2d7b805db402ce5f27e8c790e95ede626143",
+    "free_keys863_one_mad_xor_and_mad.json": "0c62e2f04c4af32d368dcbff4ce00da8f3c69d119c99963317d6acb167d8645e",
+    "free_keys863_one_mad_xor_or_mad.json": "0ea04495c302b8c48a2c467b6bbf7fe3c6d29ad4a56db284ac6f76fe27450008",
+    "free_keys863_one_mad_and_mad_xor.json": "ec80eb482383c22a57ae129027b1564ad58683aa6d584375d0046c915535e548",
+    "free_keys863_one_mad_and_mad_and.json": "f3a17a43a4aa8694c2b464a8fa5db4460c357b98368633a17cb71023aac5a058",
+    "free_keys863_one_mad_and_mad_or.json": "0f9b9cd3140828268da3287403d0d86c14f4067aff3cd90993958e17e5186b5e",
+    "free_keys863_one_mad_and_xor_mad.json": "2ff993c6cbceae263a24bff1c18c37d38464427709f2a5c13359792dfcf368aa",
+    "free_keys863_one_mad_and_and_mad.json": "470f1102ead6bcbc6c9f7a7d036af34c9aff5ed29da3b6dcf2df373a6d9fe267",
+    "free_keys863_one_mad_and_or_mad.json": "e3c71a05b21454e90f764ca42ac550dd22d7ada9f22348046775b9026ab9808a",
+    "free_keys863_one_mad_or_mad_xor.json": "e5274512f4ff527a3993b88ae54b3f62a0118520bd00bae670dcc02daa0d06f6",
+    "free_keys863_one_mad_or_mad_and.json": "ff8a4509c043301c196f7f1985b2b783151ff064deee775f61da747a87088442",
+    "free_keys863_one_mad_or_mad_or.json": "6df66e4d2ed180acf7a1135855e72b738153bda21b84e0fff810c8170212dd78",
+    "free_keys863_one_mad_or_xor_mad.json": "64d1d1f24eb38842bd6a0f915e36d27cf12d63e9cdef68c4b18e4557121b3e90",
+    "free_keys863_one_mad_or_and_mad.json": "653a191f1a90a62f689d9d0e7ce36962792c63342f89ce85ef82e8f2496649d3",
+    "free_keys863_one_mad_or_or_mad.json": "c579a2c13cacc20a3693bb055c9a863f1deb7be3eba4bed93999a52dc7dce097"
+  },
+  "xor_wiring_audit": {
+    "executable_best_cycles": 864,
+    "new_executable": false,
+    "orders": {
+      "XOR,MAD,MAD": {
+        "wiring_patterns": 18000,
+        "classes": {
+          "carry_free_prefix_or_polynomial": 18000
+        },
+        "result": "closed_by_recorded_necessary_conditions"
+      },
+      "MAD,XOR,MAD": {
+        "wiring_patterns": 13500,
+        "classes": {
+          "carry_free_prefix_or_polynomial": 9450,
+          "first_square_x_input": 75,
+          "first_square_x_key": 150,
+          "first_square_const_input": 150,
+          "first_square_const_key": 300,
+          "pure_polynomial": 1800,
+          "tail_input_addend": 150,
+          "tail_input_x_product": 75,
+          "tail_input_first_product": 75,
+          "tail_input_square": 75,
+          "fixed_input_scaled0": 30,
+          "fixed_input_scaled1": 30,
+          "fixed_input_scaled4": 90,
+          "fixed_key_addend00": 30,
+          "fixed_key_addend01": 30,
+          "tail_key_x_product": 150,
+          "fixed_key_addend03": 60,
+          "fixed_key_addend11": 30,
+          "tail_key_first_product": 150,
+          "fixed_key_addend13": 60,
+          "tail_key_square": 150,
+          "fixed_key_scaled0": 60,
+          "fixed_key_scaled1": 60,
+          "fixed_key_scaled4": 270
+        },
+        "result": "closed_by_recorded_necessary_conditions"
+      },
+      "MAD,MAD,XOR": {
+        "wiring_patterns": 10800,
+        "classes": {
+          "pure_polynomial": 5148,
+          "polynomial_or_input_bypass": 4320,
+          "polynomial_xor_input": 720,
+          "parallel_square_x_x_square": 4,
+          "parallel_square_x_x_first": 4,
+          "parallel_square_x_scale_input": 11,
+          "parallel_square_x_first_square": 4,
+          "parallel_square_x_scale_first": 11,
+          "parallel_square_const_x_square": 8,
+          "parallel_square_const_x_first": 8,
+          "parallel_square_const_scale_input": 22,
+          "parallel_square_const_first_square": 8,
+          "parallel_square_const_scale_first": 22,
+          "parallel_affine_x_square": 60,
+          "parallel_affine_x_first": 60,
+          "parallel_affine_certificate": 330,
+          "parallel_affine_first_square": 60
+        },
+        "result": "closed_by_recorded_necessary_conditions"
+      }
+    },
+    "evidence": {
+      "free_keys863_partition_square_const_input.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "1720dec0fb84da735b570b4f16cbd5dc25e7d58d813a609e3eff7847233804b2"
+      },
+      "free_keys863_partition_square_const_key.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "d864b6528b9a175636e3f67f827f90456711adbe0f0b2b87c9c5afa0de50ed6c"
+      },
+      "free_keys863_partition_square_x_input.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "39dbdb031f4c6367b702746a1bd10055e7b46ff4304e6ba54e0d6ea67a52a4c3"
+      },
+      "free_keys863_partition_square_x_key.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "244b3d6e2c39db1938c514acddc202b4274ed617dc5abca6b097938c81f02278"
+      },
+      "free_keys863_tail_partition_input_x_product.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "1b8929b76007970e0f5933241c9dd6ae433ec2b51b43fd39281eab0ebff0b8da"
+      },
+      "free_keys863_tail_partition_input_first_product.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "5990dee883edb5c9f553ff60cc7a426b22911c8af61560180da1034e7a9019e1"
+      },
+      "free_keys863_tail_partition_input_square.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "25aea6b502b7f3e02d76566938812f9a0d8999cf28065071b22fc0e9f7321d36"
+      },
+      "free_keys863_tail_partition_key_x_product.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "2fc47fc5db4c4bf6afd8356de9804befa960cc9ac8d6166bad33cd6fd86bef9e"
+      },
+      "free_keys863_tail_partition_key_first_product.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "d82f40cbb728cbab7d8b0c3a7ba5542e784f13e780d10a531a40f0f01d410130"
+      },
+      "free_keys863_tail_partition_key_square.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "229fab98e622e8c6a7f739079bfff640ef0fff1175a3871e1c76a2ad075e9a63"
+      },
+      "free_keys863_tail_partition_input_addend.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "fdeec4d7d57784e4c506f255f72f0217a45910496c2fb57a58f44ab94bbf1eff"
+      },
+      "free_keys863_fixed_tail_input_scaled0.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "40d937bcf1c87ce6804ab1ee16428d1ba42fff5d53cf4b48bfed7919ea3eb22d"
+      },
+      "free_keys863_fixed_tail_input_scaled1.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "fc25326d2451f0fa8261b914b13e6198617705672bc461eda425195f41a43c76"
+      },
+      "free_keys863_fixed_tail_input_scaled4.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "689090714bd424413fdbb2b8d0b4cd7c83725560913a49136a33b2a7d1bf8e64"
+      },
+      "free_keys863_fixed_tail_key_scaled0.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "341e931a9516b11aba1e464b8cc0da616522e6c822fbff14980d05847f6b5aa1"
+      },
+      "free_keys863_fixed_tail_key_scaled1.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "eadd501262785f7bb17060ea97b04ee784c7baa943d1b84dd27c413438745b7f"
+      },
+      "free_keys863_fixed_tail_key_scaled4.json": {
+        "result": "unknown",
+        "sha256": "0292ef95d80dddbddc61792d390c5f28b5509b530946925fcc4df4d9946f8b59"
+      },
+      "middle_free_keys863_nested_normalized.json": {
+        "result": "projected_family_unsat",
+        "sha256": "d8b712bc61e6468be1051e75fc7db3c3179bb666cc1ebe5a6b0d39f3b97d5927"
+      },
+      "free_keys863_fixed_tail_key_addend00.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "9f640b2bfcfec6fb7f7540193a25bf12d24619b72ee4430c91bd336705cea60f"
+      },
+      "free_keys863_fixed_tail_key_addend01.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "83da0bc44cf9f7fb895191a26e8baa7734c69b1a679f25c850885224af3e7a81"
+      },
+      "free_keys863_fixed_tail_key_addend11.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "700e3fe2df4afdce9e008b5c28b6be2bcc43039dcd5195dc6225d0d408eab4c0"
+      },
+      "free_keys863_fixed_tail_key_addend03.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "6ed787c24a7d9ffec67a3a9233901befd6b19fe9b4442e652e1f603b56a38c73"
+      },
+      "free_keys863_fixed_tail_key_addend13.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "3d0b0faa2640c6914f7d87bb111eea8e1e0bbaaa9581bd38275de490f84b8f50"
+      },
+      "free_keys863_parallel_partition_affine_x_square.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "d41e10a7cdba17d84bc18bd580fa37c6ba90e532593924fc075822c33fc77f85"
+      },
+      "free_keys863_parallel_partition_affine_x_first.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "ab05c391776b58e8218b5ce1b305f486102186e482444535124b56ab46b38a06"
+      },
+      "free_keys863_parallel_partition_affine_first_square.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "a250ee193a266fe8f1d5b4a391d5dd18f4c275e37bf95eb90e4b46624de2887a"
+      },
+      "free_keys863_parallel_partition_square_const_x_square.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "bada4f566015a28c74067f71c3cc25ac30621eb0fd7d96d003cc20c3eca4b79f"
+      },
+      "free_keys863_parallel_partition_square_const_x_first.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "95a2ea6c5f34fef043a45845a2522808ab425a473231967141af0b49c909b2f0"
+      },
+      "free_keys863_parallel_partition_square_const_first_square.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "f1c58083769acbffb2f3a025614a9e827547305efb94bc72f1fb6042ed6e6ad8"
+      },
+      "free_keys863_parallel_partition_square_const_scale_input.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "b5bfc5ee9475dfc74a35a078964fc377b668859790098b2b9ec91c207382dedb"
+      },
+      "free_keys863_parallel_partition_square_const_scale_first.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "50837ca90a1cc09465277bc203b29e91d455424b5e312d8c74893bde263b3bd3"
+      },
+      "free_keys863_parallel_partition_square_x_x_square.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "588c4916d6faad63a45bc3cf4a0457d26a428551530af247b9abde399ab31951"
+      },
+      "free_keys863_parallel_partition_square_x_x_first.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "3f6573ab7ad6ce163d1e37427cb028a3578f74ccd92053f7fdd62b9d525173db"
+      },
+      "free_keys863_parallel_partition_square_x_first_square.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "9e97c835ab2d84f3e3f7873820f53dff1b28546b3aaa3a3d4ca4ce0dc30d9231"
+      },
+      "free_keys863_parallel_partition_square_x_scale_input.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "748785268a916e94bc67a16d525f38ef68d3caaaecaec66e016c807247d8d711"
+      },
+      "free_keys863_parallel_partition_square_x_scale_first.json": {
+        "result": "projected_grammar_unsat",
+        "sha256": "cba656a297530f8831dba49f1bdf1cf2a7e678923abdaf9bdb8bf1df651e8764"
+      },
+      "middle_free_keys863_parallel.json": {
+        "result": "projected_family_unsat",
+        "sha256": "d9a4096dff25b9d457d56eb6a02738452c6c11fd81615acc7385cf6d03f1e996"
+      },
+      "free_keys863_bypass_polynomial.json": {
+        "result": "all three screens exclude every key pair",
+        "sha256": "92d278a621e9227530486f5faae5d30e9b75317f3eed06bb7634465f0f721129"
+      }
+    },
+    "total_wiring_patterns": 42300,
+    "scope": "One input x, arbitrary uint32 constants and endpoint XOR keys; two arbitrary-operand MADs and one XOR. Wiring counts include constant-name symmetries and dead-code forms, not distinct functions.",
+    "exclusions": "Not other opcodes, extra live inputs, four-op graphs, or the whole kernel.",
+    "unknown_handling": "Raw UNKNOWN files are preserved. The remaining fixed scaled-key case is the independently normalized nested affine family."
+  },
+  "lattice_wiring_audit": {
+    "width": 11,
+    "orders": {
+      "and,mad,mad": {
+        "raw_result": "unknown",
+        "refinement": "excluded_by_carry_free_rectangles"
+      },
+      "mad,and,mad": {
+        "raw_result": "unknown",
+        "refinement": "excluded_by_operand_partitions",
+        "wiring_patterns": 13500,
+        "classes": {
+          "carry_free_prefix_or_polynomial": 9450,
+          "first_square_x_input": 75,
+          "first_square_x_key": 150,
+          "first_square_const_input": 150,
+          "first_square_const_key": 300,
+          "first_affine_input": 1125,
+          "pure_polynomial": 1200,
+          "fixed_key_addend00": 30,
+          "fixed_key_addend01": 30,
+          "tail_key_x_product": 150,
+          "fixed_key_addend03": 60,
+          "fixed_key_addend11": 30,
+          "tail_key_first_product": 150,
+          "fixed_key_addend13": 60,
+          "tail_key_square": 150,
+          "fixed_key_scaled0": 60,
+          "fixed_key_scaled1": 60,
+          "fixed_key_scaled4": 270
+        }
+      },
+      "mad,mad,and": {
+        "raw_result": "unknown",
+        "refinement": "excluded_by_operand_domination"
+      },
+      "or,mad,mad": {
+        "raw_result": "unknown",
+        "refinement": "excluded_by_carry_free_rectangles"
+      },
+      "mad,or,mad": {
+        "raw_result": "unknown",
+        "refinement": "excluded_by_operand_partitions",
+        "wiring_patterns": 13500,
+        "classes": {
+          "carry_free_prefix_or_polynomial": 9450,
+          "first_square_x_input": 75,
+          "first_square_x_key": 150,
+          "first_square_const_input": 150,
+          "first_square_const_key": 300,
+          "first_affine_input": 1125,
+          "pure_polynomial": 1200,
+          "fixed_key_addend00": 30,
+          "fixed_key_addend01": 30,
+          "tail_key_x_product": 150,
+          "fixed_key_addend03": 60,
+          "fixed_key_addend11": 30,
+          "tail_key_first_product": 150,
+          "fixed_key_addend13": 60,
+          "tail_key_square": 150,
+          "fixed_key_scaled0": 60,
+          "fixed_key_scaled1": 60,
+          "fixed_key_scaled4": 270
+        }
+      },
+      "mad,mad,or": {
+        "raw_result": "unknown",
+        "refinement": "excluded_by_operand_domination"
+      }
+    },
+    "evidence_sha256": {
+      "free_keys863_bypass_polynomial.json": "92d278a621e9227530486f5faae5d30e9b75317f3eed06bb7634465f0f721129",
+      "middle_free_keys863_polynomial.json": "67d14c6a881ee6057cc73f43af10a38a427436687b6fc6915168fcf92cbf07bf",
+      "free_keys863_and_mad_mad.json": "91b6d308e5006b3f775c59c820e6c268e26989b7777597c150d0f2b46dbb49e3",
+      "free_keys863_mad_and_mad.json": "cb9a272f8745e584358f0f1589be4517fba210ed1e07d2a7f8227e66a5ddb226",
+      "free_keys863_mad_mad_and.json": "a1ac8e1d16ac6465a963959e17124642ff9d8432e1fa3cf8255c00e07d61e5e9",
+      "free_keys863_and_partition_affine_input.json": "c6c370b31c97512c889de5768d4e345c799acc8d4f0027bcada98b3108d202a3",
+      "free_keys863_and_partition_square_const_input.json": "9413a31b8b7f7bb874841c33611a73b68deeaa7ba0cf650f9b9e10d1d74ca98b",
+      "free_keys863_and_partition_square_const_key.json": "a664479443a1879a7020abdc4b8788811ac567e1475abfb4143466f7c959664c",
+      "free_keys863_and_partition_square_x_input.json": "2e75a7bec2755b26bddab3ce1e3591508a771a0778c8c8fae58eb2675b4a1d73",
+      "free_keys863_and_partition_square_x_key.json": "f6800f271d5a0cca37be3884515684f46e72aa376887ea0ff841b6528c01a897",
+      "free_keys863_and_tail_key_x_product.json": "b7e716607f339fbe66f8461fb604c1e1c58bb519429455146d385b4b2e4f4727",
+      "free_keys863_and_tail_key_first_product.json": "8f36b2f6a6aa84b8a6afa09c468dd132c19af85d096fca2eeb2cb7b2bea54a6c",
+      "free_keys863_and_tail_key_square.json": "d17b016242aec27e27252fc00c17c94cc94c44f3a1b293331ae9427f751dcc05",
+      "free_keys863_and_fixed_key_230.json": "dc724f99a32f7c3d2fb6dde9dd0c7b19428e09638093b4033cf9031b19746226",
+      "free_keys863_and_fixed_key_231.json": "87d8f40d8ff692aab2a2f5f01fc4cc3415ea6d4d5b557924e9074a628c6494ea",
+      "free_keys863_and_fixed_key_234.json": "15fd17aaca34bf61cae8c3645a8c0d5d8188f622fc2b1a56a5a0e4ffea3f70c2",
+      "free_keys863_and_fixed_key_002.json": "47b56f3d816106a765e3f234fcfc30a5e9d9e010cca6872da0620127c4fa3f90",
+      "free_keys863_and_fixed_key_012.json": "fbe797d56022fb1683eb5562a912e1f340333ecbc1cb2a2edf58404fefa2fcf7",
+      "free_keys863_and_fixed_key_112.json": "57496ca6e9975bc518ee9204fd4782b8acbe7ca2a36875564534c93ee97f22ba",
+      "free_keys863_and_fixed_key_032.json": "0c1c9c5dbbc8071538a5f07bbeb6731f9a1dfd43e62dd5facadd0bce7cb4f020",
+      "free_keys863_and_fixed_key_132.json": "f104181bf53648f21108a336e6ee0952420829a4c2426f482574123e7587c3a7",
+      "free_keys863_or_mad_mad.json": "6437cc1b4f0586eec38370f783ee7fd71f53c7cc69b360aa65fc3ccc5e69298c",
+      "free_keys863_mad_or_mad.json": "69ae281f90dd5717ed72b06f0212b2efbfd4ab5c6785fc3853489bfe7a1db2d7",
+      "free_keys863_mad_mad_or.json": "ebebf40fc51ea589b60be3e04e719ccf658637830cfb75d369a46a843a9380e4",
+      "free_keys863_or_partition_affine_input.json": "d8085b903eb0906830f4c9cbbeb61ebae429f0affa908145f54b65dbfa4f998d",
+      "free_keys863_or_partition_square_const_input.json": "8b649102ba7893e43cb913f12e25de0df556c8c2ffdf5fc404ab32a2d429e675",
+      "free_keys863_or_partition_square_const_key.json": "afba1436b9973dded90e50e619975d14ac0ca3283e9f696093511c729491ad78",
+      "free_keys863_or_partition_square_x_input.json": "926b05ad123510f56ce587ea0d8fa6fd1979212c1b11cdd042025056dda68c1c",
+      "free_keys863_or_partition_square_x_key.json": "bf5afae95a8c0c9eaec42e368bda2cd109ece3aca83e76189538c4a3e9ac3870",
+      "free_keys863_or_tail_key_x_product.json": "45e63dd355e77d2133be07fa942d6d6c806123323eb2816ccf96ea61bcc8aac4",
+      "free_keys863_or_tail_key_first_product.json": "4329a472c3fef17ae5c54e59316aae3f65a9b1fe8ec3825cb3be739a254979af",
+      "free_keys863_or_tail_key_square.json": "5e0f51d5aa68c49b796f28b39eca1f8619a725fd81bf977e806d1748f3aa6520",
+      "free_keys863_or_fixed_key_230.json": "39cf35a60382fe0d0a1995983fb5a88578f446d87ffe496888df74e2df6d158e",
+      "free_keys863_or_fixed_key_231_normalized.json": "dac28eb182b14361b3e41ad9df32b8236fa2286ac18f2045c0ae87c30e3d20b9",
+      "free_keys863_or_fixed_key_234.json": "d80fabf899b7fc67e88758362c5995985e4a6ee1c812c9c76a4d41e428fb91f2",
+      "free_keys863_or_fixed_key_002.json": "d97e7b542309577113ed217ad4a82d833752d582303c0d91f25eb01c8e7a3087",
+      "free_keys863_or_fixed_key_012.json": "8e1c63f767164984d5a97e0dbb4a8d98f3aec6b413539752e0dd9496cc14096b",
+      "free_keys863_or_fixed_key_112.json": "58b66bf2c91f5ccf797f1a7399370f848cbe137c068a984efcac2649ec65052f",
+      "free_keys863_or_fixed_key_032.json": "10ecc30a12edf4f23d649ab685f76d2aa82ccb50dcc42e82ba98e4c3c37fb2fe",
+      "free_keys863_or_fixed_key_132.json": "79ed9833a0d5ae4bc7205b856250a63b356185fe2bbeff70f0d5a82f495f8201"
+    },
+    "target_permutation": true,
+    "target_high_bit_equivariance": true,
+    "square_constant_high_bit_witness": {
+      "inputs": [
+        0,
+        32
+      ],
+      "difference": 1024
+    },
+    "square_x_bit_one_counts": [
+      0,
+      1024,
+      1024,
+      1024,
+      1024,
+      1024,
+      1024,
+      1024,
+      1024,
+      1024,
+      1024
+    ],
+    "square_x_complement_witness": {
+      "inputs": [
+        0,
+        2047
+      ],
+      "target_outputs": [
+        1482,
+        673
+      ],
+      "xor_difference": 1899
+    },
+    "scope": "One input, arbitrary endpoint XOR keys/constants; two MADs and one AND or OR.",
+    "excluded_orders": 6,
+    "unresolved_orders": 0,
+    "new_executable": false,
+    "executable_best_cycles": 864
+  },
+  "bit_local_witness": {
+    "inputs": [
+      0,
+      1
+    ],
+    "outputs": [
+      1482,
+      243
+    ],
+    "output_difference_outside_input_bit": 1336
+  },
+  "minimum_instructions_over_endpoint_keys": 4,
+  "upper_bound": "Recorded original four-op program, independently verified over full32.",
+  "shorter_programs": "Zero-MAD programs are bit-local. A one-MAD program of length <=2 can be padded with identity MAD into the closed two-MAD orders; two-MAD programs of length <=2 are polynomials. Dead code cannot evade these cases.",
+  "scope": "One uint32 input; MAD with arbitrary operands, XOR, AND, OR; arbitrary preloaded constants and arbitrary input/output XOR keys. No shifts, other opcodes, or earlier live values.",
+  "new_executable": false,
+  "executable_best_cycles": 864
+}

@@ -1,0 +1,154 @@
+{
+  "sequence": [
+    "mad",
+    "mad",
+    "^",
+    "mad"
+  ],
+  "width": 32,
+  "seconds_limit": 20,
+  "check_ms": 18000,
+  "live_pool": [
+    "a",
+    "prior=(a-C0)/4097",
+    "keyed=a XOR (a>>19) XOR K"
+  ],
+  "target": "F(a XOR (a>>19) XOR C1) XOR O",
+  "arbitrary_keys": true,
+  "fixed_key": null,
+  "first_source": null,
+  "middle_source": null,
+  "last_operands": null,
+  "initial_samples": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    256,
+    264,
+    288,
+    296,
+    511,
+    512,
+    1023,
+    1024,
+    524287,
+    524288,
+    524289,
+    2147483648,
+    4294967295,
+    2557842833,
+    2176040209,
+    2845480951,
+    998563837,
+    509595569,
+    888137551,
+    1312790128,
+    5565598,
+    3366205594,
+    2924455683,
+    888908023,
+    2478805274,
+    3973622707,
+    177994531,
+    2518910457,
+    1793447369,
+    638651907,
+    3665452560,
+    3728983174,
+    1781000486
+  ],
+  "control": false,
+  "pin_original": true,
+  "events": [
+    {
+      "samples": 65,
+      "synthesis": "sat",
+      "full32_verification": "unsat"
+    }
+  ],
+  "result": "proved_equivalent_full32",
+  "new_executable": false,
+  "scope": "Reduced widths restrict the full32 pre-shift a to the low domain; SAT does not imply a full32 identity or a cycle score.",
+  "input_key": 3345072700,
+  "output_key": 0,
+  "program": [
+    {
+      "op": "mad",
+      "operands": [
+        2,
+        3,
+        4
+      ],
+      "constants": [
+        33,
+        3925396509
+      ]
+    },
+    {
+      "op": "mad",
+      "operands": [
+        2,
+        4,
+        5
+      ],
+      "constants": [
+        16896,
+        2899272192
+      ]
+    },
+    {
+      "op": "^",
+      "operands": [
+        3,
+        4,
+        0
+      ],
+      "constants": [
+        0,
+        0
+      ]
+    },
+    {
+      "op": "mad",
+      "operands": [
+        5,
+        6,
+        7
+      ],
+      "constants": [
+        9,
+        4251993797
+      ]
+    }
+  ],
+  "seconds": 0.014
+}

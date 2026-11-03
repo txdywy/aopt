@@ -1,0 +1,56 @@
+{
+  "base_revision": "485156b35a656d244c0df05112053ec41766c092",
+  "python": "3.12.15",
+  "numpy": "2.5.4",
+  "z3": "5.1.0",
+  "ortools": "9.15.6755",
+  "unittest": {
+    "command": "python3.12 -m unittest codex.test_restore_frontier863 codex.test_free_middle_keys863",
+    "tests": 23,
+    "seconds": 3.406,
+    "result": "passed"
+  },
+  "full32_kernel_controls": {
+    "configurations": 7,
+    "seeds_each": 3,
+    "total": 21,
+    "reference": "tests/frozen_problem.py",
+    "execution": "topological serial correctness schedules; not optimized scores"
+  },
+  "distinct_experimental_graphs": 42,
+  "generic_search_raw_counts": {
+    "two_mad_xor": {
+      "projected_grammar_unsat": 34,
+      "unknown": 6
+    },
+    "two_mad_and_or": {
+      "projected_grammar_unsat": 34,
+      "unknown": 13
+    },
+    "one_mad": {
+      "projected_grammar_unsat": 19,
+      "unknown": 8
+    }
+  },
+  "new_executable": false,
+  "executable_best_cycles": 864,
+  "protected_paths_unchanged": true,
+  "submission_sha256": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  },
+  "python_source_sha256": {
+    "codex/audit_free_key_frontier863.py": "500bc4f21346ea3a829b2cfdd33403765df01149c5e9f386409837f5dc449b51",
+    "codex/audit_free_key_orders863.py": "9646aefa7e807c418516a8cd51ddfdebdab4512778835bc1a6df2336eed67522",
+    "codex/audit_free_keys_lattice863.py": "6b165d868e66541d822272c562ff5a2a5a36aadfa75bf649fd708cde864484eb",
+    "codex/bound_flow_materialization863.py": "5644a8f33e69b697dc3305d47f7f9a9265236230f53088dbabfc45dbb37af6b3",
+    "codex/research_flow_stage863.py": "2ec2de74ed2fb35ac4db2a9edf8b18ab87a06469c7f4c77659e2699027580e1d",
+    "codex/screen_free_keys_polynomial863.py": "908e4f703bd8fe7aa5fc51e7486ade532ad91fecc5e0d9b118f5b761fc3afcd8",
+    "codex/search_absorb_restore863.py": "ccb522751a123ec52348d4c9cd425a96f910d1a6fbc6e19b439054525134855f",
+    "codex/search_affine_xor_keys863.py": "05193b74d3705db42b681a3b04a9b750eaca73b31ca29a634d1d569fce60eff6",
+    "codex/search_masked_restore863.py": "f04a468f43b238edc0324a8ca5f755f6ea04026211af386bb9fd7798d8632299",
+    "codex/search_xor_equivalent_middle863.py": "848923c0a63ca5ed953f6252db7133cba9a8972fce317ae7ca78039cc86c7983",
+    "codex/test_restore_frontier863.py": "bc22bc73420a3cb475567f3d8ab8398ecd0120bc04aac4b646cf238ed1120a7c"
+  }
+}

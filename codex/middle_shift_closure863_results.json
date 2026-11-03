@@ -1,0 +1,7801 @@
+{
+  "best_verified_cycles": 864,
+  "new_executable": false,
+  "z3": "5.1.0",
+  "literal_affine_witnesses": {
+    "polynomial_rectangle": [
+      0,
+      8,
+      256,
+      264
+    ],
+    "values_mod2048": [
+      1482,
+      1810,
+      1738,
+      1042
+    ],
+    "mixed_difference": 1024,
+    "nonconstant_power_of_two_differences": [
+      {
+        "exponent": 1,
+        "step": 2,
+        "inputs": [
+          0,
+          1
+        ],
+        "differences": [
+          4294663762,
+          4286406226
+        ]
+      },
+      {
+        "exponent": 2,
+        "step": 4,
+        "inputs": [
+          0,
+          3
+        ],
+        "differences": [
+          4286102692,
+          646308
+        ]
+      },
+      {
+        "exponent": 3,
+        "step": 8,
+        "inputs": [
+          0,
+          3
+        ],
+        "differences": [
+          4286749000,
+          1218888
+        ]
+      },
+      {
+        "exponent": 4,
+        "step": 16,
+        "inputs": [
+          0,
+          1
+        ],
+        "differences": [
+          4287663760,
+          4287672976
+        ]
+      },
+      {
+        "exponent": 5,
+        "step": 32,
+        "inputs": [
+          0,
+          1
+        ],
+        "differences": [
+          4290110752,
+          4290129184
+        ]
+      },
+      {
+        "exponent": 6,
+        "step": 64,
+        "inputs": [
+          0,
+          1
+        ],
+        "differences": [
+          4285254208,
+          4276996672
+        ]
+      },
+      {
+        "exponent": 7,
+        "step": 128,
+        "inputs": [
+          0,
+          3
+        ],
+        "differences": [
+          4267283584,
+          4276720768
+        ]
+      },
+      {
+        "exponent": 8,
+        "step": 256,
+        "inputs": [
+          0,
+          3
+        ],
+        "differences": [
+          4248889600,
+          4258326784
+        ]
+      },
+      {
+        "exponent": 9,
+        "step": 512,
+        "inputs": [
+          0,
+          1
+        ],
+        "differences": [
+          4211650048,
+          4211954176
+        ]
+      },
+      {
+        "exponent": 10,
+        "step": 1024,
+        "inputs": [
+          0,
+          1
+        ],
+        "differences": [
+          4138378240,
+          4138986496
+        ]
+      },
+      {
+        "exponent": 11,
+        "step": 2048,
+        "inputs": [
+          0,
+          3
+        ],
+        "differences": [
+          291981312,
+          293197824
+        ]
+      },
+      {
+        "exponent": 12,
+        "step": 4096,
+        "inputs": [
+          0,
+          3
+        ],
+        "differences": [
+          2999881728,
+          3002241024
+        ]
+      },
+      {
+        "exponent": 13,
+        "step": 8192,
+        "inputs": [
+          0,
+          3
+        ],
+        "differences": [
+          3583696896,
+          3588415488
+        ]
+      },
+      {
+        "exponent": 14,
+        "step": 16384,
+        "inputs": [
+          0,
+          1
+        ],
+        "differences": [
+          2731327488,
+          2731622400
+        ]
+      },
+      {
+        "exponent": 15,
+        "step": 32768,
+        "inputs": [
+          0,
+          1
+        ],
+        "differences": [
+          4144136192,
+          4144726016
+        ]
+      },
+      {
+        "exponent": 16,
+        "step": 65536,
+        "inputs": [
+          0,
+          3
+        ],
+        "differences": [
+          3164012544,
+          3165192192
+        ]
+      },
+      {
+        "exponent": 17,
+        "step": 131072,
+        "inputs": [
+          0,
+          3
+        ],
+        "differences": [
+          1135476736,
+          1137836032
+        ]
+      },
+      {
+        "exponent": 18,
+        "step": 262144,
+        "inputs": [
+          0,
+          3
+        ],
+        "differences": [
+          3848011776,
+          3852730368
+        ]
+      },
+      {
+        "exponent": 19,
+        "step": 524288,
+        "inputs": [
+          0,
+          3
+        ],
+        "differences": [
+          2807562240,
+          2816999424
+        ]
+      },
+      {
+        "exponent": 20,
+        "step": 1048576,
+        "inputs": [
+          0,
+          3
+        ],
+        "differences": [
+          3088056320,
+          3106930688
+        ]
+      },
+      {
+        "exponent": 21,
+        "step": 2097152,
+        "inputs": [
+          0,
+          65
+        ],
+        "differences": [
+          2862612480,
+          2900361216
+        ]
+      },
+      {
+        "exponent": 22,
+        "step": 4194304,
+        "inputs": [
+          0,
+          189
+        ],
+        "differences": [
+          1740636160,
+          1816133632
+        ]
+      },
+      {
+        "exponent": 23,
+        "step": 8388608,
+        "inputs": [
+          0,
+          189
+        ],
+        "differences": [
+          2642411520,
+          2793406464
+        ]
+      },
+      {
+        "exponent": 24,
+        "step": 16777216,
+        "inputs": [
+          0,
+          189
+        ],
+        "differences": [
+          1761607680,
+          2063597568
+        ]
+      },
+      {
+        "exponent": 25,
+        "step": 33554432,
+        "inputs": [
+          0,
+          1313353289
+        ],
+        "differences": [
+          1375731712,
+          3523215360
+        ]
+      },
+      {
+        "exponent": 26,
+        "step": 67108864,
+        "inputs": [
+          0,
+          1313353289
+        ],
+        "differences": [
+          1543503872,
+          2751463424
+        ]
+      },
+      {
+        "exponent": 27,
+        "step": 134217728,
+        "inputs": [
+          0,
+          1313353289
+        ],
+        "differences": [
+          3623878656,
+          3087007744
+        ]
+      },
+      {
+        "exponent": 28,
+        "step": 268435456,
+        "inputs": [
+          0,
+          3994441691
+        ],
+        "differences": [
+          2415919104,
+          1342177280
+        ]
+      },
+      {
+        "exponent": 29,
+        "step": 536870912,
+        "inputs": [
+          0,
+          1313353289
+        ],
+        "differences": [
+          1610612736,
+          536870912
+        ]
+      },
+      {
+        "exponent": 30,
+        "step": 1073741824,
+        "inputs": [
+          0,
+          1313353289
+        ],
+        "differences": [
+          1073741824,
+          3221225472
+        ]
+      }
+    ],
+    "large_shift_quotient_witnesses": [
+      {
+        "shift": 22,
+        "valuation": 23,
+        "period": 512,
+        "input": 0,
+        "difference": 4211650048,
+        "quotient": 8225879,
+        "largest_possible_q_plus_one": 1024
+      },
+      {
+        "shift": 22,
+        "valuation": 24,
+        "period": 256,
+        "input": 0,
+        "difference": 4248889600,
+        "quotient": 16597225,
+        "largest_possible_q_plus_one": 1024
+      },
+      {
+        "shift": 22,
+        "valuation": 25,
+        "period": 128,
+        "input": 0,
+        "difference": 4267283584,
+        "quotient": 33338153,
+        "largest_possible_q_plus_one": 1024
+      },
+      {
+        "shift": 22,
+        "valuation": 26,
+        "period": 64,
+        "input": 0,
+        "difference": 4285254208,
+        "quotient": 66957097,
+        "largest_possible_q_plus_one": 1024
+      },
+      {
+        "shift": 22,
+        "valuation": 27,
+        "period": 32,
+        "input": 0,
+        "difference": 4290110752,
+        "quotient": 134065961,
+        "largest_possible_q_plus_one": 1024
+      },
+      {
+        "shift": 22,
+        "valuation": 28,
+        "period": 16,
+        "input": 0,
+        "difference": 4287663760,
+        "quotient": 267978985,
+        "largest_possible_q_plus_one": 1024
+      },
+      {
+        "shift": 22,
+        "valuation": 29,
+        "period": 8,
+        "input": 0,
+        "difference": 4286749000,
+        "quotient": 535843625,
+        "largest_possible_q_plus_one": 1024
+      },
+      {
+        "shift": 22,
+        "valuation": 30,
+        "period": 4,
+        "input": 0,
+        "difference": 4286102692,
+        "quotient": 1071525673,
+        "largest_possible_q_plus_one": 1024
+      },
+      {
+        "shift": 22,
+        "valuation": 31,
+        "period": 2,
+        "input": 0,
+        "difference": 4294663762,
+        "quotient": 2147331881,
+        "largest_possible_q_plus_one": 1024
+      },
+      {
+        "shift": 23,
+        "valuation": 24,
+        "period": 256,
+        "input": 0,
+        "difference": 4248889600,
+        "quotient": 16597225,
+        "largest_possible_q_plus_one": 512
+      },
+      {
+        "shift": 23,
+        "valuation": 25,
+        "period": 128,
+        "input": 0,
+        "difference": 4267283584,
+        "quotient": 33338153,
+        "largest_possible_q_plus_one": 512
+      },
+      {
+        "shift": 23,
+        "valuation": 26,
+        "period": 64,
+        "input": 0,
+        "difference": 4285254208,
+        "quotient": 66957097,
+        "largest_possible_q_plus_one": 512
+      },
+      {
+        "shift": 23,
+        "valuation": 27,
+        "period": 32,
+        "input": 0,
+        "difference": 4290110752,
+        "quotient": 134065961,
+        "largest_possible_q_plus_one": 512
+      },
+      {
+        "shift": 23,
+        "valuation": 28,
+        "period": 16,
+        "input": 0,
+        "difference": 4287663760,
+        "quotient": 267978985,
+        "largest_possible_q_plus_one": 512
+      },
+      {
+        "shift": 23,
+        "valuation": 29,
+        "period": 8,
+        "input": 0,
+        "difference": 4286749000,
+        "quotient": 535843625,
+        "largest_possible_q_plus_one": 512
+      },
+      {
+        "shift": 23,
+        "valuation": 30,
+        "period": 4,
+        "input": 0,
+        "difference": 4286102692,
+        "quotient": 1071525673,
+        "largest_possible_q_plus_one": 512
+      },
+      {
+        "shift": 23,
+        "valuation": 31,
+        "period": 2,
+        "input": 0,
+        "difference": 4294663762,
+        "quotient": 2147331881,
+        "largest_possible_q_plus_one": 512
+      },
+      {
+        "shift": 24,
+        "valuation": 25,
+        "period": 128,
+        "input": 0,
+        "difference": 4267283584,
+        "quotient": 33338153,
+        "largest_possible_q_plus_one": 256
+      },
+      {
+        "shift": 24,
+        "valuation": 26,
+        "period": 64,
+        "input": 0,
+        "difference": 4285254208,
+        "quotient": 66957097,
+        "largest_possible_q_plus_one": 256
+      },
+      {
+        "shift": 24,
+        "valuation": 27,
+        "period": 32,
+        "input": 0,
+        "difference": 4290110752,
+        "quotient": 134065961,
+        "largest_possible_q_plus_one": 256
+      },
+      {
+        "shift": 24,
+        "valuation": 28,
+        "period": 16,
+        "input": 0,
+        "difference": 4287663760,
+        "quotient": 267978985,
+        "largest_possible_q_plus_one": 256
+      },
+      {
+        "shift": 24,
+        "valuation": 29,
+        "period": 8,
+        "input": 0,
+        "difference": 4286749000,
+        "quotient": 535843625,
+        "largest_possible_q_plus_one": 256
+      },
+      {
+        "shift": 24,
+        "valuation": 30,
+        "period": 4,
+        "input": 0,
+        "difference": 4286102692,
+        "quotient": 1071525673,
+        "largest_possible_q_plus_one": 256
+      },
+      {
+        "shift": 24,
+        "valuation": 31,
+        "period": 2,
+        "input": 0,
+        "difference": 4294663762,
+        "quotient": 2147331881,
+        "largest_possible_q_plus_one": 256
+      },
+      {
+        "shift": 25,
+        "valuation": 26,
+        "period": 64,
+        "input": 0,
+        "difference": 4285254208,
+        "quotient": 66957097,
+        "largest_possible_q_plus_one": 128
+      },
+      {
+        "shift": 25,
+        "valuation": 27,
+        "period": 32,
+        "input": 0,
+        "difference": 4290110752,
+        "quotient": 134065961,
+        "largest_possible_q_plus_one": 128
+      },
+      {
+        "shift": 25,
+        "valuation": 28,
+        "period": 16,
+        "input": 0,
+        "difference": 4287663760,
+        "quotient": 267978985,
+        "largest_possible_q_plus_one": 128
+      },
+      {
+        "shift": 25,
+        "valuation": 29,
+        "period": 8,
+        "input": 0,
+        "difference": 4286749000,
+        "quotient": 535843625,
+        "largest_possible_q_plus_one": 128
+      },
+      {
+        "shift": 25,
+        "valuation": 30,
+        "period": 4,
+        "input": 0,
+        "difference": 4286102692,
+        "quotient": 1071525673,
+        "largest_possible_q_plus_one": 128
+      },
+      {
+        "shift": 25,
+        "valuation": 31,
+        "period": 2,
+        "input": 0,
+        "difference": 4294663762,
+        "quotient": 2147331881,
+        "largest_possible_q_plus_one": 128
+      },
+      {
+        "shift": 26,
+        "valuation": 27,
+        "period": 32,
+        "input": 0,
+        "difference": 4290110752,
+        "quotient": 134065961,
+        "largest_possible_q_plus_one": 64
+      },
+      {
+        "shift": 26,
+        "valuation": 28,
+        "period": 16,
+        "input": 0,
+        "difference": 4287663760,
+        "quotient": 267978985,
+        "largest_possible_q_plus_one": 64
+      },
+      {
+        "shift": 26,
+        "valuation": 29,
+        "period": 8,
+        "input": 0,
+        "difference": 4286749000,
+        "quotient": 535843625,
+        "largest_possible_q_plus_one": 64
+      },
+      {
+        "shift": 26,
+        "valuation": 30,
+        "period": 4,
+        "input": 0,
+        "difference": 4286102692,
+        "quotient": 1071525673,
+        "largest_possible_q_plus_one": 64
+      },
+      {
+        "shift": 26,
+        "valuation": 31,
+        "period": 2,
+        "input": 0,
+        "difference": 4294663762,
+        "quotient": 2147331881,
+        "largest_possible_q_plus_one": 64
+      },
+      {
+        "shift": 27,
+        "valuation": 28,
+        "period": 16,
+        "input": 0,
+        "difference": 4287663760,
+        "quotient": 267978985,
+        "largest_possible_q_plus_one": 32
+      },
+      {
+        "shift": 27,
+        "valuation": 29,
+        "period": 8,
+        "input": 0,
+        "difference": 4286749000,
+        "quotient": 535843625,
+        "largest_possible_q_plus_one": 32
+      },
+      {
+        "shift": 27,
+        "valuation": 30,
+        "period": 4,
+        "input": 0,
+        "difference": 4286102692,
+        "quotient": 1071525673,
+        "largest_possible_q_plus_one": 32
+      },
+      {
+        "shift": 27,
+        "valuation": 31,
+        "period": 2,
+        "input": 0,
+        "difference": 4294663762,
+        "quotient": 2147331881,
+        "largest_possible_q_plus_one": 32
+      },
+      {
+        "shift": 28,
+        "valuation": 29,
+        "period": 8,
+        "input": 0,
+        "difference": 4286749000,
+        "quotient": 535843625,
+        "largest_possible_q_plus_one": 16
+      },
+      {
+        "shift": 28,
+        "valuation": 30,
+        "period": 4,
+        "input": 0,
+        "difference": 4286102692,
+        "quotient": 1071525673,
+        "largest_possible_q_plus_one": 16
+      },
+      {
+        "shift": 28,
+        "valuation": 31,
+        "period": 2,
+        "input": 0,
+        "difference": 4294663762,
+        "quotient": 2147331881,
+        "largest_possible_q_plus_one": 16
+      },
+      {
+        "shift": 29,
+        "valuation": 30,
+        "period": 4,
+        "input": 0,
+        "difference": 4286102692,
+        "quotient": 1071525673,
+        "largest_possible_q_plus_one": 8
+      },
+      {
+        "shift": 29,
+        "valuation": 31,
+        "period": 2,
+        "input": 0,
+        "difference": 4294663762,
+        "quotient": 2147331881,
+        "largest_possible_q_plus_one": 8
+      },
+      {
+        "shift": 30,
+        "valuation": 31,
+        "period": 2,
+        "input": 0,
+        "difference": 4294663762,
+        "quotient": 2147331881,
+        "largest_possible_q_plus_one": 4
+      }
+    ],
+    "f_zero": 1818584522,
+    "f_minus_x_mod4": 2,
+    "odd_shapes": {
+      "integer_polynomial": 40,
+      "polynomial_plus_q": 7,
+      "q_times_odd_diagonal": 10,
+      "q_squared_plus_odd_diagonal": 2,
+      "q_only_cardinality": 12,
+      "scaled_q_plus_odd_diagonal": 4
+    },
+    "even_shapes": {
+      "integer_polynomial": 40,
+      "x_squared_plus_q": 1,
+      "x_times_t_plus_q": 1,
+      "q_times_x": 5,
+      "scaled_x_plus_q": 2,
+      "periodic_without_x": 22,
+      "q_times_t_plus_x": 1,
+      "q_squared_plus_x": 1,
+      "scaled_q_plus_x": 2
+    },
+    "roles": [
+      {
+        "operands": [
+          0,
+          0,
+          0
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          0,
+          0,
+          1
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          0,
+          0,
+          2
+        ],
+        "odd_reason": "polynomial_plus_q",
+        "even_reason": "x_squared_plus_q"
+      },
+      {
+        "operands": [
+          0,
+          0,
+          3
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          0,
+          0,
+          4
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          0,
+          1,
+          0
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          0,
+          1,
+          1
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          0,
+          1,
+          2
+        ],
+        "odd_reason": "polynomial_plus_q",
+        "even_reason": "x_times_t_plus_q"
+      },
+      {
+        "operands": [
+          0,
+          1,
+          3
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          0,
+          1,
+          4
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          0,
+          2,
+          0
+        ],
+        "odd_reason": "q_times_odd_diagonal",
+        "even_reason": "q_times_x"
+      },
+      {
+        "operands": [
+          0,
+          2,
+          1
+        ],
+        "odd_reason": "q_times_odd_diagonal",
+        "even_reason": "q_times_x"
+      },
+      {
+        "operands": [
+          0,
+          2,
+          2
+        ],
+        "odd_reason": "q_times_odd_diagonal",
+        "even_reason": "q_times_x"
+      },
+      {
+        "operands": [
+          0,
+          2,
+          3
+        ],
+        "odd_reason": "q_times_odd_diagonal",
+        "even_reason": "q_times_x"
+      },
+      {
+        "operands": [
+          0,
+          2,
+          4
+        ],
+        "odd_reason": "q_times_odd_diagonal",
+        "even_reason": "q_times_x"
+      },
+      {
+        "operands": [
+          0,
+          3,
+          0
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          0,
+          3,
+          1
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          0,
+          3,
+          2
+        ],
+        "odd_reason": "polynomial_plus_q",
+        "even_reason": "scaled_x_plus_q"
+      },
+      {
+        "operands": [
+          0,
+          3,
+          3
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          0,
+          3,
+          4
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          0,
+          4,
+          0
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          0,
+          4,
+          1
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          0,
+          4,
+          2
+        ],
+        "odd_reason": "polynomial_plus_q",
+        "even_reason": "scaled_x_plus_q"
+      },
+      {
+        "operands": [
+          0,
+          4,
+          3
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          0,
+          4,
+          4
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          1,
+          1,
+          0
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          1,
+          1,
+          1
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          1,
+          1,
+          2
+        ],
+        "odd_reason": "polynomial_plus_q",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          1,
+          1,
+          3
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          1,
+          1,
+          4
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          1,
+          2,
+          0
+        ],
+        "odd_reason": "q_times_odd_diagonal",
+        "even_reason": "q_times_t_plus_x"
+      },
+      {
+        "operands": [
+          1,
+          2,
+          1
+        ],
+        "odd_reason": "q_times_odd_diagonal",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          1,
+          2,
+          2
+        ],
+        "odd_reason": "q_times_odd_diagonal",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          1,
+          2,
+          3
+        ],
+        "odd_reason": "q_times_odd_diagonal",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          1,
+          2,
+          4
+        ],
+        "odd_reason": "q_times_odd_diagonal",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          1,
+          3,
+          0
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          1,
+          3,
+          1
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          1,
+          3,
+          2
+        ],
+        "odd_reason": "polynomial_plus_q",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          1,
+          3,
+          3
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          1,
+          3,
+          4
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          1,
+          4,
+          0
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          1,
+          4,
+          1
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          1,
+          4,
+          2
+        ],
+        "odd_reason": "polynomial_plus_q",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          1,
+          4,
+          3
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          1,
+          4,
+          4
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          2,
+          2,
+          0
+        ],
+        "odd_reason": "q_squared_plus_odd_diagonal",
+        "even_reason": "q_squared_plus_x"
+      },
+      {
+        "operands": [
+          2,
+          2,
+          1
+        ],
+        "odd_reason": "q_squared_plus_odd_diagonal",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          2,
+          2,
+          2
+        ],
+        "odd_reason": "q_only_cardinality",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          2,
+          2,
+          3
+        ],
+        "odd_reason": "q_only_cardinality",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          2,
+          2,
+          4
+        ],
+        "odd_reason": "q_only_cardinality",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          2,
+          3,
+          0
+        ],
+        "odd_reason": "scaled_q_plus_odd_diagonal",
+        "even_reason": "scaled_q_plus_x"
+      },
+      {
+        "operands": [
+          2,
+          3,
+          1
+        ],
+        "odd_reason": "scaled_q_plus_odd_diagonal",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          2,
+          3,
+          2
+        ],
+        "odd_reason": "q_only_cardinality",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          2,
+          3,
+          3
+        ],
+        "odd_reason": "q_only_cardinality",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          2,
+          3,
+          4
+        ],
+        "odd_reason": "q_only_cardinality",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          2,
+          4,
+          0
+        ],
+        "odd_reason": "scaled_q_plus_odd_diagonal",
+        "even_reason": "scaled_q_plus_x"
+      },
+      {
+        "operands": [
+          2,
+          4,
+          1
+        ],
+        "odd_reason": "scaled_q_plus_odd_diagonal",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          2,
+          4,
+          2
+        ],
+        "odd_reason": "q_only_cardinality",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          2,
+          4,
+          3
+        ],
+        "odd_reason": "q_only_cardinality",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          2,
+          4,
+          4
+        ],
+        "odd_reason": "q_only_cardinality",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          3,
+          3,
+          0
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          3,
+          3,
+          1
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          3,
+          3,
+          2
+        ],
+        "odd_reason": "q_only_cardinality",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          3,
+          3,
+          3
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          3,
+          3,
+          4
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          3,
+          4,
+          0
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          3,
+          4,
+          1
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          3,
+          4,
+          2
+        ],
+        "odd_reason": "q_only_cardinality",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          3,
+          4,
+          3
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          3,
+          4,
+          4
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          4,
+          4,
+          0
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          4,
+          4,
+          1
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          4,
+          4,
+          2
+        ],
+        "odd_reason": "q_only_cardinality",
+        "even_reason": "periodic_without_x"
+      },
+      {
+        "operands": [
+          4,
+          4,
+          3
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      },
+      {
+        "operands": [
+          4,
+          4,
+          4
+        ],
+        "odd_reason": "integer_polynomial",
+        "even_reason": "integer_polynomial"
+      }
+    ]
+  },
+  "top_pair": {
+    "result": "unsat",
+    "claim": "F(x XOR 2**31)=F(x) XOR 2**31"
+  },
+  "variable_count": {
+    "result": "unsat",
+    "seconds": 1.359,
+    "timeout_ms": 10000,
+    "nonzero_multiplier": true,
+    "rectangles": [
+      {
+        "width": 11,
+        "steps": [
+          8,
+          256
+        ],
+        "inputs": [
+          0,
+          8,
+          256,
+          264
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          1772506826,
+          1773716498
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 11,
+        "steps": [
+          8,
+          256
+        ],
+        "inputs": [
+          2,
+          10,
+          258,
+          266
+        ],
+        "values": [
+          1818280988,
+          1810062692,
+          1772203292,
+          1773412964
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 11,
+        "steps": [
+          8,
+          256
+        ],
+        "inputs": [
+          4,
+          12,
+          260,
+          268
+        ],
+        "values": [
+          1809719918,
+          1810938806,
+          1773079406,
+          1774289078
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 11,
+        "steps": [
+          8,
+          256
+        ],
+        "inputs": [
+          6,
+          14,
+          262,
+          270
+        ],
+        "values": [
+          1809416384,
+          1810635272,
+          1772775872,
+          1773985544
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 11,
+        "steps": [
+          8,
+          256
+        ],
+        "inputs": [
+          8,
+          16,
+          264,
+          272
+        ],
+        "values": [
+          1810366226,
+          1811280986,
+          1773716498,
+          1774787930
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 11,
+        "steps": [
+          8,
+          256
+        ],
+        "inputs": [
+          10,
+          18,
+          266,
+          274
+        ],
+        "values": [
+          1810062692,
+          1812157100,
+          1773412964,
+          1775664044
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 11,
+        "steps": [
+          8,
+          256
+        ],
+        "inputs": [
+          12,
+          20,
+          268,
+          276
+        ],
+        "values": [
+          1810938806,
+          1811853566,
+          1774289078,
+          1775360510
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 11,
+        "steps": [
+          8,
+          256
+        ],
+        "inputs": [
+          14,
+          22,
+          270,
+          278
+        ],
+        "values": [
+          1810635272,
+          1812729680,
+          1773985544,
+          1776236624
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 11,
+        "steps": [
+          8,
+          256
+        ],
+        "inputs": [
+          3300263612,
+          3300263620,
+          3300263868,
+          3300263876
+        ],
+        "values": [
+          3698866662,
+          3697578798,
+          3659719398,
+          3658588206
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 11,
+        "steps": [
+          8,
+          256
+        ],
+        "inputs": [
+          24967542,
+          24967550,
+          24967798,
+          24967806
+        ],
+        "values": [
+          3956626352,
+          3981364472,
+          4018928816,
+          4020064760
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 11,
+        "steps": [
+          8,
+          256
+        ],
+        "inputs": [
+          559837704,
+          559837712,
+          559837960,
+          559837968
+        ],
+        "values": [
+          3070278930,
+          3071433306,
+          3109661202,
+          3115156314
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 11,
+        "steps": [
+          8,
+          256
+        ],
+        "inputs": [
+          2607580846,
+          2607580854,
+          2607581102,
+          2607581110
+        ],
+        "values": [
+          4276031912,
+          4275038960,
+          4237327016,
+          4235882480
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 11,
+        "steps": [
+          8,
+          256
+        ],
+        "inputs": [
+          3576386068,
+          3576386076,
+          3576386324,
+          3576386332
+        ],
+        "values": [
+          1285457662,
+          1284317254,
+          2680467454,
+          2679317830
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 11,
+        "steps": [
+          32,
+          64
+        ],
+        "inputs": [
+          12,
+          44,
+          76,
+          108
+        ],
+        "values": [
+          1810938806,
+          1806045398,
+          1801188854,
+          1797465878
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 11,
+        "steps": [
+          32,
+          64
+        ],
+        "inputs": [
+          14,
+          46,
+          78,
+          110
+        ],
+        "values": [
+          1810635272,
+          1806930728,
+          1802055752,
+          1797180776
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 11,
+        "steps": [
+          32,
+          64
+        ],
+        "inputs": [
+          2596843594,
+          2596843626,
+          2596843658,
+          2596843690
+        ],
+        "values": [
+          1907742628,
+          1912046788,
+          1898029540,
+          1902250756
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 12,
+        "steps": [
+          8,
+          512
+        ],
+        "inputs": [
+          8,
+          16,
+          520,
+          528
+        ],
+        "values": [
+          1810366226,
+          1811280986,
+          1736486162,
+          1737714266
+        ],
+        "mixed_difference": 2048
+      },
+      {
+        "width": 12,
+        "steps": [
+          8,
+          512
+        ],
+        "inputs": [
+          9,
+          17,
+          521,
+          529
+        ],
+        "values": [
+          1810205243,
+          1811129219,
+          1736629307,
+          1737866627
+        ],
+        "mixed_difference": 2048
+      },
+      {
+        "width": 12,
+        "steps": [
+          8,
+          512
+        ],
+        "inputs": [
+          12,
+          20,
+          524,
+          532
+        ],
+        "values": [
+          1810938806,
+          1811853566,
+          1738238390,
+          1730066174
+        ],
+        "mixed_difference": 2048
+      },
+      {
+        "width": 12,
+        "steps": [
+          8,
+          512
+        ],
+        "inputs": [
+          13,
+          21,
+          525,
+          533
+        ],
+        "values": [
+          1810777823,
+          1811701799,
+          1738381535,
+          1730218535
+        ],
+        "mixed_difference": 2048
+      },
+      {
+        "width": 12,
+        "steps": [
+          8,
+          512
+        ],
+        "inputs": [
+          912703980,
+          912703988,
+          912704492,
+          912704500
+        ],
+        "values": [
+          87671958,
+          76808670,
+          4146870934,
+          4148080606
+        ],
+        "mixed_difference": 2048
+      },
+      {
+        "width": 12,
+        "steps": [
+          8,
+          512
+        ],
+        "inputs": [
+          3237814969,
+          3237814977,
+          3237815481,
+          3237815489
+        ],
+        "values": [
+          1301555307,
+          1305133491,
+          255490667,
+          249650099
+        ],
+        "mixed_difference": 2048
+      },
+      {
+        "width": 12,
+        "steps": [
+          32,
+          128
+        ],
+        "inputs": [
+          10,
+          42,
+          138,
+          170
+        ],
+        "values": [
+          1810062692,
+          1806330500,
+          1791742436,
+          1788001028
+        ],
+        "mixed_difference": 3072
+      },
+      {
+        "width": 12,
+        "steps": [
+          32,
+          128
+        ],
+        "inputs": [
+          14,
+          46,
+          142,
+          174
+        ],
+        "values": [
+          1810635272,
+          1806930728,
+          1792305800,
+          1788610472
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 12,
+        "steps": [
+          32,
+          128
+        ],
+        "inputs": [
+          3504559770,
+          3504559802,
+          3504559898,
+          3504559930
+        ],
+        "values": [
+          2399488628,
+          2404078484,
+          2341198580,
+          2346092564
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 13,
+        "steps": [
+          32,
+          256
+        ],
+        "inputs": [
+          6,
+          38,
+          262,
+          294
+        ],
+        "values": [
+          1809416384,
+          1805794784,
+          1772775872,
+          1769145056
+        ],
+        "mixed_difference": 7168
+      },
+      {
+        "width": 13,
+        "steps": [
+          32,
+          256
+        ],
+        "inputs": [
+          14,
+          46,
+          270,
+          302
+        ],
+        "values": [
+          1810635272,
+          1806930728,
+          1773985544,
+          1770290216
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 13,
+        "steps": [
+          32,
+          256
+        ],
+        "inputs": [
+          3444662752,
+          3444662784,
+          3444663008,
+          3444663040
+        ],
+        "values": [
+          316142250,
+          301839306,
+          277428138,
+          263429322
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 13,
+        "steps": [
+          32,
+          256
+        ],
+        "inputs": [
+          306999496,
+          306999528,
+          306999752,
+          306999784
+        ],
+        "values": [
+          1127165394,
+          1131146994,
+          1696854738,
+          1700845554
+        ],
+        "mixed_difference": 1024
+      },
+      {
+        "width": 13,
+        "steps": [
+          32,
+          256
+        ],
+        "inputs": [
+          2914215283,
+          2914215315,
+          2914215539,
+          2914215571
+        ],
+        "values": [
+          3084836405,
+          3080016725,
+          3113260853,
+          3146447957
+        ],
+        "mixed_difference": 4096
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          0,
+          8,
+          2048,
+          2056
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          2110565834,
+          2102273810
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          1,
+          9,
+          2049,
+          2057
+        ],
+        "values": [
+          1818423539,
+          1810205243,
+          2110404851,
+          2102112827
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          2,
+          10,
+          2050,
+          2058
+        ],
+        "values": [
+          1818280988,
+          1810062692,
+          2110262300,
+          2101970276
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          3,
+          11,
+          2051,
+          2059
+        ],
+        "values": [
+          1809862469,
+          1811081357,
+          2103060293,
+          2104205453
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          4,
+          12,
+          2052,
+          2060
+        ],
+        "values": [
+          1809719918,
+          1810938806,
+          2102917742,
+          2104062902
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          5,
+          13,
+          2053,
+          2061
+        ],
+        "values": [
+          1809558935,
+          1810777823,
+          2102756759,
+          2103901919
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          6,
+          14,
+          2054,
+          2062
+        ],
+        "values": [
+          1809416384,
+          1810635272,
+          2102614208,
+          2103759368
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          7,
+          15,
+          2055,
+          2063
+        ],
+        "values": [
+          1810508777,
+          1811432753,
+          2102416361,
+          2103414065
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          8,
+          16,
+          2056,
+          2064
+        ],
+        "values": [
+          1810366226,
+          1811280986,
+          2102273810,
+          2103262298
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          9,
+          17,
+          2057,
+          2065
+        ],
+        "values": [
+          1810205243,
+          1811129219,
+          2102112827,
+          2103110531
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          10,
+          18,
+          2058,
+          2066
+        ],
+        "values": [
+          1810062692,
+          1812157100,
+          2101970276,
+          2105318060
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          11,
+          19,
+          2059,
+          2067
+        ],
+        "values": [
+          1811081357,
+          1812005333,
+          2104205453,
+          2105203157
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          12,
+          20,
+          2060,
+          2068
+        ],
+        "values": [
+          1810938806,
+          1811853566,
+          2104062902,
+          2105051390
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          13,
+          21,
+          2061,
+          2069
+        ],
+        "values": [
+          1810777823,
+          1811701799,
+          2103901919,
+          2104899623
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          14,
+          22,
+          2062,
+          2070
+        ],
+        "values": [
+          1810635272,
+          1812729680,
+          2103759368,
+          2104747856
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          15,
+          23,
+          2063,
+          2071
+        ],
+        "values": [
+          1811432753,
+          1812651641,
+          2103414065,
+          2104559225
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          2714700075,
+          2714700083,
+          2714702123,
+          2714702131
+        ],
+        "values": [
+          169402029,
+          170547189,
+          481990317,
+          480849909
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          1834854605,
+          1834854613,
+          1834856653,
+          1834856661
+        ],
+        "values": [
+          1506643359,
+          1505502951,
+          2417903007,
+          2419195623
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          8,
+          2048
+        ],
+        "inputs": [
+          3284048145,
+          3284048153,
+          3284050193,
+          3284050201
+        ],
+        "values": [
+          2713298051,
+          2712176075,
+          3024153731,
+          3022958027
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          32,
+          512
+        ],
+        "inputs": [
+          4207769687,
+          4207769719,
+          4207770199,
+          4207770231
+        ],
+        "values": [
+          1981145273,
+          1987421657,
+          1459524281,
+          1447294937
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 14,
+        "steps": [
+          32,
+          512
+        ],
+        "inputs": [
+          3535340161,
+          3535340193,
+          3535340673,
+          3535340705
+        ],
+        "values": [
+          2941048691,
+          2945795219,
+          2867933555,
+          265735827
+        ],
+        "mixed_difference": 12288
+      },
+      {
+        "width": 14,
+        "steps": [
+          32,
+          512
+        ],
+        "inputs": [
+          2124303259,
+          2124303291,
+          2124303771,
+          2124303803
+        ],
+        "values": [
+          1057796765,
+          1062082493,
+          1135510685,
+          1140054461
+        ],
+        "mixed_difference": 12288
+      },
+      {
+        "width": 14,
+        "steps": [
+          32,
+          512
+        ],
+        "inputs": [
+          259092257,
+          259092289,
+          259092769,
+          259092801
+        ],
+        "values": [
+          1909333267,
+          1904642611,
+          1826486035,
+          1708954675
+        ],
+        "mixed_difference": 12288
+      },
+      {
+        "width": 14,
+        "steps": [
+          32,
+          512
+        ],
+        "inputs": [
+          3384975972,
+          3384976004,
+          3384976484,
+          3384976516
+        ],
+        "values": [
+          3911671758,
+          3925984494,
+          4003845582,
+          3991210734
+        ],
+        "mixed_difference": 4096
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          0,
+          8,
+          4096,
+          4104
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          523498954,
+          517566226
+        ],
+        "mixed_difference": 24576
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          1,
+          9,
+          4097,
+          4105
+        ],
+        "values": [
+          1818423539,
+          1810205243,
+          523337971,
+          517405243
+        ],
+        "mixed_difference": 24576
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          2,
+          10,
+          4098,
+          4106
+        ],
+        "values": [
+          1818280988,
+          1810062692,
+          523195420,
+          517262692
+        ],
+        "mixed_difference": 24576
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          3,
+          11,
+          4099,
+          4107
+        ],
+        "values": [
+          1809862469,
+          1811081357,
+          517136197,
+          515922061
+        ],
+        "mixed_difference": 24576
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          4,
+          12,
+          4100,
+          4108
+        ],
+        "values": [
+          1809719918,
+          1810938806,
+          516993646,
+          515779510
+        ],
+        "mixed_difference": 24576
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          5,
+          13,
+          4101,
+          4109
+        ],
+        "values": [
+          1809558935,
+          1810777823,
+          516832663,
+          515618527
+        ],
+        "mixed_difference": 24576
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          6,
+          14,
+          4102,
+          4110
+        ],
+        "values": [
+          1809416384,
+          1810635272,
+          516690112,
+          515475976
+        ],
+        "mixed_difference": 24576
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          7,
+          15,
+          4103,
+          4111
+        ],
+        "values": [
+          1810508777,
+          1811432753,
+          517708777,
+          516347185
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          8,
+          16,
+          4104,
+          4112
+        ],
+        "values": [
+          1810366226,
+          1811280986,
+          517566226,
+          516195418
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          9,
+          17,
+          4105,
+          4113
+        ],
+        "values": [
+          1810205243,
+          1811129219,
+          517405243,
+          516043651
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          10,
+          18,
+          4106,
+          4114
+        ],
+        "values": [
+          1810062692,
+          1812157100,
+          517262692,
+          519430828
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          11,
+          19,
+          4107,
+          4115
+        ],
+        "values": [
+          1811081357,
+          1812005333,
+          515922061,
+          519279061
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          12,
+          20,
+          4108,
+          4116
+        ],
+        "values": [
+          1810938806,
+          1811853566,
+          515779510,
+          519127294
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          13,
+          21,
+          4109,
+          4117
+        ],
+        "values": [
+          1810777823,
+          1811701799,
+          515618527,
+          518975527
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          14,
+          22,
+          4110,
+          4118
+        ],
+        "values": [
+          1810635272,
+          1812729680,
+          515475976,
+          520003408
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          15,
+          23,
+          4111,
+          4119
+        ],
+        "values": [
+          1811432753,
+          1812651641,
+          516347185,
+          519851641
+        ],
+        "mixed_difference": 24576
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          2585373256,
+          2585373264,
+          2585377352,
+          2585377360
+        ],
+        "values": [
+          4210360146,
+          4218297498,
+          3555618642,
+          3549473946
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          68483826,
+          68483834,
+          68487922,
+          68487930
+        ],
+        "values": [
+          2349089932,
+          2350299604,
+          2935411852,
+          2934188500
+        ],
+        "mixed_difference": 24576
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          62890992,
+          62891000,
+          62895088,
+          62895096
+        ],
+        "values": [
+          4096611130,
+          4093111426,
+          1593566010,
+          1592351874
+        ],
+        "mixed_difference": 24576
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          861005458,
+          861005466,
+          861009554,
+          861009562
+        ],
+        "values": [
+          3110789420,
+          3109649012,
+          2526900524,
+          2528045684
+        ],
+        "mixed_difference": 24576
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          1834277081,
+          1834277089,
+          1834281177,
+          1834281185
+        ],
+        "values": [
+          4123818891,
+          4115600595,
+          412740491,
+          406955219
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          4156591877,
+          4156591885,
+          4156595973,
+          4156595981
+        ],
+        "values": [
+          3372391575,
+          3385314783,
+          3918752919,
+          3934109151
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          86179834,
+          86179842,
+          86183930,
+          86183938
+        ],
+        "values": [
+          752307924,
+          751158300,
+          1333837524,
+          1335120924
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 15,
+        "steps": [
+          8,
+          4096
+        ],
+        "inputs": [
+          1159489067,
+          1159489075,
+          1159493163,
+          1159493171
+        ],
+        "values": [
+          2536788909,
+          2537897205,
+          1583793069,
+          1589693685
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          1,
+          33,
+          1025,
+          1057
+        ],
+        "values": [
+          1818423539,
+          1813585427,
+          1662442739,
+          1657567763
+        ],
+        "mixed_difference": 28672
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          2,
+          34,
+          1026,
+          1058
+        ],
+        "values": [
+          1818280988,
+          1805185340,
+          1662300188,
+          1649757500
+        ],
+        "mixed_difference": 28672
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          3,
+          35,
+          1027,
+          1059
+        ],
+        "values": [
+          1809862469,
+          1805042789,
+          1654489925,
+          1649633381
+        ],
+        "mixed_difference": 28672
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          4,
+          36,
+          1028,
+          1060
+        ],
+        "values": [
+          1809719918,
+          1804900238,
+          1654347374,
+          1650080654
+        ],
+        "mixed_difference": 28672
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          5,
+          37,
+          1029,
+          1061
+        ],
+        "values": [
+          1809558935,
+          1804757687,
+          1654794647,
+          1649919671
+        ],
+        "mixed_difference": 24576
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          6,
+          38,
+          1030,
+          1062
+        ],
+        "values": [
+          1809416384,
+          1805794784,
+          1654652096,
+          1649187296
+        ],
+        "mixed_difference": 24576
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          7,
+          39,
+          1031,
+          1063
+        ],
+        "values": [
+          1810508777,
+          1805578505,
+          1653845993,
+          1648989449
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          8,
+          40,
+          1032,
+          1064
+        ],
+        "values": [
+          1810366226,
+          1805435954,
+          1653703442,
+          1649436722
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          9,
+          41,
+          1033,
+          1065
+        ],
+        "values": [
+          1810205243,
+          1805293403,
+          1654150715,
+          1649275739
+        ],
+        "mixed_difference": 4096
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          10,
+          42,
+          1034,
+          1066
+        ],
+        "values": [
+          1810062692,
+          1806330500,
+          1654008164,
+          1650902660
+        ],
+        "mixed_difference": 4096
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          11,
+          43,
+          1035,
+          1067
+        ],
+        "values": [
+          1811081357,
+          1806187949,
+          1655635085,
+          1650778541
+        ],
+        "mixed_difference": 4096
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          12,
+          44,
+          1036,
+          1068
+        ],
+        "values": [
+          1810938806,
+          1806045398,
+          1655492534,
+          1651225814
+        ],
+        "mixed_difference": 4096
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          3943678442,
+          3943678474,
+          3943679466,
+          3943679498
+        ],
+        "values": [
+          3886657092,
+          3891219300,
+          3740076612,
+          3744601956
+        ],
+        "mixed_difference": 28672
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          3584279844,
+          3584279876,
+          3584280868,
+          3584280900
+        ],
+        "values": [
+          484762766,
+          489601454,
+          640153742,
+          626154926
+        ],
+        "mixed_difference": 4096
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          527761940,
+          527761972,
+          527762964,
+          527762996
+        ],
+        "values": [
+          2809902846,
+          2824215582,
+          558848766,
+          554250270
+        ],
+        "mixed_difference": 28672
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          2683535995,
+          2683536027,
+          2683537019,
+          2683537051
+        ],
+        "values": [
+          3676044413,
+          3671593373,
+          3821555837,
+          3930240413
+        ],
+        "mixed_difference": 20480
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          1930275498,
+          1930275530,
+          1930276522,
+          1930276554
+        ],
+        "values": [
+          3985445124,
+          3980533284,
+          4130790660,
+          4125915684
+        ],
+        "mixed_difference": 4096
+      },
+      {
+        "width": 15,
+        "steps": [
+          32,
+          1024
+        ],
+        "inputs": [
+          604723874,
+          604723906,
+          604724898,
+          604724930
+        ],
+        "values": [
+          3167062972,
+          3181062364,
+          3030509500,
+          3022574812
+        ],
+        "mixed_difference": 20480
+      },
+      {
+        "width": 16,
+        "steps": [
+          8,
+          8192
+        ],
+        "inputs": [
+          7,
+          15,
+          8199,
+          8207
+        ],
+        "values": [
+          1810508777,
+          1811432753,
+          1103956969,
+          1105028401
+        ],
+        "mixed_difference": 16384
+      },
+      {
+        "width": 16,
+        "steps": [
+          8,
+          8192
+        ],
+        "inputs": [
+          8,
+          16,
+          8200,
+          8208
+        ],
+        "values": [
+          1810366226,
+          1811280986,
+          1103814418,
+          1104876634
+        ],
+        "mixed_difference": 16384
+      },
+      {
+        "width": 16,
+        "steps": [
+          8,
+          8192
+        ],
+        "inputs": [
+          9,
+          17,
+          8201,
+          8209
+        ],
+        "values": [
+          1810205243,
+          1811129219,
+          1103653435,
+          1104724867
+        ],
+        "mixed_difference": 16384
+      },
+      {
+        "width": 16,
+        "steps": [
+          8,
+          8192
+        ],
+        "inputs": [
+          10,
+          18,
+          8202,
+          8210
+        ],
+        "values": [
+          1810062692,
+          1812157100,
+          1103510884,
+          1101034156
+        ],
+        "mixed_difference": 16384
+      },
+      {
+        "width": 16,
+        "steps": [
+          8,
+          8192
+        ],
+        "inputs": [
+          11,
+          19,
+          8203,
+          8211
+        ],
+        "values": [
+          1811081357,
+          1812005333,
+          1104529549,
+          1100882389
+        ],
+        "mixed_difference": 16384
+      },
+      {
+        "width": 16,
+        "steps": [
+          8,
+          8192
+        ],
+        "inputs": [
+          12,
+          20,
+          8204,
+          8212
+        ],
+        "values": [
+          1810938806,
+          1811853566,
+          1104386998,
+          1100730622
+        ],
+        "mixed_difference": 16384
+      },
+      {
+        "width": 16,
+        "steps": [
+          8,
+          8192
+        ],
+        "inputs": [
+          13,
+          21,
+          8205,
+          8213
+        ],
+        "values": [
+          1810777823,
+          1811701799,
+          1104226015,
+          1100578855
+        ],
+        "mixed_difference": 16384
+      },
+      {
+        "width": 16,
+        "steps": [
+          8,
+          8192
+        ],
+        "inputs": [
+          14,
+          22,
+          8206,
+          8214
+        ],
+        "values": [
+          1810635272,
+          1812729680,
+          1104083464,
+          1101606736
+        ],
+        "mixed_difference": 16384
+      },
+      {
+        "width": 16,
+        "steps": [
+          8,
+          8192
+        ],
+        "inputs": [
+          3995828536,
+          3995828544,
+          3995836728,
+          3995836736
+        ],
+        "values": [
+          1129914306,
+          1154652426,
+          4252090306,
+          4281694474
+        ],
+        "mixed_difference": 16384
+      },
+      {
+        "width": 16,
+        "steps": [
+          8,
+          8192
+        ],
+        "inputs": [
+          2563334071,
+          2563334079,
+          2563342263,
+          2563342271
+        ],
+        "values": [
+          1855491865,
+          1854204001,
+          607498009,
+          606357601
+        ],
+        "mixed_difference": 16384
+      },
+      {
+        "width": 16,
+        "steps": [
+          8,
+          8192
+        ],
+        "inputs": [
+          1270012684,
+          1270012692,
+          1270020876,
+          1270020884
+        ],
+        "values": [
+          2369474230,
+          2368333822,
+          1728982710,
+          1727989758
+        ],
+        "mixed_difference": 16384
+      },
+      {
+        "width": 16,
+        "steps": [
+          32,
+          2048
+        ],
+        "inputs": [
+          3,
+          35,
+          2051,
+          2083
+        ],
+        "values": [
+          1809862469,
+          1805042789,
+          2103060293,
+          2098166885
+        ],
+        "mixed_difference": 57344
+      },
+      {
+        "width": 16,
+        "steps": [
+          32,
+          2048
+        ],
+        "inputs": [
+          4,
+          36,
+          2052,
+          2084
+        ],
+        "values": [
+          1809719918,
+          1804900238,
+          2102917742,
+          2098024334
+        ],
+        "mixed_difference": 57344
+      },
+      {
+        "width": 16,
+        "steps": [
+          32,
+          2048
+        ],
+        "inputs": [
+          5,
+          37,
+          2053,
+          2085
+        ],
+        "values": [
+          1809558935,
+          1804757687,
+          2102756759,
+          2097881783
+        ],
+        "mixed_difference": 57344
+      },
+      {
+        "width": 16,
+        "steps": [
+          32,
+          2048
+        ],
+        "inputs": [
+          6,
+          38,
+          2054,
+          2086
+        ],
+        "values": [
+          1809416384,
+          1805794784,
+          2102614208,
+          2097739232
+        ],
+        "mixed_difference": 57344
+      },
+      {
+        "width": 16,
+        "steps": [
+          32,
+          2048
+        ],
+        "inputs": [
+          7,
+          39,
+          2055,
+          2087
+        ],
+        "values": [
+          1810508777,
+          1805578505,
+          2102416361,
+          2097559817
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 16,
+        "steps": [
+          32,
+          2048
+        ],
+        "inputs": [
+          8,
+          40,
+          2056,
+          2088
+        ],
+        "values": [
+          1810366226,
+          1805435954,
+          2102273810,
+          2097417266
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 16,
+        "steps": [
+          32,
+          2048
+        ],
+        "inputs": [
+          9,
+          41,
+          2057,
+          2089
+        ],
+        "values": [
+          1810205243,
+          1805293403,
+          2102112827,
+          2097274715
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 16,
+        "steps": [
+          32,
+          2048
+        ],
+        "inputs": [
+          10,
+          42,
+          2058,
+          2090
+        ],
+        "values": [
+          1810062692,
+          1806330500,
+          2101970276,
+          2099491460
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 16,
+        "steps": [
+          32,
+          2048
+        ],
+        "inputs": [
+          3596365480,
+          3596365512,
+          3596367528,
+          3596367560
+        ],
+        "values": [
+          3504386738,
+          3499456466,
+          3231242930,
+          3226386386
+        ],
+        "mixed_difference": 8192
+      },
+      {
+        "width": 16,
+        "steps": [
+          32,
+          2048
+        ],
+        "inputs": [
+          1430382968,
+          1430383000,
+          1430385016,
+          1430385048
+        ],
+        "values": [
+          2913317378,
+          2917898018,
+          2602498562,
+          2597568290
+        ],
+        "mixed_difference": 57344
+      },
+      {
+        "width": 17,
+        "steps": [
+          8,
+          16384
+        ],
+        "inputs": [
+          7,
+          15,
+          16391,
+          16399
+        ],
+        "values": [
+          1810508777,
+          1811432753,
+          256011241,
+          257230129
+        ],
+        "mixed_difference": 32768
+      },
+      {
+        "width": 17,
+        "steps": [
+          8,
+          16384
+        ],
+        "inputs": [
+          8,
+          16,
+          16392,
+          16400
+        ],
+        "values": [
+          1810366226,
+          1811280986,
+          256163602,
+          257373274
+        ],
+        "mixed_difference": 32768
+      },
+      {
+        "width": 17,
+        "steps": [
+          8,
+          16384
+        ],
+        "inputs": [
+          9,
+          17,
+          16393,
+          16401
+        ],
+        "values": [
+          1810205243,
+          1811129219,
+          256297531,
+          257516419
+        ],
+        "mixed_difference": 32768
+      },
+      {
+        "width": 17,
+        "steps": [
+          8,
+          16384
+        ],
+        "inputs": [
+          10,
+          18,
+          16394,
+          16402
+        ],
+        "values": [
+          1810062692,
+          1812157100,
+          256449892,
+          258839212
+        ],
+        "mixed_difference": 32768
+      },
+      {
+        "width": 17,
+        "steps": [
+          8,
+          16384
+        ],
+        "inputs": [
+          11,
+          19,
+          16395,
+          16403
+        ],
+        "values": [
+          1811081357,
+          1812005333,
+          257763469,
+          258982357
+        ],
+        "mixed_difference": 32768
+      },
+      {
+        "width": 17,
+        "steps": [
+          8,
+          16384
+        ],
+        "inputs": [
+          12,
+          20,
+          16396,
+          16404
+        ],
+        "values": [
+          1810938806,
+          1811853566,
+          257915830,
+          259125502
+        ],
+        "mixed_difference": 32768
+      },
+      {
+        "width": 17,
+        "steps": [
+          8,
+          16384
+        ],
+        "inputs": [
+          13,
+          21,
+          16397,
+          16405
+        ],
+        "values": [
+          1810777823,
+          1811701799,
+          258049759,
+          259268647
+        ],
+        "mixed_difference": 32768
+      },
+      {
+        "width": 17,
+        "steps": [
+          8,
+          16384
+        ],
+        "inputs": [
+          14,
+          22,
+          16398,
+          16406
+        ],
+        "values": [
+          1810635272,
+          1812729680,
+          258202120,
+          258232144
+        ],
+        "mixed_difference": 32768
+      },
+      {
+        "width": 17,
+        "steps": [
+          8,
+          16384
+        ],
+        "inputs": [
+          883377192,
+          883377200,
+          883393576,
+          883393584
+        ],
+        "values": [
+          2091034674,
+          2092318074,
+          3899451442,
+          3900439930
+        ],
+        "mixed_difference": 98304
+      },
+      {
+        "width": 17,
+        "steps": [
+          8,
+          16384
+        ],
+        "inputs": [
+          2787390088,
+          2787390096,
+          2787406472,
+          2787406480
+        ],
+        "values": [
+          4270813586,
+          4274695898,
+          2086547858,
+          2080108250
+        ],
+        "mixed_difference": 32768
+      },
+      {
+        "width": 17,
+        "steps": [
+          32,
+          4096
+        ],
+        "inputs": [
+          0,
+          32,
+          4096,
+          4128
+        ],
+        "values": [
+          1818584522,
+          1813727978,
+          523498954,
+          518494954
+        ],
+        "mixed_difference": 114688
+      },
+      {
+        "width": 17,
+        "steps": [
+          32,
+          4096
+        ],
+        "inputs": [
+          1,
+          33,
+          4097,
+          4129
+        ],
+        "values": [
+          1818423539,
+          1813585427,
+          523337971,
+          518352403
+        ],
+        "mixed_difference": 114688
+      },
+      {
+        "width": 17,
+        "steps": [
+          32,
+          4096
+        ],
+        "inputs": [
+          2,
+          34,
+          4098,
+          4130
+        ],
+        "values": [
+          1818280988,
+          1805185340,
+          523195420,
+          512311612
+        ],
+        "mixed_difference": 114688
+      },
+      {
+        "width": 17,
+        "steps": [
+          32,
+          4096
+        ],
+        "inputs": [
+          3,
+          35,
+          4099,
+          4131
+        ],
+        "values": [
+          1809862469,
+          1805042789,
+          517136197,
+          512169061
+        ],
+        "mixed_difference": 114688
+      },
+      {
+        "width": 17,
+        "steps": [
+          32,
+          4096
+        ],
+        "inputs": [
+          4,
+          36,
+          4100,
+          4132
+        ],
+        "values": [
+          1809719918,
+          1804900238,
+          516993646,
+          512026510
+        ],
+        "mixed_difference": 114688
+      },
+      {
+        "width": 17,
+        "steps": [
+          32,
+          4096
+        ],
+        "inputs": [
+          5,
+          37,
+          4101,
+          4133
+        ],
+        "values": [
+          1809558935,
+          1804757687,
+          516832663,
+          511883959
+        ],
+        "mixed_difference": 114688
+      },
+      {
+        "width": 17,
+        "steps": [
+          32,
+          4096
+        ],
+        "inputs": [
+          6,
+          38,
+          4102,
+          4134
+        ],
+        "values": [
+          1809416384,
+          1805794784,
+          516690112,
+          512921056
+        ],
+        "mixed_difference": 114688
+      },
+      {
+        "width": 17,
+        "steps": [
+          32,
+          4096
+        ],
+        "inputs": [
+          3365096993,
+          3365097025,
+          3365101089,
+          3365101121
+        ],
+        "values": [
+          1873302547,
+          1875394867,
+          3967067155,
+          3971666227
+        ],
+        "mixed_difference": 16384
+      },
+      {
+        "width": 18,
+        "steps": [
+          8,
+          32768
+        ],
+        "inputs": [
+          8,
+          16,
+          32776,
+          32784
+        ],
+        "values": [
+          1810366226,
+          1811280986,
+          1678409490,
+          1679914074
+        ],
+        "mixed_difference": 65536
+      },
+      {
+        "width": 18,
+        "steps": [
+          8,
+          32768
+        ],
+        "inputs": [
+          10,
+          18,
+          32778,
+          32786
+        ],
+        "values": [
+          1810062692,
+          1812157100,
+          1678695780,
+          1681380012
+        ],
+        "mixed_difference": 65536
+      },
+      {
+        "width": 18,
+        "steps": [
+          8,
+          32768
+        ],
+        "inputs": [
+          12,
+          20,
+          32780,
+          32788
+        ],
+        "values": [
+          1810938806,
+          1811853566,
+          1680161718,
+          1681666302
+        ],
+        "mixed_difference": 65536
+      },
+      {
+        "width": 18,
+        "steps": [
+          8,
+          32768
+        ],
+        "inputs": [
+          14,
+          22,
+          32782,
+          32790
+        ],
+        "values": [
+          1810635272,
+          1812729680,
+          1680448008,
+          1680772944
+        ],
+        "mixed_difference": 65536
+      },
+      {
+        "width": 18,
+        "steps": [
+          32,
+          8192
+        ],
+        "inputs": [
+          4150834984,
+          4150835016,
+          4150843176,
+          4150843208
+        ],
+        "values": [
+          1945039666,
+          1940183122,
+          1233474354,
+          1228912722
+        ],
+        "mixed_difference": 32768
+      },
+      {
+        "width": 18,
+        "steps": [
+          32,
+          8192
+        ],
+        "inputs": [
+          223172067,
+          223172099,
+          223180259,
+          223180291
+        ],
+        "values": [
+          428683301,
+          434332997,
+          829427749,
+          830653765
+        ],
+        "mixed_difference": 32768
+      },
+      {
+        "width": 18,
+        "steps": [
+          32,
+          8192
+        ],
+        "inputs": [
+          561297357,
+          561297389,
+          561305549,
+          561305581
+        ],
+        "values": [
+          3982005407,
+          3987157439,
+          2814375071,
+          2809795007
+        ],
+        "mixed_difference": 229376
+      },
+      {
+        "width": 18,
+        "steps": [
+          32,
+          8192
+        ],
+        "inputs": [
+          3045608117,
+          3045608149,
+          3045616309,
+          3045616341
+        ],
+        "values": [
+          2194387911,
+          2189586663,
+          3442529223,
+          3438022887
+        ],
+        "mixed_difference": 32768
+      },
+      {
+        "width": 18,
+        "steps": [
+          32,
+          8192
+        ],
+        "inputs": [
+          3186953323,
+          3186953355,
+          3186961515,
+          3186961547
+        ],
+        "values": [
+          2657801197,
+          2652317965,
+          2832053229,
+          2836302093
+        ],
+        "mixed_difference": 32768
+      },
+      {
+        "width": 19,
+        "steps": [
+          8,
+          65536
+        ],
+        "inputs": [
+          10,
+          18,
+          65546,
+          65554
+        ],
+        "values": [
+          1810062692,
+          1812157100,
+          679107940,
+          682381996
+        ],
+        "mixed_difference": 131072
+      },
+      {
+        "width": 19,
+        "steps": [
+          8,
+          65536
+        ],
+        "inputs": [
+          14,
+          22,
+          65550,
+          65558
+        ],
+        "values": [
+          1810635272,
+          1812729680,
+          680860168,
+          681774928
+        ],
+        "mixed_difference": 393216
+      },
+      {
+        "width": 19,
+        "steps": [
+          8,
+          65536
+        ],
+        "inputs": [
+          2678823971,
+          2678823979,
+          2678889507,
+          2678889515
+        ],
+        "values": [
+          833876069,
+          832735661,
+          3772575845,
+          3773794733
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 19,
+        "steps": [
+          8,
+          65536
+        ],
+        "inputs": [
+          2292601520,
+          2292601528,
+          2292667056,
+          2292667064
+        ],
+        "values": [
+          1359459322,
+          1360604482,
+          309375994,
+          308161858
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 19,
+        "steps": [
+          8,
+          65536
+        ],
+        "inputs": [
+          3754444361,
+          3754444369,
+          3754509897,
+          3754509905
+        ],
+        "values": [
+          3940004475,
+          3950420931,
+          3751588475,
+          3764364227
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 19,
+        "steps": [
+          8,
+          65536
+        ],
+        "inputs": [
+          3395091490,
+          3395091498,
+          3395157026,
+          3395157034
+        ],
+        "values": [
+          683738428,
+          684957316,
+          594150716,
+          593010308
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 19,
+        "steps": [
+          8,
+          65536
+        ],
+        "inputs": [
+          2131434280,
+          2131434288,
+          2131499816,
+          2131499824
+        ],
+        "values": [
+          3730913074,
+          3738914938,
+          2297968434,
+          2308329594
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 19,
+        "steps": [
+          8,
+          65536
+        ],
+        "inputs": [
+          3869771525,
+          3869771533,
+          3869837061,
+          3869837069
+        ],
+        "values": [
+          849896599,
+          813274591,
+          229467287,
+          232953311
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 19,
+        "steps": [
+          8,
+          65536
+        ],
+        "inputs": [
+          3392959743,
+          3392959751,
+          3393025279,
+          3393025287
+        ],
+        "values": [
+          2155941793,
+          2154801385,
+          1971064737,
+          1972283625
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          0,
+          32,
+          16384,
+          16416
+        ],
+        "values": [
+          1818584522,
+          1813727978,
+          254944714,
+          259820266
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          1,
+          33,
+          16385,
+          16417
+        ],
+        "values": [
+          1818423539,
+          1813585427,
+          255078643,
+          259972627
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          2,
+          34,
+          16386,
+          16418
+        ],
+        "values": [
+          1818280988,
+          1805185340,
+          255231004,
+          261304636
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          3,
+          35,
+          16387,
+          16419
+        ],
+        "values": [
+          1809862469,
+          1805042789,
+          256544581,
+          261456997
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          4,
+          36,
+          16388,
+          16420
+        ],
+        "values": [
+          1809719918,
+          1804900238,
+          256696942,
+          261609358
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          5,
+          37,
+          16389,
+          16421
+        ],
+        "values": [
+          1809558935,
+          1804757687,
+          256830871,
+          261761719
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          6,
+          38,
+          16390,
+          16422
+        ],
+        "values": [
+          1809416384,
+          1805794784,
+          256983232,
+          260734432
+        ],
+        "mixed_difference": 32768
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          7,
+          39,
+          16391,
+          16423
+        ],
+        "values": [
+          1810508777,
+          1805578505,
+          256011241,
+          260813065
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          8,
+          40,
+          16392,
+          16424
+        ],
+        "values": [
+          1810366226,
+          1805435954,
+          256163602,
+          260965426
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          9,
+          41,
+          16393,
+          16425
+        ],
+        "values": [
+          1810205243,
+          1805293403,
+          256297531,
+          261117787
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          10,
+          42,
+          16394,
+          16426
+        ],
+        "values": [
+          1810062692,
+          1806330500,
+          256449892,
+          262449796
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          11,
+          43,
+          16395,
+          16427
+        ],
+        "values": [
+          1811081357,
+          1806187949,
+          257763469,
+          262602157
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          12,
+          44,
+          16396,
+          16428
+        ],
+        "values": [
+          1810938806,
+          1806045398,
+          257915830,
+          262754518
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          13,
+          45,
+          16397,
+          16429
+        ],
+        "values": [
+          1810777823,
+          1805902847,
+          258049759,
+          262906879
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          14,
+          46,
+          16398,
+          16430
+        ],
+        "values": [
+          1810635272,
+          1806930728,
+          258202120,
+          261870376
+        ],
+        "mixed_difference": 32768
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          15,
+          47,
+          16399,
+          16431
+        ],
+        "values": [
+          1811432753,
+          1806576209,
+          257230129,
+          262105681
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          3466548066,
+          3466548098,
+          3466564450,
+          3466564482
+        ],
+        "values": [
+          2963137148,
+          2967994268,
+          1004020348,
+          1018019740
+        ],
+        "mixed_difference": 229376
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          1272685212,
+          1272685244,
+          1272701596,
+          1272701628
+        ],
+        "values": [
+          3942539462,
+          3881059814,
+          1294966982,
+          1243219430
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          1035614948,
+          1035614980,
+          1035631332,
+          1035631364
+        ],
+        "values": [
+          4137081934,
+          3830235502,
+          416357454,
+          421233006
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          264806379,
+          264806411,
+          264822763,
+          264822795
+        ],
+        "values": [
+          959538029,
+          947013773,
+          2758222701,
+          2755430541
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          788004664,
+          788004696,
+          788021048,
+          788021080
+        ],
+        "values": [
+          3291916738,
+          3278507746,
+          795634114,
+          791957218
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          2268640850,
+          2268640882,
+          2268657234,
+          2268657266
+        ],
+        "values": [
+          2916050668,
+          2911212556,
+          561030892,
+          565924876
+        ],
+        "mixed_difference": 294912
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          3549055231,
+          3549055263,
+          3549071615,
+          3549071647
+        ],
+        "values": [
+          1715864481,
+          1711302849,
+          2685420449,
+          2690001089
+        ],
+        "mixed_difference": 229376
+      },
+      {
+        "width": 19,
+        "steps": [
+          32,
+          16384
+        ],
+        "inputs": [
+          1288057511,
+          1288057543,
+          1288073895,
+          1288073927
+        ],
+        "values": [
+          1520732041,
+          1525902505,
+          3856877449,
+          3870600361
+        ],
+        "mixed_difference": 163840
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          0,
+          8,
+          131072,
+          131080
+        ],
+        "values": [
+          1818584522,
+          1810366226,
+          2954061258,
+          2948202258
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          1,
+          9,
+          131073,
+          131081
+        ],
+        "values": [
+          1818423539,
+          1810205243,
+          2953900275,
+          2948041275
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          2,
+          10,
+          131074,
+          131082
+        ],
+        "values": [
+          1818280988,
+          1810062692,
+          2953757724,
+          2947898724
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          3,
+          11,
+          131075,
+          131083
+        ],
+        "values": [
+          1809862469,
+          1811081357,
+          2947698501,
+          2946558093
+        ],
+        "mixed_difference": 786432
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          4,
+          12,
+          131076,
+          131084
+        ],
+        "values": [
+          1809719918,
+          1810938806,
+          2947555950,
+          2946415542
+        ],
+        "mixed_difference": 786432
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          5,
+          13,
+          131077,
+          131085
+        ],
+        "values": [
+          1809558935,
+          1810777823,
+          2947394967,
+          2946254559
+        ],
+        "mixed_difference": 786432
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          6,
+          14,
+          131078,
+          131086
+        ],
+        "values": [
+          1809416384,
+          1810635272,
+          2947252416,
+          2946112008
+        ],
+        "mixed_difference": 786432
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          7,
+          15,
+          131079,
+          131087
+        ],
+        "values": [
+          1810508777,
+          1811432753,
+          2948344809,
+          2946909489
+        ],
+        "mixed_difference": 786432
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          8,
+          16,
+          131080,
+          131088
+        ],
+        "values": [
+          1810366226,
+          1811280986,
+          2948202258,
+          2946757722
+        ],
+        "mixed_difference": 786432
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          9,
+          17,
+          131081,
+          131089
+        ],
+        "values": [
+          1810205243,
+          1811129219,
+          2948041275,
+          2946605955
+        ],
+        "mixed_difference": 786432
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          11,
+          19,
+          131083,
+          131091
+        ],
+        "values": [
+          1811081357,
+          1812005333,
+          2946558093,
+          2949841365
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          12,
+          20,
+          131084,
+          131092
+        ],
+        "values": [
+          1810938806,
+          1811853566,
+          2946415542,
+          2949689598
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          13,
+          21,
+          131085,
+          131093
+        ],
+        "values": [
+          1810777823,
+          1811701799,
+          2946254559,
+          2949537831
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          14,
+          22,
+          131086,
+          131094
+        ],
+        "values": [
+          1810635272,
+          1812729680,
+          2946112008,
+          2950565712
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          15,
+          23,
+          131087,
+          131095
+        ],
+        "values": [
+          1811432753,
+          1812651641,
+          2946909489,
+          2950487673
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          2057367458,
+          2057367466,
+          2057498530,
+          2057498538
+        ],
+        "values": [
+          546644156,
+          554894852,
+          3344113852,
+          3335849476
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          3837720151,
+          3837720159,
+          3837851223,
+          3837851231
+        ],
+        "values": [
+          41062073,
+          39921665,
+          1547996857,
+          1549215745
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          3503064292,
+          3503064300,
+          3503195364,
+          3503195372
+        ],
+        "values": [
+          1257654862,
+          1254145942,
+          958679630,
+          957530006
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          503508976,
+          503508984,
+          503640048,
+          503640056
+        ],
+        "values": [
+          3690659642,
+          3691804802,
+          153681722,
+          157186178
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          4113446331,
+          4113446339,
+          4113577403,
+          4113577411
+        ],
+        "values": [
+          2715120061,
+          2716265221,
+          2569499069,
+          2568284933
+        ],
+        "mixed_difference": 786432
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          418834910,
+          418834918,
+          418965982,
+          418965990
+        ],
+        "values": [
+          419050584,
+          415467936,
+          3509072984,
+          3507849632
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          2065814697,
+          2065814705,
+          2065945769,
+          2065945777
+        ],
+        "values": [
+          304486363,
+          300028195,
+          525604827,
+          523505955
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 20,
+        "steps": [
+          8,
+          131072
+        ],
+        "inputs": [
+          4258440592,
+          4258440600,
+          4258571664,
+          4258571672
+        ],
+        "values": [
+          566490586,
+          605467426,
+          3279025626,
+          3395859234
+        ],
+        "mixed_difference": 262144
+      },
+      {
+        "width": 20,
+        "steps": [
+          32,
+          32768
+        ],
+        "inputs": [
+          0,
+          32,
+          32768,
+          32800
+        ],
+        "values": [
+          1818584522,
+          1813727978,
+          1667753418,
+          1682361066
+        ],
+        "mixed_difference": 589824
+      },
+      {
+        "width": 20,
+        "steps": [
+          32,
+          32768
+        ],
+        "inputs": [
+          2,
+          34,
+          32770,
+          32802
+        ],
+        "values": [
+          1818280988,
+          1805185340,
+          1668039708,
+          1674408252
+        ],
+        "mixed_difference": 589824
+      },
+      {
+        "width": 20,
+        "steps": [
+          32,
+          32768
+        ],
+        "inputs": [
+          4,
+          36,
+          32772,
+          32804
+        ],
+        "values": [
+          1809719918,
+          1804900238,
+          1678942830,
+          1674712974
+        ],
+        "mixed_difference": 589824
+      },
+      {
+        "width": 20,
+        "steps": [
+          32,
+          32768
+        ],
+        "inputs": [
+          6,
+          38,
+          32774,
+          32806
+        ],
+        "values": [
+          1809416384,
+          1805794784,
+          1679229120,
+          1673838048
+        ],
+        "mixed_difference": 327680
+      },
+      {
+        "width": 20,
+        "steps": [
+          32,
+          32768
+        ],
+        "inputs": [
+          8,
+          40,
+          32776,
+          32808
+        ],
+        "values": [
+          1810366226,
+          1805435954,
+          1678409490,
+          1674069042
+        ],
+        "mixed_difference": 589824
+      },
+      {
+        "width": 20,
+        "steps": [
+          32,
+          32768
+        ],
+        "inputs": [
+          10,
+          42,
+          32778,
+          32810
+        ],
+        "values": [
+          1810062692,
+          1806330500,
+          1678695780,
+          1675553412
+        ],
+        "mixed_difference": 589824
+      },
+      {
+        "width": 20,
+        "steps": [
+          32,
+          32768
+        ],
+        "inputs": [
+          12,
+          44,
+          32780,
+          32812
+        ],
+        "values": [
+          1810938806,
+          1806045398,
+          1680161718,
+          1675858134
+        ],
+        "mixed_difference": 589824
+      },
+      {
+        "width": 20,
+        "steps": [
+          32,
+          32768
+        ],
+        "inputs": [
+          14,
+          46,
+          32782,
+          32814
+        ],
+        "values": [
+          1810635272,
+          1806930728,
+          1680448008,
+          1674973992
+        ],
+        "mixed_difference": 327680
+      },
+      {
+        "width": 20,
+        "steps": [
+          32,
+          32768
+        ],
+        "inputs": [
+          15,
+          47,
+          32783,
+          32815
+        ],
+        "values": [
+          1811432753,
+          1806576209,
+          1679476017,
+          1675209297
+        ],
+        "mixed_difference": 589824
+      },
+      {
+        "width": 20,
+        "steps": [
+          32,
+          32768
+        ],
+        "inputs": [
+          917829029,
+          917829061,
+          917861797,
+          917861829
+        ],
+        "values": [
+          3160192055,
+          3151188311,
+          2481468471,
+          2473054551
+        ],
+        "mixed_difference": 589824
+      },
+      {
+        "width": 20,
+        "steps": [
+          32,
+          32768
+        ],
+        "inputs": [
+          741482855,
+          741482887,
+          741515623,
+          741515655
+        ],
+        "values": [
+          714900553,
+          728033641,
+          1411908681,
+          1406757225
+        ],
+        "mixed_difference": 589824
+      }
+    ]
+  },
+  "variable_count_positive_control": {
+    "result": "sat",
+    "seconds": 0.001,
+    "timeout_ms": 10000,
+    "nonzero_multiplier": true,
+    "rectangles": [
+      {
+        "width": 12,
+        "steps": [
+          32,
+          128
+        ],
+        "inputs": [
+          2681209716,
+          2681209748,
+          2681209844,
+          2681209876
+        ],
+        "values": [
+          2686446453,
+          2686446485,
+          2686446581,
+          2686446614
+        ],
+        "mixed_difference": 1
+      },
+      {
+        "width": 13,
+        "steps": [
+          32,
+          256
+        ],
+        "inputs": [
+          3444662752,
+          3444662784,
+          3444663008,
+          3444663040
+        ],
+        "values": [
+          3451390608,
+          3451390641,
+          3451390865,
+          3451390897
+        ],
+        "mixed_difference": 8191
+      },
+      {
+        "width": 13,
+        "steps": [
+          32,
+          256
+        ],
+        "inputs": [
+          1944525564,
+          1944525596,
+          1944525820,
+          1944525852
+        ],
+        "values": [
+          1948323465,
+          1948323497,
+          1948323721,
+          1948323754
+        ],
+        "mixed_difference": 1
+      }
+    ],
+    "relaxation_model": [
+      2147483648,
+      9
+    ]
+  },
+  "square_first": [
+    {
+      "form": "square-constant",
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "32",
+        "--instructions",
+        "3",
+        "--op-sequence=mad,>>,mad",
+        "--first-mad-form",
+        "square-constant",
+        "--canonical-operands",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--extra-samples",
+        "16",
+        "--check-ms",
+        "15000",
+        "--seconds",
+        "20"
+      ],
+      "returncode": 0,
+      "results": [
+        {
+          "iteration": 1,
+          "samples": 102,
+          "synthesis": "unsat"
+        },
+        {
+          "result": "grammar_unsatisfiable",
+          "width": 32,
+          "op_sequence": [
+            "mad",
+            ">>",
+            "mad"
+          ],
+          "right_shift_amount": null,
+          "reason": null
+        }
+      ],
+      "stderr": "",
+      "seconds": 8.185
+    },
+    {
+      "form": "square-input",
+      "command": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "codex.synthesize_hash_cegis",
+        "--slice",
+        "middle",
+        "--width",
+        "32",
+        "--instructions",
+        "3",
+        "--op-sequence=mad,>>,mad",
+        "--first-mad-form",
+        "square-input",
+        "--canonical-operands",
+        "--consecutive-samples",
+        "32",
+        "--high-bit-pairs",
+        "--extra-samples",
+        "16",
+        "--check-ms",
+        "15000",
+        "--seconds",
+        "20"
+      ],
+      "returncode": 0,
+      "results": [
+        {
+          "iteration": 1,
+          "samples": 102,
+          "synthesis": "unsat"
+        },
+        {
+          "result": "grammar_unsatisfiable",
+          "width": 32,
+          "op_sequence": [
+            "mad",
+            ">>",
+            "mad"
+          ],
+          "right_shift_amount": null,
+          "reason": null
+        }
+      ],
+      "stderr": "",
+      "seconds": 4.927
+    }
+  ],
+  "final_shift_prefixes": [
+    {
+      "order": [
+        "&",
+        "mad"
+      ],
+      "width": 11,
+      "result": "unsat",
+      "events": [
+        {
+          "samples": 39,
+          "result": "unsat"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 0.055,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288
+      ]
+    },
+    {
+      "order": [
+        "*",
+        "mad"
+      ],
+      "width": 11,
+      "result": "unsat",
+      "events": [
+        {
+          "samples": 39,
+          "result": "unsat"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 0.533,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288
+      ]
+    },
+    {
+      "order": [
+        "+",
+        "mad"
+      ],
+      "width": 11,
+      "result": "unsat",
+      "events": [
+        {
+          "samples": 39,
+          "result": "unsat"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 0.524,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288
+      ]
+    },
+    {
+      "order": [
+        "-",
+        "mad"
+      ],
+      "width": 11,
+      "result": "unsat",
+      "events": [
+        {
+          "samples": 39,
+          "result": "unsat"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 1.064,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288
+      ]
+    },
+    {
+      "order": [
+        "^",
+        "mad"
+      ],
+      "width": 11,
+      "result": "unsat",
+      "events": [
+        {
+          "samples": 39,
+          "result": "unsat"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 0.102,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288
+      ]
+    },
+    {
+      "order": [
+        "mad",
+        "&"
+      ],
+      "width": 11,
+      "result": "unsat",
+      "events": [
+        {
+          "samples": 39,
+          "result": "unsat"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 0.054,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288
+      ]
+    },
+    {
+      "order": [
+        "mad",
+        "*"
+      ],
+      "width": 11,
+      "result": "unsat",
+      "events": [
+        {
+          "samples": 39,
+          "result": "unsat"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 0.509,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288
+      ]
+    },
+    {
+      "order": [
+        "mad",
+        "+"
+      ],
+      "width": 11,
+      "result": "unsat",
+      "events": [
+        {
+          "samples": 39,
+          "result": "unsat"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 0.094,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288
+      ]
+    },
+    {
+      "order": [
+        "mad",
+        "-"
+      ],
+      "width": 11,
+      "result": "unsat",
+      "events": [
+        {
+          "samples": 39,
+          "result": "unsat"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 0.127,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288
+      ]
+    },
+    {
+      "order": [
+        "mad",
+        "^"
+      ],
+      "width": 11,
+      "result": "unsat",
+      "events": [
+        {
+          "samples": 39,
+          "result": "unsat"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 0.095,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288
+      ]
+    },
+    {
+      "order": [
+        "mad",
+        "mad"
+      ],
+      "width": 11,
+      "result": "unknown",
+      "events": [
+        {
+          "samples": 39,
+          "result": "unknown"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 10.013,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288
+      ]
+    },
+    {
+      "order": [
+        "mad",
+        "|"
+      ],
+      "width": 11,
+      "result": "unsat",
+      "events": [
+        {
+          "samples": 39,
+          "result": "unsat"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 0.046,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288
+      ]
+    },
+    {
+      "order": [
+        "|",
+        "mad"
+      ],
+      "width": 11,
+      "result": "unsat",
+      "events": [
+        {
+          "samples": 39,
+          "result": "unsat"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 0.073,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288
+      ]
+    }
+  ],
+  "prefix_positive_controls": [
+    {
+      "order": [
+        "mad",
+        "^"
+      ],
+      "width": 11,
+      "result": "sat",
+      "events": [
+        {
+          "samples": 39,
+          "result": "sat"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 0.055,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288
+      ],
+      "program": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          568
+        ]
+      ],
+      "selected_output": 2,
+      "output_key": 22,
+      "verification": "exhaustive_low_domain",
+      "verified_inputs": 2048
+    },
+    {
+      "order": [
+        "&",
+        "mad"
+      ],
+      "width": 11,
+      "result": "sat",
+      "events": [
+        {
+          "samples": 39,
+          "result": "sat"
+        },
+        {
+          "samples": 40,
+          "result": "sat"
+        },
+        {
+          "samples": 41,
+          "result": "sat"
+        },
+        {
+          "samples": 42,
+          "result": "sat"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 0.074,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288,
+        128,
+        32,
+        64
+      ],
+      "program": [
+        [
+          0,
+          1,
+          0,
+          54,
+          214
+        ],
+        [
+          1,
+          2,
+          3,
+          1027,
+          5
+        ]
+      ],
+      "selected_output": 2,
+      "output_key": 224,
+      "verification": "exhaustive_low_domain",
+      "verified_inputs": 2048
+    },
+    {
+      "order": [
+        "mad",
+        "mad"
+      ],
+      "width": 11,
+      "result": "sat",
+      "events": [
+        {
+          "samples": 39,
+          "result": "sat"
+        }
+      ],
+      "timeout_ms": 10000,
+      "seconds": 0.082,
+      "samples": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        256,
+        264,
+        512,
+        513,
+        1024,
+        1032,
+        1288
+      ],
+      "program": [
+        [
+          0,
+          1,
+          2,
+          22,
+          35
+        ],
+        [
+          2,
+          2,
+          2,
+          14,
+          1928
+        ]
+      ],
+      "selected_output": 1,
+      "output_key": 0,
+      "verification": "exhaustive_low_domain",
+      "verified_inputs": 2048
+    }
+  ],
+  "coverage": {
+    "orders": [
+      {
+        "sequence": [
+          "&",
+          ">>",
+          "mad"
+        ],
+        "excluded": false,
+        "evidence": [],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "&",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT",
+          "high-output cover and nonshift prefix exclusion"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable"
+      },
+      {
+        "sequence": [
+          "*",
+          ">>",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "*",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion",
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "+",
+          ">>",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "+",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion",
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "-",
+          ">>",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "-",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion",
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "<<",
+          ">>",
+          "mad"
+        ],
+        "excluded": false,
+        "evidence": [],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "<<",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable"
+      },
+      {
+        "sequence": [
+          ">>",
+          "&",
+          "mad"
+        ],
+        "excluded": false,
+        "evidence": [],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          "*",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          "+",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          "-",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          "<<",
+          "mad"
+        ],
+        "excluded": false,
+        "evidence": [],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          ">>",
+          "mad"
+        ],
+        "excluded": false,
+        "evidence": [],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          "^",
+          "mad"
+        ],
+        "excluded": false,
+        "evidence": [],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "&"
+        ],
+        "excluded": true,
+        "evidence": [
+          "permutation and bit-containment certificate for final AND/OR"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "*"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "+"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "-"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "<<"
+        ],
+        "excluded": false,
+        "evidence": [],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          ">>"
+        ],
+        "excluded": false,
+        "evidence": [],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "^"
+        ],
+        "excluded": false,
+        "evidence": [],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous complete first-SHR polynomial relaxation"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          "mad",
+          "|"
+        ],
+        "excluded": true,
+        "evidence": [
+          "permutation and bit-containment certificate for final AND/OR"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          ">>",
+          "|",
+          "mad"
+        ],
+        "excluded": false,
+        "evidence": [],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "^",
+          ">>",
+          "mad"
+        ],
+        "excluded": false,
+        "evidence": [],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "^",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT",
+          "high-output cover and nonshift prefix exclusion"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable"
+      },
+      {
+        "sequence": [
+          "mad",
+          "&",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "mad",
+          "*",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion",
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "mad",
+          "+",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion",
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "mad",
+          "-",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion",
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "mad",
+          "<<",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable"
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "&"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable"
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "*"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "+"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "-"
+        ],
+        "excluded": true,
+        "evidence": [
+          "arithmetic opcode lowering to one of the three closed two-MAD/SHR orders"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "<<"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable"
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable"
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "^"
+        ],
+        "excluded": true,
+        "evidence": [
+          "refined full32 fixed-order UNSAT"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "mad"
+        ],
+        "excluded": true,
+        "evidence": [
+          "affine proof and two full32 square-first UNSAT queries"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "mad",
+          ">>",
+          "|"
+        ],
+        "excluded": true,
+        "evidence": [
+          "refined full32 fixed-order UNSAT"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "mad",
+          "^",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "mad",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "high-output cover and nonshift prefix exclusion"
+        ],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "mad",
+          "|",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT",
+          "high-output cover and nonshift prefix exclusion"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable"
+      },
+      {
+        "sequence": [
+          "|",
+          ">>",
+          "mad"
+        ],
+        "excluded": false,
+        "evidence": [],
+        "raw_previous_result": "inconclusive"
+      },
+      {
+        "sequence": [
+          "|",
+          "mad",
+          ">>"
+        ],
+        "excluded": true,
+        "evidence": [
+          "previous full32 fixed-order UNSAT",
+          "high-output cover and nonshift prefix exclusion"
+        ],
+        "raw_previous_result": "grammar_unsatisfiable"
+      }
+    ],
+    "closed": 36,
+    "unresolved": 12,
+    "scope": "One uint32 input; one MAD, one SHR and one operation from +,-,XOR,AND,OR,SHL,SHR,MUL,MAD. No extra live inputs or whole-kernel bound."
+  },
+  "final_bitwise": {
+    "orders": [
+      [
+        ">>",
+        "mad",
+        "&"
+      ],
+      [
+        ">>",
+        "mad",
+        "|"
+      ]
+    ],
+    "roles": [
+      {
+        "operands": [
+          0,
+          0
+        ],
+        "reason": "idempotence; previous SHR/MAD/MAD exclusion"
+      },
+      {
+        "operands": [
+          0,
+          1
+        ],
+        "reason": "F(0)!=0 for AND; F(MASK)!=MASK for OR"
+      },
+      {
+        "operands": [
+          0,
+          2
+        ],
+        "reason": "F(0)!=0 for AND; F(MASK)!=MASK for OR"
+      },
+      {
+        "operands": [
+          0,
+          3
+        ],
+        "reason": "permutation forces constant mask to identity; previous SHR/MAD/MAD exclusion"
+      },
+      {
+        "operands": [
+          0,
+          4
+        ],
+        "reason": "permutation forces constant mask to identity; previous SHR/MAD/MAD exclusion"
+      },
+      {
+        "operands": [
+          1,
+          1
+        ],
+        "reason": "idempotence; previous SHR/MAD/MAD exclusion"
+      },
+      {
+        "operands": [
+          1,
+          2
+        ],
+        "reason": "literal-q range/OR-bit witnesses; variable-count zero-domain polynomial certificate"
+      },
+      {
+        "operands": [
+          1,
+          3
+        ],
+        "reason": "permutation forces constant mask to identity; previous SHR/MAD/MAD exclusion"
+      },
+      {
+        "operands": [
+          1,
+          4
+        ],
+        "reason": "permutation forces constant mask to identity; previous SHR/MAD/MAD exclusion"
+      },
+      {
+        "operands": [
+          2,
+          2
+        ],
+        "reason": "idempotence; previous SHR/MAD/MAD exclusion"
+      },
+      {
+        "operands": [
+          2,
+          3
+        ],
+        "reason": "permutation forces constant mask to identity; previous SHR/MAD/MAD exclusion"
+      },
+      {
+        "operands": [
+          2,
+          4
+        ],
+        "reason": "permutation forces constant mask to identity; previous SHR/MAD/MAD exclusion"
+      },
+      {
+        "operands": [
+          3,
+          3
+        ],
+        "reason": "permutation forces constant mask to identity; previous SHR/MAD/MAD exclusion"
+      },
+      {
+        "operands": [
+          3,
+          4
+        ],
+        "reason": "permutation forces constant mask to identity; previous SHR/MAD/MAD exclusion"
+      },
+      {
+        "operands": [
+          4,
+          4
+        ],
+        "reason": "permutation forces constant mask to identity; previous SHR/MAD/MAD exclusion"
+      }
+    ],
+    "or_literal_witnesses": [
+      {
+        "shift": 1,
+        "input": 2,
+        "shifted": 1,
+        "target": 1818280988,
+        "forbidden_or_bits": 1
+      },
+      {
+        "shift": 2,
+        "input": 4,
+        "shifted": 1,
+        "target": 1809719918,
+        "forbidden_or_bits": 1
+      },
+      {
+        "shift": 3,
+        "input": 8,
+        "shifted": 1,
+        "target": 1810366226,
+        "forbidden_or_bits": 1
+      },
+      {
+        "shift": 4,
+        "input": 16,
+        "shifted": 1,
+        "target": 1811280986,
+        "forbidden_or_bits": 1
+      },
+      {
+        "shift": 5,
+        "input": 32,
+        "shifted": 1,
+        "target": 1813727978,
+        "forbidden_or_bits": 1
+      },
+      {
+        "shift": 6,
+        "input": 64,
+        "shifted": 1,
+        "target": 1808871434,
+        "forbidden_or_bits": 1
+      },
+      {
+        "shift": 7,
+        "input": 128,
+        "shifted": 1,
+        "target": 1790900810,
+        "forbidden_or_bits": 1
+      },
+      {
+        "shift": 8,
+        "input": 256,
+        "shifted": 1,
+        "target": 1772506826,
+        "forbidden_or_bits": 1
+      },
+      {
+        "shift": 9,
+        "input": 512,
+        "shifted": 1,
+        "target": 1735267274,
+        "forbidden_or_bits": 1
+      },
+      {
+        "shift": 10,
+        "input": 1313353289,
+        "shifted": 1282571,
+        "target": 2536569467,
+        "forbidden_or_bits": 196608
+      },
+      {
+        "shift": 11,
+        "input": 1313353289,
+        "shifted": 641285,
+        "target": 2536569467,
+        "forbidden_or_bits": 590084
+      },
+      {
+        "shift": 12,
+        "input": 1313353289,
+        "shifted": 320642,
+        "target": 2536569467,
+        "forbidden_or_bits": 263296
+      },
+      {
+        "shift": 13,
+        "input": 1313353289,
+        "shifted": 160321,
+        "target": 2536569467,
+        "forbidden_or_bits": 131072
+      },
+      {
+        "shift": 14,
+        "input": 1313353289,
+        "shifted": 80160,
+        "target": 2536569467,
+        "forbidden_or_bits": 65792
+      },
+      {
+        "shift": 15,
+        "input": 1313353289,
+        "shifted": 40080,
+        "target": 2536569467,
+        "forbidden_or_bits": 1152
+      },
+      {
+        "shift": 16,
+        "input": 1313353289,
+        "shifted": 20040,
+        "target": 2536569467,
+        "forbidden_or_bits": 1024
+      },
+      {
+        "shift": 17,
+        "input": 1313353289,
+        "shifted": 10020,
+        "target": 2536569467,
+        "forbidden_or_bits": 1284
+      },
+      {
+        "shift": 18,
+        "input": 1313353289,
+        "shifted": 5010,
+        "target": 2536569467,
+        "forbidden_or_bits": 384
+      },
+      {
+        "shift": 19,
+        "input": 1313353289,
+        "shifted": 2505,
+        "target": 2536569467,
+        "forbidden_or_bits": 384
+      },
+      {
+        "shift": 20,
+        "input": 1313353289,
+        "shifted": 1252,
+        "target": 2536569467,
+        "forbidden_or_bits": 1156
+      },
+      {
+        "shift": 21,
+        "input": 3994441691,
+        "shifted": 1904,
+        "target": 2694727901,
+        "forbidden_or_bits": 1824
+      },
+      {
+        "shift": 22,
+        "input": 1313353289,
+        "shifted": 313,
+        "target": 2536569467,
+        "forbidden_or_bits": 256
+      },
+      {
+        "shift": 23,
+        "input": 1313353289,
+        "shifted": 156,
+        "target": 2536569467,
+        "forbidden_or_bits": 132
+      },
+      {
+        "shift": 24,
+        "input": 1313353289,
+        "shifted": 78,
+        "target": 2536569467,
+        "forbidden_or_bits": 4
+      },
+      {
+        "shift": 25,
+        "input": 1313353289,
+        "shifted": 39,
+        "target": 2536569467,
+        "forbidden_or_bits": 4
+      },
+      {
+        "shift": 26,
+        "input": 3994441691,
+        "shifted": 59,
+        "target": 2694727901,
+        "forbidden_or_bits": 34
+      },
+      {
+        "shift": 27,
+        "input": 2921474216,
+        "shifted": 21,
+        "target": 1576067250,
+        "forbidden_or_bits": 5
+      },
+      {
+        "shift": 28,
+        "input": 1313353289,
+        "shifted": 4,
+        "target": 2536569467,
+        "forbidden_or_bits": 4
+      },
+      {
+        "shift": 29,
+        "input": 3994441691,
+        "shifted": 7,
+        "target": 2694727901,
+        "forbidden_or_bits": 2
+      },
+      {
+        "shift": 30,
+        "input": 3994441691,
+        "shifted": 3,
+        "target": 2694727901,
+        "forbidden_or_bits": 2
+      },
+      {
+        "shift": 31,
+        "input": 2921474216,
+        "shifted": 1,
+        "target": 1576067250,
+        "forbidden_or_bits": 1
+      }
+    ],
+    "f_zero": 1818584522,
+    "f_mask": 1818727073,
+    "and_high_output_input": 2147483648,
+    "and_high_output": 3966068170,
+    "variable_count_rectangle": [
+      32,
+      40,
+      288,
+      296
+    ],
+    "excluded": true
+  },
+  "refinement_file": "middle_shift_refinement863_results.json"
+}

@@ -1,0 +1,37 @@
+{
+  "width": 11,
+  "points": [
+    0,
+    32,
+    64,
+    96
+  ],
+  "target_values": [
+    1382,
+    70,
+    934,
+    646
+  ],
+  "input_key": 3345072700,
+  "checked_square_offsets": 2048,
+  "checked_output_keys": 2048,
+  "horizontal_bit_mask": 1056,
+  "vertical_bit_mask": 64,
+  "horizontal_divisor": 32,
+  "vertical_divisor": 64,
+  "polynomial_mixed_difference": 0,
+  "target_mixed_differences": [
+    1024
+  ],
+  "square_input_values": [
+    0,
+    1056,
+    64,
+    1120
+  ],
+  "result": "square_first_bitwise_prefix_polynomial_tail_excluded",
+  "new_executable": false,
+  "proof": "Each bit of every prefix word depends on at most one rectangle axis. Its horizontal and vertical numeric differences are multiples of 32 and 64. Every mixed term of an integer polynomial is divisible by 2048.",
+  "scope": "Input x and first x*x+B or x*x+x, any constants, then arbitrary XOR/AND/OR prefix, then arbitrary integer-polynomial continuation; target F(x XOR C1) XOR O for arbitrary O.",
+  "exclusions": "Interleaved later bitwise operations, affine first, shifts or other opcodes, additional live inputs, whole hash and kernel are not covered."
+}

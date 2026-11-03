@@ -1,0 +1,21 @@
+{
+  "relaxed_calendar_only": true,
+  "verified_executable_cycles": null,
+  "horizon": 864,
+  "compute_packed_before": 732,
+  "prefix_compute_lanes": 43862,
+  "prefix_waste": 58,
+  "fixed_dag_edges_and_resources_valid": true,
+  "future_arithmetic_energy_audit": {
+    "horizon": 864,
+    "freeze_before": 732,
+    "inconsistent_nodes": [],
+    "positive_windows": 0,
+    "cuts": [],
+    "supplied_tail_waste": 116,
+    "scope": "fixed LF calendar and frozen compute prefix; necessary tests only"
+  },
+  "calendar_sha256": "ff0200588ba7c4fe5a7edebe7993c107000b4f6deb982173b44efff6e2b6c7ac",
+  "model_recipe": "stage_astra_constant4_867_result.json",
+  "source_calendar": "/tmp/aopt-astra-refine5-732-w0-r0.sol"
+}

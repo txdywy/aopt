@@ -1,0 +1,15 @@
+{
+  "cycles": 868,
+  "verified_full32_cases": 20,
+  "scratch_words": 1270,
+  "arithmetic_lanes": 51671,
+  "load": 1688,
+  "flow": 851,
+  "store": 522,
+  "packed_before": 450,
+  "actual_prefix_waste": 52,
+  "model_text_sha256": "665d4d73682327b19076ad2b888c57e8107980ae73c343171715ff401af077e2",
+  "schedule_sha256": "75fe861a2028b736191334277ba999248a13e331b42b754d8eb9640260800bb9",
+  "recipe": "python3.12 -m codex.research_stage864 --prefix /tmp/joint450 --stage-hash final --stage-uniform=-60,-40 --cheap-coeff --head-fill --head-flow --alu-layout --tail-transposes 29,31 --tail-low --low-alu --bootstrap-flow 2 --scalar-leaves --sink 8 --literals 3",
+  "scope": "868 is fully replayed. Every compute packet 1..449 is full; 864 has not been reached."
+}

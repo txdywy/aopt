@@ -1,0 +1,579 @@
+{
+  "target": 899,
+  "seeds": 10,
+  "full32": true,
+  "verified_all_outputs": true,
+  "cycles": 983,
+  "slots": {
+    "load": 1889,
+    "alu": 11469,
+    "valu": 5770,
+    "flow": 936,
+    "store": 62
+  },
+  "load_classes": {
+    "constant": 31,
+    "other_memory:vload": 32,
+    "tree_start_depth_0:vload": 1,
+    "tree_start_depth_10:load_offset": 256,
+    "tree_start_depth_3:vload": 1,
+    "tree_start_depth_4:load_offset": 256,
+    "tree_start_depth_4:vload": 4,
+    "tree_start_depth_5:load_offset": 256,
+    "tree_start_depth_5:vload": 4,
+    "tree_start_depth_6:load_offset": 256,
+    "tree_start_depth_6:vload": 8,
+    "tree_start_depth_7:load_offset": 256,
+    "tree_start_depth_7:vload": 16,
+    "tree_start_depth_8:load_offset": 256,
+    "tree_start_depth_9:load_offset": 256
+  },
+  "windows": [
+    {
+      "cycles": [
+        0,
+        32
+      ],
+      "slots": {
+        "load": 64,
+        "alu": 309,
+        "valu": 159,
+        "flow": 16,
+        "store": 12
+      },
+      "saturated_engines": [
+        "load"
+      ]
+    },
+    {
+      "cycles": [
+        32,
+        64
+      ],
+      "slots": {
+        "store": 17,
+        "alu": 384,
+        "valu": 192,
+        "flow": 32,
+        "load": 32
+      },
+      "saturated_engines": [
+        "alu",
+        "valu",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        64,
+        96
+      ],
+      "slots": {
+        "valu": 192,
+        "alu": 376,
+        "flow": 32,
+        "store": 1,
+        "load": 52
+      },
+      "saturated_engines": [
+        "valu",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        96,
+        128
+      ],
+      "slots": {
+        "alu": 368,
+        "valu": 192,
+        "load": 64,
+        "flow": 32
+      },
+      "saturated_engines": [
+        "valu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        128,
+        160
+      ],
+      "slots": {
+        "alu": 384,
+        "valu": 192,
+        "load": 64,
+        "flow": 25
+      },
+      "saturated_engines": [
+        "alu",
+        "valu",
+        "load"
+      ]
+    },
+    {
+      "cycles": [
+        160,
+        192
+      ],
+      "slots": {
+        "alu": 384,
+        "valu": 189,
+        "load": 64,
+        "flow": 24
+      },
+      "saturated_engines": [
+        "alu",
+        "load"
+      ]
+    },
+    {
+      "cycles": [
+        192,
+        224
+      ],
+      "slots": {
+        "alu": 384,
+        "load": 64,
+        "valu": 177,
+        "flow": 32
+      },
+      "saturated_engines": [
+        "alu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        224,
+        256
+      ],
+      "slots": {
+        "valu": 192,
+        "load": 64,
+        "alu": 384,
+        "flow": 32
+      },
+      "saturated_engines": [
+        "alu",
+        "valu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        256,
+        288
+      ],
+      "slots": {
+        "valu": 173,
+        "load": 64,
+        "alu": 384,
+        "flow": 28
+      },
+      "saturated_engines": [
+        "alu",
+        "load"
+      ]
+    },
+    {
+      "cycles": [
+        288,
+        320
+      ],
+      "slots": {
+        "alu": 384,
+        "valu": 191,
+        "load": 64,
+        "flow": 29
+      },
+      "saturated_engines": [
+        "alu",
+        "load"
+      ]
+    },
+    {
+      "cycles": [
+        320,
+        352
+      ],
+      "slots": {
+        "valu": 192,
+        "alu": 384,
+        "load": 64,
+        "flow": 32
+      },
+      "saturated_engines": [
+        "alu",
+        "valu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        352,
+        384
+      ],
+      "slots": {
+        "valu": 191,
+        "alu": 384,
+        "load": 64,
+        "flow": 32
+      },
+      "saturated_engines": [
+        "alu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        384,
+        416
+      ],
+      "slots": {
+        "valu": 192,
+        "flow": 32,
+        "load": 64,
+        "alu": 384
+      },
+      "saturated_engines": [
+        "alu",
+        "valu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        416,
+        448
+      ],
+      "slots": {
+        "valu": 191,
+        "load": 64,
+        "alu": 384,
+        "flow": 32
+      },
+      "saturated_engines": [
+        "alu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        448,
+        480
+      ],
+      "slots": {
+        "valu": 187,
+        "flow": 32,
+        "alu": 384,
+        "load": 64
+      },
+      "saturated_engines": [
+        "alu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        480,
+        512
+      ],
+      "slots": {
+        "valu": 192,
+        "flow": 32,
+        "alu": 384,
+        "load": 64,
+        "store": 1
+      },
+      "saturated_engines": [
+        "alu",
+        "valu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        512,
+        544
+      ],
+      "slots": {
+        "alu": 384,
+        "valu": 179,
+        "load": 64,
+        "flow": 32
+      },
+      "saturated_engines": [
+        "alu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        544,
+        576
+      ],
+      "slots": {
+        "valu": 190,
+        "alu": 384,
+        "load": 64,
+        "flow": 32
+      },
+      "saturated_engines": [
+        "alu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        576,
+        608
+      ],
+      "slots": {
+        "valu": 191,
+        "alu": 384,
+        "load": 64,
+        "flow": 32
+      },
+      "saturated_engines": [
+        "alu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        608,
+        640
+      ],
+      "slots": {
+        "valu": 192,
+        "alu": 384,
+        "load": 64,
+        "flow": 32
+      },
+      "saturated_engines": [
+        "alu",
+        "valu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        640,
+        672
+      ],
+      "slots": {
+        "valu": 191,
+        "alu": 384,
+        "load": 64,
+        "flow": 32
+      },
+      "saturated_engines": [
+        "alu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        672,
+        704
+      ],
+      "slots": {
+        "valu": 192,
+        "alu": 380,
+        "load": 64,
+        "flow": 32,
+        "store": 1
+      },
+      "saturated_engines": [
+        "valu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        704,
+        736
+      ],
+      "slots": {
+        "valu": 192,
+        "alu": 350,
+        "load": 64,
+        "flow": 32
+      },
+      "saturated_engines": [
+        "valu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        736,
+        768
+      ],
+      "slots": {
+        "valu": 192,
+        "load": 64,
+        "flow": 32,
+        "alu": 384
+      },
+      "saturated_engines": [
+        "alu",
+        "valu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        768,
+        800
+      ],
+      "slots": {
+        "alu": 378,
+        "valu": 192,
+        "flow": 32,
+        "load": 64
+      },
+      "saturated_engines": [
+        "valu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        800,
+        832
+      ],
+      "slots": {
+        "alu": 384,
+        "valu": 192,
+        "flow": 32,
+        "load": 64,
+        "store": 1
+      },
+      "saturated_engines": [
+        "alu",
+        "valu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        832,
+        864
+      ],
+      "slots": {
+        "valu": 192,
+        "load": 64,
+        "alu": 384,
+        "flow": 32
+      },
+      "saturated_engines": [
+        "alu",
+        "valu",
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        864,
+        896
+      ],
+      "slots": {
+        "alu": 377,
+        "valu": 186,
+        "load": 64,
+        "flow": 32
+      },
+      "saturated_engines": [
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        896,
+        928
+      ],
+      "slots": {
+        "valu": 186,
+        "alu": 373,
+        "load": 64,
+        "flow": 32
+      },
+      "saturated_engines": [
+        "load",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        928,
+        960
+      ],
+      "slots": {
+        "valu": 192,
+        "load": 62,
+        "alu": 299,
+        "flow": 32,
+        "store": 6
+      },
+      "saturated_engines": [
+        "valu",
+        "flow"
+      ]
+    },
+    {
+      "cycles": [
+        960,
+        983
+      ],
+      "slots": {
+        "valu": 117,
+        "alu": 195,
+        "flow": 14,
+        "load": 15,
+        "store": 23
+      },
+      "saturated_engines": []
+    }
+  ],
+  "unchanged_work_engine_bounds": {
+    "alu": 956,
+    "valu": 962,
+    "load": 945,
+    "store": 31,
+    "flow": 936
+  },
+  "relaxed_arithmetic_bound": 961,
+  "fixed_lowering_slot_overflow": {
+    "alu": 681,
+    "valu": 376,
+    "load": 91,
+    "store": 0,
+    "flow": 37
+  },
+  "arithmetic_lane_work_overflow": 3689
+}

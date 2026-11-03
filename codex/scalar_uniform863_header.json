@@ -1,0 +1,815 @@
+[
+  {
+    "counts": {
+      "load": 1688,
+      "valu": 5345,
+      "flow": 852,
+      "alu": 8875,
+      "store": 530
+    },
+    "arithmetic_lanes": 51635,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "FEASIBLE",
+      "eligible_ops": 400,
+      "objective_incumbent": 244.0,
+      "objective_upper_bound": 284,
+      "waste_lower_bound": 76,
+      "structural_upper_bound": null,
+      "seconds": 1.000714
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "FEASIBLE",
+      "eligible_ops": 807,
+      "objective_incumbent": 67.0,
+      "objective_upper_bound": 71,
+      "waste_lower_bound": 109,
+      "structural_upper_bound": 71,
+      "seconds": 1.002129
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 464,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 864,
+    "new_executable": false,
+    "config": {
+      "full": [
+        "cache0",
+        3042594569,
+        -2,
+        3345072700
+      ],
+      "methods": {
+        "9": "stage",
+        "19": "stage"
+      },
+      "prolog19": 8,
+      "init4097": "flow",
+      "header_packs": [
+        ">>:1"
+      ]
+    },
+    "converted": [
+      {
+        "name": "cache0",
+        "partial": false,
+        "converted_vectors": 32,
+        "scalar_source": 1215
+      },
+      {
+        "name": 3042594569,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 238
+      },
+      {
+        "name": -2,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 75476
+      },
+      {
+        "name": 3345072700,
+        "partial": false,
+        "converted_vectors": 512,
+        "scalar_source": 26
+      },
+      {
+        "name": 19,
+        "partial": true,
+        "converted_vectors": 8,
+        "scalar_source": 75486
+      }
+    ],
+    "mandatory_alu": 8859,
+    "mandatory_alu_cycle_bound": 739,
+    "productive_bound": {
+      "arithmetic_lanes": 51628,
+      "prefix": {
+        "side": "prefix",
+        "width": 6,
+        "status": "FEASIBLE",
+        "eligible_ops": 400,
+        "objective_incumbent": 237.0,
+        "objective_upper_bound": 277,
+        "waste_lower_bound": 83,
+        "structural_upper_bound": null,
+        "seconds": 1.000262
+      },
+      "suffix": {
+        "side": "suffix",
+        "width": 3,
+        "status": "FEASIBLE",
+        "eligible_ops": 807,
+        "objective_incumbent": 60.0,
+        "objective_upper_bound": 64,
+        "waste_lower_bound": 116,
+        "structural_upper_bound": 64,
+        "seconds": 1.002075
+      },
+      "cycle_lower_bound": 864,
+      "excluded_unobserved_lanes": 7
+    }
+  },
+  {
+    "counts": {
+      "load": 1688,
+      "valu": 5345,
+      "flow": 852,
+      "alu": 8875,
+      "store": 530
+    },
+    "arithmetic_lanes": 51635,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "FEASIBLE",
+      "eligible_ops": 400,
+      "objective_incumbent": 244.0,
+      "objective_upper_bound": 268,
+      "waste_lower_bound": 92,
+      "structural_upper_bound": null,
+      "seconds": 1.001355
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "FEASIBLE",
+      "eligible_ops": 807,
+      "objective_incumbent": 67.0,
+      "objective_upper_bound": 71,
+      "waste_lower_bound": 109,
+      "structural_upper_bound": 71,
+      "seconds": 1.0020250000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 464,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 864,
+    "new_executable": false,
+    "config": {
+      "full": [
+        "cache0",
+        3042594569,
+        -2,
+        3345072700
+      ],
+      "methods": {
+        "9": "stage",
+        "19": "stage"
+      },
+      "prolog19": 8,
+      "init4097": "flow",
+      "header_packs": [
+        "+:1"
+      ]
+    },
+    "converted": [
+      {
+        "name": "cache0",
+        "partial": false,
+        "converted_vectors": 32,
+        "scalar_source": 1215
+      },
+      {
+        "name": 3042594569,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 238
+      },
+      {
+        "name": -2,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 75476
+      },
+      {
+        "name": 3345072700,
+        "partial": false,
+        "converted_vectors": 512,
+        "scalar_source": 26
+      },
+      {
+        "name": 19,
+        "partial": true,
+        "converted_vectors": 8,
+        "scalar_source": 75486
+      }
+    ],
+    "mandatory_alu": 8859,
+    "mandatory_alu_cycle_bound": 739,
+    "productive_bound": {
+      "arithmetic_lanes": 51628,
+      "prefix": {
+        "side": "prefix",
+        "width": 6,
+        "status": "FEASIBLE",
+        "eligible_ops": 400,
+        "objective_incumbent": 237.0,
+        "objective_upper_bound": 284,
+        "waste_lower_bound": 76,
+        "structural_upper_bound": null,
+        "seconds": 1.000747
+      },
+      "suffix": {
+        "side": "suffix",
+        "width": 3,
+        "status": "FEASIBLE",
+        "eligible_ops": 807,
+        "objective_incumbent": 60.0,
+        "objective_upper_bound": 64,
+        "waste_lower_bound": 116,
+        "structural_upper_bound": 64,
+        "seconds": 1.002116
+      },
+      "cycle_lower_bound": 864,
+      "excluded_unobserved_lanes": 7
+    }
+  },
+  {
+    "counts": {
+      "load": 1688,
+      "valu": 5345,
+      "flow": 852,
+      "alu": 8873,
+      "store": 530
+    },
+    "arithmetic_lanes": 51633,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "FEASIBLE",
+      "eligible_ops": 396,
+      "objective_incumbent": 244.0,
+      "objective_upper_bound": 284,
+      "waste_lower_bound": 76,
+      "structural_upper_bound": null,
+      "seconds": 1.001288
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "FEASIBLE",
+      "eligible_ops": 805,
+      "objective_incumbent": 65.0,
+      "objective_upper_bound": 69,
+      "waste_lower_bound": 111,
+      "structural_upper_bound": 69,
+      "seconds": 1.012257
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 464,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 864,
+    "new_executable": false,
+    "config": {
+      "full": [
+        "cache0",
+        3042594569,
+        -2,
+        3345072700
+      ],
+      "methods": {
+        "9": "stage",
+        "19": "stage"
+      },
+      "prolog19": 8,
+      "init4097": "flow",
+      "header_packs": [
+        "-:2"
+      ]
+    },
+    "converted": [
+      {
+        "name": "cache0",
+        "partial": false,
+        "converted_vectors": 32,
+        "scalar_source": 1215
+      },
+      {
+        "name": 3042594569,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 238
+      },
+      {
+        "name": -2,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 75476
+      },
+      {
+        "name": 3345072700,
+        "partial": false,
+        "converted_vectors": 512,
+        "scalar_source": 26
+      },
+      {
+        "name": 19,
+        "partial": true,
+        "converted_vectors": 8,
+        "scalar_source": 75486
+      }
+    ],
+    "mandatory_alu": 8857,
+    "mandatory_alu_cycle_bound": 739,
+    "productive_bound": {
+      "arithmetic_lanes": 51628,
+      "prefix": {
+        "side": "prefix",
+        "width": 6,
+        "status": "FEASIBLE",
+        "eligible_ops": 396,
+        "objective_incumbent": 239.0,
+        "objective_upper_bound": 287,
+        "waste_lower_bound": 73,
+        "structural_upper_bound": null,
+        "seconds": 1.001459
+      },
+      "suffix": {
+        "side": "suffix",
+        "width": 3,
+        "status": "FEASIBLE",
+        "eligible_ops": 805,
+        "objective_incumbent": 60.0,
+        "objective_upper_bound": 64,
+        "waste_lower_bound": 116,
+        "structural_upper_bound": 64,
+        "seconds": 1.0021010000000001
+      },
+      "cycle_lower_bound": 864,
+      "excluded_unobserved_lanes": 5
+    }
+  },
+  {
+    "counts": {
+      "load": 1688,
+      "valu": 5345,
+      "flow": 852,
+      "alu": 8875,
+      "store": 530
+    },
+    "arithmetic_lanes": 51635,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "OPTIMAL",
+      "eligible_ops": 373,
+      "objective_incumbent": 244.0,
+      "objective_upper_bound": 244,
+      "waste_lower_bound": 116,
+      "structural_upper_bound": null,
+      "seconds": 0.19737400000000002
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "FEASIBLE",
+      "eligible_ops": 807,
+      "objective_incumbent": 67.0,
+      "objective_upper_bound": 71,
+      "waste_lower_bound": 109,
+      "structural_upper_bound": 71,
+      "seconds": 1.0021520000000002
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 464,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false,
+    "config": {
+      "full": [
+        "cache0",
+        3042594569,
+        -2,
+        3345072700
+      ],
+      "methods": {
+        "9": "stage",
+        "19": "stage"
+      },
+      "prolog19": 8,
+      "init4097": "flow",
+      "header_packs": [
+        "+:16"
+      ]
+    },
+    "converted": [
+      {
+        "name": "cache0",
+        "partial": false,
+        "converted_vectors": 32,
+        "scalar_source": 1215
+      },
+      {
+        "name": 3042594569,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 238
+      },
+      {
+        "name": -2,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 75476
+      },
+      {
+        "name": 3345072700,
+        "partial": false,
+        "converted_vectors": 512,
+        "scalar_source": 26
+      },
+      {
+        "name": 19,
+        "partial": true,
+        "converted_vectors": 8,
+        "scalar_source": 75486
+      }
+    ],
+    "mandatory_alu": 8859,
+    "mandatory_alu_cycle_bound": 739,
+    "productive_bound": {
+      "arithmetic_lanes": 51628,
+      "prefix": {
+        "side": "prefix",
+        "width": 6,
+        "status": "OPTIMAL",
+        "eligible_ops": 373,
+        "objective_incumbent": 237.0,
+        "objective_upper_bound": 237,
+        "waste_lower_bound": 123,
+        "structural_upper_bound": null,
+        "seconds": 0.298804
+      },
+      "suffix": {
+        "side": "suffix",
+        "width": 3,
+        "status": "FEASIBLE",
+        "eligible_ops": 807,
+        "objective_incumbent": 60.0,
+        "objective_upper_bound": 64,
+        "waste_lower_bound": 116,
+        "structural_upper_bound": 64,
+        "seconds": 1.002043
+      },
+      "cycle_lower_bound": 865,
+      "excluded_unobserved_lanes": 7
+    }
+  },
+  {
+    "counts": {
+      "load": 1688,
+      "valu": 5346,
+      "flow": 852,
+      "alu": 8873,
+      "store": 530
+    },
+    "arithmetic_lanes": 51641,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "FEASIBLE",
+      "eligible_ops": 404,
+      "objective_incumbent": 252.0,
+      "objective_upper_bound": 300,
+      "waste_lower_bound": 60,
+      "structural_upper_bound": null,
+      "seconds": 1.000771
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "FEASIBLE",
+      "eligible_ops": 813,
+      "objective_incumbent": 73.0,
+      "objective_upper_bound": 77,
+      "waste_lower_bound": 103,
+      "structural_upper_bound": 77,
+      "seconds": 1.014883
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 464,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 865,
+    "new_executable": false,
+    "config": {
+      "full": [
+        "cache0",
+        3042594569,
+        -2,
+        3345072700
+      ],
+      "methods": {
+        "9": "stage",
+        "19": "stage"
+      },
+      "prolog19": 8,
+      "init4097": "flow",
+      "header_packs": [
+        ">>:1",
+        "-:2"
+      ]
+    },
+    "converted": [
+      {
+        "name": "cache0",
+        "partial": false,
+        "converted_vectors": 32,
+        "scalar_source": 1215
+      },
+      {
+        "name": 3042594569,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 238
+      },
+      {
+        "name": -2,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 75476
+      },
+      {
+        "name": 3345072700,
+        "partial": false,
+        "converted_vectors": 512,
+        "scalar_source": 26
+      },
+      {
+        "name": 19,
+        "partial": true,
+        "converted_vectors": 8,
+        "scalar_source": 75486
+      }
+    ],
+    "mandatory_alu": 8857,
+    "mandatory_alu_cycle_bound": 739,
+    "productive_bound": {
+      "arithmetic_lanes": 51628,
+      "prefix": {
+        "side": "prefix",
+        "width": 6,
+        "status": "FEASIBLE",
+        "eligible_ops": 404,
+        "objective_incumbent": 239.0,
+        "objective_upper_bound": 263,
+        "waste_lower_bound": 97,
+        "structural_upper_bound": null,
+        "seconds": 1.0018770000000001
+      },
+      "suffix": {
+        "side": "suffix",
+        "width": 3,
+        "status": "FEASIBLE",
+        "eligible_ops": 813,
+        "objective_incumbent": 60.0,
+        "objective_upper_bound": 64,
+        "waste_lower_bound": 116,
+        "structural_upper_bound": 64,
+        "seconds": 1.00078
+      },
+      "cycle_lower_bound": 865,
+      "excluded_unobserved_lanes": 13
+    }
+  },
+  {
+    "counts": {
+      "load": 1688,
+      "valu": 5347,
+      "flow": 852,
+      "alu": 8872,
+      "store": 530
+    },
+    "arithmetic_lanes": 51648,
+    "prefix": {
+      "side": "prefix",
+      "width": 6,
+      "status": "FEASIBLE",
+      "eligible_ops": 411,
+      "objective_incumbent": 260.0,
+      "objective_upper_bound": 308,
+      "waste_lower_bound": 52,
+      "structural_upper_bound": null,
+      "seconds": 1.001003
+    },
+    "suffix": {
+      "side": "suffix",
+      "width": 3,
+      "status": "FEASIBLE",
+      "eligible_ops": 820,
+      "objective_incumbent": 80.0,
+      "objective_upper_bound": 84,
+      "waste_lower_bound": 96,
+      "structural_upper_bound": 84,
+      "seconds": 1.0021820000000001
+    },
+    "streams": {
+      "load": {
+        "cycle_lower_bound": 863,
+        "prefix_at_least": 0,
+        "suffix_at_least": 21,
+        "instructions": 1684,
+        "capacity": 2
+      },
+      "store": {
+        "cycle_lower_bound": 345,
+        "prefix_at_least": 4,
+        "suffix_at_least": 109,
+        "instructions": 464,
+        "capacity": 2
+      },
+      "flow": {
+        "cycle_lower_bound": 862,
+        "prefix_at_least": 0,
+        "suffix_at_least": 10,
+        "instructions": 852,
+        "capacity": 1
+      }
+    },
+    "cycle_lower_bound": 864,
+    "new_executable": false,
+    "config": {
+      "full": [
+        "cache0",
+        3042594569,
+        -2,
+        3345072700
+      ],
+      "methods": {
+        "9": "stage",
+        "19": "stage"
+      },
+      "prolog19": 8,
+      "init4097": "flow",
+      "header_packs": [
+        "+:1",
+        ">>:1",
+        "-:2"
+      ]
+    },
+    "converted": [
+      {
+        "name": "cache0",
+        "partial": false,
+        "converted_vectors": 32,
+        "scalar_source": 1215
+      },
+      {
+        "name": 3042594569,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 238
+      },
+      {
+        "name": -2,
+        "partial": false,
+        "converted_vectors": 96,
+        "scalar_source": 75476
+      },
+      {
+        "name": 3345072700,
+        "partial": false,
+        "converted_vectors": 512,
+        "scalar_source": 26
+      },
+      {
+        "name": 19,
+        "partial": true,
+        "converted_vectors": 8,
+        "scalar_source": 75486
+      }
+    ],
+    "mandatory_alu": 8856,
+    "mandatory_alu_cycle_bound": 738,
+    "productive_bound": {
+      "arithmetic_lanes": 51628,
+      "prefix": {
+        "side": "prefix",
+        "width": 6,
+        "status": "FEASIBLE",
+        "eligible_ops": 411,
+        "objective_incumbent": 240.0,
+        "objective_upper_bound": 288,
+        "waste_lower_bound": 72,
+        "structural_upper_bound": null,
+        "seconds": 1.0014800000000001
+      },
+      "suffix": {
+        "side": "suffix",
+        "width": 3,
+        "status": "FEASIBLE",
+        "eligible_ops": 820,
+        "objective_incumbent": 60.0,
+        "objective_upper_bound": 64,
+        "waste_lower_bound": 116,
+        "structural_upper_bound": 64,
+        "seconds": 1.002104
+      },
+      "cycle_lower_bound": 864,
+      "excluded_unobserved_lanes": 20
+    }
+  }
+]

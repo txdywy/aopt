@@ -1,0 +1,59 @@
+{
+  "executable_best_cycles": 864,
+  "new_executable": false,
+  "versions": {
+    "python": "3.12.15",
+    "z3": "5.1.0",
+    "numpy": "2.3.5"
+  },
+  "tests": {
+    "modules": [
+      "codex.test_head_polynomial863",
+      "codex.test_head_and_basis863",
+      "codex.test_keyed_live_nonlinear863",
+      "codex.test_keyed_live_middle863",
+      "codex.test_head_nonlinear863"
+    ],
+    "passed": 38,
+    "seconds": 11.697
+  },
+  "frozen_replays": {
+    "graphs": 2,
+    "seeds_per_graph": 2,
+    "total_passed": 4,
+    "scratch_words": [
+      1111,
+      1060
+    ],
+    "serial_calendar_lengths": [
+      12115,
+      17549
+    ]
+  },
+  "protected_sha256": {
+    "perf_takehome.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_864.py": "98d0f4ce1ecae152378e31ddae70d52f0ed4cb6ace5b027ce191d4027346a884",
+    "codex/perf_takehome_865.py": "58ce2efca049a18ef343ba82ceaeb72fd74f638bd7c8bbc23a14e6e796d72f44"
+  },
+  "source_sha256": {
+    "codex/search_keyed_live_middle863.py": "2d45ca402956a4fb0e70fd576f26adde8e15a676374cd32a0d7ed70fd5373a1b",
+    "codex/scan_keyed_live_outer863.py": "755e6744bd7bd10b1b0861705d55c1afcfa1667d35d169e86788fae123ee1cb9",
+    "codex/audit_keyed_live_outer863.py": "a57ae633a6bf61d08b864d4ce99f8677846a2da3af7c056050044ebab179ea47",
+    "codex/search_head_polynomial863.py": "80f1128262f7ee0e9df5d54a193f3d93f046c5cfb4e7caff0b8e816a956f36b3",
+    "codex/search_head_and_basis863.py": "dec26006276d46598e381755b6603bcfd10be9a4fd3b6895fb7a18b4310b4251",
+    "codex/audit_head_polynomial863.py": "ac7492ff0f38494c31ae61a9a688ab403f8bb2718d42d9388b6225bc86d779c4",
+    "codex/research_raw_d8_records863.py": "50079648cb02776d09c3a0262caae01219a35636134264860f3743e31a547148",
+    "codex/test_head_polynomial863.py": "7bf9c1729b9b540e532011271e6a439538c28a2d9bb8400c43b5d4db2bf58d09",
+    "codex/test_head_and_basis863.py": "b02506a2ce625a68fdeafcbfa472f303dcc51d13a0aa1a54da7ca7f9650ea0a8",
+    "codex/test_keyed_live_nonlinear863.py": "5f97d78c6da45467ceb2af4bab8a8cd320dc2418c76ad35f3338505008f7aa16"
+  },
+  "head_audit_sha256": "cb2ec1ae828ba2ef4713f608dcd056c4201bcea2d3ab7bd62db223aec0af5997",
+  "outer_audit_sha256": "1a7b9557f2e4717ba94ff66b464fd54161d4bc2554b823ac02c60f8009efb654",
+  "record_results_sha256": "77e6c59d6a834217929565578ba7fc09b7f489a55cbeacb6112682d95c8fcd6a",
+  "notes": [
+    "Current submission and saved 864/865 code are unchanged; prior submission and 270-case checks were not repeated.",
+    "All raw UNKNOWN queries and both early UNKNOWN positive controls are retained.",
+    "Serial replay lengths and necessary cycle bounds are not competition scores.",
+    "The raw-record result metadata now explicitly records the two seeds used by the completed command."
+  ]
+}

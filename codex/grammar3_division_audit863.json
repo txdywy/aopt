@@ -1,0 +1,1019 @@
+{
+ "summary": {
+  "queries": 14777,
+  "unsat": 14610,
+  "other": 167,
+  "by_argument": {
+   "injective-a|even-mad-a": 7,
+   "single-source": 53,
+   "open": 98,
+   "input-numerator": 4,
+   "injective-a": 4,
+   "small-image": 1
+  }
+ },
+ "rest": [
+  {
+   "idx": 2,
+   "template": "i1=aff(u) ; i2=aff(u) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "injective-a|even-mad-a"
+  },
+  {
+   "idx": 3,
+   "template": "i1=aff(u) ; i2=aff(u) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "injective-a|even-mad-a"
+  },
+  {
+   "idx": 285,
+   "template": "i1=aff(u) ; i2=aff(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 286,
+   "template": "i1=aff(u) ; i2=aff(i1) ; i3=div_ba(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 287,
+   "template": "i1=aff(u) ; i2=aff(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 288,
+   "template": "i1=aff(u) ; i2=aff(i1) ; i3=cdiv_ba(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 299,
+   "template": "i1=aff(u) ; i2=sq(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 300,
+   "template": "i1=aff(u) ; i2=sq(i1) ; i3=div_ba(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 301,
+   "template": "i1=aff(u) ; i2=sq(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 302,
+   "template": "i1=aff(u) ; i2=sq(i1) ; i3=cdiv_ba(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 313,
+   "template": "i1=aff(u) ; i2=sqx(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 315,
+   "template": "i1=aff(u) ; i2=sqx(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 327,
+   "template": "i1=aff(u) ; i2=xk(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 328,
+   "template": "i1=aff(u) ; i2=xk(i1) ; i3=div_ba(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 329,
+   "template": "i1=aff(u) ; i2=xk(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 330,
+   "template": "i1=aff(u) ; i2=xk(i1) ; i3=cdiv_ba(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 341,
+   "template": "i1=aff(u) ; i2=andk(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 343,
+   "template": "i1=aff(u) ; i2=andk(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 356,
+   "template": "i1=aff(u) ; i2=ork(i1) ; i3=div_ba(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 358,
+   "template": "i1=aff(u) ; i2=ork(i1) ; i3=cdiv_ba(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 389,
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 391,
+   "template": "i1=aff(u) ; i2=shrk(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 544,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=lin1(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 545,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=lin2(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 560,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=lin1(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 561,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=lin2(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 562,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=prod(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 563,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=xor(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 565,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=or(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 568,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=shr_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 570,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=aab(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 572,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=aba(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 573,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=abb(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 574,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 576,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 578,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=mad_c(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 580,
+   "template": "i1=aff(u) ; i2=divk(i1) ; i3=mad_a(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 581,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=lin1(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 582,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=lin2(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 597,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=lin1(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 598,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=lin2(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 599,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=prod(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 605,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=shr_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 607,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=aab(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 609,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=aba(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 610,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=abb(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 611,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 612,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=div_ba(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 613,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 614,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=cdiv_ba(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 615,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=mad_c(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 617,
+   "template": "i1=aff(u) ; i2=kdiv(i1) ; i3=mad_a(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 618,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=lin1(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 619,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=lin2(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 621,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=xor(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 628,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=aab(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 634,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=lin1(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 635,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=lin2(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 636,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=prod(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 637,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=xor(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 638,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=and(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 639,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=or(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 642,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=shr_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 644,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=aab(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 646,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=aba(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 647,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=abb(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 648,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 650,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 652,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=mad_c(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 654,
+   "template": "i1=aff(u) ; i2=modk(i1) ; i3=mad_a(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 655,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=lin1(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 656,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=lin2(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 658,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=xor(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 665,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=aab(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 671,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=lin1(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 672,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=lin2(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 673,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=prod(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 674,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=xor(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 675,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=and(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 679,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=shr_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 681,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=aab(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 683,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=aba(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 685,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 687,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 689,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=mad_c(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 691,
+   "template": "i1=aff(u) ; i2=kmod(i1) ; i3=mad_a(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 692,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=lin1(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 693,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=lin2(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 708,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=lin1(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 709,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=lin2(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 710,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=prod(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 711,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=xor(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 713,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=or(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 716,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=shr_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 718,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=aab(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 720,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=aba(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 721,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=abb(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 722,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 724,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 726,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=mad_c(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 728,
+   "template": "i1=aff(u) ; i2=cdivk(i1) ; i3=mad_a(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 729,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=lin1(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 730,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=lin2(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 745,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=lin1(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 746,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=lin2(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 747,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=prod(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 748,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=xor(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 753,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=shr_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 755,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=aab(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 757,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=aba(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 758,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=abb(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 759,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 760,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=div_ba(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 761,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 762,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=cdiv_ba(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 763,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=mad_c(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 765,
+   "template": "i1=aff(u) ; i2=kcdiv(i1) ; i3=mad_a(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 901,
+   "template": "i1=aff(u) ; i2=lin2(u,i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "injective-a|even-mad-a"
+  },
+  {
+   "idx": 902,
+   "template": "i1=aff(u) ; i2=lin2(u,i1) ; i3=div_ba(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 903,
+   "template": "i1=aff(u) ; i2=lin2(u,i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "injective-a|even-mad-a"
+  },
+  {
+   "idx": 904,
+   "template": "i1=aff(u) ; i2=lin2(u,i1) ; i3=cdiv_ba(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 915,
+   "template": "i1=aff(u) ; i2=prod(u,i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "injective-a|even-mad-a"
+  },
+  {
+   "idx": 917,
+   "template": "i1=aff(u) ; i2=prod(u,i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "injective-a|even-mad-a"
+  },
+  {
+   "idx": 1139,
+   "template": "i1=aff(u) ; i2=bba(u,i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "injective-a|even-mad-a"
+  },
+  {
+   "idx": 3819,
+   "template": "i1=xk(u) ; i2=aff(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 3821,
+   "template": "i1=xk(u) ; i2=aff(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 3833,
+   "template": "i1=xk(u) ; i2=sq(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 3835,
+   "template": "i1=xk(u) ; i2=sq(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 3847,
+   "template": "i1=xk(u) ; i2=sqx(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 3849,
+   "template": "i1=xk(u) ; i2=sqx(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 3875,
+   "template": "i1=xk(u) ; i2=andk(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 3877,
+   "template": "i1=xk(u) ; i2=andk(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 3925,
+   "template": "i1=xk(u) ; i2=shrk(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 4094,
+   "template": "i1=xk(u) ; i2=divk(i1) ; i3=lin1(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 4095,
+   "template": "i1=xk(u) ; i2=divk(i1) ; i3=lin2(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 4108,
+   "template": "i1=xk(u) ; i2=divk(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 4110,
+   "template": "i1=xk(u) ; i2=divk(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 4152,
+   "template": "i1=xk(u) ; i2=modk(i1) ; i3=lin1(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 4168,
+   "template": "i1=xk(u) ; i2=modk(i1) ; i3=lin1(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 4182,
+   "template": "i1=xk(u) ; i2=modk(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 4184,
+   "template": "i1=xk(u) ; i2=modk(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 4204,
+   "template": "i1=xk(u) ; i2=kmod(i1) ; i3=cdiv_ab(u,i2)",
+   "result": "timeout",
+   "resolved": "input-numerator"
+  },
+  {
+   "idx": 4219,
+   "template": "i1=xk(u) ; i2=kmod(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 4221,
+   "template": "i1=xk(u) ; i2=kmod(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 4226,
+   "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=lin1(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 4227,
+   "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=lin2(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 4242,
+   "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=lin1(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 4243,
+   "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=lin2(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 4252,
+   "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=aab(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 4256,
+   "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 4258,
+   "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "single-source"
+  },
+  {
+   "idx": 4260,
+   "template": "i1=xk(u) ; i2=cdivk(i1) ; i3=mad_c(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 4435,
+   "template": "i1=xk(u) ; i2=lin2(u,i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "injective-a"
+  },
+  {
+   "idx": 4437,
+   "template": "i1=xk(u) ; i2=lin2(u,i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "injective-a"
+  },
+  {
+   "idx": 4671,
+   "template": "i1=xk(u) ; i2=bba(u,i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "injective-a"
+  },
+  {
+   "idx": 4673,
+   "template": "i1=xk(u) ; i2=bba(u,i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "injective-a"
+  },
+  {
+   "idx": 6374,
+   "template": "i1=ork(u) ; i2=divk(i1) ; i3=mad_a(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 6412,
+   "template": "i1=ork(u) ; i2=modk(i1) ; i3=mad_a(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 6432,
+   "template": "i1=ork(u) ; i2=cdivk(i1) ; i3=lin1(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 6433,
+   "template": "i1=ork(u) ; i2=cdivk(i1) ; i3=lin2(u,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 6450,
+   "template": "i1=ork(u) ; i2=cdivk(i1) ; i3=mad_a(u,i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 6551,
+   "template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=div_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 6553,
+   "template": "i1=ork(u) ; i2=lin2(u,i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "open"
+  },
+  {
+   "idx": 16233,
+   "template": "i1=cdivk(u) ; i2=sq(i1) ; i3=cdiv_ab(u,i2)",
+   "result": "timeout",
+   "resolved": "input-numerator"
+  },
+  {
+   "idx": 16366,
+   "template": "i1=cdivk(u) ; i2=kshr(i1) ; i3=cdiv_ab(u,i2)",
+   "result": "timeout",
+   "resolved": "input-numerator"
+  },
+  {
+   "idx": 16423,
+   "template": "i1=cdivk(u) ; i2=divk(i1) ; i3=cdiv_ab(u,i2)",
+   "result": "timeout",
+   "resolved": "input-numerator"
+  },
+  {
+   "idx": 16688,
+   "template": "i1=cdivk(u) ; i2=prod(u,i1) ; i3=cdiv_ab(i1,i2)",
+   "result": "timeout",
+   "resolved": "small-image"
+  }
+ ]
+}

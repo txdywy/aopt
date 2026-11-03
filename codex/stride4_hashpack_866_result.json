@@ -1,0 +1,27 @@
+{
+  "cycles": 866,
+  "scratch_words": 1324,
+  "full32_cases": 20,
+  "operations": {
+    "load": 1684,
+    "valu": 5167,
+    "flow": 848,
+    "alu": 10330,
+    "store": 490
+  },
+  "arithmetic_lanes": 51666,
+  "active_submission": false,
+  "compiler": "codex.research_sub863",
+  "compiler_flags": "--hash-pack --coefficients --literals 2 --literal-flow 7",
+  "search": {
+    "iterations": 900,
+    "seed": 1211,
+    "scalar_bias": 2,
+    "warm_calendar": "codex/stride4_865_schedule.txt"
+  },
+  "calendar_sha256": "6b9550a3166729fea8e5e031b1d7e92ce3b179807e477c14a9eab200b07c136c",
+  "model_text_sha256": "900318c6a13b7352797e242384dd6e21112b274ac2342f0e4724ef9b8551b7ee",
+  "program_sha256": "24594e263c8da89ba7b1836ca4ad820396d18bee55db6230c5748a4e73356a25",
+  "validation": "full architectural allocation; dependency audit; 20 full-width frozen-machine cases",
+  "target_sub864_reached": false
+}

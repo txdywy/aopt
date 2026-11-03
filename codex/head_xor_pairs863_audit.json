@@ -1,0 +1,128 @@
+{
+  "executable_best_cycles": 864,
+  "new_executable": false,
+  "width": 11,
+  "direct_queries": 52,
+  "affine_wiring_patterns": 18900,
+  "affine_wiring_classes": {
+    "three_operations": 18082,
+    "keyed_reordering": 562,
+    "parallel_input_key": 64,
+    "xor_then_key": 32,
+    "key_then_xor": 32,
+    "parallel_keys": 128
+  },
+  "order_statuses": [
+    {
+      "sequence": [
+        "^",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "new live MAD/XOR/MAD proof after x XOR K; extra prior input is unused"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "new complete live MAD/MAD/XOR proof after x XOR K; unused prior input only enlarges the candidate set"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "bitwise-prefix polynomial rectangle, arbitrary output key"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^",
+        "mad"
+      ],
+      "status": "closed",
+      "reason": "complete affine XOR-pair classification and 52 fixed-DAG UNSAT queries; earlier square-first exclusions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "^"
+      ],
+      "status": "open",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^",
+        "mad"
+      ],
+      "status": "open",
+      "reason": "first-MAD partitions"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "mad",
+        "^"
+      ],
+      "status": "closed",
+      "reason": "new degree-four XOR degree-two relaxation excludes the affine-first case; prior square-first exclusions remain valid"
+    }
+  ],
+  "closed_orders": 7,
+  "open_orders": 3,
+  "evidence_sha256": {
+    "head_xor_pairs863_results.json": "d1bfc38554bebd8ef03f5458beff3236931f85856fb3fcdb922ea2036934a81d",
+    "head_polynomial863_audit.json": "cb2ec1ae828ba2ef4713f608dcd056c4201bcea2d3ab7bd62db223aec0af5997",
+    "keyed_live863_nonlinear_audit.json": "758eef045456ab1b91ecffc63a97725c98cffecad6517188e3dd089c1cab36a9",
+    "free_keys863_complete_grammar.json": "68893cae943b55d5637204482c735bd9c341a541b91a620b1612fef47671c109"
+  },
+  "reduction": "If only one XOR output survives, fold constants/cancel XOR terms into three operations or move x XOR K before the affine MAD. If either XOR word is x XOR K, move it first and use the complete keyed-live MAD/XOR/MAD proof. Otherwise both outputs must be operands of the last MAD; four templates suffice.",
+  "scope": "One input, arbitrary constants and output XOR key; four instructions with three MAD/one XOR or two MAD/two XOR. Only listed exclusions are proved.",
+  "remaining": "Other four-op orders, opcodes/live inputs, whole-hash and layout changes remain open."
+}

@@ -1,0 +1,2755 @@
+{
+  "best_verified_cycles": 864,
+  "new_executable_candidate": false,
+  "closed_orders": 64,
+  "orders": [
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "complete first-MAD superset enumeration for final bitwise instruction"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "complete first-MAD superset enumeration for final bitwise instruction"
+    },
+    {
+      "sequence": [
+        "mad",
+        "mad",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "complete first-MAD superset enumeration for final bitwise instruction"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "prefix/bypass reduction; sole-u lemma; 58 final roles, refinements and residual proofs"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "prefix/bypass reduction; sole-u lemma; 58 final roles, refinements and residual proofs"
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "prefix/bypass reduction; sole-u lemma; 58 final roles, refinements and residual proofs"
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "^",
+        "^",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "^",
+        "^",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "^",
+        "^",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "^",
+        "^",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "^",
+        "&",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "^",
+        "&",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "^",
+        "&",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "^",
+        "&",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "^",
+        "|",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "^",
+        "|",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "^",
+        "|",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "^",
+        "|",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "&",
+        "^",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "&",
+        "^",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "&",
+        "^",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "&",
+        "^",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "&",
+        "&",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "&",
+        "&",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "&",
+        "&",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "&",
+        "&",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "&",
+        "|",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "&",
+        "|",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "&",
+        "|",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "&",
+        "|",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "fixed-order UNSAT with an independently verified unpinned positive control"
+    },
+    {
+      "sequence": [
+        "|",
+        "^",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "|",
+        "^",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "|",
+        "^",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "|",
+        "^",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "|",
+        "&",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "|",
+        "&",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "|",
+        "&",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "|",
+        "&",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "|",
+        "|",
+        "mad"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "|",
+        "|",
+        "^"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "|",
+        "|",
+        "&"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    },
+    {
+      "sequence": [
+        "|",
+        "|",
+        "|"
+      ],
+      "excluded": true,
+      "evidence": "bitwise-prefix / integer-polynomial rectangle certificate"
+    }
+  ],
+  "fixed_final_role_results": {
+    "unsat": 150,
+    "unknown": 24
+  },
+  "middle_source_refinement_results": {
+    "unsat": 44,
+    "unknown": 8
+  },
+  "final_roles": [
+    {
+      "op": "^",
+      "role": [
+        0,
+        0,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        0,
+        1,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        0,
+        2,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        0,
+        4,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "b*t+u enumeration"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        0,
+        5,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        0,
+        5,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        0,
+        5,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        0,
+        5,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "b*u+t enumeration"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        0,
+        5,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        0,
+        5,
+        6
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        0,
+        5,
+        7
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        0,
+        6,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "D*b+u enumeration"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        0,
+        7,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "D*b+u enumeration"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        1,
+        1,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        1,
+        2,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        1,
+        4,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        1,
+        5,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        1,
+        5,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        1,
+        5,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        1,
+        5,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        1,
+        5,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        1,
+        5,
+        6
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        1,
+        5,
+        7
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        1,
+        6,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        1,
+        7,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        2,
+        2,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        2,
+        4,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        2,
+        5,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        2,
+        5,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        2,
+        5,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        2,
+        5,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        2,
+        5,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        2,
+        5,
+        6
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        2,
+        5,
+        7
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        2,
+        6,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        2,
+        7,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        4,
+        4,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        4,
+        5,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        4,
+        5,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        4,
+        5,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        4,
+        5,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        4,
+        5,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        4,
+        5,
+        6
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        4,
+        5,
+        7
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        4,
+        6,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "D*t+u injective first-result partition"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        4,
+        7,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "D*t+u injective first-result partition"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        5,
+        5,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        5,
+        5,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        5,
+        5,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        5,
+        5,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        5,
+        6,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "D*u+b low-bit and period certificate"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        5,
+        6,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        5,
+        6,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        5,
+        6,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "D*u+t injective first-result partition"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        5,
+        7,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "D*u+b low-bit and period certificate"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        5,
+        7,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        5,
+        7,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "^",
+      "role": [
+        5,
+        7,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "D*u+t injective first-result partition"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        0,
+        0,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        0,
+        1,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        0,
+        2,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        0,
+        4,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        0,
+        5,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        0,
+        5,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        0,
+        5,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        0,
+        5,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        0,
+        5,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        0,
+        5,
+        6
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        0,
+        5,
+        7
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        0,
+        6,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "AND mask forcing and two exact exceptions"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        0,
+        7,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "AND mask forcing and two exact exceptions"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        1,
+        1,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        1,
+        2,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        1,
+        4,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        1,
+        5,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        1,
+        5,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        1,
+        5,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        1,
+        5,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        1,
+        5,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        1,
+        5,
+        6
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        1,
+        5,
+        7
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        1,
+        6,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        1,
+        7,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        2,
+        2,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        2,
+        4,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        2,
+        5,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        2,
+        5,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        2,
+        5,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        2,
+        5,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        2,
+        5,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        2,
+        5,
+        6
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        2,
+        5,
+        7
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        2,
+        6,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        2,
+        7,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        4,
+        4,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        4,
+        5,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        4,
+        5,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        4,
+        5,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        4,
+        5,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        4,
+        5,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        4,
+        5,
+        6
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        4,
+        5,
+        7
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        4,
+        6,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        4,
+        7,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        5,
+        5,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        5,
+        5,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        5,
+        5,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        5,
+        5,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        5,
+        6,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        5,
+        6,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        5,
+        6,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        5,
+        6,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        5,
+        7,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        5,
+        7,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        5,
+        7,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "&",
+      "role": [
+        5,
+        7,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        0,
+        0,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        0,
+        1,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        0,
+        2,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        0,
+        4,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        0,
+        5,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        0,
+        5,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        0,
+        5,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        0,
+        5,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        0,
+        5,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        0,
+        5,
+        6
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        0,
+        5,
+        7
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        0,
+        6,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "OR neutral-high-mask certificate"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        0,
+        7,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "OR neutral-high-mask certificate"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        1,
+        1,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        1,
+        2,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        1,
+        4,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        1,
+        5,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        1,
+        5,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        1,
+        5,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        1,
+        5,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        1,
+        5,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        1,
+        5,
+        6
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        1,
+        5,
+        7
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        1,
+        6,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        1,
+        7,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        2,
+        2,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        2,
+        4,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        2,
+        5,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        2,
+        5,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        2,
+        5,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        2,
+        5,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        2,
+        5,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        2,
+        5,
+        6
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        2,
+        5,
+        7
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        2,
+        6,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        2,
+        7,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        4,
+        4,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        4,
+        5,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        4,
+        5,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        4,
+        5,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        4,
+        5,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        4,
+        5,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        4,
+        5,
+        6
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        4,
+        5,
+        7
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        4,
+        6,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        4,
+        7,
+        5
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        5,
+        5,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        5,
+        5,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        5,
+        5,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        5,
+        5,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        5,
+        6,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        5,
+        6,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        5,
+        6,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        5,
+        6,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        5,
+        7,
+        0
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        5,
+        7,
+        1
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        5,
+        7,
+        2
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed final-role UNSAT"
+      ]
+    },
+    {
+      "op": "|",
+      "role": [
+        5,
+        7,
+        4
+      ],
+      "closed": true,
+      "evidence": [
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT",
+        "fixed middle-source UNSAT"
+      ]
+    }
+  ],
+  "positive_controls_verified": 21,
+  "scope": "Middle F(b), three operations from MAD/XOR/AND/OR, arbitrary constants; extra live prior,a,shift=a>>19,mix=a XOR C1,b=shift XOR mix. Exclusion uses the valid full32 subdomain a<2**w, w=11 or 12. It does not include other live inputs, shifts, division, selection, memory, cross-lane operations, or an entire-kernel optimality claim."
+}

@@ -1,0 +1,1489 @@
+{
+  "width": 11,
+  "timeout_ms": 3000,
+  "prefix_closed_orders": 9,
+  "counts": {
+    "unsat": 18
+  },
+  "control_counts": {
+    "sat": 18
+  },
+  "rows": [
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "^"
+      ],
+      "positive_control": {
+        "sequence": [
+          "mad",
+          "^",
+          "^"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "mad",
+            "selectors_constants": [
+              0,
+              4,
+              5,
+              33,
+              17
+            ]
+          },
+          {
+            "op": "^",
+            "selectors_constants": [
+              2,
+              4,
+              0,
+              0,
+              1603
+            ]
+          },
+          {
+            "op": "^",
+            "selectors_constants": [
+              1,
+              5,
+              0,
+              0,
+              529
+            ]
+          }
+        ],
+        "seconds": 0.69
+      },
+      "target": {
+        "sequence": [
+          "mad",
+          "^",
+          "^"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.499
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "&"
+      ],
+      "positive_control": {
+        "sequence": [
+          "mad",
+          "^",
+          "&"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "mad",
+            "selectors_constants": [
+              0,
+              5,
+              4,
+              17,
+              33
+            ]
+          },
+          {
+            "op": "^",
+            "selectors_constants": [
+              1,
+              4,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "op": "&",
+            "selectors_constants": [
+              2,
+              5,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "seconds": 0.206
+      },
+      "target": {
+        "sequence": [
+          "mad",
+          "^",
+          "&"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.238
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "^",
+        "|"
+      ],
+      "positive_control": {
+        "sequence": [
+          "mad",
+          "^",
+          "|"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "mad",
+            "selectors_constants": [
+              0,
+              4,
+              5,
+              33,
+              17
+            ]
+          },
+          {
+            "op": "^",
+            "selectors_constants": [
+              1,
+              4,
+              0,
+              0,
+              67
+            ]
+          },
+          {
+            "op": "|",
+            "selectors_constants": [
+              2,
+              5,
+              0,
+              0,
+              344
+            ]
+          }
+        ],
+        "seconds": 0.259
+      },
+      "target": {
+        "sequence": [
+          "mad",
+          "^",
+          "|"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.25
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "^"
+      ],
+      "positive_control": {
+        "sequence": [
+          "mad",
+          "&",
+          "^"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "mad",
+            "selectors_constants": [
+              0,
+              4,
+              5,
+              33,
+              17
+            ]
+          },
+          {
+            "op": "&",
+            "selectors_constants": [
+              1,
+              4,
+              0,
+              0,
+              1835
+            ]
+          },
+          {
+            "op": "^",
+            "selectors_constants": [
+              2,
+              5,
+              0,
+              0,
+              225
+            ]
+          }
+        ],
+        "seconds": 0.195
+      },
+      "target": {
+        "sequence": [
+          "mad",
+          "&",
+          "^"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.312
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "&"
+      ],
+      "positive_control": {
+        "sequence": [
+          "mad",
+          "&",
+          "&"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "mad",
+            "selectors_constants": [
+              0,
+              5,
+              4,
+              17,
+              33
+            ]
+          },
+          {
+            "op": "&",
+            "selectors_constants": [
+              2,
+              4,
+              0,
+              0,
+              49
+            ]
+          },
+          {
+            "op": "&",
+            "selectors_constants": [
+              1,
+              5,
+              0,
+              0,
+              304
+            ]
+          }
+        ],
+        "seconds": 0.27
+      },
+      "target": {
+        "sequence": [
+          "mad",
+          "&",
+          "&"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.108
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "&",
+        "|"
+      ],
+      "positive_control": {
+        "sequence": [
+          "mad",
+          "&",
+          "|"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "mad",
+            "selectors_constants": [
+              0,
+              4,
+              5,
+              33,
+              17
+            ]
+          },
+          {
+            "op": "&",
+            "selectors_constants": [
+              1,
+              4,
+              0,
+              0,
+              686
+            ]
+          },
+          {
+            "op": "|",
+            "selectors_constants": [
+              2,
+              5,
+              0,
+              0,
+              1074
+            ]
+          }
+        ],
+        "seconds": 0.203
+      },
+      "target": {
+        "sequence": [
+          "mad",
+          "&",
+          "|"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.222
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "^"
+      ],
+      "positive_control": {
+        "sequence": [
+          "mad",
+          "|",
+          "^"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "mad",
+            "selectors_constants": [
+              0,
+              5,
+              4,
+              17,
+              33
+            ]
+          },
+          {
+            "op": "|",
+            "selectors_constants": [
+              1,
+              4,
+              0,
+              0,
+              64
+            ]
+          },
+          {
+            "op": "^",
+            "selectors_constants": [
+              2,
+              5,
+              0,
+              0,
+              1104
+            ]
+          }
+        ],
+        "seconds": 0.339
+      },
+      "target": {
+        "sequence": [
+          "mad",
+          "|",
+          "^"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.361
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "&"
+      ],
+      "positive_control": {
+        "sequence": [
+          "mad",
+          "|",
+          "&"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "mad",
+            "selectors_constants": [
+              0,
+              4,
+              5,
+              33,
+              17
+            ]
+          },
+          {
+            "op": "|",
+            "selectors_constants": [
+              1,
+              4,
+              0,
+              0,
+              1026
+            ]
+          },
+          {
+            "op": "&",
+            "selectors_constants": [
+              2,
+              5,
+              0,
+              0,
+              875
+            ]
+          }
+        ],
+        "seconds": 0.204
+      },
+      "target": {
+        "sequence": [
+          "mad",
+          "|",
+          "&"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.198
+      }
+    },
+    {
+      "sequence": [
+        "mad",
+        "|",
+        "|"
+      ],
+      "positive_control": {
+        "sequence": [
+          "mad",
+          "|",
+          "|"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "mad",
+            "selectors_constants": [
+              0,
+              5,
+              4,
+              17,
+              33
+            ]
+          },
+          {
+            "op": "|",
+            "selectors_constants": [
+              2,
+              4,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "op": "|",
+            "selectors_constants": [
+              1,
+              5,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "seconds": 0.219
+      },
+      "target": {
+        "sequence": [
+          "mad",
+          "|",
+          "|"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.224
+      }
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "^"
+      ],
+      "positive_control": {
+        "sequence": [
+          "^",
+          "mad",
+          "^"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "^",
+            "selectors_constants": [
+              1,
+              4,
+              0,
+              466,
+              1427
+            ]
+          },
+          {
+            "op": "mad",
+            "selectors_constants": [
+              4,
+              6,
+              5,
+              1010,
+              2015
+            ]
+          },
+          {
+            "op": "^",
+            "selectors_constants": [
+              1,
+              5,
+              0,
+              0,
+              8
+            ]
+          }
+        ],
+        "seconds": 0.234
+      },
+      "target": {
+        "sequence": [
+          "^",
+          "mad",
+          "^"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.354
+      }
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "&"
+      ],
+      "positive_control": {
+        "sequence": [
+          "^",
+          "mad",
+          "&"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "^",
+            "selectors_constants": [
+              1,
+              4,
+              0,
+              1581,
+              959
+            ]
+          },
+          {
+            "op": "mad",
+            "selectors_constants": [
+              4,
+              6,
+              5,
+              1043,
+              33
+            ]
+          },
+          {
+            "op": "&",
+            "selectors_constants": [
+              1,
+              5,
+              0,
+              0,
+              10
+            ]
+          }
+        ],
+        "seconds": 0.221
+      },
+      "target": {
+        "sequence": [
+          "^",
+          "mad",
+          "&"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.182
+      }
+    },
+    {
+      "sequence": [
+        "^",
+        "mad",
+        "|"
+      ],
+      "positive_control": {
+        "sequence": [
+          "^",
+          "mad",
+          "|"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "^",
+            "selectors_constants": [
+              0,
+              4,
+              0,
+              2030,
+              1467
+            ]
+          },
+          {
+            "op": "mad",
+            "selectors_constants": [
+              4,
+              5,
+              6,
+              2015,
+              2034
+            ]
+          },
+          {
+            "op": "|",
+            "selectors_constants": [
+              1,
+              5,
+              0,
+              0,
+              258
+            ]
+          }
+        ],
+        "seconds": 0.196
+      },
+      "target": {
+        "sequence": [
+          "^",
+          "mad",
+          "|"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.194
+      }
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "^"
+      ],
+      "positive_control": {
+        "sequence": [
+          "&",
+          "mad",
+          "^"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "&",
+            "selectors_constants": [
+              0,
+              5,
+              0,
+              0,
+              17
+            ]
+          },
+          {
+            "op": "mad",
+            "selectors_constants": [
+              4,
+              6,
+              5,
+              19,
+              33
+            ]
+          },
+          {
+            "op": "^",
+            "selectors_constants": [
+              1,
+              5,
+              0,
+              0,
+              49
+            ]
+          }
+        ],
+        "seconds": 0.233
+      },
+      "target": {
+        "sequence": [
+          "&",
+          "mad",
+          "^"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.295
+      }
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "&"
+      ],
+      "positive_control": {
+        "sequence": [
+          "&",
+          "mad",
+          "&"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "&",
+            "selectors_constants": [
+              0,
+              4,
+              0,
+              1041,
+              1393
+            ]
+          },
+          {
+            "op": "mad",
+            "selectors_constants": [
+              4,
+              6,
+              5,
+              1043,
+              33
+            ]
+          },
+          {
+            "op": "&",
+            "selectors_constants": [
+              1,
+              5,
+              0,
+              0,
+              1364
+            ]
+          }
+        ],
+        "seconds": 0.102
+      },
+      "target": {
+        "sequence": [
+          "&",
+          "mad",
+          "&"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.149
+      }
+    },
+    {
+      "sequence": [
+        "&",
+        "mad",
+        "|"
+      ],
+      "positive_control": {
+        "sequence": [
+          "&",
+          "mad",
+          "|"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "&",
+            "selectors_constants": [
+              0,
+              4,
+              0,
+              17,
+              1452
+            ]
+          },
+          {
+            "op": "mad",
+            "selectors_constants": [
+              4,
+              5,
+              6,
+              34,
+              3
+            ]
+          },
+          {
+            "op": "|",
+            "selectors_constants": [
+              1,
+              5,
+              0,
+              0,
+              1920
+            ]
+          }
+        ],
+        "seconds": 0.176
+      },
+      "target": {
+        "sequence": [
+          "&",
+          "mad",
+          "|"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.19
+      }
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "^"
+      ],
+      "positive_control": {
+        "sequence": [
+          "|",
+          "mad",
+          "^"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "|",
+            "selectors_constants": [
+              0,
+              4,
+              0,
+              17,
+              1339
+            ]
+          },
+          {
+            "op": "mad",
+            "selectors_constants": [
+              4,
+              6,
+              5,
+              19,
+              33
+            ]
+          },
+          {
+            "op": "^",
+            "selectors_constants": [
+              1,
+              5,
+              0,
+              0,
+              6
+            ]
+          }
+        ],
+        "seconds": 0.2
+      },
+      "target": {
+        "sequence": [
+          "|",
+          "mad",
+          "^"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.232
+      }
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "&"
+      ],
+      "positive_control": {
+        "sequence": [
+          "|",
+          "mad",
+          "&"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "|",
+            "selectors_constants": [
+              0,
+              4,
+              0,
+              17,
+              1083
+            ]
+          },
+          {
+            "op": "mad",
+            "selectors_constants": [
+              4,
+              6,
+              5,
+              19,
+              33
+            ]
+          },
+          {
+            "op": "&",
+            "selectors_constants": [
+              1,
+              5,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "seconds": 0.191
+      },
+      "target": {
+        "sequence": [
+          "|",
+          "mad",
+          "&"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.108
+      }
+    },
+    {
+      "sequence": [
+        "|",
+        "mad",
+        "|"
+      ],
+      "positive_control": {
+        "sequence": [
+          "|",
+          "mad",
+          "|"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": true,
+        "result": "sat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "verification": "unsat",
+        "program": [
+          {
+            "op": "|",
+            "selectors_constants": [
+              0,
+              4,
+              0,
+              17,
+              1027
+            ]
+          },
+          {
+            "op": "mad",
+            "selectors_constants": [
+              4,
+              6,
+              5,
+              19,
+              33
+            ]
+          },
+          {
+            "op": "|",
+            "selectors_constants": [
+              1,
+              5,
+              0,
+              0,
+              1287
+            ]
+          }
+        ],
+        "seconds": 0.184
+      },
+      "target": {
+        "sequence": [
+          "|",
+          "mad",
+          "|"
+        ],
+        "width": 11,
+        "samples": 64,
+        "timeout_ms": 3000,
+        "control": false,
+        "pin_control": false,
+        "custom_target": false,
+        "result": "unsat",
+        "live_pool": [
+          "b",
+          "a=b XOR C1",
+          "prior=(a-C0)/4097",
+          "zero"
+        ],
+        "seconds": 0.176
+      }
+    }
+  ]
+}

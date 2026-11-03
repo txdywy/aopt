@@ -1,0 +1,898 @@
+{
+  "target": "H(x)=(4097*x+C0) XOR ((4097*x+C0)>>19) XOR C1; uint32",
+  "scope": "first MAD=A*x+B; arbitrary right-shift source/count and final MAD operands from x, previous results and constants",
+  "literal_shifts": "0..31 and >=32",
+  "shape_counts": {
+    "quadratic": 40,
+    "zero_input_range": 2,
+    "bilinear_parity": 10,
+    "scaled_affine_sum_or_top_pair": 4,
+    "square_sum": 1,
+    "square_shift_intervals": 2,
+    "shift_cardinality": 12,
+    "scaled_shift_intervals": 4
+  },
+  "shapes": [
+    {
+      "operands": [
+        0,
+        0,
+        0
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        0,
+        0,
+        1
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        0,
+        0,
+        2
+      ],
+      "reason": "zero_input_range"
+    },
+    {
+      "operands": [
+        0,
+        0,
+        3
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        0,
+        0,
+        4
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        0,
+        1,
+        0
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        0,
+        1,
+        1
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        0,
+        1,
+        2
+      ],
+      "reason": "zero_input_range"
+    },
+    {
+      "operands": [
+        0,
+        1,
+        3
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        0,
+        1,
+        4
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        0,
+        2,
+        0
+      ],
+      "reason": "bilinear_parity"
+    },
+    {
+      "operands": [
+        0,
+        2,
+        1
+      ],
+      "reason": "bilinear_parity"
+    },
+    {
+      "operands": [
+        0,
+        2,
+        2
+      ],
+      "reason": "bilinear_parity"
+    },
+    {
+      "operands": [
+        0,
+        2,
+        3
+      ],
+      "reason": "bilinear_parity"
+    },
+    {
+      "operands": [
+        0,
+        2,
+        4
+      ],
+      "reason": "bilinear_parity"
+    },
+    {
+      "operands": [
+        0,
+        3,
+        0
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        0,
+        3,
+        1
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        0,
+        3,
+        2
+      ],
+      "reason": "scaled_affine_sum_or_top_pair"
+    },
+    {
+      "operands": [
+        0,
+        3,
+        3
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        0,
+        3,
+        4
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        0,
+        4,
+        0
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        0,
+        4,
+        1
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        0,
+        4,
+        2
+      ],
+      "reason": "scaled_affine_sum_or_top_pair"
+    },
+    {
+      "operands": [
+        0,
+        4,
+        3
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        0,
+        4,
+        4
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        1,
+        1,
+        0
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        1,
+        1,
+        1
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        1,
+        1,
+        2
+      ],
+      "reason": "square_sum"
+    },
+    {
+      "operands": [
+        1,
+        1,
+        3
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        1,
+        1,
+        4
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        1,
+        2,
+        0
+      ],
+      "reason": "bilinear_parity"
+    },
+    {
+      "operands": [
+        1,
+        2,
+        1
+      ],
+      "reason": "bilinear_parity"
+    },
+    {
+      "operands": [
+        1,
+        2,
+        2
+      ],
+      "reason": "bilinear_parity"
+    },
+    {
+      "operands": [
+        1,
+        2,
+        3
+      ],
+      "reason": "bilinear_parity"
+    },
+    {
+      "operands": [
+        1,
+        2,
+        4
+      ],
+      "reason": "bilinear_parity"
+    },
+    {
+      "operands": [
+        1,
+        3,
+        0
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        1,
+        3,
+        1
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        1,
+        3,
+        2
+      ],
+      "reason": "scaled_affine_sum_or_top_pair"
+    },
+    {
+      "operands": [
+        1,
+        3,
+        3
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        1,
+        3,
+        4
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        1,
+        4,
+        0
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        1,
+        4,
+        1
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        1,
+        4,
+        2
+      ],
+      "reason": "scaled_affine_sum_or_top_pair"
+    },
+    {
+      "operands": [
+        1,
+        4,
+        3
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        1,
+        4,
+        4
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        2,
+        2,
+        0
+      ],
+      "reason": "square_shift_intervals"
+    },
+    {
+      "operands": [
+        2,
+        2,
+        1
+      ],
+      "reason": "square_shift_intervals"
+    },
+    {
+      "operands": [
+        2,
+        2,
+        2
+      ],
+      "reason": "shift_cardinality"
+    },
+    {
+      "operands": [
+        2,
+        2,
+        3
+      ],
+      "reason": "shift_cardinality"
+    },
+    {
+      "operands": [
+        2,
+        2,
+        4
+      ],
+      "reason": "shift_cardinality"
+    },
+    {
+      "operands": [
+        2,
+        3,
+        0
+      ],
+      "reason": "scaled_shift_intervals"
+    },
+    {
+      "operands": [
+        2,
+        3,
+        1
+      ],
+      "reason": "scaled_shift_intervals"
+    },
+    {
+      "operands": [
+        2,
+        3,
+        2
+      ],
+      "reason": "shift_cardinality"
+    },
+    {
+      "operands": [
+        2,
+        3,
+        3
+      ],
+      "reason": "shift_cardinality"
+    },
+    {
+      "operands": [
+        2,
+        3,
+        4
+      ],
+      "reason": "shift_cardinality"
+    },
+    {
+      "operands": [
+        2,
+        4,
+        0
+      ],
+      "reason": "scaled_shift_intervals"
+    },
+    {
+      "operands": [
+        2,
+        4,
+        1
+      ],
+      "reason": "scaled_shift_intervals"
+    },
+    {
+      "operands": [
+        2,
+        4,
+        2
+      ],
+      "reason": "shift_cardinality"
+    },
+    {
+      "operands": [
+        2,
+        4,
+        3
+      ],
+      "reason": "shift_cardinality"
+    },
+    {
+      "operands": [
+        2,
+        4,
+        4
+      ],
+      "reason": "shift_cardinality"
+    },
+    {
+      "operands": [
+        3,
+        3,
+        0
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        3,
+        3,
+        1
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        3,
+        3,
+        2
+      ],
+      "reason": "shift_cardinality"
+    },
+    {
+      "operands": [
+        3,
+        3,
+        3
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        3,
+        3,
+        4
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        3,
+        4,
+        0
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        3,
+        4,
+        1
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        3,
+        4,
+        2
+      ],
+      "reason": "shift_cardinality"
+    },
+    {
+      "operands": [
+        3,
+        4,
+        3
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        3,
+        4,
+        4
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        4,
+        4,
+        0
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        4,
+        4,
+        1
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        4,
+        4,
+        2
+      ],
+      "reason": "shift_cardinality"
+    },
+    {
+      "operands": [
+        4,
+        4,
+        3
+      ],
+      "reason": "quadratic"
+    },
+    {
+      "operands": [
+        4,
+        4,
+        4
+      ],
+      "reason": "quadratic"
+    }
+  ],
+  "even_multiplier": {
+    "input": 1074008809,
+    "affine_hash_value": 524287,
+    "period_witnesses": [
+      {
+        "period": 2,
+        "residue": 1
+      },
+      {
+        "period": 4,
+        "residue": 3
+      },
+      {
+        "period": 8,
+        "residue": 7
+      },
+      {
+        "period": 16,
+        "residue": 15
+      },
+      {
+        "period": 32,
+        "residue": 31
+      },
+      {
+        "period": 64,
+        "residue": 63
+      },
+      {
+        "period": 128,
+        "residue": 126
+      },
+      {
+        "period": 256,
+        "residue": 253
+      },
+      {
+        "period": 512,
+        "residue": 3
+      },
+      {
+        "period": 1024,
+        "residue": 7
+      },
+      {
+        "period": 2048,
+        "residue": 15
+      },
+      {
+        "period": 4096,
+        "residue": 31
+      },
+      {
+        "period": 8192,
+        "residue": 8127
+      },
+      {
+        "period": 16384,
+        "residue": 16255
+      },
+      {
+        "period": 32768,
+        "residue": 32511
+      },
+      {
+        "period": 65536,
+        "residue": 511
+      },
+      {
+        "period": 131072,
+        "residue": 130047
+      },
+      {
+        "period": 262144,
+        "residue": 260095
+      },
+      {
+        "period": 524288,
+        "residue": 520191
+      },
+      {
+        "period": 1048576,
+        "residue": 1048574
+      },
+      {
+        "period": 2097152,
+        "residue": 4
+      },
+      {
+        "period": 4194304,
+        "residue": 8
+      },
+      {
+        "period": 8388608,
+        "residue": 16
+      },
+      {
+        "period": 16777216,
+        "residue": 32
+      },
+      {
+        "period": 33554432,
+        "residue": 33554368
+      },
+      {
+        "period": 67108864,
+        "residue": 67108736
+      },
+      {
+        "period": 134217728,
+        "residue": 134217472
+      },
+      {
+        "period": 268435456,
+        "residue": 512
+      },
+      {
+        "period": 536870912,
+        "residue": 536869888
+      },
+      {
+        "period": 1073741824,
+        "residue": 1073739776
+      },
+      {
+        "period": 2147483648,
+        "residue": 2147479552
+      }
+    ]
+  },
+  "third_differences": {
+    "[0, 1, 2, 3]": 4294934504,
+    "[0, 2, 4, 6]": 65552,
+    "[32, 33, 34, 35]": 4294934504
+  },
+  "target_at_zero": 3115618544,
+  "low_bit_congruence_violation": 1,
+  "second_difference": 12,
+  "top_pair_xor": 2147487744,
+  "target_top_pair_differences": [
+    2147479552,
+    2147487744
+  ],
+  "variable_count_query": {
+    "result": "unsat",
+    "samples": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      2147483648,
+      2147483649,
+      2147483650,
+      2147483651,
+      2147483652,
+      2147483653,
+      2147483654,
+      2147483655,
+      2147483656,
+      2147483657,
+      2147483658,
+      2147483659,
+      2147483660,
+      2147483661,
+      2147483662,
+      2147483663,
+      2147483664,
+      2147483665,
+      2147483666,
+      2147483667,
+      2147483668,
+      2147483669,
+      2147483670,
+      2147483671,
+      2147483672,
+      2147483673,
+      2147483674,
+      2147483675,
+      2147483676,
+      2147483677,
+      2147483678,
+      2147483679,
+      2147483680,
+      2147483681,
+      2147483682,
+      2147483683,
+      2147483684,
+      2147483685,
+      2147483686,
+      2147483687,
+      2147483688,
+      2147483689,
+      2147483690,
+      2147483691,
+      2147483692,
+      2147483693,
+      2147483694,
+      2147483695,
+      2147483696,
+      2147483697,
+      2147483698,
+      2147483699,
+      2147483700,
+      2147483701,
+      2147483702,
+      2147483703,
+      2147483704,
+      2147483705,
+      2147483706,
+      2147483707,
+      2147483708,
+      2147483709,
+      2147483710,
+      2147483711
+    ],
+    "timeout_ms": 10000,
+    "nonzero_multiplier": true,
+    "seconds": 0.37
+  },
+  "z3": "5.1.0",
+  "excluded": true
+}

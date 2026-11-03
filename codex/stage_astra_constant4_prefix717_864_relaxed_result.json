@@ -1,0 +1,20 @@
+{
+  "relaxed_calendar_only": true,
+  "verified_executable_cycles": null,
+  "horizon": 864,
+  "compute_packed_before": 717,
+  "prefix_compute_lanes": 42962,
+  "prefix_waste": 58,
+  "fixed_dag_edges_and_resources_valid": true,
+  "future_arithmetic_energy_audit": {
+    "horizon": 864,
+    "freeze_before": 717,
+    "inconsistent_nodes": [],
+    "positive_windows": 0,
+    "cuts": [],
+    "supplied_tail_waste": 116,
+    "scope": "fixed LF calendar and frozen compute prefix; necessary tests only"
+  },
+  "calendar_sha256": "8280fc3855b95b9b80190fa47b5c969177a2876b4fb199504fe22f1e2044d460",
+  "source_calendar": "/tmp/aopt-astra-lookahead-717-w0-r0.sol"
+}

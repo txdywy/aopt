@@ -1,0 +1,17 @@
+{
+  "cycles": 980,
+  "status": "standalone locally verified; browser memory compatibility unverified",
+  "standalone_file": "codex/perf_takehome_980.py",
+  "bytes": 92106,
+  "sha256": "7628ae65327ed3d3489cbf3d07d66a53e4add2c47c23b3c62498b0190323b529",
+  "instruction_packets": 4064538,
+  "scratch_words": 1536,
+  "full32_seeds": 100,
+  "boundary_patterns": ["zero", "ones", "alternating"],
+  "official_tests_passed": 9,
+  "no_file_global": true,
+  "reproducer": "/tmp/aopt-smt/bin/python -m codex.experiment_981_tail --export",
+  "transformation": "Speculate first six final candidate XOR lanes into two unaligned VALU slots in the last special table; fuse last two lanes into table copies; select directly into value679; move two MAD producers to tail and scalarize value599 shift/constant-XOR; exact 10-cycle terminal schedule.",
+  "tail_graph_sha256": "bcf96747164b9c3e551acd5459ecd2f94bf869761f2ef85c992430b2f2c63b6a",
+  "remaining": ["sub900 objective", "browser judge runtime memory and upload compatibility"]
+}

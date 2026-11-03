@@ -1,0 +1,92 @@
+{
+  "arithmetic_lanes": 51612,
+  "head": {
+    "applicable": true,
+    "first_cycle_work_upper": 8,
+    "second_native_valu_count": 2,
+    "second_vectorizable_group_count": 0,
+    "second_scalar_lane_count": 62,
+    "second_cycle_work_upper": 28,
+    "first_two_waste_lower_bound": 84,
+    "first_tags": [
+      [
+        "setup",
+        []
+      ],
+      [
+        "setup",
+        []
+      ],
+      [
+        "setup",
+        []
+      ],
+      [
+        "setup",
+        []
+      ],
+      [
+        "setup",
+        []
+      ],
+      [
+        "setup",
+        []
+      ],
+      [
+        "setup",
+        []
+      ],
+      [
+        "setup",
+        []
+      ]
+    ],
+    "native_tags": [
+      [
+        "setup",
+        []
+      ],
+      [
+        "setup",
+        []
+      ]
+    ],
+    "group_tags": [],
+    "scope": "Only existing exported scalar/vector modes; overlapping candidate groups and scalar/vector slots are freely double-counted."
+  },
+  "suffix": {
+    "width": 3,
+    "store_roots": 32,
+    "free_work": 0,
+    "objective_upper_bound": 64,
+    "waste_lower_bound": 116,
+    "scope": "Two stores per cycle; shared/non-store-root arithmetic is granted free placement and all other resources are relaxed."
+  },
+  "streams": {
+    "load": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 1,
+      "suffix_at_least": 21,
+      "instructions": 1681,
+      "capacity": 2
+    },
+    "store": {
+      "cycle_lower_bound": 353,
+      "prefix_at_least": 4,
+      "suffix_at_least": 109,
+      "instructions": 480,
+      "capacity": 2
+    },
+    "flow": {
+      "cycle_lower_bound": 863,
+      "prefix_at_least": 0,
+      "suffix_at_least": 10,
+      "instructions": 853,
+      "capacity": 1
+    }
+  },
+  "cycle_lower_bound": 864,
+  "new_executable": false,
+  "scope": "This candidate and these explicit packet_modes groups only; new group layouts, graph rewrites or different programs are not excluded."
+}

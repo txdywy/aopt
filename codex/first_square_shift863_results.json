@@ -1,0 +1,84 @@
+[
+  {
+    "form": "square-constant",
+    "arguments": [
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "first",
+      "--instructions",
+      "3",
+      "--op-sequence",
+      "mad,>>,mad",
+      "--first-mad-form",
+      "square-constant",
+      "--canonical-operands",
+      "--consecutive-samples",
+      "32",
+      "--high-bit-pairs",
+      "--check-ms",
+      "15000",
+      "--seconds",
+      "20"
+    ],
+    "output": [
+      {
+        "iteration": 1,
+        "samples": 70,
+        "synthesis": "unsat"
+      },
+      {
+        "result": "grammar_unsatisfiable",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          ">>",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": null
+      }
+    ]
+  },
+  {
+    "form": "square-input",
+    "arguments": [
+      "-m",
+      "codex.synthesize_hash_cegis",
+      "--slice",
+      "first",
+      "--instructions",
+      "3",
+      "--op-sequence",
+      "mad,>>,mad",
+      "--first-mad-form",
+      "square-input",
+      "--canonical-operands",
+      "--consecutive-samples",
+      "32",
+      "--high-bit-pairs",
+      "--check-ms",
+      "15000",
+      "--seconds",
+      "20"
+    ],
+    "output": [
+      {
+        "iteration": 1,
+        "samples": 70,
+        "synthesis": "unsat"
+      },
+      {
+        "result": "grammar_unsatisfiable",
+        "width": 32,
+        "op_sequence": [
+          "mad",
+          ">>",
+          "mad"
+        ],
+        "right_shift_amount": null,
+        "reason": null
+      }
+    ]
+  }
+]

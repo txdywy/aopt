@@ -1,0 +1,2941 @@
+{
+ "stats": {
+  "b=z excluded (Theorem V)": 108750,
+  "b=t_i excluded (Theorem V, escape UNSAT)": 56952,
+  "escape sat": 44208,
+  "escape unknown": 2580
+ },
+ "distinct_subprograms": 310,
+ "subprogram_results": {
+  "unsat": 150,
+  "sat": 142,
+  "unknown": 18
+ },
+ "escape_subprograms": [
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     2
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     2
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     3
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     2,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     2,
+     3,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     2,
+     3
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     2,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     2,
+     3,
+     1
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     0,
+     0,
+     1
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     0,
+     1,
+     2
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     0,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     0,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     0,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     0,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1,
+     1,
+     1
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1,
+     1,
+     2
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1,
+     2,
+     3
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     2,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     2,
+     3,
+     1
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     2
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     2
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     0,
+     1,
+     2
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     0,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     0,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     0,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     0,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     1,
+     1,
+     2
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     1,
+     2,
+     0
+    ]
+   ],
+   "result": "unknown"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     1,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "mad"
+   ],
+   "wiring": [
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     1,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "^"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "^"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "^"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "^"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "^"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "^"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "^"
+   ],
+   "wiring": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "^"
+   ],
+   "wiring": [
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "&"
+   ],
+   "wiring": [
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "|"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "|"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "mad",
+    "|"
+   ],
+   "wiring": [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "^",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "^",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "^",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "^",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "^",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "^",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "^",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "^",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "^",
+    "^"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "^",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "^",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "^",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "^"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "^"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "&",
+    "|"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     0
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     3
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     2,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "mad"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "^"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "^"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "result": "sat"
+  },
+  {
+   "order": [
+    "|",
+    "&"
+   ],
+   "wiring": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "result": "sat"
+  }
+ ],
+ "seconds": 2169.8
+}

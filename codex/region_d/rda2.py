@@ -266,6 +266,13 @@ def solve_case(order, wiring, kind, c=11, seconds=60.0, seed=1, target=None, spl
     cm = (1 << c) - 1
     S = z3.SolverFor('QF_BV')
     case = Case(kind, c, S)
+    if kind == 2 and not path and target is None and c >= 11:
+        # Case-2 closure shortcut (pure affine path only): for s in [11, 21] the shift is
+        # u == A'z + B' (mod 2^11), a single MAD of z, and w == B mod 2^s is constant mod
+        # 2^11, so the instruction computing w (and every value depending only on w) is a
+        # constant mod 2^11: the program is a <= 3 T-op program mod 2^11, excluded by
+        # closure3. Only s in [0, 10] and [22, 31] are searched.
+        S.add(z3.Or(z3.ULE(case.s, 10), z3.UGE(case.s, 22)))
     if split:
         if 'dl' in split:
             S.add(case.dl == split['dl'])
@@ -392,7 +399,9 @@ def split_plan(kind, c):
     if kind == 3:
         return [dict(dl=d) for d in range(1, c)]
     if kind == 2:
-        return [dict(s=(lo, min(lo + 3, 31))) for lo in range(0, 32, 4)]
+        # [11, 21] is excluded by the case-2 closure shortcut for pure affine paths;
+        # the solver adds that restriction itself, so these parts still cover [0, 31]
+        return [dict(s=r) for r in ((0, 3), (4, 7), (8, 10), (11, 21), (22, 25), (26, 28), (29, 31))]
     return [dict(s=(lo, min(lo + 3, 32))) for lo in range(c, 33, 4)]
 
 

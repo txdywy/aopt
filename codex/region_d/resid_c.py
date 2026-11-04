@@ -18,6 +18,7 @@ import z3
 import rda2
 import rdq
 import rdp2
+import rdqk
 import rdg
 from coverage2 import load, final
 
@@ -103,11 +104,35 @@ def main():
                 x = rdq.solve_all(o, w, 11, sec)
                 v, log, how = x['result'], x['parts'], 'rdq'
             elif rdp2.applicable(o, w):
-                x = rdp2.solve_split(o, w, 13, sec)
-                v, log, how = x['result'], x['parts'], 'rdp2'
-                if v != 'unsat':
-                    v2, log2 = run_rdg_fixed_s(o, w, sec)
-                    v, log, how = v2, [log, log2], 'rdp2+rdg_fixed_s'
+                # capped effort: one full-range c=13 query, then parts with early abort,
+                # then rdqk per e with early abort; a single timed-out part leaves it open
+                v, log, how = 'timeout', [], 'rdp2'
+                x = rdp2.solve(o, w, 13, 2 * sec)
+                log.append(('rdp2-full', x['result']))
+                if x['result'] == 'unsat':
+                    v = 'unsat'
+                else:
+                    ok = True
+                    for lo in range(0, 33, 4):
+                        sr = (lo, min(lo + 3, 32))
+                        y = rdp2.solve(o, w, 13, sec, 1, None, sr)
+                        log.append((sr, y['result']))
+                        if y['result'] != 'unsat':
+                            ok = False
+                            break
+                    if ok:
+                        v, how = 'unsat', 'rdp2-split'
+                    elif rdqk.applicable(o, w):
+                        an = rdqk.analyse(o, w)
+                        ok = True
+                        for E in [None] + list(range(0, 21)):
+                            y = rdqk._solve(o, w, an, 11, sec, 1, E)
+                            log.append(('rdqk', E, y['result']))
+                            if y['result'] != 'unsat':
+                                ok = False
+                                break
+                        if ok:
+                            v, how = 'unsat', 'rdqk'
             else:
                 v, log = run_rdg_fixed_s(o, w, sec)
                 how = 'rdg_fixed_s'

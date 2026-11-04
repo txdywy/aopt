@@ -44,15 +44,15 @@ def work(args):
                 v, log = run_rda2(o, w, t_band)
                 rec['rda2_final'] = v
                 rec['rda2_log'] = log
-            elif rdq.applicable(o, w):
-                x = rdq.solve_all(o, w, 11, t_band)
-                rec['rdq'] = dict(result=x['result'], parts=x['parts'])
             elif rdp2.applicable(o, w):
                 # c = 13 with the closure escape filter (fastest measured formulation)
                 x = rdp2.solve(o, w, 13, max(t_band, 60.0))
                 if x['result'] == 'timeout':
                     x = rdp2.solve_split(o, w, 13, max(t_band, 30.0))
                 rec['rdp2'] = dict(result=x['result'], parts=x.get('parts'))
+            elif rdq.applicable(o, w):
+                x = rdq.solve_all(o, w, 11, t_band)
+                rec['rdq'] = dict(result=x['result'], parts=x['parts'])
             else:
                 bands = [(1, 8), (9, 10)] if w[pos][0] == 0 else [(1, 8), (9, 16), (17, 31)]
                 rec['bands'] = {}
@@ -84,7 +84,7 @@ def main():
     print(f'pos {pos} total {len(allw)} done {len(done)} todo {len(todo)}', flush=True)
     t0 = time.time()
     with Pool(workers) as pool, open(out, 'a') as f:
-        for n, r in enumerate(pool.imap_unordered(work, todo, chunksize=8), 1):
+        for n, r in enumerate(pool.imap_unordered(work, todo, chunksize=1), 1):
             f.write(json.dumps(r, default=list) + '\n')
             f.flush()
             bad = [k for k, v in (r.get('bands') or {}).items() if v['result'] != 'unsat']

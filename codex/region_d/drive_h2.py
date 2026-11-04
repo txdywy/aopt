@@ -46,9 +46,7 @@ def work(args):
                 rec['rda2_log'] = log
             elif rdp2.applicable(o, w):
                 # c = 13 with the closure escape filter (fastest measured formulation)
-                x = rdp2.solve(o, w, 13, max(t_band, 60.0))
-                if x['result'] == 'timeout':
-                    x = rdp2.solve_split(o, w, 13, max(t_band, 30.0))
+                x = rdp2.solve(o, w, 13, max(t_band, 60.0))   # timeouts go to the residual stage
                 rec['rdp2'] = dict(result=x['result'], parts=x.get('parts'))
             elif rdq.applicable(o, w):
                 x = rdq.solve_all(o, w, 11, t_band)

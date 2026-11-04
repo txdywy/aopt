@@ -272,7 +272,14 @@ def solve_case(order, wiring, kind, c=11, seconds=60.0, seed=1, target=None, spl
         # 2^11, so the instruction computing w (and every value depending only on w) is a
         # constant mod 2^11: the program is a <= 3 T-op program mod 2^11, excluded by
         # closure3. Only s in [0, 10] and [22, 31] are searched.
-        S.add(z3.Or(z3.ULE(case.s, 10), z3.UGE(case.s, 22)))
+        # Refinement: if w is computed by an instruction (w != z) and the SHR is its only
+        # consumer, that instruction is dead once u is replaced by the MAD, so the reduced
+        # program has <= 3 T-ops for every s <= 21, not only for s >= 11.
+        other = any(vi in wiring[j] for j in range(len(order)) if j != pos and j >= vi)
+        if vi >= 1 and not other:
+            S.add(z3.UGE(case.s, 22))
+        else:
+            S.add(z3.Or(z3.ULE(case.s, 10), z3.UGE(case.s, 22)))
     if split:
         if 'dl' in split:
             S.add(case.dl == split['dl'])

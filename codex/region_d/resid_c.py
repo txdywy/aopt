@@ -87,60 +87,67 @@ def run_rdg_fixed_s(o, w, sec):
     return verdict, log
 
 
-def main():
-    out, sec = sys.argv[1], float(sys.argv[2])
-    done = {(r['pos'], r['i']) for r in load(out) if r.get('result') == 'unsat'}
-    res = residuals()
-    todo = sorted(k for k in res if k not in done)
-    print('residuals', len(res), 'todo', len(todo), flush=True)
-    with open(out, 'a') as f:
-        for key in todo:
-            o, w, prev = res[key]
-            t = time.time()
-            if rda2.applicable(o, w):
-                v, log = run_rda2(o, w, sec)
-                how = 'rda2'
-            elif rdq.applicable(o, w):
-                x = rdq.solve_all(o, w, 11, sec)
-                v, log, how = x['result'], x['parts'], 'rdq'
-            elif rdp2.applicable(o, w):
-                # capped effort: one full-range c=13 query, then parts with early abort,
-                # then rdqk per e with early abort; a single timed-out part leaves it open
-                v, log, how = 'timeout', [], 'rdp2'
-                x = rdp2.solve(o, w, 13, 2 * sec)
-                log.append(('rdp2-full', x['result']))
-                if x['result'] == 'unsat':
-                    v = 'unsat'
-                else:
+def close_one(args):
+    key, o, w, prev, sec = args
+    t = time.time()
+    try:
+        if rda2.applicable(o, w):
+            v, log = run_rda2(o, w, sec)
+            how = 'rda2'
+        elif rdq.applicable(o, w):
+            x = rdq.solve_all(o, w, 11, sec)
+            v, log, how = x['result'], x['parts'], 'rdq'
+        elif rdp2.applicable(o, w):
+            v, log, how = 'timeout', [], 'rdp2'
+            x = rdp2.solve(o, w, 13, 2 * sec)
+            log.append(('rdp2-full', x['result']))
+            if x['result'] == 'unsat':
+                v = 'unsat'
+            else:
+                ok = True
+                for lo in range(0, 33, 4):
+                    sr = (lo, min(lo + 3, 32))
+                    y = rdp2.solve(o, w, 13, sec, 1, None, sr)
+                    log.append((sr, y['result']))
+                    if y['result'] != 'unsat':
+                        ok = False
+                        break
+                if ok:
+                    v, how = 'unsat', 'rdp2-split'
+                elif rdqk.applicable(o, w):
+                    an = rdqk.analyse(o, w)
                     ok = True
-                    for lo in range(0, 33, 4):
-                        sr = (lo, min(lo + 3, 32))
-                        y = rdp2.solve(o, w, 13, sec, 1, None, sr)
-                        log.append((sr, y['result']))
+                    for E in [None] + list(range(0, 21)):
+                        y = rdqk._solve(o, w, an, 11, sec, 1, E)
+                        log.append(('rdqk', E, y['result']))
                         if y['result'] != 'unsat':
                             ok = False
                             break
                     if ok:
-                        v, how = 'unsat', 'rdp2-split'
-                    elif rdqk.applicable(o, w):
-                        an = rdqk.analyse(o, w)
-                        ok = True
-                        for E in [None] + list(range(0, 21)):
-                            y = rdqk._solve(o, w, an, 11, sec, 1, E)
-                            log.append(('rdqk', E, y['result']))
-                            if y['result'] != 'unsat':
-                                ok = False
-                                break
-                        if ok:
-                            v, how = 'unsat', 'rdqk'
-            else:
-                v, log = run_rdg_fixed_s(o, w, sec)
-                how = 'rdg_fixed_s'
-            rec = dict(pos=key[0], i=key[1], order=o, wiring=w, prev=prev, result=v, how=how, log=log,
-                       sec=round(time.time() - t, 1))
+                        v, how = 'unsat', 'rdqk'
+        else:
+            v, log = run_rdg_fixed_s(o, w, sec)
+            how = 'rdg_fixed_s'
+    except Exception as e:
+        v, log, how = 'error', [repr(e)[:200]], 'error'
+    return dict(pos=key[0], i=key[1], order=o, wiring=w, prev=prev, result=v, how=how, log=log,
+                sec=round(time.time() - t, 1))
+
+
+def main():
+    out, sec = sys.argv[1], float(sys.argv[2])
+    workers = int(sys.argv[3]) if len(sys.argv) > 3 else 1
+    done = {(r['pos'], r['i']) for r in load(out) if r.get('result') == 'unsat'}
+    res = residuals()
+    todo = sorted(k for k in res if k not in done)
+    print('residuals', len(res), 'todo', len(todo), 'workers', workers, flush=True)
+    items = [(key,) + res[key] + (sec,) for key in todo]
+    from multiprocessing import Pool
+    with Pool(workers) as pool, open(out, 'a') as f:
+        for rec in pool.imap_unordered(close_one, items, chunksize=1):
             f.write(json.dumps(rec, default=list) + '\n')
             f.flush()
-            print(key, o, w, how, v, rec['sec'], flush=True)
+            print((rec['pos'], rec['i']), rec['order'], rec['wiring'], rec['how'], rec['result'], rec['sec'], flush=True)
     print('RESIDC DONE', flush=True)
 
 

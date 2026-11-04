@@ -1,0 +1,460 @@
+{"pos": 2, "i": 14328, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [1, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13419]}
+{"pos": 2, "i": 14329, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [1, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13425]}
+{"pos": 2, "i": 14330, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [1, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13435]}
+{"pos": 2, "i": 14332, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [1, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13440]}
+{"pos": 2, "i": 14333, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [1, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13444]}
+{"pos": 2, "i": 14334, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [1, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13448]}
+{"pos": 2, "i": 14335, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [1, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13452]}
+{"pos": 2, "i": 14336, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [1, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13458]}
+{"pos": 2, "i": 14337, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [1, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13465]}
+{"pos": 2, "i": 14338, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [1, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13472]}
+{"pos": 2, "i": 14348, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [1, 1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13485]}
+{"pos": 2, "i": 14349, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13492]}
+{"pos": 2, "i": 14351, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [1, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13497]}
+{"pos": 2, "i": 14352, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13501]}
+{"pos": 2, "i": 14353, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [1, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13505]}
+{"pos": 2, "i": 14354, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [1, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13509]}
+{"pos": 2, "i": 14355, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [1, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13515]}
+{"pos": 2, "i": 14356, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13523]}
+{"pos": 2, "i": 14358, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13528]}
+{"pos": 2, "i": 14359, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13532]}
+{"pos": 2, "i": 14360, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13536]}
+{"pos": 2, "i": 14361, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13540]}
+{"pos": 2, "i": 14362, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13546]}
+{"pos": 2, "i": 14364, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [3, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13552]}
+{"pos": 2, "i": 14365, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13556]}
+{"pos": 2, "i": 14366, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [3, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13560]}
+{"pos": 2, "i": 14367, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [3, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13564]}
+{"pos": 2, "i": 14369, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [3, 4, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13568]}
+{"pos": 2, "i": 14370, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13572]}
+{"pos": 2, "i": 14371, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [3, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13576]}
+{"pos": 2, "i": 14372, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [3, 4, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13580]}
+{"pos": 2, "i": 14373, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [3, 4, 5]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13584]}
+{"pos": 2, "i": 14374, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [4, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13590]}
+{"pos": 2, "i": 14375, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [4, 5, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13596]}
+{"pos": 2, "i": 14391, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [1, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13604]}
+{"pos": 2, "i": 14392, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [1, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13610]}
+{"pos": 2, "i": 14393, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [1, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13620]}
+{"pos": 2, "i": 14395, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [1, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13625]}
+{"pos": 2, "i": 14396, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [1, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13629]}
+{"pos": 2, "i": 14397, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [1, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13633]}
+{"pos": 2, "i": 14398, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [1, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13637]}
+{"pos": 2, "i": 14399, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [1, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13643]}
+{"pos": 2, "i": 14400, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [1, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13650]}
+{"pos": 2, "i": 14401, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [1, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13657]}
+{"pos": 2, "i": 14411, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [1, 1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13670]}
+{"pos": 2, "i": 14412, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13677]}
+{"pos": 2, "i": 14414, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [1, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13682]}
+{"pos": 2, "i": 14415, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13686]}
+{"pos": 2, "i": 14416, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [1, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13690]}
+{"pos": 2, "i": 14417, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [1, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13694]}
+{"pos": 2, "i": 14418, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [1, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13700]}
+{"pos": 2, "i": 14419, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13708]}
+{"pos": 2, "i": 14421, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13713]}
+{"pos": 2, "i": 14422, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13717]}
+{"pos": 2, "i": 14423, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13721]}
+{"pos": 2, "i": 14424, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13725]}
+{"pos": 2, "i": 14425, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13731]}
+{"pos": 2, "i": 14427, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [3, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13737]}
+{"pos": 2, "i": 14428, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13741]}
+{"pos": 2, "i": 14429, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [3, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13745]}
+{"pos": 2, "i": 14430, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [3, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13749]}
+{"pos": 2, "i": 14432, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [3, 4, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13753]}
+{"pos": 2, "i": 14433, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13757]}
+{"pos": 2, "i": 14434, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [3, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13761]}
+{"pos": 2, "i": 14435, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [3, 4, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13765]}
+{"pos": 2, "i": 14436, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [3, 4, 5]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13769]}
+{"pos": 2, "i": 14437, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [4, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13775]}
+{"pos": 2, "i": 14438, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [4, 5, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13781]}
+{"pos": 2, "i": 14517, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [1, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13789]}
+{"pos": 2, "i": 14518, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [1, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13795]}
+{"pos": 2, "i": 14519, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [1, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13805]}
+{"pos": 2, "i": 14521, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [1, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13810]}
+{"pos": 2, "i": 14522, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [1, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13814]}
+{"pos": 2, "i": 14523, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [1, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13818]}
+{"pos": 2, "i": 14524, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [1, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13822]}
+{"pos": 2, "i": 14525, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [1, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13828]}
+{"pos": 2, "i": 14526, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [1, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13835]}
+{"pos": 2, "i": 14527, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [1, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13842]}
+{"pos": 2, "i": 14537, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [1, 1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13855]}
+{"pos": 2, "i": 14538, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13862]}
+{"pos": 2, "i": 14540, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [1, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13867]}
+{"pos": 2, "i": 14541, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13871]}
+{"pos": 2, "i": 14542, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [1, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13875]}
+{"pos": 2, "i": 14543, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [1, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13879]}
+{"pos": 2, "i": 14544, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [1, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13885]}
+{"pos": 2, "i": 14545, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13893]}
+{"pos": 2, "i": 14547, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13898]}
+{"pos": 2, "i": 14548, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13902]}
+{"pos": 2, "i": 14549, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13906]}
+{"pos": 2, "i": 14550, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13910]}
+{"pos": 2, "i": 14551, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13916]}
+{"pos": 2, "i": 14553, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [3, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13922]}
+{"pos": 2, "i": 14554, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13926]}
+{"pos": 2, "i": 14555, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [3, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13930]}
+{"pos": 2, "i": 14556, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [3, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13934]}
+{"pos": 2, "i": 14558, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [3, 4, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13938]}
+{"pos": 2, "i": 14559, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13942]}
+{"pos": 2, "i": 14560, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [3, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13946]}
+{"pos": 2, "i": 14561, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [3, 4, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13950]}
+{"pos": 2, "i": 14562, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [3, 4, 5]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13954]}
+{"pos": 2, "i": 14563, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [4, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13960]}
+{"pos": 2, "i": 14564, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [4, 5, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13966]}
+{"pos": 2, "i": 14580, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [1, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13974]}
+{"pos": 2, "i": 14581, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [1, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13980]}
+{"pos": 2, "i": 14582, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [1, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13990]}
+{"pos": 2, "i": 14584, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [1, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13995]}
+{"pos": 2, "i": 14585, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [1, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 13999]}
+{"pos": 2, "i": 14586, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [1, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14003]}
+{"pos": 2, "i": 14587, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [1, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14007]}
+{"pos": 2, "i": 14588, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [1, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14013]}
+{"pos": 2, "i": 14589, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [1, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14020]}
+{"pos": 2, "i": 14590, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [1, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14027]}
+{"pos": 2, "i": 14600, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [1, 1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14040]}
+{"pos": 2, "i": 14601, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14047]}
+{"pos": 2, "i": 14603, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [1, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14052]}
+{"pos": 2, "i": 14604, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14056]}
+{"pos": 2, "i": 14605, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [1, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14060]}
+{"pos": 2, "i": 14606, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [1, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14064]}
+{"pos": 2, "i": 14607, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [1, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14070]}
+{"pos": 2, "i": 14608, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14078]}
+{"pos": 2, "i": 14610, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14083]}
+{"pos": 2, "i": 14611, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14087]}
+{"pos": 2, "i": 14612, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14091]}
+{"pos": 2, "i": 14613, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14095]}
+{"pos": 2, "i": 14614, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14101]}
+{"pos": 2, "i": 14616, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [3, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14107]}
+{"pos": 2, "i": 14617, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14111]}
+{"pos": 2, "i": 14618, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [3, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14115]}
+{"pos": 2, "i": 14619, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [3, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14119]}
+{"pos": 2, "i": 14621, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [3, 4, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14123]}
+{"pos": 2, "i": 14622, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14127]}
+{"pos": 2, "i": 14623, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [3, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14131]}
+{"pos": 2, "i": 14624, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [3, 4, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14135]}
+{"pos": 2, "i": 14625, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [3, 4, 5]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14139]}
+{"pos": 2, "i": 14626, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [4, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14145]}
+{"pos": 2, "i": 14627, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [4, 5, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14151]}
+{"pos": 2, "i": 14643, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [1, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14159]}
+{"pos": 2, "i": 14644, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [1, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14165]}
+{"pos": 2, "i": 14645, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [1, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14175]}
+{"pos": 2, "i": 14647, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [1, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14180]}
+{"pos": 2, "i": 14648, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [1, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14184]}
+{"pos": 2, "i": 14649, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [1, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14188]}
+{"pos": 2, "i": 14650, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [1, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14192]}
+{"pos": 2, "i": 14651, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [1, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14198]}
+{"pos": 2, "i": 14652, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [1, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14205]}
+{"pos": 2, "i": 14653, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [1, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14212]}
+{"pos": 2, "i": 14663, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [1, 1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14225]}
+{"pos": 2, "i": 14664, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14232]}
+{"pos": 2, "i": 14666, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [1, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14237]}
+{"pos": 2, "i": 14667, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14241]}
+{"pos": 2, "i": 14668, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [1, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14245]}
+{"pos": 2, "i": 14669, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [1, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14249]}
+{"pos": 2, "i": 14670, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [1, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14255]}
+{"pos": 2, "i": 14671, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14263]}
+{"pos": 2, "i": 14673, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14268]}
+{"pos": 2, "i": 14674, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14272]}
+{"pos": 2, "i": 14675, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14276]}
+{"pos": 2, "i": 14676, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14280]}
+{"pos": 2, "i": 14677, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14286]}
+{"pos": 2, "i": 14679, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [3, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14292]}
+{"pos": 2, "i": 14680, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14296]}
+{"pos": 2, "i": 14681, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [3, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14300]}
+{"pos": 2, "i": 14682, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [3, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14304]}
+{"pos": 2, "i": 14684, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [3, 4, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14308]}
+{"pos": 2, "i": 14685, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14312]}
+{"pos": 2, "i": 14686, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [3, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14316]}
+{"pos": 2, "i": 14687, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [3, 4, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14320]}
+{"pos": 2, "i": 14688, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [3, 4, 5]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14324]}
+{"pos": 2, "i": 14689, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [4, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14330]}
+{"pos": 2, "i": 14690, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [4, 5, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14336]}
+{"pos": 2, "i": 14735, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [1, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14344]}
+{"pos": 2, "i": 14736, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [1, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14350]}
+{"pos": 2, "i": 14737, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [1, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14360]}
+{"pos": 2, "i": 14739, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [1, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14365]}
+{"pos": 2, "i": 14740, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [1, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14369]}
+{"pos": 2, "i": 14741, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [1, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14373]}
+{"pos": 2, "i": 14742, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [1, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14377]}
+{"pos": 2, "i": 14743, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [1, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14383]}
+{"pos": 2, "i": 14744, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [1, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14390]}
+{"pos": 2, "i": 14745, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [1, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14397]}
+{"pos": 2, "i": 14755, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [1, 1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14410]}
+{"pos": 2, "i": 14756, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14417]}
+{"pos": 2, "i": 14758, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [1, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14422]}
+{"pos": 2, "i": 14759, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14426]}
+{"pos": 2, "i": 14760, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [1, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14430]}
+{"pos": 2, "i": 14761, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [1, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14434]}
+{"pos": 2, "i": 14762, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [1, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14440]}
+{"pos": 2, "i": 14763, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14448]}
+{"pos": 2, "i": 14765, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14453]}
+{"pos": 2, "i": 14766, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14457]}
+{"pos": 2, "i": 14767, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14461]}
+{"pos": 2, "i": 14768, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14465]}
+{"pos": 2, "i": 14769, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14471]}
+{"pos": 2, "i": 14771, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [3, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14477]}
+{"pos": 2, "i": 14772, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14481]}
+{"pos": 2, "i": 14773, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [3, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14485]}
+{"pos": 2, "i": 14774, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [3, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14489]}
+{"pos": 2, "i": 14776, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [3, 4, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14493]}
+{"pos": 2, "i": 14777, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14497]}
+{"pos": 2, "i": 14778, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [3, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14501]}
+{"pos": 2, "i": 14779, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [3, 4, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14505]}
+{"pos": 2, "i": 14780, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [3, 4, 5]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14509]}
+{"pos": 2, "i": 14781, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [4, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14515]}
+{"pos": 2, "i": 14782, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [4, 5, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14521]}
+{"pos": 2, "i": 14827, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [1, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14529]}
+{"pos": 2, "i": 14828, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [1, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14535]}
+{"pos": 2, "i": 14829, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [1, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14545]}
+{"pos": 2, "i": 14831, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [1, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14550]}
+{"pos": 2, "i": 14832, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [1, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14554]}
+{"pos": 2, "i": 14833, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [1, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14558]}
+{"pos": 2, "i": 14834, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [1, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14562]}
+{"pos": 2, "i": 14835, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [1, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14568]}
+{"pos": 2, "i": 14836, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [1, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14575]}
+{"pos": 2, "i": 14837, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [1, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14582]}
+{"pos": 2, "i": 14847, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [1, 1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14595]}
+{"pos": 2, "i": 14848, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14602]}
+{"pos": 2, "i": 14850, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [1, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14607]}
+{"pos": 2, "i": 14851, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14611]}
+{"pos": 2, "i": 14852, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [1, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14615]}
+{"pos": 2, "i": 14853, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [1, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14619]}
+{"pos": 2, "i": 14854, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [1, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14625]}
+{"pos": 2, "i": 14855, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14633]}
+{"pos": 2, "i": 14857, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14638]}
+{"pos": 2, "i": 14858, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14642]}
+{"pos": 2, "i": 14859, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14646]}
+{"pos": 2, "i": 14860, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14650]}
+{"pos": 2, "i": 14861, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14656]}
+{"pos": 2, "i": 14863, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [3, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14662]}
+{"pos": 2, "i": 14864, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14666]}
+{"pos": 2, "i": 14865, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [3, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14670]}
+{"pos": 2, "i": 14866, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [3, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14674]}
+{"pos": 2, "i": 14868, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [3, 4, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14678]}
+{"pos": 2, "i": 14869, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14682]}
+{"pos": 2, "i": 14870, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [3, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14686]}
+{"pos": 2, "i": 14871, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [3, 4, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14690]}
+{"pos": 2, "i": 14872, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [3, 4, 5]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14694]}
+{"pos": 2, "i": 14873, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [4, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14700]}
+{"pos": 2, "i": 14874, "order": ["^", "mad", ">>", "mad"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [4, 5, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 14706]}
+{"pos": 2, "i": 14922, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 1, 1], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 18996]}
+{"pos": 2, "i": 14924, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19003]}
+{"pos": 2, "i": 14925, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19008]}
+{"pos": 2, "i": 14926, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19013]}
+{"pos": 2, "i": 14928, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 1, 2], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19019]}
+{"pos": 2, "i": 14930, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19026]}
+{"pos": 2, "i": 14931, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19031]}
+{"pos": 2, "i": 14932, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19036]}
+{"pos": 2, "i": 14940, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 2, 1], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19042]}
+{"pos": 2, "i": 14942, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19049]}
+{"pos": 2, "i": 14943, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19054]}
+{"pos": 2, "i": 14944, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19059]}
+{"pos": 2, "i": 14946, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 2, 2], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19065]}
+{"pos": 2, "i": 14948, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19072]}
+{"pos": 2, "i": 14949, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19077]}
+{"pos": 2, "i": 14950, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19082]}
+{"pos": 2, "i": 14952, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 2, 3], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19088]}
+{"pos": 2, "i": 14954, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19095]}
+{"pos": 2, "i": 14955, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19100]}
+{"pos": 2, "i": 14956, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19105]}
+{"pos": 2, "i": 14960, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [2, 2, 1], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19111]}
+{"pos": 2, "i": 14962, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19118]}
+{"pos": 2, "i": 14963, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19123]}
+{"pos": 2, "i": 14964, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19128]}
+{"pos": 2, "i": 14968, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [2, 3, 1], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19134]}
+{"pos": 2, "i": 14970, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19141]}
+{"pos": 2, "i": 14971, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19146]}
+{"pos": 2, "i": 14972, "order": ["^", "mad", ">>", "^"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 19151]}
+{"pos": 2, "i": 15020, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 1, 1], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21173]}
+{"pos": 2, "i": 15022, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21180]}
+{"pos": 2, "i": 15023, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21185]}
+{"pos": 2, "i": 15024, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21190]}
+{"pos": 2, "i": 15026, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 1, 2], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21196]}
+{"pos": 2, "i": 15028, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21203]}
+{"pos": 2, "i": 15029, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21208]}
+{"pos": 2, "i": 15030, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21213]}
+{"pos": 2, "i": 15038, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 2, 1], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21219]}
+{"pos": 2, "i": 15040, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21226]}
+{"pos": 2, "i": 15041, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21231]}
+{"pos": 2, "i": 15042, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21236]}
+{"pos": 2, "i": 15044, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 2, 2], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21242]}
+{"pos": 2, "i": 15046, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21249]}
+{"pos": 2, "i": 15047, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21254]}
+{"pos": 2, "i": 15048, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21259]}
+{"pos": 2, "i": 15050, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 2, 3], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21265]}
+{"pos": 2, "i": 15052, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21272]}
+{"pos": 2, "i": 15053, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21277]}
+{"pos": 2, "i": 15054, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21282]}
+{"pos": 2, "i": 15058, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [2, 2, 1], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21288]}
+{"pos": 2, "i": 15060, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21295]}
+{"pos": 2, "i": 15061, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21300]}
+{"pos": 2, "i": 15062, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21305]}
+{"pos": 2, "i": 15066, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [2, 3, 1], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21311]}
+{"pos": 2, "i": 15068, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21318]}
+{"pos": 2, "i": 15069, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21323]}
+{"pos": 2, "i": 15070, "order": ["^", "mad", ">>", "&"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 21328]}
+{"pos": 2, "i": 15118, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 1, 1], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23350]}
+{"pos": 2, "i": 15120, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23357]}
+{"pos": 2, "i": 15121, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23362]}
+{"pos": 2, "i": 15122, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 1, 1], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23367]}
+{"pos": 2, "i": 15124, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 1, 2], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23373]}
+{"pos": 2, "i": 15126, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23380]}
+{"pos": 2, "i": 15127, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23385]}
+{"pos": 2, "i": 15128, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 1, 2], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23390]}
+{"pos": 2, "i": 15136, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 2, 1], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23396]}
+{"pos": 2, "i": 15138, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23403]}
+{"pos": 2, "i": 15139, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23408]}
+{"pos": 2, "i": 15140, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 2, 1], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23413]}
+{"pos": 2, "i": 15142, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 2, 2], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23419]}
+{"pos": 2, "i": 15144, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23426]}
+{"pos": 2, "i": 15145, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23431]}
+{"pos": 2, "i": 15146, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 2, 2], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23436]}
+{"pos": 2, "i": 15148, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 2, 3], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23442]}
+{"pos": 2, "i": 15150, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23449]}
+{"pos": 2, "i": 15151, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23454]}
+{"pos": 2, "i": 15152, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [1, 2, 3], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23459]}
+{"pos": 2, "i": 15156, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [2, 2, 1], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23465]}
+{"pos": 2, "i": 15158, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23472]}
+{"pos": 2, "i": 15159, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23477]}
+{"pos": 2, "i": 15160, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [2, 2, 1], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23482]}
+{"pos": 2, "i": 15164, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [2, 3, 1], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23488]}
+{"pos": 2, "i": 15166, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23495]}
+{"pos": 2, "i": 15167, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23500]}
+{"pos": 2, "i": 15168, "order": ["^", "mad", ">>", "|"], "wiring": [[0, 1], [2, 3, 1], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 23505]}
+{"pos": 2, "i": 15276, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25751]}
+{"pos": 2, "i": 15277, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25757]}
+{"pos": 2, "i": 15278, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25767]}
+{"pos": 2, "i": 15280, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25772]}
+{"pos": 2, "i": 15281, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25776]}
+{"pos": 2, "i": 15282, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25780]}
+{"pos": 2, "i": 15283, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25784]}
+{"pos": 2, "i": 15284, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25790]}
+{"pos": 2, "i": 15285, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25797]}
+{"pos": 2, "i": 15286, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25804]}
+{"pos": 2, "i": 15296, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25817]}
+{"pos": 2, "i": 15297, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25824]}
+{"pos": 2, "i": 15299, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25829]}
+{"pos": 2, "i": 15300, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25833]}
+{"pos": 2, "i": 15301, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25837]}
+{"pos": 2, "i": 15302, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25841]}
+{"pos": 2, "i": 15303, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25847]}
+{"pos": 2, "i": 15304, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25855]}
+{"pos": 2, "i": 15306, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25860]}
+{"pos": 2, "i": 15307, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25864]}
+{"pos": 2, "i": 15308, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25868]}
+{"pos": 2, "i": 15309, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25872]}
+{"pos": 2, "i": 15310, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25878]}
+{"pos": 2, "i": 15312, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25884]}
+{"pos": 2, "i": 15313, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25888]}
+{"pos": 2, "i": 15314, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25892]}
+{"pos": 2, "i": 15315, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25896]}
+{"pos": 2, "i": 15317, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25900]}
+{"pos": 2, "i": 15318, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25904]}
+{"pos": 2, "i": 15319, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25908]}
+{"pos": 2, "i": 15320, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25912]}
+{"pos": 2, "i": 15321, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4, 5]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25916]}
+{"pos": 2, "i": 15322, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [4, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25922]}
+{"pos": 2, "i": 15323, "order": ["^", "^", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [4, 5, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 25928]}
+{"pos": 2, "i": 15333, "order": ["^", "^", ">>", "^"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 26546]}
+{"pos": 2, "i": 15335, "order": ["^", "^", ">>", "^"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 26553]}
+{"pos": 2, "i": 15336, "order": ["^", "^", ">>", "^"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 26558]}
+{"pos": 2, "i": 15337, "order": ["^", "^", ">>", "^"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 26563]}
+{"pos": 2, "i": 15347, "order": ["^", "^", ">>", "&"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 26857]}
+{"pos": 2, "i": 15349, "order": ["^", "^", ">>", "&"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 26864]}
+{"pos": 2, "i": 15350, "order": ["^", "^", ">>", "&"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 26869]}
+{"pos": 2, "i": 15351, "order": ["^", "^", ">>", "&"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 26874]}
+{"pos": 2, "i": 15361, "order": ["^", "^", ">>", "|"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 27168]}
+{"pos": 2, "i": 15363, "order": ["^", "^", ">>", "|"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 27175]}
+{"pos": 2, "i": 15364, "order": ["^", "^", ">>", "|"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 27180]}
+{"pos": 2, "i": 15365, "order": ["^", "^", ">>", "|"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 27185]}
+{"pos": 2, "i": 15473, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29155]}
+{"pos": 2, "i": 15474, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29161]}
+{"pos": 2, "i": 15475, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29171]}
+{"pos": 2, "i": 15477, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29176]}
+{"pos": 2, "i": 15478, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29180]}
+{"pos": 2, "i": 15479, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29184]}
+{"pos": 2, "i": 15480, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29188]}
+{"pos": 2, "i": 15481, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29194]}
+{"pos": 2, "i": 15482, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29201]}
+{"pos": 2, "i": 15483, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29208]}
+{"pos": 2, "i": 15493, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29221]}
+{"pos": 2, "i": 15494, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29228]}
+{"pos": 2, "i": 15496, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29233]}
+{"pos": 2, "i": 15497, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29237]}
+{"pos": 2, "i": 15498, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29241]}
+{"pos": 2, "i": 15499, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29245]}
+{"pos": 2, "i": 15500, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29251]}
+{"pos": 2, "i": 15501, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29259]}
+{"pos": 2, "i": 15503, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29264]}
+{"pos": 2, "i": 15504, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29268]}
+{"pos": 2, "i": 15505, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29272]}
+{"pos": 2, "i": 15506, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29276]}
+{"pos": 2, "i": 15507, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29282]}
+{"pos": 2, "i": 15509, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29288]}
+{"pos": 2, "i": 15510, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29292]}
+{"pos": 2, "i": 15511, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29296]}
+{"pos": 2, "i": 15512, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29300]}
+{"pos": 2, "i": 15514, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29304]}
+{"pos": 2, "i": 15515, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29308]}
+{"pos": 2, "i": 15516, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29312]}
+{"pos": 2, "i": 15517, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29316]}
+{"pos": 2, "i": 15518, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4, 5]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29320]}
+{"pos": 2, "i": 15519, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [4, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29326]}
+{"pos": 2, "i": 15520, "order": ["^", "&", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [4, 5, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29332]}
+{"pos": 2, "i": 15530, "order": ["^", "&", ">>", "^"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29950]}
+{"pos": 2, "i": 15532, "order": ["^", "&", ">>", "^"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29957]}
+{"pos": 2, "i": 15533, "order": ["^", "&", ">>", "^"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29962]}
+{"pos": 2, "i": 15534, "order": ["^", "&", ">>", "^"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 29967]}
+{"pos": 2, "i": 15544, "order": ["^", "&", ">>", "&"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 30261]}
+{"pos": 2, "i": 15546, "order": ["^", "&", ">>", "&"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 30268]}
+{"pos": 2, "i": 15547, "order": ["^", "&", ">>", "&"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 30273]}
+{"pos": 2, "i": 15548, "order": ["^", "&", ">>", "&"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 30278]}
+{"pos": 2, "i": 15558, "order": ["^", "&", ">>", "|"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 30572]}
+{"pos": 2, "i": 15560, "order": ["^", "&", ">>", "|"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 30579]}
+{"pos": 2, "i": 15561, "order": ["^", "&", ">>", "|"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 30584]}
+{"pos": 2, "i": 15562, "order": ["^", "&", ">>", "|"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 30589]}
+{"pos": 2, "i": 15670, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32559]}
+{"pos": 2, "i": 15671, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32565]}
+{"pos": 2, "i": 15672, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32575]}
+{"pos": 2, "i": 15674, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32580]}
+{"pos": 2, "i": 15675, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32584]}
+{"pos": 2, "i": 15676, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32588]}
+{"pos": 2, "i": 15677, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32592]}
+{"pos": 2, "i": 15678, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32598]}
+{"pos": 2, "i": 15679, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32605]}
+{"pos": 2, "i": 15680, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [1, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32612]}
+{"pos": 2, "i": 15690, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32625]}
+{"pos": 2, "i": 15691, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32632]}
+{"pos": 2, "i": 15693, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32637]}
+{"pos": 2, "i": 15694, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32641]}
+{"pos": 2, "i": 15695, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32645]}
+{"pos": 2, "i": 15696, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32649]}
+{"pos": 2, "i": 15697, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32655]}
+{"pos": 2, "i": 15698, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32663]}
+{"pos": 2, "i": 15700, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32668]}
+{"pos": 2, "i": 15701, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32672]}
+{"pos": 2, "i": 15702, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32676]}
+{"pos": 2, "i": 15703, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32680]}
+{"pos": 2, "i": 15704, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32686]}
+{"pos": 2, "i": 15706, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 3, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32692]}
+{"pos": 2, "i": 15707, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 3, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32696]}
+{"pos": 2, "i": 15708, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 3, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32700]}
+{"pos": 2, "i": 15709, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32704]}
+{"pos": 2, "i": 15711, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4, 1]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32708]}
+{"pos": 2, "i": 15712, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4, 2]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32712]}
+{"pos": 2, "i": 15713, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32716]}
+{"pos": 2, "i": 15714, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32720]}
+{"pos": 2, "i": 15715, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4, 5]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32724]}
+{"pos": 2, "i": 15716, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [4, 4, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32730]}
+{"pos": 2, "i": 15717, "order": ["^", "|", ">>", "mad"], "wiring": [[0, 1], [1, 2], [2, 3], [4, 5, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 32736]}
+{"pos": 2, "i": 15727, "order": ["^", "|", ">>", "^"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 33354]}
+{"pos": 2, "i": 15729, "order": ["^", "|", ">>", "^"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 33361]}
+{"pos": 2, "i": 15730, "order": ["^", "|", ">>", "^"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 33366]}
+{"pos": 2, "i": 15731, "order": ["^", "|", ">>", "^"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 33371]}
+{"pos": 2, "i": 15741, "order": ["^", "|", ">>", "&"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 33665]}
+{"pos": 2, "i": 15743, "order": ["^", "|", ">>", "&"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 33672]}
+{"pos": 2, "i": 15744, "order": ["^", "|", ">>", "&"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 33677]}
+{"pos": 2, "i": 15745, "order": ["^", "|", ">>", "&"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 33682]}
+{"pos": 2, "i": 15755, "order": ["^", "|", ">>", "|"], "wiring": [[0, 1], [1, 2], [1, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 33976]}
+{"pos": 2, "i": 15757, "order": ["^", "|", ">>", "|"], "wiring": [[0, 1], [1, 2], [2, 3], [1, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 33983]}
+{"pos": 2, "i": 15758, "order": ["^", "|", ">>", "|"], "wiring": [[0, 1], [1, 2], [2, 3], [2, 3]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 33988]}
+{"pos": 2, "i": 15759, "order": ["^", "|", ">>", "|"], "wiring": [[0, 1], [1, 2], [2, 3], [3, 4]], "result": "unsat", "how": "input-XOR absorption", "reduced_to": [1, 33993]}

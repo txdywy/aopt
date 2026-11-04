@@ -95,7 +95,7 @@ def single_constant():
                 verdict[i] = 'unsat' if (v1 == 'unsat' and v2 == 'unsat') else (v1 if v1 != 'unsat' else v2)
         else:
             verdict = best(load(f'ch_p{pos}.jsonl'), lambda r: r['i'])
-            for fn in ('ca_res.jsonl', 'cb_res.jsonl', 'cc_res.jsonl', 'cq_res.jsonl'):
+            for fn in ('ca_res.jsonl', 'cb_res.jsonl', 'cc_res.jsonl', 'cq_res.jsonl', 'cx_res.jsonl'):
                 for r in load(fn):
                     if r.get('pos') != pos:
                         continue

@@ -25,7 +25,7 @@ from coverage2 import load, final
 
 def residuals():
     fixed = set()
-    for fn in ('ca_res.jsonl', 'cb_res.jsonl', 'cc_res.jsonl', 'cq_res.jsonl'):
+    for fn in ('ca_res.jsonl', 'cb_res.jsonl', 'cc_res.jsonl', 'cq_res.jsonl', 'cx_res.jsonl'):
         for r in load(fn):
             if final(r) == 'unsat' or r.get('result') == 'unsat':
                 fixed.add((r['pos'], r['i']))

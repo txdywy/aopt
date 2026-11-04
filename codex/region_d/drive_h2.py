@@ -78,7 +78,10 @@ def main():
                 done.add(json.loads(line)['i'])
             except Exception:
                 pass
-    todo = [(i, o, w, pos, t_fast, t_band) for i, (o, w) in enumerate(allw) if i not in done]
+    skip = set()
+    if os.path.exists(f'skip_p{pos}.json'):              # closed by a verified reduction
+        skip = set(json.load(open(f'skip_p{pos}.json')))
+    todo = [(i, o, w, pos, t_fast, t_band) for i, (o, w) in enumerate(allw) if i not in done and i not in skip]
     print(f'pos {pos} total {len(allw)} done {len(done)} todo {len(todo)}', flush=True)
     t0 = time.time()
     with Pool(workers) as pool, open(out, 'a') as f:

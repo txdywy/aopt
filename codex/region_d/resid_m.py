@@ -10,6 +10,7 @@ import time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import z3
 import rdg
+import rdm
 from coverage2 import load
 
 
@@ -49,6 +50,16 @@ def main():
             t = time.time()
             slots = literal_slots(o, w)
             parts = []
+            if rdm.applicable(o, w):
+                x = rdm.solve_all(o, w, 11, sec)
+                if x['result'] == 'unsat':
+                    rec = dict(i=r['i'], order=o, wiring=w, result='unsat', how='rdm', parts=x['parts'],
+                               sec=round(time.time() - t, 1))
+                    f.write(json.dumps(rec, default=list) + '\n')
+                    f.flush()
+                    print(r['i'], o, w, 'unsat rdm', rec['sec'], flush=True)
+                    continue
+                parts.append(('rdm', x['result'], x['parts'][-1:]))
             if slots:
                 i0, sl = slots[0]
                 for s in range(33):
@@ -61,7 +72,8 @@ def main():
             else:
                 v, log = part_verdict(o, w, None, sec * 4)
                 parts.append(('all', v, log))
-            verdict = 'unsat' if all(p[1] == 'unsat' for p in parts) else (
+            parts = [p for p in parts if p[0] != 'rdm']
+            verdict = 'unsat' if parts and all(p[1] == 'unsat' for p in parts) else (
                 'sat' if any(p[1] == 'sat' for p in parts) else 'timeout')
             rec = dict(i=r['i'], order=o, wiring=w, result=verdict, parts=parts, sec=round(time.time() - t, 1))
             f.write(json.dumps(rec, default=list) + '\n')

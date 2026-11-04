@@ -103,7 +103,7 @@ def main():
                 x = rdq.solve_all(o, w, 11, sec)
                 v, log, how = x['result'], x['parts'], 'rdq'
             elif rdp2.applicable(o, w):
-                x = rdp2.solve_split(o, w, 11, sec)
+                x = rdp2.solve_split(o, w, 13, sec)
                 v, log, how = x['result'], x['parts'], 'rdp2'
                 if v != 'unsat':
                     v2, log2 = run_rdg_fixed_s(o, w, sec)

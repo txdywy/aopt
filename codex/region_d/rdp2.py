@@ -106,7 +106,7 @@ def jets(cof, z0v):
     return V0, D1, D2
 
 
-def solve(order, wiring, c=11, seconds=120.0, seed=1, target=None, s_range=(0, 32)):
+def solve(order, wiring, c=11, seconds=120.0, seed=1, target=None, s_range=(0, 32), escape_filter=True):
     assert c >= 11, 'the exact fiber relation needs 3c >= 32'
     an = analyse(order, wiring)
     assert an is not None
@@ -129,6 +129,32 @@ def solve(order, wiring, c=11, seconds=120.0, seed=1, target=None, s_range=(0, 3
         for b in range(c - 1, -1, -1):
             d = z3.If(z3.Extract(b, b, x) == 1, z3.BitVecVal(b, 32), d)
         return d
+
+    if escape_filter and target is None:
+        # Closure escape filter. If every class has a fiber point with u = 0, the program
+        # with u := 0 (<= 3 T-ops) matches F(z^K)^D on every class mod 2^11: impossible by
+        # closure3. So only constants for which SOME class z* has no u = 0 point can work.
+        # Necessary conditions for that, on a symbolic witness class z*:
+        #   D1(z*) != 0 mod 2^c (free form): c + d > s and (V0 mod 2^(c+d)) >> s != 0
+        #   D1(z*) == 0 mod 2^c (explicit form): V0 >> s != 0 (the y = 0 point).
+        zs = z3.BitVec('zstar', c)
+        Zs = z3.ZeroExt(32 - c, zs)
+        V0s = z3.BitVecVal(0, 32)
+        D1s = z3.BitVecVal(0, 32)
+        for i, a in enumerate(co):
+            if z3.is_bv_value(a) and a.as_long() == 0:
+                continue
+            V0s = V0s + a * pw(Zs, i)
+            if i >= 1:
+                D1s = D1s + a * i * pw(Zs, i - 1)
+        Dls = z3.Extract(c - 1, 0, D1s)
+        ds = ctz(Dls)
+        ws = ds + c
+        lms = z3.If(z3.UGE(ws, 32), z3.BitVecVal(0xFFFFFFFF, 32), (z3.BitVecVal(1, 32) << ws) - 1)
+        sh = k32[pos][slot]
+        S.add(z3.If(Dls != 0,
+                    z3.And(z3.UGT(ws, sh), z3.LShR(V0s & lms, sh) != 0),
+                    z3.LShR(V0s, sh) != 0))
 
     def build(kk, cof, z0v, z0, h, y):
         kc = [(z3.Extract(c - 1, 0, a), z3.Extract(c - 1, 0, b)) for a, b in kk]
@@ -259,11 +285,11 @@ def pw(Z, i):
     return r
 
 
-def solve_split(order, wiring, c=11, seconds=120.0, seed=1):
+def solve_split(order, wiring, c=11, seconds=120.0, seed=1, escape_filter=True):
     parts = []
     for lo in range(0, 33, 4):
         sr = (lo, min(lo + 3, 32))
-        r = solve(order, wiring, c, seconds, seed, None, sr)
+        r = solve(order, wiring, c, seconds, seed, None, sr, escape_filter)
         parts.append((sr, r['result']))
         if r['result'] == 'sat':
             return dict(result='sat', parts=parts)

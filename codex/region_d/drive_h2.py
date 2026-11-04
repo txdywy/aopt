@@ -48,9 +48,10 @@ def work(args):
                 x = rdq.solve_all(o, w, 11, t_band)
                 rec['rdq'] = dict(result=x['result'], parts=x['parts'])
             elif rdp2.applicable(o, w):
-                x = rdp2.solve(o, w, 11, t_band)
+                # c = 13 with the closure escape filter (fastest measured formulation)
+                x = rdp2.solve(o, w, 13, max(t_band, 60.0))
                 if x['result'] == 'timeout':
-                    x = rdp2.solve_split(o, w, 11, t_band)
+                    x = rdp2.solve_split(o, w, 13, max(t_band, 30.0))
                 rec['rdp2'] = dict(result=x['result'], parts=x.get('parts'))
             else:
                 bands = [(1, 8), (9, 10)] if w[pos][0] == 0 else [(1, 8), (9, 16), (17, 31)]

@@ -28,6 +28,7 @@ def work(args):
     import rda
     import rda2
     import rdq
+    import rdp2
     t = time.time()
     rec = dict(i=i, order=o, wiring=w)
     try:
@@ -46,6 +47,11 @@ def work(args):
             elif rdq.applicable(o, w):
                 x = rdq.solve_all(o, w, 11, t_band)
                 rec['rdq'] = dict(result=x['result'], parts=x['parts'])
+            elif rdp2.applicable(o, w):
+                x = rdp2.solve(o, w, 11, t_band)
+                if x['result'] == 'timeout':
+                    x = rdp2.solve_split(o, w, 11, t_band)
+                rec['rdp2'] = dict(result=x['result'], parts=x.get('parts'))
             else:
                 bands = [(1, 8), (9, 10)] if w[pos][0] == 0 else [(1, 8), (9, 16), (17, 31)]
                 rec['bands'] = {}
@@ -88,6 +94,8 @@ def main():
                         bad.append('%s c=%d %s' % (key, max(r[key]), last['result']))
             if r.get('rda2_final', 'unsat') != 'unsat':
                 bad.append('rda2 split %s' % r['rda2_final'])
+            if 'rdp2' in r and r['rdp2']['result'] != 'unsat':
+                bad.append('rdp2 %s' % r['rdp2']['result'])
             if 'rdq' in r and r['rdq']['result'] != 'unsat':
                 bad.append('rdq %s' % r['rdq']['result'])
             if 'error' in r or bad:

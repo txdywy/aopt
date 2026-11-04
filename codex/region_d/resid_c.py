@@ -17,6 +17,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import z3
 import rda2
 import rdq
+import rdp2
 import rdg
 from coverage2 import load, final
 
@@ -101,6 +102,12 @@ def main():
             elif rdq.applicable(o, w):
                 x = rdq.solve_all(o, w, 11, sec)
                 v, log, how = x['result'], x['parts'], 'rdq'
+            elif rdp2.applicable(o, w):
+                x = rdp2.solve_split(o, w, 11, sec)
+                v, log, how = x['result'], x['parts'], 'rdp2'
+                if v != 'unsat':
+                    v2, log2 = run_rdg_fixed_s(o, w, sec)
+                    v, log, how = v2, [log, log2], 'rdp2+rdg_fixed_s'
             else:
                 v, log = run_rdg_fixed_s(o, w, sec)
                 how = 'rdg_fixed_s'

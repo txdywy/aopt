@@ -43,6 +43,8 @@ def final(rec):
             return last['result']
     if 'rdq' in rec:
         return rec['rdq']['result']
+    if 'rdp2' in rec:
+        return rec['rdp2']['result']
     if 'bands' in rec and rec['bands']:
         vals = [v['result'] for v in rec['bands'].values()]
         if all(v == 'unsat' for v in vals):

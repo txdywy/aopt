@@ -34,8 +34,41 @@ def part_verdict(o, w, extra, sec):
     return 'sat', log
 
 
+def close_one(args):
+    r, sec = args
+    o = tuple(r['order']); w = tuple(tuple(x) for x in r['wiring'])
+    t = time.time()
+    try:
+        if rdm.applicable(o, w):
+            x = rdm.solve_all(o, w, 11, sec)
+            if x['result'] == 'unsat':
+                return dict(i=r['i'], order=o, wiring=w, result='unsat', how='rdm', parts=x['parts'],
+                            sec=round(time.time() - t, 1))
+        slots = literal_slots(o, w)
+        parts = []
+        if slots:
+            i0, sl = slots[0]
+            for s in range(33):
+                if s < 32:
+                    ex = lambda S, ks, s=s: S.add(ks[i0][sl] == s)
+                else:
+                    ex = lambda S, ks: S.add(z3.UGE(ks[i0][sl], 32))
+                v, log = part_verdict(o, w, ex, sec)
+                parts.append((s, v, log))
+        else:
+            v, log = part_verdict(o, w, None, sec * 4)
+            parts.append(('all', v, log))
+        verdict = 'unsat' if parts and all(p[1] == 'unsat' for p in parts) else (
+            'sat' if any(p[1] == 'sat' for p in parts) else 'timeout')
+        return dict(i=r['i'], order=o, wiring=w, result=verdict, how='fixed-literal', parts=parts,
+                    sec=round(time.time() - t, 1))
+    except Exception as e:
+        return dict(i=r['i'], order=o, wiring=w, result='error', error=repr(e)[:200], sec=round(time.time() - t, 1))
+
+
 def main():
     src, out, sec = sys.argv[1], sys.argv[2], float(sys.argv[3])
+    workers = int(sys.argv[4]) if len(sys.argv) > 4 else 1
     done = {r['i'] for r in load(out) if r.get('result') == 'unsat'}
     best = {}
     for r in load(src):
@@ -43,42 +76,13 @@ def main():
             continue
         best[r['i']] = r
     todo = [r for i, r in sorted(best.items()) if r['result'] != 'unsat' and i not in done]
-    print('residuals', len(todo), flush=True)
-    with open(out, 'a') as f:
-        for r in todo:
-            o = tuple(r['order']); w = tuple(tuple(x) for x in r['wiring'])
-            t = time.time()
-            slots = literal_slots(o, w)
-            parts = []
-            if rdm.applicable(o, w):
-                x = rdm.solve_all(o, w, 11, sec)
-                if x['result'] == 'unsat':
-                    rec = dict(i=r['i'], order=o, wiring=w, result='unsat', how='rdm', parts=x['parts'],
-                               sec=round(time.time() - t, 1))
-                    f.write(json.dumps(rec, default=list) + '\n')
-                    f.flush()
-                    print(r['i'], o, w, 'unsat rdm', rec['sec'], flush=True)
-                    continue
-                parts.append(('rdm', x['result'], x['parts'][-1:]))
-            if slots:
-                i0, sl = slots[0]
-                for s in range(33):
-                    if s < 32:
-                        ex = lambda S, ks, s=s: S.add(ks[i0][sl] == s)
-                    else:
-                        ex = lambda S, ks: S.add(z3.UGE(ks[i0][sl], 32))
-                    v, log = part_verdict(o, w, ex, sec)
-                    parts.append((s, v, log))
-            else:
-                v, log = part_verdict(o, w, None, sec * 4)
-                parts.append(('all', v, log))
-            parts = [p for p in parts if p[0] != 'rdm']
-            verdict = 'unsat' if parts and all(p[1] == 'unsat' for p in parts) else (
-                'sat' if any(p[1] == 'sat' for p in parts) else 'timeout')
-            rec = dict(i=r['i'], order=o, wiring=w, result=verdict, parts=parts, sec=round(time.time() - t, 1))
+    print('residuals', len(todo), 'workers', workers, flush=True)
+    from multiprocessing import Pool
+    with Pool(workers) as pool, open(out, 'a') as f:
+        for rec in pool.imap_unordered(close_one, [(r, sec) for r in todo], chunksize=1):
             f.write(json.dumps(rec, default=list) + '\n')
             f.flush()
-            print(r['i'], o, w, verdict, [p[:2] for p in parts if p[1] != 'unsat'], rec['sec'], flush=True)
+            print(rec['i'], rec['order'], rec['wiring'], rec.get('how'), rec['result'], rec['sec'], flush=True)
     print('RESIDM DONE', flush=True)
 
 

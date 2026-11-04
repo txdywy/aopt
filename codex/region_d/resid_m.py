@@ -40,10 +40,9 @@ def close_one(args):
     t = time.time()
     try:
         if rdm.applicable(o, w):
-            x = rdm.solve_all(o, w, 11, sec)
-            if x['result'] == 'unsat':
-                return dict(i=r['i'], order=o, wiring=w, result='unsat', how='rdm', parts=x['parts'],
-                            sec=round(time.time() - t, 1))
+            x = rdm.solve_all(o, w, 11, 3 * sec)
+            return dict(i=r['i'], order=o, wiring=w, result=x['result'], how='rdm', parts=x['parts'],
+                        sec=round(time.time() - t, 1))
         slots = literal_slots(o, w)
         parts = []
         if slots:

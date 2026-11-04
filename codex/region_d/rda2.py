@@ -256,6 +256,33 @@ def path_eval(order, wiring, path, w, uw, kss, is_np, cm):
     return sv
 
 
+def poly_output(order, wiring, pos):
+    """True if every instruction in the output cone other than the SHR is a MAD, except
+    that the final instruction may be XOR of one runtime value with a private constant."""
+    n = len(order)
+    live, stack = set(), [n - 1]
+    while stack:
+        j = stack.pop()
+        if j in live:
+            continue
+        live.add(j)
+        for x in wiring[j]:
+            if 1 <= x <= j:
+                stack.append(x - 1)
+    for j in live:
+        if j == pos:
+            continue
+        op = order[j]
+        if op == 'mad':
+            continue
+        if j == n - 1 and op == '^':
+            a, b = wiring[j]
+            if (a > j) != (b > j):           # exactly one private-constant operand
+                continue
+        return False
+    return True
+
+
 def solve_case(order, wiring, kind, c=11, seconds=60.0, seed=1, target=None, split=None):
     """target: optional uint array of length 2^c to match instead of tau (K fixed 0).
     split: optional dict restricting the case parameters: {'dl': d} (case 3) and/or
@@ -276,7 +303,12 @@ def solve_case(order, wiring, kind, c=11, seconds=60.0, seed=1, target=None, spl
         # consumer, that instruction is dead once u is replaced by the MAD, so the reduced
         # program has <= 3 T-ops for every s <= 21, not only for s >= 11.
         other = any(vi in wiring[j] for j in range(len(order)) if j != pos and j >= vi)
-        if vi >= 1 and not other:
+        if (vi >= 1 and not other) or poly_output(order, wiring, pos):
+            # second refinement (polynomial certificate): if every instruction feeding the
+            # output is a MAD, except possibly a final XOR with a private constant, then in
+            # case 2 with s <= 21 the output mod 2^11 is an integer polynomial in z (XOR a
+            # constant), and SUB863_FLOW_ENCODING's carry-free rectangle certificate shows
+            # F(x^I)^O is no integer polynomial mod 2^11 for any of the 2^22 (I, O).
             S.add(z3.UGE(case.s, 22))
         else:
             S.add(z3.Or(z3.ULE(case.s, 10), z3.UGE(case.s, 22)))

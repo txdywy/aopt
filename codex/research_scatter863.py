@@ -63,10 +63,13 @@ def convert(builder, chunk_groups, wide_groups):
     print('live small', sorted(k for k in live if k < 64), flush=True)
     ones, zero = builder.vectors[1], builder.zero
     setup = []
-    copy = builder.new(1)
-    setup.append(op('alu', '|', [copy, builder.bankptr[0], (zero[0],)], ('w', 'r', 'r'), 2,
-                    ('scatter_bank', ())))
-    zvec = copy + tuple(p[0] for p in builder.bankptr[1:])
+    # A dedicated bank keeps these long packs out of the anchor/constant chain.
+    zvec = builder.new(8)
+    setup.append(op('alu', '+', [(zvec[0],), scalar(2054), scalar(16)], ('w', 'r', 'r'), 3,
+                    ('scatter_bank', (0,))))
+    for i in range(1, 8):
+        setup.append(op('alu', '+', [(zvec[i],), (zvec[i - 1],), scalar(1)], ('w', 'r', 'r'),
+                        3 + i, ('scatter_bank', (i,))))
     bank = [(v,) for v in zvec]
 
     chunks = z7 = readback = None
@@ -98,8 +101,8 @@ def convert(builder, chunk_groups, wide_groups):
             setup.append(op('alu', '>>', [live[8], scalar(16), scalar(1)], ('w', 'r', 'r'), 2,
                             ('scatter_pointer', (-1,))))
         z7 = [builder.new(1)]
-        setup.append(op('alu', '+', [z7[0], scalar(2054), scalar(16)],
-                        ('w', 'r', 'r'), 3, ('scatter_pointer', (0,))))
+        setup.append(op('alu', '+', [z7[0], bank[7], scalar(8)],
+                        ('w', 'r', 'r'), 11, ('scatter_pointer', (0,))))
         readback = [z7[0]]
         for i in range(1, 8):
             z7.append(builder.new(1))

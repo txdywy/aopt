@@ -390,7 +390,11 @@ def graph(rows,scratch=True,condense=True,event_override=None):
                     # Unknown conditional writes to the dead zero sink do not
                     # need a serial WAW chain. Definite writes still close it.
                     if a != 0 or len(bases) == 1 or live_zero.get(j,False):
-                        for q in mw[a]: edge(q,j,1)
+                        # Two scatter stores may share a packet: slots are
+                        # emitted in source order and the later slot wins.
+                        scatter = rows[j][3][0] == 'scatter_store'
+                        for q in mw[a]:
+                            edge(q,j,0 if scatter and rows[q][3][0] == 'scatter_store' and q < j else 1)
                     # A load in this packet reads before BOTH store slots.
                     # Keep it until every same-cycle write has acquired WAR.
                     if a != 0:

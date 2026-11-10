@@ -288,17 +288,16 @@ def order_packs(ir):
         elif name=='constant_reload':key=('const',coord[0]);order=8
         elif name=='anchor_store':key=('anchor',coord[0]);order=coord[1]
         elif name=='anchor':key=('anchor',coord[0]);order=8
-        elif name=='scatter_store':key=('scatter',coord[0],coord[1]);order=4*coord[2]+coord[3]
-        elif name=='scatter_reload':key=('scatter',coord[0],coord[1]);order=32
+        elif name=='scatter_store':key=('scatter',coord[0],coord[1]);order=coord[2]
+        elif name=='scatter_reload':key=('scatter',coord[0],coord[1]);order=1000+coord[2]
         else:continue
         pack=packs.setdefault(key,{'ops':[],'due':10**9})
         pack['ops'].append((order,j))
-        if op.engine=='load':pack['due']=min(uses.get(v,10**9) for v in op.args[0])
+        if op.engine=='load':pack['due']=min([pack['due']]+[uses.get(v,10**9) for v in op.args[0]])
     for rank,pack in enumerate(sorted(packs.values(),key=lambda p:p['due'])):
-        assert len(pack['ops']) in (9,33)
         for order,j in pack['ops']:
             _,engine,slot,tag=ir.rows[j]
-            ir.rows[j]=(100000+64*rank+order,engine,slot,tag)
+            ir.rows[j]=(100000+2048*rank+order,engine,slot,tag)
 
 
 def build(**kwargs):

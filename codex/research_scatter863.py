@@ -28,7 +28,7 @@ def op(engine, code, args, kinds, time, tag):
     return SimpleNamespace(engine=engine, code=code, args=args, kinds=kinds, time=time, tag=tag)
 
 
-def convert(builder, chunk_groups, wide_groups):
+def convert(builder, chunk_groups, wide_groups, triple_groups=()):
     ops = builder.ops
     writer = {v: o for o in ops if o.engine != 'store' for v in o.args[0]}
     img, blocks = {}, {}
@@ -73,9 +73,9 @@ def convert(builder, chunk_groups, wide_groups):
     bank = [(v,) for v in zvec]
 
     chunks = z7 = readback = None
-    if chunk_groups:
+    if chunk_groups or triple_groups:
         chunks = {}
-        for c1 in (0, 1):
+        for c1 in ((0, 1) if chunk_groups else ()):
             for c2 in (0, 1):
                 m = 3 + 2 * (1 - c1) + (1 - c2)
                 left, right = 2 * m + 1, 2 * m + 2
@@ -113,11 +113,17 @@ def convert(builder, chunk_groups, wide_groups):
             setup.append(op('alu', '+', [readback[i], readback[i - 1], scalar(8)],
                             ('w', 'r', 'r'), 3 + i, ('scatter_readback', (i,))))
         z7vec = tuple(v[0] for v in z7)
+        z3 = [readback[1]]
+        for i in range(1, 8 if triple_groups else 1):
+            z3.append(builder.new(1))
+            setup.append(op('alu', '+', [z3[i], z3[i - 1], scalar(3)],
+                            ('w', 'r', 'r'), 12 + i, ('scatter_pointer3', (i,))))
+        z3vec = tuple(v[0] for v in z3)
         # Unselected chunk copies land on the bank, which is dead between packs.
         sink = zvec
 
     dead, inserts, split = set(), {}, {}
-    for g in list(chunk_groups) + list(wide_groups):
+    for g in list(chunk_groups) + list(wide_groups) + list(triple_groups):
         t13, t14, t15 = (builder.hashhint[r, g] for r in (13, 14, 15))
         x13 = writer[hm[13, g].args[1][0]]
         outer = writer[x13.args[2][0]]
@@ -177,6 +183,26 @@ def convert(builder, chunk_groups, wide_groups):
             ag = sel(b14, zvec, zero, t15 - 14, 'scatter_conj')
             abg = sel(b13, ag, zero, t15 - 13, 'scatter_conj')
             d4 = select(2, t15 - 12, [(None, word(4)), (ag, word(5)), (ab, word(0)), (abg, word(1))])
+        elif g in triple_groups:
+            v = {0: z3vec}
+            v[1] = sel(b11, z3vec, sink, t14 - 40, 'scatter_conj')
+            v[2] = sel(b12, z3vec, sink, t14 - 40, 'scatter_conj')
+            v[3] = sel(b11, v[2], sink, t14 - 39, 'scatter_conj')
+            v[4] = sel(b13, z3vec, sink, t14 - 38, 'scatter_conj')
+            for k in (1, 2, 3):
+                v[4 + k] = sel(b13, v[k], sink, t14 - 37, 'scatter_conj')
+            order = sorted(range(8), key=lambda k: (bin(k).count('1'), k))
+            node3 = lambda k: 2 * (3 + 2 * (1 - (k & 1)) + (1 - (k >> 1 & 1))) + (1 if k & 4 else 2)
+            for lane in range(8):
+                for k in order:
+                    window = record(node3(k)) + builder.new(5, undefined=True)
+                    store(0, (v[k][lane],), window, t14 - 30, vector=True)
+            packets = [reload(0, readback[1 + k], t14 - 8, k) for k in range(3)]
+            word = lambda j: tuple(packets[(3 * e + j) // 8][(3 * e + j) % 8] for e in range(8))
+            n2 = None
+            d3 = word(2)
+            ag = sel(b14, zvec, zero, t15 - 8, 'scatter_conj')
+            d4 = select(1, t15 - 7, [(None, word(0)), (ag, word(1))])
         else:
             v = {0: None}
             v[1] = sel(b11, zvec, zero, t13 - 30, 'scatter_conj')
@@ -193,7 +219,9 @@ def convert(builder, chunk_groups, wide_groups):
             g0 = select(2, t15 - 25, [(v[k], record(node3(k))[0]) for k in order])
             g1 = select(3, t15 - 25, [(v[k], record(node3(k))[1]) for k in order])
             d4 = sel(b14, g1, g0, t15 - 3, 'scatter_select')
-        if g in chunk_groups:
+        if n2 is None:
+            pass
+        elif g in chunk_groups:
             # The staged d2 words are not contiguous: use eight scalar XORs.
             split[id(x13)] = [op('alu', '^', [(x13.args[0][lane],), (x13.args[1][lane],),
                                               (n2[lane],)], ('w', 'r', 'r'), x13.time,
@@ -222,12 +250,12 @@ def convert(builder, chunk_groups, wide_groups):
 
 def main():
     parse = lambda text: [int(g) for g in text.split(',') if g]
-    chunk_groups, wide_groups = parse(sys.argv.pop(1)), parse(sys.argv.pop(1))
+    chunk_groups, wide_groups, triple_groups = (parse(sys.argv.pop(1)) for _ in range(3))
     original = frontier.build
 
     def build(args):
         ir, builder = original(args)
-        convert(builder, chunk_groups, wide_groups)
+        convert(builder, chunk_groups, wide_groups, triple_groups)
         frontier.logical_order(builder)
         return ir, builder
     stage.frontier = SimpleNamespace(**{k: getattr(frontier, k) for k in dir(frontier)})

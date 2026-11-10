@@ -634,7 +634,8 @@ def main():
                 degree[q] -= 1
                 if not degree[q]:
                     heapq.heappush(ready, q)
-        assert step == len(ir.ops), 'cyclic experimental IR'
+        if step != len(ir.ops):
+            pickle.dump(ir, open(str(args.prefix) + ".cyc.pkl", "wb")); raise AssertionError("cyclic experimental IR")
         program, words, _ = allocate(ir, times)
         assert words <= 1536, words
         print({'scratch': words, 'serial_verified': verify(program, 3)}, flush=True)

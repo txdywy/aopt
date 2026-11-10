@@ -1,0 +1,50 @@
+# 863 候选图：第二遍驻留节点 + 条件地址 STORE（2026-11-10）
+
+**可执行最好成绩仍为 864 cycles，本轮没有得到 863 程序。** 未修改提交内核、
+`problem.py` 或 `tests/`。本文记录第一张通过 863 全部必要条件的指令图，以及
+它目前排不进去的原因。
+
+## 做法
+
+对选定的组，第 13–15 轮不再做 d3 记录 gather，也不算地址乘加（每组遍省 8 lane）：
+d2/d3/d4 的编码节点字留在 scratch，用按奇偶位生成的“条件地址向量”把候选值覆盖
+写入内存，再用 vload 读回。未选中的写入落到死单元。两种形式（`research_scatter863.py`）：
+
+| 形式 | FLOW | LOAD | STORE | 说明 |
+|---|---:|---:|---:|---|
+| 原做法（每组遍） | 7 | 8 | 0 | 另有 1 条地址乘加 |
+| chunk | 6 | 9 | 80 | 每个候选一次 8 字 vstore 写出整块 d2 子树（步长 7 暂存），再做两次小的缓冲区选择 |
+| wide | 8 | 4 | 224 | 三位条件向量 + 标量 STORE |
+
+条件地址 STORE 本身在 880 版内核里已有二选一用法；这里新的是多个候选共用条件向量。
+
+## 已验证的事实
+
+配置：chunk 组 0,2,4,6,8,10,12,14；wide 组 3,9；其余参数同 864，`--sink 16`。
+
+- 串行程序在冻结模拟器上 3 组随机输入通过（scratch 1149）。
+- C = 51,606，LOAD 1688，FLOW 853，STORE 1618。
+- `packet_budget_bound --target-horizon 863`：首部损失 52、尾部 116，算术周期下界 **863**；
+  三路指令流窗口下界 LOAD 862、FLOW 863、STORE 813。
+- 不加改造时导出的 864 模型 SHA256 与记录一致。
+
+## 尚未解决
+
+- `packet_mode_search` 4 个种子各 4000 次迭代只到 **877**。日历里 STORE 从第 250 周期到
+  结尾全程占满，条件写入包被拖到末尾。关键路径也从 327 增到 570（所有包共用一个
+  缓冲区，按源顺序串行）。
+- 1088 次新增 STORE 太多。减少的方向：用 80 STORE 的三字记录形式代替 wide（需要
+  步长 3 的指针组和 4 条 FLOW）；让最后完成的几组使用 chunk（它们的末次读回不占
+  饱和区的 LOAD）；用重铺镜像代替 6 条重复异或。
+- 之后仍需完整的精确排程。
+
+## 重现
+
+```bash
+python3 -m codex.research_scatter863 0,2,4,6,8,10,12,14 3,9 --prefix /tmp/sc10 \
+  --small-stage 4 --stage-hash final --stage-uniform=-60,-40 --cheap-coeff --head-fill \
+  --head-flow --alu-layout --tail-transposes 29,31 --tail-low --low-alu --bootstrap-flow 2 \
+  --scalar-leaves --fold-raw-hash --sink 16 --literals 2 --serial
+python3 -m codex.packet_modes export --ir /tmp/sc10.ir.pkl --prefix /tmp/sc10-modes
+python3 -m codex.packet_budget_bound /tmp/sc10-modes.pkl --prefix 1 --suffix 3 --target-horizon 863
+```

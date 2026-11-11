@@ -16,7 +16,7 @@
 
 当前提交是根目录的 [`perf_takehome.py`](perf_takehome.py)，其字节相同的独立副本为
 [`codex/perf_takehome_864.py`](codex/perf_takehome_864.py)。
-此后约两周、数十轮的 sub-864 研究**没有得到 863 程序**；这些研究给出了
+此后约两周、数十轮的 sub-864 研究**没有得到 863 程序**（公开榜单榜首已于 2026-11 到达 863，做法未公开）；这些研究给出了
 当前算法族下 864 的资源下界论证（见[下文](#为什么停在-864)），但不构成对任意算法的全局最优证明。
 
 ## 快速验证
@@ -114,6 +114,7 @@ LOAD 1,688（截止期内占满）  FLOW 851（余量约 2）  STORE 530（大�
 | 第 0 轮与根节点 | [第 0 轮合并](codex/SUB863_ROUND0_MERGE_20261028.md)、[钉住移位量](codex/SUB863_ROUND0_PINNED_20261028.md)、[根边界](codex/SUB863_ROOT_BOUNDARY_20261028.md) |
 | 记录、选择与活跃性 | [选择车道引理](codex/SUB863_SELECT_LEMMA_20261027.md)、[逐车道活跃性](codex/SUB863_LIVENESS_20261027.md)、[尾部推迟](codex/SUB863_TAIL_DEFERRAL_20261027.md) |
 | 构图与常量 | [374 配置扫描](codex/SUB863_CONFIG_SWEEP_20261027.md)、[常量链](codex/SUB863_UNIFORM_CHAINS_20261027.md)、[标量常量](codex/SUB863_SCALAR_UNIFORMS_20261025.md) |
+| 榜单现状与首部爬坡 | [863 榜单与爬坡账本](codex/SUB863_LEADERBOARD_RAMP_20261111.md) |
 | 模拟器语义 | [冻结模拟器复读](codex/SUB863_SIMULATOR_REREAD_20261027.md) |
 
 ## 目录结构

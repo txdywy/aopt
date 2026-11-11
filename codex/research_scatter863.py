@@ -20,6 +20,8 @@ from codex import research_frontier863 as frontier
 from codex import research_stage864 as stage
 from codex import stride4_family as family
 
+import os
+SHARED_BANK = bool(int(os.environ.get('SCATTER_SHARED_BANK', '0')))
 X = (-60, -40)
 Y = (2310, 2430)
 
@@ -63,13 +65,20 @@ def convert(builder, chunk_groups, wide_groups, triple_groups=()):
     print('live small', sorted(k for k in live if k < 64), flush=True)
     ones, zero = builder.vectors[1], builder.zero
     setup = []
-    # A dedicated bank keeps these long packs out of the anchor/constant chain.
-    zvec = builder.new(8)
-    setup.append(op('alu', '+', [(zvec[0],), scalar(2054), scalar(16)], ('w', 'r', 'r'), 3,
-                    ('scatter_bank', (0,))))
-    for i in range(1, 8):
-        setup.append(op('alu', '+', [(zvec[i],), (zvec[i - 1],), scalar(1)], ('w', 'r', 'r'),
-                        3 + i, ('scatter_bank', (i,))))
+    if SHARED_BANK:
+        # Reuse the anchor/constant bank; only its header word needs a copy.
+        copy = builder.new(1)
+        setup.append(op('alu', '|', [copy, builder.bankptr[0], (zero[0],)], ('w', 'r', 'r'), 2,
+                        ('scatter_bank', (0,))))
+        zvec = copy + tuple(p[0] for p in builder.bankptr[1:])
+    else:
+        # A dedicated bank keeps these long packs out of the anchor/constant chain.
+        zvec = builder.new(8)
+        setup.append(op('alu', '+', [(zvec[0],), scalar(2054), scalar(16)], ('w', 'r', 'r'), 3,
+                        ('scatter_bank', (0,))))
+        for i in range(1, 8):
+            setup.append(op('alu', '+', [(zvec[i],), (zvec[i - 1],), scalar(1)], ('w', 'r', 'r'),
+                            3 + i, ('scatter_bank', (i,))))
     bank = [(v,) for v in zvec]
 
     chunks = z7 = readback = None
